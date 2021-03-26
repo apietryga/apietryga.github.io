@@ -37,6 +37,16 @@ div{
   flex:2;
 }
 
+.content div{
+  height:200px;
+  color:red;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
 .footer{
   padding: 20px 0;
   text-align: right;
