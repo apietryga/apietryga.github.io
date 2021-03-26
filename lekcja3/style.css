@@ -1,0 +1,36 @@
+body{
+  background-color: antiquewhite;
+}
+div{
+  border:2px dashed red;
+}
+.header{
+  display:flex;
+  justify-content: flex-end;
+  padding: 15px 0;
+}
+.nav{
+  width:60%;
+}
+
+.menu{
+  display:flex;
+  justify-content: space-around;
+}
+
+/* WYKRESY */
+.wykres1{
+  border:2px dashed blue;
+  height:2in;
+  display:flex;
+  justify-content: space-evenly;
+}
+.slupek{
+  width: 12%;
+  background-color: aqua;
+}
+.s1{height:1in;}
+.s2{height:1cm;}
+.s3{height:1mm;}
+.s4{height:1px;}
+.s5{height:1pt;}
