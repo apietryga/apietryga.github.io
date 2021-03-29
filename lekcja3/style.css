@@ -5,19 +5,44 @@ body{
 /* div{
   border:2px dashed red;
 } */
+
+/* Header */
 .header{
   display:flex;
   justify-content: flex-end;
   padding: 15px 0;
 }
 .nav{
-  width:60%;
+  width:500px;
 }
 
 .menu{
   display:flex;
   justify-content: space-around;
 }
+
+.menu div{
+  border:2px solid #000;
+  flex:1;
+  text-align: center;
+}
+
+.logo{
+  border:2px solid #000;
+  width:500px;
+  height: 200px;
+  background-image: url("logo_sprites.jpg");
+  /* background-position: 0 -200px; */
+}
+
+.logo:hover{
+  background-position: 0 -200px;
+}
+
+.logo:active{
+  background-position: 0 -400px;
+}
+
 
 
 /* WYKRES 1 */
@@ -57,4 +82,10 @@ body{
 .sl4{width:15vw;}
 
 
+/* Footer */
+.em{
+  font-size:2em;
+  float: right;
+  color:red;
+}
 
