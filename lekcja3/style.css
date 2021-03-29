@@ -18,9 +18,10 @@ div{
   justify-content: space-around;
 }
 
-/* WYKRESY */
+
+/* WYKRES 1 */
 .wykres1{
-  border:2px dashed blue;
+  border:5px dashed blue;
   height:2in;
   display:flex;
   justify-content: space-evenly;
@@ -34,3 +35,25 @@ div{
 .s3{height:1mm;}
 .s4{height:1px;}
 .s5{height:1pt;}
+
+
+/* WYKRES 2 */
+.wykres2{
+  border:5px dashed blue;
+  /* height:2in; */
+  display:flex;
+  flex-direction: column;
+}
+.slPion{
+  height:12%;
+  padding:5%;
+  margin: 10px 0 ;
+  background-color: aqua;
+}
+.sl1{width:50%;}
+.sl2{width:10vh;}
+.sl3{width:10vw;}
+.sl4{width:15vw;}
+
+
+
