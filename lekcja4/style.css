@@ -26,7 +26,6 @@ body{
   width:100%;
   z-index:1;
 }
-
 .content{
   display:flex;
   justify-content: space-evenly;
@@ -51,7 +50,6 @@ body{
   background-color:#fff;
   background-size:cover;
 }
-
 .clickable:active{
   opacity:0;
   transition:1s;
@@ -60,8 +58,6 @@ body{
 .img2{background-image:url(https://github.com/apietryga/kurs-Front-end/blob/master/materialy/lekcja2/cw2/zebra.jpg?raw=true)}
 .img3{background-image:url(https://github.com/apietryga/kurs-Front-end/blob/master/materialy/lekcja2/cw2/nosorozec.jpg?raw=true)}
 .img4{background-image:url(https://github.com/apietryga/kurs-Front-end/blob/master/materialy/lekcja2/cw2/lew.jpg?raw=true)}
-
-
 /* USTAWIAMY WYŚWIETLANIE NA TELEFONIE */
 @media (max-device-width:748px){
   .relative{
