@@ -1,0 +1,29 @@
+body{
+  /* Background pattern from Toptal Subtle Patterns */
+  background-image: url(triangular.png);
+}
+img{
+  max-width:100%;
+}
+
+.topHeader{
+  text-align: center;
+}
+.topNav{
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.content{
+  border:2px dashed red;
+  display:flex;
+  align-items: flex-start;
+}
+main{
+  border:2px dashed blue;
+  flex:3;
+}
+.recommend{
+  border:2px dashed green;
+  flex:1;
+}
