@@ -1,0 +1,69 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  /* Background pattern from Toptal Subtle Patterns */
+  background-image: url(triangular.png);
+}
+img{
+  max-width:100%;
+}
+.topHeader{
+  text-align: center;
+}
+
+.topNav{
+  /* display:flex;
+  justify-content: space-evenly; */
+  padding:2% 0;
+}
+
+ol{
+  padding:0;
+  margin:0;
+  display:flex;
+  justify-content: space-between;
+}
+
+li{
+  list-style-type: none;
+}
+
+ul{
+  display:none;
+  border:2px dashed red;
+  width:100%;
+  position:absolute;
+  flex-direction: column;
+  padding:0;
+  background-color:#fff;
+}
+
+ul > li{
+  border:2px dashed blue;
+  padding:1%;
+}
+
+ol > li {
+  position:relative;  
+  border:2px dashed green;
+  cursor: pointer;
+}
+
+ol > li:hover > ul {
+  display:flex;
+}
+
+.content{
+  border:2px dashed red;
+  display:flex;
+  align-items: flex-start;
+}
+main{
+  border:2px dashed blue;
+  flex:3;
+}
+.recommend{
+  border:2px dashed green;
+  flex:1;
+}
