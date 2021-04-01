@@ -1,0 +1,84 @@
+body h1, body .twoCols, body .twoCols .imgHolder, body main, body main div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 60%;
+}
+
+body {
+  background-color: bisque;
+}
+
+body .twoCols {
+  border: 2px dashed red;
+}
+
+body .twoCols header {
+  border: 2px dashed blue;
+  flex: 2;
+  padding-left: 2%;
+  color: #411919;
+  background-color: #eca5a5;
+}
+
+body .twoCols .imgHolder {
+  border: 2px dashed green;
+  flex: 1;
+  background-color: #411919;
+  padding: 5%;
+}
+
+body main {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+body main div {
+  border: 2px dashed red;
+  width: 30vw;
+  height: 30vw;
+  margin: 1vw 0;
+  background-size: cover;
+  background-position: center;
+}
+
+body main div:nth-child(1) {
+  border: 4vw solid #212121;
+  background-image: url(img/d1.jpg);
+}
+
+body main div:nth-child(2) {
+  border: 4vw solid #424242;
+  background-image: url(img/d2.jpg);
+}
+
+body main div:nth-child(3) {
+  border: 4vw solid #636363;
+  background-image: url(img/d3.jpg);
+}
+
+body main div:nth-child(4) {
+  border: 4vw solid #858585;
+  background-image: url(img/d4.jpg);
+}
+
+body main div:nth-child(5) {
+  border: 4vw solid #a6a6a6;
+  background-image: url(img/d5.jpg);
+}
+
+body main div:nth-child(6) {
+  border: 4vw solid #c7c7c7;
+  background-image: url(img/d6.jpg);
+}
+
+body .second {
+  flex-direction: row-reverse;
+}
