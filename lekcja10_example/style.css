@@ -1,0 +1,55 @@
+body{
+  background-color: deepskyblue;
+}
+
+/* for development */
+div{
+  border:2px dashed red;
+}
+
+.title{
+  text-align: center;
+  padding: 20px 0;
+}
+
+.subtitle{
+  padding:10px;
+  display:flex;
+  justify-content: space-around;
+}
+
+.gif{
+  padding:6%;
+  border:2px solid rgb(46, 46, 247);
+  color:rgb(46, 46, 247);
+  background-size: cover;
+}
+.content{
+  display:flex;
+  justify-content: center;
+  
+  padding:6%;
+}
+.displayGif{
+  /* stosunek tego do desc Gifa */
+  background-size: auto 100%;
+  flex:3;
+}
+.descGif{
+  flex:2;
+}
+
+.content div{
+  height:200px;
+  color:red;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.footer{
+  padding: 20px 0;
+  text-align: right;
+}

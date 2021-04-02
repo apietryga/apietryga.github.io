@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Przygody Pana Cyfrowego</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <div class="title">Przygody Pana Cyfrowego</div>
+  <div class="subtitle">
+    <div class="gif">gif</div>
+    <div class="gif">gif</div>
+    <div class="gif">gif</div>
+    <div class="gif">gif</div>
+  </div>
+  <div class="content">
+    <div class="displayGif">GIF</div>
+    <div class="descGif">Opis Gifa</div>
+  </div>
+  <div class="footer">
+    Strona stworzona przez Antka.
+  </div>
+
+  <script>
+    const data = [
+      {
+        title : " Pc S",
+        src : "siada.gif"
+      },
+      {
+        title : "Pc m",
+        src : "majta.gif"
+      },
+      {
+        title : "Pc w",
+        src : "wstaje.gif"
+      },
+      {
+        title : "Pc g",
+        src : "gada.gif"
+      }
+    ];
+
+    const gifs = $(".gif");
+    for(let g = 0; g < gifs.length; g++){
+      console.log(g)
+      gifs[g].style.backgroundImage = "url('img/"+data[g].src+"')";
+      $(gifs[g]).on("click",()=>{
+        changePlane(g);
+      })
+    }
+
+    function changePlane(arg){
+      console.log(arg);
+      $(".descGif").html(data[arg].title);
+      $(".displayGif").css({"background-image":"url('img/"+data[arg].src+"')"});
+    }
+
+
+  </script>
+
+  
+</body>
+</html>
