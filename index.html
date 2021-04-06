@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="inc/css/style.css">
-  <!-- <script src="inc/js/script.js"></script> -->
+  <!-- <script defer src="inc/js/script.js"></script> -->
   <link rel="shortcut icon" href="inc/img/favicon.ico" type="image/x-icon">
 
   <title>Portfolio - Antoni Pietryga</title>
@@ -17,6 +17,51 @@
 
 </head>
 <body>
+
+  <style>
+    .example{
+      color:#000;
+      background-color: aliceblue;
+      position:fixed;
+      width:100%;
+      height:100%;
+      left:0;
+      top:0;
+      border:2px dashed red;
+      display:flex;
+    }
+    .example div{
+      flex:1;
+      border:2px dashed blue;
+    }
+    .example div iframe{
+      width:100%;
+      height:100%;
+    }
+
+  </style>
+  <div class="example">
+    <div>
+      <div onclick='changeURL("lekcja1/index.html")'>JEDEN</div>
+      <div onclick='changeURL("lekcja2/cw1/index.html")'>DWA</div>
+      <div onclick='changeURL("lekcja3/index.html")'>TRZY</div>
+      <div onclick='changeURL("lekcja4/index.html")'>CZTERY</div>
+      
+    </div>
+    <div>
+      <iframe src="lekcja1/index.html" frameborder="0"></iframe>
+    </div>
+  
+  </div>
+  <script>
+    const tenIframe = document.querySelector("iframe");
+    function changeURL(src){
+      tenIframe.src = src;
+    }
+  </script>
+
+
+  
   <div class="root">
     <header>
       <h1>Antoni Pietryga Portfolio</h1>

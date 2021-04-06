@@ -6,27 +6,10 @@ let interactive = {
   init(callback){
     // set key events
     document.addEventListener("keydown",(e)=>{
-      //console.log(e.code)
-      if(e.code == "ArrowDown"){
-        this.char.y += 10;
-        this.char.direction = 1;
-      }
-      if(e.code == "ArrowUp"){
-        this.char.y -= 10;
-        this.char.direction = 0;
-      }
-      if(e.code == "ArrowRight"){
-        this.char.x += 10;
-        this.char.direction = 2;
-      }
-      if(e.code == "ArrowLeft"){
-        this.char.x -= 10;
-        this.char.direction = 3;
-      }
-      this.char.walk();
+      this.char.walk(e);
       interactive.update();
     })
-    this.char = new El("char",svg.src)
+    this.char = new El("char",svg.src);
     document.body.append(this.plane);
     this.plane.style.position = "fixed";
     this.plane.style.left = "0";
@@ -72,17 +55,48 @@ class El {
     }
   }
 
-  walk(){
+  walk(e){
+    console.log(this.walking);
     if(!this.walking){
       this.walking = true;
-      this.cyle = 1;
+      let change = {};
+      let distance = 20;
+      if(e.code == "ArrowDown"){
+        // this.char.y += 10;
+        this.direction = 1;
+        change["y"] = distance;
+      }
+      if(e.code == "ArrowUp"){
+        // this.char.y -= 10;
+        this.direction = 0;
+        change["y"] = -distance;
+      }
+      if(e.code == "ArrowRight"){
+        // this.char.x += 10;
+        this.direction = 2;
+        change["x"] = distance;
+      }
+      if(e.code == "ArrowLeft"){
+        // this.char.x -= 10;
+        this.direction = 3;
+        change["x"] = -distance;
+      }     
+      this.cyle = 2;
+      let key = Object.keys(change);
       setTimeout(()=>{
-        this.cyle = 2;
+        this[key] += change[key]/2;
+        this.cyle = 1;
+        interactive.update();
         setTimeout(()=>{
+          this[key] += change[key]/2;
           this.cyle = 0;
-          this.walking = false;
+          setTimeout(()=>{
+            this.walking = false;
+          })
+          interactive.update();
         },100)
       },100)
+
 
 
     }
