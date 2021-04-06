@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #344d64;
   color: #fff;
@@ -17,4 +21,20 @@ body section {
 
 body section:nth-child(odd) {
   text-align: right;
+}
+
+body section .prettyView {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 15%;
+}
+
+body section .prettyView div {
+  border: 2px dashed #fff;
+  width: 10%;
+  padding: 5%;
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  margin: 2%;
 }

@@ -1,4 +1,7 @@
 $bgColor: rgba(0, 0, 0, 0.452);
+*{
+  box-sizing: border-box;
+}
 body{
   background-color: rgb(52, 77, 100);
   color:#fff;
@@ -13,6 +16,21 @@ body{
     background-color: $bgColor;
     &:nth-child(odd){
       text-align:right;
+    }
+    .prettyView{
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0 15%;
+      div{
+        border:2px dashed #fff;
+        width:10%;
+        padding:5%;
+        flex:1;
+        justify-content: center;
+        display:flex;
+        margin:2%;
+      }
+
     }
   }
 }
