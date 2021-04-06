@@ -1,3 +1,20 @@
 body {
-  background-color: #7db7eb;
+  background-color: #344d64;
+  color: #fff;
+}
+
+body header {
+  margin: 2%;
+  padding: 2%;
+}
+
+body section {
+  border: 2px solid #000;
+  margin: 2%;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.452);
+}
+
+body section:nth-child(odd) {
+  text-align: right;
 }

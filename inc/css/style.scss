@@ -1,3 +1,19 @@
+$bgColor: rgba(0, 0, 0, 0.452);
 body{
-  background-color: rgb(125, 183, 235);
+  background-color: rgb(52, 77, 100);
+  color:#fff;
+  header{
+    margin:2%;
+    padding:2%;
+  }
+  section{
+    border:2px solid #000;
+    margin:2%;
+    padding:2%;
+    background-color: $bgColor;
+    &:nth-child(odd){
+      text-align:right;
+    }
+  }
 }
+
