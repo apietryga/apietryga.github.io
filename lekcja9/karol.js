@@ -46,7 +46,7 @@ imgField.append(img);
   // PUNKT 4 PRZEŁĄCZANIE SLJAJDÓW
 
   function changeSlide (direction) {
-    console.log(direction)
+    // console.log(direction)
       if (direction == "left")
       {
           currentSlide--;
@@ -56,12 +56,15 @@ imgField.append(img);
           }
       }  else {
               currentSlide++;
+
+              // console.log(currentSlide);
+              // console.log(views);
               if (currentSlide > views.length-1)
               {
                   currentSlide = 0;
               }
           }
-          console.log (currentSlide);
+           console.log (currentSlide);
           displayViews(currentSlide);
       }
   // PUNSKT 5 POBIERAMY STRZAŁKI Z HTMLA
