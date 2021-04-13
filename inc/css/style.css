@@ -38,7 +38,3 @@ body section .prettyView div {
   display: flex;
   margin: 2%;
 }
-
-body canvas {
-  border: 2px dashed red;
-}

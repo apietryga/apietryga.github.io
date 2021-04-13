@@ -71,19 +71,24 @@ class El {
       this.cyle = 2;
       
       let key = Object.keys(change);
-      console.log("key : "+key)
+      // console.log("key : "+key)
       setTimeout(()=>{
         this.cyle = 1;
 
-        let newValue = (interactive.plane.style[key].split("px")[0]*1 + (change[key]/3));
-        console.log(newValue);
+        let newValue = (interactive.plane.style[key].split("px")[0]*1);
+        let part = change[key]/9;        
         interactive.update();
+        newValue += part;
         interactive.plane.style[key] = newValue+"px";
         setTimeout(()=>{
+          newValue += part;
           interactive.plane.style[key] = newValue+"px";
           // this[key] += change[key]/2;
           this.cyle = 2;
           setTimeout(()=>{
+            newValue += part;
+            newValue = Math.round(newValue);
+            console.log(newValue);
             interactive.plane.style[key] = newValue+"px";
             this.cyle = 0;
             this.walking = false;
