@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  // zegar
+  function zegar(){
+    let dzisiaj = new Date();
+
+    let dzien = dzisiaj.getDate();
+    let miesiac = dzisiaj.getMonth()+1;
+    let rok = dzisiaj.getFullYear();
+
+    let godzina = dzisiaj.getHours();
+    if (godzina<10) godzina = "0"+godzina;
+    let minuta = dzisiaj.getMinutes();
+    if  (minuta<10) minuta = "0"+minuta;
+    let sekunda = dzisiaj.getSeconds();
+    if  (sekunda<10) sekunda = "0"+sekunda;
+
+
+    document.getElementById("zegar").innerHTML = dzien+"-"+miesiac+"-"+rok+" "+godzina+":"+minuta+":"+sekunda;
+
+    // setTimeout("zegar"),1000;
+    setTimeout(()=>{zegar()},1000);
+  }
+
+  
+
+</script>
+
+
+  <div id="zegar">zegar
+    <script type="text/javascript">
+        //document.getElementById("zegar").innerHTML;
+        zegar();
+        // document.body.onload = zegar();
+
+    </script>
+
+</div>
+
+
+
+  
+</body>
+</html>

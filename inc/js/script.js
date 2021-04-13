@@ -14,8 +14,8 @@ let interactive = {
     this.plane.style.position = "fixed";
     this.plane.style.left = "0";
     this.plane.style.top = "0";
-    this.plane.style.width = "100%";
-    this.plane.style.height = "100%";
+    this.plane.style.width = "100px";
+    this.plane.style.height = "100px";
     // load char sprite 
     // THIS MUST BE LAST BECOUSE OF CALLBACK()    
     this.char.img.onload = () => {    
@@ -23,8 +23,6 @@ let interactive = {
     } 
   },
   set(){
-    this.plane.width = window.innerWidth;
-    this.plane.height = window.innerHeight;
     this.ctx = this.plane.getContext("2d");
     this.ctx.width = window.innerWidth;
     this.ctx.height = window.innerHeight;
@@ -35,7 +33,8 @@ let interactive = {
 
     this.ctx.drawImage(this.char.img, 
     this.char.cyle * 40, this.char.direction * 40, 40, 40, 
-    this.char.x, this.char.y, 100, 100);
+    //this.char.x, this.char.y, 100, 100);
+    0, 0, this.plane.width, this.plane.height);
     
   }
 
@@ -56,46 +55,57 @@ class El {
   }
 
   walk(e){
-    console.log(this.walking);
+    // console.log(this.walking);
     if(!this.walking){
       this.walking = true;
       let change = {};
-      let distance = 20;
+      let distance = 300;
+      let speed = 75;
       if(e.code == "ArrowDown"){
         // this.char.y += 10;
         this.direction = 1;
-        change["y"] = distance;
+        change["top"] = distance;
       }
       if(e.code == "ArrowUp"){
         // this.char.y -= 10;
         this.direction = 0;
-        change["y"] = -distance;
+        change["top"] = -distance;
       }
       if(e.code == "ArrowRight"){
         // this.char.x += 10;
         this.direction = 2;
-        change["x"] = distance;
+        change["left"] = distance;
       }
       if(e.code == "ArrowLeft"){
         // this.char.x -= 10;
         this.direction = 3;
-        change["x"] = -distance;
+        change["left"] = -distance;
       }     
       this.cyle = 2;
+      
       let key = Object.keys(change);
+      console.log("key : "+key)
       setTimeout(()=>{
-        this[key] += change[key]/2;
         this.cyle = 1;
+
+        let newValue = (interactive.plane.style[key].split("px")[0]*1 + (change[key]/3));
+        console.log(newValue);
         interactive.update();
+        interactive.plane.style[key] = newValue+"px";
         setTimeout(()=>{
-          this[key] += change[key]/2;
-          this.cyle = 0;
+          interactive.plane.style[key] = newValue+"px";
+          // this[key] += change[key]/2;
+          this.cyle = 2;
           setTimeout(()=>{
+            interactive.plane.style[key] = newValue+"px";
+            this.cyle = 0;
             this.walking = false;
-          })
+            interactive.update();
+          },speed)
           interactive.update();
-        },100)
-      },100)
+        },speed)
+        interactive.update();
+      },speed)
 
 
 
