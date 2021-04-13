@@ -1,0 +1,93 @@
+body{
+    background-image: url(2.jpg);
+    background-size: cover;
+    height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+}
+header{
+   background-color: rgba(206, 210, 214, 0.678);
+    margin: 0%;
+    padding: 1%;
+    text-align: center;
+    font-weight: bold;
+    color: blueviolet;
+    font-size: 5vh;
+    font-style: italic;
+}
+
+.topNav{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10vh 0;
+}
+
+.topNav section{
+    background-color: rgba(0, 250, 133, 0.623);
+    display: flex;
+    flex-wrap: wrap;
+    width: 60vh;
+    height: 70vh;
+    margin: -8vh;
+    margin-left: -40vh;
+    color: navy;
+    font-weight: bold;
+    text-align: center;
+       
+}
+
+.topNav section:nth-child(even){
+    margin-left: 25vh;
+    background-color: rgba(14, 217, 231, 0.623);  
+}
+h2, h4 {
+    width: 50vh;
+    height: 5vh;
+    text-align: center;
+    color: crimson;
+    font-size: 7vh;
+    font-weight: bold;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 0%;
+}
+h3, h5 {
+    width: 50vh;
+    height: 5vh;
+    color: rgb(143, 14, 126);
+    font-size: 6vh;
+    font-weight: bold;
+}
+
+div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+a {
+    color: rgb(206, 52, 137);
+    font-size: 4vh;
+    
+}
+i{
+    font-size: 10vh;
+    color: rgb(206, 52, 137);
+}
+@media(max-width: 900px){
+        section{
+            width: 100%;
+        }
+}
