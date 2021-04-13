@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+.art1 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.art1 div {
+  position: absolute;
+  background-color: #a73939;
+  border: 2px dashed green;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.art1 .back, .art1 .third {
+  background-color: yellow;
+  opacity: 0;
+  transform: rotateY(-180deg);
+  transition: 0.7s;
+}
+
+.art1 .back .text, .art1 .third .text {
+  transition: transform 0.7s cubic-bezier(0.2, 0.2, 0.2, 1), opacity 0.4s linear;
+  transform: translate3d(200%, 0, 0);
+}
+
+.art1:hover .front {
+  transform: rotateY(180deg);
+  transition: transform 0.7s cubic-bezier(0.2, 0.2, 0.2, 1);
+}
+
+.art1:hover .front .text {
+  transition: transform 0.7s cubic-bezier(0.2, 0.2, 0.2, 1), opacity 0.4s linear;
+  transform: translate3d(-200%, 0, 0);
+}
+
+.art1:hover .back {
+  opacity: 1;
+  transform: rotateY(0deg);
+  transition: transform 0.7s cubic-bezier(0.2, 0.2, 0.2, 1);
+}
+
+.art1:hover .back .text {
+  transition: transform 0.7s cubic-bezier(0.2, 0.2, 0.2, 1), opacity 0.4s linear;
+  transform: translate3d(0, 0, 0);
+}
+
+.art1:active .back {
+  transform: rotateY(180deg);
+  transition: transform 0.7s cubic-bezier(0.2, 0.2, 0.2, 1);
+}
+
+.art1:active .back .text {
+  transition: transform 0.7s cubic-bezier(0.2, 0.2, 0.2, 1), opacity 0.4s linear;
+  transform: translate3d(-200%, 0, 0);
+}
+
+.art1:active .third {
+  opacity: 1;
+  transform: rotateY(0deg);
+  transition: transform 0.7s cubic-bezier(0.2, 0.2, 0.2, 1);
+}
+
+.art1:active .third .text {
+  transition: transform 0.7s cubic-bezier(0.2, 0.2, 0.2, 1), opacity 0.4s linear;
+  transform: translate3d(0, 0, 0);
+}
