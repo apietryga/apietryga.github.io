@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Joanna Kowalczyk</title>
+    <meta name ="description" content="Front-end portfolio-portfolio początkującego programisty">
+    <meta property="og:title" content="Portfolio - Joanna Kowalczyk">
+    <meta property="og:description" content="Frond-end portfolio-portfolio początkującego programisty">
+    <meta property="og:image" content="https://">
+    <style>
+body{
+    background-color: rgb(94, 94, 109);
+}
+*{
+    box-sizing: border-box;
+
+}
+.content{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+div{ 
+    display:block;
+}
+.relative{
+    border: 10px solid rosybrown;
+    height: 30vw;
+    position: relative;
+    width: 30vw;
+    margin: 3vw;
+}
+.absolutne{
+    border: 10px solid rgb(189, 90, 140);
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color: rgb(233, 233, 10);
+    background-size: cover;
+    text-align: center;
+}
+.img1{
+    background-image: url(img/1.jpg);
+}
+.clickable:hover{
+    opacity:0;
+    transition:1s;
+
+}
+.img2{
+background-image: url( img/2.jpg);
+}
+
+
+.img3{
+    background-image: url(img/3.jpg/);
+}
+
+.img4{
+    background-image: url(img/4.jpg/);
+}
+
+
+    </style>
+</head>
+<body>
+  <header>
+      <h1>Joanna Kowalczyk Portfolio</h1>
+  </header>
+  <section>
+    <h2> O mnie</h2>
+    <p> 
+      Witam, mam na imię Joanna. Jestem początkującym programistą.Ukończyłam kurs z podstaw programowania( front-end developer) Zapraszam do obejrzenia niektórych moich projektów.
+    </p>
+  </section>
+  <section>
+    <header>
+      <h2>Projekty</h2>
+    </header>
+    <div class=" content">
+      <div class="relative">
+        <a
+        href=" https://joanna9513.github.io/lekcja9/"
+        target="_blank"
+        class= "absolutne img1">
+          <div class= "absolutne clickable"> Zobacz projekt</div>
+        </a>
+      </div>
+      <div class=" relative">
+        <a 
+        href=" https://joanna9513.github.io/lekcja8/"
+        target="_blank"
+        class=" absolutne img2">
+          <div class=" absolutne clickable">Zobacz projekt</div>
+        </a>
+      </div>
+      <div class=" relative">
+        <a
+        href="https://joanna9513.github.io/lekcja7"
+        target="_blank"
+        class=" absolutne img3">
+          <div class=" absolutne clickable">Zobacz projekt </div>
+        </a>
+      </div>
+      <div class=" relative">
+        <a
+        href="https://joanna9513.github.io/lekcja6"
+        target="_blank"
+        class=" absolutne img4">
+          <div class= " absolutne clickable"> Zobacz projekt</div>
+        </a>
+      </div>
+    </div>
+  </section>
+        
+  <section>
+    <header>
+      <h2>Technologie</h2>
+    </header>
+    <p>
+      Do tej pory udało mi się poznać technologie takie jak:
+    </p>
+    <div class="Technologie">
+        <div>HTML</div>
+        <div>CSS</div>
+        <div>JS</div>
+    </div>
+  </section>
+  <section>
+    <header>
+      <h2>Kontakt</h2>
+    </header>
+    <p>
+      e-mail: joannak1979@autograf.pl;
+      telefon: 514148879
+    </p>
+  </section>
+</body>   
+</html>

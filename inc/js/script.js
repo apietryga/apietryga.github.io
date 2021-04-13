@@ -61,26 +61,13 @@ class El {
       let change = {};
       let distance = 300;
       let speed = 75;
-      if(e.code == "ArrowDown"){
-        // this.char.y += 10;
-        this.direction = 1;
-        change["top"] = distance;
-      }
-      if(e.code == "ArrowUp"){
-        // this.char.y -= 10;
-        this.direction = 0;
-        change["top"] = -distance;
-      }
-      if(e.code == "ArrowRight"){
-        // this.char.x += 10;
-        this.direction = 2;
-        change["left"] = distance;
-      }
-      if(e.code == "ArrowLeft"){
-        // this.char.x -= 10;
-        this.direction = 3;
-        change["left"] = -distance;
-      }     
+
+      // set arrow options
+      if(e.code == "ArrowLeft"){[this.direction, change['left']] = [3,-distance];}
+      if(e.code == "ArrowRight"){[this.direction, change['left']] = [2,distance];}
+      if(e.code == "ArrowUp"){[this.direction, change['top']] = [0,-distance];}
+      if(e.code == "ArrowDown"){[this.direction, change['top']] = [1,distance];}
+
       this.cyle = 2;
       
       let key = Object.keys(change);
