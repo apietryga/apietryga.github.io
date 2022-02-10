@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="DESC">
+  <title>{{title}}</title>
+  <meta property="og:title" content="{{title}}" />
+  <meta property="og:title" content="'.$val->name.' - Projekty - APPortfolio" />
+  <meta property="og:image:type" content="'.$mimetype.'" />
+  <meta property="og:image:width" content="'.$imgSize[0].'" />
+  <meta property="og:image:height" content="'.$imgSize[1].'" />
+  <meta property="og:image:alt" content="'.$val->desc.'" />
+  <meta property="og:description" content="'.$val->desc.'" />
+  <meta property="og:image" content="'.$imgSrc.'" />
+  <meta property="og:url" content="'.$url.'/'.$path.$val->name.'" />
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <meta name="theme-color" content="rgb(58, 58, 58);">
+  <meta name="apple-mobile-web-app-title" content="Portfolio Antek Pietryga" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="HTML, CSS, JavaScript, jQuery, portfolio, programista">
+  <meta name="author" content="Antek Pietryga">
+  <!-- <link rel="manifest" href="js/manifest.json"> -->
+  <link rel="stylesheet" href="/style/style.min.css">  
+	<link rel="apple-touch-icon" href="/img/logo.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/img/icons/icon76.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/img/icons/icon120.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/img/icons/icon152.png">  
+	<link rel="apple-touch-startup-image" href="/img/logo.png">
+	<link rel="apple-touch-startup-image" href="/img/logo.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
+	<link rel="apple-touch-startup-image" href="/img/logo.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" />
+  <!-- <script src="js/jquery.js"></script>  
+  <script src="js/social_hacks.js"></script> -->
+</head>
+<body>
+  <div class="menu">
+    <label for="toggler" class="toggler">
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
+    <input type="checkbox" id="toggler">
+    <nav>
+      <a href="/">
+        <img src="/img/page/nav_home.svg" alt="">
+        <span>Home</span>
+      </a>
+      <a href="/projects">
+        <img src="/img/page/nav_projects.svg" alt="">
+        <span>Projects</span>
+      </a>
+      <a href="/exps">
+        <img src="/img/page/nav_exp.svg" alt="">
+        <span>Experience</span>
+      </a>
+      <a href="/contact.html">
+        <img src="/img/page/nav_contact.svg" alt="">
+        <span>Contact</span>
+      </a>
+    </nav>
+  </div>
+  <div class="wrapper">
+    <header class='navHeader'>
+      <!-- <div class="toggler" onclick="toggler.refresh()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div> -->
+      <a href="/">
+        <img src="/img/logo.webp" alt="{{title}} Logo">
+      </a>
+      <div class="searchContainer">
+        <form action="search.html" action="get">
+          <img src="/img/page/nav_lupa.svg" alt="SEARCH" />
+          <input type="text" name="search" list="suggest" placeholder="Search" />
+          <img src="/img/page/nav_x.svg" alt="ABORT SEARCHING" />
+        </form>
+        <div class="suggestions">
+          HERE
+        </div>
+      </div>
+    </header>
+
+
+
+
+
+
