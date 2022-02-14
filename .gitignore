@@ -1,3 +1,4 @@
 node_modules/
-public/
+old_public/
+old_content/
 .vscode/

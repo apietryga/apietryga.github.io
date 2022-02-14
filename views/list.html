@@ -1,9 +1,30 @@
 {% include "header.html" %}
-<div class="list">
+<main class="list">
+  <nav>
+    <h1>{{title}}</h1>
+    <header>
+      <h4>name</h4>      
+      <h4>date</h4>      
+    </header>
+    {% for item in content %}
+    <section>
+        <header style="background-color:{{item.color}}">
+          <img src="/img/contents/{{item.img}}" alt="{{item.name}}">
+        </header>
+        <article>
+          <header>
+            <h3>{{item.name}}</h3>
+            <p>{{item.s_desc}}</p>
+            <a href="{{item.href}}" style="background-color:{{item.color}}"><b>MORE</b></a>
+            </header>
+          <footer>
+            <p class="date">{{item.date}}</p>
+            <u>{{item.category}}</u>
+          </footer>
+        </article>
+      </section>    
+      {% endfor %}
+    </nav>
 
-{% for item in content %}
-  {% include "item.html" %}
-{% endfor %}
-
-</div>
+</main>
 {% include "footer.html" %}

@@ -1,8 +1,25 @@
-
-<!-- </main> -->
-<!-- </div> -->
     <footer>
-      Created by apietryga 2022.
+      <nav>
+        <p>
+          {% for item in footer.nav %}
+            <a href="{{item.href}}">{{item.name}}</a>
+          {% endfor %}
+        </p>
+        <p>
+          {% for item in footer.projects %}
+            <a href="{{item.href}}">{{item.name}}</a>
+          {% endfor %}
+        </p>
+        <p>
+          {% for item in footer.exps %}
+            <a href="{{item.href}}">{{item.name}}</a>
+          {% endfor %}
+        </p>
+  
+      </nav>
+      <p>
+        Created by apietryga 2022.
+      </p>          
     </footer>
   </div>
 </body>
@@ -142,4 +159,5 @@
     }
   }
   scraper.init();
+
 </script>

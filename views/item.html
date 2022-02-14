@@ -1,8 +1,10 @@
 <a href="{{ item.href }}">
   <article>
     <h3>{{ item.name }}</h3>
-    <p>{{ item.desc }}</p>
-    <u>{{ item.cat }}</u>
+    <p>{{ item.s_desc }}</p>
+    <u>{{ item.category }}</u>
+    <!-- {{item.href}} -->
   </article>
-  <img src="{{ item.img }}" alt="{{ item.name }}" />
+  <!-- <img src="{{ item.img }}" alt="{{ item.name }}" /> -->
+  <img src="/img/contents/{{ item.img }}" alt="{{ item.name }}" />
 </a>

@@ -6,78 +6,75 @@ const func = require('./static/js/functions');
 nunjucks.configure('views', {
   autoescape: true,
   express   : app,
-  watch : true
+  watch : true,
+  variableStart: '<$',
+  variableEnd: '$>',
 });
+// let data = ;
+// let data = require('./static/js/data').init();
+// let data = require('./static/js/data').data;
+let Data = require('./static/js/data');
+let data = new Data().data;
 
-const pathURL = "localhost";
-const data = require('./static/js/data')
-console.log(data);
-
-const contentScraper = () => {
-  const content = new Map();
-  // const content = [];
-  const path = __dirname+"/content/";
-  const files = fs.readdirSync(path);
-  for(const file of files){
-    if(file.split(".")[1] == "html"){
-      content.set(file,fs.readFileSync(path+file,'utf8'))
-      // content.push({[file]:fs.readFileSync(path+file,'utf8')})
+const viewScraper = (options = {}) => {
+  // REFRESH CONTENT ON DEVELOPMENT
+  // if(options.hardrefresh){delete require.cache[require.resolve('./static/js/data')];data = require('./static/js/data').data;}
+  if(options.hardrefresh){delete require.cache[require.resolve('./static/js/data')];Data = require('./static/js/data');data = new Data().data;}
+  // MAKE PAGES FROM TEMPLATE
+  const allPages = {};
+  for(const page in data){
+    if(typeof data[page] != "object"){
+      allPages[page] = data[page];
     }else{
-      if(typeof content.get(file) == 'undefined'){
-        content.set(file,[]);
-        // content.push({[file]:fs.readFileSync(path+file,'utf8')})
+      const allItems = [];
+      for(const subpage of data[page]){
+        subpage.href = `${page}/${subpage.name}`;
+        allPages[page+"/"+subpage.name] = subpage;
+        allItems.push(subpage);
       }
-      const filesInside = fs.readdirSync(path+file);
-      for(const fileInside of filesInside){
-        if(fileInside.split(".")[1] == "html"){
-          const readed = fs.readFileSync(path+file+"/"+fileInside,'utf8');
-
-          // const getPageInfo = (readedFile) => {
-          //   const result = {
-          //     name: readed.split("</h1>")[0].split("<h1>")[1],
-          //     desc : readed.split("</h2>")[0].split("<h2>")[1],
-          //     cat : readed.split("</u>")[0].split("<u>")[1],
-          //     img : readed.split("\" alt")[0].split("img src=\"")[1],
-          //     href: "/"+file+"/"+fileInside
-          //   };
-          //   return result;
-          // }
-          // content.get(file).push(getPageInfo(readed));
-          content.get(file).push(func.getPageInfo(readed,{file:file,fileInside:fileInside}));
-
-          // content.get(file).push({
-          //   name: readed.split("</h1>")[0].split("<h1>")[1],
-          //   desc : readed.split("</h2>")[0].split("<h2>")[1],
-          //   cat : readed.split("</u>")[0].split("<u>")[1],
-          //   img : readed.split("\" alt")[0].split("img src=\"")[1],
-          //   href: "/"+file+"/"+fileInside
-          // });
-          content.set(file+"/"+fileInside,readed)
-        }
-      }
+      allPages[page] = allItems;
     }
   }
-  return content;
+  return allPages;
 }
 // SCRAPE CONTENT ONCE
-let scrapedContent = contentScraper();
-let scrapedContentString;
-for(const [key,value] of scrapedContent.entries()){
-  scrapedContentString += (key+"||"+value+"|||");
-}
+let scrapedContent = viewScraper();
+scrapedContent.projects = "hi then";
 app.use(express.static('static'));
 app.get('*', (req, res) => {
-  // Refresh content on development
-  if(req.get('host') == 'localhost'){
-    scrapedContent = contentScraper();
+  // REFRESH CONTENT ON DEVELOPMENT
+  if(req.get('host') == 'localhost'){scrapedContent = viewScraper({hardrefresh:true});}
+
+    // MAKE NEW PAGE TO SCREEN
+    const page = {};
+    page.origin = req.originalUrl == "/" ? 'index.html' : req.originalUrl.replace("/","");
+    page.origin = page.origin.split(".")[0];
+
+    const content = scrapedContent[page.origin] != null ? scrapedContent[page.origin] : scrapedContent["404"];
+
+    if(page.origin.includes("/")){
+    for( const key in scrapedContent[page.origin]){
+      page[key] = scrapedContent[page.origin][key];
+    }  
+  }else{
+    page.content = content;
   }
-  const page = req.originalUrl == "/" ? 'index.html' : req.originalUrl.replace("/","");
-  const template = ['projects','exps'].includes(page) ? 'list.html' : page.includes("/") ? 'details.html':'basic.html';
-  const content = typeof scrapedContent.get(page) == 'undefined' ? scrapedContent.get("404.html") : scrapedContent.get(page) ;
-  res.render(template, {
-    title: 'APIETRYGA',
-    content : content,
-    scrapedContentString:JSON.stringify(scrapedContentString)
-  });
+
+  const template = ['projects','exps'].includes(page.origin) ? 'list.html' : page.origin.includes("/") ? 'details.html':'basic.html';
+  page.title = page.title != "index" ? page.title =  page.origin : page.title;
+  page.title = page.title.replace("/", " - ");
+
+  // MAKE FOOTER
+  page.footer = []; const cols = {};
+  for(const footPage in scrapedContent){
+    const [path, name] = footPage.split("/").length == 1 ? ["", footPage.split("/")[0]] : footPage.split("/");
+    const emptyPath = path == "" ? "nav" : path;
+    if(typeof cols[emptyPath] == 'undefined'){cols[emptyPath] = [];}
+    if((cols[path] == null || cols[path].length < 3 || ["nav"].includes(path)) && (!["404"].includes(name))){
+      cols[emptyPath].push({name, href : path+"/"+name})
+    }
+  }
+  page.footer = cols;
+  res.render(template, page);
 });
 app.listen(process.env.PORT || 80, () => { console.log('SERWER STARTED') });
