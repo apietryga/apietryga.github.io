@@ -13,18 +13,17 @@
         </header>
         <article>
           <header>
+            <p class="date">{{item.date}}</p>
             <h3>{{item.name}}</h3>
-            <p>{{item.s_desc}}</p>
+            <p>{{item.lang[language].desc}}</p>
             <a href="{{item.href}}" style="background-color:{{item.color}}"><b>MORE</b></a>
             </header>
           <footer>
-            <p class="date">{{item.date}}</p>
-            <u>{{item.category}}</u>
+            <u>{{item.lang[language].category}}</u>
           </footer>
         </article>
       </section>    
       {% endfor %}
     </nav>
-
 </main>
 {% include "footer.html" %}

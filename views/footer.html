@@ -1,21 +1,19 @@
     <footer>
       <nav>
+
         <p>
-          {% for item in footer.nav %}
-            <a href="{{item.href}}">{{item.name}}</a>
-          {% endfor %}
+          <a href="/">
+            <span>{{pageBuild[language].nav.home}}</span>
+          </a>
+          <a href="/projects">
+            <span>{{pageBuild[language].nav.projects}}</span>
+          </a>
+          <a href="/exps">
+            <span>{{pageBuild[language].nav.exps}}</span>
+          </a>
+          <a href="/contact.html">
+            <span>{{pageBuild[language].nav.contact}}</span>  
         </p>
-        <p>
-          {% for item in footer.projects %}
-            <a href="{{item.href}}">{{item.name}}</a>
-          {% endfor %}
-        </p>
-        <p>
-          {% for item in footer.exps %}
-            <a href="{{item.href}}">{{item.name}}</a>
-          {% endfor %}
-        </p>
-  
       </nav>
       <p>
         Created by apietryga 2022.
@@ -26,7 +24,7 @@
 </html>
 <script src="/js/functions.js"></script>
 <script>
-  // abort menu
+  // abort menu on focus out
   const menu = {
     toggler : document.querySelector("#toggler"),
     init(){
@@ -46,118 +44,9 @@
   } 
   menu.init();
 
-  const scraper = {
-    init(){
-      this.suggestDOM = document.querySelector(".searchContainer .suggestions");
-      this.getContent();
+  if('serviceWorker' in navigator){navigator.serviceWorker.register('/js/serviceWorker.js');}
 
-      // configure form buttons
-      this.searchInput = document.querySelector(".searchContainer input");
-      this.searchInput.addEventListener("keyup", () => {this.searchByKey()});
-      this.searchInput.addEventListener("focusout", () => {
-        setTimeout(() => {
-          if(!document.activeElement.parentElement.classList.contains("suggestions")){
-            console.log(document.activeElement.parentElement.classList)
-            this.displaySuggestions(false)
-          }
-        },1);
-      });
-      this.searchInput.addEventListener("focusin", () => {
-        this.searchByKey();
-      });
-      for(const searchIMG of document.querySelectorAll(".searchContainer img")){
-        if(searchIMG.alt == "SEARCH"){
-          searchIMG.addEventListener('click', (e) => {
-            e.target.nextElementSibling.focus()
-          })
-        }else if(searchIMG.alt == "ABORT SEARCHING"){
-          searchIMG.addEventListener('click', (e) => {
-            this.displaySuggestions(false)
-            e.target.previousElementSibling.value='';
-          })
-        }
-      }
-
-      // // 4 devs
-      // this.searchInput.value = "ana";
-      // this.searchByKey();
-      // this.searchInput.focus();
-    },
-    searchByKey(){
-      const matchingContent = [];
-        for(const obj of this.scrapedContent){
-          if(typeof obj[Object.keys(obj)]!= 'undefined' && obj[Object.keys(obj)].includes(this.searchInput.value)){
-            // console.log(Object.keys(obj))
-            matchingContent.push(obj);
-          }
-        }
-        this.displaySuggestions(matchingContent);
-    },
-    getContent(){
-      this.content = "{{scrapedContentString}}";
-      this.content = this.content.replaceAll("&quot;","'");
-      this.content = this.content.replaceAll("&lt;","<");
-      this.content = this.content.replaceAll("&gt;",">");
-      this.content = this.content.replaceAll("&#39;","'");
-      this.content = this.content.replace(/(\r\n|\n|\r)/gm, "");
-      this.scrapedContent = [];
-      for(const cont of this.content.split('|||')){
-        const [key, value] = cont.split("||");
-        this.scrapedContent.push({[key]:value});
-      }
-    },
-    displaySuggestions(matchingContentArr){
-      this.suggestDOM.innerHTML = "";
-      if(matchingContentArr){
-        this.suggestDOM.style.display = "flex";
-        for(const matchingPage of matchingContentArr){
-          // SCRAPE CONTENT
-          const pageContent = matchingPage[Object.keys(matchingPage)];
-          const pageInfo = getPageInfo(pageContent);
-          const pageContentWithoutHTMLTags = pageContent.replace(/(<([^>]+)>)/gi, ".");;
-
-          // WORK WITH CONTENT
-          const index = pageContentWithoutHTMLTags.search(this.searchInput.value)
-          let afterPharse = pageContentWithoutHTMLTags.slice(index + this.searchInput.value.length).split(".")[0];
-          let beforePharse = pageContentWithoutHTMLTags.slice(0,(index)).split(".")[1];
-          if(typeof beforePharse == 'undefined'){
-            beforePharse = pageContentWithoutHTMLTags.slice(0,(index));
-          }
-          console.log(beforePharse)
-
-          const pharseMaxLength = 20;
-          if(typeof afterPharse != 'undefined' && afterPharse.length > pharseMaxLength){
-            afterPharse = afterPharse.slice(0,pharseMaxLength)+" [...] ";
-          }
-          if(typeof beforePharse != 'undefined' && beforePharse.length > pharseMaxLength){
-            beforePharse = "[...] "+beforePharse.slice(beforePharse.length - pharseMaxLength,beforePharse.length);
-          }
-          
-
-          // CREATE DOM'S
-          const aContainer = document.createElement("a");
-          aContainer.href = "/"+Object.keys(matchingPage);
-          const img = document.createElement("img");
-          img.src = pageInfo.img;
-          aContainer.append(img);
-          const wrapper = document.createElement("div");
-          aContainer.append(wrapper);
-          const title = document.createElement("h5");
-          title.innerHTML = pageInfo.name;
-          wrapper.append(title);
-          const matchingSentence = document.createElement("p");
-          // matchingSentence.innerText = beforePharse;
-          // matchingSentence.innerHTML += "<span>"+this.searchInput.value+"</span>";
-          // matchingSentence.innerText += afterPharse;
-          matchingSentence.innerHTML += beforePharse+"<span>"+this.searchInput.value+"</span>"+afterPharse;
-          wrapper.append(matchingSentence);
-          this.suggestDOM.append(aContainer);
-        }
-      }else{
-        this.suggestDOM.style.display = "none";
-      }
-    }
-  }
-  scraper.init();
-
+  const searchPages = "{{searchPages}}";
+  const lang = "{{lang}}";
 </script>
+<script src="/js/search.js"></script>

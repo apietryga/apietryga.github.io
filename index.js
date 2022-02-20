@@ -1,80 +1,66 @@
 const express = require('express');
 const app = express();
-const nunjucks = require('nunjucks');
-const fs = require('fs');
 const func = require('./static/js/functions');
+let data = require('./static/js/data').data;
+let Pages = require('./components/Pages')
+let allPages = new Pages(data);
+const nunjucks = require('nunjucks');
 nunjucks.configure('views', {
   autoescape: true,
   express   : app,
-  watch : true,
-  variableStart: '<$',
-  variableEnd: '$>',
+  watch : true
 });
-// let data = ;
-// let data = require('./static/js/data').init();
-// let data = require('./static/js/data').data;
-let Data = require('./static/js/data');
-let data = new Data().data;
 
-const viewScraper = (options = {}) => {
-  // REFRESH CONTENT ON DEVELOPMENT
-  // if(options.hardrefresh){delete require.cache[require.resolve('./static/js/data')];data = require('./static/js/data').data;}
-  if(options.hardrefresh){delete require.cache[require.resolve('./static/js/data')];Data = require('./static/js/data');data = new Data().data;}
-  // MAKE PAGES FROM TEMPLATE
-  const allPages = {};
-  for(const page in data){
-    if(typeof data[page] != "object"){
-      allPages[page] = data[page];
-    }else{
-      const allItems = [];
-      for(const subpage of data[page]){
-        subpage.href = `${page}/${subpage.name}`;
-        allPages[page+"/"+subpage.name] = subpage;
-        allItems.push(subpage);
-      }
-      allPages[page] = allItems;
-    }
-  }
-  return allPages;
-}
-// SCRAPE CONTENT ONCE
-let scrapedContent = viewScraper();
-scrapedContent.projects = "hi then";
 app.use(express.static('static'));
+app.use(func.forceHTTPS);
 app.get('*', (req, res) => {
-  // REFRESH CONTENT ON DEVELOPMENT
-  if(req.get('host') == 'localhost'){scrapedContent = viewScraper({hardrefresh:true});}
+  // REFRESH DATA DEVELOPMENT
+  if(req.get('host') == 'localhost'){
+    delete require.cache[require.resolve('./static/js/data')]; data = require('./static/js/data').data;
+    delete require.cache[require.resolve('./components/Pages')]; Pages = require('./components/Pages'); allPages = new Pages(data);
+    // delete require.cache[require.resolve('./static/js/functions')]; func = require('./static/js/functions');
+  }
+  // MAKE NEW PAGE TO SCREEN
+  // console.log(req)
+  const page = {
+    host : req.hostname,
+    origin: req.originalUrl == "/" ? 'index' : req.originalUrl.replace("/","").split(".")[0],
+    language: req.headers["accept-language"].split(/,|-/)[0] != 'pl' ? 'en' : 'pl',
+    footer:[],
+  };
+  page.searchPages = JSON.stringify(allPages.getSearchPages(page.language));
 
-    // MAKE NEW PAGE TO SCREEN
-    const page = {};
-    page.origin = req.originalUrl == "/" ? 'index.html' : req.originalUrl.replace("/","");
-    page.origin = page.origin.split(".")[0];
-
-    const content = scrapedContent[page.origin] != null ? scrapedContent[page.origin] : scrapedContent["404"];
-
-    if(page.origin.includes("/")){
-    for( const key in scrapedContent[page.origin]){
-      page[key] = scrapedContent[page.origin][key];
-    }  
+  // MAKE PAGE CONTENT
+  if(allPages.getArrayByKey("href").includes(page.origin)){
+    const thisWork = allPages.getByKey('href',page.origin);
+    for( const key in thisWork ){
+      page[key] = thisWork[key];
+    }
+    page.content = thisWork.getContent(page.language)
+  }else if(allPages.lists.includes(page.origin)){
+    page.content = allPages.getArrayOfWorksByKey('parent', page.origin)
   }else{
-    page.content = content;
+    page.content = allPages.getByKey('href',page.origin) != null ? allPages.getByKey('href',page.origin).getContent(page.language) : allPages.getByKey('href','404').getContent(page.language);
   }
 
-  const template = ['projects','exps'].includes(page.origin) ? 'list.html' : page.origin.includes("/") ? 'details.html':'basic.html';
-  page.title = page.title != "index" ? page.title =  page.origin : page.title;
-  page.title = page.title.replace("/", " - ");
+  page.pageBuild = data.pageBuild;
+
+  page.title = page.title != "index" ? page.origin.replace("/", " - ") : page.title.replace("/", " - ");
+
 
   // MAKE FOOTER
-  page.footer = []; const cols = {};
-  for(const footPage in scrapedContent){
-    const [path, name] = footPage.split("/").length == 1 ? ["", footPage.split("/")[0]] : footPage.split("/");
-    const emptyPath = path == "" ? "nav" : path;
-    if(typeof cols[emptyPath] == 'undefined'){cols[emptyPath] = [];}
-    if((cols[path] == null || cols[path].length < 3 || ["nav"].includes(path)) && (!["404"].includes(name))){
-      cols[emptyPath].push({name, href : path+"/"+name})
-    }
-  }
-  page.footer = cols;
-  res.render(template, page);
+  // const cols = {};
+  // for(const footPage in scrapedContent){
+  //   const [path, name] = footPage.split("/").length == 1 ? ["", footPage.split("/")[0]] : footPage.split("/");
+  //   const emptyPath = path == "" ? "nav" : path;
+  //   if(typeof cols[emptyPath] == 'undefined'){cols[emptyPath] = [];}
+  //   if((cols[path] == null || cols[path].length < 3 || ["nav"].includes(path)) && (!["404"].includes(name))){
+  //     cols[emptyPath].push({name, href : path+"/"+name})
+  //   }
+  // }
+  // page.footer = cols;
+  // res.render(page.origin == "index" ? "index.html" : ['projects','exps'].includes(page.origin) ? 'list.html' : page.origin.includes("/") ? 'details.html':'basic.html', page);
+  // 
+  res.render(page.origin == "index" ? "index.html" : allPages.lists.includes(page.origin) ? 'list.html' : page.origin.includes("/") ? 'details.html':'basic.html', page);
 });
 app.listen(process.env.PORT || 80, () => { console.log('SERWER STARTED') });

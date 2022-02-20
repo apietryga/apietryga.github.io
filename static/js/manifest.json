@@ -1,0 +1,35 @@
+{
+  "name": "apietryga portfolio",
+  "short_name": "apietryga",
+  "description": "Full stack web developer portfolio",
+  "start_url": "/",
+  "background_color": "black",
+  "theme_color": "black",
+  "author": "apietryga",
+  "display": "standalone",
+  "prefer_related_applications": true,
+  "icons": [
+    {
+      "src": "/img/icons/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/icons/apple-touch-icon-precomposed.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": [
+      "js/serviceWorker.js",
+      "js/search.js",
+      "js/functions.js"
+    ],
+    "run_at": "document_idle"
+  }
+]
+}

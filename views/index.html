@@ -1,0 +1,109 @@
+{% include "header.html" %}
+  <header class="topHeader">
+    <div class="title">
+      <h1>{{lang[language].content[0]| safe}}<b>{{lang[language].content[1]}}</b></h1>
+      <h2>{{lang[language].content[2]}}</h2>
+      <p>{{lang[language].content[3]}}</p>
+    </div>
+    <div class="photo background"></div>
+    <div class="photo sea"></div>
+    <div class="photo sunset"></div>
+    <div class="photo clouds"></div>
+    <div class="mask photo"></div>
+    <div class="next">
+      <a href="#code">
+        <img src="/img/page/nav_backer.svg" alt="CODE">
+      </a>  
+    </div>
+  </header>
+  <div class="hider"></div>
+  <main id="code">
+    <div class="codeprojects">
+      <header>
+        <h1>{{lang[language].content[4]}}</h1>
+        <h2>{{lang[language].content[5]}}</h2>
+        <p>
+          {{lang[language].content[6]}}
+        </p>  
+      </header>
+      <ul>
+        {% for techElement in stack %}
+          <a href="/search?query={{techElement}}">
+            <li>{{techElement}}</li>
+          </a>
+        {% endfor %}
+      </ul>
+      <section>
+        {% for element in recomended.code %}
+          <a href="{{element.href}}">
+            <article>
+              <header>
+                <h2>{{element.name}}</h2>
+                <p>{{element.lang[language].desc}}</p>
+              </header>
+              <img src="/img/contents/{{element.img}}" alt="{{element.name}}">
+            </article>
+          </a>
+        {% endfor %}
+        <div></div>
+        <footer>
+          <a href="/projects">{{lang[language].content[7]}}</a>
+        </footer>
+      </section>
+    </div>
+  </main>
+  <article id="teaching">
+    <div class="mask top"></div>
+    <div class="stopper"></div>
+    <header>
+      <h1>{{lang[language].content[8]}}</h1>
+      <h2>{{lang[language].content[9]}}</h2>  
+    </header>
+    <div class="content">
+      <p>{{lang[language].content[10]}}</p>
+      <section>
+        {% for element in recomended.teaching %}
+          <a href="{{element.href}}">
+            <article>
+              <header>
+                <h2>{{element.name}}</h2>
+                <p>{{element.lang[language].desc}}</p>
+              </header>
+              <img src="/img/contents/{{element.img}}" alt="{{element.name}}">
+            </article>
+          </a>
+        {% endfor %}
+        <div></div>
+        <footer>
+          <a href="/exps">{{lang[language].content[11]}}</a>
+        </footer>  
+      </section>
+    
+    </div>
+    <div class="mask dark"></div>
+    
+  </article>
+  <article id="business">
+    <div class="photo me"></div>
+    <h1>{{lang[language].content[12]}}</h1>
+    <p>{{lang[language].content[13]}}</p>
+    <section>
+      {% for element in recomended.business %}
+        <a href="{{element.href}}">
+          <article>
+            <header>
+              <h2>{{element.name}}</h2>
+              <p>{{element.lang[language].desc}}</p>
+            </header>
+            <img src="/img/contents/{{element.img}}" alt="{{element.name}}">
+          </article>
+        </a>
+      {% endfor %}
+      <div></div>
+      <footer>
+        <a href="/projects">{{lang[language].content[14]}}</a>
+      </footer>  
+    </section>
+
+  </article>
+{% include "footer.html" %}

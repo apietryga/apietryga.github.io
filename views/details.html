@@ -1,15 +1,26 @@
 {% include "header.html" %}
-<main class="details">
-    <div class="background" style=background:{{color}}></div>
-    <div class="mainImg" style="background:{{color}}" >
-      <img src="/img/contents/{{img}}" alt="{{title}}">
-    </div>
-    <div class="content">
-      <h1>{{name}}</h1>
-      <h2>{{s_desc}}</h2>
-      <p>
-        {{l_desc | safe}}
-      </p>
-    </div>
+<div class="details">
+  <div class="background"></div>
+  <div class="mainImg">
+    <img src="/img/contents/{{img}}" alt="{{title}}">
+  </div>
+</div>
+<main class="content">
+  <h1>{{name}}</h1>
+  <h2>{{s_desc}}</h2>
+  {% for section in content %}
+    <section>
+      {% if section.header %}
+        <header>
+          {{section.header | safe}}
+        </header>
+      {% endif %}
+      {% if section.article %}
+        <article>
+            {{section.article | safe}}
+        </article>
+      {% endif %}
+    </section>
+  {% endfor %}
 </main>
 {% include "footer.html" %}
