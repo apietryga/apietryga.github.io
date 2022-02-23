@@ -19,6 +19,7 @@ app.get('*', (req, res) => {
     delete require.cache[require.resolve('./static/js/data')]; data = require('./static/js/data').data;
     delete require.cache[require.resolve('./components/Pages')]; Pages = require('./components/Pages'); allPages = new Pages(data);
     // // delete require.cache[require.resolve('./static/js/functions')]; func = require('./static/js/functions');
+    console.error("DEVELOPMENT REFRESH")
   }
   // SET UP PAGE
   let page = {
@@ -73,6 +74,9 @@ app.get('*', (req, res) => {
       page.title = data.pageBuild[page.language].nav[pageBuild] + " - " + mainTitle;
     }
   }
+
+  console.log(page.fullHref+" : "+res.statusCode)  
+
   res.render(page.template+".html", page);
 });
 app.listen(process.env.PORT || 80, () => { console.log('SERWER STARTED') });
