@@ -31,20 +31,14 @@ app.get('*', (req, res) => {
   }
   // SET UP PAGE
   let page = {
-    // host : req.hostname,
-    // origin: req.originalUrl == "/" ? 'index' : req.originalUrl.replace("/","").split(/\.|\?/g)[0],
     origin: req.originalUrl.split(/[\.\?]/g)[0] == "/" ? 'index' : req.originalUrl.replace("/","").split(/[\.\?]/g)[0],
     language: req.headers["accept-language"]?.split(/,|-/)[0] != 'pl' ? 'en' : 'pl',
     pageBuild: data.pageBuild,
     protocol: req.get('x-forwarded-proto') || req.protocol,
   };
-  page.host =  page.protocol+'://'+req.hostname,
-  page.fullHref = page.protocol+'://' + req.get('host') + req.originalUrl,
-  console.log('protocol:');
-  // console.log(req.protocol);
-  // console.log(req.get('x-forwarded-proto'));
-  console.log(page.protocol)
-  // const searchPages = allPages.getSearchPages(page.language);
+  page.host =  page.protocol+'://'+req.hostname;
+  page.fullHref = page.protocol+'://' + req.get('host') + req.originalUrl;
+
   const searchPages = allPages.jobs;
   if(page.origin == "searchPages"){ res.json(searchPages); return }
   // MAKE PAGE CONTENT
