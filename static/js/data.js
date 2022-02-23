@@ -192,7 +192,7 @@ this.data = {
       ],
       lang: {
         pl: {
-          category: "film",
+          category: ["film"],
           desc: "Team startujący w RedBull Can You Make It",
           content: [
             `We Can Make It - to hasło które przyświecało nam podczas
@@ -207,7 +207,7 @@ this.data = {
           ],
         },
         en: {
-          category: "movie",
+          category: ["movie"],
           desc: "Team taking part in RedBull Can You Make It",
           content: [
             `We Can Make It - this is the slogan that guided us during
@@ -266,7 +266,7 @@ this.data = {
       ],
       lang: {
         pl: {
-          category: "motoryzacja",
+          category: ["motoryzacja"],
           desc: "Custom Chopper stworzony na bazie Rometa Kadetta",
           content: [
             `Projekt rozpocząłem w mając 16 lat od zmiany konstrukcji  ramy`,
@@ -278,7 +278,7 @@ this.data = {
           ],
         },
         en: {
-          category: "moto",
+          category: ["moto"],
           desc: "Custom Chopper based on Romet Kadett",
           content: [
             `I started the project at the age of 16 with the change of the frame structure`,

@@ -19,7 +19,7 @@ this.forceHTTPS = (req, res, next) => {
   }
   next();
 }
-this.setMatchingEl = (searchingIn, searchingKey) => {
+this.highlightMatchingElement = (searchingIn, searchingKey) => {
   const indexes = [];
   for (let i = 0; i < searchingIn.length; i++) {
     if(searchingIn.slice(i, i + searchingKey.length).toLowerCase() == searchingKey){
@@ -36,66 +36,52 @@ this.setMatchingEl = (searchingIn, searchingKey) => {
   result += searchingIn.slice(lastIndex, searchingIn.length);
   return result;
 }
-this.searchByKey = (query, scrapedContent) =>{
+this.searchByKey = (query, scrapedContent, lang) =>{
   const matchingContent = [];
   const searchingKey = query.toLowerCase();
+  
+  // FIND SEARCHING KEY IN ALL DATA
   for(const obj of scrapedContent){
-    obj.category = obj.category.constructor == Array ? obj.category.join(', ').toString() : obj.category;
-    const matchObj = {
-      img : obj.img,
-      href : obj.href,
-      name: obj.name,
-      desc: obj.desc,
-      category: obj.category,
-      color: obj.color,
-      date: obj.date,
-    };
+    if(['index','contact','404'].includes(obj.href)){continue}
+    const matchObj = {...obj}
     const matchFields = [];
     let isMatch = false;
     for(const key in obj){
-      if(['img','href'].includes(key)){continue}
-      if(obj[key].constructor == String && obj[key].toLowerCase()?.includes(searchingKey)){
+      if(['img','href','recomended'].includes(key)){continue}
+      // GET THE VALUE FROM NESTED DATA
+      let value;
+      if(key == "lang"){
+        for(const objKey in obj[key][lang]){
+          value = obj[key][lang][objKey].constructor == Array ? obj[key][lang][objKey].toString() : obj[key][lang][objKey];
+        }
+      }else if(obj[key].constructor == Array){
+        value = obj[key].toString()
+      }else{
+        value = obj[key];
+      }
+      // TRY TO FIND SEARCHING KEY IN GETTED VALUE
+      if(value.toLowerCase()?.includes(searchingKey)){
         isMatch = true;
         matchFields.push(key);
-        matchObj[key] = this.setMatchingEl(obj[key],searchingKey);
-      }
-      if(obj[key].constructor == Array){
-        for(const arrVal of obj[key]){            
-          if(arrVal.toLowerCase()?.includes(searchingKey)){
-            isMatch = true;
-            matchFields.push(key);
-            matchObj[key] = this.setMatchingEl(arrVal,searchingKey);
-          }
-        }
-      }
+        matchObj[key] = ['name','desc','category'].includes(key) ? this.highlightMatchingElement(obj[key],searchingKey) : obj[key]; 
+      }      
     }
-    if(isMatch){
-      matchingContent.push({match: matchFields, el: matchObj});
+    if(isMatch){ 
+      matchingContent.push({match: matchFields, el: matchObj}) 
     }
   }
 
-  // sort matchingContent from most important
+  // SORT MATCHING CONTENT IN ORDER FROM MOST IMPORTANT
+  const sortingOrder = ['name', 'category', 'desc', 'content'];
   matchingContent.sort((a, b) => {
-    const sortingOrder = ['name', 'category', 'desc', 'content'];
     for(const key of sortingOrder){
       if(a.match.includes(key)){return -1;}
       if(b.match.includes(key)){return 1;}  
     }
   })
+
+  // FILTER SORTED DATA TO MINIMUM NEEDED
   const filteredMatchingContent = [];
   matchingContent.forEach(e => { filteredMatchingContent.push(e.el) })
   return filteredMatchingContent;
-}
-this.fillPage = (allPages, page, keyvalue) => {
-  const thisWork = allPages.getByKey( keyvalue[0], keyvalue[1] );
-  for( const key in thisWork ){
-    page[key] = thisWork[key];
-  }
-  page.content = thisWork.getContent(page.language)
-  if(['index','contact','404'].includes(page.origin)){
-    page.template = page.origin
-  }else{
-    page.template = "details";
-  }
-  return page;
 }

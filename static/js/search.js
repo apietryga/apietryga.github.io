@@ -4,6 +4,7 @@ const scraper = {
     this.suggestDOM = document.querySelector(".searchContainer .suggestions");
     this.searchInput = document.querySelector(".searchContainer input");
     this.searchInput.addEventListener("click", this.firstClick);
+    this.lang = document.documentElement.lang;
     document.addEventListener("keyup", e => {
       if(e.key == "s"){
         scraper.searchInput.focus();
@@ -20,7 +21,7 @@ const scraper = {
   },
   setElementBehavior(){
     this.searchInput.addEventListener("keyup", () => {
-      this.displaySuggestions(searchByKey(this.searchInput.value, this.scrapedContent));
+      this.displaySuggestions(searchByKey(this.searchInput.value, this.scrapedContent, this.lang));
     });
     this.searchInput.addEventListener("focusout", () => {
       setTimeout(() => {
@@ -53,11 +54,21 @@ const scraper = {
             <img src="/img/contents/${matchingPage.img}" alt="${matchingPage.name} logo" />
             <div class="wrapper">
               <h5>${matchingPage.name}</h5>
-              <p>${matchingPage.desc}</p>
-              <u>${matchingPage.category}</u>
+              <p>${matchingPage.lang[this.lang].desc}</p>
+              <u>${matchingPage.lang[this.lang].category?.join(", ")}</u>
             </div>
           </a>
         `;
+        // const aContainer = /*html*/`
+        //   <a href="/${matchingPage.href}">
+        //     <img src="/img/contents/${matchingPage.img}" alt="${matchingPage.name} logo" />
+        //     <div class="wrapper">
+        //       <h5>${matchingPage.name}</h5>
+        //       <p>${matchingPage.desc}</p>
+        //       <u>${matchingPage.category}</u>
+        //     </div>
+        //   </a>
+        // `;
         this.suggestDOM.insertAdjacentHTML( 'beforeend', aContainer);
       }
       if(this.suggestDOM.innerHTML == ""){

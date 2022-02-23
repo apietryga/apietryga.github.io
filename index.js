@@ -24,32 +24,44 @@ app.get('*', (req, res) => {
   let page = {
     host : req.hostname,
     // origin: req.originalUrl == "/" ? 'index' : req.originalUrl.replace("/","").split(/\.|\?/g)[0],
-    origin: req.originalUrl.split(/[\.\?]/g)[0] == "/" ? 'index' : req.originalUrl.replace("/",""),
+    origin: req.originalUrl.split(/[\.\?]/g)[0] == "/" ? 'index' : req.originalUrl.replace("/","").split(/[\.\?]/g)[0],
     language: req.headers["accept-language"]?.split(/,|-/)[0] != 'pl' ? 'en' : 'pl',
     pageBuild: data.pageBuild,
     // fullHref: req.protocol + '://' + req.get('host') + req.originalUrl,
     fullHref: 'https://' + req.get('host') + req.originalUrl,
   };
 
-  const searchPages = allPages.getSearchPages(page.language);
+  // const searchPages = allPages.getSearchPages(page.language);
+  const searchPages = allPages.jobs;
   if(page.origin == "searchPages"){ res.json(searchPages); return }
+
 
   // MAKE PAGE CONTENT
   if(allPages.getArrayByKey("href").includes(page.origin)){
-    page = func.fillPage(allPages, page, ['href', page.origin]);
+   const thisWork = allPages.getByKey( 'href', page.origin );
+    for( const key in thisWork ){
+      page[key] = thisWork[key];
+    }
+    page.content = thisWork.getContent(page.language)
+    if(['index','contact','404'].includes(page.origin)){
+      page.template = page.origin
+    }else{
+      page.template = "details";
+    }
+
   }else if(allPages.lists.includes(page.origin)){
     page.template = "list";
     if(page.origin == "search"){
-      const url = new URL(page.href.replace(/[`~!@#\$%\^\*\(\)\+]/g,""));
+      const url = new URL(page.fullHref.replace(/[`~!@#\$%\^\*\(\)\+]/g,""));
       page.query = url.searchParams.get('q');
       let isPage = false;
-      allPages.getArrayByKey('name').forEach( e=>{ e.toLowerCase() == page.query.toLowerCase() ? isPage = e : ''; })
+      allPages.getArrayByKey('name').forEach( e =>{ e.toLowerCase() == page.query.toLowerCase() ? isPage = e : ''; })
+      // if exact match
       if(isPage){
-        page = func.fillPage(allPages, page, ['name', isPage]);
-        page.origin = page.href;
+        res.redirect("/"+allPages.getByKey('name',isPage).href);return
       }else{
         // or display list of potential pages
-        page.content = func.searchByKey(page.query, searchPages);
+        page.content = page.query.length > 0 ? func.searchByKey(page.query, searchPages, page.language) : [];
       }
     }else{
       page.content = allPages.getArrayOfWorksByKey('parent', page.origin)  

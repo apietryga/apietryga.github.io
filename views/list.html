@@ -1,13 +1,11 @@
 {% include "header.html" %}
 <main class="list">
   <nav>
-    <h1>{{title}} {{query}}</h1>
+    <h1>{{title}}</h1>
     {% for item in content %}
     <section>
         <header style="background-color:{{item.color}}">
-
           <img src="/img/contents/{{item.img}}" alt="{{item.name}}">
-
         </header>
         <article>
           <header>
@@ -17,8 +15,8 @@
             <a href="{{item.href}}" style="background-color:{{item.color}}"><b>MORE</b></a>
             </header>
           <footer>
-            <u>{{item.lang[language].category or item.category}}</u>
-            {# <u>{{item.lang[language].category| join(", ")}}</u> #}
+            {# <u>{{item.lang[language].category or item.category}}</u> #}
+            <u>{{item.lang[language].category| join(", ")}}</u>
           </footer>
         </article>
       </section>    

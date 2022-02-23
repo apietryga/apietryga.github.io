@@ -55,23 +55,23 @@ class Pages{
     }
     return result;
   }
-  getSearchPages(lang = 'en'){
-    const result = [];
-    for(const job of this.jobs){
-      if(!this.static.includes(job.name)){
-        result.push({
-          name: job.name,
-          img: job.img,
-          color: job.color,
-          date: job.date,
-          href: job.href,
-          content: job.lang[lang].content,
-          category: job.lang[lang].category,
-          desc: job.lang[lang].desc,
-        })
-      }
-    }
-    return result;
-  }    
+  // getSearchPages(lang = 'en'){
+  //   const result = [];
+  //   for(const job of this.jobs){
+  //     if(!this.static.includes(job.name)){
+  //       result.push({
+  //         name: job.name,
+  //         img: job.img,
+  //         color: job.color,
+  //         date: job.date,
+  //         href: job.href,
+  //         content: job.lang[lang].content,
+  //         category: job.lang[lang].category,
+  //         desc: job.lang[lang].desc,
+  //       })
+  //     }
+  //   }
+  //   return result;
+  // }    
 }
 module.exports = Pages;

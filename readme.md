@@ -9,11 +9,11 @@ PWA web-dev Portfolio
   - search bar
   - topnav
   - title's
+  - og tags - add protocol
+  - change matching content (after searching) url page
+  - throw out searchlist, and get info from Pages.jobs. (in details thorow one val without "OR" statement)
 
 ## TO DO:
-  - change matching content (after searching) url page
-  - og tags - add protocol
-  - throw out searchlist, and get info from Pages.jobs. (in details thorow one val without "OR" statement)
   - serp
   - details subpage
   - og images
