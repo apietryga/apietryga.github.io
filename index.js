@@ -10,10 +10,19 @@ nunjucks.configure('views', {
   express   : app,
   watch : true
 });
+
 const mainTitle = data.index.name;
 app.use(express.static('static'));
 app.use(func.forceHTTPS);
 app.get('*', (req, res) => {
+  // DYNAMICALLY CHANGE WEBP FORMAT TO PNG (FOR META IMAGES)
+  for (const imgPath of allPages.getArrayByKey('img')){
+    if('/img/contents/'+imgPath?.replace(/\.\w+/, ".png") == req.originalUrl){
+      res.type(`image/png`)
+      func.reformatImg(__dirname+'/static/img/contents/'+imgPath,'png').pipe(res)
+      return
+    }
+  }
   // REFRESH DATA DEVELOPMENT
   if(req.get('host') == 'localhost'){
     delete require.cache[require.resolve('./static/js/data')]; data = require('./static/js/data').data;
@@ -30,12 +39,9 @@ app.get('*', (req, res) => {
     // fullHref: req.protocol + '://' + req.get('host') + req.originalUrl,
     fullHref: 'https://' + req.get('host') + req.originalUrl,
   };
-
   // const searchPages = allPages.getSearchPages(page.language);
   const searchPages = allPages.jobs;
   if(page.origin == "searchPages"){ res.json(searchPages); return }
-
-
   // MAKE PAGE CONTENT
   if(allPages.getArrayByKey("href").includes(page.origin)){
    const thisWork = allPages.getByKey( 'href', page.origin );
@@ -71,7 +77,6 @@ app.get('*', (req, res) => {
     page.lang = allPages.getByKey('href','404').lang;
   }
 
-  
   // MAKE TITLE
   page.title = page.name;
   if(page.origin == 'search'){
@@ -84,7 +89,6 @@ app.get('*', (req, res) => {
       page.title = data.pageBuild[page.language].nav[pageBuild] + " - " + mainTitle;
     }
   }
-
 
   res.render(page.template+".html", page);
 });

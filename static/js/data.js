@@ -834,6 +834,7 @@ this.data = {
   index:{
     name: "apietryga",
     href: "index",
+    img: "index.webp",
     recomended:{
       code: ['Anadar', 'Webions', 'uFlash'],
       teaching: ['Śląska Akademia Senior@', 'Kurs Front-end Dev', 'Kurs Cyfrowy.pl'],

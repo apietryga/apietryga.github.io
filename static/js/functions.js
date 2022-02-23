@@ -1,3 +1,14 @@
+if(typeof window == 'undefined'){
+  // here functions only for backend
+  const fs = require('fs');
+  const sharp = require('sharp');
+  this.reformatImg = (path, format) => {
+    return fs.createReadStream(path).pipe(sharp().toFormat(format))
+  }
+  
+}
+
+
 this.getPageInfo = (readedFile, opt = {file:'',fileInside:''}) => {
   const result = {
     name: readedFile.split("</h1>")[0].split("<h1>")[1],

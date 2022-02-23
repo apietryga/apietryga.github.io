@@ -5,6 +5,7 @@ class Job{
     }
     // this.href = this.parent != null ? this.parent + "/" + this.escapeSpecialChars(this.name): this.name.toLowerCase();
     this.href = this.parent != null ? this.parent + "/" + this.escapeSpecialChars(this.name): this.href;
+    this.metaIMG = '/img/contents/'+this.img?.replace(/\.\w+/, ".png");
     // console.log(object)
   }
   escapeSpecialChars(string){

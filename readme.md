@@ -21,3 +21,4 @@ PWA web-dev Portfolio
   - hard refresh css and js
   - lazy loading
   - serviceWorker
+  - contact
