@@ -19,7 +19,6 @@ app.get('*', (req, res) => {
     delete require.cache[require.resolve('./static/js/data')]; data = require('./static/js/data').data;
     delete require.cache[require.resolve('./components/Pages')]; Pages = require('./components/Pages'); allPages = new Pages(data);
     // // delete require.cache[require.resolve('./static/js/functions')]; func = require('./static/js/functions');
-    console.error("DEVELOPMENT REFRESH")
   }
   // SET UP PAGE
   let page = {
@@ -28,11 +27,10 @@ app.get('*', (req, res) => {
     origin: req.originalUrl.split(/[\.\?]/g)[0] == "/" ? 'index' : req.originalUrl.replace("/",""),
     language: req.headers["accept-language"]?.split(/,|-/)[0] != 'pl' ? 'en' : 'pl',
     pageBuild: data.pageBuild,
-    fullHref: req.protocol + '://' + req.get('host') + req.originalUrl,
+    // fullHref: req.protocol + '://' + req.get('host') + req.originalUrl,
+    fullHref: 'https://' + req.get('host') + req.originalUrl,
   };
 
-  // console.log("origin: "+page.origin)
-  // console.log("req: "+req.originalUrl)
   const searchPages = allPages.getSearchPages(page.language);
   if(page.origin == "searchPages"){ res.json(searchPages); return }
 
@@ -75,7 +73,6 @@ app.get('*', (req, res) => {
     }
   }
 
-  console.log(page.fullHref+" : "+res.statusCode)  
 
   res.render(page.template+".html", page);
 });

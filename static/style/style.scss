@@ -415,7 +415,6 @@ body{
     display:flex;
     color:$fontColor;
     height:100vh;
-    // width:100vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -435,7 +434,10 @@ body{
       background-repeat: no-repeat;
       position:absolute;
       background-size:cover;
-      transition:.1s;
+      -webkit-transition: .01s;
+      -moz-transition: .01s;
+      -o-transition: .01s;
+      transition: .01s;
     }  
     .mask{
       background-color: $backgroundColor;
@@ -485,20 +487,24 @@ body{
       background-position:bottom;
     }
     .clouds{
-      // animation: fadeIn 3s ease;
-      animation: fadeInDelay 2s ease;
-      // opacity:0;
-      z-index:-2;
-      background-position:left bottom;
+      @keyframes slide{
+        0% { background-position: 150vh bottom; }
+      }
       top:0;
-      height:75vh;
       left:0;
-      background-size: auto 100%;
-      background-repeat: repeat;
-      background-image: url("../img/frontPage/clouds.webp");
+      z-index:-2;
+      height:75vh;
+
+      -webkit-animation: slide 20s linear infinite; /* Safari 4+ */
+      -moz-animation:    slide 20s linear infinite; /* Fx 5+ */
+      -o-animation:      slide 20s linear infinite; /* Opera 12+ */
+      animation:         slide 20s linear infinite; /* IE 10+ */
+
+      background: url("../img/frontPage/clouds.webp") repeat 0 bottom;
+      background-size: 150vh auto;
     }
     .title{
-      animation: fadeInDelay 3s ease;
+      animation: fadeInDelay 1.5s ease;
       display:flex;
       z-index:-1;
       top:10vh;
@@ -515,8 +521,8 @@ body{
       }
       h1{
         margin:0;
-        line-height: .5em;
-        font-size:3em;
+        line-height: 1.7rem;
+        font-size:3rem;
         b{
           display:block;
           font-weight: bolder;
