@@ -26,7 +26,7 @@ this.getPageInfo = (readedFile, opt = {file:'',fileInside:''}) => {
 this.forceHTTPS = (req, res, next) => {
   // The 'x-forwarded-proto' check is for Heroku
   if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== "development" && req.get('host') != 'localhost') {
-    req.protocol = 'https';
+    req.protocol = 'https:';
     return res.redirect(301, 'https://' + req.get('host') + req.url);
   }
   next();
