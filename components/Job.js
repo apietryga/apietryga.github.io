@@ -3,7 +3,9 @@ class Job{
     for(const key in object){
       this[key] = object[key];
     }
-    this.href = this.parent != null ? this.parent + "/" + this.escapeSpecialChars(this.name): this.name.toLowerCase();
+    // this.href = this.parent != null ? this.parent + "/" + this.escapeSpecialChars(this.name): this.name.toLowerCase();
+    this.href = this.parent != null ? this.parent + "/" + this.escapeSpecialChars(this.name): this.href;
+    // console.log(object)
   }
   escapeSpecialChars(string){
     return string.replace(/[. @ąźęłńóśźż]/gi, x => ({

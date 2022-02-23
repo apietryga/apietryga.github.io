@@ -3,6 +3,7 @@ class Pages{
   constructor(data){
     this.jobs = [];
     this.lists = ['search'];
+    this.static = [];
     for(const page in data){
       if(page == "pageBuild"){continue;}
       if(data[page].constructor == Array){
@@ -14,6 +15,7 @@ class Pages{
         }
       }
       if(data[page].constructor == Object){
+        this.static.push(data[page].name)
         if(data[page].recomended != null){
           for(const section in data[page].recomended){
             const tempArr = data[page].recomended[section];
@@ -54,8 +56,22 @@ class Pages{
     return result;
   }
   getSearchPages(lang = 'en'){
-
-    return "ELO"
+    const result = [];
+    for(const job of this.jobs){
+      if(!this.static.includes(job.name)){
+        result.push({
+          name: job.name,
+          img: job.img,
+          color: job.color,
+          date: job.date,
+          href: job.href,
+          content: job.lang[lang].content,
+          category: job.lang[lang].category,
+          desc: job.lang[lang].desc,
+        })
+      }
+    }
+    return result;
   }    
 }
 module.exports = Pages;

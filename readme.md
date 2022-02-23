@@ -5,12 +5,18 @@ PWA web-dev Portfolio
   - broken links
   - langs
   - manifest
+  - head
+  - search bar
+  - topnav
+  - title's
 
 ## TO DO:
-  - search bar
-  - serviceWorker
+  - throw out searchlist, and get info from Pages.jobs. (in details thorow one val without "OR" statement)
+  - serp
   - details subpage
-  - lazy loading
-  - head
+  - og images
   - hard refresh css and js
+  - lazy loading
   - sitemap
+  - serviceWorker
+  - prevent searching from empty string

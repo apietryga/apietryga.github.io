@@ -1,25 +1,24 @@
 {% include "header.html" %}
 <main class="list">
   <nav>
-    <h1>{{title}}</h1>
-    <header>
-      <h4>name</h4>      
-      <h4>date</h4>      
-    </header>
+    <h1>{{title}} {{query}}</h1>
     {% for item in content %}
     <section>
         <header style="background-color:{{item.color}}">
+
           <img src="/img/contents/{{item.img}}" alt="{{item.name}}">
+
         </header>
         <article>
           <header>
             <p class="date">{{item.date}}</p>
-            <h3>{{item.name}}</h3>
-            <p>{{item.lang[language].desc}}</p>
+            <h3>{{item.name | safe}}</h3>
+            <p>{{item.lang[language].desc or item.desc | safe}}</p>
             <a href="{{item.href}}" style="background-color:{{item.color}}"><b>MORE</b></a>
             </header>
           <footer>
-            <u>{{item.lang[language].category}}</u>
+            <u>{{item.lang[language].category or item.category}}</u>
+            {# <u>{{item.lang[language].category| join(", ")}}</u> #}
           </footer>
         </article>
       </section>    

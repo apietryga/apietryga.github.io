@@ -14,8 +14,8 @@
   <meta property="og:url" content="{{host}}/{{origin}}" />
   <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style/style.min.css">
   <link rel="manifest" href="/js/manifest.json">
+  <link rel="stylesheet" href="/style/style.min.css">
 </head>
 <body>
   <header class='navHeader'>
@@ -39,7 +39,7 @@
           <img src="/img/page/nav_exp.svg" alt="{{pageBuild[language].nav.exps}}">
           <span>{{pageBuild[language].nav.exps}}</span>
         </a>
-        <a href="/contact.html">
+        <a href="/contact">
           <img src="/img/page/nav_contact.svg" alt="{{pageBuild[language].nav.contact}}">
           <span>{{pageBuild[language].nav.contact}}</span>
         </a>
@@ -47,25 +47,20 @@
       <div class="navShadow"></div>
     </div>
     <div class="searchContainer">
-      <form action="search.html" action="get">
+      <form action="/search" method="get">
         <label for="search">
           <img src="/img/page/nav_lupa.svg" alt="SEARCH" />
         </label>
-        <input type="text" name="search" id="search" list="suggest" placeholder="Search" />
+        <input type="text" name="q" id="search" list="suggest" placeholder="Search" />
         <div class="bg"></div>
-        <img src="/img/page/nav_x.svg" alt="ABORT SEARCHING" class="abort" />
+        <div class="abort">
+          <img src="/img/page/nav_x.svg" alt="ABORT SEARCHING" />
+        </div>
       </form>
-      <div class="suggestions"></div>
+      <div class="suggestions">5</div>
     </div>
     <a href="/">
-      <img src="/img/icons/logo.webp" alt="{{title}} Logo">
+      <img src="/img/icons/logo128.webp" alt="{{title}} Logo">
     </a>
   </header>
-  <div class="wrapper">  
-    <!-- END OF HEADER -->
-    
-
-
-
-
-
+  <!-- END OF HEADER -->

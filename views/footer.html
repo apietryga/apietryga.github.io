@@ -1,25 +1,23 @@
-    <footer>
-      <nav>
-
-        <p>
-          <a href="/">
-            <span>{{pageBuild[language].nav.home}}</span>
-          </a>
-          <a href="/projects">
-            <span>{{pageBuild[language].nav.projects}}</span>
-          </a>
-          <a href="/exps">
-            <span>{{pageBuild[language].nav.exps}}</span>
-          </a>
-          <a href="/contact.html">
-            <span>{{pageBuild[language].nav.contact}}</span>  
-        </p>
-      </nav>
+  <footer>
+    <nav>
       <p>
-        Created by apietryga 2022.
-      </p>          
-    </footer>
-  </div>
+        <a href="/">
+          <span>{{pageBuild[language].nav.home}}</span>
+        </a>
+        <a href="/projects">
+          <span>{{pageBuild[language].nav.projects}}</span>
+        </a>
+        <a href="/exps">
+          <span>{{pageBuild[language].nav.exps}}</span>
+        </a>
+        <a href="/contact.html">
+          <span>{{pageBuild[language].nav.contact}}</span>  
+      </p>
+    </nav>
+    <p>
+      Created by apietryga 2022.
+    </p>          
+  </footer>
 </body>
 </html>
 <script src="/js/functions.js"></script>
@@ -43,10 +41,7 @@
     }
   } 
   menu.init();
-
   if('serviceWorker' in navigator){navigator.serviceWorker.register('/js/serviceWorker.js');}
-
-  const searchPages = "{{searchPages}}";
-  const lang = "{{lang}}";
+  const lang = "{{language}}";
 </script>
 <script src="/js/search.js"></script>

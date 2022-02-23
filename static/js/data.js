@@ -797,20 +797,30 @@ this.data = {
   ],
   404:{
     name: "404",
+    href: "404",
     media: [],
     lang: {
       pl: {
-        desc: `To nie jest strona o którą chodziło <br /> Lepiej sprawdź <br /> 
-          <a href='/projects'>projekty</a> 😎`       
+        desc: /*html*/`
+          <p>
+            To nie jest strona o którą chodziło <br /> 
+            Lepiej sprawdź 
+            <a href='/projects'>projekty</a> 😎
+          </p>`
       },
       en: {
-        desc: `To nie jest strona o którą chodziło <br /> Lepiej sprawdź <br /> 
-          <a href='/projects'>projekty</a> 😎`       
+        desc: /*html*/`
+        <p>
+          This is not the page you wanted <br /> 
+          Better check
+          <a href='/projects'>projects</a> 😎
+        </p>`
       },
     }
   },
   contact:{
     name: "Contact",
+    href: "contact",
     media: [],
     lang: {
       pl: {
@@ -822,7 +832,8 @@ this.data = {
     }
   },
   index:{
-    name: "INDEX",
+    name: "apietryga",
+    href: "index",
     recomended:{
       code: ['Anadar', 'Webions', 'uFlash'],
       teaching: ['Śląska Akademia Senior@', 'Kurs Front-end Dev', 'Kurs Cyfrowy.pl'],
@@ -846,6 +857,7 @@ this.data = {
     ],
     lang: {
       pl: {
+        desc: "ELO",
         content : [
             `Jestem`,
             `apietryga`,
@@ -865,6 +877,7 @@ this.data = {
           ]
       },
       en: {
+        desc: "ELO",
         content : [
             `I'm`,
             `apietryga`,

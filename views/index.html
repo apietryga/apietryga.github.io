@@ -1,20 +1,17 @@
 {% include "header.html" %}
+  <script src="/js/topheader.js" defer></script>
   <header class="topHeader">
     <div class="title">
       <h1>{{lang[language].content[0]| safe}}<b>{{lang[language].content[1]}}</b></h1>
       <h2>{{lang[language].content[2]}}</h2>
       <p>{{lang[language].content[3]}}</p>
     </div>
-    <div class="photo background"></div>
-    <div class="photo sea"></div>
-    <div class="photo sunset"></div>
+    <div class="background"></div>
+    <div class="photo sky"></div>
+    <div class="photo mountains"></div>
+    <div class="photo moon"></div>
     <div class="photo clouds"></div>
     <div class="mask photo"></div>
-    <div class="next">
-      <a href="#code">
-        <img src="/img/page/nav_backer.svg" alt="CODE">
-      </a>  
-    </div>
   </header>
   <div class="hider"></div>
   <main id="code">
@@ -28,7 +25,7 @@
       </header>
       <ul>
         {% for techElement in stack %}
-          <a href="/search?query={{techElement}}">
+          <a href="/search?q={{techElement}}">
             <li>{{techElement}}</li>
           </a>
         {% endfor %}
