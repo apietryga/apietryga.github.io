@@ -39,6 +39,8 @@ app.get('*', (req, res) => {
     // fullHref: req.protocol + '://' + req.get('host') + req.originalUrl,
     fullHref: 'https://' + req.get('host') + req.originalUrl,
   };
+  console.log('protocol:');
+  console.log(req.protocol);
   // const searchPages = allPages.getSearchPages(page.language);
   const searchPages = allPages.jobs;
   if(page.origin == "searchPages"){ res.json(searchPages); return }
