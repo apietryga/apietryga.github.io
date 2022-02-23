@@ -26,7 +26,7 @@ app.get('*', (req, res) => {
     origin: req.originalUrl == "/" ? 'index' : req.originalUrl.replace("/","").split(/\.|\?/g)[0],
     language: req.headers["accept-language"].split(/,|-/)[0] != 'pl' ? 'en' : 'pl',
     pageBuild: data.pageBuild,
-    href: req.protocol + '://' + req.get('host') + req.originalUrl,
+    fullHref: req.protocol + '://' + req.get('host') + req.originalUrl,
   };
   const searchPages = allPages.getSearchPages(page.language);
   if(page.origin == "searchPages"){ res.json(searchPages); return }
