@@ -23,11 +23,15 @@ app.get('*', (req, res) => {
   // SET UP PAGE
   let page = {
     host : req.hostname,
-    origin: req.originalUrl == "/" ? 'index' : req.originalUrl.replace("/","").split(/\.|\?/g)[0],
+    // origin: req.originalUrl == "/" ? 'index' : req.originalUrl.replace("/","").split(/\.|\?/g)[0],
+    origin: req.originalUrl.split(/[\.\?]/g)[0] == "/" ? 'index' : req.originalUrl.replace("/",""),
     language: req.headers["accept-language"].split(/,|-/)[0] != 'pl' ? 'en' : 'pl',
     pageBuild: data.pageBuild,
     fullHref: req.protocol + '://' + req.get('host') + req.originalUrl,
   };
+
+  // console.log("origin: "+page.origin)
+  // console.log("req: "+req.originalUrl)
   const searchPages = allPages.getSearchPages(page.language);
   if(page.origin == "searchPages"){ res.json(searchPages); return }
 
