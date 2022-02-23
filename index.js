@@ -41,6 +41,7 @@ app.get('*', (req, res) => {
   };
   console.log('protocol:');
   console.log(req.protocol);
+  console.log(req.get('x-forwarded-proto'));
   // const searchPages = allPages.getSearchPages(page.language);
   const searchPages = allPages.jobs;
   if(page.origin == "searchPages"){ res.json(searchPages); return }
