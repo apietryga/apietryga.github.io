@@ -26,7 +26,7 @@ app.get('*', (req, res) => {
     host : req.hostname,
     // origin: req.originalUrl == "/" ? 'index' : req.originalUrl.replace("/","").split(/\.|\?/g)[0],
     origin: req.originalUrl.split(/[\.\?]/g)[0] == "/" ? 'index' : req.originalUrl.replace("/",""),
-    language: req.headers["accept-language"].split(/,|-/)[0] != 'pl' ? 'en' : 'pl',
+    language: req.headers["accept-language"]?.split(/,|-/)[0] != 'pl' ? 'en' : 'pl',
     pageBuild: data.pageBuild,
     fullHref: req.protocol + '://' + req.get('host') + req.originalUrl,
   };
