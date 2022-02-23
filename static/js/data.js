@@ -874,6 +874,7 @@ this.data = {
             `BIZNES JEST BIZNES`,
             `W 2018 roku założyłem swoją pierwszą działalność gospodarczą, dzięki której powstało część projektów, i spora część doświadczenia przedstawionych na tej stronie.`,
             `zobacz więcej projektów biznesowych`,
+            `biznes`,
           ]
       },
       en: {
@@ -894,6 +895,7 @@ this.data = {
             `BUSINESS IS BUSINESS`,
             `In 2018, I started my first business, which resulted in some of the projects and a lot of experience featured on this page.`,
             `see more business projects`,
+            `business`,
           ]
       },
     }

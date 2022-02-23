@@ -20,6 +20,11 @@ this.forceHTTPS = (req, res, next) => {
   next();
 }
 this.highlightMatchingElement = (searchingIn, searchingKey) => {
+  let wasArray = false;
+  if(searchingIn.constructor == Array){
+    wasArray = true;
+    searchingIn = searchingIn.join("|");
+  }
   const indexes = [];
   for (let i = 0; i < searchingIn.length; i++) {
     if(searchingIn.slice(i, i + searchingKey.length).toLowerCase() == searchingKey){
@@ -34,7 +39,7 @@ this.highlightMatchingElement = (searchingIn, searchingKey) => {
     result += "<span>"+searchingIn.slice(startAt, lastIndex)+"</span>";
   }
   result += searchingIn.slice(lastIndex, searchingIn.length);
-  return result;
+  return wasArray ? result.split("|") : result;
 }
 this.searchByKey = (query, scrapedContent, lang) =>{
   const matchingContent = [];
@@ -53,17 +58,25 @@ this.searchByKey = (query, scrapedContent, lang) =>{
       if(key == "lang"){
         for(const objKey in obj[key][lang]){
           value = obj[key][lang][objKey].constructor == Array ? obj[key][lang][objKey].toString() : obj[key][lang][objKey];
+          if(value.toLowerCase()?.includes(searchingKey)){
+            isMatch = true;
+            matchFields.push(objKey);
+            // matchObj[key][lang][objKey] = ['name','desc','category'].includes(objKey) ? this.highlightMatchingElement(obj[key][lang][objKey], searchingKey) : obj[key][lang][objKey];
+            matchObj[key][lang][objKey] =  obj[key][lang][objKey];
+          }
         }
       }else if(obj[key].constructor == Array){
         value = obj[key].toString()
       }else{
         value = obj[key];
       }
+
       // TRY TO FIND SEARCHING KEY IN GETTED VALUE
       if(value.toLowerCase()?.includes(searchingKey)){
         isMatch = true;
         matchFields.push(key);
-        matchObj[key] = ['name','desc','category'].includes(key) ? this.highlightMatchingElement(obj[key],searchingKey) : obj[key]; 
+        // matchObj[key] = ['name','desc','category'].includes(key) ? this.highlightMatchingElement(obj[key],searchingKey) : obj[key]; 
+        matchObj[key] = obj[key]; 
       }      
     }
     if(isMatch){ 

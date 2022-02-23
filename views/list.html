@@ -1,24 +1,24 @@
 {% include "header.html" %}
 <main class="list">
+  <h1>{{title}}</h1>
   <nav>
-    <h1>{{title}}</h1>
     {% for item in content %}
     <section>
-        <header style="background-color:{{item.color}}">
-          <img src="/img/contents/{{item.img}}" alt="{{item.name}}">
+        <header>
+          <h2>
+            <a href="{{item.href}}">{{item.name | safe}}</a>
+          </h2>
+          <p class="date">{{item.date}}</p>
         </header>
         <article>
-          <header>
-            <p class="date">{{item.date}}</p>
-            <h3>{{item.name | safe}}</h3>
-            <p>{{item.lang[language].desc or item.desc | safe}}</p>
-            <a href="{{item.href}}" style="background-color:{{item.color}}"><b>MORE</b></a>
-            </header>
-          <footer>
-            {# <u>{{item.lang[language].category or item.category}}</u> #}
-            <u>{{item.lang[language].category| join(", ")}}</u>
-          </footer>
+          <img src="/img/contents/{{item.img}}" alt="{{item.name}}">
+          <p>{{item.lang[language].desc | safe}}</p>
         </article>
+          <footer>
+            {% for tag in item.lang[language].category %}
+              <a href="/search?q={{tag| safe }}">#{{tag | safe}}</a>
+            {% endfor %}
+          </footer>
       </section>    
       {% endfor %}
     </nav>
