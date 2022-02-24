@@ -47,7 +47,9 @@ app.get("/sitemap.xml", (req, res) => {
       if(['404', null].includes(href)){continue}
       result += "<url>\n";
       result += "  <loc>"+host+"/"+href+"</loc>\n";
-      result += "  <lastmod>"+yyyymmdd+"</lastmod>\n";
+      // result += "  <lastmod>"+yyyymmdd+"</lastmod>\n";
+      result += "  <lastmod>2022-02-24T13:40:57+00:00</lastmod>\n";
+      result += "  <priority>1.0</priority>\n";
       result += "</url>\n";
     }
     result += "\n</urlset>";
