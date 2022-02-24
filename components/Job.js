@@ -47,7 +47,7 @@ class Job{
   fillArticle(url){
     if(url == null){return 0;}
     if(["jpg","webp"].includes(url.split(".")[url.split(".").length-1])){
-      return `<img src='/img/contents/${url}' />`;
+      return `<img src='/img/contents/${url}' alt='${this.name}' />`;
     }
     if(url.includes("youtube.com")){
       let imgURL = url.replace("www","img").replace("embed","vi") + "/hqdefault.jpg";

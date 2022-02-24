@@ -13,12 +13,48 @@ nunjucks.configure('views', {
   watch : true
 });
 
-
-
-
 app.use(express.static('static'));
 app.use(func.forceHTTPS);
+app.get('/robots.txt', (req, res) => {
+  // DYNAMICALLY CREATE ROBOTS.TXT
+  const protocol = req.get('x-forwarded-proto') || req.protocol;
+  const host =  protocol+'://'+req.hostname;
+  res.type(`text/plain`);
+  res.send(`User-agent: *
+  Allow: /
+  
+  Sitemap: ${host}/sitemap.xml
+  `);
+  return
+})
+
+app.get("/sitemap.xml", (req, res) => {
+  // DYNAMICALLY CREATE SITEMAP.XML
+  const protocol = req.get('x-forwarded-proto') || req.protocol;
+  const host =  protocol+'://'+req.hostname;
+  // console.log(host)
+  const date = new Date();
+  const yyyymmdd = date.getFullYear()+'-'+(date.getMonth()<10?'0'+date.getMonth():date.getMonth())+'-'+(date.getDay()<10?'0'+date.getDay():date.getDay());
+
+    res.type(`application/xhtml+xml`);
+    res.send(`<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>${host}/index</loc>
+        <lastmod>${yyyymmdd}</lastmod>
+      </url>
+    </urlset>
+    `); return
+})
+
 app.get('*', (req, res) => {
+  // REFRESH DATA DEVELOPMENT
+  if(req.get('host') == 'localhost'){
+    delete require.cache[require.resolve('./static/js/data')]; data = require('./static/js/data').data;
+    delete require.cache[require.resolve('./components/Pages')]; Pages = require('./components/Pages'); allPages = new Pages(data);
+    // // delete require.cache[require.resolve('./static/js/functions')]; func = require('./static/js/functions');
+  }
+
   // DYNAMICALLY CHANGE WEBP FORMAT TO PNG (FOR META IMAGES)
   for (const imgPath of allPages.getArrayByKey('img')){
     if('/img/contents/'+imgPath?.replace(/\.\w+/, ".png") == req.originalUrl){
@@ -27,12 +63,8 @@ app.get('*', (req, res) => {
       return
     }
   }
-  // REFRESH DATA DEVELOPMENT
-  if(req.get('host') == 'localhost'){
-    delete require.cache[require.resolve('./static/js/data')]; data = require('./static/js/data').data;
-    delete require.cache[require.resolve('./components/Pages')]; Pages = require('./components/Pages'); allPages = new Pages(data);
-    // // delete require.cache[require.resolve('./static/js/functions')]; func = require('./static/js/functions');
-  }
+
+
   // SET UP PAGE
   let page = {
     version: package.version,
