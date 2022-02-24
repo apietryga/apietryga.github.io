@@ -11,7 +11,8 @@
           <span>{{pageBuild[language].nav.exps}}</span>
         </a>
         <a href="/contact.html">
-          <span>{{pageBuild[language].nav.contact}}</span>  
+          <span>{{pageBuild[language].nav.contact}}</span> 
+        </a>
       </p>
     </nav>
     <p>
@@ -20,27 +21,3 @@
   </footer>
 </body>
 </html>
-<script src="/js/functions.js"></script>
-<script>
-  // abort menu on focus out
-  const menu = {
-    toggler : document.querySelector("#toggler"),
-    init(){
-      document.addEventListener("click", e => {
-        let isMenuClick = false;
-        let elem = e.target;
-        for ( ; elem && elem !== document; elem = elem.parentNode ) {
-          if(elem.classList.contains("menu")){
-            isMenuClick = true;
-          }
-        }
-        if(!isMenuClick){
-          this.toggler.checked = false;
-        }
-      })
-    }
-  } 
-  menu.init();
-  if('serviceWorker' in navigator){navigator.serviceWorker.register('/js/serviceWorker.js');}
-</script>
-<script src="/js/search.js"></script>

@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 let func = require('./static/js/functions');
-let data = require('./static/js/data').data;
 let Pages = require('./components/Pages')
+let data = require('./static/js/data').data;
 let allPages = new Pages(data);
+const mainTitle = data.index.name;
+const package = require('./package.json')
 const nunjucks = require('nunjucks');
 nunjucks.configure('views', {
   autoescape: true,
@@ -11,7 +13,9 @@ nunjucks.configure('views', {
   watch : true
 });
 
-const mainTitle = data.index.name;
+
+
+
 app.use(express.static('static'));
 app.use(func.forceHTTPS);
 app.get('*', (req, res) => {
@@ -31,6 +35,7 @@ app.get('*', (req, res) => {
   }
   // SET UP PAGE
   let page = {
+    version: package.version,
     origin: req.originalUrl.split(/[\.\?]/g)[0] == "/" ? 'index' : req.originalUrl.replace("/","").split(/[\.\?]/g)[0],
     language: req.headers["accept-language"]?.split(/,|-/)[0] != 'pl' ? 'en' : 'pl',
     pageBuild: data.pageBuild,

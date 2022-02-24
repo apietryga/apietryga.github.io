@@ -1,6 +1,6 @@
 {
   "name": "apietryga.com",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webdev portfolio",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.2",
+    "lazyframe": "^2.2.7",
     "nunjucks": "^3.2.3",
     "sharp": "^0.30.1"
   }

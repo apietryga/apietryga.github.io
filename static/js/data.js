@@ -821,13 +821,26 @@ this.data = {
   contact:{
     name: "Contact",
     href: "contact",
-    media: [],
+    phone : "+48 732 012 715",
+    fullName: "Antoni Pietryga",
+    mail: "antek.pietryga@gmail.com",
+    messenger: "https://www.messenger.com/t/antoni.pietryga",
+    ig: "http://instagram.com/antek_pietryga",
+    fb: "https://www.facebook.com/antoni.pietryga/",
+    yt: "https://www.youtube.com/channel/UCB5bhBYgly7udyjyjj0K_UQ?view_as=subscriber",
+    github: "https://github.com/apietryga",
     lang: {
       pl: {
-        desc: `KONTAKT`       
+        desc: `Dane kontaktowe`,
+        content:[
+          `Kliknij Aby przejść`
+        ]
       },
       en: {
-        desc: `CONTACT`       
+        desc: `Contact details`,
+        content:[
+          `Click to go`
+        ]
       },
     }
   },

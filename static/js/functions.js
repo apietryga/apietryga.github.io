@@ -4,8 +4,10 @@ if(typeof window == 'undefined'){
   const sharp = require('sharp');
   this.reformatImg = (path, format) => {
     return fs.createReadStream(path).pipe(sharp().toFormat(format))
-  }
-  
+  }  
+}else{
+  // here functions only for frontend
+  // if('serviceWorker' in navigator){ navigator.serviceWorker.register('/serviceWorker.js'); }
 }
 
 

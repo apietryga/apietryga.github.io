@@ -1,22 +1,18 @@
 {% include "header.html" %}
-  <div class="frame_cell">
-    <div class="contactField">
-      <h2>Dane kontaktowe</h2>
-      <br />
-      Antoni Pietryga <br />
-      tel. +48 732 012 715<br />
-      mail: antek.pietryga@gmail.com
-      <br />
-      <br />
-    <h2>Kliknij, aby przejść:</h2>
-    </div>
-    <div class="socials">
-      <a class="single phone" href="tel:+48732012715"></a>
-      <a class="single mail" href="mailto:antek.pietryga@gmail.com"></a>
-      <a class="single messenger" href="https://www.messenger.com/t/antoni.pietryga" target="_blank"></a>
-      <a class="single insta" href="http://instagram.com/antek_pietryga" target="_blank"></a>
-      <a class="single fb" href="https://fb.com/profile/antoni.pietryga" target="_blank"></a>
-      <a class="single yt" href="https://www.youtube.com/channel/UCB5bhBYgly7udyjyjj0K_UQ?view_as=subscriber" target="_blank"></a>
-    </div>
-  </div>
+  <main class="contact">
+    <h1>{{lang[language].desc}}</h1>
+      <h3>{{fullName}}</h3>
+      <p>{{phone}}</p>
+      <p>{{mail}}</p>
+      <h2>{{lang[language].content[0]}}</h2>
+      <section class="socials">
+        <a class="single github" href="{{github}}" target="_blank"></a>
+        <a class="single phone" href="tel:{{phone}}"></a>
+        <a class="single mail" href="mailto:{{mail}}"></a>
+        <a class="single messenger" href="{{messenger}}" target="_blank"></a>
+        <a class="single insta" href="{{ig}}" target="_blank"></a>
+        <a class="single yt" href="{{yt}}" target="_blank"></a>
+        <a class="single fb" href="{{fb}}" target="_blank"></a>
+      </section>
+  </main>
 {% include "footer.html" %}

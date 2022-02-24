@@ -1,9 +1,9 @@
-const cacheVersion = "v1";
+const cacheVersion = "v5";
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(cacheVersion).then((cache) => {
       return cache.addAll([
-        '/index.html',
+        '/',
         '/style/style.min.css',
         '/favicon.ico'
       ]);
@@ -20,7 +20,7 @@ self.addEventListener('fetch', (event) => {
         });
         return response;
       }).catch(() => {
-        return caches.match('/index.html');
+        return caches.match('/');
       })
     })
   );
