@@ -46,8 +46,8 @@ app.get("/sitemap.xml", (req, res) => {
     for(const href of allPages.getArrayByKey('href')){
       if(['404', null].includes(href)){continue}
       result += "<url>\n";
-      result += "  <loc>"+host+"/"+href+"<loc>\n";
-      result += "  <lastmod>"+yyyymmdd+"<lastmod>\n";
+      result += "  <loc>"+host+"/"+href+"</loc>\n";
+      result += "  <lastmod>"+yyyymmdd+"</lastmod>\n";
       result += "</url>\n";
     }
     result += "\n</urlset>";
