@@ -31,11 +31,10 @@ app.get("/sitemap.xml", (req, res) => {
   // DYNAMICALLY CREATE SITEMAP.XML
   const protocol = req.get('x-forwarded-proto') || req.protocol;
   const host =  protocol+'://'+req.hostname;
-  // console.log(host)
   const date = new Date();
-  date.ge
   const yyyymmdd = date.getFullYear()+'-'+(date.getMonth()<10?'0'+date.getMonth():date.getMonth())+'-'+(date.getDay()<10?'0'+date.getDay():date.getDay());
-    res.type(`application/xml`);
+    // res.type(`application/xml`);
+    res.type('text/xml');
     let result = '<?xml version="1.0" encoding="UTF-8"?>\n';
     result += `<urlset
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

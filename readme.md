@@ -12,17 +12,15 @@ PWA web-dev Portfolio
   - head elements with |safe
   - `<meta name="theme-color">` tag found.
   - Does not provide a valid apple-touch-icon [It must point to a non-transparent 192px (or 180px) square PNG]
+  - [index] img width and height
 
 
 ## TO DO:
+  
+  - [index] Low-contrast text (main#code, ul li)
 
-  [index]
-  - img width and height
-  - Low-contrast text (main#code, ul li)
-
-  [list]
-  - contrast with text and background
-  - meta desc
+  - [list] contrast with text and background
+  - [list] meta desc
 
 
   - fill contents
