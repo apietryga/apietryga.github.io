@@ -15,7 +15,6 @@ PWA web-dev Portfolio
 
 
 ## TO DO:
-  - Sitemap: http://www.example.com/sitemap.xml
 
   [index]
   - img width and height
@@ -30,4 +29,6 @@ PWA web-dev Portfolio
   - clear github
   - [functions] turn on serviceworker
 
+  - DOMAIN
+  - SITEMAP
 

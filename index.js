@@ -25,7 +25,6 @@ app.get('/robots.txt', (req, res) => {
   
   Sitemap: ${host}/sitemap.xml
   `);
-  return
 })
 
 app.get("/sitemap.xml", (req, res) => {
@@ -34,17 +33,25 @@ app.get("/sitemap.xml", (req, res) => {
   const host =  protocol+'://'+req.hostname;
   // console.log(host)
   const date = new Date();
+  date.ge
   const yyyymmdd = date.getFullYear()+'-'+(date.getMonth()<10?'0'+date.getMonth():date.getMonth())+'-'+(date.getDay()<10?'0'+date.getDay():date.getDay());
-
-    res.type(`application/xhtml+xml`);
-    res.send(`<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      <url>
-        <loc>${host}/index</loc>
-        <lastmod>${yyyymmdd}</lastmod>
-      </url>
-    </urlset>
-    `); return
+    res.type(`application/xml`);
+    let result = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    result += `<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">\n`;
+    // console.log(allPages.getArrayByKey('href'))
+    for(const href of allPages.getArrayByKey('href')){
+      if(['404', null].includes(href)){continue}
+      result += "<url>\n";
+      result += "  <loc>"+host+"/"+href+"<loc>\n";
+      result += "  <lastmod>"+yyyymmdd+"<lastmod>\n";
+      result += "</url>\n";
+    }
+    result += "\n</urlset>";
+    res.send(result)
 })
 
 app.get('*', (req, res) => {
