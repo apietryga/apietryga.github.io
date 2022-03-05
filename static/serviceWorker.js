@@ -3,9 +3,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(cacheVersion).then((cache) => {
       return cache.addAll([
-        '/',
-        '/style/style.min.css',
-        '/favicon.ico'
+        '/'
       ]);
     })
   );

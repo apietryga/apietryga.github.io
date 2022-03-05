@@ -4,74 +4,27 @@
   <meta charset="UTF-8">
   <title>{{title}}</title>
   <meta property="og:title" content="{{title}}" />
-  <!-- HANDLE INDEX, CONTACT -->
-  <meta name="description" content="{{lang[language].desc|safe}}">
-  <meta property="og:description" content="{{lang[language].desc|safe}}" />
-  <meta name="keywords" content="{{lang[language].category|safe}}">
-  <meta name="theme-color" content="black">
-  <meta name="author" content="apietryga">
-  <meta property="fb:app_id" content="391914688893705" />
-  <meta property="og:image:alt" content="{{title|safe}}" />
+  <meta name="description" content="{{desc}}">
+  <meta name="keywords" content="{{keywords}}">
+
+  <meta property="og:title" content="{{title}}" />
+  <meta property="og:description" content="{{desc}}" />
   <meta property="og:image" content="{{host|safe}}{{metaIMG|safe}}" />
+  <meta property="og:image:alt" content="{{title|safe}}" />
+  <meta property="og:url" content="{{fullHref|safe}}" />  
   <meta property="og:image:width" content="700" />
   <meta property="og:image:height" content="700" />
-  <meta property="og:url" content="{{fullHref|safe}}" />
   <meta property="og:type" content="website" />
 
+  <meta name="theme-color" content="black">
+  <meta name="author" content="apietryga">
   <meta name="google-site-verification" content="HiFKcOEQgBmvsSspbPCegvzrnmfGmZIilwJ5zZbh21k" />
-  <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="fb:app_id" content="391914688893705" />
+
+  <link rel="apple-touch-icon" href="{{host}}/img/icons/apple-touch-icon.png">  
+  <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon">
   <link rel="manifest" href="/js/manifest.json?v={{version|safe}}">
-  <link rel="stylesheet" href="/style/style.min.css?v={{version|safe}}">
+
   <script src="/js/functions.js" defer></script>
-  <script src="/js/search.js" defer></script>
-</head>
-<body>
-  <header class='navHeader'>
-    <div class="searchAndMenu">
-      <div class="menu">
-        <input type="checkbox" id="toggler">
-        <label for="toggler" class="toggler">
-          <div></div>
-          <div></div>
-          <div></div>
-        </label>
-        <nav> 
-          <a href="/">
-            <img src="/img/page/nav_home.svg" alt="{{pageBuild[language].nav.home}}">
-            <span>{{pageBuild[language].nav.home}}</span>
-          </a>
-          <a href="/projects">
-            <img src="/img/page/nav_projects.svg" alt="{{pageBuild[language].nav.projects}}">
-            <span>{{pageBuild[language].nav.projects}}</span>
-          </a>
-          <a href="/exps">
-            <img src="/img/page/nav_exp.svg" alt="{{pageBuild[language].nav.exps}}">
-            <span>{{pageBuild[language].nav.exps}}</span>
-          </a>
-          <a href="/contact">
-            <img src="/img/page/nav_contact.svg" alt="{{pageBuild[language].nav.contact}}">
-            <span>{{pageBuild[language].nav.contact}}</span>
-          </a>
-        </nav>
-        <div class="navShadow"></div>
-      </div>
-      <div class="searchContainer">
-        <form action="/search" method="get">
-          <label for="search">
-            <img src="/img/page/nav_lupa.svg" alt="SEARCH" />
-          </label>
-          <input type="text" name="q" id="search" list="suggest" placeholder="Search" />
-          <div class="bg"></div>
-          <div class="abort">
-            <img src="/img/page/nav_x.svg" alt="ABORT SEARCHING" />
-          </div>
-        </form>
-        <div class="suggestions">5</div>
-      </div>
-    </div>
-    <a href="/">
-      <img src="/img/icons/logo128.webp" alt="{{title}} Logo">
-    </a>
-  </header>
-  <!-- END OF HEADER -->
+  <script src="/js/allPages.js" defer></script>

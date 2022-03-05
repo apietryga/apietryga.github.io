@@ -1,0 +1,293 @@
+@use "config" as *;
+body{
+  .list{
+    min-height: calc(100vh - #{$footerHeight} - #{$navHeaderHeight});
+    margin-top:$navHeaderHeight;
+    display:flex;
+    flex-wrap:wrap;
+    position:relative;
+    justify-content:flex-start;
+    width:100%;
+    $tableBackground:$darkColor;
+    @extend %coloredATag;
+    h1{
+      margin:1rem 0 .2rem .5rem;
+    }
+    nav{
+      position:relative;
+      margin:0 auto;
+      padding: 1rem .5rem;
+      display:flex;
+      flex-direction: column;
+      span{
+        background-color:rgb(150, 150, 11);
+      }
+      section{
+        // background-color: $hoverColor;
+        border-bottom:.1rem solid rgba(0, 0, 0, 0.288);
+  
+        display:flex;
+        margin-bottom:.5rem;
+        flex-direction: column;
+        padding:.5rem 1rem;
+        >header{
+          display:flex;
+          justify-content: space-between;
+          align-items: center;
+          h2{
+            margin:.5rem 0;
+          }
+        }
+        article{
+          display:flex;
+          flex-direction: row-reverse;
+          p{
+            flex:1;
+          }
+          img{
+            width:100px;
+            height:100px;
+          }
+        }
+        footer{
+          text-align: right;
+        }
+        @media (max-width:350px){
+          flex-direction: column;
+          >header{
+            margin-top:2rem;
+          }
+          article{
+            header{
+              margin-top:.2rem;
+            }
+          }
+        }
+      }  
+    }
+  }  
+  .details{
+    position:relative;
+    margin-top:$navHeaderHeight;
+    min-height:30vh;
+    .background{
+      position:absolute;
+      width:100%;
+      height:100%;
+      z-index:-1;
+    }
+    .mainImg{
+      min-height:30vh;
+      background-position:center;
+      height:100%;
+      width:100%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        width:250px;
+        height:250px;
+      }  
+    }
+  }
+  >.content{ // content in details
+    min-height:calc( 70vh - 275px );
+    background-color: $backgroundColor;
+    padding:2rem; 
+    h1{
+      line-height: 2.5rem;
+      font-size:3rem;
+    }
+    h2{
+      line-height: 1.8rem;
+    }
+    section{
+      text-align: left;
+      display:flex;
+      flex-direction: column;
+      header,article{
+        flex:1;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        img,iframe{
+          max-width: 100%;
+        }
+      }
+      header{
+        padding:1.5rem 0;
+      }
+    }
+    .fbgroup{
+      position:relative;
+      &:before{
+        content:"";
+        position:absolute;
+        width:3rem;
+        height:3rem;
+        left:-.5rem;
+        top:-.5rem;
+        border-radius:25px;
+        background-size:100%;
+        background-repeat:no-repeat;
+        background-position: center;
+        background-image:
+        url("/img/page/contact/facebook.svg"),
+        linear-gradient(#18AAFD,#0066E2);
+      }
+    }
+    .fbpost{
+      border:2px dashed red;
+      display:flex;
+      align-items: center;
+    }
+    .externalJob{
+      border:2px dashed blue;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      padding:1rem;
+      background-color:rgba(0, 0, 0, 0.11);
+      >*{
+        border:2px dashed red;
+      }
+      img{
+        width:8rem;
+        height:8rem;
+      }
+      h3{
+        margin:.5rem;
+      }
+      p{
+        text-align:center;
+      }
+    }
+
+    @media (min-width : 720px){
+      h2{
+        margin-bottom:2rem
+      }
+      section{
+        &:nth-child(even){
+          flex-direction: row-reverse;
+        }  
+        flex-direction: row;
+        header{
+          padding:2rem;
+        }
+      }
+    }
+  }
+  .div404{
+    margin-top:$navHeaderHeight;
+    min-height: calc(70vh - 3rem);
+    background-image: url("/img/meta/404.webp");
+    background-size: cover;
+    background-position: bottom;
+    display:flex;
+    color:#fff;
+    font-size:1.2em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    h2,p{
+      background-color:rgb(3, 3, 3);
+      padding:.5rem 2rem;
+    }
+    h2{
+      border-radius:2rem 2rem 0 0;
+    }
+    p{
+      border-radius:2rem;
+     
+    }
+    a{
+      display:inline;
+    }
+    img{
+      max-height: 100%;
+      position:absolute;
+    }
+  }
+  .contact{
+    margin-top:$navHeaderHeight;
+    min-height: calc(70vh - #{$navHeaderHeight});
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:1.5rem;
+    h3,p{
+      margin:.5rem;
+    }
+    h2{margin:1rem;}
+    .socials{
+      padding:.5rem 1rem 2rem 1rem;
+      display: grid;
+      grid-template-areas:
+      'gh ph ml'
+      'mg ig fb'
+      '.  yt .';
+      @media (min-width : 350px){
+        gap:1rem;
+
+      }
+      @media (min-width : 720px){
+        grid-template-areas:
+        'gh ph ml mg'
+        '.  ig fb yt';
+      }
+      .single{
+        width:100px;
+        height:100px;
+        border-radius:25px;
+        background-size:100%;
+        background-repeat:no-repeat;
+        background-position: center;
+      }
+      .github{
+        grid-area:gh;
+        background-image:
+        url("/img/page/contact/github.svg"),
+        linear-gradient(#fff,rgb(221, 215, 215));
+      }
+      .phone{
+        grid-area:ph;
+        background-image:
+        url("/img/page/contact/phone.svg"),
+        linear-gradient(#5EF979,#09BB26);
+      }
+      .mail{
+        grid-area:ml;
+        background-image:
+        url("/img/page/contact/mail.svg"),
+        linear-gradient(#1E52EE,#19E4FF);
+      }
+      .messenger{
+        grid-area:mg;
+        background-image:
+        url("/img/page/contact/messenger.svg"),
+        linear-gradient(#00C6FF,#006EFF);
+      }
+      .insta{
+        grid-area:ig;
+        background-image:
+        url("/img/page/contact/instagram.svg"),
+        radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+      }
+      .fb{
+        grid-area:fb;
+        background-image:
+        url("/img/page/contact/facebook.svg"),
+        linear-gradient(#18AAFD,#0066E2);
+      }
+      .yt{
+        grid-area:yt;
+        background-image:
+        url("/img/page/contact/youtube.svg"),
+        linear-gradient(#DB2824,#760700);
+      }
+    }
+  }
+}

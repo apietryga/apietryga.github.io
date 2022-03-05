@@ -81,7 +81,10 @@ this.data = {
       media: [
         "uflash_praca.webp",
         "https://web.facebook.com/uflashon/videos/562031354613430",
-        "https://www.instagram.com/p/CHLXtKEh1l4/"
+        {
+          type:'igpost',
+          id: 'B9bkKoyBGAI'
+        },
       ],
       lang: {
         pl:{
@@ -135,8 +138,73 @@ this.data = {
         },
       },
     },
-    // pinky
-    // sanctuarium
+    { name:"Pinky",
+      color: "#F6B9ED",
+      img: "pinky.webp",
+      date: "2021-01-24",
+      media:[
+        "pinky_server.webp",
+        "pinky_client.webp"
+      ],
+      lang: {
+        pl: {
+          category : ["iOT","kodowanie", "Python", "django"],
+          desc : "Interaktywny asystent domu, do zdalnego kontrolowania urządzeń elektrycznych",
+          content : [
+            `Pinky łatwo dostosować do swojego mieszkania, wystarczy włączyć 
+            prosty w obsłudze serwer na komputerze lub raspberry pi`,
+            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed voluptas vitae, pariatur optio, excepturi assumenda neque illum animi ipsum id molestias consectetur necessitatibus fugit officiis blanditiis numquam repellat magnam? Assumenda.
+            Aspernatur odit eum dignissimos molestiae eveniet autem, dolore, voluptas nemo mollitia beatae ullam ratione hic consectetur, impedit magnam optio voluptatem facere quos dolorum libero maiores assumenda labore iusto. Nulla, fugit.
+            Delectus commodi porro odit velit doloribus possimus dolorem id, necessitatibus sit. Quas totam aut, laboriosam, ab neque quisquam quod possimus ea error voluptate dolorem. Totam obcaecati quam exercitationem fugit. Maiores?
+            Praesentium consectetur vero quos alias harum eaque ullam quam maxime. Placeat laboriosam maiores laudantium amet enim eligendi, voluptatibus, ratione libero asperiores ex dignissimos velit fugit! Officia voluptatum ratione illo mollitia.
+            Officia numquam culpa accusantium quis labore provident omnis ut impedit natus fuga a reprehenderit nobis cupiditate enim, inventore architecto earum libero nisi commodi. Molestias veritatis nam, mollitia facilis labore incidunt.`
+          ]              
+        },
+        en: {
+          category : ["game","coding"],
+          desc : "Interaktywny showroom, gdzie trzymam niektóre z moich projektów",
+          content : [
+            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed voluptas vitae, pariatur optio, excepturi assumenda neque illum animi ipsum id molestias consectetur necessitatibus fugit officiis blanditiis numquam repellat magnam? Assumenda.
+            Aspernatur odit eum dignissimos molestiae eveniet autem, dolore, voluptas nemo mollitia beatae ullam ratione hic consectetur, impedit magnam optio voluptatem facere quos dolorum libero maiores assumenda labore iusto. Nulla, fugit.
+            Delectus commodi porro odit velit doloribus possimus dolorem id, necessitatibus sit. Quas totam aut, laboriosam, ab neque quisquam quod possimus ea error voluptate dolorem. Totam obcaecati quam exercitationem fugit. Maiores?
+            Praesentium consectetur vero quos alias harum eaque ullam quam maxime. Placeat laboriosam maiores laudantium amet enim eligendi, voluptatibus, ratione libero asperiores ex dignissimos velit fugit! Officia voluptatum ratione illo mollitia.
+            Officia numquam culpa accusantium quis labore provident omnis ut impedit natus fuga a reprehenderit nobis cupiditate enim, inventore architecto earum libero nisi commodi. Molestias veritatis nam, mollitia facilis labore incidunt.`
+          ]              
+        },
+
+      }
+    },
+    {name:"Sanctuarium",
+      color: "#fff",
+      img: "sanctuarium.webp",
+      date: "2020-08-15",
+      media:[],
+      lang: {
+        pl: {
+          category : ["gra","kodowanie"],
+          desc : "Interaktywny showroom, gdzie trzymam niektóre z moich projektów",
+          content : [
+            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed voluptas vitae, pariatur optio, excepturi assumenda neque illum animi ipsum id molestias consectetur necessitatibus fugit officiis blanditiis numquam repellat magnam? Assumenda.
+            Aspernatur odit eum dignissimos molestiae eveniet autem, dolore, voluptas nemo mollitia beatae ullam ratione hic consectetur, impedit magnam optio voluptatem facere quos dolorum libero maiores assumenda labore iusto. Nulla, fugit.
+            Delectus commodi porro odit velit doloribus possimus dolorem id, necessitatibus sit. Quas totam aut, laboriosam, ab neque quisquam quod possimus ea error voluptate dolorem. Totam obcaecati quam exercitationem fugit. Maiores?
+            Praesentium consectetur vero quos alias harum eaque ullam quam maxime. Placeat laboriosam maiores laudantium amet enim eligendi, voluptatibus, ratione libero asperiores ex dignissimos velit fugit! Officia voluptatum ratione illo mollitia.
+            Officia numquam culpa accusantium quis labore provident omnis ut impedit natus fuga a reprehenderit nobis cupiditate enim, inventore architecto earum libero nisi commodi. Molestias veritatis nam, mollitia facilis labore incidunt.`
+          ]              
+        },
+        en: {
+          category : ["game","coding"],
+          desc : "Interaktywny showroom, gdzie trzymam niektóre z moich projektów",
+          content : [
+            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed voluptas vitae, pariatur optio, excepturi assumenda neque illum animi ipsum id molestias consectetur necessitatibus fugit officiis blanditiis numquam repellat magnam? Assumenda.
+            Aspernatur odit eum dignissimos molestiae eveniet autem, dolore, voluptas nemo mollitia beatae ullam ratione hic consectetur, impedit magnam optio voluptatem facere quos dolorum libero maiores assumenda labore iusto. Nulla, fugit.
+            Delectus commodi porro odit velit doloribus possimus dolorem id, necessitatibus sit. Quas totam aut, laboriosam, ab neque quisquam quod possimus ea error voluptate dolorem. Totam obcaecati quam exercitationem fugit. Maiores?
+            Praesentium consectetur vero quos alias harum eaque ullam quam maxime. Placeat laboriosam maiores laudantium amet enim eligendi, voluptatibus, ratione libero asperiores ex dignissimos velit fugit! Officia voluptatum ratione illo mollitia.
+            Officia numquam culpa accusantium quis labore provident omnis ut impedit natus fuga a reprehenderit nobis cupiditate enim, inventore architecto earum libero nisi commodi. Molestias veritatis nam, mollitia facilis labore incidunt.`
+          ]              
+        },
+
+      }
+    },
     { name: "Wellton",
       img: "wellton.webp",
       date: "2017-12-12",
@@ -188,7 +256,10 @@ this.data = {
       color: "red",
       media:[
         "https://www.youtube.com/embed/fDDymBgEMLk",
-        "https://www.facebook.com/watch/?v=586424458190096"
+        {
+          type: "fbvideo",
+          href: "https://fb.watch/bxEBJl9Bmk/"
+        },
       ],
       lang: {
         pl: {
@@ -229,7 +300,14 @@ this.data = {
       color: "#B05111",
       media: [
         "https://www.youtube.com/embed/-ziFSL_WbiY",
-        "https://www.instagram.com/p/-ufmdAIfqq/"
+        {
+          type: "igpost",
+          id: "-ufmdAIfqq"
+        },
+        {
+          type: "projects",
+          name: "Sanctuarium"
+        }
       ],
       lang:{
         pl:{
@@ -298,7 +376,7 @@ this.data = {
       date: "2020-01-22",
       color: "#4F9690",
       media: [
-        "/reference.1.webp"
+        "/reference/1.webp"
       ],
       lang:{
         pl:{
@@ -350,16 +428,24 @@ this.data = {
       date: "2018-11-01",
       color: "#FF6BF2",
       media:[
-        "https://www.facebook.com/cyfrowy.slask/photos/a.481559862658219/481557912658414",
-        "https://www.facebook.com/cyfrowy.slask/posts/583869765760561",
-        "projects|Kurs Cyfrowy.pl",
-        "projects|Cyfrowa Majówka",
-        "/reference/2.jpg",
-        "/reference/3.jpg",
-        "/reference/4.jpg",
-        "/reference/5.jpg",
-        "/reference/6.jpg",
+        {
+          type:'fbpost',
+          href:"https://www.facebook.com/cyfrowy.slask/photos/a.481559862658219/481557912658414",
+        },
+        {
+          type:'fbpost',
+          href:"https://www.facebook.com/cyfrowy.slask/posts/583869765760561",
+        },
+        {
+          type:'exps',
+          name: 'Kurs Cyfrowy.pl',          
+        },
         "https://www.youtube.com/embed/SgVNov7eCq0",
+        "/reference/2.webp",
+        "/reference/3.webp",
+        "/reference/4.webp",
+        "/reference/5.webp",
+        "/reference/6.webp",
       ],
       lang:{
         pl:{
@@ -415,7 +501,11 @@ this.data = {
       date: "2020-04-10",
       color: "#ADFFAD",
       media:[
-        "https://www.facebook.com/groups/kurscyfrowy",
+        {
+          type: "fbgroup",
+          img: "https://scontent.fwaw7-1.fna.fbcdn.net/v/t1.6435-9/78856084_2547039475379560_2129939445330214912_n.jpg?stp=dst-jpg_s960x960&_nc_cat=110&ccb=1-5&_nc_sid=8631f5&_nc_ohc=cDEr9duIQzcAX_jBin-&_nc_ht=scontent.fwaw7-1.fna&oh=00_AT8xNLs2QCMsHShhnnjfyYGF5PmiZD5M__dL3BGkCGI1Cw&oe=6247B527",
+          href: "https://www.facebook.com/groups/kurscyfrowy"
+        },
         "https://www.youtube.com/embed/fYKp4NstrBQ",
         "https://www.youtube.com/embed/6liLfVHJCFY",
       ],
@@ -471,7 +561,7 @@ this.data = {
       date: "2014-05-10",
       color: "#F1BF00",
       media:[
-        "yano_1.jpg"
+        "yano_1.webp"
       ],
       lang:{
         pl:{
@@ -696,7 +786,10 @@ this.data = {
       color: "#395880",
       media:[
         "https://www.youtube.com/embed/8Xbi-eyQpG0",
-        "https://www.facebook.com/111588037252415/videos/2946573035471387"
+        {
+          type: "fbvideo",
+          href: "https://www.facebook.com/111588037252415/videos/2946573035471387",
+        },
       ],
       lang:{
         pl:{
@@ -732,7 +825,7 @@ this.data = {
       date: "2017-10-11",
       color: "#464A35",
       media:[
-        "jerzymalcher_foto1.jpg",
+        "jerzymalcher_foto1.webp",
         "https://www.youtube.com/embed/2FYxPa2Uv2Y",
         "https://www.youtube.com/embed/iqlRAYE5ys0"
       ],
@@ -847,7 +940,7 @@ this.data = {
   index:{
     name: "apietryga",
     href: "index",
-    img: "index.webp",
+    img: "index.png",
     recomended:{
       code: ['Anadar', 'Webions', 'uFlash'],
       teaching: ['Śląska Akademia Senior@', 'Kurs Front-end Dev', 'Kurs Cyfrowy.pl'],
@@ -872,6 +965,7 @@ this.data = {
     lang: {
       pl: {
         desc: "ELO",
+        category: ['webdevelopment', 'fullstack', 'node developer'],
         content : [
             `Jestem`,
             `apietryga`,
@@ -893,6 +987,7 @@ this.data = {
       },
       en: {
         desc: "ELO",
+        category: ['webdevelopment', 'fullstack', 'node developer'],
         content : [
             `I'm`,
             `apietryga`,
@@ -922,6 +1017,7 @@ this.data = {
         exps: "Doświadczenie",
         contact: "Kontakt",
       },
+      readMore: 'Czytaj więcej',
     },
     en:{
       nav:{
@@ -930,6 +1026,7 @@ this.data = {
         exps: "Experience",
         contact: "Contact",
       },
+      readMore: 'Read more',
     },
   }
 }

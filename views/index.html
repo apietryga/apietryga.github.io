@@ -1,5 +1,7 @@
 {% include "header.html" %}
+  <link rel="stylesheet" href="/style/index.min.css?v={{version|safe}}">
   <script src="/js/topheader.js" defer></script>
+{% include "navHeader.html" %}
   <header class="topHeader">
     <div class="title">
       <h1>{{lang[language].content[0]| safe}}<b>{{lang[language].content[1]}}</b></h1>
@@ -25,9 +27,9 @@
       </header>
       <ul>
         {% for techElement in stack %}
-          <a href="/search?q={{techElement}}">
-            <li>{{techElement}}</li>
-          </a>
+          <li>
+            <a href="/search?q={{techElement}}">{{techElement}}</a>
+          </li>
         {% endfor %}
       </ul>
       <section>

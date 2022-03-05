@@ -12,7 +12,6 @@ nunjucks.configure('views', {
   express   : app,
   watch : true
 });
-
 app.use(express.static('static'));
 app.use(func.forceHTTPS);
 app.get('/robots.txt', (req, res) => {
@@ -26,7 +25,6 @@ app.get('/robots.txt', (req, res) => {
   Sitemap: ${host}/sitemap.xml
   `);
 })
-
 app.get("/sitemap.xml", (req, res) => {
   // DYNAMICALLY CREATE SITEMAP.XML
   const protocol = req.get('x-forwarded-proto') || req.protocol;
@@ -41,7 +39,6 @@ app.get("/sitemap.xml", (req, res) => {
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
     http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">\n`;
-    // console.log(allPages.getArrayByKey('href'))
     for(const href of allPages.getArrayByKey('href')){
       if(['404', null].includes(href)){continue}
       result += "<url>\n";
@@ -60,7 +57,7 @@ app.get('*', (req, res) => {
   if(req.get('host') == 'localhost'){
     delete require.cache[require.resolve('./static/js/data')]; data = require('./static/js/data').data;
     delete require.cache[require.resolve('./components/Pages')]; Pages = require('./components/Pages'); allPages = new Pages(data);
-    // // delete require.cache[require.resolve('./static/js/functions')]; func = require('./static/js/functions');
+    // delete require.cache[require.resolve('./static/js/functions')]; func = require('./static/js/functions');
   }
 
   // DYNAMICALLY CHANGE WEBP FORMAT TO PNG (FOR META IMAGES)
@@ -72,27 +69,29 @@ app.get('*', (req, res) => {
     }
   }
 
-
   // SET UP PAGE
   let page = {
     version: package.version,
     origin: req.originalUrl.split(/[\.\?]/g)[0] == "/" ? 'index' : req.originalUrl.replace("/","").split(/[\.\?]/g)[0],
-    language: req.headers["accept-language"]?.split(/,|-/)[0] != 'pl' ? 'en' : 'pl',
     pageBuild: data.pageBuild,
     protocol: req.get('x-forwarded-proto') || req.protocol,
   };
   page.host =  page.protocol+'://'+req.hostname;
   page.fullHref = page.protocol+'://' + req.get('host') + req.originalUrl;
+  const langField = func.parseCookies(req).lang != null ? func.parseCookies(req).lang : req.headers["accept-language"];
+  page.language = langField?.split(/,|-/)[0] != 'pl' ? 'en' : 'pl';
+
 
   const searchPages = allPages.jobs;
   if(page.origin == "searchPages"){ res.json(searchPages); return }
   // MAKE PAGE CONTENT
   if(allPages.getArrayByKey("href").includes(page.origin)){
-   const thisWork = allPages.getByKey( 'href', page.origin );
+    const thisWork = allPages.getByKey( 'href', page.origin );
     for( const key in thisWork ){
       page[key] = thisWork[key];
     }
     page.content = thisWork.getContent(page.language)
+
     if(['index','contact','404'].includes(page.origin)){
       page.template = page.origin
     }else{
@@ -133,6 +132,11 @@ app.get('*', (req, res) => {
       page.title = data.pageBuild[page.language].nav[pageBuild] + " - " + mainTitle;
     }
   }
+
+  // FILL PAGE CONTENT WITH DEFAULTS IF NOT SET
+  page.desc = page.desc || data.index.lang[page.language].desc; 
+  page.keywords = page.lang?.[page.language].category || data.index.lang[page.language].category;
+  page.metaIMG = page.metaIMG || "/"+data.index.img;
 
   res.render(page.template+".html", page);
 });

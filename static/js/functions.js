@@ -112,3 +112,25 @@ this.searchByKey = (query, scrapedContent, lang) =>{
   matchingContent.forEach(e => { filteredMatchingContent.push(e.el) })
   return filteredMatchingContent;
 }
+this.setCookie = (cname, cvalue, exdays) => {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  return cname + "=" + cvalue + ";" + expires + ";"
+}
+this.parseCookies = (request) => {
+  const list = {};
+  const cookieHeader = request.headers?.cookie || request.cookie;
+  if (!cookieHeader) return list;
+
+  cookieHeader.split(`;`).forEach(function(cookie) {
+      let [ name, ...rest] = cookie.split(`=`);
+      name = name?.trim();
+      if (!name) return;
+      const value = rest.join(`=`).trim();
+      if (!value) return;
+      list[name] = decodeURIComponent(value);
+  });
+
+  return list;
+}

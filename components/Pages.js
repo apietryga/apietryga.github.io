@@ -1,4 +1,7 @@
-const Job = require("./Job");
+// const Job = require("./Job");
+let Job = require("./Job");
+  // refresh on development
+  delete require.cache[require.resolve('./Job')]; Job = require('./Job');
 class Pages{
   constructor(data){
     this.jobs = [];
@@ -53,11 +56,17 @@ class Pages{
         result.push(single);
       }
     }
+    // console.log(result)
+    // for(const single of this.jobs){
+    //   if(single[key] == value){
+    //     single.content = single.getContent(lang);
+    //     result.push(single);
+    //   }
+    // }
+
+
+
     return result;
   }
-  // makeSiteMap(){
-
-  //   return `sitemap`;
-  // }
 }
 module.exports = Pages;

@@ -1,6 +1,5 @@
 # apietryga.com
 PWA web-dev Portfolio
-
 ## TESTING NOW:
   - hard refresh css and js
   - contact
@@ -13,20 +12,22 @@ PWA web-dev Portfolio
   - `<meta name="theme-color">` tag found.
   - Does not provide a valid apple-touch-icon [It must point to a non-transparent 192px (or 180px) square PNG]
   - [index] img width and height
-
-
-## TO DO:
-  
   - [index] Low-contrast text (main#code, ul li)
-
+  - [all] divide style.css
   - [list] contrast with text and background
   - [list] meta desc
-
-
+  - [list] read more butt
+  - SITEMAP [improve prior and date on domain]
+  - language changer
+  - cookies info div
+  - load projects in projects
+  - js onclick images gallery
+  - arrow keys up/down in search
+  - search display improve
+## TO DO:
+  - improve changing language (liveshare project err.)
+  - next / prev project / exp before footer.
   - fill contents
   - clear github
-  - [functions] turn on serviceworker
-
   - DOMAIN
-  - SITEMAP
-
+  - [functions] turn on serviceworker
