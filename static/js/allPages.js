@@ -47,7 +47,11 @@ const search = {
           e.stopPropagation();
           if(e.key == "ArrowDown"){ selectedA++ }
           if(e.key == "ArrowUp"){ selectedA-- }
-          document.querySelectorAll(".suggestions a").forEach( (a, i) =>{
+          const suggestions = document.querySelectorAll(".suggestions a");
+          if(selectedA < -1){selectedA = suggestions.length-1 }
+          if(selectedA > suggestions.length-1){selectedA = -1 }
+
+          suggestions.forEach( (a, i) =>{
             a.classList.remove("selected")
             if(selectedA == i){ a.classList.add("selected") }
           })
@@ -113,6 +117,11 @@ const langChager = {
   onSelectChange(e){
     // SET COOKIES IF NEW
     if(e.target.value != this.lang){
+      // delete old cookie if isset
+      if(parseCookies(document).lang != null){
+        eraseCookie("lang")
+      }
+      // set new cookie
       document.cookie = setCookie("lang", e.target.value, 360);
       location.reload();
     }

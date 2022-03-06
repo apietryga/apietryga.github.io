@@ -115,8 +115,11 @@ this.searchByKey = (query, scrapedContent, lang) =>{
 this.setCookie = (cname, cvalue, exdays) => {
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
-  return cname + "=" + cvalue + ";" + expires + ";"
+  expires = "; expires=" + d.toUTCString();
+  return cname + "=" + (cvalue || "")  + expires + "; path=/";
+}
+this.eraseCookie = (name) => {
+  document.cookie = name+'=; Max-Age=0;';  
 }
 this.parseCookies = (request) => {
   const list = {};

@@ -1,7 +1,7 @@
-// const Job = require("./Job");
-let Job = require("./Job");
-  // refresh on development
-  delete require.cache[require.resolve('./Job')]; Job = require('./Job');
+const Job = require("./Job");
+// let Job = require("./Job");
+//   /*refresh on development*/
+//   delete require.cache[require.resolve('./Job')]; Job = require('./Job');
 class Pages{
   constructor(data){
     this.jobs = [];

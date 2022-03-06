@@ -158,3 +158,32 @@ const photoGallery = {
   }
 }
 photoGallery.init();
+
+
+
+// // STYLING IFRAMES
+// for(let i = 0; i < frames.length; i++){
+//   if(!frames[i].frameElement.classList.contains("ytvideo")){
+//   //   const cssLink = document.createElement("link");
+//   //   cssLink.href = "/style/iframes.min.css";
+//   //   cssLink.rel = "stylesheet";
+//   //   cssLink.type = "text/css";
+//   //   console.log(frames[i].frameElement)
+//   //   frames[i].document.body.appendChild(cssLink)
+//     // frames[i].height = frames[i].contentWindow.document.body.scrollHeight + "px";
+//   }
+//   // else{
+//   //   console.log("YTVID")  
+//   // }
+// }
+
+// document.querySelectorAll("iframe").forEach(iframe => {
+//   if(!iframe.classList.contains("ytvideo")){
+//     console.log(iframe.classList)
+//     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+//     console.log(iframe.contentWindow.document.body.scrollHeight)
+//     // console.log(getComputedStyle(iframe.contentWindow.document.body.scrollHeight).height)
+
+//     // console.dir(iframe.contentWindow.document.body)
+//   }
+// })

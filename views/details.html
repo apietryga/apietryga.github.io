@@ -25,5 +25,16 @@
       {% endif %}
     </section>
   {% endfor %}
+
+  <div class="prevNextWrapper">
+    <div class="prev">
+      {{prev | safe}}
+    </div>
+    <div class="next">
+      {{next | safe}}
+    </div>
+  </div>
+
 </main>
+
 {% include "footer.html" %}

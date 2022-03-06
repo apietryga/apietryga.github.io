@@ -105,9 +105,11 @@ body{
       text-align: left;
       display:flex;
       flex-direction: column;
+      margin:2rem 0;
       header,article{
         flex:1;
         display:flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         img,iframe{
@@ -137,21 +139,23 @@ body{
       }
     }
     .fbpost{
-      border:2px dashed red;
-      display:flex;
-      align-items: center;
+      background-color:rgba(255, 255, 255, 0.63);
+    }
+    .ytvideo{
+      background-color:#000;
     }
     .externalJob{
-      border:2px dashed blue;
+      border-radius:2rem;
+      border:2px solid $darkColor;
+      box-shadow: 0 0 1rem $darkColor;
       display:flex;
       flex-direction: column;
       align-items: center;
-      padding:1rem;
-      background-color:rgba(0, 0, 0, 0.11);
-      >*{
-        border:2px dashed red;
-      }
+      padding:0 1rem;
+      background: lighten($backgroundColor, 10%);
       img{
+        // padding-top:1rem;
+        margin-top:1rem;
         width:8rem;
         height:8rem;
       }
@@ -160,8 +164,102 @@ body{
       }
       p{
         text-align:center;
+        padding:0 1rem 1rem 1rem;
       }
     }
+    .prevNextWrapper{
+      margin-top:5rem;
+      display:flex;
+      gap:1rem;
+      >div{
+        flex:1;
+        display:flex;
+        flex-direction: column;
+        >a{
+          border:.2rem solid $darkColor;
+          // border:2px dashed red;
+          background:lighten($backgroundColor, 5%);
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+          position:relative;
+          padding-bottom:1.5rem;
+          h4{
+            margin-bottom:0;
+          }
+          img{
+            width:6rem;
+            height:6rem;
+          }
+          p{
+            text-align: center;
+            padding:0 1rem;
+            &:nth-child(1){
+              font-size: 1.2rem;
+              position:absolute;
+              top:-2rem;
+              font-weight: bold;
+            }
+          }
+        }
+        >p{
+          flex:1;
+          display:flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          padding:1rem;
+          background-color: $darkColor;
+          color:$backgroundColor;
+          a{
+            line-height: 1.5rem;
+            padding:.5rem;
+          }
+        }
+      }
+      @media(max-width: 510px){
+        flex-direction: column;
+        >div:nth-child(1){
+          margin-bottom:2.5rem;
+        }
+      }
+
+    }
+    .githubContainer{
+      // border:.5rem solid #fff;
+      background-color: #000;
+      box-shadow: 0 0 1rem #000;
+      color:#fff;
+      padding:2rem;
+      border-radius: 2rem;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      .github{
+        outline:0;
+        background-color: #fff;
+        background-image: url("/img/page/contact/github.svg");
+        background-size: cover;
+        width:5rem;
+        height:5rem;
+        position:relative;
+        &:after{
+          content: '';
+          border:5px solid #000;
+          // border:5px solid red;
+          position:absolute;
+          width:calc(100% - 6px);
+          height:calc(100% - 6px); 
+          // height:calc(100% ); 
+          top:-2px;
+          left:-2px;
+        }
+      }
+      p{
+        z-index:1;
+      }
+    }
+
 
     @media (min-width : 720px){
       h2{

@@ -13,7 +13,9 @@ nunjucks.configure('views', {
   watch : true
 });
 app.use(express.static('static'));
-app.use(func.forceHTTPS);
+
+// app.use(func.forceHTTPS);
+
 app.get('/robots.txt', (req, res) => {
   // DYNAMICALLY CREATE ROBOTS.TXT
   const protocol = req.get('x-forwarded-proto') || req.protocol;
@@ -81,12 +83,12 @@ app.get('*', (req, res) => {
   const langField = func.parseCookies(req).lang != null ? func.parseCookies(req).lang : req.headers["accept-language"];
   page.language = langField?.split(/,|-/)[0] != 'pl' ? 'en' : 'pl';
 
-
   const searchPages = allPages.jobs;
   if(page.origin == "searchPages"){ res.json(searchPages); return }
   // MAKE PAGE CONTENT
   if(allPages.getArrayByKey("href").includes(page.origin)){
     const thisWork = allPages.getByKey( 'href', page.origin );
+    thisWork.makePrevNext(page.language);
     for( const key in thisWork ){
       page[key] = thisWork[key];
     }
@@ -97,7 +99,6 @@ app.get('*', (req, res) => {
     }else{
       page.template = "details";
     }
-
   }else if(allPages.lists.includes(page.origin)){
     page.template = "list";
     if(page.origin == "search"){

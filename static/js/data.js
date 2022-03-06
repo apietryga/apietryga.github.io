@@ -80,7 +80,10 @@ this.data = {
       date: "2020-03-23",
       media: [
         "uflash_praca.webp",
-        "https://web.facebook.com/uflashon/videos/562031354613430",
+        {
+          type:'igpost',
+          id: 'B5P0GPLhPoZ'
+        },
         {
           type:'igpost',
           id: 'B9bkKoyBGAI'
@@ -181,15 +184,15 @@ this.data = {
       media:[],
       lang: {
         pl: {
-          category : ["gra","kodowanie"],
-          desc : "Interaktywny showroom, gdzie trzymam niektóre z moich projektów",
+          category : ['remont', 'kodowanie', 'iOT'],
+          desc : "Interaktywny showroom, gdzie stoją niektóre z moich projektów",
           content : [
-            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed voluptas vitae, pariatur optio, excepturi assumenda neque illum animi ipsum id molestias consectetur necessitatibus fugit officiis blanditiis numquam repellat magnam? Assumenda.
-            Aspernatur odit eum dignissimos molestiae eveniet autem, dolore, voluptas nemo mollitia beatae ullam ratione hic consectetur, impedit magnam optio voluptatem facere quos dolorum libero maiores assumenda labore iusto. Nulla, fugit.
-            Delectus commodi porro odit velit doloribus possimus dolorem id, necessitatibus sit. Quas totam aut, laboriosam, ab neque quisquam quod possimus ea error voluptate dolorem. Totam obcaecati quam exercitationem fugit. Maiores?
-            Praesentium consectetur vero quos alias harum eaque ullam quam maxime. Placeat laboriosam maiores laudantium amet enim eligendi, voluptatibus, ratione libero asperiores ex dignissimos velit fugit! Officia voluptatum ratione illo mollitia.
-            Officia numquam culpa accusantium quis labore provident omnis ut impedit natus fuga a reprehenderit nobis cupiditate enim, inventore architecto earum libero nisi commodi. Molestias veritatis nam, mollitia facilis labore incidunt.`
-          ]              
+            `Mając dostęp do pomieszczenia około 30m² postanowiłem stworzyć miejsce, gdzie będę rozwijał projekty.`,
+            `Wyposażyłem pomieszczenie w system Pinky, który kontroluje światło oraz składanie i rozkładanie łóżka`,
+            
+
+
+          ]
         },
         en: {
           category : ["game","coding"],
@@ -256,10 +259,7 @@ this.data = {
       color: "red",
       media:[
         "https://www.youtube.com/embed/fDDymBgEMLk",
-        {
-          type: "fbvideo",
-          href: "https://fb.watch/bxEBJl9Bmk/"
-        },
+        "https://www.youtube.com/embed/rsp7LJa7-Fc",
       ],
       lang: {
         pl: {
@@ -371,6 +371,187 @@ this.data = {
     },
   ],
   exps:[
+    { name: "Single Courses",
+      img: "singlecourses.webp",
+      color: "#fff",
+      media: [
+        {
+          type:"github",
+          href: "https://github.com/apietryga/python"
+        },
+        {
+          type:"github",
+          href: "https://github.com/apietryga/kursjava"
+        },
+        {
+          type:"github",
+          href: "https://github.com/apietryga/kurseo"
+        },
+      ],
+      lang:{
+        pl:{
+          category:["szkolenia"],
+          desc:`Pojedyncze szkolenia, które prowadziłem nie więcej niż 3 razy.`,
+          content: [
+            /*html*/`<h3>Kurs Python</h3>
+            <ul>
+              <li>Zintegrowane Środowisko Programistyczne</li>
+              <li>Struktury danych</li>
+              <li>Podstawowe instrukcje</li>
+              <li>Zasady tworzenia dokumentacji</li>
+              <li>Funkcje</li>
+              <li>Programowanie obiektowe</li>
+              <li>Web API - django</li>
+            </ul>
+            <p>Pliki stworzone podczas tego kursu możesz zobaczyć w serwisie github</p>`,
+            
+            /*html*/`<h3>Kurs Java</h3>
+            <ul>
+              <li>Podstawy języka Java</li>
+              <li>Typy zmiennych</li>
+              <li>Metody wywoływania programów na ekranie</li>
+              <li>Funkcje matematyczne</li>
+              <li>Metody pobierania danych od użytkownika</li>
+              <li>Programowanie obiektowe w Javie</li>
+              <li>Grafika AWT i Swing</li>
+              <li>Web API - Spring</li>
+            </ul>
+            <p>Pliki stworzone podczas tego kursu możesz zobaczyć w serwisie github</p>`,
+
+            /*html*/`<h3>Kurs SEO</h3>
+            <ul>
+              <li>Optymalizacja on-page / off-page</li>
+              <li>Architektura treści</li>
+              <li>Semantyka, optymalizacja kodu</li>
+              <li>Linkowanie wewnętrzne / zewnętrzne</li>
+              <li>Mapa witryny</li>
+              <li>Działanie wyszukiwarki Google</li>
+              <li>Skanowanie, indeksowanie</li>
+              <li>Opytmalizacja UX i UI</li>
+              <li>Dobre / Złe praktyki</li>
+              <li>Słowa kluczowe</li>
+              <li>Narzędzia SEO - Ahrefs, Majestic, GTMetrix, Senuto, SemRush</li>
+              <li>Budżet i strategia</li>
+              <li>Badanie konkurencji</li>
+              <li>Domena i Hosting</li>
+              <li>Narzędzia google - Analytics, Search Console, Merchant, Buisness</li>
+              <li>Blog jako miejsce budowy contentu</li>
+            </ul>
+
+            <p>
+              Na tym kursie praktycznie wprowadzaliśmy poznane technologie. Jednym z wyników tego kursu
+              jest strona poświęcona tematyce drzewek bonsai - wpisz w google "strona o bonzajach" 
+              - pierwszym wynikiem będzie <a href="https://apietryga.github.io/kurseo/" target="_blank"><b>ta strona</b></a>
+            </p>
+
+            `,
+
+            /*html*/`<h3>Social Media w Biznesie</h3>
+            <ul>
+              <li>Mechanizmy SM</li>
+              <li>Psychologia użytkownika</li>
+              <li>SM w sprzedaży i marketingu</li>
+              <li>Strategia działania</li>
+              <li>Facebook jako narzędzie wykorzystywane przez biznes - case study</li>
+              <li>LinkedIn jako narzędzie do budowania marki - case study</li>
+              <li>Wykorzystanie w biznesie Twitter, Youtube, Instagram, Google</li>
+              <li>Przeszłe i przyszłe trendy</li>
+              <li>short video, tiktok</li>
+              <li>Content marketing</li>
+              <li>Webwriting, copywriting</li>
+              <li>Świadomość marki</li>
+              <li>Tworzenie reklam / ogłoszeń</li>
+            </ul>
+            <p>
+              Ten kurs trwał 3 dni, stąd mieliśmy czas tylko na teorię popartą przykładami, 
+              ale social media kursantów zmieniły się nie do poznania.
+            </p>
+            `,
+          ]
+        },
+        en:{
+          category:["courses"],
+          desc:`Single courses that I have conducted no more than 3 times.`,
+          content: [
+            /*html*/`<h3>Python Course</h3>
+            <ul>
+              <li>Integrated Development Environment</li>
+              <li>Data structures</li>
+              <li>Basic instructions</li>
+              <li>Principles of creating documentation</li>
+              <li>Funcions</li>
+              <li>Object oriented programming (OOP)</li>
+              <li>Web API - django</li>
+            </ul>
+            <p>You can see the files created during this course on github</p>`,
+            
+            /*html*/`<h3>Java Course</h3>
+            <ul>
+              <li>Basics of the Java language</li>
+              <li>Variable types</li>
+              <li>Methods of calling programs on the screen</li>
+              <li>Math functions</li>
+              <li>Methods of retrieving data from the user</li>
+              <li>Object-oriented programming in Java</li>
+              <li>AWT and Swing graphics</li>
+              <li>Web API - Spring</li>
+              <li>Basics of the Java language</li>
+            </ul>
+            <p>You can see the files created during this course on github</p>`,
+
+            /*html*/`<h3>SEO Course</h3>
+            <ul>
+              <li>On-page / off-page optimization</li>
+              <li>Content Architecture</li>
+              <li>Semantics, code optimization</li>
+              <li>Internal / external linking</li>
+              <li>Site Map</li>
+              <li>The operation of the Google search engine</li>
+              <li>Scanning, indexing</li>
+              <li>UX and UI optimization</li>
+              <li>Good / Bad practices</li>
+              <li>Keywords</li>
+              <li>SEO tools - Ahrefs, Majestic, GTMetrix, Senuto, SemRush</li>
+              <li>Budget and strategy</li>
+              <li>Competition research</li>
+              <li>Domain and Hosting</li>
+              <li>Google tools - Analytics, Search Console, Merchant, Buisness</li>
+              <li>Blog as a place to build content</li>
+            </ul>
+
+            <p>
+              In this course, we practically introduced the known technologies. One of the results of this course 
+              is a website dedicated to bonsai trees - try to google "strona o bonzajach" 
+              - the first result will be <a href="https://apietryga.github.io/kurseo/" target="_blank"><b>this page</b></a>
+            </p>
+            `,
+
+            /*html*/`<h3>Social Media in Business</h3>
+            <ul>
+              <li>Mechanisms of MS</li>
+              <li>User psychology</li>
+              <li>SM in sales and marketing</li>
+              <li>Action strategy</li>
+              <li>Facebook as a tool used by business - case study</li>
+              <li>LinkedIn as a brand building tool - case study</li>
+              <li>Use in business Twitter, Youtube, Instagram, Google</li>
+              <li>Past and future trends</li>
+              <li>Short video content, tiktok</li>
+              <li>Content marketing</li>
+              <li>Webwriting, Copywriting</li>
+              <li>Brand awareness</li>
+              <li>Creation of advertisements / announcements</li>
+            </ul>
+            <p>
+              This course lasted 3 days, so we had time only for the theory supported by examples, 
+              but the students' social media changed beyond recognition.
+            </p>
+            `,
+          ]
+        },
+
+      }
+    },
     { name: "Kurs Front-end Dev",
       img: "sfedev.webp",
       date: "2020-01-22",
@@ -383,7 +564,7 @@ this.data = {
           category: ["szkolenia","webdevelopment"],
           desc : "Szkolenie podstaw programowania aplikacji WEB",
           content:[
-            `Przeprowadziłem ponad 500 godzin szkoleń z programowania
+            `Przeprowadziłem ponad 1000 godzin szkoleń z programowania
             front-end developer. Szkolenia są skierowane dla
             osób poszukujących swojej ścieżki zawowdowej. Na kursie 
             uczą się podstaw wymaganych do pracy w zawodzie.`,
@@ -391,12 +572,13 @@ this.data = {
             - HTML5<br />
             - CSS3 wraz z preprocesorami SASS, LESS, SCSS <br />
             - Bootstrap 4 <br />
-            - JS6 + jQuery, AngularJS / React<br />
+            - JavaScript (JS ES6) + jQuery, AngularJS / React<br />
             - SEO<br />
             - PHP (na potrzeby WP)<br />
             - CMS WordPress<br />
             - GIT<br />
-            - NPM<br />`,
+            - NPM<br />
+            - Node.js (nodejs)`,
             `Kurs jest elastyczny i wrzechstronny. Zbieram bardzo pozytywne referencje.`,
           ],              
         },
@@ -404,7 +586,7 @@ this.data = {
           category: ["courses","webdevelopment"],
           desc : "Course of the basics WEB application programming",
           content:[
-            `I have conducted over 500 hours of programming training
+            `I have conducted over 1000 hours of programming training
             front-end developer. The training courses are aimed at
             people looking for their professional path. On the course
             learn the basics required to work in the profession.`,
@@ -412,12 +594,13 @@ this.data = {
             - HTML5 <br />
             - CSS3 with SASS, LESS, SCSS preprocessors <br />
             - Bootstrap 4 <br />
-            - JS6 + jQuery, AngularJS / React <br />
+            - JavaScript (JS) + jQuery, AngularJS / React <br />
             - SEO <br />
             - PHP (for WP purposes) <br />
             - CMS WordPress <br />
             - GIT <br />
-            - NPM <br /> `,
+            - NPM <br /> 
+            - Node.js (nodejs)`,
             `The course is flexible and comprehensive. I am collecting very positive references.`,
           ],              
         },
@@ -426,7 +609,7 @@ this.data = {
     { name: "Śląska Akademia Senior@",
       img: "slaskaakademiaseniora.webp",
       date: "2018-11-01",
-      color: "#FF6BF2",
+      color: "#FFD1F2",
       media:[
         {
           type:'fbpost',
@@ -436,23 +619,23 @@ this.data = {
           type:'fbpost',
           href:"https://www.facebook.com/cyfrowy.slask/posts/583869765760561",
         },
+        "/reference/4.webp",
+        "/reference/3.webp",
         {
           type:'exps',
           name: 'Kurs Cyfrowy.pl',          
         },
         "https://www.youtube.com/embed/SgVNov7eCq0",
-        "/reference/2.webp",
-        "/reference/3.webp",
-        "/reference/4.webp",
         "/reference/5.webp",
-        "/reference/6.webp",
       ],
       lang:{
         pl:{
           category: ["szkolenia","społeczne","film"],
           desc: "Szkolenia kompetencji cyfrowych",
           content: [
-            `W tym projekcie rozpocząłem karierę Trenera.`,
+            `Karierę trenera rozpocząłem od kursów obsługi komputera dla seniorów.
+            Grupa kursantów w tym wieku jest naprawdę wdzięczna i przepełniona
+            doświadczeniem życiowym. Nauczyłem się prowadzić zajęcia w sposób jak najbardziej przejrzysty.`,
             `Prowadziłem szkolenia z zakresu <br />
               - Obsługa podstawowych programów Windows (Paint, Rejestrator głosu, aparat, Edytor Video) <br />
               - Obsługa pakietu MS OFFICE, a także Google Docs (Word, Excel, PowerPoint - a także odpowiedniki Docs, Sheets)<br />
@@ -478,7 +661,9 @@ this.data = {
           category: ["courses","social","movie"],
           desc: "Course of digital competences",
           content: [
-            `In this project I started my career as a Trainer .`,
+            `I started my career as a trainer with computer skills courses for seniors.
+            The student group of this age is really thankful and overcrowded
+            life experience. I learned to conduct classes as transparently as possible.`,
             `I conducted trainings in the field of <br />
               - Support for basic Windows programs (Paint, Voice Recorder, Camera, Video Editor) <br />
               - Support for MS OFFICE package, as well as Google Docs (Word, Excel, PowerPoint - as well as Docs, Sheets equivalents) <br />
@@ -501,6 +686,7 @@ this.data = {
       date: "2020-04-10",
       color: "#ADFFAD",
       media:[
+        "kurscyfrowy_plakat.webp",
         {
           type: "fbgroup",
           img: "https://scontent.fwaw7-1.fna.fbcdn.net/v/t1.6435-9/78856084_2547039475379560_2129939445330214912_n.jpg?stp=dst-jpg_s960x960&_nc_cat=110&ccb=1-5&_nc_sid=8631f5&_nc_ohc=cDEr9duIQzcAX_jBin-&_nc_ht=scontent.fwaw7-1.fna&oh=00_AT8xNLs2QCMsHShhnnjfyYGF5PmiZD5M__dL3BGkCGI1Cw&oe=6247B527",
@@ -636,6 +822,11 @@ this.data = {
       img: "tomigra.webp",
       date: "2015-09-03",
       color: "#B2EF6B",
+      media:[
+        "tomigra1.webp",
+        "tomigra2.webp",
+        "tomigra3.webp",
+      ],
       lang:{
         pl:{
           category: ["webdevelopment", "HTML", "CSS", "JS", "jQuery"],
@@ -864,7 +1055,12 @@ this.data = {
       color: "#193840",
       media:[
         "https://www.youtube.com/embed/ZlfrefYtBI0",
-        "https://www.instagram.com/p/B4FN5NHAfQB/",
+        {
+          type:"igpost",
+          id:"B4FN5NHAfQB"
+
+        },
+        // "https://www.instagram.com/p/B4FN5NHAfQB/",
       ],
       lang:{
         pl:{

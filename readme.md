@@ -24,10 +24,20 @@ PWA web-dev Portfolio
   - js onclick images gallery
   - arrow keys up/down in search
   - search display improve
-## TO DO:
   - improve changing language (liveshare project err.)
   - next / prev project / exp before footer.
-  - fill contents
+  - [Pages.js] turn off refreshing
+  - update style onload (iframes)
+  - moon bottom of #code
+  - details elements css
+  - jumping lang in menu
   - clear github
-  - DOMAIN
+  - remove refresh from pages
+## TO DO:
+  - fill contents
+  - improve categories
   - [functions] turn on serviceworker
+  - DOMAIN
+    - apietryga.com redirect
+    -
+  - analytics

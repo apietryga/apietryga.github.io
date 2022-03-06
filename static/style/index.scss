@@ -243,6 +243,7 @@
 #code{
   overflow-y: hidden;
   background-color:$backgroundColor;
+  position:relative;
   .codeprojects{
     width:100%;
     display:flex;
@@ -373,13 +374,18 @@
     margin-top:$navHeaderHeight;
   }
   >p{
-    // border:2px dashed green;
-    // width:60%;
     padding:2rem 0 2rem 2rem;
     line-height:1.5rem;
   }
   section{
     @extend %rowSection;
     padding:2rem 0;
+  }
+}
+#code,#teaching,#business{
+  footer{
+    a{
+      text-align: center!important;
+    }
   }
 }

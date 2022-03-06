@@ -2,6 +2,7 @@ document.addEventListener('scroll', e => {
   const vh = Math.round( (window.scrollY * 100)/window.innerHeight );
   if(vh < 100){
     document.querySelectorAll(".topHeader >*").forEach(e => {
+      if(!e.classList.contains("background")){e.style.opacity = 1;}
       if(['next', 'mask photo'].includes(e.className)){
         return;
       }else if(e.classList.contains("mountains")){
@@ -16,5 +17,10 @@ document.addEventListener('scroll', e => {
         e.style.backgroundColor = 'rgba(0,0,0, '+((vh/2 + 70)/100)+')';return;
       }
     })
+  }else{
+    document.querySelectorAll(".topHeader >*").forEach(e => {
+      if(!e.classList.contains("background")){e.style.opacity = 0;}
+    })
+
   }
 })
