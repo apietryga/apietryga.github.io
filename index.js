@@ -87,10 +87,14 @@ app.get('*', (req, res) => {
   if(page.origin == "searchPages"){ res.json(searchPages); return }
   // MAKE PAGE CONTENT
   if(allPages.getArrayByKey("href").includes(page.origin)){
-    const thisWork = allPages.getByKey( 'href', page.origin );
+    const thisWork = allPages.getByKey('href', page.origin);
+    // const thisWork = allPages.getByKey('name', page.name);
     thisWork.makePrevNext(page.language);
     for( const key in thisWork ){
       page[key] = thisWork[key];
+      if(key == 'lang'){
+        page.desc = thisWork.lang[page.language].desc;
+      }
     }
     page.content = thisWork.getContent(page.language)
 
@@ -135,7 +139,8 @@ app.get('*', (req, res) => {
   }
 
   // FILL PAGE CONTENT WITH DEFAULTS IF NOT SET
-  page.desc = data.index.lang[page.language].desc || page.desc; 
+  console.log(page.desc)
+  page.desc = page.desc || data.index.lang[page.language].desc; 
   page.keywords = page.lang?.[page.language].category || data.index.lang[page.language].category;
   page.metaIMG = page.metaIMG || "/"+data.index.img;
 
