@@ -117,10 +117,17 @@ const langChager = {
   onSelectChange(e){
     // SET COOKIES IF NEW
     if(e.target.value != this.lang){
+      // clear serviceworker cache
+      caches.keys().then(function(names) {
+        for (let name of names)
+            caches.delete(name);
+      });
+      
       // delete old cookie if isset
       if(parseCookies(document).lang != null){
         eraseCookie("lang")
       }
+
       // set new cookie
       document.cookie = setCookie("lang", e.target.value, 360);
       location.reload();

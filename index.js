@@ -135,7 +135,7 @@ app.get('*', (req, res) => {
   }
 
   // FILL PAGE CONTENT WITH DEFAULTS IF NOT SET
-  page.desc = page.desc || data.index.lang[page.language].desc; 
+  page.desc = data.index.lang[page.language].desc || page.desc; 
   page.keywords = page.lang?.[page.language].category || data.index.lang[page.language].category;
   page.metaIMG = page.metaIMG || "/"+data.index.img;
 

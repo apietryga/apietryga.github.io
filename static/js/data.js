@@ -430,7 +430,7 @@ this.data = {
       lang:{
         pl:{
           category:["szkolenia", "Python", "django", "Java", "Spring", "SEO"],
-          desc:`Pojedyncze szkolenia, które prowadziłem nie więcej niż 3 razy.`,
+          desc:`Pojedyncze szkolenia, które prowadziłem nie więcej niż 5 razy.`,
           content: [
             /*html*/`<h3>Kurs Python</h3>
             <ul>
@@ -510,7 +510,7 @@ this.data = {
         },
         en:{
           category:["courses", "Python", "django", "Java", "Spring", "SEO"],
-          desc:`Single courses that I have conducted no more than 3 times.`,
+          desc:`Single courses that I have conducted no more than 5 times.`,
           content: [
             /*html*/`<h3>Python Course</h3>
             <ul>
@@ -1176,9 +1176,9 @@ this.data = {
     href: "index",
     img: "index.png",
     recomended:{
-      code: ['Anadar', 'Webions', 'uFlash'],
-      teaching: ['Śląska Akademia Senior@', 'Kurs Front-end Dev', 'Kurs Cyfrowy.pl'],
-      business: ['Wellton', 'Bombel Tyj', 'GoodLock'],
+      code: ['Anadar', 'Webions', 'Pinky'],
+      teaching: ['Śląska Akademia Senior@', 'Kurs Front-end Dev', 'Single Courses'],
+      business: ['Wellton', 'Bombel Tyj', 'uFlash'],
     },
     stack:[
       'HTML',
