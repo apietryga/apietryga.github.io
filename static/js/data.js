@@ -4,14 +4,14 @@ this.data = {
       media:[
         "https://www.youtube.com/embed/X7MoF4tvf2Q",
         "anadar_restauracje.webp",
-        "anadar_skanery.webp"
+        "anadar_locals.webp"
       ],
       img: "anadar.webp",
       date: "2018-09-01",
       color: "white",
       lang: {
         pl : {
-          category: ["biznes", "nauka", "film", "kodowanie"],
+          category: ["biznes", "nauka", "film", "kodowanie","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL"],
           desc: "Platforma dla przedsiębiorców, do kontrolowania i rozwijania swojego biznesu",
           content: [
             `Anadar jest cyfrową syntezą teorii nauki zarządzania. 
@@ -23,11 +23,13 @@ this.data = {
             integruje kuchnię z ladą oraz automatycznie dokonuje analizy sytuacji firmy.`,
             `W grudnio 2018 roku powstał koncept kart rabatowych, wspomagających 
             kooperacje lokalnych przedsiębiorstw.`,
-            `Produkt aktualnie testowany w wersji beta.`
+            `W 2021 roku, w związku z rozwojem projektu Bobel Tyj Anadar został porzeszony o wtyczkę
+            "Anadar Locals", która jest zintegrowana z kasą fiskalną oraz kuchnią, co przyspiesza 
+            procesy zamawiania i produkcji.`
           ],
         },
         en : {
-          category: ["business", "education", "movie", "coding"],
+          category: ["business", "education", "movie", "coding","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL"],
           desc: "A web platform for enterpeurs to control and developing business",
           content: [
             `Anadar is a digital synthesis of management science theory.
@@ -39,7 +41,9 @@ this.data = {
               integrates the kitchen with the counter and automatically analyzes the company's situation.
               In December 2018, project get the concept of rebate cards which supports
               cooperation of local enterprises`,
-              `Product currently in beta testing .`
+              `In 2021, due to the development of the project, Bombel Tyj Anadar was awarded a plug
+              "Anadar Locals", which is integrated with the cash register and the kitchen, which makes it faster
+              ordering and production processes`,
           ],                
         }
       }
@@ -48,27 +52,46 @@ this.data = {
       img: "webions.webp",
       date: "2018-09-01",
       color: "#222",
+      media:[
+        'https://www.youtube.com/embed/vgn3TVi4fU0',
+        'webions_1.webp',
+        {
+          type:'github',
+          href: 'https://github.com/apietryga/webions2',
+        },
+      ],
       lang: {
         pl: {
-          category : ["gra","kodowanie"],
+          category : ["gra","kodowanie","HTML", "SCSS","JavaScript", "JS", "Node.js","Redis"],
           desc : "Webions jest grą MMORPG, dostępną na przeglądarkach.",
           content : [
-            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed voluptas vitae, pariatur optio, excepturi assumenda neque illum animi ipsum id molestias consectetur necessitatibus fugit officiis blanditiis numquam repellat magnam? Assumenda.
-            Aspernatur odit eum dignissimos molestiae eveniet autem, dolore, voluptas nemo mollitia beatae ullam ratione hic consectetur, impedit magnam optio voluptatem facere quos dolorum libero maiores assumenda labore iusto. Nulla, fugit.
-            Delectus commodi porro odit velit doloribus possimus dolorem id, necessitatibus sit. Quas totam aut, laboriosam, ab neque quisquam quod possimus ea error voluptate dolorem. Totam obcaecati quam exercitationem fugit. Maiores?
-            Praesentium consectetur vero quos alias harum eaque ullam quam maxime. Placeat laboriosam maiores laudantium amet enim eligendi, voluptatibus, ratione libero asperiores ex dignissimos velit fugit! Officia voluptatum ratione illo mollitia.
-            Officia numquam culpa accusantium quis labore provident omnis ut impedit natus fuga a reprehenderit nobis cupiditate enim, inventore architecto earum libero nisi commodi. Molestias veritatis nam, mollitia facilis labore incidunt.`
+            `W wieku szkolnym mnóstwo czasu poświęcałem grze Tibia. Zawsze kiedy odchodziłem od komputera,
+            bolało mnie to, że nie mogę wyciągnąć telefonu i rozwijać postaci poza komputerem. Kiedy poznałem
+            technologię Node.js, uznałem ją za nieocenioną technologię (javascript everywhere) i postanowiłem 
+            stworzyć coś ciekawego. Łącząc kropki padło na wersję Tibii, w którą dałoby się grać na wszystkich urządzeniach`,
+            `Webions oferuje mały świat z kilkoma 
+              potworami, itemami, lootingiem, questami 
+              fist Fightigiem, distance Fightingiem, mwalls'ami, 
+              automatycznym shootiniem i auto mwall'ami,
+              - a to wszystko tylko po wejściu na stronę w przeglądarce`,
+            `Aby każdy fan Tibii mógł cieszyć się tą grą - udostępniłem publiczne repozytorium z grą - wystarczy otworzyć serwer.js node.js'em . (lub wrzucić na heroku)`,
+            `Chcesz zagrać? Wystarczy, że wejdziesz na <b><a href="http://webions.herokuapp.com/" target="_blank">http://webions.herokuapp.com/</a></b>`
           ]              
         },
         en: {
-          category : ["game","coding"],
+          category : ["game","coding","HTML", "SCSS","JavaScript", "JS", "Node.js","Redis"],
           desc : "Webions is a MMORPG game, avalible on browsers.",
           content : [
-            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed voluptas vitae, pariatur optio, excepturi assumenda neque illum animi ipsum id molestias consectetur necessitatibus fugit officiis blanditiis numquam repellat magnam? Assumenda.
-            Aspernatur odit eum dignissimos molestiae eveniet autem, dolore, voluptas nemo mollitia beatae ullam ratione hic consectetur, impedit magnam optio voluptatem facere quos dolorum libero maiores assumenda labore iusto. Nulla, fugit.
-            Delectus commodi porro odit velit doloribus possimus dolorem id, necessitatibus sit. Quas totam aut, laboriosam, ab neque quisquam quod possimus ea error voluptate dolorem. Totam obcaecati quam exercitationem fugit. Maiores?
-            Praesentium consectetur vero quos alias harum eaque ullam quam maxime. Placeat laboriosam maiores laudantium amet enim eligendi, voluptatibus, ratione libero asperiores ex dignissimos velit fugit! Officia voluptatum ratione illo mollitia.
-            Officia numquam culpa accusantium quis labore provident omnis ut impedit natus fuga a reprehenderit nobis cupiditate enim, inventore architecto earum libero nisi commodi. Molestias veritatis nam, mollitia facilis labore incidunt.`
+            `In school age, I spent a lot of time playing Tibia. Whenever I walked away from my computer
+            it hurt me not being able to pull out my phone and develop characters outside of the computer. When i met
+            Node.js technology, found it an invaluable technology (javascript everywhere) and decided to
+            create something interesting. Connecting the dots i decide to make version of Tibia that could be played on all devices`,
+            `Webions offers a small world with a few monsters, items, looting, quests 
+            fist Fightig, distance Fighting, mwalls, 
+            Automation shooting, Automaton Mwalls,
+            - and all this only after entering the website in the browser`,
+            `So that every Tibia fan can enjoy this game - I have made available a public repository - just open sewer.js by node.js (or push this repository to heroku)`,
+            `Do you want to play? Just go to <b> <a href="http://webions.herokuapp.com/" target="_blank"> http://webions.herokuapp.com/ </a> </b>`,
           ]              
         },
 
@@ -91,27 +114,27 @@ this.data = {
       ],
       lang: {
         pl:{
-          category: ["biznes","IoT","film","kodowanie"],
+          category: ["biznes","IoT","film","kodowanie","HTML", "CSS", "PHP", "JavaScript", "JS"],
           desc: "Interaktywne fotolustro przeznaczone na imprezy okolicznościowe lub do miejsc kultury",
           content : [
             `Lustro o wymiarach 160 x 80cm sprawia, że produkt 
             jest jednym z największych tego typu dostępnych na rynku.`,
             `Dzięki prostemu WEB interface lustro potrafi w prosty sposób
             komunikować się z urządzeniami obsługującymi przeglądarki (komputery, tablety, telefony)`,
-            `Więcej informacji znajdziesz na stronie
-            <a href='http://apietryga.web.app/uflash.pl/' target='_blank'>uFlash.pl</a>`
+            `Więcej informacji znajdziesz
+            <a href='http://apietryga.web.app/uflash.pl/' target='_blank'>na tej stronie</a>`
           ],    
         },
         en : {
-          category: ["business","IoT","movie","coding"],
+          category: ["business","IoT","movie","coding","HTML", "CSS", "PHP", "JavaScript", "JS"],
           desc: "Interactive photo-mirror created for events or cultural places",
           content : [
             `A mirror measuring 160 x 80cm makes the product
             is one of the largest of its kind available on the polish market.`,
             `Thanks to the simple WEB interface, the mirror can be used in a simple way
             communicate with devices that support browsers (computers, tablets, phones).`,
-            `For more information, see the website
-            <a href='http://apietryga.web.app/uflash.pl/' target='_blank'> uFlash.pl </a> `,
+            `For more information
+            <a href='http://apietryga.web.app/uflash.pl/' target='_blank'> see this website </a> `,
           ],    
         }
       },
@@ -120,23 +143,29 @@ this.data = {
       color:"#DC468E",
       img: "bombeltyj.webp",
       date: "2021-03-23",
+      media:[
+        'bombeltyj_1.webp',
+        'bombeltyj_2.webp',
+      ],
       lang:{
         pl:{
-          category: ["biznes"],
+          category: ['biznes', 'remont', '3d'],
           desc: "Restauracja serwująca bubble-tea",
           content: [
-            `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, officia.`,
-            `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, officia.`,
-            `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, officia.`,
+            `Przekształciliśmy lokal przemysłowy w gastronomiczny - wymagało to mnóstwa
+            projektowania i planowania, do czego używaliśmy projektów 3D`,
+            `Robiliśmy też sesje zdjęciowe produktów, które odbywały się na </b>Sanctuarium<b>.`,
+            `Już niedługo otwieramy!`,
           ]
         },
         en:{
-          category: ["business"],
+          category: ['renovations','business', '3d'],
           desc: "Restaurant serving bubble-tea",
           content: [
-            `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, officia.`,
-            `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, officia.`,
-            `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, officia.`,
+            `We turned an industrial into a gastronomic establishment - it took a lot
+             design and planning, for which we used 3D projects`,
+             `We also did product photoshoots at </b> Sanctuarium <b> .`,
+             `We're opening soon!`,
           ]
         },
       },
@@ -147,65 +176,75 @@ this.data = {
       date: "2021-01-24",
       media:[
         "pinky_server.webp",
-        "pinky_client.webp"
+        "pinky_nest.webp",
       ],
       lang: {
         pl: {
-          category : ["iOT","kodowanie", "Python", "django"],
+          category : ["iOT","kodowanie", "Python", "django", "CPP", "Arduino", "HTML", "CSS"],
           desc : "Interaktywny asystent domu, do zdalnego kontrolowania urządzeń elektrycznych",
           content : [
             `Pinky łatwo dostosować do swojego mieszkania, wystarczy włączyć 
-            prosty w obsłudze serwer na komputerze lub raspberry pi`,
-            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed voluptas vitae, pariatur optio, excepturi assumenda neque illum animi ipsum id molestias consectetur necessitatibus fugit officiis blanditiis numquam repellat magnam? Assumenda.
-            Aspernatur odit eum dignissimos molestiae eveniet autem, dolore, voluptas nemo mollitia beatae ullam ratione hic consectetur, impedit magnam optio voluptatem facere quos dolorum libero maiores assumenda labore iusto. Nulla, fugit.
-            Delectus commodi porro odit velit doloribus possimus dolorem id, necessitatibus sit. Quas totam aut, laboriosam, ab neque quisquam quod possimus ea error voluptate dolorem. Totam obcaecati quam exercitationem fugit. Maiores?
-            Praesentium consectetur vero quos alias harum eaque ullam quam maxime. Placeat laboriosam maiores laudantium amet enim eligendi, voluptatibus, ratione libero asperiores ex dignissimos velit fugit! Officia voluptatum ratione illo mollitia.
-            Officia numquam culpa accusantium quis labore provident omnis ut impedit natus fuga a reprehenderit nobis cupiditate enim, inventore architecto earum libero nisi commodi. Molestias veritatis nam, mollitia facilis labore incidunt.`
+            prosty w obsłudze serwer na komputerze lub raspberry pi. 
+            System jest wyposażony w rozpoznawanie mowy oraz w hotword "Pinky" - oparty na PocketSphinx 
+            - jedynym systemie jaki znalazłem, który nie wymaga połączenia z internetem (stąd decyzja o stworzeniu 
+              projektu w Pythonie)`,
+            `Cały system składa się z serwera (Python + django) oraz systemu gniazdek "Pinky Nest", 
+            które zbudowałem na modułach ESP8266`,
+            `Na Sanctuarium zastosowałem Pinky Nest Hidden - czyli te same konstrukcje, lecz ukryte 
+            w ścianie.`
           ]              
         },
         en: {
-          category : ["game","coding"],
-          desc : "Interaktywny showroom, gdzie trzymam niektóre z moich projektów",
+          category : ["iOT","coding", "Python", "django", "CPP", "Arduino", "HTML", "CSS"],
+          desc : "Interactive home assistant for remote control of electrical appliances",
           content : [
-            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed voluptas vitae, pariatur optio, excepturi assumenda neque illum animi ipsum id molestias consectetur necessitatibus fugit officiis blanditiis numquam repellat magnam? Assumenda.
-            Aspernatur odit eum dignissimos molestiae eveniet autem, dolore, voluptas nemo mollitia beatae ullam ratione hic consectetur, impedit magnam optio voluptatem facere quos dolorum libero maiores assumenda labore iusto. Nulla, fugit.
-            Delectus commodi porro odit velit doloribus possimus dolorem id, necessitatibus sit. Quas totam aut, laboriosam, ab neque quisquam quod possimus ea error voluptate dolorem. Totam obcaecati quam exercitationem fugit. Maiores?
-            Praesentium consectetur vero quos alias harum eaque ullam quam maxime. Placeat laboriosam maiores laudantium amet enim eligendi, voluptatibus, ratione libero asperiores ex dignissimos velit fugit! Officia voluptatum ratione illo mollitia.
-            Officia numquam culpa accusantium quis labore provident omnis ut impedit natus fuga a reprehenderit nobis cupiditate enim, inventore architecto earum libero nisi commodi. Molestias veritatis nam, mollitia facilis labore incidunt.`
+            `Pinky is easy to adapt to your apartment, just switch it on
+             easy to use server on a computer or raspberry pi.
+             The system is equipped with speech recognition and the hotword "Pinky" - based on PocketSphinx
+             - the only system I found that does not require an internet connection (hence the decision to create
+              this project in Python)`,
+             `The whole system consists of a server (Python + django) and a socket system "Pinky Nest",
+             which I built on ESP8266 modules`,
+             `At Sanctuarium, I used Pinky Nest Hidden - the same constructions, but hidden
+             in the wall`,
           ]              
         },
 
       }
     },
-    {name:"Sanctuarium",
+    { name:"Sanctuarium",
       color: "#fff",
       img: "sanctuarium.webp",
       date: "2020-08-15",
-      media:[],
+      media:[
+        "https://www.youtube.com/embed/bjks8oaKip4",
+        "sanctuarium_2.webp",
+        "sanctuarium_3.webp",
+      ],
       lang: {
         pl: {
           category : ['remont', 'kodowanie', 'iOT'],
-          desc : "Interaktywny showroom, gdzie stoją niektóre z moich projektów",
+          desc : "Interaktywny showroom, w którym tworzę i testuję projekty",
           content : [
             `Mając dostęp do pomieszczenia około 30m² postanowiłem stworzyć miejsce, gdzie będę rozwijał projekty.`,
-            `Wyposażyłem pomieszczenie w system Pinky, który kontroluje światło oraz składanie i rozkładanie łóżka`,
-            
-
-
+            `Poza interaktywnymi projektami, jak uFlash czy Wellton, Sanctuarium wyposażone jest
+            w system Pinky, który kontroluje światło oraz składanie i rozkładanie łóżka`,
+            `Choć domyślnie służy jako biuro, miejsce świetnie sprawdza się w każdego rodzaju inicjatywach
+            takich jak sesje zdjęciowe czy studio nagrań.`,
           ]
         },
         en: {
-          category : ["game","coding"],
-          desc : "Interaktywny showroom, gdzie trzymam niektóre z moich projektów",
+          category : ['renovations', 'coding', 'iOT'],
+          desc : "An interactive showroom where I create and test projects",
           content : [
-            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed voluptas vitae, pariatur optio, excepturi assumenda neque illum animi ipsum id molestias consectetur necessitatibus fugit officiis blanditiis numquam repellat magnam? Assumenda.
-            Aspernatur odit eum dignissimos molestiae eveniet autem, dolore, voluptas nemo mollitia beatae ullam ratione hic consectetur, impedit magnam optio voluptatem facere quos dolorum libero maiores assumenda labore iusto. Nulla, fugit.
-            Delectus commodi porro odit velit doloribus possimus dolorem id, necessitatibus sit. Quas totam aut, laboriosam, ab neque quisquam quod possimus ea error voluptate dolorem. Totam obcaecati quam exercitationem fugit. Maiores?
-            Praesentium consectetur vero quos alias harum eaque ullam quam maxime. Placeat laboriosam maiores laudantium amet enim eligendi, voluptatibus, ratione libero asperiores ex dignissimos velit fugit! Officia voluptatum ratione illo mollitia.
-            Officia numquam culpa accusantium quis labore provident omnis ut impedit natus fuga a reprehenderit nobis cupiditate enim, inventore architecto earum libero nisi commodi. Molestias veritatis nam, mollitia facilis labore incidunt.`
-          ]              
+            `Having access to a room of approximately 30m², I decided to create a place where I will develop my projects.`,
+            `In addition to interactive projects such as uFlash and Wellton, the Sanctuarium is equipped
+            the Pinky system, which controls the light and the folding and unfolding of the bed,`,
+            `Although it serves as an office by default, the place is great for any type of initiative
+            such as photo shoots or a recording studio.`,
+          ]
         },
-
+        
       }
     },
     { name: "Wellton",
@@ -220,7 +259,7 @@ this.data = {
       ],
       lang : {
         pl: {
-          category: ["biznes","IoT","kodowanie"],
+          category: ["biznes","IoT","kodowanie","HTML","CSS","PHP","JavaScript","JS","Android"],
           desc: "Projekt interaktywnych stołów przeznaczonych do restauracji.",
           content : [
             `Oprogramowanie stołów jest skierowane do restauracji.
@@ -236,7 +275,7 @@ this.data = {
 
         },
         en: {
-          category: ["business","IoT","coding"],
+          category: ["business","IoT","coding","HTML","CSS","PHP","JavaScript","JS","Android"],
           desc: "Interactive tables for restaurants.",
           content : [
             `The table software is aimed at restaurants.
@@ -311,7 +350,7 @@ this.data = {
       ],
       lang:{
         pl:{
-          category: ["IoT","kodowanie"],
+          category: ["IoT","kodowanie","HTML","CSS","JavaScript", "JS", "PHP"],
           desc: "Program do przesyłania elementów pomiędzy ekranami",
           content:[
             `Pozwala przesłać tekst, film z yt / cda, zdjęcie lub stronę internetową
@@ -321,7 +360,7 @@ this.data = {
           ],
         },
         en:{
-          category: ["IoT","coding"],
+          category: ["IoT","coding","HTML","CSS","JavaScript", "JS", "PHP"],
           desc: "A program for transferring items between screens",
           content:[
             `Lets you upload text, video from yt / cda, photo or website
@@ -390,7 +429,7 @@ this.data = {
       ],
       lang:{
         pl:{
-          category:["szkolenia"],
+          category:["szkolenia", "Python", "django", "Java", "Spring", "SEO"],
           desc:`Pojedyncze szkolenia, które prowadziłem nie więcej niż 3 razy.`,
           content: [
             /*html*/`<h3>Kurs Python</h3>
@@ -470,7 +509,7 @@ this.data = {
           ]
         },
         en:{
-          category:["courses"],
+          category:["courses", "Python", "django", "Java", "Spring", "SEO"],
           desc:`Single courses that I have conducted no more than 3 times.`,
           content: [
             /*html*/`<h3>Python Course</h3>
@@ -561,7 +600,7 @@ this.data = {
       ],
       lang:{
         pl:{
-          category: ["szkolenia","webdevelopment"],
+          category: ["szkolenia","webdevelopment","HTML","CSS","SCSS","JavaScript","JS","Node.js", "jQuery", "SEO"],
           desc : "Szkolenie podstaw programowania aplikacji WEB",
           content:[
             `Przeprowadziłem ponad 1000 godzin szkoleń z programowania
@@ -583,7 +622,7 @@ this.data = {
           ],              
         },
         en:{
-          category: ["courses","webdevelopment"],
+          category: ["courses","webdevelopment","HTML","CSS","SCSS","JavaScript","JS","Node.js", "jQuery", "SEO"],
           desc : "Course of the basics WEB application programming",
           content:[
             `I have conducted over 1000 hours of programming training
@@ -697,7 +736,7 @@ this.data = {
       ],
       lang:{
         pl:{
-          category: ["społeczne","programy","nauka"],
+          category: ["społeczne","programy","nauka", "HTML", "CSS", "JavaScript", "JS"],
           desc: "Projekt nauki kompetencji cyfrowych",
           content:[
             `Po kursach prowadzonych w ramach Śląskiej Akademii Senior@
@@ -719,7 +758,7 @@ this.data = {
           ],
         },
         en:{
-          category: ["social","coding","teaching"],
+          category: ["social","coding","teaching", "HTML", "CSS", "JavaScript", "JS"],
           desc: "Course of digital competences",
           content:[
             `After the courses conducted as part of the Silesian Senior @ Academy
@@ -984,7 +1023,7 @@ this.data = {
       ],
       lang:{
         pl:{
-          category: ["YouTube","film","foto"],
+          category: ["YouTube","film","foto","grafika"],
           desc: "Kanał YouTube dobrze rokującego standupera",
           content : [
             `Ymek Szewczyk to koneser grubego humoru. Podbija kolejne sceny 
@@ -997,7 +1036,7 @@ this.data = {
           ]
         },
         en:{
-          category: ["YouTube","movie","photo"],
+          category: ["YouTube","movie","photo","graphic"],
           desc: "YouTube channel of a promising standuper",
           content : [
             `Ymek Szewczyk is a connoisseur of thick humor. He conquers the next scenes
@@ -1060,7 +1099,6 @@ this.data = {
           id:"B4FN5NHAfQB"
 
         },
-        // "https://www.instagram.com/p/B4FN5NHAfQB/",
       ],
       lang:{
         pl:{
@@ -1150,17 +1188,19 @@ this.data = {
       'JavaScript',
       'Node.js',
       'jQuery',
-      'C++',
+      'CPP',
       'Arduino',
       'Python',
       'django',
       'Java',
       'Spring',
       'MySQL',
+      'iOT',
+      'SEO'
     ],
     lang: {
       pl: {
-        desc: "ELO",
+        desc: "Full stack developer portfolio",
         category: ['webdevelopment', 'fullstack', 'node developer'],
         content : [
             `Jestem`,
@@ -1169,7 +1209,7 @@ this.data = {
             `tuż przed opus magnum`,
             `KOD`,
             `BYŁ MOJĄ PIERWSZĄ MIŁOŚCIĄ`,
-            `Zacząłem kodować w wieku 14 lat. Szybko zrozumiałem, że web development jest tym co powinienem robić, więc zacząłem się uczyć`,
+            `Zacząłem kodować w 2010 roku. Szybko zrozumiałem, że web development jest tym co powinienem robić, więc zacząłem się uczyć`,
             `zobacz więcej projektów`,
             `NAUCZANIE`,
             `NAJLEPSZY SPOSÓB UCZENIA SIĘ`,
@@ -1182,7 +1222,7 @@ this.data = {
           ]
       },
       en: {
-        desc: "ELO",
+        desc: "Full stack developer portfolio",
         category: ['webdevelopment', 'fullstack', 'node developer'],
         content : [
             `I'm`,
@@ -1191,7 +1231,7 @@ this.data = {
             `just before opus magnum`,
             `CODE`,
             `WAS MY FIRST LOVE`,
-            `I started coding when I was 14. I quickly realized that web development is what I should do, so I started learning.`,
+            `I started coding in 2010. I quickly realized that web development is what I should do, so I started learning.`,
             `see more projects`,
             `TEACHING`,
             `BEST WAY OF LEARNING`,

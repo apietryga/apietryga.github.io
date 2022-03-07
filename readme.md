@@ -33,11 +33,10 @@ PWA web-dev Portfolio
   - jumping lang in menu
   - clear github
   - remove refresh from pages
-## TO DO:
   - fill contents
   - improve categories
   - [functions] turn on serviceworker
-  - DOMAIN
-    - apietryga.com redirect
-    -
+  - anti idling
+## TO DO:
+  - CV
   - analytics
