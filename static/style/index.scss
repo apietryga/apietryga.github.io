@@ -349,7 +349,6 @@
 }
 #business{
   color:$fontColor;
-  z-index:-1;
   position:relative;
   min-height:40vh;
   padding:2em;
@@ -358,6 +357,7 @@
   display:flex;
   flex-direction: column;
   .me{
+    z-index:-1;
     top:0;
     left:0;
     width:100%;

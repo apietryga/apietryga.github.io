@@ -118,11 +118,13 @@ const langChager = {
     // SET COOKIES IF NEW
     if(e.target.value != this.lang){
       // clear serviceworker cache
-      caches.keys().then(function(names) {
-        for (let name of names)
-            caches.delete(name);
-      });
-      
+      if(caches != null){
+        caches.keys().then(function(names) {
+          for (let name of names)
+              caches.delete(name);
+        });
+      }
+            
       // delete old cookie if isset
       if(parseCookies(document).lang != null){
         eraseCookie("lang")
