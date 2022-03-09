@@ -50,7 +50,7 @@ this.data = {
     },
     { name: "Webions",
       img: "webions.webp",
-      date: "2018-09-01",
+      date: "2021-08-01",
       color: "#222",
       media:[
         'https://www.youtube.com/embed/vgn3TVi4fU0',
@@ -611,7 +611,9 @@ this.data = {
             - HTML5<br />
             - CSS3 wraz z preprocesorami SASS, LESS, SCSS <br />
             - Bootstrap 4 <br />
-            - JavaScript (JS ES6) + jQuery, AngularJS / React<br />
+            - JavaScript (JS) + jQuery, <br />
+            - AngularJS (podstawy) <br />
+            - ReactJS (podstawy) <br />
             - SEO<br />
             - PHP (na potrzeby WP)<br />
             - CMS WordPress<br />
@@ -633,7 +635,9 @@ this.data = {
             - HTML5 <br />
             - CSS3 with SASS, LESS, SCSS preprocessors <br />
             - Bootstrap 4 <br />
-            - JavaScript (JS) + jQuery, AngularJS / React <br />
+            - JavaScript (JS) + jQuery, <br />
+            - AngularJS basics <br />
+            - ReactJS basics <br />
             - SEO <br />
             - PHP (for WP purposes) <br />
             - CMS WordPress <br />
@@ -1196,7 +1200,8 @@ this.data = {
       'Spring',
       'MySQL',
       'iOT',
-      'SEO'
+      'SEO',
+      'ReactJS'
     ],
     lang: {
       pl: {
