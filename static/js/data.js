@@ -155,7 +155,7 @@ this.data = {
             `Przekształciliśmy lokal przemysłowy w gastronomiczny - wymagało to mnóstwa
             projektowania i planowania, do czego używaliśmy projektów 3D`,
             `Robiliśmy też sesje zdjęciowe produktów, które odbywały się na </b>Sanctuarium<b>.`,
-            `Już niedługo otwieramy!`,
+            `<a href="https://bombeltyj.pl">Sprawdź nasze menu tutaj!</a>`,
           ]
         },
         en:{
@@ -165,8 +165,8 @@ this.data = {
             `We turned an industrial into a gastronomic establishment - it took a lot
              design and planning, for which we used 3D projects`,
              `We also did product photoshoots at </b> Sanctuarium <b> .`,
-             `We're opening soon!`,
-          ]
+             `<a href="https://bombeltyj.pl">Check our menu here!</a>`,
+            ]
         },
       },
     },
