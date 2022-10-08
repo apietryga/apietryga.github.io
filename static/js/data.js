@@ -57,7 +57,7 @@ this.data = {
         'webions_1.webp',
         {
           type:'github',
-          href: 'https://github.com/apietryga/webions2',
+          href: 'https://github.com/apietryga/webions',
         },
       ],
       lang: {
@@ -416,15 +416,15 @@ this.data = {
       media: [
         {
           type:"github",
-          href: "https://github.com/apietryga/python"
+          href: "https://github.com/taicoders/kurspython"
         },
         {
           type:"github",
-          href: "https://github.com/apietryga/kursjava"
+          href: "https://github.com/taicoders/kursjava"
         },
         {
           type:"github",
-          href: "https://github.com/apietryga/kurseo"
+          href: "https://github.com/taicoders/kurseo"
         },
       ],
       lang:{
