@@ -1,15 +1,14 @@
 <script setup lang="ts">
-  import data from '@/stores/data';
+  import { useDataStore } from '@/stores'
+  const dataStore = useDataStore();
 </script>
 
 <template>
   <div class="projects">
-    <h2>ELO</h2>
+    <h2>Projects</h2>
   </div>
-  <div class="project" v-for="project of data.projects">
-    <RouterLink :to="'/projects/' + project.name">
-      <h3>{{ project.name }}</h3>
-    </RouterLink>
+  <div class="project" v-for="project of dataStore.projects">
+    <projectLink :project="project" />
   </div>
 </template>
 

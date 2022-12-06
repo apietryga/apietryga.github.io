@@ -3,6 +3,21 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProjectsView from '../views/ProjectsView.vue'
 import ProjectView from '../views/ProjectView.vue'
+import e404 from '../views/404.vue'
+import data from '../stores/data'
+
+const projects = data => {
+  const projects = []
+  for( const project of data.projects ){
+    projects.push({
+      path: '/projects/' + project.url,
+      name: project.name.toLowerCase(),
+      component: ProjectView,
+    })
+  }
+  return projects
+}
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,12 +32,12 @@ const router = createRouter({
       name: 'projects',
       component: ProjectsView,
     },
+    ...projects(data),
     {
-      path: '/projects/Anadar',
-      name: 'Anadar',
-      component: ProjectView,
-    }
-  ]
+      path: '/:pathMatch(.*)*',
+      component: e404,
+    },
+  ],
 })
 
 export default router

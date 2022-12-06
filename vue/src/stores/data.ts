@@ -1,4 +1,4 @@
-export default {
+export default{
   projects:[
     { name: "Anadar",
       media:[
@@ -9,6 +9,7 @@ export default {
       img: "anadar.webp",
       date: "2018-09-01",
       color: "white",
+      url: "anadar",
       lang: {
         pl : {
           category: ["biznes", "nauka", "film", "kodowanie","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL"],
@@ -52,6 +53,7 @@ export default {
       img: "webions.webp",
       date: "2021-08-01",
       color: "#222",
+      url: "webions",
       media:[
         'https://www.youtube.com/embed/vgn3TVi4fU0',
         'webions_1.webp',
@@ -101,6 +103,7 @@ export default {
       color: "#fff",
       img: "uflash.webp",
       date: "2020-03-23",
+      url: "uflash",
       media: [
         "uflash_praca.webp",
         {
@@ -143,6 +146,7 @@ export default {
       color:"#DC468E",
       img: "bombeltyj.webp",
       date: "2021-03-23",
+      url: "bombeltyj",
       media:[
         'bombeltyj_1.webp',
         'bombeltyj_2.webp',
@@ -163,9 +167,9 @@ export default {
           desc: "Restaurant serving bubble-tea",
           content: [
             `We turned an industrial into a gastronomic establishment - it took a lot
-             design and planning, for which we used 3D projects`,
-             `We also did product photoshoots at </b> Sanctuarium <b> .`,
-             `<a href="https://bombeltyj.pl">Check our menu here!</a>`,
+            design and planning, for which we used 3D projects`,
+            `We also did product photoshoots at </b> Sanctuarium <b> .`,
+            `<a href="https://bombeltyj.pl">Check our menu here!</a>`,
             ]
         },
       },
@@ -174,6 +178,7 @@ export default {
       color: "#F6B9ED",
       img: "pinky.webp",
       date: "2021-01-24",
+      url: "pinky",
       media:[
         "pinky_server.webp",
         "pinky_nest.webp",
@@ -199,14 +204,14 @@ export default {
           desc : "Interactive home assistant for remote control of electrical appliances",
           content : [
             `Pinky is easy to adapt to your apartment, just switch it on
-             easy to use server on a computer or raspberry pi.
-             The system is equipped with speech recognition and the hotword "Pinky" - based on PocketSphinx
-             - the only system I found that does not require an internet connection (hence the decision to create
+            easy to use server on a computer or raspberry pi.
+            The system is equipped with speech recognition and the hotword "Pinky" - based on PocketSphinx
+            - the only system I found that does not require an internet connection (hence the decision to create
               this project in Python)`,
-             `The whole system consists of a server (Python + django) and a socket system "Pinky Nest",
-             which I built on ESP8266 modules`,
-             `At Sanctuarium, I used Pinky Nest Hidden - the same constructions, but hidden
-             in the wall`,
+            `The whole system consists of a server (Python + django) and a socket system "Pinky Nest",
+            which I built on ESP8266 modules`,
+            `At Sanctuarium, I used Pinky Nest Hidden - the same constructions, but hidden
+            in the wall`,
           ]              
         },
 
@@ -216,6 +221,7 @@ export default {
       color: "#fff",
       img: "sanctuarium.webp",
       date: "2020-08-15",
+      url: "sanctuarium",
       media:[
         "https://www.youtube.com/embed/bjks8oaKip4",
         "sanctuarium_2.webp",
@@ -251,6 +257,7 @@ export default {
       img: "wellton.webp",
       date: "2017-12-12",
       color: "#729AAA",
+      url: "wellton",
       media: [
         "wellton_visualisation.webp",
         "https://www.youtube.com/embed/lNKEEGrVEEw",
@@ -279,14 +286,14 @@ export default {
           desc: "Interactive tables for restaurants.",
           content : [
             `The table software is aimed at restaurants.
-             Thanks to the plugin of the Anadar project, it allows you to analyze orders immediately
-             in terms of the product strategy.`,
-             `Two prototypes of this product were built. The first with a classic table look
-             on wooden legs and a 32 '' matrix,`,
-             `And a taller table based on the projector, making it thick
-             of the worktop was 8mm, which was two P4 toughened glass panes resistant to damage
-             mechanical`,
-             `The project is currently in the prototype stage .`,
+            Thanks to the plugin of the Anadar project, it allows you to analyze orders immediately
+            in terms of the product strategy.`,
+            `Two prototypes of this product were built. The first with a classic table look
+            on wooden legs and a 32 '' matrix,`,
+            `And a taller table based on the projector, making it thick
+            of the worktop was 8mm, which was two P4 toughened glass panes resistant to damage
+            mechanical`,
+            `The project is currently in the prototype stage .`,
           ]
 
         },
@@ -296,6 +303,7 @@ export default {
       img: "polishmakers.webp",
       date: "2016-02-15",
       color: "red",
+      url: "polish-makers",
       media:[
         "https://www.youtube.com/embed/fDDymBgEMLk",
         "https://www.youtube.com/embed/rsp7LJa7-Fc",
@@ -321,14 +329,14 @@ export default {
           desc: "Team taking part in RedBull Can You Make It",
           content: [
             `We Can Make It - this is the slogan that guided us during
-             creating a film, but also during a promotional campaign`,
-             `The film aroused considerable interest among the community
-             student, and we gained experience in
-             marketing. During the promotional campaign, we created
-             Valentine's Day film in cooperation with the then still fledgling film
-             AbyssGlass start-up`,
-             `Finally, we didn't make the trip, but we did
-             a lot of experience.`,
+            creating a film, but also during a promotional campaign`,
+            `The film aroused considerable interest among the community
+            student, and we gained experience in
+            marketing. During the promotional campaign, we created
+            Valentine's Day film in cooperation with the then still fledgling film
+            AbyssGlass start-up`,
+            `Finally, we didn't make the trip, but we did
+            a lot of experience.`,
           ],
         },
       },
@@ -337,6 +345,7 @@ export default {
       img: "liveshare.webp",
       date: "2015-12-05",
       color: "#B05111",
+      url: "liveshare",
       media: [
         "https://www.youtube.com/embed/-ziFSL_WbiY",
         {
@@ -364,9 +373,9 @@ export default {
           desc: "A program for transferring items between screens",
           content:[
             `Lets you upload text, video from yt / cda, photo or website
-             between the phone / computer / TV screen.`,
-             `There is no screen limit and it is easy to adjust to the content sent`,
-             `The 'design is in a' drawer 'but will be used in a' Sanctuarium 'design`,
+            between the phone / computer / TV screen.`,
+            `There is no screen limit and it is easy to adjust to the content sent`,
+            `The 'design is in a' drawer 'but will be used in a' Sanctuarium 'design`,
           ],
         }
       },
@@ -375,6 +384,7 @@ export default {
       color:"#D9BD90",
       img: "tanker.webp",
       date: "2012-05-15",
+      url: "tanker",
       media: [
         "tanker_1.webp",
         "tanker_2.webp",
@@ -408,11 +418,12 @@ export default {
         },
       },
     },
-  ],
-  exps:[
+  // ],
+  // exps:[
     { name: "Single Courses",
       img: "singlecourses.webp",
       color: "#fff",
+      url: "single-courses",
       media: [
         {
           type:"github",
@@ -595,6 +606,7 @@ export default {
       img: "sfedev.webp",
       date: "2020-01-22",
       color: "#4F9690",
+      url: "kurs-front-end",
       media: [
         "/reference/1.webp"
       ],
@@ -653,6 +665,7 @@ export default {
       img: "slaskaakademiaseniora.webp",
       date: "2018-11-01",
       color: "#FFD1F2",
+      url: "slaska-akademia-seniora",
       media:[
         {
           type:'fbpost',
@@ -728,6 +741,7 @@ export default {
       img: "kurscyfrowy.webp",
       date: "2020-04-10",
       color: "#ADFFAD",
+      url: "kurscyfrowy-pl",
       media:[
         "kurscyfrowy_plakat.webp",
         {
@@ -789,6 +803,7 @@ export default {
       img: "yanomebel.webp",
       date: "2014-05-10",
       color: "#F1BF00",
+      url: "yanomebel",
       media:[
         "yano_1.webp"
       ],
@@ -815,7 +830,7 @@ export default {
             translation. I also improved the site navigation. <br /> `,
             `Everything is based on WordPress and a page with my modifications
             works to this day. <br />
-             You can find it here:`,
+            You can find it here:`,
             `<a href='http://yanomebel.com.pl' target='_blank'>yanomebel.com.pl</a>`,
           ],
         },
@@ -825,6 +840,7 @@ export default {
       img: "masterkey.webp",
       date: "2016-02-15",
       color: "#F78F1D",
+      url: "masterkey",
       media:[
         "masterkey_1.webp",
         "masterkey_2.webp",
@@ -850,13 +866,13 @@ export default {
           desc: "Order configurator for the MasterKey key manufacturer",
           content:[
             `Masterkey technology allows you to open multiple locks with one key.
-             However, this causes a problem when ordering a larger number of this type of keys,
-             where the individual is to have access to specific doors.
-             So we created a configurator with the possibility of creating locks and keys
-             and then determining the dependencies between them.`,
-             `Then I created a system that replaces the entered information
-             on the standard (provided by the manufacturer) form * .xml and automatically
-             sends the order.`
+            However, this causes a problem when ordering a larger number of this type of keys,
+            where the individual is to have access to specific doors.
+            So we created a configurator with the possibility of creating locks and keys
+            and then determining the dependencies between them.`,
+            `Then I created a system that replaces the entered information
+            on the standard (provided by the manufacturer) form * .xml and automatically
+            sends the order.`
           ],
         }
       },
@@ -865,6 +881,7 @@ export default {
       img: "tomigra.webp",
       date: "2015-09-03",
       color: "#B2EF6B",
+      url: "tomigra",
       media:[
         "tomigra1.webp",
         "tomigra2.webp",
@@ -915,6 +932,7 @@ export default {
       img: "goodlock.webp",
       date: "2016-05-01",
       color: "#bbb",
+      url: "goodlock",
       media: [
         "goodlock_1.webp",
         "goodlock_2.webp",
@@ -941,14 +959,14 @@ export default {
           desc: "Website + reservation system + admin panel",
           content:[
             `I created a website for the escape room - the company's showcase
-             with the services presented.`,
-             `And with a simple visit booking form`,
-             `I have fastened everything into a simple CMS that allows you to add
-             non-working days and hours and verification of the reservation.
-             I also created the escaper-room logo
-             and advertising materials such as banners, leaflets.`,
-             `I was administering the website for 2 years until the fire
-             customer when it was the business.`,
+            with the services presented.`,
+            `And with a simple visit booking form`,
+            `I have fastened everything into a simple CMS that allows you to add
+            non-working days and hours and verification of the reservation.
+            I also created the escaper-room logo
+            and advertising materials such as banners, leaflets.`,
+            `I was administering the website for 2 years until the fire
+            customer when it was the business.`,
           ],
         },
       },
@@ -957,6 +975,7 @@ export default {
       img: "eatall.webp",
       date: "2016-04-15",
       color: "#FF0000",
+      url: "eatall",
       media:[
         "eatall_ulotka_black.webp",
         "eatall_ulotka_white.webp",
@@ -978,10 +997,10 @@ export default {
           desc: "Graphic design for a restaurant in Tarnowskie Góry",
           content:[
             `For EatAll, I have prepared a graphic logo and menu
-             in two color variants - black: `,
-             `and white:`,
-             `Everything is made in CMYK colors for better printing, and in vectors,
-             to keep the shape with each format.`,
+            in two color variants - black: `,
+            `and white:`,
+            `Everything is made in CMYK colors for better printing, and in vectors,
+            to keep the shape with each format.`,
           ]
         },
       },
@@ -990,6 +1009,7 @@ export default {
       img: "szalejemybudujemy.webp",
       date: "2020-04-04",
       color: "#93AAC9",
+      url: "szalejemy-budujemy",
       media:[
         "https://www.youtube.com/embed/htItjXAqpDo",
       ],
@@ -1008,8 +1028,8 @@ export default {
           desc: "YouTube channel about construction",
           content:[
             `In this project, I was responsible for the implementation. I prepared the intro
-             the channel, which is still used today, and I edited the first episode`,
-             `The channel is constantly evolving .`,
+            the channel, which is still used today, and I edited the first episode`,
+            `The channel is constantly evolving .`,
           ],
         },
       },
@@ -1018,6 +1038,7 @@ export default {
       img: "ymekszewczyk.webp",
       date: "2020-06-19",
       color: "#395880",
+      url: "szymon-ymek-szewczyk",
       media:[
         "https://www.youtube.com/embed/8Xbi-eyQpG0",
         {
@@ -1058,6 +1079,7 @@ export default {
       img: "jmalcher.webp",
       date: "2017-10-11",
       color: "#464A35",
+      url: "jerzy-malcher-film",
       media:[
         "jerzymalcher_foto1.webp",
         "https://www.youtube.com/embed/2FYxPa2Uv2Y",
@@ -1096,6 +1118,7 @@ export default {
       img: "jbu.webp",
       date: "2017-01-22",
       color: "#193840",
+      url: "jo-byl-ukradziony",
       media:[
         "https://www.youtube.com/embed/ZlfrefYtBI0",
         {
