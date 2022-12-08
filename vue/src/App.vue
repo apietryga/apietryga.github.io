@@ -54,7 +54,7 @@ header{
         color: var(--fc-primary);
         display:flex;
         font-family: var(--f-primary);
-        font-size:.8rem;
+        font-size:1rem;
         font-weight: 600;
         letter-spacing: 0.1rem;
         margin-right:1.2rem;
@@ -73,7 +73,7 @@ header{
         z-index:2;
       }
       label {
-        @include border(1px);
+        @include border(2px);
         display:block;
         height:1.4rem;
         margin-right:1.2rem;
@@ -81,7 +81,7 @@ header{
         width:1.4rem;
         z-index:3;
         div{
-          height:1px;
+          height:2px;
           width:80%;
           left:10%;
           background-color: var(--b-primary);
@@ -103,15 +103,18 @@ header{
           }
           &:nth-child(1){
             animation:toggler1Hide .5s;
-            top:20%;
+            // top:20%;
+            top:calc( 20% - 1px );
           }
           &:nth-child(2){
             animation:toggler2Hide .5s;
-            top:50%;
+            // top:50%;
+            top:calc( 50% - 1px );
           }
           &:nth-child(3){
             animation:toggler3Hide .5s;
             bottom:20%;
+            // bottom:calc( 20% - 1px );
           }
         }
       }
@@ -136,7 +139,8 @@ header{
             }
             &:nth-child(1){
               animation:toggler1Show .5s;
-              top:50%;
+              // top:50%;
+              top:calc(50% - 1px);
               transform:rotate(45deg);
             }
             &:nth-child(2){
@@ -145,7 +149,8 @@ header{
             }
             &:nth-child(3){
               animation:toggler3Show .5s;
-              bottom:50%;
+              // bottom:50%;
+              bottom:calc(50% - 1px);
               transform:rotate(-45deg);
             }
           }
