@@ -61,7 +61,7 @@ export default{
       h3{
         font-size:clamp(.8rem, 2vw, 2rem);
         font-weight: bold;
-        line-height:.7rem;
+        line-height:.8rem;
       }
       .label{
         @include border(1px);

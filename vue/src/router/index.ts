@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import ProjectsView from '../views/ProjectsView.vue'
-import ProjectView from '../views/ProjectView.vue'
+import HomeView from '../views/homeView.vue'
+import ProjectsView from '../views/projectsView.vue'
+import ProjectView from '../views/projectView.vue'
 import e404 from '../views/404.vue'
 import data from '../stores/data'
 

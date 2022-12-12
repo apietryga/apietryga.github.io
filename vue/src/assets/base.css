@@ -80,7 +80,8 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
+  /* color: var(--color-text); */
+  color: var(--f-primary);
   /* background: var(--color-background); */
   background: var(--c-primary);
   transition: color 0.5s, background-color 0.5s;
@@ -98,4 +99,10 @@ a,
   text-decoration: none;
   color: hsl(160, 100%, 37%);
   transition: 0.4s;
+}
+
+h2{
+  text-transform: uppercase;
+  font-family: var(--f-primary);
+  margin:0 0 0 1rem; 
 }

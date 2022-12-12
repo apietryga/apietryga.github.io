@@ -17,12 +17,6 @@
 
 <style lang="scss">
 .projects_view_header{
-  color:var(--fc-primary);
-  h2{
-    text-transform: uppercase;
-    font-family: var(--f-primary);
-    margin:0 0 0 1rem; 
-  }
   p{
     line-height: 0;
     margin:0 0 1.5rem 1rem; 

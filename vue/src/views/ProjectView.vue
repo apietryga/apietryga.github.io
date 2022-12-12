@@ -1,22 +1,26 @@
 <template>
-  <div class="project">
-
-    <div class="topBackground" :style="'background: linear-gradient('+project.color+', transparent)'">
-    </div>
-
-
-    <h2>{{ project.name }}</h2>
-    <p>{{ project.lang.pl.desc}}</p>
-    
-    <img 
-      :src="'/img/contents/' + project.img" 
-      :alt="project.name + ' image'" 
-      style="width:10rem;height:10rem;">
-
-    <!-- <p>{{ project.lang.pl.content}}</p> -->
-    <p v-html="project.lang.pl.content"></p>
-
-  </div>
+  <section class="project__single">
+    <header>
+      <h2>{{ project.name }}</h2>
+      <p>{{ project.lang.en.desc}}</p>
+    </header>
+    <main>
+      <img 
+        :src="'/img/contents/' + project.img" 
+        :alt="project.name + ' image'" 
+        style="width:10rem;height:10rem;" 
+      />
+      <div 
+        class="block"
+        v-for="index of [0,1,2]"
+      >
+        <p v-html="project.lang.en.content[index]" />
+        <div class="media__wrapper">
+          <projectMedia :media="project.media[index]" class="media" />
+        </div>
+      </div>
+    </main>
+  </section>
 </template>
 
 <script lang="ts" scoped>
@@ -44,15 +48,28 @@
   }
 </script>
 
-<style lang="scss">
-.topBackground{
-  // border:2px dashed Green;
-  width:100%;
-  height:50vh;
-  position:absolute;
-  top:-4rem;
-  z-index:-1;
-  left:0;
+<style lang="scss" scoped>
+.project__single{
+  padding:0 1rem;
+  header{
+    width:100%;
+    h2{
+      line-height: 1rem;
+      margin:.25rem 0;
+    }
+    p{
+      line-height: 1.1rem;
+    }
+  }
+  main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    .media__wrapper{
+      .media{
+        max-width:100%;
+      }
+    }
+  }
 }
-
 </style>
