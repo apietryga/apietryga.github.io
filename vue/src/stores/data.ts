@@ -8,7 +8,7 @@ export default{
       ],
       img: "anadar.webp",
       date: "2018-09-01",
-      color: "white",
+      color: "#ffffff",
       url: "anadar",
       lang: {
         pl : {
@@ -52,7 +52,7 @@ export default{
     { name: "Webions",
       img: "webions.webp",
       date: "2021-08-01",
-      color: "#222",
+      color: "#222222",
       url: "webions",
       media:[
         'https://www.youtube.com/embed/vgn3TVi4fU0',
@@ -100,7 +100,7 @@ export default{
       }
     },
     { name: "uFlash",
-      color: "#fff",
+      color: "#ffffff",
       img: "uflash.webp",
       date: "2020-03-23",
       url: "uflash",
@@ -218,7 +218,7 @@ export default{
       }
     },
     { name:"Sanctuarium",
-      color: "#fff",
+      color: "#ffffff",
       img: "sanctuarium.webp",
       date: "2020-08-15",
       url: "sanctuarium",
@@ -302,7 +302,7 @@ export default{
     { name: "Polish Makers",
       img: "polishmakers.webp",
       date: "2016-02-15",
-      color: "red",
+      color: "#ff0000",
       url: "polish-makers",
       media:[
         "https://www.youtube.com/embed/fDDymBgEMLk",
@@ -422,7 +422,8 @@ export default{
   // exps:[
     { name: "Single Courses",
       img: "singlecourses.webp",
-      color: "#fff",
+      date: "2020-03-15",
+      color: "#ffffff",
       url: "single-courses",
       media: [
         {
@@ -931,7 +932,7 @@ export default{
     { name: "GoodLock",
       img: "goodlock.webp",
       date: "2016-05-01",
-      color: "#bbb",
+      color: "#bbbbbb",
       url: "goodlock",
       media: [
         "goodlock_1.webp",

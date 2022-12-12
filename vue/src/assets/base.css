@@ -45,6 +45,7 @@
 
   /* font colors */
   --fc-primary: #000;
+  --fc-secondary: #fff;
 
   /* fonts */
   --f-primary: 'Roboto Condensed', sans-serif;

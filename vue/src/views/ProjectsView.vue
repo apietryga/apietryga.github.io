@@ -4,25 +4,35 @@
 </script>
 
 <template>
-  <h2>Projects</h2>
+  <header class="projects_view_header">
+    <h2>Projects</h2>
+    <p> ... </p>
+  </header>
   <div class="projects">
     <div class="project" v-for="project of dataStore.projects">
-      <!-- <projectLink :project="project" /> -->
       <projectThumbnail :project="project" />
     </div>
   </div>
 </template>
 
 <style lang="scss">
+.projects_view_header{
+  color:var(--fc-primary);
+  h2{
+    text-transform: uppercase;
+    font-family: var(--f-primary);
+    margin:0 0 0 1rem; 
+  }
+  p{
+    line-height: 0;
+    margin:0 0 1.5rem 1rem; 
+  }
+}
 .projects{
-  border:2px dashed blue;
   display:flex;
   flex-wrap:wrap;
   justify-content: space-evenly;
   .project{
-    @include border(2px);
-    border-radius:5px;
-    box-shadow: 2px 2px 0 #000;
     margin:.5rem 0;
     width:45%;
   }
