@@ -23,7 +23,7 @@
           <!-- <h2>Antek Pietryga</h2> -->
           <!-- <p>Full-stack web developer</p> -->
           <p>{{ dataStore.index.lang.en.content[2] }}</p>
-          <p>{{ dataStore.index.lang.en.content[3] }}</p>
+          <!-- <p>{{ dataStore.index.lang.en.content[3] }}</p> -->
 
         </div>
       </div>

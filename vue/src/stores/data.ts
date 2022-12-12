@@ -1233,7 +1233,7 @@ export default{
         content : [
             `Jestem`,
             `apietryga`,
-            `Freelance full-stack webdeveloper`,
+            `Full-stack developer`,
             `tuż przed opus magnum`,
             `KOD`,
             `BYŁ MOJĄ PIERWSZĄ MIŁOŚCIĄ`,
@@ -1255,7 +1255,7 @@ export default{
         content : [
             `I'm`,
             `apietryga`,
-            `Freelance full-stack webdeveloper`,
+            `Full-stack developer`,
             `just before opus magnum`,
             `CODE`,
             `WAS MY FIRST LOVE`,
