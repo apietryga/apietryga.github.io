@@ -1,16 +1,16 @@
 <template>
   <div class="media" v-if="media">
     <img
-      v-if="detectType() === 'img'" 
+      v-if="type === 'img'" 
       :src="'/img/contents/'+media"
-      :alt="generateAlt()"
+      :alt="alt"
     />
 
     <div 
       class="yt"
-      v-else-if="detectType() === 'youtube'"
+      v-else-if="type === 'youtube'"
     >
-      YOUTUBE: 
+      YOUTUBE: {{ yt_id }}
     </div>
 
     <pre v-else>
@@ -26,31 +26,35 @@ export default{
     media: {
       type : String,
       required: true
+    },
+  },
+  data(){
+    return {
+      type: "",
+      alt: "",
+      yt_id: "",
     }
   },
   methods: {
     detectType(){
-      const images = ['webp']
-      if(images.includes(this.media.split(".")[this.media.split(".").length - 1 ])){ return "img" }
+      // detect image
+      if(['webp'].includes(this.media.split(".")[this.media.split(".").length - 1 ])){ 
+        this.alt = this.media.split("_").join(" ").split(".")[0]
+        return this.type = "img" 
+      }
 
-      // if()
+      // detect youtube video
       for( const parts of this.media.split(".") ){
-        console.log(parts)
         if(parts == 'youtube'){
-
-          return "youtube"
+          this.yt_id = this.media.split("/")[ this.media.split("/").length - 1 ]
+          return this.type = "youtube"
         }
       }
 
-
-      
-      // return "img"
     },
-    generateAlt(){
-      return this.media.split("_").join(" ").split(".")[0]
-    }
   },
   mounted() {
+    this.detectType();
     console.log( this.media )
   },
 }
