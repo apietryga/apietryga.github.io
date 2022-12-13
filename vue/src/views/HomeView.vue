@@ -1,18 +1,6 @@
 <template>
-  <!-- <article>
-    <header>
-      <h2>HELLO</h2>
-    </header>
-  </article> -->
   <div>
     <article class="firstView">
-      <header>
-        <!-- <p>{{ dataStore.index.lang.en.content[0] }}</p>
-        <p>{{ dataStore.index.lang.en.content[1] }}</p> -->
-        <!-- <p>{{ dataStore.index.lang.en.content[2] }}</p> -->
-        <!-- <p>{{ dataStore.index.lang.en.content[3] }}</p> -->
-      </header>
-
       <div class="content">
         <div class="alaPhone">
           <img 
@@ -20,16 +8,12 @@
             alt="MYIMAGE"
           >
           <h2>{{ dataStore.index.lang.en.content[0] + " " + dataStore.index.lang.en.content[1] }}</h2>
-          <!-- <h2>Antek Pietryga</h2> -->
-          <!-- <p>Full-stack web developer</p> -->
-          <p>{{ dataStore.index.lang.en.content[2] }}</p>
-          <!-- <p>{{ dataStore.index.lang.en.content[3] }}</p> -->
-
+          <!-- <p>{{ dataStore.index.lang.en.content[2] }}</p> -->
+          <p>Web developerss</p>
         </div>
       </div>
     </article>
     <main>
-      <!-- <projectLink :project="{url: 'testOtherPage', name: '404'}" /> -->
       <h3>MAIN</h3>
       <div v-for="category of dataStore.index.recomended" class="categories">
         <div v-for="project of category" class="project">

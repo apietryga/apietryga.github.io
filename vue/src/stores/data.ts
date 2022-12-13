@@ -747,7 +747,7 @@ export default{
         "kurscyfrowy_plakat.webp",
         {
           type: "fbgroup",
-          img: "https://scontent.fwaw7-1.fna.fbcdn.net/v/t1.6435-9/78856084_2547039475379560_2129939445330214912_n.jpg?stp=dst-jpg_s960x960&_nc_cat=110&ccb=1-5&_nc_sid=8631f5&_nc_ohc=cDEr9duIQzcAX_jBin-&_nc_ht=scontent.fwaw7-1.fna&oh=00_AT8xNLs2QCMsHShhnnjfyYGF5PmiZD5M__dL3BGkCGI1Cw&oe=6247B527",
+          img: "https://scontent.fpoz4-1.fna.fbcdn.net/v/t1.6435-9/78856084_2547039475379560_2129939445330214912_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8631f5&_nc_ohc=akgAcrLQKFgAX-H9zGE&_nc_ht=scontent.fpoz4-1.fna&oh=00_AfCZ-OtJKIXunw88PPjlNqGi_HkCjtD29v_pYFge7ynyGw&oe=63C051A7",
           href: "https://www.facebook.com/groups/kurscyfrowy"
         },
         "https://www.youtube.com/embed/fYKp4NstrBQ",
