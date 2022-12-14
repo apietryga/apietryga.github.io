@@ -4,12 +4,17 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import './assets/base.css'
-// import htmlize from '../node_modules/vue-htmlize/index.js'
-// import htmlize from '../node_modules/vue-htmlize'
-import htmlize from 'vue-htmlize'
 
-console.log({ htmlize })
-// htmlizeRouter( router )
+import { htmlize } from 'vue-htmlize'
+
+htmlize.config = [ 'favicon.ico', 'img' ]
+
+console.log( htmlize )
+
+// htmlize.htmlizeRouter( router )
+
+// console.log({ router })
+// console.log( router.getRoutes() )
 
 const app = createApp(App)
 
