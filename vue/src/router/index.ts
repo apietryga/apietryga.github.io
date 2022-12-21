@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { createRouter, createWebHistory } from 'vue-router'
-import homeView from '../views/homeView.vue'
-import projectsView from '../views/projectsView.vue'
-import projectView from '../views/projectView.vue'
+import HomeView from '../views/HomeView.vue'
+import ProjectsView from '../views/ProjectsView.vue'
+import ProjectView from '../views/ProjectView.vue'
 import e404 from '../views/404.vue'
 import data from '../stores/data'
 
@@ -12,7 +12,7 @@ const projects = data => {
     projects.push({
       path: '/projects/' + project.url,
       name: project.name.toLowerCase(),
-      component: projectView,
+      component: ProjectView,
     })
   }
   return projects
@@ -25,12 +25,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: homeView,
+      component: HomeView,
     },
     {
       path: '/projects',
       name: 'projects',
-      component: projectsView,
+      component: ProjectsView,
     },
     ...projects(data),
     {

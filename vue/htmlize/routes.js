@@ -16,7 +16,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -37,7 +37,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -58,7 +58,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -79,7 +79,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -100,7 +100,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2644,7 +2644,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2665,7 +2665,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2686,7 +2686,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2707,7 +2707,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2728,7 +2728,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2749,7 +2749,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2770,7 +2770,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2791,7 +2791,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2812,7 +2812,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2833,7 +2833,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2854,7 +2854,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2875,7 +2875,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2896,7 +2896,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2917,7 +2917,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2938,7 +2938,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2959,7 +2959,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -2980,7 +2980,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -3001,7 +3001,7 @@ module.exports = [
                 "methods": {},
                 "__hmrId": "d63c2bc8",
                 "__scopeId": "data-v-d63c2bc8",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectView.vue"
             }
         }
     },
@@ -3021,7 +3021,7 @@ module.exports = [
             "default": {
                 "methods": {},
                 "__hmrId": "94348299",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/homeView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/HomeView.vue"
             }
         }
     },
@@ -3039,9 +3039,9 @@ module.exports = [
         "enterCallbacks": {},
         "components": {
             "default": {
-                "__name": "projectsView",
+                "__name": "ProjectsView",
                 "__hmrId": "7991c3cc",
-                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/projectsView.vue"
+                "__file": "C:/Users/Dell/Desktop/apietryga.github.io/vue/src/views/ProjectsView.vue"
             }
         }
     },
