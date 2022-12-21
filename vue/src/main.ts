@@ -4,17 +4,13 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import './assets/base.css'
-// import htmlize from '../node_modules/vue-htmlize/index.js'
-// import htmlize from '../node_modules/vue-htmlize'
-import htmlize from 'vue-htmlize'
-
-console.log({ htmlize })
-// htmlizeRouter( router )
 
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+
+console.log({routes: router.getRoutes()})
 
 const components = import.meta.glob('./components/*.vue', { eager : true })
 Object.entries(components).forEach(([path, definition]) => {
