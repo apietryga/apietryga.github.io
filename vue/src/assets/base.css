@@ -38,21 +38,28 @@
 
 /* CUSTOM */
   /* colors */
-  --c-primary: #FFC700;
+  --c-primary: #000000;
+  --c-secondary: #1A4D2E;
+  --c-tertiary: #FF9F29;
+  --c-quaternary: #FAF3E3;
+  /* --c-primary: #FFC700;
   --c-secondary: #746BEB;
   --c-tertiary: #fff;
-  /* --c-quaternary */
+  --c-quaternary: #000*/
 
   /* font colors */
-  --fc-primary: #000;
-  --fc-secondary: #fff;
+  /* --fc-primary: #000;
+  --fc-secondary: #fff; */
+  --fc-primary: var(--c-quaternary);
+  --fc-secondary: var(--c-primary);
 
   /* fonts */
   --f-primary: 'Roboto Condensed', sans-serif;
   --f-secondary: 'Roboto Flex', sans-serif;
 
   /* border */
-  --b-primary: #000;
+  /* --b-primary: #000; */
+  --b-primary: var(--c-quaternary);
 
 }
 

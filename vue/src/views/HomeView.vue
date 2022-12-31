@@ -9,11 +9,11 @@
           >
           <h2>{{ dataStore.index.lang.en.content[0] + " " + dataStore.index.lang.en.content[1] }}</h2>
           <!-- <p>{{ dataStore.index.lang.en.content[2] }}</p> -->
-          <p>Web developerss</p>
+          <p>WEBDEV</p>
         </div>
       </div>
     </article>
-    <main>
+    <main class="homeMain">
       <h3>MAIN</h3>
       <div v-for="category of dataStore.index.recomended" class="categories">
         <div v-for="project of category" class="project">
@@ -47,10 +47,16 @@ export default {
 <style lang="scss">
 .firstView{
   color: var(--fc-primary);
-  border:2px dashed red;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   padding:2rem 0;
   // height:100vh;
   display:flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   .content{
     display:flex;
@@ -58,13 +64,21 @@ export default {
     .alaPhone{
       @include border(2px);
       align-items: center;
-      background-color: yellow;
+      background-color: var(--c-primary);
       border-radius:.75rem;
       display:flex;
       flex-direction: column;
-      padding:1rem;
+      justify-content: center;
+      align-items: center;
       position:relative;
       width:80vw;
+      height:80vh;
+      h2{
+        font-size:clamp(1rem, 10vw, 10rem);
+        line-height: 80%;
+        margin:2rem 0;
+        font-weight: 900;
+      }
       img{
         @include border(2px);
         border-radius:50%;
@@ -73,7 +87,8 @@ export default {
       }
       &::after{
         @include border(2px);
-        background-color: red;
+        // background-color: red;
+        background-color: var(--c-secondary);
         border-radius:.75rem;
         content: "";
         height:100%;
@@ -87,10 +102,13 @@ export default {
   }
 }
 
-.categories{
-  border:2px dashed yellow;
-  .project{
-    border:2px dashed red;
+.homeMain{
+  margin-top: calc( 100vh - 5rem );
+  .categories{
+    border:2px dashed yellow;
+    .project{
+      border:2px dashed red;
+    }
   }
 }
 </style>
