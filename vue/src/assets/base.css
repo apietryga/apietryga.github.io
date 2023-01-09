@@ -90,7 +90,8 @@ body {
   /* color: var(--color-text); */
   color: var(--f-primary);
   /* background: var(--color-background); */
-  background: var(--c-primary);
+  /* background: var(--c-primary); */
+  background: var(--c-tertiary);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
