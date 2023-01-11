@@ -7,9 +7,11 @@
             src="/img/frontPage/projects_footer.webp" 
             alt="MYIMAGE"
           >
-          <h2>{{ dataStore.index.lang.en.content[0] + " " + dataStore.index.lang.en.content[1] }}</h2>
-          <!-- <p>{{ dataStore.index.lang.en.content[2] }}</p> -->
-          <p>WEBDEV</p>
+          <header>
+            <h2>{{ dataStore.index.lang.en.content[0] + " " + dataStore.index.lang.en.content[1] }}</h2>
+            <!-- <p>{{ dataStore.index.lang.en.content[2] }}</p> -->
+            <p>WEBDEV</p>
+          </header>
         </div>
       </div>
     </article>
@@ -62,42 +64,66 @@ export default {
     display:flex;
     justify-content: center;
     .alaPhone{
-      @include border(2px);
+      // @include border(2px);
       align-items: center;
-      background-color: var(--c-primary);
-      border-radius:.75rem;
+      // background-color: var(--c-primary);
+      // border-radius:.75rem;
+      border-radius:10rem;
       display:flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      // justify-content: center;
+      // align-items: center;
       position:relative;
-      width:80vw;
-      height:80vh;
-      h2{
-        font-size:clamp(1rem, 10vw, 10rem);
-        line-height: 80%;
-        margin:2rem 0;
-        font-weight: 900;
-      }
+      // width:80vw;
+      // height:80vh;
       img{
-        @include border(2px);
+        // @include border(2px);
         border-radius:50%;
-        height:4rem;
-        width:4rem;
-      }
-      &::after{
-        @include border(2px);
-        // background-color: red;
-        background-color: var(--c-secondary);
-        border-radius:.75rem;
-        content: "";
-        height:100%;
+        height:15rem;
+        width:15rem;
+        // border-color:yellow;
         position:absolute;
-        width:100%;
-        top:.75rem;
-        left:.75rem;
-        z-index:-1;
+        top:-10rem;
       }
+      header{
+        display:flex;
+        justify-content: center;
+        background-color: var(--c-primary);
+        border-radius:10rem;
+        h2{
+          font-size:clamp(1rem, 10vw, 10rem);
+          line-height: 80%;
+          margin:3rem 2rem 1rem 2rem;
+          padding:2rem;
+          font-weight: 900;
+        }
+        p{
+          background-color: var(--c-primary);
+          // border-radius: 0 0 10rem 10rem;
+          // border-radius: 0 0 50% 50%;
+          border-radius: 0 0 5rem 5rem;
+          position: absolute;
+          height:3rem;
+          width:20rem;
+          display:flex;
+          justify-content: center;
+          bottom:calc(-2rem + 1px);
+          padding:2rem;
+        }
+      }
+      // &::after{
+      //   @include border(2px);
+      //   // background-color: red;
+      //   background-color: var(--c-secondary);
+      //   border-radius:.75rem;
+      //   content: "";
+      //   height:100%;
+      //   position:absolute;
+      //   width:100%;
+      //   top:.75rem;
+      //   left:.75rem;
+      //   z-index:-1;
+      // }
     }
   }
 }
