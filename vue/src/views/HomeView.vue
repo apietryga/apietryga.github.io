@@ -2,15 +2,7 @@
   <div>
     <article class="firstView">
       <div class="content">
-        <div class="alaPhone">
-          <picture>
-            <img src="/img/frontPage/projects_footer.webp" alt="MYIMAGE" />
-          </picture>
-          <header>
-            <h2> {{ dataStore.index.lang.en.content[0] + " " + dataStore.index.lang.en.content[1] }} </h2>
-            <p> WEBDEV </p>
-          </header>
-        </div>
+        <backAnimation :lang="dataStore.index.lang"/>
       </div>
     </article>
     <main class="homeMain">
@@ -60,84 +52,6 @@ export default {
   .content{
     display:flex;
     justify-content: center;
-    .alaPhone{
-      align-items: center;
-      border-radius:10rem;
-      display:flex;
-      flex-direction: column;
-      position:relative;
-      &::after{
-        border:2rem solid var(--c-secondary);
-        border-radius:10rem;
-        content: '';
-        height:100%;
-        left:.5rem;
-        position:absolute;
-        top:1rem;
-        width: 100%;
-        z-index:-1;
-      }
-      picture{
-        height:15rem;
-        position:absolute;
-        top:-10rem;
-        width:15rem;
-        &::after{
-          border:2rem solid var(--c-secondary);
-          border-radius:50%;
-          content: '';
-          height:100%;
-          left:.5rem;
-          position:absolute;
-          top:1rem;
-          width: 100%;
-          z-index:0;
-        }
-        img{
-          border-radius:50%;
-          height:100%;
-          position:absolute;
-          width:100%;
-          z-index:1;
-        }
-      }
-      header{
-        display:flex;
-        justify-content: center;
-        background-color: var(--c-primary);
-        border-radius:10rem;
-        h2{
-          font-size:clamp(1rem, 10vw, 10rem);
-          font-weight: 900;
-          line-height: 80%;
-          margin:5rem 2rem .25rem 2rem;
-          padding:2rem;
-          position:relative;
-        }
-        p{
-          background-color: var(--c-primary);
-          border-radius: 0 0 5rem 5rem;
-          bottom:calc(-4.5rem + 1px);
-          display:flex;
-          height:3rem;
-          justify-content: center;
-          padding:1rem 2rem 3rem 2rem;
-          position: absolute;
-          width:20rem;
-          &::after{
-            border:2rem solid var(--c-secondary);
-            border-radius: 0 0 5rem 5rem;
-            content: '';
-            height:100%;
-            left:.5rem;
-            position:absolute;
-            top:.5rem;
-            width: 100%;
-            z-index:-1;
-          }
-        }
-      }
-    }
   }
 }
 
