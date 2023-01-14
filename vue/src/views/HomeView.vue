@@ -52,6 +52,7 @@ export default {
   .content{
     display:flex;
     justify-content: center;
+    padding:100vh 0;
   }
 }
 
