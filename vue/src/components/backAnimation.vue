@@ -1,5 +1,8 @@
 <template>
   <div class="backAnimation">
+    <div class="box b">b</div>
+    <div class="box c">c</div>
+
     <picture>
       <img src="/img/frontPage/projects_footer.webp" alt="MYIMAGE" />
     </picture>
@@ -10,7 +13,80 @@
   </div>
 </template>
 
+<!-- <script lang="ts"> -->
 <script lang="ts">
+// import { gsap, ScrollTrigger} from "gsap/all";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger"
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+// gsap.to(".backAnimation", {
+//   scrollTrigger: ".backAnimation", // start the animation when ".box" enters the viewport (once)
+//   x: 500
+// });
+
+gsap.registerPlugin(ScrollTrigger);
+
+// You can use a ScrollTrigger in a tween or timeline
+gsap.to(".b", {
+  x: 400,
+  rotation: 360,
+  scrollTrigger: {
+    trigger: ".c",
+    start: "top center",
+    end: "top 100px",
+    scrub: true,
+    // scrub: 1,
+    markers: true,
+    id: "scrub"
+  }
+});
+
+// ScrollTrigger.create({
+//   trigger: ".c",
+//   animation: gsap.to(".c", {
+//     x: 400,
+//     rotation: 360,
+//     duration: 3
+//   })
+
+
+// })
+
+// const anim = gsap.to(".c", {
+//   x: 400,
+//   rotation: 360,
+//   duration: 3
+// });
+// ScrollTrigger.create({
+//   trigger: ".c",
+//   animation: anim,
+//   // Uncomment these to see how they affect the ScrollTrigger
+//   // markers: true,
+//   // start: "top center",
+//   // end: "top 100px",
+//   // toggleClass: "active",
+//   // pin: true,
+//   // scrub: 1,
+//   // onUpdate: self => {
+//   //   console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
+//   // }
+// });
+
+// const tl = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".backAnimation",
+//     start: "center bottom",
+//     end: "center top",
+//     scrub: true,
+//     markers: true
+//   }
+// });
+// tl.to(".box", {yPercent: 350, duration: 1})
+// tl.to(".box", {rotation: 360, duration: 3})
+// tl.to(".box", {xPercent: 350, duration: 1})
+
 export default {
   props: {
     lang: {
@@ -22,6 +98,33 @@ export default {
 </script>
 
 <style lang="scss">
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #28a92b;
+  position: absolute;
+  left: 100px;
+  z-index: 100;
+  line-height: 100px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.b {
+  top: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
 :root{
   --borders-size: 2px;
 }
