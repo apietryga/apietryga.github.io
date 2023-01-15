@@ -1,7 +1,18 @@
 <template>
   <div class="topAnimation">
     <picture class="">
-      <img src="/img/frontPage/projects_footer.webp" alt="MYIMAGE" />
+      <!-- <img src="/img/frontPage/projects_footer.webp" alt="MYIMAGE" /> -->
+
+      <svg
+        class="" 
+        style="margin:.5rem" width="1.5rem" height="1.5rem" version="1.1" viewBox="0 0 143.01 143.01" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(-27.954 -21.108)">
+          <path fill="var(--fc-primary)" d="m75.343 24.916-39.224 91.826 2.1751 2.7683 3.4313-7.3861h45.878l21.229 48.123 20.17-6.7231zm-10.321 32.275 21.534 51.457h-43.277z" />
+          <circle cx="99.457" cy="92.611" r="69.003" fill="none" stroke="var(--fc-primary)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+        </g>
+      </svg>
+
+
     </picture>
     <header>
       <h2> {{ lang.en.content[0] + " " + lang.en.content[1] }} </h2>
@@ -67,14 +78,6 @@ export default {
 
 
 
-
-
-
-
-
-
-
-
 :root{
   --borders-size: 2px;
 }
@@ -110,11 +113,12 @@ export default {
   @include background();
   picture{
     @include background();
+    border:none;
     height:15rem;
     position:absolute;
     top:-10rem;
     width:15rem;
-    img{
+    img, svg{
       border-radius:50%;
       height:100%;
       position:absolute;
