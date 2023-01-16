@@ -172,7 +172,6 @@ header{
       ul{
         @include border(1px);
         background-color: var(--c-tertiary);
-        border-radius:10px;
         box-shadow: 3px 3px #000;
         left:1.5rem;
         list-style: none;
