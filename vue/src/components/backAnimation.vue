@@ -19,6 +19,7 @@
       <p> WEBDEV </p>
     </header>
   </div>
+  <div class="centerHeader"></div>
 </template>
 
 <script lang="ts">
@@ -38,13 +39,14 @@ export default {
         scrollTrigger: {
           // start: 'top top',
           // end: 'bottom, bottom',
-          start: "top center",
           // start: "center",
           // end: "top 100px",
+          start: "top center",
           end: "bottom 100px",
           markers: true,
 
-          trigger: ".topAnimation",
+          // trigger: ".topAnimation",
+          trigger: ".centerHeader",
           scrub: true,
         }
       });
@@ -76,6 +78,14 @@ export default {
   top: 600px;
 }
 
+.centerHeader{
+  border:2px dashed red;
+  position:absolute;
+  width:20px;
+  right:0;
+  height:20vh;
+  top:40vh;
+}
 
 
 :root{
