@@ -1,4 +1,5 @@
 export default {
+  language: 'en',
   projects:[
     { name: "Anadar",
       media:[
@@ -11,7 +12,7 @@ export default {
       color: "#ffffff",
       url: "anadar",
       lang: {
-        pl : {
+        "pl": {
           category: ["biznes", "nauka", "film", "kodowanie","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL"],
           desc: "Platforma dla przedsiębiorców, do kontrolowania i rozwijania swojego biznesu",
           content: [
@@ -29,7 +30,7 @@ export default {
             procesy zamawiania i produkcji.`
           ],
         },
-        en : {
+        "en": {
           category: ["business", "education", "movie", "coding","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL"],
           desc: "A web platform for enterpeurs to control and developing business",
           content: [
@@ -63,7 +64,7 @@ export default {
         },
       ],
       lang: {
-        pl: {
+        "pl": {
           category : ["gra","kodowanie","HTML", "SCSS","JavaScript", "JS", "Node.js","Redis"],
           desc : "Webions jest grą MMORPG, dostępną na przeglądarkach.",
           content : [
@@ -80,7 +81,7 @@ export default {
             `Chcesz zagrać? Wystarczy, że wejdziesz na <b><a href="http://webions.herokuapp.com/" target="_blank">http://webions.herokuapp.com/</a></b>`
           ]              
         },
-        en: {
+        "en": {
           category : ["game","coding","HTML", "SCSS","JavaScript", "JS", "Node.js","Redis"],
           desc : "Webions is a MMORPG game, avalible on browsers.",
           content : [
@@ -116,7 +117,7 @@ export default {
         },
       ],
       lang: {
-        pl:{
+        "pl":{
           category: ["biznes","IoT","film","kodowanie","HTML", "CSS", "PHP", "JavaScript", "JS"],
           desc: "Interaktywne fotolustro przeznaczone na imprezy okolicznościowe lub do miejsc kultury",
           content : [
@@ -128,7 +129,7 @@ export default {
             <a href='http://apietryga.web.app/uflash.pl/' target='_blank'>na tej stronie</a>`
           ],    
         },
-        en : {
+        "en": {
           category: ["business","IoT","movie","coding","HTML", "CSS", "PHP", "JavaScript", "JS"],
           desc: "Interactive photo-mirror created for events or cultural places",
           content : [
@@ -152,7 +153,7 @@ export default {
         'bombeltyj_2.webp',
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ['biznes', 'remont', '3d'],
           desc: "Restauracja serwująca bubble-tea",
           content: [
@@ -162,7 +163,7 @@ export default {
             `<a href="https://bombeltyj.pl">Sprawdź nasze menu tutaj!</a>`,
           ]
         },
-        en:{
+        "en":{
           category: ['renovations','business', '3d'],
           desc: "Restaurant serving bubble-tea",
           content: [
@@ -184,7 +185,7 @@ export default {
         "pinky_nest.webp",
       ],
       lang: {
-        pl: {
+        "pl": {
           category : ["iOT","kodowanie", "Python", "django", "CPP", "Arduino", "HTML", "CSS"],
           desc : "Interaktywny asystent domu, do zdalnego kontrolowania urządzeń elektrycznych",
           content : [
@@ -199,7 +200,7 @@ export default {
             w ścianie.`
           ]              
         },
-        en: {
+        "en": {
           category : ["iOT","coding", "Python", "django", "CPP", "Arduino", "HTML", "CSS"],
           desc : "Interactive home assistant for remote control of electrical appliances",
           content : [
@@ -228,7 +229,7 @@ export default {
         "sanctuarium_3.webp",
       ],
       lang: {
-        pl: {
+        "pl": {
           category : ['remont', 'kodowanie', 'iOT'],
           desc : "Interaktywny showroom, w którym tworzę i testuję projekty",
           content : [
@@ -239,7 +240,7 @@ export default {
             takich jak sesje zdjęciowe czy studio nagrań.`,
           ]
         },
-        en: {
+        "en": {
           category : ['renovations', 'coding', 'iOT'],
           desc : "An interactive showroom where I create and test projects",
           content : [
@@ -265,7 +266,7 @@ export default {
         "wellton_visualisation2.webp"
       ],
       lang : {
-        pl: {
+        "pl": {
           category: ["biznes","IoT","kodowanie","HTML","CSS","PHP","JavaScript","JS","Android"],
           desc: "Projekt interaktywnych stołów przeznaczonych do restauracji.",
           content : [
@@ -281,7 +282,7 @@ export default {
           ]
 
         },
-        en: {
+        "en": {
           category: ["business","IoT","coding","HTML","CSS","PHP","JavaScript","JS","Android"],
           desc: "Interactive tables for restaurants.",
           content : [
@@ -309,7 +310,7 @@ export default {
         "https://www.youtube.com/embed/rsp7LJa7-Fc",
       ],
       lang: {
-        pl: {
+        "pl": {
           category: ["film"],
           desc: "Team startujący w RedBull Can You Make It",
           content: [
@@ -324,7 +325,7 @@ export default {
             sporo doświadczenia.`,
           ],
         },
-        en: {
+        "en": {
           category: ["movie"],
           desc: "Team taking part in RedBull Can You Make It",
           content: [
@@ -358,7 +359,7 @@ export default {
         }
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["IoT","kodowanie","HTML","CSS","JavaScript", "JS", "PHP"],
           desc: "Program do przesyłania elementów pomiędzy ekranami",
           content:[
@@ -368,7 +369,7 @@ export default {
             `Projekt leży w ''szufladzie'', ale będzie użyty w projekcie ''Sanctuarium''`,
           ],
         },
-        en:{
+        "en":{
           category: ["IoT","coding","HTML","CSS","JavaScript", "JS", "PHP"],
           desc: "A program for transferring items between screens",
           content:[
@@ -392,7 +393,7 @@ export default {
         "tanker_4.webp",
       ],
       lang: {
-        pl: {
+        "pl": {
           category: ["motoryzacja"],
           desc: "Custom Chopper stworzony na bazie Rometa Kadetta",
           content: [
@@ -404,7 +405,7 @@ export default {
             `Projekt został sprzedany.`,
           ],
         },
-        en: {
+        "en": {
           category: ["moto"],
           desc: "Custom Chopper based on Romet Kadett",
           content: [
@@ -440,7 +441,7 @@ export default {
         },
       ],
       lang:{
-        pl:{
+        "pl":{
           category:["szkolenia", "Python", "django", "Java", "Spring", "SEO"],
           desc:`Pojedyncze szkolenia, które prowadziłem nie więcej niż 5 razy.`,
           content: [
@@ -520,7 +521,7 @@ export default {
             `,
           ]
         },
-        en:{
+        "en":{
           category:["courses", "Python", "django", "Java", "Spring", "SEO"],
           desc:`Single courses that I have conducted no more than 5 times.`,
           content: [
@@ -612,7 +613,7 @@ export default {
         "/reference/1.webp"
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["szkolenia","webdevelopment","HTML","CSS","SCSS","JavaScript","JS","Node.js", "jQuery", "SEO"],
           desc : "Szkolenie podstaw programowania aplikacji WEB",
           content:[
@@ -636,7 +637,7 @@ export default {
             `Kurs jest elastyczny i wrzechstronny. Zbieram bardzo pozytywne referencje.`,
           ],              
         },
-        en:{
+        "en":{
           category: ["courses","webdevelopment","HTML","CSS","SCSS","JavaScript","JS","Node.js", "jQuery", "SEO"],
           desc : "Course of the basics WEB application programming",
           content:[
@@ -686,7 +687,7 @@ export default {
         "/reference/5.webp",
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["szkolenia","społeczne","film"],
           desc: "Szkolenia kompetencji cyfrowych",
           content: [
@@ -714,7 +715,7 @@ export default {
             Marek Zagórski`,
           ],
         },
-        en:{
+        "en":{
           category: ["courses","social","movie"],
           desc: "Course of digital competences",
           content: [
@@ -754,7 +755,7 @@ export default {
         "https://www.youtube.com/embed/6liLfVHJCFY",
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["społeczne","programy","nauka", "HTML", "CSS", "JavaScript", "JS"],
           desc: "Projekt nauki kompetencji cyfrowych",
           content:[
@@ -776,7 +777,7 @@ export default {
             problematycznych kwestii. `,
           ],
         },
-        en:{
+        "en":{
           category: ["social","coding","teaching", "HTML", "CSS", "JavaScript", "JS"],
           desc: "Course of digital competences",
           content:[
@@ -809,7 +810,7 @@ export default {
         "yano_1.webp"
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["webdevelopment","HTML", "CSS", "PHP", "WORDPRESS"],
           desc: "Edycja strony producenta meblowego",
           content : [
@@ -822,7 +823,7 @@ export default {
             `<a href='http://yanomebel.com.pl' target='_blank'>yanomebel.com.pl</a>`,
           ],
         },
-        en:{
+        "en":{
           category: ["webdevelopment","HTML", "CSS", "PHP", "WORDPRESS"],
           desc: "Editing of the furniture manufacturer's website",
           content : [
@@ -847,7 +848,7 @@ export default {
         "masterkey_2.webp",
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["webdevelopment","HTML", "CSS", "JS", "jQuery", "PHP", "EXCEL", "CSV"],
           desc: "Konfigurator zamówień dla producenta kluczy MasterKey",
           content:[
@@ -862,7 +863,7 @@ export default {
 
           ],
         },
-        en:{
+        "en":{
           category: ["webdevelopment","HTML", "CSS", "JS", "jQuery", "PHP", "EXCEL", "CSV"],
           desc: "Order configurator for the MasterKey key manufacturer",
           content:[
@@ -889,7 +890,7 @@ export default {
         "tomigra3.webp",
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["webdevelopment", "HTML", "CSS", "JS", "jQuery"],
           desc: "Edukacyjna gra dla dzieci szkół muzycznych i podstawowych",
           content:[
@@ -908,7 +909,7 @@ export default {
             (zwłaszcza w JS / jQuery i PSD -> HTML).`,
           ],
         },
-        en:{
+        "en":{
           category: ["webdevelopment", "HTML", "CSS", "JS", "jQuery"],
           desc: "Educational game for children of music and elementary schools",
           content:[
@@ -940,7 +941,7 @@ export default {
         "goodlock_ulotka.webp",
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["webdevelopment","grafika", "HTML", "CSS", "JS", "PHP", "MySQL"],
           desc: "Strona WWW + system rezerwacji + panel administratora",
           content:[
@@ -955,7 +956,7 @@ export default {
             klienta, kiedy to zawinął biznes.`,
           ],
         },
-        en:{
+        "en":{
           category: ["webdevelopment","graphic", "HTML", "CSS", "JS", "PHP", "MySQL"],
           desc: "Website + reservation system + admin panel",
           content:[
@@ -982,7 +983,7 @@ export default {
         "eatall_ulotka_white.webp",
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["grafika"],
           desc: "Oprawa graficzna dla lokalu gastronomicznego w Tarnowskich Górach",
           content:[
@@ -993,7 +994,7 @@ export default {
             aby zachować kształt przy każdym formacie.`,
           ]
         },
-        en:{
+        "en":{
           category: ["graphic"],
           desc: "Graphic design for a restaurant in Tarnowskie Góry",
           content:[
@@ -1015,7 +1016,7 @@ export default {
         "https://www.youtube.com/embed/htItjXAqpDo",
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["YouTube","film"],
           desc: "Kanał YouTube traktujący o budowlance",
           content:[
@@ -1024,7 +1025,7 @@ export default {
             `Kanał cały czas się rozwija.`,
           ],
         },
-        en:{
+        "en":{
           category: ["YouTube","movie"],
           desc: "YouTube channel about construction",
           content:[
@@ -1048,7 +1049,7 @@ export default {
         },
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["YouTube","film","foto","grafika"],
           desc: "Kanał YouTube dobrze rokującego standupera",
           content : [
@@ -1061,7 +1062,7 @@ export default {
             przywiozłem żonę 😎.`,
           ]
         },
-        en:{
+        "en":{
           category: ["YouTube","movie","photo","graphic"],
           desc: "YouTube channel of a promising standuper",
           content : [
@@ -1087,7 +1088,7 @@ export default {
         "https://www.youtube.com/embed/iqlRAYE5ys0"
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["film","aktorstwo"],
           desc: "Film upamiętniający bohatera Jerzego Malchera",
           content:[
@@ -1100,7 +1101,7 @@ export default {
             `Ale w wolnym czasie stanowczo polecam zobaczyć całość`,
           ],
         },
-        en:{
+        "en":{
           category: ["movie","acting"],
           desc: "A film commemorating the hero Jerzy Malcher",
           content:[
@@ -1129,7 +1130,7 @@ export default {
         },
       ],
       lang:{
-        pl:{
+        "pl":{
           category: ["film","aktorstwo"],
           desc: "Film obrazujący losy ślązaków podczas i po wojnie",
           content:[
@@ -1138,7 +1139,7 @@ export default {
             `A tutaj zdjęcia z planu:`,
           ],
         },
-        en:{
+        "en":{
           category: ["movie","acting"],
           desc: "A film showing the fate of Silesians during and after the war",
           content:[
@@ -1155,7 +1156,7 @@ export default {
     href: "404",
     media: [],
     lang: {
-      pl: {
+      "pl": {
         desc: /*html*/`
           <p>
             To nie jest strona o którą chodziło <br /> 
@@ -1163,7 +1164,7 @@ export default {
             <a href='/projects'>projekty</a> 😎
           </p>`
       },
-      en: {
+      "en": {
         desc: /*html*/`
         <p>
           This is not the page you wanted <br /> 
@@ -1185,13 +1186,13 @@ export default {
     yt: "https://www.youtube.com/channel/UCB5bhBYgly7udyjyjj0K_UQ?view_as=subscriber",
     github: "https://github.com/apietryga",
     lang: {
-      pl: {
+      "pl": {
         desc: `Dane kontaktowe`,
         content:[
           `Kliknij Aby przejść`
         ]
       },
-      en: {
+      "en": {
         desc: `Contact details`,
         content:[
           `Click to go`
@@ -1228,7 +1229,7 @@ export default {
       'ReactJS'
     ],
     lang: {
-      pl: {
+      "pl": {
         desc: "Full stack developer portfolio",
         category: ['webdevelopment', 'fullstack', 'node developer'],
         content : [
@@ -1250,7 +1251,7 @@ export default {
             `biznes`,
           ]
       },
-      en: {
+      "en": {
         desc: "Full stack developer portfolio",
         category: ['webdevelopment', 'fullstack', 'node developer'],
         content : [
@@ -1275,7 +1276,7 @@ export default {
     }
   },
   pageBuild:{
-    pl:{
+    "pl":{
       nav:{
         home: "Strona główna",
         projects: "Projekty",
@@ -1284,7 +1285,7 @@ export default {
       },
       readMore: 'Czytaj więcej',
     },
-    en:{
+    "en":{
       nav:{
         home: "Home",
         projects: "Projects",

@@ -10,7 +10,7 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 
-console.log({routes: router.getRoutes()})
+// console.log({routes: router.getRoutes()})
 
 const components = import.meta.glob('./components/*.vue', { eager : true })
 Object.entries(components).forEach(([path, definition]) => {

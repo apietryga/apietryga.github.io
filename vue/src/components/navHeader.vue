@@ -376,11 +376,7 @@
   import { useDataStore } from '@/stores'
   export default {
     data(){
-      const { pageBuild } = useDataStore();
-      return { 
-        language: 'pl',
-        pageBuild 
-      }
+      return useDataStore()
     },
   }
 </script>
