@@ -1,4 +1,18 @@
 <style lang="scss" >
+
+@keyframes chopFalling {
+  from {
+    transform: rotate(-2deg);
+    right: 6.5rem;
+  }
+  to {
+    transform: rotate(2deg);
+    right: 5.5rem;
+  }
+}
+
+
+
 .topAnimation{
   display:flex;
   justify-content: end;
@@ -8,6 +22,7 @@
     position:absolute;
     right: 6rem;
     top:1rem;
+    animation:chopFalling 2s infinite alternate;
   }
 }
 </style>

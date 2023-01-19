@@ -89,8 +89,10 @@ body {
   /* background: var(--color-background); */
   /* background: var(--c-primary); */
   /* background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%); */
-  background: radial-gradient(ellipse at top, #e66465, transparent),
-            radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+  /* background: radial-gradient(ellipse at top, #e66465, transparent),
+            radial-gradient(ellipse at bottom, #4d9f0c, transparent); */
+  background: #0B121B;
+
   /* background: radial-gradient(closest-side, #3f87a6, #ebf8e1, #f69d3c); */
   /* background: var(--c-tertiary); */
   transition: color 0.5s, background-color 0.5s;
