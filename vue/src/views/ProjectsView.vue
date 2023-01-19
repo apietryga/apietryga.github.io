@@ -10,7 +10,7 @@
   </header>
   <div class="projects">
     <div class="project" v-for="project of dataStore.projects">
-      <projectThumbnail :project="project" />
+      <!-- <projectThumbnail :project="project" /> -->
     </div>
   </div>
 </template>

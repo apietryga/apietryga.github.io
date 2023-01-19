@@ -36,7 +36,7 @@ export default{
 
 <style lang="scss" scoped>
   .projectThumbnail{
-    @include border(2px);
+    // @include border(2px);
     align-items: center;
     border-radius:5px;
     box-shadow: 2px 2px 0 #000;
@@ -64,7 +64,7 @@ export default{
         line-height:.8rem;
       }
       .label{
-        @include border(1px);
+        // @include border(1px);
         border-radius:5px;
         background:var(--c-primary);
         color:var(--fc-primary);

@@ -1,73 +1,4 @@
-$hoverColor: rgba(116, 116, 116, 0.363);
-$clickedColor: rgba(0, 0, 0, 0.2);
-$backgroundColor: rgb(214, 214, 214);
-$boxShadowsColor: rgba(0, 0, 0, 0.5);
-$fontColor:rgba(31, 29, 29, 0.8);
-$darkColor:rgb(39, 39, 39);
-$buttonsColor: $backgroundColor;
-$teachingMaskColor:#040003;
-$navHeaderHeight: 3rem;
-$footerHeight:30vh;
-%actionColors{
-  transition:.3s;
-  &:hover{
-    background-color: $hoverColor;
-  }
-  &:active{
-    background-color: $clickedColor;
-  }
-}
-%coloredATag{
-  a{
-    color:#103063;
-    &:active{
-      color:#5a1414;
-    }
-    &:visited{
-      color:#39083d;
-    }
-  }
-}
-$iconSize:2.2rem;
-@mixin svgIcon($invert){
-  width:$iconSize;
-  height:$iconSize;
-  margin-left:.3em;
-  margin-right:.3em;
-  filter:invert($invert);
-}
-@mixin text-stroke($size, $strokeColor) {
-  $rSize : $size - (2*$size);
-  text-shadow:
-    $size $size 0 $strokeColor,
-    $rSize $rSize 0 $strokeColor,  
-    $size $rSize 0 $strokeColor,
-    $rSize $size 0 $strokeColor,
-    $size $size 0 $strokeColor;
-}
-:root{
-  font-size:16px;
-}
-*{
-  box-sizing: border-box;
-}
-a{
-  text-decoration: none;
-  color:inherit;
-}
-h1,h2,p{
-  margin:0;
-}
-body{
-  background-color:$backgroundColor;
-  font-family: 'Ubuntu', sans-serif;
-  margin:0;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  color:$fontColor;
-  height:calc(100vh - #{$navHeaderHeight});
-  position:relative;
-  z-index:0;
+<style lang="scss">
   .navHeader{
     position:fixed;
     background-color:$darkColor;
@@ -384,89 +315,72 @@ body{
       }
     }    
   }
-  >footer{
-    display:flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-    min-height:$footerHeight;
-    background-color: invert($backgroundColor);
-    color:invert($fontColor);
-    width:100%;
-    padding:1rem .5rem .5rem 1rem;
-    position:absolute;
-    nav{
-      display:grid;
-      flex:1;
-      height:100%;
-      grid-template-columns: 1fr 1fr 1fr;
-      width:100%;
-      p{
-        display:flex;
-        flex-direction: column;
-        align-items: flex-start;
-        a{
-          padding:5px;
-          font-size:.7em;
-        }  
+</style>
+
+<template>
+  <header class='navHeader'>
+    <div class="searchAndMenu">
+      <div class="menu">
+        <input type="checkbox" id="toggler">
+        <label for="toggler" class="toggler">
+          <div></div>
+          <div></div>
+          <div></div>
+        </label>
+        <nav> 
+          <a href="/">
+            <img src="/img/page/nav_home.svg" alt="{{ pageBuild[language].nav.home }}">
+            <span>{{ pageBuild[language].nav.home }}</span>
+          </a>
+          <a href="/projects">
+            <img src="/img/page/nav_projects.svg" alt="{{ pageBuild[language].nav.projects }}">
+            <span>{{ pageBuild[language].nav.projects }}</span>
+          </a>
+          <a href="/exps">
+            <img src="/img/page/nav_exp.svg" alt="{{ pageBuild[language].nav.exp s}}">
+            <span>{{ pageBuild[language].nav.exps }}</span>
+          </a>
+          <a href="/contact">
+            <img src="/img/page/nav_contact.svg" alt="{{ pageBuild[language].nav.contact }}">
+            <span>{{ pageBuild[language].nav.contact }}</span>
+          </a>
+          <select name="language">
+            <option value="pl">🇵🇱</option>
+            <option value="en">🇺🇸</option>
+          </select>
+        </nav>
+        <div class="navShadow"></div>
+      </div>
+      <div class="searchContainer">
+        <form action="/search" method="get">
+          <label for="search">
+            <img src="/img/page/nav_lupa.svg" alt="SEARCH" />
+          </label>
+          <input type="text" name="q" id="search" list="suggest" placeholder="Search" />
+          <div class="bg"></div>
+          <div class="abort">
+            <img src="/img/page/nav_x.svg" alt="ABORT SEARCHING" />
+          </div>          
+        </form>
+        <div class="suggestions"></div>
+      </div>
+    </div>
+    <a href="/">
+      <img src="/img/icons/logo128.webp" alt="{{title}} Logo">
+    </a>
+  </header>
+</template>
+
+
+<script lang="ts">
+  import { useDataStore } from '@/stores'
+  export default {
+    data(){
+      const { pageBuild } = useDataStore();
+      return { 
+        language: 'pl',
+        pageBuild 
       }
-
-    }
+    },
   }
-}
-@media (max-width : 720px) { // mobile
-  body{
-    main{
-      .details{
-        .mainImg{
-          width:100%!important;
-        }
-        .content{
-          section{
-            flex-direction: column!important;
-          }
-
-        }
-      }
-    }
-    #code{
-      .codeprojects{
-        flex-direction: column;
-        section{
-          min-height: fit-content;
-          margin:0;
-        }
-      }
-    }
-    .list{
-      >a{
-        flex-direction: column-reverse;
-        justify-content: center;
-        text-align: center;
-        article{
-          padding:0 0 2rem 0;
-        }
-
-
-      }
-
-    }
-  }
-}
-@media (min-width : 720px){   // bigger screens 
-  #code, #teaching, #buisness, body >.content{
-    margin:0 10vw;
-  }
-  .list,.details>.content body >.content{
-    padding:0 20%;
-  }
-}
-@media (min-width : 1220px){
-  #code, #teaching, #business body >.content{
-    margin:0 20vw;
-  }
-  .list,.details>.content body >.content{
-    padding:0 30%;
-  }
-
-}
+</script>

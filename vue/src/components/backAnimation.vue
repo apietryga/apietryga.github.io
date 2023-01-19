@@ -1,3 +1,8 @@
+<!-- 
+  SIMPLE ANIMATION 
+  MAKED FROM AI TEMPLATE
+ -->
+
 <style lang="scss" >
 
 @keyframes chopFalling {
@@ -155,10 +160,10 @@ export default {
   }
 }
 
-// .content{
+.content{
 //   border:2px dashed blue;
-//   width:100%;
-// }
+  width:100%;
+}
 
 // .topAnimation{
 //   // border:2px dashed red;
