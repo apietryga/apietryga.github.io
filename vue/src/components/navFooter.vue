@@ -3,16 +3,16 @@
     <nav>
       <p>
         <a href="/">
-          <span>{{pageBuild[language].nav.home}}</span>
+          <span>{{ pageBuild[language].nav.home }}</span>
         </a>
         <a href="/projects">
-          <span>{{pageBuild[language].nav.projects}}</span>
+          <span>{{ pageBuild[language].nav.projects }}</span>
         </a>
         <a href="/exps">
-          <span>{{pageBuild[language].nav.exps}}</span>
+          <span>{{ pageBuild[language].nav.exps }}</span>
         </a>
         <a href="/contact.html">
-          <span>{{pageBuild[language].nav.contact}}</span> 
+          <span>{{ pageBuild[language].nav.contact }}</span> 
         </a>
         <a href="/img/cvs/2022_03_CV_{{language}}.pdf" target="_blank">
           Curriculum Vitae
