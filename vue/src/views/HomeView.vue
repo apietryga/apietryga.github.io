@@ -121,7 +121,8 @@ export default {
 document.addEventListener('scroll', e => {
   const vh = Math.round( (window.scrollY * 100)/window.innerHeight );
   if(vh < 100){
-    document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
+    // document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
+    document.querySelectorAll(".topHeader >*").forEach(( e ) => {
       if(!e.classList.contains("background")){e.style.opacity = '1';}
       if(['next', 'mask photo'].includes(e.className)){
         return;
@@ -138,7 +139,8 @@ document.addEventListener('scroll', e => {
       }
     })
   }else{
-    document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
+    // document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
+    document.querySelectorAll(".topHeader >*").forEach(( e ) => {
       if(!e.classList.contains("background")){ e.style.opacity = '0' }
     })
 
