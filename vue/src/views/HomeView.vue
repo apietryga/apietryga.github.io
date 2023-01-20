@@ -107,8 +107,10 @@ export default {
     return { ...index, language, projects }
   },
   methods: {
-    getProjectsByNames( names: string[] ){
-      return names.map(( name: string ) => {
+    // getProjectsByNames( names: string[] ){
+    //   return names.map(( name: string ) => {
+    getProjectsByNames( names ){
+      return names.map(( name ) => {
         return this.projects.filter( project => project.name == name )[0]
       })
     }
