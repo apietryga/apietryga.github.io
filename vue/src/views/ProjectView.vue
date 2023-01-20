@@ -1,75 +1,261 @@
 <template>
-  <section class="project__single">
-    <header>
-      <h2>{{ project.name }}</h2>
-      <p>{{ project.lang.en.desc}}</p>
-    </header>
-    <main>
-      <img 
-        :src="'/img/contents/' + project.img" 
-        :alt="project.name + ' image'" 
-        style="width:10rem;height:10rem;" 
-      />
-      <div 
-        class="block"
-        v-for="index of [0,1,2]"
-      >
-        <p v-html="project.lang.en.content[index]" />
-        <div class="media__wrapper">
-          <projectMedia :media="project.media[index]" class="media" />
-        </div>
+  <div class="details">
+    <div class="background" style="background-color:{{color}}"></div>
+    <div class="mainImg">
+      <img :src="'/img/contents/' + img" :alt="title">
+    </div>
+  </div>
+  <main class="content">
+    <h1>{{ name }}</h1>
+    <h2>{{ lang[language].desc }}</h2>
+    <section v-for="section in content">
+      {{ section }}
+      <header v-if="section.header">
+        {{ section.header }}
+      </header>
+      <article v-if="section.article">
+        {{ section.article }}
+      </article>
+    </section>
+    <div class="prevNextWrapper">
+      <div class="prev">
+        {{ prev }}
       </div>
-    </main>
-  </section>
+      <div class="next">
+        {{ next }}
+      </div>
+    </div>
+  </main>
 </template>
 
-<script lang="ts" scoped>
+<script lang="ts">
   import { useDataStore } from '@/stores'
-
+  import { RouterLink } from 'vue-router'
   export default {
-    setup() {
-      const dataStore = useDataStore();
-      return { dataStore }
-    },
     data(){
-      return{
-        project: this.getProject(),
+      // return useDataStore()
+      const { projects, language } = useDataStore()
+      // const content = projects 
+      // return { ...index, language, content }
+
+      // console.log("ROUTER", this.$route.name)
+      // console.log("ROUTER", this.$route)
+      // const lang = projects.filter( project => project.name.toLowerCase() == this.$route.name.toLowerCase() )[0] 
+      return { 
+        ...projects.filter( project => project.name.toLowerCase() == this.$route.name.toLowerCase() )[0], 
+        language
       }
+      // return { lang: projects.filter( project => project.name.toLowerCase() == this.$route.name.toLowerCase() )[0] }
     },
     methods: {
-      getProject( ){
-        return this.dataStore.projects
-        .find( ( project : any) => project.url == location.pathname.split("/")[2] )
-      }
-    },
-    mounted(){
-      console.log(this.project)
-    },
-  }
-</script>
+      getContent(lang = 'en'){
+        const content = [];
+        const fieldsLength = Math.max(this.lang[lang].content?.length || 0, this.media?.length || 0);
+        for(let i = 0; i <= fieldsLength - 1; i++){
+          content.push({
+            header: this.lang?.[lang]?.content[i],
+            article: this.fillArticle(this.media?.[i], lang)
+          })
+        }
+        return content
+      },
+      
 
-<style lang="scss" scoped>
-.project__single{
-  padding:0 1rem;
-  header{
-    width:100%;
-    h2{
-      line-height: 1rem;
-      margin:.25rem 0;
-    }
-    p{
-      line-height: 1.1rem;
+
+
+
+      
     }
   }
-  main{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    .media__wrapper{
-      .media{
-        max-width:100%;
-      }
+
+
+  
+// PHOTO GALLERY (REVRITED 1:1 BY OLD)
+const photoGallery = {
+  images : document.querySelectorAll(".content article >img"),
+  init(){
+    this.images.forEach(img => {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", e => {
+        this.renderGallery(e.target);
+      })
+    })
+  },
+  renderGallery(img){
+    const galleryDOM = document.createElement("div");
+    galleryDOM.className = "photoGALLERY";
+    galleryDOM.innerHTML = /*html*/`
+      <style>
+        .photoGALLERY{
+          position:fixed;
+          z-index:1;
+          left:0;
+          top:0;
+          width:100%;
+          height:100%;
+          background-color:rgba(0,0,0,0.8);
+          color:#fff;
+          display:flex;
+          flex-direction:column;
+        }
+        .photoGALLERY .wrapper{
+          display:flex;
+          flex:1;
+          height:10vh;
+          justify-content:space-between;
+        }
+        .photoGALLERY .wrapper >*{
+          display:flex;
+          justify-content:center;
+          align-items:center;
+        }
+        .photoGALLERY .wrapper .left,
+        .photoGALLERY .wrapper .right{
+          padding:1rem;
+          font-size:2rem;
+        }
+        .photoGALLERY .wrapper .left span,
+        .photoGALLERY .wrapper .right span{
+          cursor:pointer;
+        }
+        .photoGALLERY .wrapper .imgContainer{
+          flex:1;
+        }
+        .photoGALLERY .wrapper .imgContainer img{
+          max-width:100%;
+          max-height:100%;
+        }
+        .photoGALLERY .closer{
+          text-align:right;
+          padding:1rem;
+        }
+        .photoGALLERY .closer span{
+          font-size:2rem;
+          cursor:pointer;
+        }
+        .photoGALLERY .thumbnails{
+          display:flex;
+          padding:1rem 0;
+          overflow-x:auto;
+          overflow-y:hidden;
+        }
+        .photoGALLERY .thumbnails img{
+          height:5rem;
+          margin:.5rem;
+          cursor:pointer;
+          border:5px solid transparent;
+        }
+        .photoGALLERY .thumbnails img.active{
+          border:5px solid red;
+        }
+      </style>
+      <div class="closer">
+        <span>❌</span>
+      </div>
+      <div class="wrapper">
+        <div class="left">
+          <span>⬅️</span>
+        </div>
+        <div class="imgContainer">
+          <img src="${img.src}" alt="${img.alt}" />
+        </div>
+        <div class="right">
+          <span>➡️</span>
+        </div>
+      </div>
+      <div class="thumbnails"></div>
+    `;
+    document.body.append(galleryDOM);
+    const displayedIMG = document.querySelector(".photoGALLERY .imgContainer img");
+    displayedIMG.addEventListener("click", e => { e.stopPropagation(); })
+    galleryDOM.addEventListener("click", () => { galleryDOM.remove() })
+
+    const changeImageTo = () => {
+      displayedIMG.src = photoGallery.images[currentImage].src;
+      displayedIMG.alt = photoGallery.images[currentImage].alt;
+      thumbnails.childNodes.forEach((thumb, i) => {
+        thumb.classList.remove("active");
+        if(i == currentImage){ thumb.classList.add("active") }
+      })
     }
+
+    let currentImage;
+
+    const thumbnails = galleryDOM.querySelector(".photoGALLERY .thumbnails");
+    this.images.forEach((thumbnail, i) => {
+      const thumb = document.createElement("img");
+      thumb.src = thumbnail.src;
+      thumb.alt = thumbnail.alt;
+      if(thumbnail.src == img.src){
+        thumb.className = "active";
+        currentImage = i;
+      }
+      thumb.addEventListener("click", e => {
+        currentImage = i;
+        changeImageTo();
+        e.stopPropagation();
+      })
+      thumbnails.append(thumb);
+    })
+
+    const rightButton = galleryDOM.querySelector(".photoGALLERY .right span");
+    rightButton.addEventListener("click", e => {
+      currentImage = currentImage >= photoGallery.images.length - 1 ? 0 : currentImage+1;
+      changeImageTo();
+      e.stopPropagation();
+    })
+
+    const leftButton = galleryDOM.querySelector(".photoGALLERY .left span");
+    leftButton.addEventListener("click", e => {
+      currentImage = currentImage <= 0 ? photoGallery.images.length - 1 : currentImage-1;
+      changeImageTo();
+      e.stopPropagation();
+    })
+
+    // keyarrows
+    document.addEventListener("keydown", e => {
+      if(e.key == "ArrowLeft"){
+        currentImage = currentImage <= 0 ? photoGallery.images.length - 1 : currentImage-1;
+        changeImageTo();
+      }
+      if(e.key == "ArrowRight"){
+        currentImage = currentImage >= photoGallery.images.length - 1 ? 0 : currentImage+1;
+        changeImageTo();
+      }
+      if(e.key == "Escape"){
+        galleryDOM.remove() 
+      }
+    })
   }
 }
+photoGallery.init();
+
+
+</script>
+
+<style lang="scss">
+  .details{
+    position:relative;
+    margin-top:$navHeaderHeight;
+    min-height:30vh;
+    .background{
+      position:absolute;
+      width:100%;
+      height:100%;
+      z-index:-1;
+    }
+    .mainImg{
+      min-height:30vh;
+      background-position:center;
+      height:100%;
+      width:100%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        width:250px;
+        height:250px;
+      }  
+    }
+  }
 </style>

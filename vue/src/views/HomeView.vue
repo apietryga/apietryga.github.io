@@ -27,11 +27,11 @@
         </header>
         <ul>
           <li v-for="techElement in stack">
-            <a :href="'/search?q=' + techElement">{{ techElement }}</a>
+            <RouterLink :to="'/search?q=' + techElement">{{ techElement }}</RouterLink>
           </li>
         </ul>
         <section>
-          <a v-for="element in getProjectsByNames(recomended.code)" :href="element.href">
+          <RouterLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)">
             <article>
               <header>
                 <h2>{{ element.name }}</h2>
@@ -39,10 +39,10 @@
               </header>
               <img :src="'/img/contents/' + element.img" :alt="element.name">
             </article>
-          </a>
+          </RouterLink>
           <div></div>
           <footer>
-            <a href="/projects">{{ lang[language].content[7] }}</a>
+            <RouterLink to="/projects">{{ lang[language].content[7] }}</RouterLink>
           </footer>
         </section>
       </div>
@@ -57,7 +57,7 @@
       <div class="content">
         <p>{{lang[language].content[10]}}</p>
         <section>
-          <a v-for="element in getProjectsByNames(recomended.teaching)" :href="element.href">
+          <RouterLink v-for="element in getProjectsByNames(recomended.teaching)" :to="'/projects/' + element.url">
             <article>
               <header>
                 <h2>{{ element.name }}</h2>
@@ -65,23 +65,21 @@
               </header>
               <img :src="'/img/contents/' + element.img" :alt="element.name">
             </article>
-          </a>
+          </RouterLink>
           <div></div>
           <footer>
-            <a href="/exps">{{ lang[language].content[11] }}</a>
+            <RouterLink to="/projects">{{ lang[language].content[11] }}</RouterLink>
           </footer>  
         </section>
-      
       </div>
       <div class="mask dark"></div>
-      
     </article>
     <article id="business">
       <div class="photo me"></div>
       <h1>{{ lang[language].content[12] }}</h1>
       <p>{{ lang[language].content[13] }}</p>
       <section>
-        <a v-for="element in getProjectsByNames(recomended.business)" :href="element.href">
+        <RouterLink v-for="element in getProjectsByNames(recomended.business)" :to="'/projects/' + element.url">
           <article>
             <header>
               <h2>{{element.name}}</h2>
@@ -89,10 +87,10 @@
             </header>
             <img :src="'/img/contents/' + element.img" :alt="element.name">
           </article>
-        </a>
+        </RouterLink>
         <div></div>
         <footer>
-          <a :href="'/search?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</a>
+          <RouterLink :to="'/search?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</RouterLink>
         </footer>  
       </section>
 
@@ -101,6 +99,7 @@
 
 <script lang="ts">
 import { useDataStore } from '@/stores'
+import { RouterLink } from 'vue-router'
 export default {
   data(){
     const { index, language, projects } = useDataStore()

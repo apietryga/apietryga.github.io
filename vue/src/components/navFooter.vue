@@ -2,21 +2,19 @@
   <footer>
     <nav>
       <p>
-        <a href="/">
+        <RouterLink to="/">
           <span>{{ pageBuild[language].nav.home }}</span>
-        </a>
-        <a href="/projects">
+        </RouterLink>
+        <RouterLink to="/projects">
           <span>{{ pageBuild[language].nav.projects }}</span>
-        </a>
-        <a href="/exps">
-          <span>{{ pageBuild[language].nav.exps }}</span>
-        </a>
-        <a href="/contact.html">
+        </RouterLink>
+        <RouterLink to="/contact.html">
           <span>{{ pageBuild[language].nav.contact }}</span> 
-        </a>
-        <a href="/img/cvs/2022_03_CV_{{language}}.pdf" target="_blank">
+        </RouterLink>
+        <!-- TODO: NOWE CV !!! -->
+        <RouterLink :to="'/img/cvs/2022_03_CV_' + language + '.pdf'" target="_blank">
           Curriculum Vitae
-        </a>
+        </RouterLink>
       </p>
     </nav>
     <p>
@@ -27,6 +25,7 @@
 
 <script lang="ts">
   import { useDataStore } from '@/stores'
+  import { RouterLink } from 'vue-router'
   export default {
     data(){
       return useDataStore()

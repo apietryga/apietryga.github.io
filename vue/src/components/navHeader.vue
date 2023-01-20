@@ -328,22 +328,18 @@
           <div></div>
         </label>
         <nav> 
-          <a href="/">
+          <RouterLink to="/">
             <img src="/img/page/nav_home.svg" alt="{{ pageBuild[language].nav.home }}">
             <span>{{ pageBuild[language].nav.home }}</span>
-          </a>
-          <a href="/projects">
+          </RouterLink>
+          <RouterLink to="/projects">
             <img src="/img/page/nav_projects.svg" alt="{{ pageBuild[language].nav.projects }}">
             <span>{{ pageBuild[language].nav.projects }}</span>
-          </a>
-          <a href="/exps">
-            <img src="/img/page/nav_exp.svg" alt="{{ pageBuild[language].nav.exp s}}">
-            <span>{{ pageBuild[language].nav.exps }}</span>
-          </a>
-          <a href="/contact">
+          </RouterLink>
+          <RouterLink to="/contact">
             <img src="/img/page/nav_contact.svg" alt="{{ pageBuild[language].nav.contact }}">
             <span>{{ pageBuild[language].nav.contact }}</span>
-          </a>
+          </RouterLink>
           <select name="language">
             <option value="pl">🇵🇱</option>
             <option value="en">🇺🇸</option>
@@ -365,15 +361,16 @@
         <div class="suggestions"></div>
       </div>
     </div>
-    <a href="/">
+    <RouterLink to="/">
       <img src="/img/icons/logo128.webp" alt="{{title}} Logo">
-    </a>
+    </RouterLink>
   </header>
 </template>
 
 
 <script lang="ts">
   import { useDataStore } from '@/stores'
+  import { RouterLink } from 'vue-router'
   export default {
     data(){
       return useDataStore()

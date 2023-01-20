@@ -5,7 +5,7 @@
       <section v-for="item in content">
         <header>
           <h2>
-            <a :href="'/project/' + item.url">{{ item.name }}</a>
+            <RouterLink :to="'/projects/' + item.url">{{ item.name }}</RouterLink>
           </h2>
           <p class="date">{{item.date}}</p>
         </header>
@@ -14,9 +14,9 @@
           <p>{{ item.lang[language].desc }}</p>
         </article>
         <footer>
-          <a :href="'/search?q=' + tag" v-for="tag in item.lang[language].category">
+          <RouterLink :to="'/search?q=' + tag" v-for="tag in item.lang[language].category">
             #{{ tag }}
-          </a>
+          </RouterLink>
         </footer>
       </section>    
     </nav>
@@ -25,6 +25,7 @@
 
 <script lang="ts">
   import { useDataStore } from '@/stores'
+  import { RouterLink } from 'vue-router'
   export default {
   data(){
       const { index, language, projects } = useDataStore()
