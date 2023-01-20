@@ -23,7 +23,8 @@
   </main>
 </template>
 
-<script lang="ts">
+<!-- <script lang="ts"> -->
+<script>
   import { useDataStore } from '@/stores'
   import { RouterLink } from 'vue-router'
   export default {
