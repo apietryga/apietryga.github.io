@@ -8,7 +8,7 @@
         <RouterLink to="/projects">
           <span>{{ pageBuild[language].nav.projects }}</span>
         </RouterLink>
-        <RouterLink to="/contact.html">
+        <RouterLink to="/contact">
           <span>{{ pageBuild[language].nav.contact }}</span> 
         </RouterLink>
         <!-- TODO: NOWE CV !!! -->
