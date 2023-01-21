@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ContactView from '../views/ContactView.vue'
 import ProjectsView from '../views/ProjectsView.vue'
 import ProjectView from '../views/ProjectView.vue'
 import e404 from '../views/404.vue'
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+    },
+    {
+      path: '/contact',
+      name: 'home',
+      component: ContactView,
     },
     {
       path: '/projects',

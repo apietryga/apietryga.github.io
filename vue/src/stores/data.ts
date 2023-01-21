@@ -1151,7 +1151,7 @@ export default {
       },
     },
   ],
-  404:{
+  p404:{
     name: "404",
     href: "404",
     media: [],
