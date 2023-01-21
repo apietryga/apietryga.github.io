@@ -1,7 +1,7 @@
 <template>
 
-  <a v-if="url?.type == 'fbgroup'" href="${url?.href}" target="_blank" class="fbgroup">
-    <img src="${url?.img}" alt="${url?.name}" />
+  <a v-if="url?.type == 'fbgroup'" :href="url?.href" target="_blank" class="fbgroup">
+    <img :src="url?.img" :alt="url?.name" />
   </a>
 
   <div v-if="url?.type == 'fbpost'" class="fbpost">
@@ -9,7 +9,7 @@
       class='fbpost'
       width="500"
       height="300"
-      src="https://www.facebook.com/plugins/post.php?href=${url.href}&show_text=true&width=500" 
+      :src="'https://www.facebook.com/plugins/post.php?href=' + url.href + '&show_text=true&width=500'" 
       style="border:none;overflow:hidden" 
       scrolling="no" frameborder="0" allowfullscreen="true" 
       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
@@ -19,12 +19,11 @@
   <template v-if="url?.constructor == Object">
     
     <template v-if="['projects'].includes(url.type)">
-      <template v-for="el of data[url.type]">
-
-        <a v-if="el.name == url.name" :href="'/' + this.generateHref(url.type, url.name)" class="externalJob">
-          <img src="/img/contents/${el.img}" alt="${el.name} Logo" />
-          <h3>${el.name}</h3>
-          <p>${el.lang[lang].desc}</p>
+      <template v-for="el of getIncludedProject()">
+        <a :href="'/projects/' + el.href" class="externalJob">
+          <img :src="'/img/contents/' + el.img" alt="${el.name} Logo" />
+          <h3>{{ el.name }}</h3>
+          <p>{{ el.lang[language].desc }}</p>
         </a>
       </template>
     </template>
@@ -33,11 +32,11 @@
       <blockquote 
         class="instagram-media" 
         data-instgrm-captioned
-        data-instgrm-permalink="https://www.instagram.com/p/${url?.id}/?utm_source=ig_embed&amp;utm_campaign=loading" 
+        :data-instgrm-permalink="'https://www.instagram.com/p/' + url?.id + '/?utm_source=ig_embed&amp;utm_campaign=loading'" 
         data-instgrm-version="14" 
         style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
         <div style="padding:16px;"> 
-          <a href="https://www.instagram.com/p/${url?.id}/?utm_source=ig_embed&amp;utm_campaign=loading" 
+          <a :href="'https://www.instagram.com/p/' + url?.id + '/?utm_source=ig_embed&amp;utm_campaign=loading'" 
             style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> 
             <div style=" display: flex; flex-direction: row; align-items: center;"> 
               <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> 
@@ -65,12 +64,11 @@
           </a>
         </div>
       </blockquote>
-      <!-- <script async src="//www.instagram.com/embed.js"></script> -->
     </template>
 
     <template v-if="url.type == 'fbvideo'">
       <iframe 
-        src="https://www.facebook.com/plugins/video.php?href=${url.href}" 
+        :src="'https://www.facebook.com/plugins/video.php?href=' + url.href" 
         style="border:none;overflow:hidden" 
         scrolling="no" 
         frameborder="0" 
@@ -81,7 +79,8 @@
     </template>
 
     <template v-if="url.type == 'github'">
-      <a href="${url.href}" target="_blank" class="githubContainer">
+      <!-- <a href="${url.href}" target="_blank" class="githubContainer"> -->
+      <a :href="url.href" target="_blank" class="githubContainer">
         <div class="github"></div>
         <!-- <p>${title.toUpperCase()}</p> -->
         <p v-html="url.href.split('/')[url.href.split('/').length -1]"></p>
@@ -123,6 +122,7 @@
 </template>
 
 <script>
+  import { useDataStore } from '@/stores'
   export default { 
     props: {
       props: {
@@ -131,15 +131,18 @@
       }
     },
     data(){
-      console.log('url', this.props)
-      return { 
-        // ...this.url,
-        // url: this.$route.href,
-        url: this.props.media
+      const { language, projects } = useDataStore()
+      const data = { 
+        url: this.props.media,
+        language,
+        projects,
       }
-
+      return data
     },
     methods: {
+      getIncludedProject(){
+        return this.projects.filter( project => project.name == this.url.name )
+      },
       generateHref(parent, name){
         return parent != null ? parent + "/" + this.escapeSpecialChars(name): this.href;
       },
@@ -167,7 +170,12 @@
           'Ź' : 'Z',
           'Ż' : 'Z',
         })[x])
-      }
+      },
+    },
+    mounted() {
+      const igScript = document.createElement('script')
+      igScript.setAttribute('src', '//www.instagram.com/embed.js')
+      document.head.appendChild(igScript)
     },
   }
 </script>
@@ -312,5 +320,14 @@
     p{
       z-index:1;
     }
+  }
+
+  section{
+    display:flex;
+    justify-content: center;
+  }
+
+  img{
+    max-width: 100%;
   }
 </style>
