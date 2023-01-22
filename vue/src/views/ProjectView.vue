@@ -19,8 +19,7 @@
   </main>
   <div class="prevNextWrapper">
     <div v-for="butt of getPrevNext()">
-      <!-- <RouterLink v-if="butt?.name" :to="'/projects/' + butt.url"> -->
-      <a v-if="butt?.name" :href="'/projects/' + butt.url">
+      <RouterLink v-if="butt?.name" :to="'/projects/' + butt.url">
         <p>{{ butt.languages[language] }}</p>
         <h4>{{ butt.name }}</h4>
         <img :src="'/img/contents/' + butt.img" :alt="butt.name +' Logo'" />
@@ -30,8 +29,7 @@
             v-for="tag in butt.lang?.[language].category"> #{{ tag }} 
           </RouterLink>
         </p>
-      <!-- </RouterLink> -->
-      </a>
+      </RouterLink>
     </div>
   </div>
 </template>

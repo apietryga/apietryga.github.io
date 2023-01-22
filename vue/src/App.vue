@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+  import { RouterView } from 'vue-router'
 </script>
 
 <template>
   <navHeader />
-  <RouterView />
+  <RouterView :key="$route.fullPath" />
   <navFooter />
 </template>

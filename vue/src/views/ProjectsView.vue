@@ -2,7 +2,7 @@
   <main class="list">
     <h1>{{ title }}</h1>
     <nav>
-      <section v-for="item in content">
+      <section v-for="item in projects">
         <header>
           <h2>
             <RouterLink :to="'/projects/' + item.url">{{ item.name }}</RouterLink>
@@ -23,15 +23,41 @@
   </main>
 </template>
 
-<!-- <script lang="ts"> -->
 <script>
   import { useDataStore } from '@/stores'
   import { RouterLink } from 'vue-router'
   export default {
-  data(){
+    data(){
       const { index, language, projects } = useDataStore()
-      const content = projects 
-      return { ...index, language, content }
+      if(this.$route.name == 'search'){
+        return { ...index, language, projects: this.searchProjects( projects, language ) }
+      }
+      return { ...index, language, projects }
+    },
+    methods: {
+      searchProjects( allProjects, lang ){
+        const q = this.$route.query.q
+
+        // FILTERING
+        let filteredProjects = [];
+        filteredProjects = allProjects.filter( project => {
+          if( project.url.includes(q)
+          ||  project.name.includes(q) 
+          ||  project.lang[lang].desc.includes(q)
+          ||  project.lang[lang].category.includes(q)
+          ){ return true }
+          for(const content of project.lang[lang].content ){
+            if( content.includes(q) ){ return true }
+          }
+          return false
+        })
+
+        // SORTING
+        
+
+
+        return filteredProjects
+      },
     },
   }
 </script>

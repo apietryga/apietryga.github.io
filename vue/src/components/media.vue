@@ -132,12 +132,11 @@
     },
     data(){
       const { language, projects } = useDataStore()
-      const data = { 
+      return { 
         url: this.props.media,
         language,
         projects,
       }
-      return data
     },
     methods: {
       getIncludedProject(){
