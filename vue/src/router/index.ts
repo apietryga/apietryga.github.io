@@ -48,6 +48,12 @@ const router = createRouter({
       component: e404,
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    return { 
+      top: 0,
+      behavior: 'smooth',
+    }
+  },
 })
 
 export default router

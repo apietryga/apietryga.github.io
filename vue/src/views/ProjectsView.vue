@@ -2,7 +2,7 @@
   <main class="list">
     <h1>{{ title }}</h1>
     <nav>
-      <section v-for="item in projects">
+      <section v-if="projects.length > 0" v-for="item in projects">
         <header>
           <h2>
             <RouterLink :to="'/projects/' + item.url">{{ item.name }}</RouterLink>
@@ -19,6 +19,12 @@
           </RouterLink>
         </footer>
       </section>    
+      <section v-else>
+        <p>
+          There's no results<span v-if="$route.query"> for <b>{{ $route.query.q }}</b> query</span>.<br /> 
+          Try search something else or <RouterLink to="/projects">see all projects</RouterLink>
+        </p>
+      </section>
     </nav>
   </main>
 </template>
@@ -41,24 +47,34 @@
         // FILTERING
         let filteredProjects = [];
         filteredProjects = allProjects.filter( project => {
-          if( project.url.includes(q)
-          ||  project.name.includes(q) 
-          ||  project.lang[lang].desc.includes(q)
-          ||  project.lang[lang].category.includes(q)
+          if( project.url.toLowerCase().includes(q.toLowerCase())
+          ||  project.name.toLowerCase().includes(q.toLowerCase()) 
+          ||  project.lang[lang].desc.toLowerCase().includes(q.toLowerCase())
+          ||  this.arrToLowercase(project.lang[lang].category).includes(q.toLowerCase())
           ){ return true }
           for(const content of project.lang[lang].content ){
-            if( content.includes(q) ){ return true }
+            if( content.toLowerCase().includes(q.toLowerCase()) ){ return true }
           }
           return false
         })
 
         // SORTING
-        
+
 
 
         return filteredProjects
       },
+      arrToLowercase(arr){
+        const lower = [];
+        for (const element of arr) {
+          lower.push(element.toLowerCase());
+        }
+        return lower
+      }
     },
+    mounted(){
+      console.log(this.$route)
+    }
   }
 </script>
 
@@ -82,9 +98,6 @@
     padding: 1rem .5rem;
     display:flex;
     flex-direction: column;
-    span{
-      background-color:rgb(150, 150, 11);
-    }
     section{
       border-bottom:.1rem solid rgba(0, 0, 0, 0.288);
       display:flex;

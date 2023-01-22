@@ -389,7 +389,7 @@ body{
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
-    min-height:$footerHeight;
+    // min-height:$footerHeight;
     background-color: invert($backgroundColor);
     color:invert($fontColor);
     width:100%;
@@ -414,6 +414,12 @@ body{
     }
   }
 }
+
+.router-link-active {
+  color:rgb(198, 236, 190);
+
+}
+
 @media (max-width : 720px) { // mobile
   body{
     main{

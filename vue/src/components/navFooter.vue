@@ -16,10 +16,8 @@
           Curriculum Vitae
         </RouterLink>
       </p>
+      <p> <div class="cp">&copy; apietryga 2022.</div> </p>
     </nav>
-    <p>
-      Created by apietryga 2022.
-    </p>          
   </footer>
 </template>
 
@@ -40,7 +38,6 @@ footer{
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
-  min-height:$footerHeight;
   background-color: invert($backgroundColor);
   color:invert($fontColor);
   width:100%;
@@ -48,18 +45,24 @@ footer{
   position:absolute;
   nav{
     display:grid;
-    flex:1;
     height:100%;
-    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: flex-end;
+    grid-template-columns: 1fr 1fr;
     width:100%;
     p{
       display:flex;
       flex-direction: column;
       align-items: flex-start;
-      a{
-        padding:5px;
-        font-size:.7em;
-      }  
+      padding:1rem;
+      font-size:1rem;
+      &:nth-child(2){
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+      a, .cp{
+        font-size:inherit;
+        padding:.45rem 0;
+      }
     }
 
   }
