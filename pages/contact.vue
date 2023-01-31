@@ -19,6 +19,14 @@
 
 <script>
   export default {
+    // setup(){
+    //   useHead({
+    //     title: 'Contact Me!',
+    //     meta: [
+    //       { name: "description", content: "Get contact to me" },
+    //     ]
+    //   })
+    // },
     data(){
       const { contact, language } = this.$appData
       return { ...contact, language }

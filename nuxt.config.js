@@ -1,8 +1,4 @@
 export default defineNuxtConfig({
-  // modules: [
-  //   '@nuxt/ui'
-  // ],
-// export default {
   vite: {
     css: {
       preprocessorOptions: {
@@ -12,10 +8,7 @@ export default defineNuxtConfig({
       },
     },
   },
-    // modules: [
-    //   '@nuxt/ui'
-    // ],
-    // plugins: ['~/plugins/data.js'],
-  // }
-
+  publicRuntimeConfig: {
+    ORIGIN: process.env.ORIGIN
+  }
 })
