@@ -1179,6 +1179,7 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
       contact:{
         name: "Contact",
         href: "contact",
+        img: "antek_insta.webp",
         phone : "+48 732 012 715",
         fullName: "Antoni Pietryga",
         mail: "antek.pietryga@gmail.com",
