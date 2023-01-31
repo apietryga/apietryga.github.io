@@ -23,7 +23,7 @@
         <a :href="'/projects/' + el.href" class="externalJob">
           <img :src="'/img/contents/' + el.img" :alt="el?.name + ' Logo'" />
           <h3>{{ el?.name }}</h3>
-          <p>{{ el.lang[language].desc }}</p>
+          <p>{{ el.lang?.[language].desc }}</p>
         </a>
       </template>
     </template>
