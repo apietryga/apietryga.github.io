@@ -47,7 +47,7 @@
           seo.title = page.name
           seo.meta = [
             { name: "description", content: page.lang[this.$appData.language].desc },
-            { name: "keywords", content: page.lang[this.$appData.language].category.join(", ") },
+            { name: "keywords", content: page.lang[this.$appData.language].category?.join(", ") },
             { name: "og:title", content: page.name },
             { name: "og:description", content: page.lang[this.$appData.language].desc },
             { name: "og:image", content: ORIGIN + 'img/contents/' + page.img },
