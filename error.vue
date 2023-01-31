@@ -19,7 +19,9 @@
 <style lang="scss">
   .div404{
     margin-top:var(--navHeaderHeight);
-    min-height: calc(70vh - 3rem);
+    // min-height: calc(70vh - 3rem);
+    // min-height: calc( 100vh - var(--navHeaderHeight) - var(--navfooterHeight));
+    min-height: calc( 100vh - var(--navHeaderHeight) - var(--navfooterHeight));
     background-image: url("/img/meta/404.webp");
     background-size: cover;
     background-position: bottom;
