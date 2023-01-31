@@ -8,7 +8,4 @@ export default defineNuxtConfig({
       },
     },
   },
-  publicRuntimeConfig: {
-    ORIGIN: process.env.ORIGIN
-  }
 })
