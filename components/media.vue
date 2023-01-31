@@ -207,8 +207,8 @@
   }
   .externalJob{
     border-radius:2rem;
-    border:2px solid $darkColor;
-    box-shadow: 0 0 1rem $darkColor;
+    border:2px solid var(--dark-primary);
+    box-shadow: 0 0 1rem var(--dark-primary);
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -237,7 +237,7 @@
       display:flex;
       flex-direction: column;
       >a{
-        border:.2rem solid $darkColor;
+        border:.2rem solid var(--dark-primary);
         // border:2px dashed red;
         background:lighten($backgroundColor, 5%);
         display:flex;
@@ -270,7 +270,7 @@
         justify-content: center;
         align-items: center;
         padding:1rem;
-        background-color: $darkColor;
+        background-color: var(--dark-primary);
         color:$backgroundColor;
         a{
           line-height: 1.5rem;

@@ -36,8 +36,8 @@
 
 <style lang="scss">
   .contact{
-    margin-top:$navHeaderHeight;
-    min-height: calc(70vh - #{$navHeaderHeight});
+    margin-top:var(--navHeaderHeight);
+    min-height: calc(70vh - #{var(--navHeaderHeight)});
     display:flex;
     flex-direction: column;
     align-items: center;

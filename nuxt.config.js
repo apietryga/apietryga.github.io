@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  css: ["@/assets/base.css"],
   vite: {
     css: {
       preprocessorOptions: {

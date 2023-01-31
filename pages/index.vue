@@ -403,7 +403,7 @@
       align-items: center;
       header{
         flex:1;
-        padding-top:$navHeaderHeight;
+        padding-top:var(--navHeaderHeight);
         h1{
           margin:2rem 0 .5rem 0;
         }
@@ -504,7 +504,7 @@
     position:relative;
     min-height:40vh;
     padding:2em;
-    padding-top:$navHeaderHeight;
+    padding-top:var(--navHeaderHeight);
     margin-top:calc(10vh + 5px);
     display:flex;
     flex-direction: column;
@@ -523,7 +523,7 @@
     h1{
       font-size:3rem;
       line-height: 1em;
-      margin-top:$navHeaderHeight;
+      margin-top:var(--navHeaderHeight);
     }
     >p{
       padding:2rem 0 2rem 2rem;

@@ -1,10 +1,10 @@
 <style lang="scss">
   .navHeader{
     position:fixed;
-    background-color:$darkColor;
+    background-color:var(--dark-primary);
     top:0;
     width:100%;
-    height: $navHeaderHeight;
+    height: var(--navHeaderHeight);
     z-index:2;
     display:flex;
     flex-direction: row-reverse;
@@ -16,7 +16,7 @@
       align-items: center;
       .menu{
         right:0;
-        height:$navHeaderHeight;
+        height:var(--navHeaderHeight);
         padding:.5rem;
         display:flex;
         justify-content: center;
@@ -25,16 +25,16 @@
           transition:.5s;
           position:absolute;
           width:100%;
-          height:$navHeaderHeight;
+          height:var(--navHeaderHeight);
           left:0;
           top:0;
-          background-color:$darkColor;
+          background-color:var(--dark-primary);
         }
         .toggler{
           z-index:2;
           cursor:pointer;
-          width: $navHeaderHeight - 1;
-          height: $navHeaderHeight - 1;
+          width: var(--navHeaderHeight) - 1;
+          height: var(--navHeaderHeight) - 1;
           border-radius:50%;
           display:flex;
           flex-direction: column;
@@ -91,8 +91,8 @@
             }
           }
           &:checked ~ nav{
-            top:$navHeaderHeight;
-            height:calc(100vh - #{$navHeaderHeight});
+            top:var(--navHeaderHeight);
+            height:calc(100vh - #{var(--navHeaderHeight)});
             >*{
               animation: showMenu 1s ease;
             }
@@ -117,7 +117,7 @@
               padding:0 .5rem;
             }        
           }  
-          top:$navHeaderHeight;
+          top:var(--navHeaderHeight);
           transition:1s;
           position:absolute;
           width:100%;
@@ -310,8 +310,8 @@
       align-items: center;
       padding:.5rem;
       img{
-        height:$navHeaderHeight - 1;
-        width:$navHeaderHeight - 1;
+        height:var(--navHeaderHeight) - 1;
+        width:var(--navHeaderHeight) - 1;
       }
     }    
   }
@@ -362,17 +362,332 @@
       </div>
     </div>
     <NuxtLink to="/">
-      <!-- <img src="/img/icons/logo128.webp" alt="{{title}} Logo"> -->
-      <img src="/img/icons/logo128.webp" >
+      <navLogo />
     </NuxtLink>
   </header>
 </template>
 
 
-<!-- <script lang="ts"> -->
 <script>
-  import data from '@/stores'
   export default {
-    data(){ return data },
+    data(){ return this.$appData },
   }
 </script>
+
+
+<style lang="scss">
+  .navHeader{
+    position:fixed;
+    // background-color:$darkColor;
+    background-color:var(--dark-primary);
+    top:0;
+    width:100%;
+    height: var(--navHeaderHeight);
+    z-index:2;
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    .searchAndMenu{
+      flex:1;
+      display:flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      .menu{
+        right:0;
+        height:var(--navHeaderHeight);
+        padding:.5rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        .navShadow{
+          transition:.5s;
+          position:absolute;
+          width:100%;
+          height:var(--navHeaderHeight);
+          left:0;
+          top:0;
+          background-color:var(--dark-primary);
+        }
+        .toggler{
+          z-index:2;
+          cursor:pointer;
+          width: var(--navHeaderHeight) - 1;
+          height: var(--navHeaderHeight) - 1;
+          border-radius:50%;
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          @extend %actionColors;
+          position:relative;
+          div{
+            position:absolute;
+            transition:.5s;
+            border-radius:5px;
+            background-color:$buttonsColor;
+            height:.1rem;
+            width:1rem;
+            margin:.1rem;
+            &:nth-child(1){
+              top:.5rem;
+            }
+            &:nth-child(3){
+              bottom:.5rem;
+            }
+          }
+        }
+        #toggler{
+          @keyframes showMenu {
+            0%{
+              opacity:0;
+              padding:0 .5rem;
+            }
+            20%{
+              opacity:0;
+            //   padding:0 .5rem;
+            }
+            100%{
+              opacity:1;
+              padding:.5rem .5rem;
+            }        
+          }  
+          display:none;
+          &:checked ~ .toggler{
+            div{
+              &:nth-child(1){
+                transform:rotate(135deg);
+                top:auto;
+              }
+              &:nth-child(2){
+                opacity:0;
+                transition: .1s;
+              }
+              &:nth-child(3){
+                transform:rotate(-135deg);
+                bottom:auto;
+              }
+            }
+          }
+          &:checked ~ nav{
+            top:var(--navHeaderHeight);
+            height:calc(100vh - #{var(--navHeaderHeight)});
+            >*{
+              animation: showMenu 1s ease;
+            }
+            transition:.5s;
+          }
+          &:checked ~ .navShadow{
+            background-color:rgb(0, 0, 0);
+          }
+        }
+        nav{
+          @keyframes hideMenu {
+            0%{
+              opacity:1;
+              padding:.5rem .5rem;
+            }
+            30%{
+              opacity:0;
+              padding:0 .5rem;
+            }
+            100%{
+              opacity:0;
+              padding:0 .5rem;
+            }        
+          }  
+          top:var(--navHeaderHeight);
+          transition:1s;
+          position:absolute;
+          width:100%;
+          left:0;
+          top:-100vh;
+          display:flex;
+          flex-direction:column;
+          padding:.5rem;
+          color:#fff;
+          background-color: #040003;
+          >*{
+            animation: hideMenu 1s ease;
+          }
+          a{
+            @extend %actionColors;
+            display:flex;
+            align-items: center;
+            border-radius:3em;
+            &:nth-child(1){
+              padding-left:.2rem;
+            }
+            img{
+              @include svgIcon(20%);
+            }
+          }
+          select{
+            padding:.5rem;
+            cursor:pointer;
+            margin:0 1rem;
+            max-width:fit-content;
+            animation: none;
+            color:inherit;
+            background-color: transparent;
+            white-space: normal;
+            outline: none;
+            border:none;
+            option{
+              padding:0;
+              color:#000;
+            }
+          }
+        }  
+      }
+      .searchContainer{
+        flex:1;
+        display:flex;
+        justify-content: flex-end;
+        align-items: center;
+        position:relative;
+        form{
+          display:flex;
+          position:relative;
+          border-radius: 2rem;
+          transition: .5s;
+          &:hover{
+            background-color: $hoverColor;
+          }
+          input{
+            transition: .5s;
+            position:relative;
+            z-index:1;
+            padding:0;
+            background-color: transparent;
+            border:none;
+            outline:none;
+            font-size:1rem;
+            transition: .5s;
+            width:0;
+            flex:1;
+            color:rgba(255, 255, 255, 0.8);
+          }
+          .bg{
+            border-radius: 2rem;
+            position:absolute;
+            width:100%;
+            height:100%;
+            z-index:0;
+          }
+          label,.abort{
+            cursor:pointer;
+            display:flex;
+            position:relative;
+            z-index:1;
+          }
+          img{
+            @include svgIcon(0%);
+            transform: scale(0.6);
+            margin:0;
+            cursor:pointer;
+          }
+          .abort{
+            opacity:0;
+            left:(-$iconSize);
+            transition: .5s;
+            width:0;
+            img{
+              width:0;
+            }
+          }
+          input:focus{
+            width:7rem;
+          }
+          input:focus ~ .abort{
+            opacity:1;
+            left:0;
+            width:$iconSize;
+            img{
+              width:$iconSize;
+            }
+          }
+          input:focus ~ .bg{
+            background-color: $hoverColor;
+          }
+        }
+        .suggestions{
+          display:none;
+          flex-direction: column;
+          top:100%;
+          position:absolute;
+          background-color: $backgroundColor;
+          right:1rem;
+          max-height:60vh;
+          width:40vw;
+          overflow-y:auto;
+          border-radius:.5rem;
+          padding:.5rem;
+          border:1px solid rgba(0, 0, 0, 0.356);
+          box-shadow: 0 0 .2rem #000;
+          a{
+            padding:.5rem;
+            display:flex;
+            flex-direction: column;
+            &:not(a:nth-child(1)){
+              border-top:1px solid rgba(0, 0, 0, 0.356);
+            }
+            &:hover,&.selected{
+              background-color: #04000325;
+            }
+            h5{
+              margin:0;
+              text-align: left;
+              width: 100%;
+            }
+            .wrapper{
+              display:flex;
+              align-items: center;
+              justify-content: flex-start;
+              gap:5px;
+              width:100%;
+              p{
+                margin:0;
+                flex:1;
+              }
+            }
+            span{
+              background-color:yellow;
+            }
+          }
+        }
+      }
+      @media (min-width:749px){
+        flex-direction: row;
+        padding-right: .5rem;
+        justify-content: space-between;
+        .menu{
+          .toggler{display:none!important;}
+          nav{
+            position:relative;
+            top:0;
+            flex-direction: row;
+            z-index:1;
+            background-color: transparent;
+            a,select{
+              animation:none;
+              transition:none;
+              span, &select{
+                padding:0 .5rem;
+              }
+              img{
+                display:none;
+              }
+            }
+          }
+        }
+      }
+    }
+    > a{
+      position:relative;
+      display:flex;
+      align-items: center;
+      padding:.5rem 0rem .5rem 1rem;
+    }    
+  }
+
+</style>

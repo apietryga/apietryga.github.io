@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Webdev portfolio",
   "scripts": {
-    "dev": "nuxt",
+    "dev": "npx nuxi dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt start",

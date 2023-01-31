@@ -77,14 +77,14 @@
 
 <style lang="scss">
 .list{
-  min-height: calc(100vh - #{$footerHeight} - #{$navHeaderHeight});
-  margin-top:$navHeaderHeight;
+  min-height: calc(100vh - #{$footerHeight} - #{var(--navHeaderHeight)});
+  margin-top:var(--navHeaderHeight);
   display:flex;
   flex-wrap:wrap;
   position:relative;
   justify-content:flex-start;
   width:100%;
-  $tableBackground:$darkColor;
+  $tableBackground:var(--dark-primary);
   @extend %coloredATag;
   h1{
     margin:1rem 0 .2rem .5rem;

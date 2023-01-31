@@ -76,7 +76,7 @@
 <style lang="scss">
   .details{
     position:relative;
-    margin-top:$navHeaderHeight;
+    margin-top:var(--navHeaderHeight);
     min-height:30vh;
     .background{
       position:absolute;
@@ -138,7 +138,7 @@
         display:flex;
         flex-direction: column;
         >a{
-          border:.2rem solid $darkColor;
+          border:.2rem solid var(--dark-primary);
           // border:2px dashed red;
           background:lighten($backgroundColor, 5%);
           display:flex;
@@ -171,7 +171,7 @@
           justify-content: center;
           align-items: center;
           padding:1rem;
-          background-color: $darkColor;
+          background-color: var(--dark-primary);
           color:$backgroundColor;
           a{
             line-height: 1.5rem;
