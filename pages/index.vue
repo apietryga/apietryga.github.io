@@ -1,6 +1,4 @@
 <template>
-  <!-- TODO: MAKE HEADER WITH META TAGS -->
-  <!-- {% include "header.html" %} -->
     <header class="topHeader">
       <div class="title">
         <h1>{{ lang[language].content[0] }}<b>{{ lang[language].content[1] }}</b></h1>
@@ -27,11 +25,11 @@
         </header>
         <ul>
           <li v-for="techElement in stack" :key="techElement">
-            <RouterLink :to="'/search?q=' + techElement">{{ techElement }}</RouterLink>
+            <NuxtLink :to="'/search?q=' + techElement">{{ techElement }}</NuxtLink>
           </li>
         </ul>
         <section>
-          <RouterLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)" :key="element">
+          <NuxtLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)" :key="element">
             <article>
               <header>
                 <h2>{{ element.name }}</h2>
@@ -39,10 +37,10 @@
               </header>
               <img :src="'/img/contents/' + element.img" :alt="element.name">
             </article>
-          </RouterLink>
+          </NuxtLink>
           <div></div>
           <footer>
-            <RouterLink to="/projects">{{ lang[language].content[7] }}</RouterLink>
+            <NuxtLink to="/projects">{{ lang[language].content[7] }}</NuxtLink>
           </footer>
         </section>
       </div>
@@ -57,7 +55,7 @@
       <div class="content">
         <p>{{lang[language].content[10]}}</p>
         <section>
-          <RouterLink v-for="element in getProjectsByNames(recomended.teaching)" :to="'/projects/' + element.url" :key="element">
+          <NuxtLink v-for="element in getProjectsByNames(recomended.teaching)" :to="'/projects/' + element.url" :key="element">
             <article>
               <header>
                 <h2>{{ element.name }}</h2>
@@ -65,10 +63,10 @@
               </header>
               <img :src="'/img/contents/' + element.img" :alt="element.name">
             </article>
-          </RouterLink>
+          </NuxtLink>
           <div></div>
           <footer>
-            <RouterLink to="/projects">{{ lang[language].content[11] }}</RouterLink>
+            <NuxtLink to="/projects">{{ lang[language].content[11] }}</NuxtLink>
           </footer>  
         </section>
       </div>
@@ -79,7 +77,7 @@
       <h1>{{ lang[language].content[12] }}</h1>
       <p>{{ lang[language].content[13] }}</p>
       <section>
-        <RouterLink v-for="element in getProjectsByNames(recomended.business)" :to="'/projects/' + element.url" :key="element">
+        <NuxtLink v-for="element in getProjectsByNames(recomended.business)" :to="'/projects/' + element.url" :key="element">
           <article>
             <header>
               <h2>{{element.name}}</h2>
@@ -87,10 +85,10 @@
             </header>
             <img :src="'/img/contents/' + element.img" :alt="element.name">
           </article>
-        </RouterLink>
+        </NuxtLink>
         <div></div>
         <footer>
-          <RouterLink :to="'/search?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</RouterLink>
+          <NuxtLink :to="'/search?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</NuxtLink>
         </footer>  
       </section>
 
@@ -99,63 +97,58 @@
 
 <!-- <script lang="ts"> -->
 <script>
-// import { useDataStore } from '@/stores'
-import data from '@/stores'
-import { RouterLink } from 'vue-router'
 export default {
   data(){
-
-
-    const { index, language, projects } = data
+    const { index, language, projects } = this.$appData
     return { ...index, language, projects }
   },
   methods: {
-
     // getProjectsByNames( names: string[] ){
     //   return names.map(( name: string ) => {
     getProjectsByNames( names ){
       return names.map(( name ) => {
         return this.projects.filter( project => project.name == name )[0]
       })
-    }
+    },
+    scrollingAnimation(){
+      // copy pasted from old project
+      document.addEventListener('scroll', e => {
+        const vh = Math.round( (window.scrollY * 100)/window.innerHeight );
+        if(vh < 100){
+          // document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
+          document.querySelectorAll(".topHeader >*").forEach(( e ) => {
+            if(!e.classList.contains("background")){e.style.opacity = '1';}
+            if(['next', 'mask photo'].includes(e.className)){
+              return;
+            }else if(e.classList.contains("mountains")){
+              e.style.marginTop = (window.scrollY/2) + "px";return;
+            }else if(e.classList.contains("moon")){
+              e.style.marginTop = (window.scrollY*1.7) + "px";return;
+            }else if(e.classList.contains("clouds")){
+              e.style.marginTop = -(window.scrollY*2) + "px";return;
+            }else if(e.classList.contains("title")){
+              e.style.marginTop = (window.scrollY/1.8) + "px";return;
+            }else if(e.classList.contains("background")){
+              e.style.backgroundColor = 'rgba(0,0,0, '+((vh/2 + 70)/100)+')';return;
+            }
+          })
+        }else{
+          // document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
+          document.querySelectorAll(".topHeader >*").forEach(( e ) => {
+            if(!e.classList.contains("background")){ e.style.opacity = '0' }
+          })
+
+        }
+      })
+    },
   },
-  mounted(){
-    // console.log($data)
-    // console.log($myPlugin())
-    // console.log($data())
-    console.log($myData())
-  }
+  created() {
+    if(process.client){ this.scrollingAnimation() }
+  },
+  beforeUpdate () {
+    if(process.client){ this.scrollingAnimation() }
+  },
 }
-
-// // copy pasted from old project
-// document.addEventListener('scroll', e => {
-//   const vh = Math.round( (window.scrollY * 100)/window.innerHeight );
-//   if(vh < 100){
-//     // document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
-//     document.querySelectorAll(".topHeader >*").forEach(( e ) => {
-//       if(!e.classList.contains("background")){e.style.opacity = '1';}
-//       if(['next', 'mask photo'].includes(e.className)){
-//         return;
-//       }else if(e.classList.contains("mountains")){
-//         e.style.marginTop = (window.scrollY/2) + "px";return;
-//       }else if(e.classList.contains("moon")){
-//         e.style.marginTop = (window.scrollY*1.7) + "px";return;
-//       }else if(e.classList.contains("clouds")){
-//         e.style.marginTop = -(window.scrollY*2) + "px";return;
-//       }else if(e.classList.contains("title")){
-//         e.style.marginTop = (window.scrollY/1.8) + "px";return;
-//       }else if(e.classList.contains("background")){
-//         e.style.backgroundColor = 'rgba(0,0,0, '+((vh/2 + 70)/100)+')';return;
-//       }
-//     })
-//   }else{
-//     // document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
-//     document.querySelectorAll(".topHeader >*").forEach(( e ) => {
-//       if(!e.classList.contains("background")){ e.style.opacity = '0' }
-//     })
-
-//   }
-// })
 </script>
 
 <style lang="scss">

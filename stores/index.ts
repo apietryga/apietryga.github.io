@@ -1,3 +1,4 @@
+// export const data = () => ({
 export default {
   language: 'en',
   projects:[
@@ -1296,3 +1297,5 @@ export default {
     },
   }
 }
+// )
+
