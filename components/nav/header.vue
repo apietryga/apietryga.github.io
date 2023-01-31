@@ -328,18 +328,18 @@
           <div></div>
         </label>
         <nav> 
-          <RouterLink to="/">
+          <NuxtLink to="/">
             <img src="/img/page/nav_home.svg" alt="{{ pageBuild[language].nav.home }}">
             <span>{{ pageBuild[language].nav.home }}</span>
-          </RouterLink>
-          <RouterLink to="/projects">
+          </NuxtLink>
+          <NuxtLink to="/projects">
             <img src="/img/page/nav_projects.svg" alt="{{ pageBuild[language].nav.projects }}">
             <span>{{ pageBuild[language].nav.projects }}</span>
-          </RouterLink>
-          <RouterLink to="/contact">
+          </NuxtLink>
+          <NuxtLink to="/contact">
             <img src="/img/page/nav_contact.svg" alt="{{ pageBuild[language].nav.contact }}">
             <span>{{ pageBuild[language].nav.contact }}</span>
-          </RouterLink>
+          </NuxtLink>
           <select name="language">
             <option value="pl">🇵🇱</option>
             <option value="en">🇺🇸</option>
@@ -361,20 +361,17 @@
         <div class="suggestions"></div>
       </div>
     </div>
-    <RouterLink to="/">
+    <NuxtLink to="/">
       <img src="/img/icons/logo128.webp" alt="{{title}} Logo">
-    </RouterLink>
+    </NuxtLink>
   </header>
 </template>
 
 
 <!-- <script lang="ts"> -->
 <script>
-  import { useDataStore } from '@/stores'
-  import { RouterLink } from 'vue-router'
+  import data from '@/stores'
   export default {
-    data(){
-      return useDataStore()
-    },
+    data(){ return data },
   }
 </script>

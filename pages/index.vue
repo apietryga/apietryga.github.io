@@ -26,12 +26,12 @@
           </p>  
         </header>
         <ul>
-          <li v-for="techElement in stack">
+          <li v-for="techElement in stack" :key="techElement">
             <RouterLink :to="'/search?q=' + techElement">{{ techElement }}</RouterLink>
           </li>
         </ul>
         <section>
-          <RouterLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)">
+          <RouterLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)" :key="element">
             <article>
               <header>
                 <h2>{{ element.name }}</h2>
@@ -57,7 +57,7 @@
       <div class="content">
         <p>{{lang[language].content[10]}}</p>
         <section>
-          <RouterLink v-for="element in getProjectsByNames(recomended.teaching)" :to="'/projects/' + element.url">
+          <RouterLink v-for="element in getProjectsByNames(recomended.teaching)" :to="'/projects/' + element.url" :key="element">
             <article>
               <header>
                 <h2>{{ element.name }}</h2>
@@ -79,7 +79,7 @@
       <h1>{{ lang[language].content[12] }}</h1>
       <p>{{ lang[language].content[13] }}</p>
       <section>
-        <RouterLink v-for="element in getProjectsByNames(recomended.business)" :to="'/projects/' + element.url">
+        <RouterLink v-for="element in getProjectsByNames(recomended.business)" :to="'/projects/' + element.url" :key="element">
           <article>
             <header>
               <h2>{{element.name}}</h2>
@@ -99,14 +99,18 @@
 
 <!-- <script lang="ts"> -->
 <script>
-import { useDataStore } from '@/stores'
+// import { useDataStore } from '@/stores'
+import data from '@/stores'
 import { RouterLink } from 'vue-router'
 export default {
   data(){
-    const { index, language, projects } = useDataStore()
+
+
+    const { index, language, projects } = data
     return { ...index, language, projects }
   },
   methods: {
+
     // getProjectsByNames( names: string[] ){
     //   return names.map(( name: string ) => {
     getProjectsByNames( names ){
@@ -115,37 +119,43 @@ export default {
       })
     }
   },
+  mounted(){
+    // console.log($data)
+    // console.log($myPlugin())
+    // console.log($data())
+    console.log($myData())
+  }
 }
 
-// copy pasted from old project
-document.addEventListener('scroll', e => {
-  const vh = Math.round( (window.scrollY * 100)/window.innerHeight );
-  if(vh < 100){
-    // document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
-    document.querySelectorAll(".topHeader >*").forEach(( e ) => {
-      if(!e.classList.contains("background")){e.style.opacity = '1';}
-      if(['next', 'mask photo'].includes(e.className)){
-        return;
-      }else if(e.classList.contains("mountains")){
-        e.style.marginTop = (window.scrollY/2) + "px";return;
-      }else if(e.classList.contains("moon")){
-        e.style.marginTop = (window.scrollY*1.7) + "px";return;
-      }else if(e.classList.contains("clouds")){
-        e.style.marginTop = -(window.scrollY*2) + "px";return;
-      }else if(e.classList.contains("title")){
-        e.style.marginTop = (window.scrollY/1.8) + "px";return;
-      }else if(e.classList.contains("background")){
-        e.style.backgroundColor = 'rgba(0,0,0, '+((vh/2 + 70)/100)+')';return;
-      }
-    })
-  }else{
-    // document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
-    document.querySelectorAll(".topHeader >*").forEach(( e ) => {
-      if(!e.classList.contains("background")){ e.style.opacity = '0' }
-    })
+// // copy pasted from old project
+// document.addEventListener('scroll', e => {
+//   const vh = Math.round( (window.scrollY * 100)/window.innerHeight );
+//   if(vh < 100){
+//     // document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
+//     document.querySelectorAll(".topHeader >*").forEach(( e ) => {
+//       if(!e.classList.contains("background")){e.style.opacity = '1';}
+//       if(['next', 'mask photo'].includes(e.className)){
+//         return;
+//       }else if(e.classList.contains("mountains")){
+//         e.style.marginTop = (window.scrollY/2) + "px";return;
+//       }else if(e.classList.contains("moon")){
+//         e.style.marginTop = (window.scrollY*1.7) + "px";return;
+//       }else if(e.classList.contains("clouds")){
+//         e.style.marginTop = -(window.scrollY*2) + "px";return;
+//       }else if(e.classList.contains("title")){
+//         e.style.marginTop = (window.scrollY/1.8) + "px";return;
+//       }else if(e.classList.contains("background")){
+//         e.style.backgroundColor = 'rgba(0,0,0, '+((vh/2 + 70)/100)+')';return;
+//       }
+//     })
+//   }else{
+//     // document.querySelectorAll(".topHeader >*").forEach(( e: any ) => {
+//     document.querySelectorAll(".topHeader >*").forEach(( e ) => {
+//       if(!e.classList.contains("background")){ e.style.opacity = '0' }
+//     })
 
-  }
-})
+//   }
+// })
 </script>
 
 <style lang="scss">
