@@ -348,7 +348,7 @@
         <div class="navShadow"></div>
       </div>
       <div class="searchContainer">
-        <form action="/search" method="get">
+        <form action="/projects" method="get">
           <label for="search">
             <img src="/img/page/nav_lupa.svg" alt="SEARCH" />
           </label>

@@ -36,15 +36,10 @@
 </template>
 
 <script>
-  // import { NuxtLink } from 'vue-router'
-  // import { useDataStore } from '@/stores'
   export default {
     data(){
-      // const { projects, language } = useDataStore()
       const { projects, language } = this.$appData
-      // const projectIndex = projects.findIndex( project => project.name.toLowerCase() == this.$route.name.toLowerCase())
-      console.log(this.$route.params)
-      const projectIndex = projects.findIndex( project => project.name.toLowerCase() == this.$route.params.name[0].toLowerCase())
+      const projectIndex = projects.findIndex( project => project.url == this.$route.params.name[0])
       console.log('project:', projects[projectIndex])
       return {
         ...projects[projectIndex],
