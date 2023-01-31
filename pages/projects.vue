@@ -2,27 +2,29 @@
   <main class="list">
     <h1>{{ title }}</h1>
     <nav>
-      <section v-if="projects.length > 0" v-for="item in projects">
-        <header>
-          <h2>
-            <RouterLink :to="'/projects/' + item.url">{{ item.name }}</RouterLink>
-          </h2>
-          <p class="date">{{item.date}}</p>
-        </header>
-        <article>
-          <img :src="'/img/contents/' + item.img" :alt="item.name">
-          <p>{{ item.lang[language].desc }}</p>
-        </article>
-        <footer>
-          <RouterLink :to="'/search?q=' + tag" v-for="tag in item.lang[language].category">
-            #{{ tag }}
-          </RouterLink>
-        </footer>
-      </section>    
+      <template v-if="projects.length > 0">          
+        <section v-for="item in projects" :key="item">
+          <header>
+            <h2>
+              <NuxtLink :to="'/projects/' + item.url">{{ item.name }}</NuxtLink>
+            </h2>
+            <p class="date">{{item.date}}</p>
+          </header>
+          <article>
+            <img :src="'/img/contents/' + item.img" :alt="item.name">
+            <p>{{ item.lang[language].desc }}</p>
+          </article>
+          <footer>
+            <NuxtLink :to="'/search?q=' + tag" v-for="tag in item.lang[language].category" :key="tag">
+              #{{ tag }}
+            </NuxtLink>
+          </footer>
+        </section>
+      </template>
       <section v-else>
         <p>
           There's no results<span v-if="$route.query"> for <b>{{ $route.query.q }}</b> query</span>.<br /> 
-          Try search something else or <RouterLink to="/projects">see all projects</RouterLink>
+          Try search something else or <NuxtLink to="/projects">see all projects</NuxtLink>
         </p>
       </section>
     </nav>
@@ -30,11 +32,9 @@
 </template>
 
 <script>
-  import { useDataStore } from '@/stores'
-  import { RouterLink } from 'vue-router'
   export default {
     data(){
-      const { index, language, projects } = useDataStore()
+      const { index, language, projects } = this.$appData
       if(this.$route.name == 'search'){
         return { ...index, language, projects: this.searchProjects( projects, language ) }
       }

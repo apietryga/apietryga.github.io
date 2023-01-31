@@ -2,6 +2,7 @@
   <div>
     <navHeader />
     <slot />
+    <navFooter />
   </div>
 </template>
 <!-- 

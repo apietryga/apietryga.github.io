@@ -2,32 +2,31 @@
   <footer>
     <nav>
       <p>
-        <RouterLink to="/">
+        <NuxtLink to="/">
           <span>{{ pageBuild[language].nav.home }}</span>
-        </RouterLink>
-        <RouterLink to="/projects">
+        </NuxtLink>
+        <NuxtLink to="/projects">
           <span>{{ pageBuild[language].nav.projects }}</span>
-        </RouterLink>
-        <RouterLink to="/contact">
+        </NuxtLink>
+        <NuxtLink to="/contact">
           <span>{{ pageBuild[language].nav.contact }}</span> 
-        </RouterLink>
+        </NuxtLink>
         <!-- TODO: NOWE CV !!! -->
-        <RouterLink :to="'/img/cvs/2022_03_CV_' + language + '.pdf'" target="_blank">
+        <NuxtLink :to="'/img/cvs/2022_03_CV_' + language + '.pdf'" target="_blank">
           Curriculum Vitae
-        </RouterLink>
+        </NuxtLink>
       </p>
-      <p> <div class="cp">&copy; apietryga 2022.</div> </p>
+      <div class="cp">
+        <p>&copy; apietryga 2022.</p>
+      </div>
     </nav>
   </footer>
 </template>
 
-<!-- <script lang="ts"> -->
 <script>
-  import { useDataStore } from '@/stores'
-  import { RouterLink } from 'vue-router'
   export default {
     data(){
-      return useDataStore()
+      return this.$appData
     },
   }
 </script>
@@ -59,10 +58,15 @@ footer{
         align-items: flex-end;
         justify-content: flex-end;
       }
-      a, .cp{
+      a{
         font-size:inherit;
         padding:.45rem 0;
       }
+    }
+    .cp{
+      display:flex;
+      justify-content:flex-end;
+      align-items:flex-end;
     }
 
   }
