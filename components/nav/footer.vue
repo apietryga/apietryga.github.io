@@ -39,7 +39,7 @@ footer{
   display:flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height:var(--navfooterHeight);
+  min-height: var(--navfooterHeight);
   padding:1rem .5rem .5rem 1rem;
   position:absolute;
   width:100%;

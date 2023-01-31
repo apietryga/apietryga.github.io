@@ -39,7 +39,9 @@
     margin-top:var(--navHeaderHeight);
     // min-height: calc(70vh - #{var(--navHeaderHeight)});
     // min-height: calc(70vh - var(--navHeaderHeight));
-    min-height: calc(100vh - var(--navHeaderHeight));
+    // min-height: calc(100vh - var(--navHeaderHeight));
+    min-height: calc( 100vh - ( var(--navfooterHeight) + var(--navHeaderHeight)));
+    
     display:flex;
     flex-direction: column;
     align-items: center;

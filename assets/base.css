@@ -3,14 +3,8 @@
   
   --dark-primary:rgb(39, 39, 39);
 
-
   --primary-color:#000;
 
-
   --navHeaderHeight: 3rem;
-  --navfooterHeight:20vh;
-  /* $footerHeight:30vh; */
-
-
-  
+  --navfooterHeight:18vh;
 }
