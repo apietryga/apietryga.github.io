@@ -2,3 +2,5 @@ node_modules/
 old_public/
 old_content/
 .nuxt
+dist
+.output
