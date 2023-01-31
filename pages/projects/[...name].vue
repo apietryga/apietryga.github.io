@@ -1,9 +1,8 @@
 <template>
   <div class="details">
     <div class="background" style="background-color:{{color}}"></div>
-    <!-- <div class="mainImg"> -->
     <div class="mainImg" v-if="img">
-      <img :src="'/img/contents/' + img" :alt="title">
+      <img :src="'/img/contents/' + img" :alt="name">
     </div>
   </div>
   <main class="content">
@@ -40,7 +39,7 @@
     data(){
       const { projects, language } = this.$appData
       const projectIndex = projects.findIndex( project => project.url == this.$route.params.name[0])
-      console.log('project:', projects[projectIndex])
+      // console.log('project:', projects[projectIndex])
       return {
         ...projects[projectIndex],
         projectIndex,

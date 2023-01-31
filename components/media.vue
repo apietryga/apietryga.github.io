@@ -21,8 +21,8 @@
     <template v-if="['projects'].includes(url.type)">
       <template v-for="el of getIncludedProject()" :key="el">
         <a :href="'/projects/' + el.href" class="externalJob">
-          <img :src="'/img/contents/' + el.img" alt="${el.name} Logo" />
-          <h3>{{ el.name }}</h3>
+          <img :src="'/img/contents/' + el.img" :alt="el?.name + ' Logo'" />
+          <h3>{{ el?.name }}</h3>
           <p>{{ el.lang[language].desc }}</p>
         </a>
       </template>
@@ -97,7 +97,7 @@
       :src="`${url}&autoplay=1`"
       :srcdoc="`<style>*{box-sizing:border-box;overflow:hidden;padding:0;margin:0}.ytImgLink .ytbuttonContainer{position:absolute;width:100%;height:100%;display:flex;justify-content:center;align-items:center}.ytImgLink .ytbuttonContainer:hover .ytbutton{background-color:red}.ytImgLink .ytbuttonContainer .ytbutton{transition:.2s;display:flex;justify-content:center;align-items:center;color:#fff;background-color:#474747;border-radius:50%/10%;font-size:1.5rem;height:3rem;width:4.5rem;position:relative}.ytImgLink img{position:absolute;width:100%;top:0;bottom:0;margin:auto}</style>
       <a class='ytImgLink' href=${url}?autoplay=1>
-        <img src='${url.replace('www','img').replace('embed','vi') + '/hqdefault.jpg' }' alt='${this.name}'>
+        <img src='${url.replace('www','img').replace('embed','vi') + '/hqdefault.jpg' }' alt='${name}'>
         <div class='ytbuttonContainer'>
           <span class='ytbutton'>▶</span>
         </div>
@@ -105,7 +105,7 @@
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
-      title="${this.name}">
+      :title="name">
     </iframe>
 
     <iframe v-if="url.split('/').includes('videos')"

@@ -362,7 +362,8 @@
       </div>
     </div>
     <NuxtLink to="/">
-      <img src="/img/icons/logo128.webp" alt="{{title}} Logo">
+      <!-- <img src="/img/icons/logo128.webp" alt="{{title}} Logo"> -->
+      <img src="/img/icons/logo128.webp" >
     </NuxtLink>
   </header>
 </template>
