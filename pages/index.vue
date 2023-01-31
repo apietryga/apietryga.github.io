@@ -25,7 +25,7 @@
         </header>
         <ul>
           <li v-for="techElement in stack" :key="techElement">
-            <NuxtLink :to="'/search?q=' + techElement">{{ techElement }}</NuxtLink>
+            <NuxtLink :to="'/projects?q=' + techElement">{{ techElement }}</NuxtLink>
           </li>
         </ul>
         <section>
@@ -88,7 +88,7 @@
         </NuxtLink>
         <div></div>
         <footer>
-          <NuxtLink :to="'/search?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</NuxtLink>
+          <NuxtLink :to="'/projects?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</NuxtLink>
         </footer>  
       </section>
 

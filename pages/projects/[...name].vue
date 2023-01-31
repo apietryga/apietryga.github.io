@@ -1,14 +1,15 @@
 <template>
   <div class="details">
     <div class="background" style="background-color:{{color}}"></div>
-    <div class="mainImg">
+    <!-- <div class="mainImg"> -->
+    <div class="mainImg" v-if="img">
       <img :src="'/img/contents/' + img" :alt="title">
     </div>
   </div>
   <main class="content">
     <h1>{{ name }}</h1>
     <h2>{{ lang[language].desc }}</h2>
-    <section v-for="section in getContent()">
+    <section v-for="section in getContent()" :key="section">
       <p v-if="section.header" v-html="section.header"></p>
       <media v-else :props="section" />
     </section>
@@ -18,29 +19,33 @@
     </div>
   </main>
   <div class="prevNextWrapper">
-    <div v-for="butt of getPrevNext()">
-      <RouterLink v-if="butt?.name" :to="'/projects/' + butt.url">
+    <div v-for="butt of getPrevNext()" :key="butt">
+      <NuxtLink v-if="butt?.name" :to="'/projects/' + butt.url">
         <p>{{ butt.languages[language] }}</p>
         <h4>{{ butt.name }}</h4>
         <img :src="'/img/contents/' + butt.img" :alt="butt.name +' Logo'" />
         <p>{{ butt.lang[language].desc }}</p>
         <p>
-          <RouterLink :to="'/search?q=' + tag" 
-            v-for="tag in butt.lang?.[language].category"> #{{ tag }} 
-          </RouterLink>
+          <NuxtLink :to="'/projects?q=' + tag" 
+            v-for="tag in butt.lang?.[language].category" :key="tag"> #{{ tag }} 
+          </NuxtLink>
         </p>
-      </RouterLink>
+      </NuxtLink>
     </div>
   </div>
 </template>
 
 <script>
-  import { RouterLink } from 'vue-router'
-  import { useDataStore } from '@/stores'
+  // import { NuxtLink } from 'vue-router'
+  // import { useDataStore } from '@/stores'
   export default {
     data(){
-      const { projects, language } = useDataStore()
-      const projectIndex = projects.findIndex( project => project.name.toLowerCase() == this.$route.name.toLowerCase())
+      // const { projects, language } = useDataStore()
+      const { projects, language } = this.$appData
+      // const projectIndex = projects.findIndex( project => project.name.toLowerCase() == this.$route.name.toLowerCase())
+      console.log(this.$route.params)
+      const projectIndex = projects.findIndex( project => project.name.toLowerCase() == this.$route.params.name[0].toLowerCase())
+      console.log('project:', projects[projectIndex])
       return {
         ...projects[projectIndex],
         projectIndex,

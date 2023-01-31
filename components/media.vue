@@ -19,7 +19,7 @@
   <template v-if="url?.constructor == Object">
     
     <template v-if="['projects'].includes(url.type)">
-      <template v-for="el of getIncludedProject()">
+      <template v-for="el of getIncludedProject()" :key="el">
         <a :href="'/projects/' + el.href" class="externalJob">
           <img :src="'/img/contents/' + el.img" alt="${el.name} Logo" />
           <h3>{{ el.name }}</h3>
@@ -47,7 +47,8 @@
             </div>
             <div style="padding: 19% 0;"></div> 
             <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
-              <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+              <!-- <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"> -->
+              <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" >
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <g transform="translate(-511.000000, -20.000000)" fill="#000000">
                     <g>
@@ -73,8 +74,7 @@
         scrolling="no" 
         frameborder="0" 
         allowfullscreen="true" 
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
-        allowFullScreen="true">
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
       </iframe>
     </template>
 
@@ -114,15 +114,14 @@
       scrolling="no" 
       frameborder="0" 
       allowfullscreen="true" 
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
-      allowFullScreen="true">
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
     </iframe>
   </template>
 
 </template>
 
 <script>
-  import { useDataStore } from '@/stores'
+  // import { useDataStore } from '@/stores'
   export default { 
     props: {
       props: {
@@ -131,7 +130,8 @@
       }
     },
     data(){
-      const { language, projects } = useDataStore()
+      // const { language, projects } = useDataStore()
+      const { language, projects } = this.$appData
       return { 
         url: this.props.media,
         language,

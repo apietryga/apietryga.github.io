@@ -15,7 +15,7 @@
             <p>{{ item.lang[language].desc }}</p>
           </article>
           <footer>
-            <NuxtLink :to="'/search?q=' + tag" v-for="tag in item.lang[language].category" :key="tag">
+            <NuxtLink :to="'/projects?q=' + tag" v-for="tag in item.lang[language].category" :key="tag">
               #{{ tag }}
             </NuxtLink>
           </footer>
@@ -35,7 +35,7 @@
   export default {
     data(){
       const { index, language, projects } = this.$appData
-      if(this.$route.name == 'search'){
+      if(this.$route.query?.q){
         return { ...index, language, projects: this.searchProjects( projects, language ) }
       }
       return { ...index, language, projects }
@@ -72,9 +72,6 @@
         return lower
       }
     },
-    mounted(){
-      console.log(this.$route)
-    }
   }
 </script>
 

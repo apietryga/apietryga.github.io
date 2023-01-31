@@ -1,16 +1,16 @@
 <template>
+  <navHeader />
   <main class='div404'>
     <h2>404</h2>
     <p v-html="lang[language].desc"></p>
-    <!-- {{ lang[language].desc }} -->
   </main>
+  <navFooter />
 </template>
 
 <script>
- import { useDataStore } from '@/stores'
   export default {
     data(){
-      const { p404, language } = useDataStore()
+      const { p404, language } = this.$appData
       return { ...p404, language }
     },
   }

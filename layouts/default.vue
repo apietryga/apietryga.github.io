@@ -1,7 +1,7 @@
 <template>
   <div>
     <navHeader />
-    <slot />
+    <slot :key="$route.fullPath" />
     <navFooter />
   </div>
 </template>
@@ -13,12 +13,10 @@
     <NuxtLink to="/">Home page</NuxtLink>
   </div>
 </template>
-
+-->
 <script>
-export default {
+// export default {
   // props: ['error'],
   // layout: 'blog' // you can set a custom layout for the error page
-}
+// }
 </script> 
--->
-

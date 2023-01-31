@@ -18,10 +18,9 @@
 </template>
 
 <script>
-  import { useDataStore } from '@/stores'
   export default {
     data(){
-      const { contact, language } = useDataStore()
+      const { contact, language } = this.$appData
       return { ...contact, language }
     },
   }
