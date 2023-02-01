@@ -61,7 +61,7 @@ footer{
       }
       a{
         font-size:inherit;
-        padding:.45rem 0;
+        padding:.5rem 0;
       }
     }
     .cp{

@@ -81,8 +81,7 @@
     <template v-if="url.type == 'github'">
       <!-- <a href="${url.href}" target="_blank" class="githubContainer"> -->
       <a :href="url.href" target="_blank" class="githubContainer">
-        <div class="github"></div>
-        <!-- <p>${title.toUpperCase()}</p> -->
+        <iconGithub />
         <p v-html="url.href.split('/')[url.href.split('/').length -1]"></p>
       </a>
     </template>
@@ -296,26 +295,6 @@
     display:flex;
     flex-direction: column;
     align-items: center;
-    .github{
-      outline:0;
-      background-color: #fff;
-      background-image: url("/img/page/contact/github.svg");
-      background-size: cover;
-      width:5rem;
-      height:5rem;
-      position:relative;
-      &:after{
-        content: '';
-        border:5px solid #000;
-        // border:5px solid red;
-        position:absolute;
-        width:calc(100% - 6px);
-        height:calc(100% - 6px); 
-        // height:calc(100% ); 
-        top:-2px;
-        left:-2px;
-      }
-    }
     p{
       z-index:1;
     }
