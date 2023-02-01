@@ -120,7 +120,6 @@
 </template>
 
 <script>
-  // import { useDataStore } from '@/stores'
   export default { 
     props: {
       props: {
@@ -177,7 +176,6 @@
     },
   }
 </script>
-
 
 <style lang="scss">
   .fbgroup{

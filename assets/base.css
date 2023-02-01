@@ -1,9 +1,12 @@
 :root{
   --font-primary-color:#fff;
   
-  --dark-primary:rgb(39, 39, 39);
+  /* --dark-primary:rgb(39, 39, 39); */
+  --dark-primary:#111;
 
   --primary-color:#000;
+
+  --hover-color: rgba(116, 116, 116, 0.2);
 
   --navHeaderHeight: 3rem;
   --navfooterHeight:18vh;

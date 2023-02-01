@@ -1,17 +1,12 @@
-$hoverColor: rgba(116, 116, 116, 0.363);
 $clickedColor: rgba(0, 0, 0, 0.2);
 $backgroundColor: rgb(214, 214, 214);
 $boxShadowsColor: rgba(0, 0, 0, 0.5);
 $fontColor:rgba(31, 29, 29, 0.8);
-// $darkColor:rgb(39, 39, 39);
-$buttonsColor: $backgroundColor;
 $teachingMaskColor:#040003;
-// var(--navHeaderHeight): 3rem;
-// $footerHeight:30vh;
 %actionColors{
   transition:.3s;
   &:hover{
-    background-color: $hoverColor;
+    background-color: var(--hover-color);
   }
   &:active{
     background-color: $clickedColor;
@@ -104,7 +99,7 @@ body{
   // text-decoration:underline;
   // text-decoration: solid underline var(--font-primary-color) 2px;
   span{
-    border-bottom:1px solid var(--font-primary-color);
+    border-bottom:1.5px solid var(--font-primary-color);
   }
 
 

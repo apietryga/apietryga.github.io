@@ -1,0 +1,78 @@
+/* MOBILE MENU */
+/* NAV MENU TOGGLER */
+@keyframes togglerEl1 {
+  0%{
+    top:2px;
+    transform:rotate(0deg);
+  }
+  50%{
+    transform:rotate(0deg);
+    top:calc( 50% - 3px );
+
+  }
+  100%{
+    transform:rotate(135deg);                
+    top:calc( 50% - 3px );
+  }
+}
+
+@keyframes togglerEl1_reverse {
+  100%{
+    top:2px;
+    transform:rotate(0deg);
+  }
+  50%{
+    transform:rotate(0deg);
+    top:calc( 50% - 3px );
+  }
+  0%{
+    transform:rotate(135deg);                
+    top:calc( 50% - 3px );
+  }
+}
+
+@keyframes togglerEl3 {
+  0%{
+    bottom:2px;
+    transform:rotate(0deg);
+  }
+  50%{
+    transform:rotate(0deg);
+    bottom:calc( 50% - 3px );
+  }
+  100%{
+    transform:rotate(-135deg);
+    bottom:calc( 50% - 3px );
+  }
+}
+
+@keyframes togglerEl3_reverse {
+  100%{
+    bottom:2px;
+    transform:rotate(0deg);
+  }
+  50%{
+    transform:rotate(0deg);
+    bottom:calc( 50% - 3px );
+  }
+  0%{
+    transform:rotate(-135deg);
+    bottom:calc( 50% - 3px );
+  }
+}
+/* END OF NAV MENU TOGGLER */
+
+@keyframes showMenu {
+  0%{
+    opacity:0;
+    padding:0 .5rem;
+  }
+  20%{
+    opacity:0;
+  /* //   padding:0 .5rem; */
+  }
+  100%{
+    opacity:1;
+    padding:.5rem .5rem;
+  }        
+} 
