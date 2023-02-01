@@ -23,26 +23,6 @@ $teachingMaskColor:#040003;
     }
   }
 }
-$iconSize:2.2rem;
-@mixin svgIcon($invert){
-  width:$iconSize;
-  height:$iconSize;
-  margin-left:.3em;
-  margin-right:.3em;
-  filter:invert($invert);
-}
-@mixin text-stroke($size, $strokeColor) {
-  $rSize : $size - (2*$size);
-  text-shadow:
-    $size $size 0 $strokeColor,
-    $rSize $rSize 0 $strokeColor,  
-    $size $rSize 0 $strokeColor,
-    $rSize $size 0 $strokeColor,
-    $size $size 0 $strokeColor;
-}
-:root{
-  font-size:16px;
-}
 *{
   box-sizing: border-box;
 }

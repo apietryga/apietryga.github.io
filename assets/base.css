@@ -1,5 +1,6 @@
 :root{
-  --font-primary-color:#fff;
+  /* --font-primary-color:#fff; */
+  --font-primary-color:rgb(184, 34, 189);
   
   /* --dark-primary:rgb(39, 39, 39); */
   --dark-primary:#111;
@@ -10,4 +11,6 @@
 
   --navHeaderHeight: 3rem;
   --navfooterHeight:18vh;
+
+  --icon-size:2rem;
 }
