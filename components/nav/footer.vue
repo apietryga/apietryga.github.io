@@ -34,8 +34,8 @@
 <style lang="scss" scoped>
 footer{
   align-items: flex-end;
-  background-color: invert($backgroundColor);
-  color:invert($fontColor);
+  background:var(--dark-primary);
+  color: var(--font-primary-color);
   display:flex;
   flex-direction: column;
   justify-content: flex-end;

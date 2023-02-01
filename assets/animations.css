@@ -65,29 +65,23 @@
 @keyframes showMenu {
   0%{
     opacity:0;
-    padding:0 .5rem;
   }
   20%{
     opacity:0;
-  /* //   padding:0 .5rem; */
   }
   100%{
     opacity:1;
-    padding:.5rem .5rem;
   }        
 } 
 
 @keyframes hideMenu {
   0%{
     opacity:1;
-    padding:.5rem .5rem;
   }
   30%{
     opacity:0;
-    padding:0 .5rem;
   }
   100%{
     opacity:0;
-    padding:0 .5rem;
   }        
 }  

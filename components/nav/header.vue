@@ -197,7 +197,7 @@
             border-radius:1rem;
             color: var(--font-primary-color);
             display:flex;
-            font-size:.8rem;
+            // font-size:.8rem;
             line-height: .7rem;
             margin-left:1rem;
             svg{
