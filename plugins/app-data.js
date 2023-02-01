@@ -1188,6 +1188,7 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
         fb: "https://www.facebook.com/antoni.pietryga/",
         yt: "https://www.youtube.com/channel/UCB5bhBYgly7udyjyjj0K_UQ?view_as=subscriber",
         github: "https://github.com/apietryga",
+        in: "https://www.linkedin.com/in/apietryga/",
         lang: {
           "pl": {
             desc: `Dane kontaktowe`,
