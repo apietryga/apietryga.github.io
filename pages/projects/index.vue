@@ -1,19 +1,21 @@
 <template>
   <main class="list">
-    <h1>{{ title }}</h1>
+    <h1 v-if="title">{{ title }}</h1>
     <nav>
       <template v-if="projects.length > 0">          
         <section v-for="item in projects" :key="item">
-          <header>
-            <h2>
-              <NuxtLink :to="'/projects/' + item.url">{{ item.name }}</NuxtLink>
-            </h2>
-            <p class="date">{{item.date}}</p>
-          </header>
-          <article>
-            <img :src="'/img/contents/' + item.img" :alt="item.name">
-            <p>{{ item.lang[language].desc }}</p>
-          </article>
+          <div class="wrapper">
+            <header>
+              <p class="date">{{item.date}}</p>
+              <h2>
+                <NuxtLink :to="'/projects/' + item.url">{{ item.name }}</NuxtLink>
+              </h2>
+              <p>{{ item.lang[language].desc }}</p>
+            </header>
+            <article>
+              <img :src="'/img/contents/' + item.img" :alt="item.name">
+            </article>
+          </div>
           <footer>
             <NuxtLink :to="'/projects?q=' + tag" v-for="tag in item.lang[language].category" :key="tag">
               #{{ tag }}
@@ -92,7 +94,6 @@
   nav{
     position:relative;
     margin:0 auto;
-    padding: 1rem .5rem;
     display:flex;
     flex-direction: column;
     section{
@@ -101,23 +102,28 @@
       margin-bottom:.5rem;
       flex-direction: column;
       padding:.5rem 1rem;
-      >header{
+      .wrapper{
+        // border:2px dashed red;
         display:flex;
-        justify-content: space-between;
-        align-items: center;
-        h2{
-          margin:.5rem 0;
-        }
-      }
-      article{
-        display:flex;
-        flex-direction: row-reverse;
-        p{
+        >header{
           flex:1;
+          h2{
+            margin:.3rem 0;
+          }
+          .date{
+            font-size:.6rem;
+            font-weight:bolder;
+            line-height:.7rem;
+            margin:0;
+          }
         }
-        img{
-          width:100px;
-          height:100px;
+        article{
+          display:flex;
+          flex-direction: row-reverse;
+          img{
+            height:100px;
+            width:100px;
+          }
         }
       }
       footer{
