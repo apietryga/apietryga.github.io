@@ -12,11 +12,10 @@
   "dependencies": {
     "nuxt": "^3.1.1",
     "sass": "^1.57.1",
-    "three": "^0.149.0",
-    "three-obj-mtl-loader": "^1.0.3"
+    "three": "^0.149.0"
   },
   "devDependencies": {
-    "execa": "^6.1.0",
-    "@types/three": "^0.149.0"
+    "@types/three": "^0.149.0",
+    "execa": "^6.1.0"
   }
 }
