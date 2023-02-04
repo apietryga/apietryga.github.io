@@ -1,8 +1,7 @@
 <template>
-  <div class="headerWrapper">  
-    <homeHeader class="homeHeader"/>
-    <div class="hider"></div>
-  </div>
+  <homeNewHeader />
+  <homeRocket />
+  <div class="hider"></div>
   <main id="code">
     <div class="codeprojects">
       <header>
@@ -101,16 +100,12 @@
 </script>
 
 <style lang="scss">
-  .headerWrapper{
-    height:100vh;
+  .hider{ // hide elements in front page (code section)
+    background: $backgroundColor;
+    z-index:-1;
     width:100%;
-    z-index:-10;
-    .hider{ // hide elements in front page (code section)
-      background: $backgroundColor;
-      max-width:100vw;
-      height:120%;
-      position:absolute;
-    }
+    height:120%;
+    position:absolute;
   }
   %rowSection{
     flex:1;

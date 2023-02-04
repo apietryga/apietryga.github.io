@@ -66,12 +66,12 @@
 
 <style lang="scss">
   .topHeader{
-    display:flex;
-    color:$fontColor;
-    height:100vh;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    color:$fontColor;
+    display:flex;
+    flex-direction: column;
+    height:100vh;
+    justify-content: center;
     position:relative;
     @keyframes fadeIn {
       from{opacity:0;}
