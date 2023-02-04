@@ -16,6 +16,7 @@
     "three-obj-mtl-loader": "^1.0.3"
   },
   "devDependencies": {
+    "execa": "^6.1.0",
     "@types/three": "^0.149.0"
   }
 }
