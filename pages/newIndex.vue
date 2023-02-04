@@ -1,6 +1,6 @@
 <template>
-  <homeNewHeader />
   <homeRocket />
+  <homeNewheader />
   <div class="hider"></div>
   <main id="code">
     <div class="codeprojects">
