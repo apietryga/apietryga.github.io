@@ -102,14 +102,18 @@
 
 <style lang="scss">
   .headerWrapper{
+    // border:2px dashed red;
     height:100vh;
     width:100%;
-    z-index:-10;
+    // z-index:-10;
     .hider{ // hide elements in front page (code section)
       background: $backgroundColor;
-      max-width:100vw;
+      max-width:100%;
+      width:100%;
       height:120%;
       position:absolute;
+      // z-index:10;
+      // border:2px dashed green;
     }
   }
   %rowSection{
