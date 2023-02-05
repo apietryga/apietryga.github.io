@@ -146,35 +146,6 @@
         }
         #toggler{
           display:none;
-          &:checked ~ .toggler{
-            div{
-              &:nth-child(1){
-                animation:togglerEl1 .4s;
-                transform:rotate(135deg);
-                top:calc( 50% - 3px );
-              }
-              &:nth-child(2){
-                opacity:0;
-                transition: .1s;
-              }
-              &:nth-child(3){
-                animation:togglerEl3 .4s;
-                transform:rotate(-135deg);
-                bottom:calc( 50% - 3px );
-              }
-            }
-          }
-          &:checked ~ nav{
-            top:var(--navHeaderHeight);
-            height:calc(100vh - #{var(--navHeaderHeight)});
-            >*{
-              animation: showMenu 1s ease;
-            }
-            transition:.5s;
-          }
-          &:checked ~ .navShadow{
-            background-color:rgb(0, 0, 0);
-          }
         }
         nav{
           top:var(--navHeaderHeight);
@@ -197,7 +168,6 @@
             border-radius:1rem;
             color: var(--font-primary-color);
             display:flex;
-            // font-size:.8rem;
             line-height: .7rem;
             margin-left:1rem;
             svg{
@@ -377,6 +347,40 @@
       }
       .linkLogo{
         padding:.5rem 0 .5rem 1rem;
+      }
+    }
+  }
+
+  @media (max-width:749px){
+    .navHeader .searchAndMenu .menu #toggler{
+      &:checked ~ .toggler{
+        div{
+          &:nth-child(1){
+            animation:togglerEl1 .4s;
+            transform:rotate(135deg);
+            top:calc( 50% - 3px );
+          }
+          &:nth-child(2){
+            opacity:0;
+            transition: .1s;
+          }
+          &:nth-child(3){
+            animation:togglerEl3 .4s;
+            transform:rotate(-135deg);
+            bottom:calc( 50% - 3px );
+          }
+        }
+      }
+      &:checked ~ nav{
+        top:var(--navHeaderHeight);
+        height:calc(100vh - #{var(--navHeaderHeight)});
+        >*{
+          animation: showMenu 1s ease;
+        }
+        transition:.5s;
+      }
+      &:checked ~ .navShadow{
+        background-color:rgb(0, 0, 0);
       }
     }
   }
