@@ -5,5 +5,3 @@ My piece of the internet
 - Coding
 - Teaching
 - Business
-
-## Most important elements
