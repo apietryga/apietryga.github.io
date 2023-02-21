@@ -16,6 +16,7 @@
 <script>
   import * as THREE from 'three';
   import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+  import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
   export default {
     data(){
       let width = 100, height = 100;
@@ -30,69 +31,45 @@
     },
     methods:{
       animation(){
-        // const targetRocketPosition = 0.5;
-        // const animationDuration = 2000;
-        // const t = (Date.now() % animationDuration) / animationDuration;
-        // const delta = targetRocketPosition * Math.sin(Math.PI * 2 * t);
-        // if (this.rocket) {
-        //   this.rocket.position.y = delta;
-        // }
+        if (this.rocket) {
+          this.rocket.rotation.z -= 0.0025;
+        }
+
         this.renderer.render(this.scene, this.camera);
         requestAnimationFrame(this.animation);
       },
       createLights(){
-        // const ambientLight = new THREE.HemisphereLight(0x404040, 0x404040, 1);
-        const ambientLight = new THREE.HemisphereLight(0x104054, 0x49F8F1, 1);
+        // const ambientLight = new THREE.HemisphereLight(0x404040, 0x404040, 1000);
+        const ambientLight = new THREE.PointLight(0xa11148, 2, 1000, 2);
+        ambientLight.position.set(0, 0, 150);
 
-        // const directionalLight = new THREE.DirectionalLight(0xdfebff, 1);
-        const directionalLight = new THREE.DirectionalLight(0x41F4EE, 1);
-        directionalLight.position.set(250, 0, 0);
+        const directionalLight = new THREE.DirectionalLight(0xdfebff, 1);
+        directionalLight.position.set(10, 0, 0);
 
-        // const pointLight = new THREE.PointLight(0xa11148, 2, 1000, 2);
-        const pointLight = new THREE.PointLight(0xB06B63, 2, 1000, 2);
-        // pointLight.position.set(200, -100, 50);
-        pointLight.position.set(-150, 10, 0);
+        const pointLight = new THREE.PointLight(0xa11148, 2, 1000, 2);
+        pointLight.position.set(200, -100, 50);
 
         this.scene.add(ambientLight, directionalLight, pointLight);
       },
       createScene(){
         this.scene = new THREE.Scene();
-        // this.scene.fog = new THREE.Fog(0x5d0361, 10, 1500);
         this.camera = new THREE.PerspectiveCamera( 60, this.width / this.height, 1, 10000); // fieldOfView. aspectRadio, nearPlane, farPlane
-        // Object.assign(this.camera.position, {x: 0, z: 30, y: 4})
-        Object.assign(this.camera.position, {
-          x: 0,
-          z: 8, 
-          // z: 0, 
-          y: 0,
-        })
-
-        Object.assign(this.camera.rotation, {
-          x: 0,
-          z: 0, 
-          y: 0
-        })
+        this.camera.position.z = 3
 
         this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        // this.renderer.setSize(this.width, this.height);
+        this.renderer.setSize(this.width, this.height);
         this.renderer.shadowMap.enabled = true;
         let loader = new GLTFLoader();
+
+        this.controls = new OrbitControls( this.camera, this.renderer.domElement );
+        this.controls.touches = {
+          ONE: THREE.TOUCH.ROTATE,
+          TWO: THREE.TOUCH.DOLLY_PAN
+        }
+
         loader.load( "/rocketcomcept/models/logo.glb", gltf => {
           this.rocket = gltf.scene;
-          // this.rocket.position.y = 0;
-          // this.rocket.rotation.x = -0.3;
-          Object.assign(this.rocket.position, {
-            x: 0,
-            z: 0, 
-            y: 0,
-          })
-
-          Object.assign(this.rocket.rotation, {
-            x: 90,
-            z: 0, 
-            y: 0,
-          })
-
+          this.rocket.rotation.x = 90 * Math.PI / 180
           this.scene.add(this.rocket);
           this.$refs.container.append(this.renderer.domElement);
         })
@@ -147,7 +124,7 @@
     var(--dark-primary),
     var(--dark-primary),
     var(--bright-primary));
-  border:20px dashed blue;
+  // border:20px dashed blue;
   display:flex;
   position:relative;
   z-index:2;
@@ -158,15 +135,15 @@
 
   .titleWrapper{
     // flex:1;
-    border:2px dashed red;
+    // border:2px dashed red;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     width:50%;
     .title{
-        color:var(--bright-primary) !important;
-      border:2px dashed red;
+      color:var(--bright-primary) !important;
+      // border:2px dashed red;
       padding:2rem;
       line-height: 3rem;
       h1{
@@ -180,7 +157,7 @@
     }
   }
   .logoWrapper{
-    border:2px dashed green;
+    // border:2px dashed green;
     width:100%;
     height:100%;
     display:flex;
@@ -191,11 +168,18 @@
   // .rocket__wrapper{
 
     #logo{
-      border:2px dashed red;
+      // border:10px dashed red;
+      // position:absolute;
+      // right:5rem;
       // position:relative;
+      // max-width: 50vw;
+      max-width: 100%;
+      display: flex;
+      align-items: center;
 
       canvas{
-        border:2px dashed yellow;
+        // border:2px dashed yellow;
+        // max-width: 100%;
         // position:absolute;
         // left:-50vw;
         // top:-50vh;
@@ -204,6 +188,9 @@
         // width:50vw;
         // transform: scale(3);
         // max-width:50%;
+        height: fit-content !important;
+        max-width:100%;
+        // height:auto;
         // max-height:50%;
       }
     }
