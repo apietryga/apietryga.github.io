@@ -1,6 +1,15 @@
 <template>
-  <div class="rocket__wrapper">
-    <div id="rocket" ref="container"></div>
+  <div class="headerWrapper">
+    <header class="titleWrapper">
+      <div class="title">
+        <h1>apietryga</h1>
+        <h2>FullStack.</h2>
+      </div>
+
+    </header>
+    <div class="logoWrapper">
+      <div id="logo" ref="container"></div>
+    </div>
   </div>
 </template>
 
@@ -52,18 +61,38 @@
         this.camera = new THREE.PerspectiveCamera( 60, this.width / this.height, 1, 10000); // fieldOfView. aspectRadio, nearPlane, farPlane
         // Object.assign(this.camera.position, {x: 0, z: 30, y: 4})
         Object.assign(this.camera.position, {
-          x: 0, 
-          z: 30, 
-          y: 12
+          x: 0,
+          z: 8, 
+          // z: 0, 
+          y: 0,
         })
+
+        Object.assign(this.camera.rotation, {
+          x: 0,
+          z: 0, 
+          y: 0
+        })
+
         this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        this.renderer.setSize(this.width, this.height);
+        // this.renderer.setSize(this.width, this.height);
         this.renderer.shadowMap.enabled = true;
         let loader = new GLTFLoader();
-        loader.load( "/models/rocket2.glb", gltf => {
+        loader.load( "/rocketcomcept/models/logo.glb", gltf => {
           this.rocket = gltf.scene;
-          this.rocket.position.y = 0;
-          this.rocket.rotation.x = -0.3;
+          // this.rocket.position.y = 0;
+          // this.rocket.rotation.x = -0.3;
+          Object.assign(this.rocket.position, {
+            x: 0,
+            z: 0, 
+            y: 0,
+          })
+
+          Object.assign(this.rocket.rotation, {
+            x: 90,
+            z: 0, 
+            y: 0,
+          })
+
           this.scene.add(this.rocket);
           this.$refs.container.append(this.renderer.domElement);
         })
@@ -111,23 +140,73 @@
 </script>
 
 <style lang="scss">
-  .rocket__wrapper{
-    // ai_bg.png
-    // border:2px dashed blue;
-    // background: red;
-    position:relative;
-    // z-index:10;
+.headerWrapper{
+  background: var(--primary-color);
+  background: linear-gradient(
+    var(--dark-primary),
+    var(--dark-primary),
+    var(--dark-primary),
+    var(--bright-primary));
+  border:20px dashed blue;
+  display:flex;
+  position:relative;
+  z-index:2;
+  top:0;
+  left:0;
+  height:100vh;
+  width:100vw;
 
-    position:fixed;
-    z-index:1;
-    top:0;
-    left:0;
-
-    #rocket{
-      canvas{
-        max-width:100%;
-        max-height:100%;
+  .titleWrapper{
+    // flex:1;
+    border:2px dashed red;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width:50%;
+    .title{
+        color:var(--bright-primary) !important;
+      border:2px dashed red;
+      padding:2rem;
+      line-height: 3rem;
+      h1{
+        font-size:4rem;
+        font-weight: 900;
+        font-family: var(--font-family);
+      }
+      h2{
+        text-align: end;
       }
     }
   }
+  .logoWrapper{
+    border:2px dashed green;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    place-items:center;
+
+  // }
+  // .rocket__wrapper{
+
+    #logo{
+      border:2px dashed red;
+      // position:relative;
+
+      canvas{
+        border:2px dashed yellow;
+        // position:absolute;
+        // left:-50vw;
+        // top:-50vh;
+        // bottom:0;
+        // right:0;
+        // width:50vw;
+        // transform: scale(3);
+        // max-width:50%;
+        // max-height:50%;
+      }
+    }
+  }
+}
 </style>
