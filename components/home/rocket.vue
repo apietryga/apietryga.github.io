@@ -196,4 +196,19 @@
     }
   }
 }
+
+@media (max-width:768px){
+  .headerWrapper{
+    flex-direction: column;
+    .titleWrapper{
+      border:2px dashed red;
+      flex:1;
+      width: 100%;
+    }
+    .logoWrapper{
+      border:2px dashed blue;
+    }
+  }
+
+}
 </style>
