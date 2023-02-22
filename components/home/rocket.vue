@@ -200,6 +200,7 @@
 @media (max-width:768px){
   .headerWrapper{
     flex-direction: column;
+    border:2px dashed blue;
     .titleWrapper{
       border:2px dashed red;
       flex:1;
