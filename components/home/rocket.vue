@@ -53,7 +53,7 @@
       },
       createScene(){
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera( 60, this.width / this.height, 1, 10000); // fieldOfView. aspectRadio, nearPlane, farPlane
+        this.camera = new THREE.PerspectiveCamera( 80, this.width / this.height, 1, 10000); // fieldOfView. aspectRadio, nearPlane, farPlane
         this.camera.position.z = 3
 
         this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -62,9 +62,10 @@
         let loader = new GLTFLoader();
 
         this.controls = new OrbitControls( this.camera, this.renderer.domElement );
+        this.controls.enableZoom = false;
         this.controls.touches = {
           ONE: THREE.TOUCH.ROTATE,
-          TWO: THREE.TOUCH.DOLLY_PAN
+          // TWO: THREE.TOUCH.DOLLY_PAN
         }
 
         loader.load( "/rocketcomcept/models/logo.glb", gltf => {
@@ -147,7 +148,9 @@
       padding:2rem;
       line-height: 3rem;
       h1{
-        font-size:4rem;
+        font-family: Ubuntu;
+        // font-size:4rem;
+        font-size:clamp(2rem, 2vw, 4rem);
         font-weight: 900;
         font-family: var(--font-family);
       }
@@ -205,9 +208,20 @@
       border:2px dashed red;
       flex:1;
       width: 100%;
+      display:flex;
+      justify-content: flex-start;
+      .title{
+        margin-top:8rem;
+        padding:2rem;
+        font-size:0.5rem;
+      }
     }
     .logoWrapper{
       border:2px dashed blue;
+      width:200%;
+      left:-50%;
+      transform:scale(0.5);
+      position:absolute;
     }
   }
 
