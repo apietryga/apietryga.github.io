@@ -1,87 +1,89 @@
 <template>
   <div class="headerWrapper">  
     <homeHeader class="homeHeader"/>
-    <div class="hider"></div>
+    <!-- <div class="hider"></div> -->
   </div>
-  <main id="code">
-    <div class="codeprojects">
+  <div class="overwrapper">
+    <main id="code">
+      <div class="codeprojects">
+        <header>
+          <h1>{{lang[language].content[4]}}</h1>
+          <h2>{{lang[language].content[5]}}</h2>
+          <p>
+            {{lang[language].content[6]}}
+          </p>  
+        </header>
+        <ul>
+          <li v-for="techElement in stack" :key="techElement">
+            <NuxtLink :to="'/projects?q=' + techElement">{{ techElement }}</NuxtLink>
+          </li>
+        </ul>
+        <section>
+          <NuxtLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)" :key="element">
+            <article>
+              <header>
+                <h2>{{ element.name }}</h2>
+                <p>{{ element.lang[language].desc }}</p>
+              </header>
+              <img :src="'/img/contents/' + element.img" :alt="element.name">
+            </article>
+          </NuxtLink>
+          <div></div>
+          <footer>
+            <NuxtLink to="/projects">{{ lang[language].content[7] }}</NuxtLink>
+          </footer>
+        </section>
+      </div>
+    </main>
+    <article id="teaching">
+      <div class="mask top"></div>
+      <div class="stopper"></div>
       <header>
-        <h1>{{lang[language].content[4]}}</h1>
-        <h2>{{lang[language].content[5]}}</h2>
-        <p>
-          {{lang[language].content[6]}}
-        </p>  
+        <h1>{{lang[language].content[8]}}</h1>
+        <h2>{{lang[language].content[9]}}</h2>  
       </header>
-      <ul>
-        <li v-for="techElement in stack" :key="techElement">
-          <NuxtLink :to="'/projects?q=' + techElement">{{ techElement }}</NuxtLink>
-        </li>
-      </ul>
+      <div class="content">
+        <p>{{lang[language].content[10]}}</p>
+        <section>
+          <NuxtLink v-for="element in getProjectsByNames(recomended.teaching)" :to="'/projects/' + element.url" :key="element">
+            <article>
+              <header>
+                <h2>{{ element.name }}</h2>
+                <p>{{ element.lang[language].desc }}</p>
+              </header>
+              <img :src="'/img/contents/' + element.img" :alt="element.name">
+            </article>
+          </NuxtLink>
+          <div></div>
+          <footer>
+            <NuxtLink to="/projects">{{ lang[language].content[11] }}</NuxtLink>
+          </footer>  
+        </section>
+      </div>
+      <div class="mask dark"></div>
+    </article>
+    <article id="business">
+      <div class="photo me"></div>
+      <h1>{{ lang[language].content[12] }}</h1>
+      <p>{{ lang[language].content[13] }}</p>
       <section>
-        <NuxtLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)" :key="element">
+        <NuxtLink v-for="element in getProjectsByNames(recomended.business)" :to="'/projects/' + element.url" :key="element">
           <article>
             <header>
-              <h2>{{ element.name }}</h2>
-              <p>{{ element.lang[language].desc }}</p>
+              <h2>{{element.name}}</h2>
+              <p>{{element.lang[language].desc}}</p>
             </header>
             <img :src="'/img/contents/' + element.img" :alt="element.name">
           </article>
         </NuxtLink>
         <div></div>
         <footer>
-          <NuxtLink to="/projects">{{ lang[language].content[7] }}</NuxtLink>
-        </footer>
-      </section>
-    </div>
-  </main>
-  <article id="teaching">
-    <div class="mask top"></div>
-    <div class="stopper"></div>
-    <header>
-      <h1>{{lang[language].content[8]}}</h1>
-      <h2>{{lang[language].content[9]}}</h2>  
-    </header>
-    <div class="content">
-      <p>{{lang[language].content[10]}}</p>
-      <section>
-        <NuxtLink v-for="element in getProjectsByNames(recomended.teaching)" :to="'/projects/' + element.url" :key="element">
-          <article>
-            <header>
-              <h2>{{ element.name }}</h2>
-              <p>{{ element.lang[language].desc }}</p>
-            </header>
-            <img :src="'/img/contents/' + element.img" :alt="element.name">
-          </article>
-        </NuxtLink>
-        <div></div>
-        <footer>
-          <NuxtLink to="/projects">{{ lang[language].content[11] }}</NuxtLink>
+          <NuxtLink :to="'/projects?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</NuxtLink>
         </footer>  
       </section>
-    </div>
-    <div class="mask dark"></div>
-  </article>
-  <article id="business">
-    <div class="photo me"></div>
-    <h1>{{ lang[language].content[12] }}</h1>
-    <p>{{ lang[language].content[13] }}</p>
-    <section>
-      <NuxtLink v-for="element in getProjectsByNames(recomended.business)" :to="'/projects/' + element.url" :key="element">
-        <article>
-          <header>
-            <h2>{{element.name}}</h2>
-            <p>{{element.lang[language].desc}}</p>
-          </header>
-          <img :src="'/img/contents/' + element.img" :alt="element.name">
-        </article>
-      </NuxtLink>
-      <div></div>
-      <footer>
-        <NuxtLink :to="'/projects?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</NuxtLink>
-      </footer>  
-    </section>
-
-  </article>
+  
+    </article>
+  </div>
 </template>
 
 <script>
@@ -101,19 +103,24 @@
 </script>
 
 <style lang="scss">
+  .overwrapper{
+    //background-color:green;
+    background: var(--bright-primary);
+
+  }
   .headerWrapper{
     // border:2px dashed red;
     height:100vh;
     width:100%;
-    // z-index:-10;
+     z-index:-15;
     .hider{ // hide elements in front page (code section)
       background: $backgroundColor;
       max-width:100%;
       width:100%;
       height:120%;
       position:absolute;
-      // z-index:10;
-      // border:2px dashed green;
+      z-index:-10;
+       border:2px dashed green;
     }
   }
   %rowSection{
@@ -225,7 +232,7 @@
   }
   #code{
     overflow-y: hidden;
-    background-color:$backgroundColor;
+    //background-color:$backgroundColor;
     position:relative;
     .codeprojects{
       width:100%;

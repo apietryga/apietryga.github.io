@@ -1,10 +1,10 @@
 <template>
   <seo :key="$route.fullPath" />
-  <div>
+  <!-- <div> -->
     <navHeader />
     <slot :key="$route.fullPath" />
     <navFooter />
-  </div>
+  <!-- </div> -->
 </template>
 
 <script></script> 

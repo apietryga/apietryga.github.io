@@ -1,12 +1,12 @@
 <template>
   <div class="headerWrapper">
-    <header class="titleWrapper">
+    <!-- <header class="titleWrapper">
       <div class="title">
         <h1>apietryga</h1>
         <h2>FullStack.</h2>
       </div>
 
-    </header>
+    </header> -->
     <div class="logoWrapper">
       <div id="logo" ref="container"></div>
     </div>

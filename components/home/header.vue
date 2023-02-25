@@ -8,9 +8,11 @@
     <div class="background"></div>
     <div class="photo sky"></div>
     <div class="photo mountains"></div>
-    <div class="photo moon"></div>
+    <!-- <div class="photo moon"></div> -->
+    <homeRocket class="photo moon" />
     <div class="photo clouds"></div>
     <div class="mask photo"></div>
+
   </header>
 </template>
 
@@ -68,9 +70,11 @@
   .topHeader{
     align-items: center;
     color:$fontColor;
+    // border:2px dashed red;
     display:flex;
     flex-direction: column;
     height:100vh;
+    width:100vw;
     justify-content: center;
     position:relative;
     @keyframes fadeIn {
@@ -95,7 +99,9 @@
       transition: .01s;
     }  
     .mask{
-      background-color: $backgroundColor;
+      //background-color: $backgroundColor;
+      background: var(--bright-primary);
+
       clip-path: polygon(50% 80%, 100% 0%, 100% 100%, 0 100%, 0 0);
       height:calc(10vh + 15px);
       bottom:-15px;
@@ -115,7 +121,12 @@
     }
     .sky{
       z-index:-5;
-      background:linear-gradient(rgba(2, 0, 15, 0.644), rgba(6, 1, 48, 0.589), rgba(14, 1, 22, 0.473), transparent);
+      background:linear-gradient(
+        rgba(108, 161, 230, 0.644), 
+        rgba(198, 215, 225, 0.589), 
+        rgb(98, 134, 133), 
+        transparent);
+      //background:linear-gradient(rgba(2, 0, 15, 0.644), rgba(6, 1, 48, 0.589), rgba(14, 1, 22, 0.473), transparent);
       animation: fadeIn .5s ease;
     }
     .mountains{
@@ -130,15 +141,19 @@
     }
     .moon{
       animation: fadeIn 1s ease;
-      box-shadow: 0 0 15vh #b1b1b1;
+      //box-shadow: 0 0 15vh #b1b1b1;
+      pointer-events: none;
       border-radius:50%;
-      background-color:rgb(255, 255, 255);
+      background: radial-gradient(#fff transparent, transparent, transparent);
+      //background: radial-gradient(var(--bright-primary) transparent, transparent, transparent);
+      //background-color:rgb(255, 255, 255);
       z-index:-4;
-      background-image: url("/img/frontPage/moon.webp");
+      // background-image: url("/img/frontPage/moon.webp");
       background-size:contain;
       height:20vh;
       width:20vh;
-      top:30vh;
+      top:15vh;
+      left:30vw;
       background-position:bottom;
     }
     .clouds{
@@ -170,7 +185,7 @@
       padding:2rem;
       width:fit-content;
       position:absolute;    
-      text-shadow: 0 0 1rem #000;
+      //text-shadow: 0 0 1rem #000;
       h1,h2,p{  
         margin:1em 0 1em 0; 
       }
@@ -189,6 +204,22 @@
       p{
         font-weight: bold;
         margin:0;
+      }
+    }
+  }
+
+  @media (min-width:768px){
+    .topHeader{
+      .title{
+        left:10rem;
+      }
+      .moon{
+        left:unset;
+        top:-12vh;
+        right:5rem;
+        height:90vh;
+        width:90vh;
+  
       }
     }
   }

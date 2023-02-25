@@ -3,13 +3,14 @@
   /* --font-family: "Ubuntu", sans-serif; */
   --font-family:  'Nunito', sans-serif;
   /* --font-primary-color:#fff; */
-  --font-primary-color:rgb(214, 206, 231);
+  --font-primary-color:rgb(203, 186, 186);
+  
   
   /* --dark-primary:rgb(39, 39, 39); */
   --dark-primary:#111;
   --bright-primary:#eee;
 
-  --primary-color:#000;
+  --primary-color:#25bb31;
 
   --hover-color: rgba(116, 116, 116, 0.2);
 

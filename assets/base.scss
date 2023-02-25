@@ -1,6 +1,7 @@
 $clickedColor: rgba(0, 0, 0, 0.2);
 $backgroundColor: rgb(214, 214, 214);
-$boxShadowsColor: rgba(0, 0, 0, 0.5);
+//$boxShadowsColor: rgba(0, 0, 0, 0.5);
+$boxShadowsColor: rgba(255, 255, 255, 0.5);
 $fontColor:rgba(31, 29, 29, 0.8);
 $teachingMaskColor:#040003;
 %actionColors{
@@ -35,7 +36,8 @@ h1,h2,p{
 }
 body{
   background-color:$backgroundColor;
-  font-family: 'Ubuntu', sans-serif;
+  //font-family: 'Ubuntu', sans-serif;
+  font-family: var(--font-family);
   margin:0;
   letter-spacing: 0.2px;
   line-height: 20px;

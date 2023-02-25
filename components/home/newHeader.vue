@@ -79,7 +79,7 @@
       animation: fadeIn 1s ease;
       border-radius:50%;
       // background: linear-gradient(red, blue);
-      background-image: url("/img/frontPage/moon.webp");
+      // background-image: url("/img/frontPage/moon.webp");
       background-size:contain;
       height:$moonSize;
       left:calc(( 100vw - $moonSize ) / 2);
