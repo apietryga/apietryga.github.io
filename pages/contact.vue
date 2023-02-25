@@ -111,8 +111,8 @@
         'in  ig fb yt';
       }
       .single{
-        width:100px;
-        height:100px;
+        width:80px;
+        height:80px;
         border-radius:25px;
         background-size:100%;
         background-repeat:no-repeat;

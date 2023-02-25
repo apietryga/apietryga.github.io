@@ -21,23 +21,27 @@
       <p v-if="section.header" v-html="section.header"></p>
       <media v-else :props="section" />
     </section>
-    <div class="prevNextWrapper">
+    <!-- <div class="prevNextWrapper">
       <div class="prev"> {{ prev }} </div>
       <div class="next"> {{ next }} </div>
-    </div>
+    </div> -->
   </main>
   <div class="prevNextWrapper">
     <div v-for="butt of getPrevNext()" :key="butt">
       <NuxtLink v-if="butt?.name" :to="'/projects/' + butt.url">
-        <p>{{ butt.languages[language] }}</p>
-        <h4>{{ butt.name }}</h4>
-        <img :src="'/img/contents/' + butt.img" :alt="butt.name +' Logo'" />
-        <p>{{ butt.lang[language].desc }}</p>
-        <p>
+        <picture>
+          <img :src="'/img/contents/' + butt.img" :alt="butt.name +' Logo'" />
+        </picture>
+        <div class="title">
+          <h4>{{ butt.name }}</h4>
+          <p>{{ butt.lang[language].desc }}</p>
+        </div>
+        <!-- <p>{{ butt.languages[language] }}</p> -->
+        <!-- <p>
           <NuxtLink :to="'/projects?q=' + tag" 
             v-for="tag in butt.lang?.[language].category" :key="tag"> #{{ tag }} 
           </NuxtLink>
-        </p>
+        </p> -->
       </NuxtLink>
     </div>
   </div>
@@ -104,24 +108,29 @@
       //height:100%;
       width:100%;
       display:flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-start;
+      align-items: flex-start;
       margin-top: var(--navHeaderHeight);
       picture{
         display: flex;
         align-items: center;
-        //width:25rem;
+        width:5rem;
         height:5rem;
         img{
           height:5rem;
-          max-width: none;
+
+          max-width: unset;
         }
       }
       .title{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         margin:.5rem;
+        p{
+          border:2px dashed red;
+          text-align: left;
+        }
         h1{
           line-height: 2.5rem;
           font-size:2rem;
@@ -130,6 +139,9 @@
         h2{
           font-size:1.2rem;
           line-height: 1.1rem;
+          margin:0;
+        }
+        h4{
           margin:0;
         }
       }
@@ -157,31 +169,29 @@
     }
 
     .prevNextWrapper{
-      margin-top:5rem;
+      margin-top:0 1rem;
       display:flex;
+      align-items: center;
       gap:1rem;
-      >div{
+      > div{
         flex:1;
-        display:flex;
-        flex-direction: column;
-        >a{
+        //display:flex;
+        //flex-direction: column;
+        > a{
           border:.2rem solid var(--dark-primary);
           // border:2px dashed red;
           background:lighten($backgroundColor, 5%);
           display:flex;
-          flex-direction: column;
+          flex-direction: column;    
           align-items: center;
           position:relative;
           padding-bottom:1.5rem;
-          h4{
-            margin-bottom:0;
-          }
           img{
             width:6rem;
             height:6rem;
           }
           p{
-            text-align: center;
+            text-align: left;
             padding:0 1rem;
             &:nth-child(1){
               font-size: 1.2rem;
