@@ -274,8 +274,8 @@
         @extend %coloredATag;
 
         @mixin text-contrast($n) {
-          $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
-          $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+          $color-brightness: round((red($n) * 299) + (green($n) * 587) + calc((blue($n) * 114) / 1000));
+          $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + calc((blue(#ffffff) * 114) / 1000));
           @if abs($color-brightness) < calc($light-color / 2){
             color: white;
           }
@@ -381,6 +381,8 @@
     margin-top:calc(10vh + 5px);
     display:flex;
     flex-direction: column;
+    align-items: center;
+    /*
     .me{
       z-index:-1;
       top:0;
@@ -392,7 +394,7 @@
       background-position: right;
       background-repeat: no-repeat;
       background-image: url('/img/frontPage/half_index.webp');
-    }
+    } // */
     h1{
       font-size:3rem;
       line-height: 1em;

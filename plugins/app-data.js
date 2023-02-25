@@ -1239,6 +1239,7 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
           'Kubernetes',
           'Linux',
           'Slim',
+          'Twig'
 
         ],
         lang: {
