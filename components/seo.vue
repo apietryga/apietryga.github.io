@@ -6,6 +6,13 @@
       :name="name"
       :content="content"
     />
+    <!-- <Link 
+     rel='stylesheet'
+     href='https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap'
+    /> -->
+    <Link rel="preconnect" href="https://fonts.googleapis.com" />
+    <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <Link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet" />
   </Head>
 </template>
 
@@ -45,6 +52,9 @@
         }
         if(page){
           seo.title = page.name
+          // seo.link = [
+          //   { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap' },
+          // ]
           seo.meta = [
             { name: "description", content: page.lang[this.$appData.language].desc },
             { name: "keywords", content: page.lang[this.$appData.language].category?.join(", ") },

@@ -148,9 +148,7 @@
       padding:2rem;
       line-height: 3rem;
       h1{
-        font-family: Ubuntu;
-        // font-size:4rem;
-        font-size:clamp(2rem, 2vw, 4rem);
+        font-size:clamp(3rem, 2vw, 4rem);
         font-weight: 900;
         font-family: var(--font-family);
       }
