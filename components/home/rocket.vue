@@ -199,7 +199,8 @@
   }
 }
 
-@media (max-width:768px){
+@media (max-width:508px){
+//@media (max-width:768px){
   .headerWrapper{
     flex-direction: column;
     // border:2px dashed blue;

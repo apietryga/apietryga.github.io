@@ -1,13 +1,22 @@
 <template>
-  <div class="details">
-    <div class="background" style="background-color:{{color}}"></div>
-    <div class="mainImg" v-if="img">
+  <!-- <div class="details"> -->
+    <!-- <div class="background" style="background-color:{{color}}"></div> -->
+    <!-- <div class="mainImg" v-if="img">
       <img :src="'/img/contents/' + img" :alt="name">
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
   <main class="content">
-    <h1>{{ name }}</h1>
-    <h2>{{ lang[language].desc }}</h2>
+
+    <div class="mainImg">
+      <picture v-if="img">
+        <img :src="'/img/contents/' + img" :alt="name">
+      </picture>
+      <div class="title">
+        <h1>{{ name }}</h1>
+        <h2>{{ lang[language].desc }}</h2>
+      </div>
+    </div>
+
     <section v-for="section in getContent()" :key="section">
       <p v-if="section.header" v-html="section.header"></p>
       <media v-else :props="section" />
@@ -77,43 +86,61 @@
   .details{
     position:relative;
     margin-top:var(--navHeaderHeight);
-    min-height:30vh;
+    //min-height:30vh;
     .background{
       position:absolute;
       width:100%;
       height:100%;
       z-index:-1;
     }
+  }
+  main.content{ // content in details
+    //min-height:calc( 70vh - 275px );
+    background-color: $backgroundColor;
+    padding:.5rem 1rem; 
     .mainImg{
-      min-height:30vh;
+      //min-height:30vh;
       background-position:center;
-      height:100%;
+      //height:100%;
       width:100%;
       display:flex;
       justify-content: center;
       align-items: center;
-      img{
-        width:250px;
-        height:250px;
-      }  
+      margin-top: var(--navHeaderHeight);
+      picture{
+        display: flex;
+        align-items: center;
+        //width:25rem;
+        height:5rem;
+        img{
+          height:5rem;
+          max-width: none;
+        }
+      }
+      .title{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin:.5rem;
+        h1{
+          line-height: 2.5rem;
+          font-size:2rem;
+          margin:0;
+        }
+        h2{
+          font-size:1.2rem;
+          line-height: 1.1rem;
+          margin:0;
+        }
+      }
     }
-  }
-  main.content{ // content in details
-    min-height:calc( 70vh - 275px );
-    background-color: $backgroundColor;
-    padding:2rem; 
-    h1{
-      line-height: 2.5rem;
-      font-size:3rem;
-    }
-    h2{
-      line-height: 1.8rem;
-    }
+
     section{
       text-align: left;
       display:flex;
       flex-direction: column;
-      margin:2rem 0;
+      margin:0 0 2rem 0;
+      //margin:2rem 0;
       header,article{
         flex:1;
         display:flex;
