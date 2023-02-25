@@ -7,8 +7,6 @@
   <div v-if="url?.type == 'fbpost'" class="fbpost">
     <iframe 
       class='fbpost'
-      width="500"
-      height="300"
       :src="'https://www.facebook.com/plugins/post.php?href=' + url.href + '&show_text=true&width=500'" 
       style="border:none;overflow:hidden" 
       scrolling="no" frameborder="0" allowfullscreen="true" 
@@ -327,7 +325,8 @@
     justify-content: center;
   }
 
-  img{
-    max-width: 100%;
+  img,iframe{
+    max-width: 100vw;
+    max-height:50vh;
   }
 </style>
