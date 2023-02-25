@@ -262,21 +262,56 @@
         @extend %rowSection;
       }
       ul{
-        background-color: rgba(0, 0, 0, 0.171);
-        padding:.5rem;
+        //background-color: rgba(0, 0, 0, 0.171);
         display:flex;
-        list-style-type: none;
-        flex-direction: column;
         flex-wrap: wrap;
-        // margin:auto;
+        justify-content: center;
+        list-style-type: none;
         margin:2rem auto;
         max-height:15rem;
         min-width:80%;
+        padding:.5rem;
         @extend %coloredATag;
+
+        @mixin text-contrast($n) {
+          $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+          $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+          @if abs($color-brightness) < calc($light-color / 2){
+            color: white;
+          }
+          @else {
+            color: black;
+          }
+        }
+
+        @mixin random-bgr($i){
+
+          $c: rgb(random(255), random(255), random(255));
+          background: $c;
+          border-color:darken($c,10%);
+          color:invert(darken($c,10%));
+          @include text-contrast($c);
+
+
+        }
+
         li{
+          border:.25rem solid red;
           font-size: 90%;
-          padding:.5rem 0;
-          &:before{content:"➡️ ";}
+          padding:.25rem .5rem;
+          margin:.1rem;
+          border-radius:8px;
+          font-weight:bolder;
+          //&:before{content:"➡️ ";}
+          @for $i from 0 to 30 {
+            &:nth-child(#{$i}) {
+              @include random-bgr($i);
+              
+            }
+          }
+          a{
+            color:inherit;
+          }
         }
       }
     }

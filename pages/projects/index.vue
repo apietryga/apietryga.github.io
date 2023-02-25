@@ -26,7 +26,10 @@
       <section v-else>
         <p>
           There's no results<span v-if="$route.query"> for <b>{{ $route.query.q }}</b> query</span>.<br /> 
-          Try search something else or <NuxtLink to="/projects">see all projects</NuxtLink>
+          Try search something else or 
+          <NuxtLink 
+            style="color:var(--link-color)"
+            to="/projects">see all projects</NuxtLink>
         </p>
       </section>
     </nav>

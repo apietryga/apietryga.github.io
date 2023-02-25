@@ -1225,12 +1225,21 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
           'Arduino',
           'Python',
           'django',
+          'Flask',
           'Java',
           'Spring',
           'MySQL',
           'iOT',
           'SEO',
-          'ReactJS'
+          'ReactJS',
+          // ---
+          'Vue',
+          'Nuxt',
+          'Docker',
+          'Kubernetes',
+          'Linux',
+          'Slim',
+
         ],
         lang: {
           "pl": {
