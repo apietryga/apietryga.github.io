@@ -11,7 +11,7 @@
     <!-- <div class="photo moon"></div> -->
     <homeRocket class="photo moon" />
     <div class="photo clouds"></div>
-    <div class="mask photo"></div>
+    <!-- <div class="mask photo"></div> -->
 
   </header>
 </template>
@@ -122,9 +122,10 @@
     .sky{
       z-index:-5;
       background:linear-gradient(
-        rgba(108, 161, 230, 0.644), 
-        rgba(198, 215, 225, 0.589), 
-        rgb(98, 134, 133), 
+        rgba(190, 215, 246, 0.644), 
+        rgba(97, 178, 232, 0.589), 
+        rgb(244, 176, 67), 
+        rgb(233, 140, 140), 
         transparent);
       //background:linear-gradient(rgba(2, 0, 15, 0.644), rgba(6, 1, 48, 0.589), rgba(14, 1, 22, 0.473), transparent);
       animation: fadeIn .5s ease;
