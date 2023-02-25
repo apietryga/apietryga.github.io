@@ -18,7 +18,7 @@
     
     <template v-if="['projects'].includes(url.type)">
       <template v-for="el of getIncludedProject()" :key="el">
-        <a :href="'/projects/' + el.href" class="externalJob">
+        <a :href="'/projects/' + el.url" class="externalJob">
           <img :src="'/img/contents/' + el.img" :alt="el?.name + ' Logo'" />
           <h3>{{ el?.name }}</h3>
           <p>{{ el.lang?.[language].desc }}</p>
@@ -194,19 +194,20 @@
       linear-gradient(#18AAFD,#0066E2);
     }
   }
-  .fbpost{
-    background-color:rgba(255, 255, 255, 0.63);
-  }
+  //.fbpost{
+    //background-color:rgba(255, 255, 255, 0.63);
+  //}
   .ytvideo{
     background-color:#000;
   }
   .externalJob{
     border-radius:2rem;
-    border:2px solid var(--dark-primary);
-    box-shadow: 0 0 1rem var(--dark-primary);
+    //border:2px solid var(--dark-primary);
+    //box-shadow: 0 0 1rem var(--dark-primary);
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding:0 1rem;
     background: lighten($backgroundColor, 10%);
     img{
@@ -233,13 +234,13 @@
       flex-direction: column;
       &:nth-child(2){
         a{
-          flex-direction: row;
+          flex-direction: row-reverse;
           //border-radius:3.5rem 0 0 3.5rem;
           h4{
-            text-align: left;
+            text-align: right;
           }
           p{
-            text-align: left;
+            text-align: right;
           }
         }
       }
@@ -252,7 +253,7 @@
         //background:lighten($backgroundColor, 5%);
         display:flex;
         //flex-direction: column;
-        flex-direction: row-reverse;
+        //flex-direction: row-reverse;
 
         align-items: center;
         justify-content: center;
@@ -262,7 +263,7 @@
         }
         h4{
           margin:0;
-          text-align: right;
+          text-align: left;
         }
         img{
           width:6rem;
@@ -272,7 +273,7 @@
 
         }
         p{
-          text-align: right;
+          text-align: left;
           //padding:0 1rem;
           &:nth-child(1){
             font-size: 1.2rem;
@@ -325,8 +326,13 @@
     justify-content: center;
   }
 
-  img,iframe{
-    max-width: 100vw;
+  img{
+    max-width: 50vw;
     max-height:50vh;
+  }
+  iframe{
+    max-width: 100vw;
+    max-height:100vh;
+    min-height:50vh;
   }
 </style>

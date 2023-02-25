@@ -80,7 +80,7 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
                   automatycznym shootiniem i auto mwall'ami,
                   - a to wszystko tylko po wejściu na stronę w przeglądarce`,
                 `Aby każdy fan Tibii mógł cieszyć się tą grą - udostępniłem publiczne repozytorium z grą - wystarczy otworzyć serwer.js node.js'em . (lub wrzucić na heroku)`,
-                `Chcesz zagrać? Wystarczy, że wejdziesz na <b><a href="http://webions.uk/" target="_blank">http://webions.uk/</a></b>`
+                `Chcesz zagrać? Wystarczy, że wejdziesz na <b><a href="https://webions.uk/" target="_blank">https://webions.uk/</a></b>`
               ]              
             },
             "en": {
@@ -96,7 +96,7 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
                 Automation shooting, Automaton Mwalls,
                 - and all this only after entering the website in the browser`,
                 `So that every Tibia fan can enjoy this game - I have made available a public repository - just open sewer.js by node.js (or push this repository to heroku)`,
-                `Do you want to play? Just go to <b> <a href="http://webions.uk/" target="_blank"> http://webions.uk/ </a> </b>`,
+                `Do you want to play? Just go to <b> <a href="https://webions.uk/" target="_blank"> https://webions.uk/ </a> </b>`,
               ]              
             },
 
