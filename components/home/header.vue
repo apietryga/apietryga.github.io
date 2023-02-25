@@ -122,11 +122,11 @@
     .sky{
       z-index:-5;
       background:linear-gradient(
-        rgba(190, 215, 246, 0.644), 
-        rgba(97, 178, 232, 0.589), 
-        rgb(244, 176, 67), 
-        rgb(233, 140, 140), 
-        transparent);
+        #FEFEFF,
+        #FED775, 
+        #E47F5B, 
+        #704853,
+        #271E2B);
       //background:linear-gradient(rgba(2, 0, 15, 0.644), rgba(6, 1, 48, 0.589), rgba(14, 1, 22, 0.473), transparent);
       animation: fadeIn .5s ease;
     }
@@ -181,7 +181,8 @@
       top:10vh;
       flex-direction: column;
       justify-content: flex-end;
-      color:#fff;
+      //color:#fff;
+      color:var(--dark-primary);
       height:50vh;
       padding:2rem;
       width:fit-content;
