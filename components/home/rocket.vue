@@ -126,6 +126,7 @@
     var(--dark-primary),
     var(--bright-primary));
   // border:20px dashed blue;
+  background: transparent;
   display:flex;
   position:relative;
   z-index:2;
@@ -201,9 +202,9 @@
 @media (max-width:768px){
   .headerWrapper{
     flex-direction: column;
-    border:2px dashed blue;
+    // border:2px dashed blue;
     .titleWrapper{
-      border:2px dashed red;
+      // border:2px dashed red;
       flex:1;
       width: 100%;
       display:flex;
@@ -215,7 +216,7 @@
       }
     }
     .logoWrapper{
-      border:2px dashed blue;
+      // border:2px dashed blue;
       width:200%;
       left:-50%;
       transform:scale(0.5);

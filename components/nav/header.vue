@@ -89,7 +89,7 @@
     top:0;
     width:100%;
     height: var(--navHeaderHeight);
-    z-index:2;
+    z-index:4;
     display:flex;
     flex-direction: row-reverse;
     justify-content: space-between;
