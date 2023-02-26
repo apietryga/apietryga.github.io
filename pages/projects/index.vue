@@ -5,21 +5,23 @@
       <template v-if="projects.length > 0">          
         <section v-for="item in projects" :key="item">
           <div class="wrapper">
-            <header>
-              <p class="date">{{item.date}}</p>
-              <h2>
-                <NuxtLink :to="'/projects/' + item.url">{{ item.name }}</NuxtLink>
-              </h2>
-              <p>{{ item.lang[language].desc }}</p>
-            </header>
+            <NuxtLink :to="'/projects/' + item.url">
+              <header>
+                <p class="date">{{item.date}}</p>
+                <h2>
+                  {{ item.name }}
+                </h2>
+                <p>{{ item.lang[language].desc }}</p>
+              </header>
+            </NuxtLink>
             <article>
               <img :src="'/img/contents/' + item.img" :alt="item.name">
             </article>
           </div>
           <footer>
-            <NuxtLink :to="'/projects?q=' + tag" v-for="tag in item.lang[language].category" :key="tag">
-              #{{ tag }}
-            </NuxtLink>
+            <!-- <NuxtLink :to="'/projects?q=' + tag" v-for="tag in item.lang[language].category" :key="tag">
+              <small>#{{ tag }}</small>
+            </NuxtLink> -->
           </footer>
         </section>
       </template>
@@ -102,12 +104,13 @@
     section{
       border-bottom:.1rem solid rgba(0, 0, 0, 0.288);
       display:flex;
-      margin-bottom:.5rem;
+      margin:1rem 0;
       flex-direction: column;
       padding:.5rem 1rem;
       .wrapper{
         // border:2px dashed red;
         display:flex;
+        justify-content: space-between;
         >header{
           flex:1;
           h2{

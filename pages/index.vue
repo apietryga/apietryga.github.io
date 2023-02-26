@@ -105,7 +105,10 @@
 <style lang="scss">
   .overwrapper{
     //background-color:green;
+    
     background: var(--bright-primary);
+
+      //background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
 
   }
   .headerWrapper{
