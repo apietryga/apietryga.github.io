@@ -218,7 +218,8 @@
       .moon{
         left:unset;
         top:-12vh;
-        right:5rem;
+        // right:5rem;
+        right:0;
         height:90vh;
         width:90vh;
   
