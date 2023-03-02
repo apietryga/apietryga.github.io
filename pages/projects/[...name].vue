@@ -18,12 +18,17 @@
 
   </header>
   <main class="content">
-
-
-    <section v-for="section in getContent()" :key="section">
-      <p v-if="section.header" v-html="section.header"></p>
-      <media v-else :props="section" />
-    </section>
+    <template v-for="section in getContent()" :key="section">
+      <section
+        v-if="section?.media || section?.header"
+        >
+        <!-- v-if="Object.keys(section).length === 0" -->
+      <!-- {{ section }} -->
+        <p v-if="section.header" v-html="section.header"></p>
+        <!-- <template v-else-if="!section.media" ></template> -->
+        <media v-else :props="section" />
+      </section>
+    </template>
     <!-- <div class="prevNextWrapper">
       <div class="prev"> {{ prev }} </div>
       <div class="next"> {{ next }} </div>

@@ -135,6 +135,13 @@ body{
   .list,.details>.content body >.content{
     padding:0 20%;
   }
+  .list{
+    padding:1rem 10% 0 1rem;
+    nav{
+      margin:0;
+    }
+  
+  }
 }
 @media (min-width : 1220px){
   #code, #teaching, #business body >.content{
