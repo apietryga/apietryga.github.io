@@ -383,13 +383,11 @@
       text-align:center;
     }
     > p{
-      // padding:2rem 0 1rem 2rem;
       padding:0 0 1rem 2rem;
       line-height:1.5rem;
     }
     section{
       @extend %rowSection;
-      // padding:2rem 0;
       padding:0 0 2rem 0;
       a{
         margin-top:0;

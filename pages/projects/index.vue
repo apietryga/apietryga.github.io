@@ -6,6 +6,9 @@
         <section v-for="item in projects" :key="item">
           <div class="wrapper">
             <NuxtLink :to="'/projects/' + item.url">
+              <article>
+                <img :src="'/img/contents/' + item.img" :alt="item.name">
+              </article>
               <header>
                 <p class="date">{{item.date}}</p>
                 <h2>
@@ -14,9 +17,9 @@
                 <p>{{ item.lang[language].desc }}</p>
               </header>
             </NuxtLink>
-            <article>
+            <!-- <article>
               <img :src="'/img/contents/' + item.img" :alt="item.name">
-            </article>
+            </article> -->
           </div>
           <footer>
             <!-- <NuxtLink :to="'/projects?q=' + tag" v-for="tag in item.lang[language].category" :key="tag">
@@ -104,31 +107,35 @@
     section{
       border-bottom:.1rem solid rgba(0, 0, 0, 0.288);
       display:flex;
-      margin:1rem 0;
       flex-direction: column;
-      padding:.5rem 1rem;
+      padding:1rem;
       .wrapper{
-        // border:2px dashed red;
         display:flex;
         justify-content: space-between;
-        >header{
-          flex:1;
-          h2{
-            margin:.3rem 0;
-          }
-          .date{
-            font-size:.6rem;
-            font-weight:bolder;
-            line-height:.7rem;
-            margin:0;
-          }
-        }
-        article{
+        a{
+          // border:2px dashed red;
           display:flex;
-          flex-direction: row-reverse;
-          img{
-            height:100px;
-            width:100px;
+          align-items: center;
+          header{
+            flex:1;
+            h2{
+              margin:.3rem 0;
+            }
+            .date{
+              font-size:.6rem;
+              font-weight:bolder;
+              line-height:.7rem;
+              margin:0;
+            }
+          }
+          article{
+            display:flex;
+            flex-direction: row-reverse;
+            margin-right:1rem;
+            img{
+              height:100px;
+              width:100px;
+            }
           }
         }
       }
