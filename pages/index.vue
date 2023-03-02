@@ -7,8 +7,8 @@
     <main id="code">
       <div class="codeprojects">
         <header>
-          <h1>{{lang[language].content[4]}}</h1>
-          <h2>{{lang[language].content[5]}}</h2>
+          <h2>{{lang[language].content[4]}}</h2>
+          <p>{{lang[language].content[5]}}</p>
           <p>
             {{lang[language].content[6]}}
           </p>  
@@ -22,7 +22,7 @@
           <NuxtLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)" :key="element">
             <article>
               <header>
-                <h2>{{ element.name }}</h2>
+                <h3>{{ element.name }}</h3>
                 <p>{{ element.lang[language].desc }}</p>
               </header>
               <img :src="'/img/contents/' + element.img" :alt="element.name">
@@ -39,8 +39,8 @@
       <div class="mask top"></div>
       <div class="stopper"></div>
       <header>
-        <h1>{{lang[language].content[8]}}</h1>
-        <h2>{{lang[language].content[9]}}</h2>  
+        <h2>{{lang[language].content[8]}}</h2>
+        <p>{{lang[language].content[9]}}</p>  
       </header>
       <div class="content">
         <p>{{lang[language].content[10]}}</p>
@@ -48,7 +48,7 @@
           <NuxtLink v-for="element in getProjectsByNames(recomended.teaching)" :to="'/projects/' + element.url" :key="element">
             <article>
               <header>
-                <h2>{{ element.name }}</h2>
+                <h3>{{ element.name }}</h3>
                 <p>{{ element.lang[language].desc }}</p>
               </header>
               <img :src="'/img/contents/' + element.img" :alt="element.name">
@@ -60,17 +60,16 @@
           </footer>  
         </section>
       </div>
-      <div class="mask dark"></div>
     </article>
     <article id="business">
       <div class="photo me"></div>
-      <h1>{{ lang[language].content[12] }}</h1>
+      <h2>{{ lang[language].content[12] }}</h2>
       <p>{{ lang[language].content[13] }}</p>
       <section>
         <NuxtLink v-for="element in getProjectsByNames(recomended.business)" :to="'/projects/' + element.url" :key="element">
           <article>
             <header>
-              <h2>{{element.name}}</h2>
+              <h3>{{element.name}}</h3>
               <p>{{element.lang[language].desc}}</p>
             </header>
             <img :src="'/img/contents/' + element.img" :alt="element.name">
@@ -81,7 +80,6 @@
           <NuxtLink :to="'/projects?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</NuxtLink>
         </footer>  
       </section>
-  
     </article>
   </div>
 </template>
@@ -104,18 +102,10 @@
 
 <style lang="scss">
   .overwrapper{
-    //background-color:green;
-    
-    //background: var(--bright-primary);
-    background: var(--dark-primary);
-    background: linear-gradient(to bottom, var(--dark-rocks), var(--dark-primary));
+    background: var(--dark-rocks);
     color: var(--bright-primary);
-
-      //background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
-
   }
   .headerWrapper{
-    // border:2px dashed red;
     height:100vh;
     width:100%;
      z-index:-15;
@@ -171,18 +161,14 @@
           }
         }
         img{
-          //border:2px dashed red;
           background-color: var(--bright-primary);
           border-radius:50%;
           box-shadow: 0 0 5px var(--bright-primary);
-          // max-width:2rem;
-          // max-height:2rem;
           width:4rem;
           height:4rem;
           margin:.8rem 0;
           padding:.5rem;
         }
-
       }
     }
     footer{
@@ -204,7 +190,6 @@
       }
     }
     @media (max-width:720px){
-      // border:2px dashed red;
       grid-template-columns:1fr;
       grid-template-rows: 1fr 1fr 1fr;          
       a{
@@ -218,16 +203,13 @@
       footer{
         a{
           text-align: center!important;
-          // border:2px dashed red;
           margin-top:4rem;
-
         }
       }
     }
-
   }
   .mask{
-    background-color:$teachingMaskColor;
+    // background:red;
     clip-path: polygon(50% 100%, 100% 0%, 100% 100%, 0 100%, 0 0);
     height:calc(10vh + 5px);
     position:relative;
@@ -239,12 +221,13 @@
     &.dark{
       clip-path: polygon(100% 0, 0 0, 50% 100%);
       bottom:calc(-10vh - 4px);
-      background-color: #040003;
+      // background-color: #040003;
+        background:red;
+
     }
   }
   #code{
     overflow-y: hidden;
-    //background-color:$backgroundColor;
     position:relative;
     .codeprojects{
       width:100%;
@@ -254,15 +237,17 @@
       header{
         flex:1;
         padding-top:var(--navHeaderHeight);
-        h1{
-          margin:2rem 0 .5rem 0;
-        }
         h2{
-          margin-bottom:2rem;
+          margin:2rem 0 .5rem 0;
+          font-size:3rem;
         }
         *{
           text-align: center;
           flex:1;
+        }
+        p:nth-child(2){
+          margin-bottom:2rem;
+          text-align: center;
         }
         p{
           margin-bottom:0;
@@ -274,12 +259,12 @@
         @extend %rowSection;
       }
       ul{
-        //background-color: rgba(0, 0, 0, 0.171);
         display:flex;
         flex-wrap: wrap;
         justify-content: center;
         list-style-type: none;
-        margin:2rem auto;
+        // margin:2rem auto;
+        margin:1rem auto 2rem auto;
         max-height:15rem;
         min-width:80%;
         padding:.5rem;
@@ -331,7 +316,7 @@
   #teaching{
     position:relative;
     color:#fff;
-    background-color: $teachingMaskColor;
+    background:var(--dark-rocks);
     display:flex;
     flex-direction: column;
     margin-top:calc(10vh + 5px);
@@ -346,13 +331,11 @@
     }
     >header{
       margin-top:13rem;
-      // min-height:40vh;
-      h1{
-        // border:2px dashed red;
+      h2{
         padding-left:1rem;
         font-size:3rem;
       }
-      h2{
+      p{
         padding-left:1rem;
         margin:.5rem;
         margin-bottom:3.4rem;
@@ -367,7 +350,6 @@
       display:flex;
       flex-direction: column;
       align-items: center;
-      // transform: translateZ(0);
       p{
         flex:1;
         margin:0 1.5rem 2rem 1.5rem;
@@ -386,40 +368,32 @@
   }
   #business{
     background: var(--bright-primary);
-    color:$fontColor;
+    color:var(--dark-primary);
     position:relative;
     min-height:40vh;
-    padding:2em;
+    padding:2rem;
     padding-top:var(--navHeaderHeight);
-    margin-top:calc(10vh + 5px);
+    margin-top:2rem;
     display:flex;
     flex-direction: column;
     align-items: center;
-    /*
-    .me{
-      z-index:-1;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      position:absolute;
-      background-size: auto 100%;
-      background-position: right;
-      background-repeat: no-repeat;
-      background-image: url('/img/frontPage/half_index.webp');
-    } // */
-    h1{
+    h2{
       font-size:3rem;
       line-height: 1em;
-      margin-top:var(--navHeaderHeight);
+      text-align:center;
     }
-    >p{
-      padding:2rem 0 2rem 2rem;
+    > p{
+      // padding:2rem 0 1rem 2rem;
+      padding:0 0 1rem 2rem;
       line-height:1.5rem;
     }
     section{
       @extend %rowSection;
-      padding:2rem 0;
+      // padding:2rem 0;
+      padding:0 0 2rem 0;
+      a{
+        margin-top:0;
+      }
     }
   }
   #code,#teaching,#business{

@@ -36,9 +36,9 @@
               if(['next', 'mask photo'].includes(e.className)){
                 return;
               }else if(e.classList.contains("mountains")){
-                e.style.marginTop = (window.scrollY/2) + "px";return;
+                e.style.marginTop = (window.scrollY/3.5) + "px";return;
               }else if(e.classList.contains("moon")){
-                e.style.marginTop = (window.scrollY*1.7) + "px";return;
+                e.style.marginTop = (window.scrollY*0.2) + "px";return;
               }else if(e.classList.contains("clouds")){
                 e.style.marginTop = -(window.scrollY*2) + "px";return;
               }else if(e.classList.contains("title")){
@@ -127,35 +127,31 @@
         #E47F5B, 
         #704853,
         #271E2B);
-      //background:linear-gradient(rgba(2, 0, 15, 0.644), rgba(6, 1, 48, 0.589), rgba(14, 1, 22, 0.473), transparent);
       animation: fadeIn .5s ease;
     }
     .mountains{
       animation: fadeInDelay 1s ease;
       background-image: url("/img/frontPage/mountains.svg");
+      background-position: center;
+      background-repeat: repeat;
+      background-size:auto 100%;
       height:50vh;
       top:50vh;
       z-index:-3;
-      background-size:auto 100%;
-      background-position: center;
-      background-repeat: repeat;
     }
     .moon{
       animation: fadeIn 1s ease;
-      //box-shadow: 0 0 15vh #b1b1b1;
-      pointer-events: none;
-      border-radius:50%;
       background: radial-gradient(#fff transparent, transparent, transparent);
-      //background: radial-gradient(var(--bright-primary) transparent, transparent, transparent);
-      //background-color:rgb(255, 255, 255);
-      z-index:-4;
-      // background-image: url("/img/frontPage/moon.webp");
-      background-size:contain;
-      height:20vh;
-      width:20vh;
-      top:15vh;
-      left:30vw;
       background-position:bottom;
+      background-size:contain;
+      border-radius:50%;
+      height:20vh;
+      left:30vw;
+      max-width:100%;
+      pointer-events: none;
+      top:15vh;
+      width:20vh;
+      z-index:-4;
     }
     .clouds{
       @keyframes slide{

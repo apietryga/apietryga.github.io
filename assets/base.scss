@@ -1,15 +1,11 @@
 $clickedColor: rgba(0, 0, 0, 0.2);
 $backgroundColor: rgb(214, 214, 214);
-//$boxShadowsColor: rgba(0, 0, 0, 0.5);
-$boxShadowsColor: rgba(255, 255, 255, 0.5);
 $fontColor:rgba(31, 29, 29, 0.8);
-$teachingMaskColor:#040003;
-
 
 %actionColors{
   transition:.3s;
   &:hover{
-    background-color: var(--hover-color);
+    background-color: var(--hover-color); 
   }
   &:active{
     background-color: $clickedColor;
