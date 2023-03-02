@@ -211,7 +211,6 @@
     padding:0 1rem;
     background: lighten($backgroundColor, 10%);
     img{
-      // padding-top:1rem;
       margin-top:1rem;
       width:8rem;
       height:8rem;
@@ -220,22 +219,24 @@
       margin:.5rem;
     }
     p{
-      //text-align:center;
       padding:0 1rem 1rem 1rem;
     }
   }
   .prevNextWrapper{
-    //margin-top:5rem;
     display:flex;
     gap:1rem;
-    >div{
+    > div{
       flex:1;
       display:flex;
       flex-direction: column;
+      a{
+        justify-content: flex-start;
+      }
+      align-items: flex-start;
       &:nth-child(2){
+        align-items: flex-end;
         a{
           flex-direction: row-reverse;
-          //border-radius:3.5rem 0 0 3.5rem;
           h4{
             text-align: right;
           }
@@ -245,21 +246,13 @@
         }
       }
       > a{
-        //border:.2rem solid var(--dark-primary);
-        border-width: 0 0 .5rem 1px;
-        //border-radius:0 5rem 5rem 0 ;
-        //border-radius:5rem 0 0 5rem;
-        // border:2px dashed red;
-        //background:lighten($backgroundColor, 5%);
-        display:flex;
-        //flex-direction: column;
-        //flex-direction: row-reverse;
-
         align-items: center;
+        border-width: 0 0 .5rem 1px;
+        display:flex;
         justify-content: center;
         position:relative;
         .title{
-         margin:.5rem;
+          margin:.5rem;
         }
         h4{
           margin:0;
@@ -283,7 +276,7 @@
           }
         }
       }
-      >p{
+      > p{
         flex:1;
         display:flex;
         flex-wrap: wrap;
@@ -304,10 +297,8 @@
         margin-bottom:2.5rem;
       }
     }
-
   }
   .githubContainer{
-    // border:.5rem solid #fff;
     background-color: #000;
     box-shadow: 0 0 1rem #000;
     color:#fff;

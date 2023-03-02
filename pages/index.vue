@@ -329,7 +329,7 @@
       height:15rem;
       width:100%;
     }
-    >header{
+    > header{
       margin-top:13rem;
       h2{
         padding-left:1rem;
@@ -338,7 +338,7 @@
       p{
         padding-left:1rem;
         margin:.5rem;
-        margin-bottom:3.4rem;
+        margin-bottom:3rem;
       }  
       *{
         text-align: center;
@@ -352,7 +352,7 @@
       align-items: center;
       p{
         flex:1;
-        margin:0 1.5rem 2rem 1.5rem;
+        margin:0 1.5rem 0rem 1.5rem;
         // margin-left:1.5rem;
       }
       section{

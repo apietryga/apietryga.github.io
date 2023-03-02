@@ -19,20 +19,11 @@
   </header>
   <main class="content">
     <template v-for="section in getContent()" :key="section">
-      <section
-        v-if="section?.media || section?.header"
-        >
-        <!-- v-if="Object.keys(section).length === 0" -->
-      <!-- {{ section }} -->
+      <section v-if="section?.media || section?.header">
         <p v-if="section.header" v-html="section.header"></p>
-        <!-- <template v-else-if="!section.media" ></template> -->
         <media v-else :props="section" />
       </section>
     </template>
-    <!-- <div class="prevNextWrapper">
-      <div class="prev"> {{ prev }} </div>
-      <div class="next"> {{ next }} </div>
-    </div> -->
   </main>
   <div class="prevNextWrapper">
     <div v-for="butt of getPrevNext()" :key="butt">
@@ -44,12 +35,6 @@
           <h4>{{ butt.name }}</h4>
           <p>{{ butt.lang[language].desc }}</p>
         </div>
-        <!-- <p>{{ butt.languages[language] }}</p> -->
-        <!-- <p>
-          <NuxtLink :to="'/projects?q=' + tag" 
-            v-for="tag in butt.lang?.[language].category" :key="tag"> #{{ tag }} 
-          </NuxtLink>
-        </p> -->
       </NuxtLink>
     </div>
   </div>
@@ -60,7 +45,6 @@
     data(){
       const { projects, language } = this.$appData
       const projectIndex = projects.findIndex( project => project.url == this.$route.params.name[0])
-      // console.log('project:', projects[projectIndex])
       return {
         ...projects[projectIndex],
         projectIndex,
@@ -98,7 +82,6 @@
   .details{
     position:relative;
     margin-top:var(--navHeaderHeight);
-    //min-height:30vh;
     .background{
       position:absolute;
       width:100%;
@@ -107,23 +90,20 @@
     }
   }
   .mainImg{
-    padding:1rem;
-    //min-height:30vh;
+    align-items: center;
     background-position:center;
-    //height:100%;
-    width:100%;
     display:flex;
     justify-content: flex-start;
-    align-items: center;
     margin-top: var(--navHeaderHeight);
+    padding:1rem;
+    width:100%;
     picture{
-      display: flex;
       align-items: center;
+      display: flex;
       width:5rem;
       height:5rem;
       img{
         height:5rem;
-
         max-width: unset;
       }
     }
@@ -188,41 +168,42 @@
     }
 
     .prevNextWrapper{
-      background:var(--dark-primary);
-      
-      margin-top:0 1rem;
-      display:flex;
       align-items: center;
+      background:var(--dark-primary);
+      display:flex;
       gap:1rem;
+      margin-top:0 1rem;
+      border:2px dashed blue;
       > div{
         flex:1;
-        //display:flex;
-        //flex-direction: column;
+        border:2px dashed red;
+
+          
+
         > a{
-          border:.2rem solid var(--dark-primary);
-          // border:2px dashed red;
+          align-items: center;
           background:lighten($backgroundColor, 5%);
+          border:.2rem solid var(--dark-primary);
           display:flex;
           flex-direction: column;    
-          align-items: center;
-          position:relative;
           padding-bottom:1.5rem;
+          position:relative;
           img{
-            width:6rem;
             height:6rem;
+            width:6rem;
           }
           p{
-            text-align: left;
             padding:0 1rem;
+            text-align: left;
             &:nth-child(1){
               font-size: 1.2rem;
+              font-weight: bold;
               position:absolute;
               top:-2rem;
-              font-weight: bold;
             }
           }
         }
-        >p{
+        > p{
           flex:1;
           display:flex;
           flex-wrap: wrap;
@@ -244,7 +225,6 @@
         }
       }
     }
-
     @media (min-width : 720px){
       &.content{
         display:grid;
