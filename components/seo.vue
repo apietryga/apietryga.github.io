@@ -6,6 +6,7 @@
       :name="name"
       :content="content"
     />
+    <Meta name="google-site-verification" content="8ipK6aTDBqxsTimOuexoAapkaGpct8pl3NNw7HLw2vA" />
     <!-- <Link 
      rel='stylesheet'
      href='https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap'
