@@ -380,6 +380,7 @@
     h2{
       font-size:3rem;
       line-height: 1em;
+      margin-top:2rem;
       text-align:center;
     }
     > p{
