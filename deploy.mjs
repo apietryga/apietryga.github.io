@@ -1,12 +1,8 @@
 import { execa } from "execa";
-import { existsSync } from "fs";
 (async () => {
   try {
     await execa("git", ["checkout", "--orphan", "gh-pages"]);
-    // await execa("git", ["checkout", "gh-pages"]);
-    // eslint-disable-next-line no-console
     console.log("Building started...");
-    // await execa("npm", ["run", "build"]);
     await execa("npm", ["run", "generate"]);
     // Understand if it's dist or build folder
     // const folderName = existsSync("dist") ? "dist" : "build";
@@ -19,9 +15,5 @@ import { existsSync } from "fs";
     await execa("git", ["checkout", "-f", "master"]);
     await execa("git", ["branch", "-D", "gh-pages"]);
     console.log("Successfully deployed, check your settings");
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.log(e.message);
-    process.exit(1);
-  }
+  } catch (e) { console.log({ e }); process.exit(1) }
 })();
