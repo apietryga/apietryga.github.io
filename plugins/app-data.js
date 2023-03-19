@@ -1244,8 +1244,8 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
         ],
         lang: {
           "pl": {
-            desc: "Full stack developer portfolio",
-            category: ['webdevelopment', 'fullstack', 'node developer'],
+            desc: "Nazywam się Antoni Pietryga i tworzę rzeczy w necie. Z racji tego, że zajmowałem się różnymi rzeczami stworzyłem tę stronę - tutaj znajdziesz wszystkie moje projekty.",
+            category: ['webdevelopment', 'fullstack', 'node developer', 'Antoni', 'Pietryga', 'Sofware developer', 'Antek'],
             content : [
                 `Jestem`,
                 `apietryga`,
@@ -1266,8 +1266,8 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
               ]
           },
           "en": {
-            desc: "Full stack developer portfolio",
-            category: ['webdevelopment', 'fullstack', 'node developer'],
+            desc: "My name is Antoni Pietryga and I create things online. Due to the fact that I was dealing with various things, I created this page - here you will find all my projects.",
+            category: ['webdevelopment', 'fullstack', 'node developer', 'Antoni', 'Pietryga', 'Sofware developer', 'Antek'],
             content : [
                 `I'm`,
                 `apietryga`,
