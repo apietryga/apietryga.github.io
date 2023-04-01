@@ -88,7 +88,7 @@
 <style lang="scss">
 .list{
   min-height: calc(100vh - var(--navfooterHeight) - #{var(--navHeaderHeight)});
-  margin-top:var(--navHeaderHeight);
+  // margin-top:var(--navHeaderHeight);
   display:flex;
   flex-wrap:wrap;
   position:relative;

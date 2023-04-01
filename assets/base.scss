@@ -32,6 +32,16 @@ a{
 h1,h2,p{
   margin:0;
 }
+#__nuxt{
+  border:2px dashed green;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  >div{
+    flex:1;
+  }
+}
 body{
   background-color:$backgroundColor;
   //font-family: 'Ubuntu', sans-serif;

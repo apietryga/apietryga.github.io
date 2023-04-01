@@ -81,7 +81,7 @@
 <style lang="scss">
   .details{
     position:relative;
-    margin-top:var(--navHeaderHeight);
+    // margin-top:var(--navHeaderHeight);
     .background{
       position:absolute;
       width:100%;
@@ -94,7 +94,7 @@
     background-position:center;
     display:flex;
     justify-content: flex-start;
-    margin-top: var(--navHeaderHeight);
+    // margin-top: var(--navHeaderHeight);
     padding:1rem;
     width:100%;
     picture{

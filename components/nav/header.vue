@@ -84,11 +84,10 @@
 
 <style lang="scss">
   .navHeader{
-    position:fixed;
-    // background-color:var(--dark-primary);
+    // position:fixed;
+    position:sticky;
     top:0;
     width:100%;
-    // height: var(--navHeaderHeight);
     z-index:4;
     display:flex;
     flex-direction: row-reverse;

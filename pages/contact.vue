@@ -87,7 +87,7 @@
   export default {
     data(){
       const { contact, language } = this.$appData
-      console.log({ contact })
+      // console.log({ contact })
       return { ...contact, language }
     },
   }
@@ -95,13 +95,14 @@
 
 <style lang="scss">
   .contact{
-    margin-top:var(--navHeaderHeight);
-    min-height: calc( 100vh - ( var(--navfooterHeight) + var(--navHeaderHeight)));
+    // margin-top:var(--navHeaderHeight);
+    // min-height: calc( 100vh - ( var(--navfooterHeight) + var(--navHeaderHeight)));
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top:1.5rem;
+    // padding-top:1.5rem;
+    padding-top:1rem;
     h3,p{
       margin:.5rem;
     }
@@ -111,7 +112,7 @@
       display: grid;
       grid-template-areas:
       'gh in so'
-      'yt ig fb'
+      'ig fb yt'
       'ph mg ml';
       // 'gh ph ml'
       // 'mg ig fb'

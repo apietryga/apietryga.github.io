@@ -38,10 +38,14 @@ footer{
   display:flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: var(--navfooterHeight);
-  padding:1rem .5rem .5rem 1rem;
-  position:absolute;
+  // min-height: var(--navfooterHeight);
+  // padding:1rem .5rem .5rem 1rem;
+  padding:.5rem;
+  // position:absolute;
+  position:relative;
+  bottom:0;
   width:100%;
+  border:2px dashed red;
   nav{
     display:grid;
     height:100%;
