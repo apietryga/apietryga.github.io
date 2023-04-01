@@ -49,9 +49,6 @@
         }
         if(page){
           seo.title = page.name
-          // seo.link = [
-          //   { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap' },
-          // ]
           seo.meta = [
             { name: "description", content: page.lang[this.$appData.language].desc },
             { name: "keywords", content: page.lang[this.$appData.language].category?.join(", ") },
@@ -60,12 +57,9 @@
             { name: "og:description", content: page.lang[this.$appData.language].desc },
             { name: "og:image", content: ORIGIN + '/img/contents/' + page.img },
 
-            // { name: }
             { name: "twitter:title", content: page.name },
             { name: "twitter:description", content: page.lang[this.$appData.language].desc },
             { name: "twitter:image", content: ORIGIN + '/img/contents/' + page.img },
-//             <meta name=”twitter:card” content=”summary” /> 
-        // <meta name=”twitter:site” content=”@yoursite” /> 
           ]
         }
         return seo

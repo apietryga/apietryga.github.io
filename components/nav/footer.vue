@@ -11,7 +11,6 @@
         <NuxtLink to="/contact">
           <span>{{ pageBuild[language].nav.contact }}</span> 
         </NuxtLink>
-        <!-- <NuxtLink :to="'/img/cvs/2022_03_CV_' + language + '.pdf'" target="_blank"> -->
         <NuxtLink :to="'/cvs/2023_03_CV_en.pdf'" target="_blank">
           Curriculum Vitae
         </NuxtLink>

@@ -35,7 +35,7 @@
             </g>
           </svg>
         </a>
-        <a class="single insta" :href="ig" target="_blank">
+        <a class="single instagram" :href="instagram" target="_blank">
           <svg width="100%" height="100%" version="1.1" viewBox="0 0 73.66 73.66">
             <g transform="translate(-194.57 -162.79)">
               <g transform="translate(59.953 93.897)">
@@ -44,7 +44,7 @@
             </g>
           </svg>
         </a>
-        <a class="single yt" :href="yt" target="_blank">
+        <a class="single youtube" :href="youtube" target="_blank">
           <svg width="100%" height="100%" version="1.1" viewBox="0 0 73.66 73.66" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
             <g transform="translate(-409.33 -174.96)">
               <g transform="translate(59.953 93.897)">
@@ -55,7 +55,7 @@
             </g>
           </svg>
         </a>
-        <a class="single fb" :href="fb" target="_blank">
+        <a class="single facebook" :href="facebook" target="_blank">
           <svg width="100%" height="100%" version="1.1" viewBox="0 0 73.66 73.66">
             <g transform="translate(-238.97 -182.21)">
               <g transform="translate(59.953 93.897)">
@@ -64,9 +64,19 @@
             </g>
           </svg>
         </a>
-        <a class="single in" :href="in" target="_blank">
+        <a class="single liknedin" :href="linkedin" target="_blank">
           <svg width="100%" height="100%" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="m8 19h-3v-11h3zm-1.5-12.268c-0.966 0-1.75-0.79-1.75-1.764s0.784-1.764 1.75-1.764 1.75 0.79 1.75 1.764-0.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476z" fill="#fff"/>
+          </svg>
+        </a>
+        <a class="single stackoverflow" :href="stackoverflow" target="_blank">
+          <svg width="100%" height="100%" version="1.1" viewBox="0 0 123.81 123.81" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0 -.192)" fill="none" fill-rule="evenodd">
+            <g transform="matrix(.79932 0 0 .79932 2.4082 .038531)">
+            <polygon transform="matrix(.86982 0 0 .86982 27.446 23.082)" points="11 113 88 113 88 80 99 80 99 124 0 124 0 80 11 80" fill="#bbb"/>
+            <path d="m47.442 89.823 46.992 9.8768 1.9754-9.394-46.992-9.8811zm6.2183-22.501 43.531 20.274 4.0551-8.706-43.532-20.274zm12.045-21.357 36.905 30.731 6.1461-7.3804-36.905-30.731zm23.822-22.716-7.7066 5.7321 28.659 38.533 7.7066-5.7312zm-42.944 88.554h47.84v-9.568h-47.84z" fill="#f58025" fill-rule="nonzero" stroke-width=".86982"/>
+            </g>
+          </g>
           </svg>
         </a>
       </section>
@@ -77,6 +87,7 @@
   export default {
     data(){
       const { contact, language } = this.$appData
+      console.log({ contact })
       return { ...contact, language }
     },
   }
@@ -99,17 +110,20 @@
       padding:.5rem 1rem 2rem 1rem;
       display: grid;
       grid-template-areas:
-      'gh ph ml'
-      'mg ig fb'
-      'in  yt .';
+      'gh in so'
+      'yt ig fb'
+      'ph mg ml';
+      // 'gh ph ml'
+      // 'mg ig fb'
+      // 'in  yt so';
       @media (min-width : 350px){
         gap:1rem;
       }
-      @media (min-width : 720px){
-        grid-template-areas:
-        'gh ph ml mg'
-        'in  ig fb yt';
-      }
+      // @media (min-width : 720px){
+      //   grid-template-areas:
+      //   'gh ph ml mg'
+      //   'in  ig fb yt';
+      // }
       .single{
         width:80px;
         height:80px;
@@ -135,21 +149,25 @@
         grid-area:mg;
         background:linear-gradient(#00C6FF,#006EFF);
       }
-      .insta{
+      .instagram{
         grid-area:ig;
         background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
       }
-      .fb{
+      .facebook{
         grid-area:fb;
         background:linear-gradient(#18AAFD,#0066E2);
       }
-      .yt{
+      .youtube{
         grid-area:yt;
         background:linear-gradient(#DB2824,#760700);
       }
-      .in{
+      .liknedin{
         grid-area:in;
         background:#007FBC;
+      }
+      .stackoverflow{
+        grid-area:so;
+        background: linear-gradient(#fff,#ddd);
       }
     }
   }

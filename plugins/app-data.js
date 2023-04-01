@@ -1184,11 +1184,12 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
         fullName: "Antoni Pietryga",
         mail: "antek.pietryga@gmail.com",
         messenger: "https://www.messenger.com/t/antoni.pietryga",
-        ig: "http://instagram.com/antek_pietryga",
-        fb: "https://www.facebook.com/antoni.pietryga/",
-        yt: "https://www.youtube.com/channel/UCB5bhBYgly7udyjyjj0K_UQ?view_as=subscriber",
-        in: "https://www.linkedin.com/in/apietryga/",
+        instagram: "http://instagram.com/antek_pietryga",
+        facebook: "https://www.facebook.com/antoni.pietryga/",
+        youtube: "https://www.youtube.com/channel/UCB5bhBYgly7udyjyjj0K_UQ?view_as=subscriber",
+        linkedin: "https://www.linkedin.com/in/apietryga/",
         github: "https://github.com/apietryga",
+        stackoverflow: "https://stackoverflow.com/users/5252704/antek-pietryga",
         lang: {
           "pl": {
             desc: `Dane kontaktowe`,
