@@ -1,4 +1,3 @@
-
 <template>
   <div class="homeHeader">
     <div class="photo moon"></div>

@@ -116,7 +116,6 @@
       height:120%;
       position:absolute;
       z-index:-10;
-       border:2px dashed green;
     }
   }
   %rowSection{
