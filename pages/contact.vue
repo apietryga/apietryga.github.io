@@ -1,7 +1,7 @@
 <template>
   <main class="contact">
     <h1>{{lang[language].desc}}</h1>
-      <h2>{{lang[language].content[0]}}</h2>
+      <!-- <h2>{{lang[language].content[0]}}</h2> -->
       <section class="socials">
         <a class="single github" :href="github" target="_blank">
           <iconGithub />
@@ -106,7 +106,8 @@
     h3,p{
       margin:.5rem;
     }
-    h2{margin:1rem;}
+    // h2{margin:1rem;}
+    h1{margin-bottom:1em;}
     .socials{
       padding:.5rem 1rem 2rem 1rem;
       display: grid;
