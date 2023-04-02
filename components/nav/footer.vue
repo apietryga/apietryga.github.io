@@ -16,7 +16,7 @@
         </NuxtLink>
       </p>
       <div class="cp">
-        <p>&copy; apietryga 2022.</p>
+        <p>&copy; apietryga 2023</p>
       </div>
     </nav>
   </footer>

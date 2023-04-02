@@ -1,9 +1,10 @@
 <template>
-  <header class='navHeader'>
+  <header class='navHeader preload'>
     <div class="searchAndMenu">
       <div class="menu">
         <input type="checkbox" id="toggler" v-model="toggler">
-        <label for="toggler" class="toggler">
+        <!-- <input type="checkbox" id="toggler"> -->
+        <label for="toggler" class="toggler preload" ref="togglerLabel">
           <div></div>
           <div></div>
           <div></div>
@@ -71,20 +72,22 @@
     data(){ 
       return {
         ...this.$appData,
-        toggler: 'off',
+        toggler: false,
       } 
     },
     watch:{
       '$route.fullPath'(newValue){
-        this.toggler = 'off'
+        this.toggler = false
       }
     },
+    mounted(){
+      this.$refs.togglerLabel.classList.remove('preload')
+    }
   }
 </script>
 
 <style lang="scss">
   .navHeader{
-    // position:fixed;
     position:sticky;
     top:0;
     width:100%;
@@ -125,7 +128,6 @@
           width: 1.5rem;
           z-index:2;
           div{
-            
             background:var(--font-primary-color);
             border-radius:2px;
             height:2px;
@@ -142,6 +144,12 @@
               bottom:2px;
             }
           }
+          &.preload *{
+            animation-duration: 0s !important;
+            -webkit-animation-duration: 0s !important;
+            transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+          }
+
         }
         #toggler{
           display:none;
@@ -307,7 +315,7 @@
         height:var(--navHeaderHeight) - 1;
         width:var(--navHeaderHeight) - 1;
       }
-    }    
+    }
   }
   @media (min-width:749px){
     .navHeader{
