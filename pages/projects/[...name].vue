@@ -57,8 +57,8 @@
         const content = [];
         const fieldsLength = Math.max(this.lang[lang].content?.length || 0, this.media?.length || 0);
         for(let i = 0; i <= fieldsLength - 1; i++){
-          content.push({ header: this.lang?.[lang]?.content[i] })
-          content.push({ media: this.media?.[i] })
+          content.push({ header: this.lang?.[lang]?.content[i], name: this.name })
+          content.push({ media: this.media?.[i], name: this.name })
         }
         return content
       },

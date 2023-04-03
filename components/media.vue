@@ -87,14 +87,14 @@
   </template>
 
   <template v-if="typeof url == 'string'">
-    <img v-if="['jpg','webp'].includes(url?.split('.')[url?.split('.').length-1])" :src="'/img/contents/'+ url" :alt="name" />
+    <img v-if="['jpg','webp'].includes(url?.split('.')[url?.split('.').length-1])" :src="'/img/contents/'+ url" :alt="props.name" />
 
     <iframe v-if="url.includes('youtube.com')"
       class="ytvideo"
       :src="`${url}&autoplay=1`"
       :srcdoc="`<style>*{box-sizing:border-box;overflow:hidden;padding:0;margin:0}.ytImgLink .ytbuttonContainer{position:absolute;width:100%;height:100%;display:flex;justify-content:center;align-items:center}.ytImgLink .ytbuttonContainer:hover .ytbutton{background-color:red}.ytImgLink .ytbuttonContainer .ytbutton{transition:.2s;display:flex;justify-content:center;align-items:center;color:#fff;background-color:#474747;border-radius:50%/10%;font-size:1.5rem;height:3rem;width:4.5rem;position:relative}.ytImgLink img{position:absolute;width:100%;top:0;bottom:0;margin:auto}</style>
       <a class='ytImgLink' href=${url}?autoplay=1>
-        <img src='${url.replace('www','img').replace('embed','vi') + '/hqdefault.jpg' }' alt='${name}'>
+        <img src='${url.replace('www','img').replace('embed','vi') + '/hqdefault.jpg' }' alt='${props.name}'>
         <div class='ytbuttonContainer'>
           <span class='ytbutton'>▶</span>
         </div>
@@ -102,7 +102,7 @@
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
-      :title="name">
+      :title="props.name">
     </iframe>
 
     <iframe v-if="url.split('/').includes('videos')"
@@ -126,7 +126,6 @@
       }
     },
     data(){
-      // const { language, projects } = useDataStore()
       const { language, projects } = this.$appData
       return { 
         url: this.props.media,
