@@ -113,22 +113,29 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
               type:'igpost',
               id: 'B5P0GPLhPoZ'
             },
+            // {
+            //   type:'igpost',
+            //   id: 'B9bkKoyBGAI'
+            // },
             {
-              type:'igpost',
-              id: 'B9bkKoyBGAI'
+              type:'github',
+              href: 'https://github.com/apietryga/uFlash',
             },
           ],
           lang: {
             "pl":{
-              category: ["biznes","IoT","film","kodowanie","HTML", "CSS", "PHP", "JavaScript", "JS"],
+              category: ["biznes","IoT","film","kodowanie","HTML", "CSS", "PHP", "JavaScript", "JS", "Node.js", "Tensorflow", "AI"],
               desc: "Interaktywne fotolustro przeznaczone na imprezy okolicznościowe lub do miejsc kultury",
               content : [
                 `Lustro o wymiarach 160 x 80cm sprawia, że produkt 
                 jest jednym z największych tego typu dostępnych na rynku.`,
                 `Dzięki prostemu WEB interface lustro potrafi w prosty sposób
-                komunikować się z urządzeniami obsługującymi przeglądarki (komputery, tablety, telefony)`,
-                `Więcej informacji znajdziesz
-                <a href='http://apietryga.web.app/uflash.pl/' target='_blank'>na tej stronie</a>`
+                komunikować się z urządzeniami obsługującymi przeglądarki (komputery, tablety, telefony)<br />
+                Więcej informacji znajdziesz na 
+                <a href='https://apietryga.github.io/uFlash' target='_blank' style='color:blue;'>tutaj</a>`,
+                `W 2023 roku zmieniłem technologię na Node.js i zoptymalizowałem program, aby mógł działać na raspberry pi 3+. 
+                Dodatkowo wykorzystałem moduł sztucznej inteligencji Tensorflow.js, jako system rozpoznawania twarzy i emocji.
+                <br /> Odświeżoną wersję aplikacji można znaleźćna moim github.`,
               ],    
             },
             "en": {
@@ -138,9 +145,12 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
                 `A mirror measuring 160 x 80cm makes the product
                 is one of the largest of its kind available on the polish market.`,
                 `Thanks to the simple WEB interface, the mirror can be used in a simple way
-                communicate with devices that support browsers (computers, tablets, phones).`,
-                `For more information
-                <a href='http://apietryga.web.app/uflash.pl/' target='_blank'> see this website </a> `,
+                communicate with devices that support browsers (computers, tablets, phones). <br />
+                Website with more information can be found 
+                <a href='https://apietryga.github.io/uFlash' target='_blank' style='color:blue;'>here</a> `,
+                `In 2023, I switched technology to Node.js and optimized the program to run on raspberry pi 3+.
+                In addition, I used the Tensorflow.js artificial intelligence module as a face and emotion recognition system.
+                <br /> The refreshed version of the application can be found on my github.`,
               ],    
             }
           },
