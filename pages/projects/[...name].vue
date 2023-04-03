@@ -145,8 +145,10 @@
     padding:1rem;
 
     section{
-      text-align: left;
+      // text-align: left;
+      // text-align: left;
       display:flex;
+      align-items: center;
       flex-direction: column;
       margin:0 0 2rem 0;
       //margin:2rem 0;
