@@ -79,7 +79,20 @@
 </script>
 
 <style lang="scss">
-  .details{
+  .content ul {
+    // border:2px dashed red;
+    text-align: left;
+  }
+  .content p {
+    // border:2px dashed blue;
+    margin: 0;
+    width:100%;
+    p{
+      margin:0;
+      width:100%;
+    }
+  }
+.details{
     position:relative;
     // margin-top:var(--navHeaderHeight);
     .background{
@@ -131,7 +144,6 @@
       }
     }
   }
-
   main.content{ // content in details
     //min-height:calc( 70vh - 275px );
     background-color: $backgroundColor;
@@ -168,20 +180,16 @@
         padding:1.5rem 0;
       }
     }
-
     .prevNextWrapper{
       align-items: center;
       background:var(--dark-primary);
       display:flex;
       gap:1rem;
       margin-top:0 1rem;
-      border:2px dashed blue;
+      // border:2px dashed blue;
       > div{
         flex:1;
-        border:2px dashed red;
-
-          
-
+        // border:2px dashed red;
         > a{
           align-items: center;
           background:lighten($backgroundColor, 5%);
@@ -258,9 +266,9 @@
           justify-content: flex-start;
         }  
         flex-direction: row;
-        p{
-          max-width:50%;
-        }
+        // p{
+        //   max-width:50%;
+        // }
         header{
           padding:2rem;
         }
