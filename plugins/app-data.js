@@ -393,44 +393,44 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
             }
           },
         },
-        { name: "Tanker",
-          color:"#D9BD90",
-          img: "tanker.webp",
-          date: "2012-05-15",
-          url: "tanker",
-          media: [
-            "tanker_1.webp",
-            "tanker_2.webp",
-            "tanker_3.webp",
-            "tanker_4.webp",
-          ],
-          lang: {
-            "pl": {
-              category: ["motoryzacja"],
-              desc: "Custom Chopper stworzony na bazie Rometa Kadetta",
-              content: [
-                `Projekt rozpocząłem w mając 16 lat od zmiany konstrukcji  ramy`,
-                `Po kosmetycznej poprawie zrobiłem również koncept baku`,
-                `Po malowaniu, modelowaniu i przerobieniu paru części
-                motor zaczynał nabierać kształtów`,
-                `Na tym etapie zakończyłem prace nad projektem`,
-                `Projekt został sprzedany.`,
-              ],
-            },
-            "en": {
-              category: ["moto"],
-              desc: "Custom Chopper based on Romet Kadett",
-              content: [
-                `I started the project at the age of 16 with the change of the frame structure`,
-                `After cosmetic improvement, I also made the concept of the fuel tank`,
-                `After painting, modeling and reworking a few parts
-                the bike was starting to take shape`,
-                `At this stage, I have completed work on the project`,
-                `The project has been sold .`,
-              ],
-            },
-          },
-        },
+        // { name: "Tanker",
+        //   color:"#D9BD90",
+        //   img: "tanker.webp",
+        //   date: "2012-05-15",
+        //   url: "tanker",
+        //   media: [
+        //     "tanker_1.webp",
+        //     "tanker_2.webp",
+        //     "tanker_3.webp",
+        //     "tanker_4.webp",
+        //   ],
+        //   lang: {
+        //     "pl": {
+        //       category: ["motoryzacja"],
+        //       desc: "Custom Chopper stworzony na bazie Rometa Kadetta",
+        //       content: [
+        //         `Projekt rozpocząłem w mając 16 lat od zmiany konstrukcji  ramy`,
+        //         `Po kosmetycznej poprawie zrobiłem również koncept baku`,
+        //         `Po malowaniu, modelowaniu i przerobieniu paru części
+        //         motor zaczynał nabierać kształtów`,
+        //         `Na tym etapie zakończyłem prace nad projektem`,
+        //         `Projekt został sprzedany.`,
+        //       ],
+        //     },
+        //     "en": {
+        //       category: ["moto"],
+        //       desc: "Custom Chopper based on Romet Kadett",
+        //       content: [
+        //         `I started the project at the age of 16 with the change of the frame structure`,
+        //         `After cosmetic improvement, I also made the concept of the fuel tank`,
+        //         `After painting, modeling and reworking a few parts
+        //         the bike was starting to take shape`,
+        //         `At this stage, I have completed work on the project`,
+        //         `The project has been sold .`,
+        //       ],
+        //     },
+        //   },
+        // },
       // ],
       // exps:[
         { name: "Single Courses",

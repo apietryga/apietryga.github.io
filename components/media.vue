@@ -326,6 +326,6 @@
   iframe{
     max-width: 100vw;
     max-height:100vh;
-    min-height:50vh;
+    // min-height:50vh;
   }
 </style>
