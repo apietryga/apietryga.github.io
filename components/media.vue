@@ -300,15 +300,18 @@
   }
   .githubContainer{
     background-color: #000;
-    box-shadow: 0 0 1rem #000;
+    box-shadow: 0 0 .5rem #000;
     color:#fff;
-    padding:2rem;
+    padding:1.5rem 2.5rem;
     border-radius: 2rem;
     display:flex;
     flex-direction: column;
     align-items: center;
+    max-width:50vw;
     p{
       z-index:1;
+      display:flex;
+      justify-content: center;
     }
   }
 
