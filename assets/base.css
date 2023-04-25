@@ -32,10 +32,12 @@ h1, h2, p{
   margin:0;
 }
 #__nuxt{
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  z-index: -1;
 }
 #__nuxt > div{
   flex:1;
