@@ -95,7 +95,6 @@
   justify-content:flex-start;
   width:100%;
   $tableBackground:var(--dark-primary);
-  @extend %coloredATag;
   h1{
     margin:1rem 0 .2rem .5rem;
   }

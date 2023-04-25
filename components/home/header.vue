@@ -69,7 +69,7 @@
 <style lang="scss">
   .topHeader{
     align-items: center;
-    color:$fontColor;
+    color:var(--fontColor);
     // border:2px dashed red;
     display:flex;
     flex-direction: column;

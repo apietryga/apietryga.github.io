@@ -208,7 +208,8 @@
     align-items: center;
     justify-content: center;
     padding:0 1rem;
-    background: lighten(var(--backgroundColor), 10%);
+    // background: lighten(var(--backgroundColor), 10%);
+    background: hsl(var(--backgroundColor), 10% );
     img{
       margin-top:1rem;
       width:8rem;

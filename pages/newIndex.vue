@@ -268,7 +268,6 @@
         max-height:15rem;
         min-width:80%;
         padding:.5rem;
-        @extend %coloredATag;
 
         @mixin text-contrast($n) {
           $color-brightness: round((red($n) * 299) + (green($n) * 587) + calc((blue($n) * 114) / 1000));

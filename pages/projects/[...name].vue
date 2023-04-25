@@ -191,7 +191,8 @@
         // border:2px dashed red;
         > a{
           align-items: center;
-          background:lighten(var(--backgroundColor), 5%);
+          // background:lighten(var(--backgroundColor), 5%);
+          background: hsl(var(--backgroundColor), 5% );
           border:.2rem solid var(--dark-primary);
           display:flex;
           flex-direction: column;    

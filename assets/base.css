@@ -1,14 +1,10 @@
 :root{
-
-  /* --font-family: "Ubuntu", sans-serif; */
   --font-family:  'Nunito', sans-serif;
-  /* --font-primary-color:#fff; */
   --font-primary-color:#eee;
   
   --link-color:#67a4e8;
   --dark-rocks:#000000;
   
-  /* --dark-primary:rgb(39, 39, 39); */
   --dark-primary:#111;
   --bright-primary:#eee;
 
@@ -21,14 +17,7 @@
 
   --icon-size:2rem;
 
-
-  /* 
-  $clickedColor: rgba(0, 0, 0, 0.2);
-  var(--backgroundColor): rgb(214, 214, 214);
-  $fontColor:rgba(31, 29, 29, 0.8); 
-  */
   --clickedColor: rgba(0, 0, 0, 0.2);
   --backgroundColor: rgb(214, 214, 214);
   --fontColor:rgba(31, 29, 29, 0.8); 
-
 }

@@ -170,7 +170,6 @@
             animation: hideMenu 1s ease;
           }
           a{
-            @extend %actionColors;
             align-items: center;
             border-radius:1rem;
             color: var(--font-primary-color);
@@ -179,6 +178,14 @@
             margin-left:1rem;
             svg{
               padding:5px;
+            }
+            // @extend %actionColors;
+            transition:.3s;
+            &:hover{
+              background-color: var(--hover-color); 
+            }
+            &:active{
+              background-color: var(--clickedColor);
             }
           }
           select{
