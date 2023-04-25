@@ -19,7 +19,7 @@
   display:flex;
   align-items: center;
   justify-content: center;
-  border:2px dashed blue;
+  // border:2px dashed blue;
   > header{
     flex:2;
     // border:2px dashed red;
@@ -38,6 +38,10 @@
   .smth{
     flex:1;
     border:2px dashed green;
+    height:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>
