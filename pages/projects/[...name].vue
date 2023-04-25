@@ -15,7 +15,6 @@
         <h2>{{ lang[language].desc }}</h2>
       </div>
     </div>
-
   </header>
   <main class="content">
     <template v-for="section in getContent()" :key="section">
@@ -146,7 +145,7 @@
   }
   main.content{ // content in details
     //min-height:calc( 70vh - 275px );
-    background-color: $backgroundColor;
+    background-color: var(--backgroundColor);
     //border:2px dashed red;
     display:flex;
     flex-direction: column;
@@ -192,7 +191,7 @@
         // border:2px dashed red;
         > a{
           align-items: center;
-          background:lighten($backgroundColor, 5%);
+          background:lighten(var(--backgroundColor), 5%);
           border:.2rem solid var(--dark-primary);
           display:flex;
           flex-direction: column;    
@@ -221,7 +220,7 @@
           align-items: center;
           padding:1rem;
           background-color: var(--dark-primary);
-          color:$backgroundColor;
+          color:var(--backgroundColor);
           a{
             line-height: 1.5rem;
             padding:.5rem;

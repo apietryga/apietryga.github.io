@@ -99,7 +99,7 @@
       transition: .01s;
     }  
     .mask{
-      //background-color: $backgroundColor;
+      //background-color: var(--backgroundColor);
       background: var(--bright-primary);
 
       clip-path: polygon(50% 80%, 100% 0%, 100% 100%, 0 100%, 0 0);

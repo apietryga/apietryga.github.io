@@ -20,4 +20,15 @@
   --navfooterHeight:18vh;
 
   --icon-size:2rem;
+
+
+  /* 
+  $clickedColor: rgba(0, 0, 0, 0.2);
+  var(--backgroundColor): rgb(214, 214, 214);
+  $fontColor:rgba(31, 29, 29, 0.8); 
+  */
+  --clickedColor: rgba(0, 0, 0, 0.2);
+  --backgroundColor: rgb(214, 214, 214);
+  --fontColor:rgba(31, 29, 29, 0.8); 
+
 }

@@ -208,7 +208,7 @@
     align-items: center;
     justify-content: center;
     padding:0 1rem;
-    background: lighten($backgroundColor, 10%);
+    background: lighten(var(--backgroundColor), 10%);
     img{
       margin-top:1rem;
       width:8rem;
@@ -283,7 +283,7 @@
         align-items: center;
         padding:1rem;
         background-color: var(--dark-primary);
-        color:$backgroundColor;
+        color:var(--backgroundColor);
         a{
           line-height: 1.5rem;
           padding:.5rem;

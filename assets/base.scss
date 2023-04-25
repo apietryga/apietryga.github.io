@@ -1,6 +1,6 @@
-$clickedColor: rgba(0, 0, 0, 0.2);
-$backgroundColor: rgb(214, 214, 214);
-$fontColor:rgba(31, 29, 29, 0.8);
+// $clickedColor: rgba(0, 0, 0, 0.2);
+// var(--backgroundColor): rgb(214, 214, 214);
+// $fontColor:rgba(31, 29, 29, 0.8);
 
 %actionColors{
   transition:.3s;
@@ -42,7 +42,7 @@ h1,h2,p{
   }
 }
 body{
-  background-color:$backgroundColor;
+  background-color:var(--backgroundColor);
   //font-family: 'Ubuntu', sans-serif;
   font-family: var(--font-family);
   margin:0;
@@ -58,7 +58,7 @@ body{
     align-items: flex-end;
     flex-direction: column;
     // min-height:$footerHeight;
-    background-color: invert($backgroundColor);
+    background-color: invert(var(--backgroundColor));
     color:invert($fontColor);
     width:100%;
     padding:1rem .5rem .5rem 1rem;

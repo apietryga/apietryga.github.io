@@ -9,5 +9,5 @@ export default defineNuxtConfig({
     }
   },
   transpile: [ "three" ],
-  vite: { css: { preprocessorOptions: { scss: { additionalData: '@import "@/assets/base.scss";' }}}},
+  // vite: { css: { preprocessorOptions: { scss: { additionalData: '@import "@/assets/base.scss";' }}}},
 })
