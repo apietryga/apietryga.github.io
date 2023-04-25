@@ -22,14 +22,17 @@
   border:2px dashed blue;
   > header{
     flex:2;
-    border:2px dashed red;
+    // border:2px dashed red;
     text-align: right;
     h1{
-      border:2px dashed yellow;
+      // border:2px dashed yellow;
       font-size: clamp(2rem, 10vw, 10rem);
       line-height: 70%;
       // padding:1.5rem 0;
       padding:2vw 0;
+    }
+    p{
+      padding-left:2rem;
     }
   }
   .smth{
