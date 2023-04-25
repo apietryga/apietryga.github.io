@@ -21,3 +21,33 @@
   --backgroundColor: rgb(214, 214, 214);
   --fontColor:rgba(31, 29, 29, 0.8); 
 }
+*{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color:inherit;
+}
+h1, h2, p{
+  margin:0;
+}
+#__nuxt{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#__nuxt > div{
+  flex:1;
+}
+body{
+  background-color:var(--backgroundColor);
+  font-family: var(--font-family);
+  margin:0;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  color:var(--fontColor);
+  height:calc(100vh - var(--navHeaderHeight));
+  position:relative;
+  z-index:0;
+}

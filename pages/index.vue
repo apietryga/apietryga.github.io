@@ -351,7 +351,7 @@
       p{
         flex:1;
         margin:0 1.5rem 0rem 1.5rem;
-        // margin-left:1.5rem;
+        text-align: center;
       }
       section{
         padding-bottom:0;
