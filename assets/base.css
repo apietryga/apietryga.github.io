@@ -47,7 +47,7 @@ body{
   font-family: var(--font-family);
   margin:0;
   letter-spacing: 0.2px;
-  line-height: 20px;
+  /* line-height: 20px; */
   color:var(--fontColor);
   height:calc(100vh - var(--navHeaderHeight));
   position:relative;
