@@ -1,6 +1,6 @@
 <template>
   <main class="list">
-    <h1 v-if="title">{{ title }}</h1>
+    <!-- <h1>{{ $c.title }}</h1> -->
     <nav>
       <template v-if="projects.length > 0">          
         <section v-for="item in projects" :key="item">

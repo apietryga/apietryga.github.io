@@ -1,6 +1,7 @@
 <template>
   <Head>
-    <Title>{{ title }}</Title>
+    <!-- <Title>{{ title }}</Title> -->
+    <!-- <Title>{{ $c.seo.title }}</Title> -->
     <Meta 
       v-for="{name, content} of meta" :key="name"
       :name="name"

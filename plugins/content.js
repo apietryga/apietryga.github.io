@@ -3,6 +3,7 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
 
   const content = {
     en: {
+      title: "apietryga",
       nav: {
         home: 'Home',
         projects: 'Projects',
