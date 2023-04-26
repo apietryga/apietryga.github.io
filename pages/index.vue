@@ -236,10 +236,11 @@
       align-items: center;
       header{
         flex:1;
-        padding-top:var(--navHeaderHeight);
+        // padding-top:var(--navHeaderHeight);
         h2{
           margin:2rem 0 .5rem 0;
           font-size:3rem;
+          line-height: 1.3rem;
         }
         *{
           text-align: center;
@@ -266,7 +267,9 @@
         // margin:2rem auto;
         margin:1rem auto 2rem auto;
         max-height:15rem;
-        min-width:80%;
+        min-width:50%;
+        max-width: 900px;
+        // min-width:80%;
         padding:.5rem;
 
         @mixin text-contrast($n) {
