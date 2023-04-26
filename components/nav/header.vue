@@ -182,7 +182,9 @@
             // line-height: .5rem;
             // margin-left:1rem;
             text-transform: uppercase;
-            font-weight: 800;
+            font-weight: 400;
+            font-size:.8rem;
+
             svg{
               padding:5px;
             }

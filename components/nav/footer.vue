@@ -61,7 +61,7 @@ footer{
       }
       a{
         font-size:inherit;
-        padding:.25rem 0;
+        // padding:.25rem 0;
       }
     }
     .cp{
@@ -69,7 +69,6 @@ footer{
       justify-content:flex-end;
       align-items:flex-end;
     }
-
   }
 }
 </style>
