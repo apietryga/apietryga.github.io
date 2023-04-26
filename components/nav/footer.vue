@@ -48,6 +48,7 @@ footer{
     justify-content: flex-end;
     grid-template-columns: 1fr 1fr;
     width:100%;
+    font-family: var(--font-secondary);
     p{
       display:flex;
       flex-direction: column;

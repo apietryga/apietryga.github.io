@@ -9,7 +9,12 @@
     <Meta name="google-site-verification" content="8ipK6aTDBqxsTimOuexoAapkaGpct8pl3NNw7HLw2vA" />
     <Link rel="preconnect" href="https://fonts.googleapis.com" />
     <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <Link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet" />
+    <!-- <Link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet" /> -->
+    <!-- <Link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Nunito&display=swap" rel="stylesheet" /> -->
+    <!-- <Link href="https://fonts.googleapis.com/css2?family=Nunito&family=Ubuntu+Mono&display=swap" rel="stylesheet" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap" rel="stylesheet">
+
+
   </Head>
 </template>
 

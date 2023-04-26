@@ -14,26 +14,29 @@
             <svg width="1.5rem" height="1.5rem" version="1.1" viewBox="0 0 6.031 6.031">
               <path d="m0 2.9826h6.0312l-3.0575-2.9626zm0.79284 2e-3v3.022h1.5978v-1.4066h1.2392v1.4066h1.5286v-3.022z" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".11559" fill="var(--font-primary-color)"/>
             </svg>
-            <span>{{ pageBuild[language].nav.home }}</span>
+            <!-- <span>{{ pageBuild[language].nav.home }}</span> -->
+            <span>{{ $c.nav.home }}</span>
           </NuxtLink>
           <NuxtLink to="/projects">
             <svg width="1.5rem" height="1.5rem" version="1.1" viewBox="0 0 7.476 7.476">
               <path d="m0.00496 1.3496-0.0040162-0.89572c0.043515-0.25255 0.18469-0.41558 0.46192-0.45388h3.4744c0.20556 0.012296 0.43234 0.15777 0.46995 0.44183v0.90777z" fill="var(--font-primary-color)"/>
               <path d="m7.8738e-6 1.5698v5.399c-0.0014764 0.24134 0.20483 0.44241 0.47956 0.44235h6.4988c0.2905 5.423e-4 0.49807-0.2021 0.49713-0.50229v-4.8357c0.00508-0.30561-0.25317-0.5015-0.55811-0.50023z" fill="var(--font-primary-color)"/>
             </svg>
-            <span>{{ pageBuild[language].nav.projects }}</span>
+            <!-- <span>{{ pageBuild[language].nav.projects }}</span> -->
+            <span>{{ $c.nav.projects }}</span>
           </NuxtLink>
           <NuxtLink to="/contact">
             <svg width="1.5rem" height="1.5rem" version="1.1" viewBox="0 0 7.899 7.899">
               <path d="m4.5916e-6 0.14748v7.5169c-9.25e-4 0.14767 0.13805 0.28619 0.28384 0.28619h7.3205c0.17243-6.71e-4 0.29333-0.13744 0.29436-0.29106v-7.499l-3.96 4.8137s-3.8684-4.8401-3.9387-4.8267z" fill="var(--font-primary-color)" style="paint-order:normal"/>
               <path d="m0.033107 0 3.8891 4.716 3.9468-4.7z" fill="var(--font-primary-color)"/>
             </svg>
-            <span>{{ pageBuild[language].nav.contact }}</span>
+            <!-- <span>{{ pageBuild[language].nav.contact }}</span> -->
+            <span>{{ $c.nav.contact }}</span>
           </NuxtLink>
-          <select name="language">
+          <!-- <select name="language">
             <option value="pl">🇵🇱</option>
             <option value="en">🇺🇸</option>
-          </select>
+          </select> -->
         </nav>
         <div class="navShadow"></div>
       </div>
@@ -71,7 +74,7 @@
   export default {
     data(){ 
       return {
-        ...this.$appData,
+        // ...this.$appData,
         toggler: false,
       } 
     },
@@ -173,17 +176,21 @@
             align-items: center;
             border-radius:1rem;
             color: var(--font-primary-color);
+            font-family: var(--font-secondary);
             display:flex;
-            line-height: .7rem;
-            margin-left:1rem;
+            // line-height: .7rem;
+            // line-height: .5rem;
+            // margin-left:1rem;
+            text-transform: uppercase;
+            font-weight: 800;
             svg{
               padding:5px;
             }
             // @extend %actionColors;
-            transition:.3s;
-            &:hover{
-              background-color: var(--hover-color); 
-            }
+            // transition:.3s;
+            // &:hover{
+            //   background-color: var(--hover-color); 
+            // }
             &:active{
               background-color: var(--clickedColor);
             }
