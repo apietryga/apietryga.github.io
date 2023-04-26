@@ -1,6 +1,9 @@
 export default defineNuxtConfig({
   css: [ "@/assets/base.css", "@/assets/animations.css" ],
-  experimental: { payloadExtraction: false },
+  experimental: { 
+    payloadExtraction: false,
+    viewTransition: true,
+  },
   modules: [ 'nuxt-simple-sitemap' ], // sitemap must be at the end
   render: { spaScripts: false },
   runtimeConfig: {
