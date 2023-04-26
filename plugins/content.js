@@ -4,11 +4,16 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
   const content = {
     en: {
       home: {
-        title: "hello! <br> im apietryga",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta repellendus quibusdam perspiciatis eum deserunt similique, omnis minima veritatis. Alias esse possimus consequuntur perspiciatis veritatis. Aliquam nostrum eaque magnam nam enim?",
+        title: "hello <br> im apietryga",
+        description: "I am self-taught programming, I work as a Software Developer. I feel best in Node and Nuxt. I create WEB and IoT projects. I also conduct trainings in programming web applications. I am happy to talk about interesting projects.",
       },
     },
-    pl: {}
+    pl: {
+      home: {
+        title: "hello <br> im apietryga",
+        description: "Jestem samoukiem programowania, pracuję jako Software Developer. Najlepiej czuje się w Node i Nuxt. Tworzę projekty WEB i IoT. Prowadzę również szkolenia z programowania aplikacji internetowych. Chętnie porozmawiam o ciekawych projektach.",
+      }
+    }
   }
   return { provide: { c: content[lang] } }
 })

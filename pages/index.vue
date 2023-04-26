@@ -1,6 +1,7 @@
 <template>
   <div class="headerWrapper">  
-    <homeHeader class="homeHeader"/>
+    <!-- <homeHeader class="homeHeader"/> -->
+    <homeNewHeader />
     <!-- <div class="hider"></div> -->
   </div>
   <div class="overwrapper">

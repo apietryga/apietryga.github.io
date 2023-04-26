@@ -4,7 +4,9 @@
       <h1 v-html="$c.home.title"></h1>
       <p>{{ $c.home.description }}</p>
     </header>
-    <div class="smth"> SMTH </div>
+    <div class="smth"> 
+      <!-- SMTH  -->
+    </div>
   </div>
 </template>
 
@@ -13,22 +15,18 @@
 .homeHeader{
   background: #000;
   color:#fff;
-  text-shadow: 0 0 2px #fff;
+  // text-shadow: 0 0 2px #fff;
   width:100%;
   height:calc(100vh - 2.5rem);
   display:flex;
   align-items: center;
   justify-content: center;
-  // border:2px dashed blue;
   > header{
     flex:2;
-    // border:2px dashed red;
     text-align: right;
     h1{
-      // border:2px dashed yellow;
       font-size: clamp(2rem, 10vw, 10rem);
       line-height: 70%;
-      // padding:1.5rem 0;
       padding:2vw 0;
     }
     p{
@@ -37,11 +35,25 @@
   }
   .smth{
     flex:1;
-    border:2px dashed green;
+    // border:2px dashed green;
     height:100%;
     display:flex;
     align-items: center;
     justify-content: center;
+  }
+}
+@media(max-width: 768px){
+  .homeHeader{
+    flex-direction: column-reverse;
+    >header{
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      padding:2rem;
+    }
+    .smth{
+      flex:2;
+    }
   }
 }
 </style>
