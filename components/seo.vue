@@ -1,18 +1,10 @@
 <template>
   <Head>
-    <!-- <Title>{{ title }}</Title> -->
-    <!-- <Title>{{ $c.seo.title }}</Title> -->
-    <Meta 
-      v-for="{name, content} of meta" :key="name"
-      :name="name"
-      :content="content"
-    />
-    <Meta name="google-site-verification" content="8ipK6aTDBqxsTimOuexoAapkaGpct8pl3NNw7HLw2vA" />
+    <Title>{{ $c.title }}</Title>
+    <Meta v-for="{name, content} of meta" :key="name" :name="name" :content="content" />
+    <!-- <Meta name="google-site-verification" content="8ipK6aTDBqxsTimOuexoAapkaGpct8pl3NNw7HLw2vA" /> -->
     <Link rel="preconnect" href="https://fonts.googleapis.com" />
     <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <Link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet" /> -->
-    <!-- <Link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Nunito&display=swap" rel="stylesheet" /> -->
-    <!-- <Link href="https://fonts.googleapis.com/css2?family=Nunito&family=Ubuntu+Mono&display=swap" rel="stylesheet" /> -->
     <Link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap" rel="stylesheet" />
 
 
@@ -21,7 +13,7 @@
 
 <script>
   const ORIGIN="https://apietryga.github.io"
-  export default {
+  export default{
     data(){
       return this.fillSeoFields()
     },
@@ -56,6 +48,8 @@
         if(page){
           seo.title = page.name
           seo.meta = [
+            { name: "google-site-verification", content: "8ipK6aTDBqxsTimOuexoAapkaGpct8pl3NNw7HLw2vA" },
+
             { name: "description", content: page.lang[this.$appData.language].desc },
             { name: "keywords", content: page.lang[this.$appData.language].category?.join(", ") },
 
