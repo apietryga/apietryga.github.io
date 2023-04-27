@@ -3,6 +3,51 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
     appData: {
       language: 'en',
       projects:[
+        { name: "Praktykody",
+          media:[
+            "https://praktykody.github.io",
+            {
+              type:'github',
+              href:"https://github.com/praktykody",
+            },
+          ],
+          img: "praktykody.webp",
+          date: "2022-11-08",
+          color: "#ffffff",
+          url: "praktykody",
+          lang: {
+            "pl": {
+              category: ["biznes", "nauka", "film", "kodowanie","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL"],
+              desc: "",
+              content: [
+                `Anadar jest cyfrową syntezą teorii nauki zarządzania. 
+                Jego elastyczny interface pozwala korzystać z niego 
+                prezesom wielkich firm, ale i osobom prowadzącym małe biznesy. 
+                W obydwu przypadkach program pomoże przedsiębiorcy ograniczyć wydatki 
+                i zwiększyć zyski.`,
+                `W Październiku 2018 roku program został rozbudowany o wtyczkę dla restauracji, która 
+                integruje kuchnię z ladą oraz automatycznie dokonuje analizy sytuacji firmy.`,
+                `W grudnio 2018 roku powstał koncept kart rabatowych, wspomagających 
+                kooperacje lokalnych przedsiębiorstw.`,
+              ],
+            },
+            "en": {
+              category: ["business", "education", "movie", "coding","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL"],
+              desc: "A web platform for enterpeurs to control and developing business",
+              content: [
+                `Anadar is a digital synthesis of management science theory.
+                  Its flexible interface allows you to use it
+                  CEOs of large companies, but also people in their small businesses.
+                  In both cases, the program will help entrepreneurs to reduce expenses
+                  and increase profits.`,
+                  `In October 2018, the program was expanded with a plug-in for a restaurant that
+                  integrates the kitchen with the counter and automatically analyzes the company's situation.
+                  In December 2018, project get the concept of rebate cards which supports
+                  cooperation of local enterprises`,
+              ],                
+            }
+          }
+        },
         { name: "Anadar",
           media:[
             "https://www.youtube.com/embed/X7MoF4tvf2Q",

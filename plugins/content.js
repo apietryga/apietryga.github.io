@@ -15,6 +15,7 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
       },
     },
     pl: {
+      title: "apietryga",
       nav: {
         home: 'Home',
         projects: 'Projekty',

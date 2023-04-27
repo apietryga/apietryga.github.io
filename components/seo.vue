@@ -1,6 +1,6 @@
 <template>
   <Head>
-    <Title>{{ title }}</Title>
+    <!-- <Title>{{ title }}</Title> -->
     <!-- <Title>{{ $c.seo.title }}</Title> -->
     <Meta 
       v-for="{name, content} of meta" :key="name"
@@ -21,7 +21,7 @@
 
 <script>
   const ORIGIN="https://apietryga.github.io"
-  export default{
+  export default {
     data(){
       return this.fillSeoFields()
     },
