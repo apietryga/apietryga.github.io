@@ -98,19 +98,23 @@
     display:flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    // border:2px dashed blue;
+
     .searchAndMenu{
       flex:1;
       display:flex;
       flex-direction: row-reverse;
       align-items: center;
       .menu{
+        flex:1;
         align-items: center;
         display:flex;
         height:var(--navHeaderHeight);
         justify-content: center;
-        padding:.5rem 1rem .5rem .5rem;
+        // padding:.5rem 1rem .5rem .5rem;
         right:0;
         .navShadow{
+          // border:2px dashed red;
           transition:.5s;
           position:absolute;
           width:100%;
@@ -158,6 +162,9 @@
           display:none;
         }
         nav{
+          flex:1;
+          justify-content: flex-end;
+          // border:2px dashed green;
           top:var(--navHeaderHeight);
           transition:1s;
           position:absolute;
@@ -166,7 +173,7 @@
           top:-100vh;
           display:flex;
           flex-direction:column;
-          padding:.5rem .5rem .5rem 0;
+          // padding:.5rem .5rem .5rem 0;
           color:#fff;
           background-color: #040003;
           >*{
@@ -178,9 +185,6 @@
             color: var(--font-primary-color);
             font-family: var(--font-secondary);
             display:flex;
-            // line-height: .7rem;
-            // line-height: .5rem;
-            // margin-left:1rem;
             text-transform: uppercase;
             font-weight: 400;
             font-size:.8rem;
@@ -188,11 +192,6 @@
             svg{
               padding:5px;
             }
-            // @extend %actionColors;
-            // transition:.3s;
-            // &:hover{
-            //   background-color: var(--hover-color); 
-            // }
             &:active{
               background-color: var(--clickedColor);
             }
@@ -216,7 +215,7 @@
         }  
       }
       .searchContainer{
-        flex:1;
+        // flex:1;
         display:flex;
         justify-content: flex-end;
         align-items: center;
@@ -323,6 +322,7 @@
       }
     }
     .linkLogo{
+      // border:2px dashed yellow;
       align-items: center;
       display:flex;
       padding:.5rem 1rem;
@@ -333,6 +333,7 @@
       }
     }
   }
+
   @media (min-width:749px){
     .navHeader{
       .searchAndMenu{
@@ -375,35 +376,48 @@
   }
 
   @media (max-width:749px){
-    .navHeader .searchAndMenu .menu #toggler{
-      &:checked ~ .toggler{
-        div{
-          &:nth-child(1){
-            animation:togglerEl1 .4s;
-            transform:rotate(135deg);
-            top:calc( 50% - 3px );
+    .navHeader .searchAndMenu {
+      .menu {
+        padding:.5rem 1rem .5rem .5rem;
+        flex:none;
+        nav{
+          justify-content: flex-start;
+          // flex:none;
+          padding:0 1.5rem;
+
+        }
+        
+        #toggler{
+          &:checked ~ .toggler{
+            div{
+              &:nth-child(1){
+                animation:togglerEl1 .4s;
+                transform:rotate(135deg);
+                top:calc( 50% - 3px );
+              }
+              &:nth-child(2){
+                opacity:0;
+                transition: .1s;
+              }
+              &:nth-child(3){
+                animation:togglerEl3 .4s;
+                transform:rotate(-135deg);
+                bottom:calc( 50% - 3px );
+              }
+            }
           }
-          &:nth-child(2){
-            opacity:0;
-            transition: .1s;
+          &:checked ~ nav{
+            top:var(--navHeaderHeight);
+            height:calc(100vh - #{var(--navHeaderHeight)});
+            >*{
+              animation: showMenu 1s ease;
+            }
+            transition:.5s;
           }
-          &:nth-child(3){
-            animation:togglerEl3 .4s;
-            transform:rotate(-135deg);
-            bottom:calc( 50% - 3px );
+          &:checked ~ .navShadow{
+            background-color:rgb(0, 0, 0);
           }
         }
-      }
-      &:checked ~ nav{
-        top:var(--navHeaderHeight);
-        height:calc(100vh - #{var(--navHeaderHeight)});
-        >*{
-          animation: showMenu 1s ease;
-        }
-        transition:.5s;
-      }
-      &:checked ~ .navShadow{
-        background-color:rgb(0, 0, 0);
       }
     }
   }
