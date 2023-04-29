@@ -1,6 +1,8 @@
 <template>
-  <div class="logoWrapper">
-    <div id="logo" ref="container"></div>
+  <div class="outerWrapper">
+    <div class="logoWrapper" ref="logoWrapper">
+      <div id="logo" ref="container"></div>
+    </div>
   </div>
 </template>
 
@@ -10,14 +12,9 @@
   import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
   export default {
     data(){
-      let width = 100, height = 100;
-      if(typeof window != 'undefined'){
-        height = window.innerHeight;
-        width = window.innerWidth;
-      }
       return{
-        height,
-        width,
+        height: 100,
+        width: 100,
       }
     },
     methods:{
@@ -65,9 +62,10 @@
       },
       handleWindowResize() {
         console.log("RESIZE")
-        
-        this.height = window.innerHeight;
-        this.width = window.innerWidth;
+        console.log(this.$refs.logoWrapper)
+        if(!this.$refs.logoWrapper){ return }
+        this.width = this.$refs.logoWrapper.offsetWidth + 20
+        this.height = this.$refs.logoWrapper.offsetHeight + 20
 
         this.renderer.setSize(this.width, this.height);
         this.camera.aspect = this.width / this.height;
@@ -84,26 +82,42 @@
       },
     },
     mounted(){
+      this.width = this.$refs.logoWrapper.offsetWidth + 20
+      this.height = this.$refs.logoWrapper.offsetHeight + 20
       this.init()
     },
   }
 </script>
 
-<style lang="scss" scoped>
-.logoWrapper{
-  width:100%;
+<style lang="scss">
+.outerWrapper{
+  flex:1;
   height:100%;
   display:flex;
-  justify-content: center;
-  place-items:center;
-  #logo{
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    canvas{
-      height: fit-content !important;
-      max-width:100%;
+  align-items: center;
+  .logoWrapper{
+    position:relative;
+    width:100%;
+    height:70%;
+    display:flex;
+    justify-content: center;
+    place-items:center;
+    #logo{
+      position:absolute;
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      canvas{
+        height: fit-content !important;
+        max-width:100%;
+      }
     }
+  }
+}
+
+@media (max-width: 768px){
+  .outerWrapper .logoWrapper{
+    height:120%;
   }
 }
 </style>
