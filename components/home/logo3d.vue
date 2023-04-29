@@ -26,14 +26,13 @@
         requestAnimationFrame(this.animation);
       },
       createLights(){
-        // const ambientLight = new THREE.HemisphereLight(0x404040, 0x404040, 1000);
-        const ambientLight = new THREE.PointLight(0xa11148, 2, 1000, 2);
+        const ambientLight = new THREE.HemisphereLight(0xaaaaaa, 0xaaaaaa, 0.7);
         ambientLight.position.set(0, 0, 150);
 
-        const directionalLight = new THREE.DirectionalLight(0xdfebff, 1);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(10, 0, 0);
 
-        const pointLight = new THREE.PointLight(0xa11148, 2, 1000, 2);
+        const pointLight = new THREE.PointLight(0x000000, 2, 1000, 2);
         pointLight.position.set(200, -100, 50);
 
         this.scene.add(ambientLight, directionalLight, pointLight);
@@ -61,8 +60,6 @@
         })
       },
       handleWindowResize() {
-        console.log("RESIZE")
-        console.log(this.$refs.logoWrapper)
         if(!this.$refs.logoWrapper){ return }
         this.width = this.$refs.logoWrapper.offsetWidth + 20
         this.height = this.$refs.logoWrapper.offsetHeight + 20
