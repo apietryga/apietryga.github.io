@@ -25,6 +25,9 @@
   align-items: center;
   justify-content: center;
   > header{
+    position: relative;
+    z-index:1;
+
     flex:2;
     text-align: right;
     display:flex;
@@ -41,6 +44,8 @@
     }
   }
   .smth{
+    // position: relative;
+    // z-index:0;
     flex:1;
     // border:2px dashed green;
     height:100%;
