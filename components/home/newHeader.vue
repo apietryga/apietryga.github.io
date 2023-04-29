@@ -8,6 +8,7 @@
     </header>
     <div class="smth"> 
       <!-- SMTH  -->
+      <homeLogo3d class="logo" />
     </div>
   </div>
 </template>
@@ -46,6 +47,10 @@
     display:flex;
     align-items: center;
     justify-content: center;
+    .logo{
+      border:2px dashed red;
+      max-width: 100%;
+    }
   }
 }
 @media(max-width: 768px){

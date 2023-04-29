@@ -384,9 +384,7 @@
           justify-content: flex-start;
           // flex:none;
           padding:0 1.5rem;
-
         }
-        
         #toggler{
           &:checked ~ .toggler{
             div{
