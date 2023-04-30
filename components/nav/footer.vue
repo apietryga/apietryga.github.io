@@ -2,6 +2,9 @@
   <footer>
     <nav>
       <p>
+        <navLogo />
+      </p>
+      <p>
         <NuxtLink to="/">
           <span>{{ pageBuild[language].nav.home }}</span>
         </NuxtLink>
@@ -13,6 +16,17 @@
         </NuxtLink>
         <NuxtLink :to="'/cvs/2023_03_CV_en.pdf'" target="_blank">
           Curriculum Vitae
+        </NuxtLink>
+      </p>
+      <p>
+        <NuxtLink to="/projects?q=code">
+          <span>Code</span> 
+        </NuxtLink>
+        <NuxtLink to="/projects?q=teach">
+          <span>Teach</span> 
+        </NuxtLink>
+        <NuxtLink to="/projects?q=business">
+          <span>Business</span> 
         </NuxtLink>
       </p>
       <div class="cp">
