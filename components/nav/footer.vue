@@ -29,10 +29,10 @@
           <span>Business</span> 
         </NuxtLink>
       </p>
-      <div class="cp">
-        <p>&copy; apietryga 2023</p>
-      </div>
     </nav>
+    <div class="cp">
+      <p>&copy; apietryga 2023</p>
+    </div>
   </footer>
 </template>
 
@@ -57,10 +57,12 @@ footer{
   bottom:0;
   width:100%;
   nav{
-    display:grid;
+    // display:grid;
+    display:flex;
     height:100%;
-    justify-content: flex-end;
-    grid-template-columns: 1fr 1fr;
+    // justify-content: flex-end;
+    justify-content: flex-start;
+    // grid-template-columns: 1fr 1fr 1fr;
     width:100%;
     font-family: var(--font-secondary);
     p{
@@ -70,7 +72,7 @@ footer{
       padding:1rem;
       font-size:1rem;
       &:nth-child(2){
-        align-items: flex-end;
+        // align-items: flex-end;
         justify-content: flex-end;
       }
       a{
