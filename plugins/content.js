@@ -10,8 +10,9 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
         contact: 'Contact',
       },
       home: {
-        title: "You found <b>Software Developer</b><br>which <b>will do the job</b>",
-        description: "I am self-taught programming, I work as a Software Developer. I feel best in Node and Nuxt. I create WEB and IoT projects. I also conduct trainings in programming web applications. I am happy to talk about interesting projects.",
+        title: "You found <b>Software Developer</b><br><b>which will do</b> the job",
+        // description: "I am self-taught programming, I work as a Software Developer. I feel best in Node and Nuxt. I create WEB and IoT projects. I also conduct trainings in programming web applications. I am happy to talk about interesting projects.",
+        description: "I am <b>self-taught</b> programmer works with <b>WEB</b> and <b>IoT projects</b>,<br> additionally I teach <b>web application programming</b>.",
         cta: "See my experience",
       },
     },

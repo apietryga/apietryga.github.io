@@ -3,7 +3,7 @@
     <header >
       <h1>{{ $c.author }}</h1>
       <p class="heroText" v-html="$c.home.title"></p>
-      <p>{{ $c.home.description }}</p>
+      <p class="description" v-html="$c.home.description"></p>
       <nuxt-link to="/projects" class="cta">{{ $c.home.cta }}</nuxt-link>
     </header>
     <div class="smth"> 
@@ -32,18 +32,12 @@
     align-items: flex-end;
     h1{
       margin:0;
-      font-size:.8rem;
+      font-size:1rem;
     }
     .heroText{
-      // font-size: clamp(2rem, 10vw, 10rem);
-      // font-size: clamp(2rem, 4vw, 10rem);
-      // font-size: 2.5rem;
       font-size: 2rem;
-      // line-height: 70%;
       font-weight: 100;
-      // line-height: 2.5rem;
       line-height: 100%;
-      // padding:2vw 0;
       b{
         line-height: 100%;
         font-size: 2.5rem;
@@ -58,9 +52,12 @@
     .cta{
       padding:.6rem 1.5rem;
       margin-top:.75rem;
-      background: radial-gradient(circle at 70%, var(--primary-color), #14611a);
+      background: var(--accent);
+      color:var(--dark-primary);
       border-radius:.5rem;
-      font-size:1rem;
+      font-size:.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
     }
   }
   .smth{
@@ -83,7 +80,6 @@
       justify-content: center;
       padding:2rem;
       .heroText{
-        // bor
         padding:0;
         font-size: 1rem;
         b{
