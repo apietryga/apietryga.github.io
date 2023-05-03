@@ -61,11 +61,7 @@
       },
       handleWindowResize() {
         if(!this.$refs.logoWrapper){ return }
-        // this.width = this.$refs.logoWrapper.offsetWidth + 20
-        // this.height = this.$refs.logoWrapper.offsetHeight + 20
         this.setCanvasDimensions()
-
-
         this.renderer.setSize(this.width, this.height);
         this.camera.aspect = this.width / this.height;
         this.camera.updateProjectionMatrix();
@@ -80,22 +76,11 @@
         }
       },
       setCanvasDimensions(){
-        // const w = this.$refs.logoWrapper.offsetWidth,
-        //       h = this.$refs.logoWrapper.offsetHeight;
         const { offsetWidth, offsetHeight } = this.$refs.logoWrapper
-
-        // if(w > h){
-        if(offsetWidth > offsetHeight){
-          return this.width = this.height = offsetWidth
-        }
-        return this.width = this.height = offsetHeight
+        return this.width = this.height = offsetWidth > offsetHeight ? offsetWidth : offsetHeight
       },
     },
     mounted(){
-      // this.width = this.$refs.logoWrapper.offsetWidth + 20
-      // this.height = this.$refs.logoWrapper.offsetHeight + 20
-      // this.width = this.$refs.logoWrapper.offsetWidth 
-      // this.height = this.$refs.logoWrapper.offsetHeight 
       this.setCanvasDimensions()
       this.init()
     },
@@ -116,7 +101,6 @@
     justify-content: center;
     place-items:center;
     #logo{
-      // border:2px dashed red;
       position:absolute;
       max-width: 100%;
       display: flex;

@@ -3,13 +3,14 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
   const content = {
     en: {
       title: "apietryga",
+      author: "Antoni Pietryga",
       nav: {
         home: 'Home',
         projects: 'Projects',
         contact: 'Contact',
       },
       home: {
-        title: "hello <br> im apietryga",
+        title: "You found <b>Software Developer</b><br>which <b>will do the job</b>",
         description: "I am self-taught programming, I work as a Software Developer. I feel best in Node and Nuxt. I create WEB and IoT projects. I also conduct trainings in programming web applications. I am happy to talk about interesting projects.",
         cta: "See my experience",
       },

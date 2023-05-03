@@ -12,5 +12,6 @@ export default defineNuxtConfig({
     }
   },
   transpile: [ "three" ],
+  ssr: false,
   // vite: { css: { preprocessorOptions: { scss: { additionalData: '@import "@/assets/base.scss";' }}}},
 })
