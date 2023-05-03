@@ -1,7 +1,5 @@
 :root{
   --font-family:  'Nunito', sans-serif;
-  /* --font-secondary: "Arial Black"; */
-  /* --font-secondary: 'Anonymous Pro', monospace; */
   --font-secondary: 'Poppins', sans-serif;
 
   --font-primary-color:#eee;
@@ -60,6 +58,5 @@ body{
   z-index:0;
 }
 main{
-  /* min-height:80vh; */
   min-height:calc(100vh - 10.4rem);
 }

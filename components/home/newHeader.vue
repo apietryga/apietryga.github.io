@@ -15,7 +15,6 @@
 .homeHeader{
   background: #000;
   color:#fff;
-  // text-shadow: 0 0 2px #fff;
   width:100%;
   height:calc(100vh - 2.5rem);
   display:flex;
@@ -40,11 +39,8 @@
       max-width: 1000px;
     }
     .cta{
-      // border:.15rem solid var(--bright-primary);
       padding:.6rem 1.5rem;
       margin-top:.75rem;
-      // background: var(--primary-color);
-      // background: radial-gradient(circle at 80%, var(--primary-color), var(--dark-primary));
       background: radial-gradient(circle at 70%, var(--primary-color), #14611a);
       border-radius:.5rem;
       font-size:1rem;
