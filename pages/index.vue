@@ -7,17 +7,27 @@
       <main id="code">
         <div class="codeprojects">
           <header>
+            <!-- <h2>{{ $c.home.code.title }}</h2> -->
+            <h2 data-aos="fade-up" v-html="$c.home.code.title"></h2>
+            <p data-aos="fade-up">{{ $c.home.code.description }}</p>
+            <!-- 
             <h2>{{lang[language].content[4]}}</h2>
             <p>{{lang[language].content[5]}}</p>
             <p>
               {{lang[language].content[6]}}
-            </p>  
+            </p>
+          -->
           </header>
-          <ul>
-            <li v-for="techElement in stack" :key="techElement">
-              <NuxtLink :to="'/projects?q=' + techElement">{{ techElement }}</NuxtLink>
-            </li>
-          </ul>
+          <!-- <div class="wrapper"> -->
+          <div class="techCloud">
+            <ul>
+              <!-- <li v-for="techElement in stack" :key="techElement"> -->
+              <!-- <li style="opacity:0;"></li> -->
+              <li v-for="[index, techElement] in stack.entries()" :key="index" data-aos="fade-up" :data-aos-delay="index*10">
+                <NuxtLink :to="'/projects?q=' + techElement">{{ techElement }}</NuxtLink>
+              </li>
+            </ul>
+          </div>
           <section>
             <NuxtLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)" :key="element">
               <article>
@@ -25,14 +35,21 @@
                   <h3>{{ element.name }}</h3>
                   <p>{{ element.lang[language].desc }}</p>
                 </header>
-                <img :src="'/img/contents/' + element.img" :alt="element.name">
+                <!-- <img :src="'/img/contents/' + element.img" :alt="element.name"> -->
+                <picture>
+                  <img :src="'/img/contents/' + element.img" :alt="element.name" width="80" height="80">
+                </picture>
               </article>
             </NuxtLink>
-            <div></div>
-            <footer>
+            <!-- <div></div> -->
+            <!-- <footer>
               <NuxtLink to="/projects">{{ lang[language].content[7] }}</NuxtLink>
-            </footer>
+            </footer> -->
           </section>
+          <!-- </div> -->
+          <footer>
+            <NuxtLink to="/projects">{{ lang[language].content[7] }}</NuxtLink>
+          </footer>
         </div>
       </main>
       <article id="teaching">
@@ -102,12 +119,12 @@
 </script>
 
 <style lang="scss">
+  h2 b { color: var(--accent); font-weight: 900; }
   .overwrapper{
     background: var(--dark-rocks);
     color: var(--bright-primary);
   }
   .headerWrapper{
-    // height:100vh;
     width:100%;
     z-index:-15;
     .hider{ // hide elements in front page (code section)
@@ -227,89 +244,151 @@
     }
   }
   #code{
-    overflow-y: hidden;
+    // overflow-y: hidden;
     position:relative;
     .codeprojects{
       width:100%;
       display:flex;
       flex-direction: column;
       align-items: center;
-      header{
+      > header{
         flex:1;
+        padding:0 2rem;
         // padding-top:var(--navHeaderHeight);
+        width:100%;
         h2{
-          margin:2rem 0 .5rem 0;
-          font-size:3rem;
-          line-height: 1.3rem;
+          text-align: right;
+          // margin:2rem 0 .5rem 0;
+          margin:2rem 0 0 0;
+          // font-size:3rem;
+          font-size:2rem;
+          line-height: 100%;
+          // text-transform: uppercase;
+          // line-height: 1.3rem;
         }
-        *{
-          text-align: center;
-          flex:1;
-        }
-        p:nth-child(2){
-          margin-bottom:2rem;
-          text-align: center;
-        }
-        p{
+        // *{
+        //   text-align: center;
+        //   flex:1;
+        // }
+        // p:nth-child(2){
+        //   margin-bottom:2rem;
+        //   text-align: center;
+        // }
+        > p{
           margin-bottom:0;
-          padding:0 3rem;
-          text-align: left;
+          // padding:0 3rem;
+          // text-align: left;
+          text-align: right;
+          // max-width:50vw;
+          padding-left:50vw;
         }
-      } 
-      section{
-        @extend %rowSection;
       }
-      ul{
-        display:flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        list-style-type: none;
-        // margin:2rem auto;
-        margin:1rem auto 2rem auto;
-        max-height:15rem;
-        min-width:50%;
-        max-width: 900px;
-        // min-width:80%;
-        padding:.5rem;
+      // .wrapper{
+      border:2px dashed red;
+      display:flex;
+      // align-items: flex-start;
+      align-items: center;
+      section{
+        // @extend %rowSection;
+        flex:1;
+        border:2px dashed blue;
+        a{
+          border:2px dashed green;
+          article{
+            align-items: flex-start;
+            // background: #fff;
+            background: var(--accent);
+            // align-items: center;
+            border:2px dashed yellow;
+            border-radius:.5rem;
+            display:flex;
+            flex-direction: row-reverse;
+            // margin:0 1rem;
+            padding:.5rem;
+            margin:0 .5rem;
+            header{
+              // border:2px dashed red;
+              h3{
+                margin:0;
+              }
+              p{
+                border:2px dashed blue;
+                font-size:.8rem;
+                line-height: .8rem;
 
-        @mixin text-contrast($n) {
-          $color-brightness: round((red($n) * 299) + (green($n) * 587) + calc((blue($n) * 114) / 1000));
-          $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + calc((blue(#ffffff) * 114) / 1000));
-          @if abs($color-brightness) < calc($light-color / 2){
-            color: white;
-          }
-          @else {
-            color: black;
-          }
-        }
-
-        @mixin random-bgr($i){
-
-          $c: rgb(random(255), random(255), random(255));
-          background: $c;
-          border-color:darken($c,10%);
-          color:invert(darken($c,10%));
-          @include text-contrast($c);
-
-
-        }
-
-        li{
-          border:.25rem solid red;
-          font-size: 90%;
-          padding:.25rem .5rem;
-          margin:.1rem;
-          border-radius:8px;
-          font-weight:bolder;
-          //&:before{content:"➡️ ";}
-          @for $i from 0 to 30 {
-            &:nth-child(#{$i}) {
-              @include random-bgr($i);
-              
+              }
+            }
+            picture{
+              border:2px dashed #000;
             }
           }
-          a{
-            color:inherit;
+        }
+      }
+      .techCloud{
+        // border:2px dashed blue;
+        // flex:1;
+        display: flex;
+        justify-content: flex-end;
+        width:100%;
+        ul{
+          // margin:0 0 0 auto;
+          // border:2px dashed red;
+          // width:100%;
+          // flex:1;
+          display:flex;
+          flex-wrap: wrap;
+          // justify-content: center;
+          // justify-content: flex-end;
+          list-style-type: none;
+          // margin:2rem auto;
+          // margin:1rem auto 2rem auto;
+          max-height:15rem;
+          min-width:50%;
+          // max-width: 900px;
+          max-width: 60vw;
+          // min-width:80%;
+          // padding:.5rem;
+          padding-right:2rem;
+
+          @mixin text-contrast($n) {
+            $color-brightness: round((red($n) * 299) + (green($n) * 587) + calc((blue($n) * 114) / 1000));
+            $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + calc((blue(#ffffff) * 114) / 1000));
+            @if abs($color-brightness) < calc($light-color / 2){
+              color: white;
+            }
+            @else {
+              color: black;
+            }
+          }
+
+          @mixin random-bgr($i){
+
+            $c: rgb(random(255), random(255), random(255));
+            background: $c;
+            border-color:darken($c,10%);
+            color:invert(darken($c,10%));
+            @include text-contrast($c);
+
+
+          }
+
+          li{
+            border:.25rem solid red;
+            font-size: 90%;
+            padding:.25rem .5rem;
+            margin:.1rem;
+            border-radius:8px;
+            font-weight:bolder;
+            //&:before{content:"➡️ ";}
+            @for $i from 0 to 30 {
+              &:nth-child(#{$i}) {
+                @include random-bgr($i);
+                
+              }
+            }
+            a{
+              color:inherit;
+            }
           }
         }
       }

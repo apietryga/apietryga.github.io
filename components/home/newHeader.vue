@@ -1,6 +1,6 @@
 <template>
   <div class="homeHeader">
-    <header >
+    <header>
       <h1 data-aos="fade-up">{{ $c.author }}</h1>
       <p data-aos="fade-up" data-aos-delay="100" class="heroText" v-html="$c.home.title"></p>
       <p data-aos="fade-up" data-aos-delay="200" class="description" v-html="$c.home.description"></p>
@@ -15,7 +15,7 @@
 </template>
 
 <style>
-
+/* 
 .slide-fade-enter-active {
   transition: all 0.3s ease-out;
 }
@@ -28,27 +28,27 @@
 .slide-fade-leave-to {
   transform: translateX(20px);
   opacity: 0;
-}
+} */
 </style>
 
 <style lang="scss">
 .homeHeader{
+  align-items: center;
   background: #000;
   color:#fff;
-  width:100%;
-  height:calc(100vh - 2.5rem);
   display:flex;
-  align-items: center;
   justify-content: center;
+  width:100%;
   > header{
-    position: relative;
-    z-index:1;
-
-    flex:2;
-    text-align: right;
-    display:flex;
-    flex-direction: column;
     align-items: flex-end;
+    display:flex;
+    flex:2;
+    flex-direction: column;
+    padding: 30vh 0;
+    min-height: 20vh;
+    position: relative;
+    text-align: right;
+    z-index:1;
     h1{
       margin:0;
       font-size:1rem;
@@ -93,6 +93,7 @@
 @media(max-width: 768px){
   .homeHeader{
     flex-direction: column-reverse;
+    height:calc(100vh - 2.5rem);
     >header{
       display:flex;
       flex-direction: column;
