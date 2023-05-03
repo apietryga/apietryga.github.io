@@ -92,7 +92,6 @@
   height:100%;
   display:flex;
   align-items: center;
-  // position:r
   .logoWrapper{
     position:relative;
     width:100%;
@@ -115,7 +114,6 @@
 
 @media (max-width: 768px){
   .outerWrapper .logoWrapper #logo{
-    // height:75vh;
     height:150%;
     bottom:-55%;
   }

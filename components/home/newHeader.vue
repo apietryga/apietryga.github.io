@@ -1,18 +1,15 @@
 <template>
   <div class="homeHeader">
-    <!-- <header ref="observer_1"> -->
-    <!-- <header v-intersection-observer="()=>{ console.log('ee!') }"> -->
     <header >
       <h1 v-html="$c.home.title"></h1>
       <p>{{ $c.home.description }}</p>
+      <nuxt-link to="/projects" class="cta">{{ $c.home.cta }}</nuxt-link>
     </header>
     <div class="smth"> 
-      <!-- SMTH  -->
         <homeLogo3d class="logo" />
     </div>
   </div>
 </template>
-
 
 <style lang="scss">
 .homeHeader{
@@ -42,18 +39,24 @@
       padding-left:2rem;
       max-width: 1000px;
     }
+    .cta{
+      // border:.15rem solid var(--bright-primary);
+      padding:.6rem 1.5rem;
+      margin-top:.75rem;
+      // background: var(--primary-color);
+      // background: radial-gradient(circle at 80%, var(--primary-color), var(--dark-primary));
+      background: radial-gradient(circle at 70%, var(--primary-color), #14611a);
+      border-radius:.5rem;
+      font-size:1rem;
+    }
   }
   .smth{
-    // position: relative;
-    // z-index:0;
     flex:1;
-    // border:2px dashed green;
     height:100%;
     display:flex;
     align-items: center;
     justify-content: center;
     .logo{
-      // border:2px dashed red;
       max-width: 100%;
     }
   }
@@ -75,56 +78,4 @@
 }
 </style>
 
-
-
-<script>
-
-// co
-
-
-export default{
-  // setup() {
-  //   const target = ref(null)
-  //   const targetIsVisible = ref(false)
-
-  //   const { stop } = useIntersectionObserver(
-  //     target,
-  //     ([{ isIntersecting }], observerElement) => {
-  //       targetIsVisible.value = isIntersecting
-  //     },
-  //   )
-
-  //   return {
-  //     target,
-  //     targetIsVisible,
-  //   }
-  // }
-  // data(){
-  //   return{ 
-  //     // language: this.$appData.language,
-  //     // lang: this.$appData.index.lang,
-  //   //   observer : new IntersectionObserver( entries => {
-  //   //     entries.forEach( entry => {
-  //   //       console.log({ entry })
-  //   //       if(entry.isIntersecting){
-  //   //         entry.target.classList.add('show')
-  //   //       }else{
-  //   //         entry.target.classList.add('show')
-  //   //       }
-  //   //     })
-  //   //   })
-  //   // }
-  //  },
-  // }
-  // mounted() {
-  //   // console.log(this.$refs)
-  //   Object.keys(this.$refs).forEach(k => {
-  //     if(k.includes('observer')){
-  //       // console.log({ k })
-  //       this.observer.observe(this.$refs[k])
-  //     }
-  //     // console.log({ r })
-  //   })
-  // },
-}
-</script>
+<script> export default{} </script>
