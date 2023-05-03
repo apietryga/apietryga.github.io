@@ -45,7 +45,6 @@
             </div>
             <div style="padding: 19% 0;"></div> 
             <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
-              <!-- <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"> -->
               <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" >
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <g transform="translate(-511.000000, -20.000000)" fill="#000000">
@@ -77,7 +76,6 @@
     </template>
 
     <template v-if="url.type == 'github'">
-      <!-- <a href="${url.href}" target="_blank" class="githubContainer"> -->
       <a :href="url.href" target="_blank" class="githubContainer">
         <iconGithub />
         <p v-html="url.href.split('/')[url.href.split('/').length -1]"></p>
