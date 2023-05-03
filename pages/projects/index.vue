@@ -3,7 +3,8 @@
     <!-- <h1>{{ $c.title }}</h1> -->
     <nav>
       <template v-if="projects.length > 0">          
-        <section v-for="item in projects" :key="item">
+        <section v-for="[index, item] in projects.entries()" :key="item"
+          data-aos="fade-up" :data-aos-delay="index * 10">
           <div class="wrapper">
             <NuxtLink :to="'/projects/' + item.url">
               <article>

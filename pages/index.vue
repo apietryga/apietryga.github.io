@@ -39,7 +39,7 @@
         <div class="mask top"></div>
         <div class="stopper"></div>
         <header>
-          <h2>{{lang[language].content[8]}}</h2>
+          <h2 data-aos="fade-up">{{lang[language].content[8]}}</h2>
           <p>{{lang[language].content[9]}}</p>  
         </header>
         <div class="content">
@@ -107,9 +107,9 @@
     color: var(--bright-primary);
   }
   .headerWrapper{
-    height:100vh;
+    // height:100vh;
     width:100%;
-     z-index:-15;
+    z-index:-15;
     .hider{ // hide elements in front page (code section)
       background: var(--backgroundColor);
       max-width:100%;
