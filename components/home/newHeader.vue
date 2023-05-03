@@ -1,7 +1,15 @@
 <template>
   <div class="homeHeader">
+
+    <!-- <div data-aos="fade-up" data-aos-delay="300">
+      <img src="~/assets/pages/home/hero.svg" >
+      <img data-aos="zoom-in" data-aos-delay="500" src="~/assets/pages/home/hero-2.svg">
+    </div> -->
+
     <header >
-      <h1>{{ $c.author }}</h1>
+      <!-- <Transition name="slide-fade"> -->
+      <h1 data-aos="fade-up" data-aos-delay="300">{{ $c.author }}</h1>
+      <!-- </Transition> -->
       <p class="heroText" v-html="$c.home.title"></p>
       <p class="description" v-html="$c.home.description"></p>
       <nuxt-link to="/projects" class="cta">{{ $c.home.cta }}</nuxt-link>
@@ -11,6 +19,23 @@
     </div>
   </div>
 </template>
+
+<style>
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+</style>
 
 <style lang="scss">
 .homeHeader{
@@ -96,4 +121,24 @@
 }
 </style>
 
-<script> export default{} </script>
+<!-- <script> export default{} </script> -->
+<script> 
+export default{
+  // data(){
+  //   const observer = new IntersectionObserver(([entry]) => {	 
+  //     if (entry && entry.isIntersecting) {
+  //       // console.log(“Look, Ma! I’m intersecting!”)
+  //       console.log("Look, Ma! I’m intersecting!")
+  //     }
+  //   }, options);
+
+  //   return{
+  //     observer
+
+  //   }
+  // }
+  
+
+
+} 
+</script>

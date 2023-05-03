@@ -16,5 +16,7 @@ export default defineNuxtConfig({
   },
   transpile: [ "three" ],
   ssr: false,
+  // plugins: [ { src: "@/plugins/aos", mode: "client" } ],
+  purgeCSS: { whitelist: ["aos-init", "aos-animate", "data-aos-delay", "data-aos-duration", "fade-up", "zoom-in"] }
   // vite: { css: { preprocessorOptions: { scss: { additionalData: '@import "@/assets/base.scss";' }}}},
 })
