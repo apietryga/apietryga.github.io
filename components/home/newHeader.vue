@@ -12,7 +12,10 @@
       <!-- </Transition> -->
       <p data-aos="fade-up" data-aos-delay="100" class="heroText" v-html="$c.home.title"></p>
       <p data-aos="fade-up" data-aos-delay="200" class="description" v-html="$c.home.description"></p>
-      <nuxt-link data-aos="fade-up" data-aos-delay="300" to="/projects" class="cta">{{ $c.home.cta }}</nuxt-link>
+      <!-- :data-aos-disable="window.innerWidth < 768" -->
+      <nuxt-link 
+        data-aos-disable="false"
+        data-aos="fade-up" data-aos-delay="300" to="/projects" class="cta">{{ $c.home.cta }}</nuxt-link>
     </header>
     <div class="smth" data-aos="zoom-in"> 
       <homeLogo3d class="logo" />
@@ -111,7 +114,10 @@
           font-size: 2rem;
         }
       }
-
+      .cta{
+        opacity: 1;
+        transform: translateZ(0);
+      }
     }
     .smth{
       flex:2;
@@ -124,7 +130,7 @@
 <!-- <script> export default{} </script> -->
 <script> 
 export default{
-  // data(){
+  data(){
   //   const observer = new IntersectionObserver(([entry]) => {	 
   //     if (entry && entry.isIntersecting) {
   //       // console.log(“Look, Ma! I’m intersecting!”)
@@ -132,11 +138,12 @@ export default{
   //     }
   //   }, options);
 
-  //   return{
+    return{
+      window
   //     observer
 
-  //   }
-  // }
+    }
+  }
   
 
 
