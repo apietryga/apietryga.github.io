@@ -1,4 +1,7 @@
 export default defineNuxtConfig({
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
   css: [ "@/assets/base.css", "@/assets/animations.css" ],
   experimental: { 
     payloadExtraction: false,

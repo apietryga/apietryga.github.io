@@ -1,85 +1,87 @@
 <template>
-  <div class="headerWrapper">  
-    <homeNewHeader />
-  </div>
-  <div class="overwrapper">
-    <main id="code">
-      <div class="codeprojects">
+  <div>
+    <div class="headerWrapper">  
+      <homeNewHeader />
+    </div>
+    <div class="overwrapper">
+      <main id="code">
+        <div class="codeprojects">
+          <header>
+            <h2>{{lang[language].content[4]}}</h2>
+            <p>{{lang[language].content[5]}}</p>
+            <p>
+              {{lang[language].content[6]}}
+            </p>  
+          </header>
+          <ul>
+            <li v-for="techElement in stack" :key="techElement">
+              <NuxtLink :to="'/projects?q=' + techElement">{{ techElement }}</NuxtLink>
+            </li>
+          </ul>
+          <section>
+            <NuxtLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)" :key="element">
+              <article>
+                <header>
+                  <h3>{{ element.name }}</h3>
+                  <p>{{ element.lang[language].desc }}</p>
+                </header>
+                <img :src="'/img/contents/' + element.img" :alt="element.name">
+              </article>
+            </NuxtLink>
+            <div></div>
+            <footer>
+              <NuxtLink to="/projects">{{ lang[language].content[7] }}</NuxtLink>
+            </footer>
+          </section>
+        </div>
+      </main>
+      <article id="teaching">
+        <div class="mask top"></div>
+        <div class="stopper"></div>
         <header>
-          <h2>{{lang[language].content[4]}}</h2>
-          <p>{{lang[language].content[5]}}</p>
-          <p>
-            {{lang[language].content[6]}}
-          </p>  
+          <h2>{{lang[language].content[8]}}</h2>
+          <p>{{lang[language].content[9]}}</p>  
         </header>
-        <ul>
-          <li v-for="techElement in stack" :key="techElement">
-            <NuxtLink :to="'/projects?q=' + techElement">{{ techElement }}</NuxtLink>
-          </li>
-        </ul>
+        <div class="content">
+          <p>{{lang[language].content[10]}}</p>
+          <section>
+            <NuxtLink v-for="element in getProjectsByNames(recomended.teaching)" :to="'/projects/' + element.url" :key="element">
+              <article>
+                <header>
+                  <h3>{{ element.name }}</h3>
+                  <p>{{ element.lang[language].desc }}</p>
+                </header>
+                <img :src="'/img/contents/' + element.img" :alt="element.name">
+              </article>
+            </NuxtLink>
+            <div></div>
+            <footer>
+              <NuxtLink to="/projects">{{ lang[language].content[11] }}</NuxtLink>
+            </footer>  
+          </section>
+        </div>
+      </article>
+      <article id="business">
+        <div class="photo me"></div>
+        <h2>{{ lang[language].content[12] }}</h2>
+        <p>{{ lang[language].content[13] }}</p>
         <section>
-          <NuxtLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)" :key="element">
+          <NuxtLink v-for="element in getProjectsByNames(recomended.business)" :to="'/projects/' + element.url" :key="element">
             <article>
               <header>
-                <h3>{{ element.name }}</h3>
-                <p>{{ element.lang[language].desc }}</p>
+                <h3>{{element.name}}</h3>
+                <p>{{element.lang[language].desc}}</p>
               </header>
               <img :src="'/img/contents/' + element.img" :alt="element.name">
             </article>
           </NuxtLink>
           <div></div>
           <footer>
-            <NuxtLink to="/projects">{{ lang[language].content[7] }}</NuxtLink>
-          </footer>
-        </section>
-      </div>
-    </main>
-    <article id="teaching">
-      <div class="mask top"></div>
-      <div class="stopper"></div>
-      <header>
-        <h2>{{lang[language].content[8]}}</h2>
-        <p>{{lang[language].content[9]}}</p>  
-      </header>
-      <div class="content">
-        <p>{{lang[language].content[10]}}</p>
-        <section>
-          <NuxtLink v-for="element in getProjectsByNames(recomended.teaching)" :to="'/projects/' + element.url" :key="element">
-            <article>
-              <header>
-                <h3>{{ element.name }}</h3>
-                <p>{{ element.lang[language].desc }}</p>
-              </header>
-              <img :src="'/img/contents/' + element.img" :alt="element.name">
-            </article>
-          </NuxtLink>
-          <div></div>
-          <footer>
-            <NuxtLink to="/projects">{{ lang[language].content[11] }}</NuxtLink>
+            <NuxtLink :to="'/projects?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</NuxtLink>
           </footer>  
         </section>
-      </div>
-    </article>
-    <article id="business">
-      <div class="photo me"></div>
-      <h2>{{ lang[language].content[12] }}</h2>
-      <p>{{ lang[language].content[13] }}</p>
-      <section>
-        <NuxtLink v-for="element in getProjectsByNames(recomended.business)" :to="'/projects/' + element.url" :key="element">
-          <article>
-            <header>
-              <h3>{{element.name}}</h3>
-              <p>{{element.lang[language].desc}}</p>
-            </header>
-            <img :src="'/img/contents/' + element.img" :alt="element.name">
-          </article>
-        </NuxtLink>
-        <div></div>
-        <footer>
-          <NuxtLink :to="'/projects?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</NuxtLink>
-        </footer>  
-      </section>
-    </article>
+      </article>
+    </div>
   </div>
 </template>
 
