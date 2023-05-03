@@ -1,6 +1,5 @@
 <template>
   <main class="list">
-    <!-- <h1>{{ $c.title }}</h1> -->
     <nav>
       <template v-if="projects.length > 0">          
         <section v-for="[index, item] in projects.entries()" :key="item"
@@ -18,15 +17,7 @@
                 <p>{{ item.lang[language].desc }}</p>
               </header>
             </NuxtLink>
-            <!-- <article>
-              <img :src="'/img/contents/' + item.img" :alt="item.name">
-            </article> -->
           </div>
-          <footer>
-            <!-- <NuxtLink :to="'/projects?q=' + tag" v-for="tag in item.lang[language].category" :key="tag">
-              <small>#{{ tag }}</small>
-            </NuxtLink> -->
-          </footer>
         </section>
       </template>
       <section v-else>

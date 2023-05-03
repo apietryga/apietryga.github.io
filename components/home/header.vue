@@ -8,10 +8,8 @@
     <div class="background"></div>
     <div class="photo sky"></div>
     <div class="photo mountains"></div>
-    <!-- <div class="photo moon"></div> -->
     <homeRocket class="photo moon" />
     <div class="photo clouds"></div>
-    <!-- <div class="mask photo"></div> -->
 
   </header>
 </template>

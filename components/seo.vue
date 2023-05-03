@@ -2,12 +2,9 @@
   <Head>
     <Title>{{ $c.title }}</Title>
     <Meta v-for="{name, content} of meta" :key="name" :name="name" :content="content" />
-    <!-- <Meta name="google-site-verification" content="8ipK6aTDBqxsTimOuexoAapkaGpct8pl3NNw7HLw2vA" /> -->
     <Link rel="preconnect" href="https://fonts.googleapis.com" />
     <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <Link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap" rel="stylesheet" />
-
-
   </Head>
 </template>
 
