@@ -284,42 +284,75 @@
         }
       }
       // .wrapper{
-      border:2px dashed red;
+      // border:2px dashed red;
       display:flex;
       // align-items: flex-start;
       align-items: center;
+      footer{
+        // border:2px dashed #fff;
+        display:flex;
+        align-items: flex-start;
+        // width:100%;
+        width:68vw;
+        margin-left:30vw;
+        // margin-top:2rem;
+        margin-top:1rem;
+        // a{
+        //   border:2px dashed red;
+        // }
+      }
       section{
+        // color: var(--dark-primary);
+        // border: 
+
         // @extend %rowSection;
         flex:1;
-        border:2px dashed blue;
+        // border:2px dashed blue;
+        display:flex;
+        justify-content: flex-start;
         a{
-          border:2px dashed green;
+          // border:2px dashed green;
+          max-width: 25%;
           article{
-            align-items: flex-start;
+            // align-items: flex-start;
+            align-items: center;
+            color:var(--font-primary-color);
             // background: #fff;
-            background: var(--accent);
+            // background: var(--accent);
+            // background: var(--overlay-color);
+            // border:.25rem solid blue;
+            border:.25rem solid var(--bright-primary);
             // align-items: center;
-            border:2px dashed yellow;
+            // border:2px dashed yellow;
             border-radius:.5rem;
             display:flex;
             flex-direction: row-reverse;
             // margin:0 1rem;
             padding:.5rem;
             margin:0 .5rem;
+
             header{
+              // align-items: center;
               // border:2px dashed red;
+              // border:2px dashed red;
+              margin-left:.5rem;
               h3{
                 margin:0;
               }
               p{
-                border:2px dashed blue;
+                // border:2px dashed blue;
                 font-size:.8rem;
                 line-height: .8rem;
-
               }
             }
             picture{
-              border:2px dashed #000;
+              // border:2px dashed #000;
+              padding:.25rem;
+              background: var(--font-primary-color);
+              display:flex;
+              align-items: center;
+              justify-content: center;
+              border-radius:50%;
             }
           }
         }

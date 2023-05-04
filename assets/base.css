@@ -23,6 +23,8 @@
   --clickedColor: rgba(0, 0, 0, 0.2);
   --backgroundColor: rgb(214, 214, 214);
   --fontColor:rgba(31, 29, 29, 0.8); 
+
+  --overlay-color: rgba(157, 179, 157, 0.712);
 }
 *{
   box-sizing: border-box;
