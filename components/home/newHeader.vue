@@ -6,7 +6,7 @@
       <p data-aos="fade-up" data-aos-delay="200" class="description" v-html="$c.home.description"></p>
       <nuxt-link 
         data-aos-disable="false"
-        data-aos="fade-up" data-aos-delay="300" to="/projects" class="cta">{{ $c.home.cta }}</nuxt-link>
+        data-aos="fade-up" data-aos-delay="300" to="/projects" class="btn">{{ $c.home.cta }}</nuxt-link>
     </header>
     <div class="smth" data-aos="zoom-in"> 
       <homeLogo3d class="logo" />
@@ -68,16 +68,16 @@
       padding-left:2rem;
       max-width: 1000px;
     }
-    .cta{
-      padding:.6rem 1.5rem;
-      margin-top:.75rem;
-      background: var(--accent);
-      color:var(--dark-primary);
-      border-radius:.5rem;
-      font-size:.8rem;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
+    // .cta{
+    //   padding:.6rem 1.5rem;
+    //   margin-top:.75rem;
+    //   background: var(--accent);
+    //   color:var(--dark-primary);
+    //   border-radius:.5rem;
+    //   font-size:.8rem;
+    //   font-weight: 900;
+    //   text-transform: uppercase;
+    // }
   }
   .smth{
     flex:1;

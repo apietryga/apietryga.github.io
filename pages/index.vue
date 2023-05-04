@@ -17,7 +17,7 @@
               </li>
             </ul>
           </div>
-          <section>
+          <section class="card__wrapper">
             <NuxtLink 
               :key="element"
               :to="'/projects/' + element.url" 
@@ -39,13 +39,14 @@
             </NuxtLink>
           </section>
           <footer data-aos="fade-up">
-            <NuxtLink to="/projects">{{ lang[language].content[7] }}</NuxtLink>
+            <!-- <NuxtLink to="/projects">{{ lang[language].content[7] }}</NuxtLink> -->
+            <NuxtLink to="/projects" class="btn">{{ lang[language].content[7] }}</NuxtLink>
           </footer>
         </div>
       </main>
       <article id="teaching">
-        <div class="mask top"></div>
-        <div class="stopper"></div>
+        <!-- <div class="mask top"></div> -->
+        <!-- <div class="stopper"></div> -->
         <header>
           <h2 data-aos="fade-up">{{lang[language].content[8]}}</h2>
           <p>{{lang[language].content[9]}}</p>  
@@ -257,48 +258,53 @@
           padding-left:50vw;
         }
       }
-      display:flex;
-      align-items: center;
       footer{
         display:flex;
-        align-items: flex-start;
+        // align-items: flex-start;
+        align-items: center;
+        justify-content: center;
         width:100%;
-        padding-left:2rem;
+        // padding-left:2rem;
         margin-top:1rem;
       }
       section{
-        flex:1;
-        display:flex;
-        justify-content: flex-start;
+        // flex:1;
+        // display:flex;
+        // justify-content: flex-start;
+        // margin:3rem 0;
+        margin-top:3rem;
         a{
           max-width: 25%;
-          article{
-            // align-items: center;
-            // color:var(--font-primary-color);
-            // border:.25rem solid var(--bright-primary);
-            // border-radius:.5rem;
-            // display:flex;
-            // flex-direction: row-reverse;
-            // padding:.5rem;
-            // margin:0 .5rem;
-            header{
-              // margin-left:.5rem;
-              h3{
-                margin:0;
-              }
-              p{
-                font-size:.8rem;
-                line-height: .8rem;
-              }
-            }
-            // picture{
-            //   padding:.25rem;
-            //   background: var(--font-primary-color);
-            //   display:flex;
-            //   align-items: center;
-            //   justify-content: center;
-            //   border-radius:50%;
-            // }
+          // article:nth-child(1){
+          &:nth-child(2){
+          //   // border:2px dashed blue;
+            transform: scale(1.2);
+          //   // align-items: center;
+          //   // color:var(--font-primary-color);
+          //   // border:.25rem solid var(--bright-primary);
+          //   // border-radius:.5rem;
+          //   // display:flex;
+          //   // flex-direction: row-reverse;
+          //   // padding:.5rem;
+          //   // margin:0 .5rem;
+          //   // header{
+          //   //   // margin-left:.5rem;
+          //   //   // h3{
+          //   //   //   margin:0;
+          //   //   // }
+          //   //   p{
+          //   //     font-size:.8rem;
+          //   //     line-height: .8rem;
+          //   //   }
+          //   // }
+          //   // picture{
+          //   //   padding:.25rem;
+          //   //   background: var(--font-primary-color);
+          //   //   display:flex;
+          //   //   align-items: center;
+          //   //   justify-content: center;
+          //   //   border-radius:50%;
+          //   // }
           }
         }
       }
@@ -310,10 +316,8 @@
           display:flex;
           flex-wrap: wrap;
           list-style-type: none;
-          max-height:15rem;
           max-width: 60vw;
           padding-right:2rem;
-
           @mixin text-contrast($n) {
             $color-brightness: round((red($n) * 299) + (green($n) * 587) + calc((blue($n) * 114) / 1000));
             $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + calc((blue(#ffffff) * 114) / 1000));
@@ -324,7 +328,6 @@
               color: black;
             }
           }
-
           @mixin random-bgr($i){
 
             $c: rgb(random(255), random(255), random(255));
@@ -335,7 +338,6 @@
 
 
           }
-
           li{
             border:.25rem solid red;
             font-size: 90%;
@@ -364,7 +366,7 @@
     background:var(--dark-rocks);
     display:flex;
     flex-direction: column;
-    margin-top:calc(10vh + 5px);
+    // margin-top:calc(10vh + 5px);
     .stopper{
       position:absolute;
       background-image: url("/img/frontPage/projects_footer.webp");
@@ -375,7 +377,7 @@
       width:100%;
     }
     > header{
-      margin-top:13rem;
+      // margin-top:13rem;
       h2{
         padding-left:1rem;
         font-size:3rem;
@@ -445,6 +447,28 @@
       a{
         text-align: center!important;
       }
+    }
+  }
+
+  @media (max-width:768px){
+    #code .codeprojects{
+      >header >p {
+        padding-left:0;
+      }
+      .techCloud ul{
+        max-width:100%;
+        justify-content: center;
+      }
+      >section{
+        flex-direction: column;
+        padding:0 2rem;
+        a{ max-width: 100%; }
+      }
+      // footer{
+      //   // text-align: center;
+      //   justify-content: center;
+      //   padding:0;
+      // }
     }
   }
 </style>
