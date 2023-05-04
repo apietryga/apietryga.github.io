@@ -7,47 +7,38 @@
       <main id="code">
         <div class="codeprojects">
           <header>
-            <!-- <h2>{{ $c.home.code.title }}</h2> -->
             <h2 data-aos="fade-up" v-html="$c.home.code.title"></h2>
             <p data-aos="fade-up">{{ $c.home.code.description }}</p>
-            <!-- 
-            <h2>{{lang[language].content[4]}}</h2>
-            <p>{{lang[language].content[5]}}</p>
-            <p>
-              {{lang[language].content[6]}}
-            </p>
-          -->
           </header>
-          <!-- <div class="wrapper"> -->
           <div class="techCloud">
             <ul>
-              <!-- <li v-for="techElement in stack" :key="techElement"> -->
-              <!-- <li style="opacity:0;"></li> -->
               <li v-for="[index, techElement] in stack.entries()" :key="index" data-aos="fade-up" :data-aos-delay="index*10">
                 <NuxtLink :to="'/projects?q=' + techElement">{{ techElement }}</NuxtLink>
               </li>
             </ul>
           </div>
           <section>
-            <NuxtLink :to="'/projects/' + element.url" v-for="element in getProjectsByNames(recomended.code)" :key="element">
-              <article>
-                <header>
+            <NuxtLink 
+              :key="element"
+              :to="'/projects/' + element.url" 
+              v-for="[index, element] in getProjectsByNames(recomended.code).entries()" 
+            >
+              <article class="card" data-aos="fade-right" :data-aos-delay="100*index">
+                <header class="card__header">
                   <h3>{{ element.name }}</h3>
                   <p>{{ element.lang[language].desc }}</p>
                 </header>
-                <!-- <img :src="'/img/contents/' + element.img" :alt="element.name"> -->
-                <picture>
-                  <img :src="'/img/contents/' + element.img" :alt="element.name" width="80" height="80">
+                <picture class="card__picture">
+                  <img :src="'/img/contents/' + element.img" 
+                    :alt="element.name" 
+                    height="50"
+                    width="50"
+                  >
                 </picture>
               </article>
             </NuxtLink>
-            <!-- <div></div> -->
-            <!-- <footer>
-              <NuxtLink to="/projects">{{ lang[language].content[7] }}</NuxtLink>
-            </footer> -->
           </section>
-          <!-- </div> -->
-          <footer>
+          <footer data-aos="fade-up">
             <NuxtLink to="/projects">{{ lang[language].content[7] }}</NuxtLink>
           </footer>
         </div>
@@ -244,7 +235,6 @@
     }
   }
   #code{
-    // overflow-y: hidden;
     position:relative;
     .codeprojects{
       width:100%;
@@ -254,133 +244,74 @@
       > header{
         flex:1;
         padding:0 2rem;
-        // padding-top:var(--navHeaderHeight);
         width:100%;
         h2{
           text-align: right;
-          // margin:2rem 0 .5rem 0;
           margin:2rem 0 0 0;
-          // font-size:3rem;
           font-size:2rem;
           line-height: 100%;
-          // text-transform: uppercase;
-          // line-height: 1.3rem;
         }
-        // *{
-        //   text-align: center;
-        //   flex:1;
-        // }
-        // p:nth-child(2){
-        //   margin-bottom:2rem;
-        //   text-align: center;
-        // }
         > p{
           margin-bottom:0;
-          // padding:0 3rem;
-          // text-align: left;
           text-align: right;
-          // max-width:50vw;
           padding-left:50vw;
         }
       }
-      // .wrapper{
-      // border:2px dashed red;
       display:flex;
-      // align-items: flex-start;
       align-items: center;
       footer{
-        // border:2px dashed #fff;
         display:flex;
         align-items: flex-start;
-        // width:100%;
-        width:68vw;
-        margin-left:30vw;
-        // margin-top:2rem;
+        width:100%;
+        padding-left:2rem;
         margin-top:1rem;
-        // a{
-        //   border:2px dashed red;
-        // }
       }
       section{
-        // color: var(--dark-primary);
-        // border: 
-
-        // @extend %rowSection;
         flex:1;
-        // border:2px dashed blue;
         display:flex;
         justify-content: flex-start;
         a{
-          // border:2px dashed green;
           max-width: 25%;
           article{
-            // align-items: flex-start;
-            align-items: center;
-            color:var(--font-primary-color);
-            // background: #fff;
-            // background: var(--accent);
-            // background: var(--overlay-color);
-            // border:.25rem solid blue;
-            border:.25rem solid var(--bright-primary);
             // align-items: center;
-            // border:2px dashed yellow;
-            border-radius:.5rem;
-            display:flex;
-            flex-direction: row-reverse;
-            // margin:0 1rem;
-            padding:.5rem;
-            margin:0 .5rem;
-
+            // color:var(--font-primary-color);
+            // border:.25rem solid var(--bright-primary);
+            // border-radius:.5rem;
+            // display:flex;
+            // flex-direction: row-reverse;
+            // padding:.5rem;
+            // margin:0 .5rem;
             header{
-              // align-items: center;
-              // border:2px dashed red;
-              // border:2px dashed red;
-              margin-left:.5rem;
+              // margin-left:.5rem;
               h3{
                 margin:0;
               }
               p{
-                // border:2px dashed blue;
                 font-size:.8rem;
                 line-height: .8rem;
               }
             }
-            picture{
-              // border:2px dashed #000;
-              padding:.25rem;
-              background: var(--font-primary-color);
-              display:flex;
-              align-items: center;
-              justify-content: center;
-              border-radius:50%;
-            }
+            // picture{
+            //   padding:.25rem;
+            //   background: var(--font-primary-color);
+            //   display:flex;
+            //   align-items: center;
+            //   justify-content: center;
+            //   border-radius:50%;
+            // }
           }
         }
       }
       .techCloud{
-        // border:2px dashed blue;
-        // flex:1;
         display: flex;
         justify-content: flex-end;
         width:100%;
         ul{
-          // margin:0 0 0 auto;
-          // border:2px dashed red;
-          // width:100%;
-          // flex:1;
           display:flex;
           flex-wrap: wrap;
-          // justify-content: center;
-          // justify-content: flex-end;
           list-style-type: none;
-          // margin:2rem auto;
-          // margin:1rem auto 2rem auto;
           max-height:15rem;
-          min-width:50%;
-          // max-width: 900px;
           max-width: 60vw;
-          // min-width:80%;
-          // padding:.5rem;
           padding-right:2rem;
 
           @mixin text-contrast($n) {
