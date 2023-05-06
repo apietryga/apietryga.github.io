@@ -1,12 +1,12 @@
 <template>
-  <a v-if="type=='github'" :href="$c.contact.icons.github" target="_blank" style="background:linear-gradient(#000,rgb(75, 75, 75));">
+  <a v-if="type=='github'" :href="$t('contact.icons.github')" target="_blank" style="background:linear-gradient(#000,rgb(75, 75, 75));">
     <svg version="1.1" viewBox="0 0 108.37 108.37" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(-61.09 -125.99)" fill="#fff">
         <path d="m105.06 217.96c0.45852-0.52772 0.47625-0.70026 0.47625-4.6354v-4.0873l-0.89959 0.17402c-1.2716 0.246-4.4607 0.22928-6.0854-0.0319-3.148-0.50606-4.9038-1.8585-6.3037-4.8556-1.3016-2.7865-2.5522-4.474-4.0896-5.518-2.1582-1.4656-2.1941-2.4195-0.0899-2.3891 2.1509 0.0311 4.705 1.7283 6.1292 4.0729 0.92348 1.5202 2.5673 3.0819 3.8846 3.6904 1.2987 0.59997 4.2322 0.62406 5.9726 0.049 1.5106-0.49908 1.614-0.59442 1.7816-1.6424 0.17356-1.0854 1.0257-2.8294 1.7597-3.6012 0.62678-0.6591 0.5791-0.69442-1.213-0.89833-4.1718-0.47469-8.5407-2.3524-11.065-4.7556-1.778-1.6928-2.7069-3.1365-3.6623-5.6921-1.5349-4.1058-1.8188-10.209-0.6367-13.69 0.57924-1.7055 2.069-4.3501 2.8472-5.0544 0.40103-0.36293 0.40454-0.41946 0.0782-1.2611-0.24855-0.64106-0.34516-1.6309-0.35452-3.6328-0.0109-2.3386 0.0642-3.0012 0.50067-4.4139l0.51355-1.6622 1.3914 0.0889c1.744 0.11141 5.1587 1.4256 7.6646 2.9498l1.7702 1.0767 1.4817-0.33863c5.3504-1.2228 10.607-1.2598 16.115-0.11321l2.1448 0.44647 1.1887-0.76042c2.948-1.8858 6.5424-3.306 8.3674-3.306 1.0295 0 1.0834 0.0296 1.3891 0.76108 0.97944 2.3441 1.2109 6.6244 0.47191 8.7258l-0.32156 0.91436 0.98607 1.3081c2.3252 3.0847 3.0935 5.8705 2.9293 10.621-0.13086 3.7853-0.71344 6.3641-2.074 9.1804-2.0609 4.2659-6.651 7.2842-12.676 8.3352-3.284 0.57286-3.0913 0.47457-2.4425 1.2457 1.7522 2.0824 2.0109 3.5761 2.0155 11.637 4e-3 6.2026 0.0222 6.5038 0.43618 7.03 0.6573 0.83563 1.5372 0.89705 3.3792 0.23588 11.373-4.0825 20.669-13.921 24.136-25.546 5.5169-18.495-2.9779-38.038-20.307-46.718-7.2421-3.6273-16.416-4.8967-24.559-3.3981-8.426 1.5506-16.834 6.3107-22.354 12.656-10.423 11.98-12.769 28.723-6.0192 42.965 1.8289 3.8591 4.1994 7.2127 7.4953 10.604 4.2269 4.3489 8.6186 7.2293 14.295 9.3753 1.8862 0.71315 2.8424 0.67495 3.5522-0.1419z" fill="#fff" stroke-width=".21167"/>
       </g>
     </svg>
   </a>
-  <a v-else-if="type=='phone'" :href="'tel:' + $c.contact.icons.phone" style="background:linear-gradient(#5EF979,#09BB26);">
+  <a v-else-if="type=='phone'" :href="'tel:' + $t('contact.icons.phone')" style="background:linear-gradient(#5EF979,#09BB26);">
     <svg width="100%" height="100%" version="1.1" viewBox="0 0 73.66 73.66" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(-75.581 -106.76)">
         <g transform="translate(59.953 93.897)">
@@ -15,7 +15,7 @@
       </g>
     </svg>
   </a>
-  <a v-else-if="type=='mail'" :href="'mailto:' + $c.contact.icons.mail" style="background:linear-gradient(#1E52EE,#19E4FF);">
+  <a v-else-if="type=='mail'" :href="'mailto:' + $t('contact.icons.mail')" style="background:linear-gradient(#1E52EE,#19E4FF);">
     <svg width="100%" height="100%" version="1.1" viewBox="0 0 73.66 73.66" xmlns="http://www.w3.org/2000/svg">
         <g transform="translate(-73.507 -105.1)">
         <g transform="translate(59.953 93.897)">
@@ -24,7 +24,7 @@
       </g>
     </svg>
   </a>
-  <a v-else-if="type=='messenger'" :href="$c.contact.icons.messenger" target="_blank" style="background:linear-gradient(#00C6FF,#006EFF);">
+  <a v-else-if="type=='messenger'" :href="$t('contact.icons.messenger')" target="_blank" style="background:linear-gradient(#00C6FF,#006EFF);">
     <svg width="100%" height="100%" version="1.1" viewBox="0 0 73.66 73.66" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(-143.13 -148)">
         <g transform="translate(59.953 93.897)">
@@ -35,7 +35,7 @@
       </g>
     </svg>
   </a>
-  <a v-else-if="type=='instagram'" :href="$c.contact.icons.instagram" target="_blank" style="background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);">
+  <a v-else-if="type=='instagram'" :href="$t('contact.icons.instagram')" target="_blank" style="background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);">
     <svg width="100%" height="100%" version="1.1" viewBox="0 0 73.66 73.66" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(-194.57 -162.79)">
         <g transform="translate(59.953 93.897)">
@@ -44,7 +44,7 @@
       </g>
     </svg>
   </a>
-  <a v-else-if="type=='youtube'" :href="$c.contact.icons.youtube" target="_blank" style="background:linear-gradient(#DB2824,#760700);">
+  <a v-else-if="type=='youtube'" :href="$t('contact.icons.youtube')" target="_blank" style="background:linear-gradient(#DB2824,#760700);">
     <svg width="100%" height="100%" version="1.1" viewBox="0 0 73.66 73.66" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <g transform="translate(-409.33 -174.96)">
         <g transform="translate(59.953 93.897)">
@@ -55,7 +55,7 @@
       </g>
     </svg>
   </a>
-  <a v-else-if="type=='facebook'" :href="$c.contact.icons.facebook" target="_blank" style="background:linear-gradient(#18AAFD,#0066E2);">
+  <a v-else-if="type=='facebook'" :href="$t('contact.icons.facebook')" target="_blank" style="background:linear-gradient(#18AAFD,#0066E2);">
     <svg width="100%" height="100%" version="1.1" viewBox="0 0 73.66 73.66" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(-238.97 -182.21)">
         <g transform="translate(59.953 93.897)">
@@ -64,12 +64,12 @@
       </g>
     </svg>
   </a>
-  <a v-else-if="type=='linkedin'" :href="$c.contact.icons.linkedin" target="_blank" style="background:#007FBC;">
+  <a v-else-if="type=='linkedin'" :href="$t('contact.icons.linkedin')" target="_blank" style="background:#007FBC;">
     <svg width="100%" height="100%" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="m8 19h-3v-11h3zm-1.5-12.268c-0.966 0-1.75-0.79-1.75-1.764s0.784-1.764 1.75-1.764 1.75 0.79 1.75 1.764-0.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476z" fill="#fff"/>
     </svg>
   </a>
-  <a v-else-if="type=='stackoverflow'" :href="$c.contact.icons.stackoverflow" target="_blank" style="background: linear-gradient(#fff,#ddd);">
+  <a v-else-if="type=='stackoverflow'" :href="$t('contact.icons.stackoverflow')" target="_blank" style="background: linear-gradient(#fff,#ddd);">
     <svg width="100%" height="100%" version="1.1" viewBox="0 0 123.81 123.81" xmlns="http://www.w3.org/2000/svg">
     <g transform="translate(0 -.192)" fill="none" fill-rule="evenodd">
       <g transform="matrix(.79932 0 0 .79932 2.4082 .038531)">

@@ -1,10 +1,8 @@
 <template>
   <article id="teaching">
     <header>
-      <!-- <h2 data-aos="fade-up">{{lang[language].content[8]}}</h2> -->
-      <h2 data-aos="fade-up" v-html="$c.home.teaching.title"></h2>
-      <!-- <p>{{lang[language].content[9]}}</p>   -->
-      <p>{{ $c.home.teaching.description }}</p>  
+      <h2 data-aos="fade-up" v-html="$t('home.teaching.title')"></h2>
+      <p>{{ $t('home.teaching.description') }}</p>  
     </header>
     <div class="content">
       <!-- <p>{{lang[language].content[10]}}</p> -->

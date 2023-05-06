@@ -1,6 +1,6 @@
 <template>
   <main class="contact">
-    <h1>{{ $c.contact.title }}</h1>
+    <h1>{{ $t('contact.title') }}</h1>
     <div class="socials">
       <iconCustom 
         v-for="[index, icon] in icons.entries()"

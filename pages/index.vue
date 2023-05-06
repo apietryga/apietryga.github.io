@@ -8,8 +8,8 @@
       <main id="code">
         <div class="codeprojects">
           <header>
-            <h2 data-aos="fade-up" v-html="$c.home.code.title"></h2>
-            <p data-aos="fade-up">{{ $c.home.code.description }}</p>
+            <h2 data-aos="fade-up" v-html="$t('home.code.title')"></h2>
+            <p data-aos="fade-up">{{ $t('home.code.description') }}</p>
           </header>
           <div class="techCloud">
             <ul>
