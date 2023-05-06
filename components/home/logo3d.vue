@@ -80,11 +80,7 @@
       },
     },
     async mounted(){
-      // this.$forceUpdate()
-      // console.log('check1', this.width, this.$refs.logoWrapper.offsetWidth)
-
       this.setCanvasDimensions()
-
       if(this.$refs.logoWrapper.offsetWidth == 0){
         await new Promise((res, rej) => {
           let i = 0
@@ -99,71 +95,13 @@
             if(this.$refs.logoWrapper.offsetWidth == 0){ return }
   
             clearInterval(tryToSetSize); 
-            res({error: null})
+            res({ error: null })
   
           }, 100);
         })
       }
-
-      // this.setCanvasDimensions()
-      // this.handleWindowResize()
-      // console.log('check2', this.width, this.$refs.logoWrapper.offsetWidth)
-      // console.log('this1', this)
-      // nextTick(() => {
-        //   console.log('this2', this)
-        //   try {
-          //     // myCanvas.value.drawImage(background, 0, 0, size.w, size.h);
       this.init()
-          // console.log('check2', this.width, this.$refs.logoWrapper.offsetWidth)
-          // await nextTick( () => {
-          //   return console.log('check3', this.width, this.$refs.logoWrapper.offsetWidth)
-          
-          // })
-          // setTimeout(() => {
-          //   console.log('check4', this.width, this.$refs.logoWrapper.offsetWidth)
-            
-          // }, 3000);
-
-          // document.onreadystatechange = () => {
-          //   if (document.readyState == "complete") {
-          //     // console.log('Page completed with image and files!')
-          //     console.log('check5', this.width, this.$refs.logoWrapper.offsetWidth)
-          //     // fetch to next page or some code
-          //   }
-          // }
-
-
-          // this.$watch(
-          //     () => {
-          //         return this.$refs.logoWrapper.offsetWidth
-          //     },
-          //   (val) => {
-          //     alert('App $watch $refs.logoWrapper.offsetWidth: ' + val)
-          //   }
-          // )
-    //       this.$watch(
-    //     () => {
-    //         return this.$refs.logoWrapper.offsetWidth
-    //     },
-    //   (val) => {
-    //     console.log('$watch $refs.<name>.<data>: ' + val)
-    //   }
-    // )
-          // nex
-      //   } catch (e) {
-      //     console.log({ e });
-      //   }
-      //   // drawText();
-      // });
-      // this.init()
-      // setTimeout(() => {
-      // }, 100);
     },
-    // watch: {
-    //   '$refs.logoWrapper.offsetWidth': value =>  {
-    //     console.log('check5 ', this.$refs.logoWrapper.offsetWidth)
-    //   }
-    // }
   }
 </script>
 

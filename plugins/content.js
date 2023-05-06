@@ -12,11 +12,15 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
       home: {
         title: "You found <b>Software Developer</b><br><b>which will do</b> the job",
         description: "I am self-taught programmer works with WEB and IoT projects,<br> additionally I teach web application programming",
-        cta: "See my experience",
+        cta: "See my full experience",
         code: {
           title: "<b>Code</b> was my first <b>love</b>",
           description: "In 2010, I started Googling in order to create a game. Since then, web development has captured me completely."
-        }
+        },
+        teaching: {
+          title: "<b>Teaching</b> - the best way of <b>learing</b>",
+          description: "I started my adventure with training with a computer skills course for seniors."
+        },
       },
       contact: {
         title: "Contact details",
