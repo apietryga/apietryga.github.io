@@ -1,7 +1,7 @@
 <template>
   <Head>
-    <Title>{{ $c.title }}</Title>
-    <Meta v-for="{name, content} of meta" :key="name" :name="name" :content="content" />
+    <Title>{{ $t('title') }}</Title>
+    <Meta v-for="{ name, content } of meta" :key="name" :name="name" :content="content" />
     <Link rel="preconnect" href="https://fonts.googleapis.com" />
     <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <Link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap" rel="stylesheet" />

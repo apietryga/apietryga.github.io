@@ -56,5 +56,18 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
       }
     }
   }
-  return { provide: { c: content[lang] } }
+
+  const t = trans_key => {
+    let a = trans_key.replace(/\[(\w+)\]/g, '.$1').replace(/^\./, '').split('.')
+    let o = content[lang]
+
+    for (let i = 0, n = a.length; i < n; ++i) {
+      let k = a[i];
+      if (!k in o){ return }
+      o = o[k];
+    }
+    return o;
+  }
+
+  return { provide: { t, c: content[lang] } }
 })

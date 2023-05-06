@@ -1,12 +1,12 @@
 <template>
   <div class="homeHeader">
     <header>
-      <h1 data-aos="fade-up">{{ $c.author }}</h1>
-      <p data-aos="fade-up" data-aos-delay="100" class="heroText" v-html="$c.home.title"></p>
-      <p data-aos="fade-up" data-aos-delay="200" class="description" v-html="$c.home.description"></p>
+      <h1 data-aos="fade-up">{{ $t('author') }}</h1>
+      <p data-aos="fade-up" data-aos-delay="100" class="heroText" v-html="$t('home.title')"></p>
+      <p data-aos="fade-up" data-aos-delay="200" class="description" v-html="$t('home.description')"></p>
       <nuxt-link 
         data-aos-disable="false"
-        data-aos="fade-up" data-aos-delay="300" to="/projects" class="btn">{{ $c.home.cta }}</nuxt-link>
+        data-aos="fade-up" data-aos-delay="300" to="/projects" class="btn">{{ $t('home.cta') }}</nuxt-link>
     </header>
     <div class="smth" data-aos="zoom-in"> 
       <homeLogo3d class="logo" />
