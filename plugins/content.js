@@ -1,4 +1,5 @@
-export default defineNuxtPlugin((/* nuxtApp */) => {
+// export default defineNuxtPlugin((/* nuxtApp */) => {
+export default defineNuxtPlugin( app => {
   const lang = 'en'
   const content = {
     en: {
@@ -37,6 +38,9 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
           github: "https://github.com/apietryga",
           stackoverflow: "https://stackoverflow.com/users/5252704/antek-pietryga",
         }
+      },
+      projects: {
+        cta: "Watch ",
       },
     },
     pl: {
@@ -99,5 +103,13 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
     return o;
   }
 
-  return { provide: { t } }
+  const p = ( name, selector ) => {
+    const project = app.$appData.projects.find(p => p.name == name)
+    if(!project){ return console.error(`Project "${name}" does not exists`) }
+    if(project[selector]){ return project[selector] }
+    if(project.lang[lang][selector]){ return project.lang[lang][selector] }
+    return console.error(`Selector "${selector}" does not exist on project "${name}"`)
+  }
+
+  return { provide: { t, p } }
 })

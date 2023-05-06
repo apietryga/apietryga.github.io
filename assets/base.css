@@ -108,3 +108,8 @@ body{
   font-weight: 900;
   text-transform: uppercase;
 }
+.btn.small{
+  font-size:.7rem;
+  padding:.3rem .75rem;
+
+}

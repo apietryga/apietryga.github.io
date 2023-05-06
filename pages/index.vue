@@ -52,7 +52,19 @@
 </script>
 
 <style lang="scss">
-  h2 b { color: var(--accent); font-weight: 900; }
+  .heroText{
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 100%;
+    b{
+      line-height: 100%;
+      font-size: 2.5rem;
+      color:var(--accent);
+      font-weight:900;
+    }
+  }
+
+  // h2 b { color: var(--accent); font-weight: 900; }
   .overwrapper{
     background: var(--dark-rocks);
     color: var(--bright-primary);
