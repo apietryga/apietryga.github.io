@@ -11,15 +11,27 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
       },
       home: {
         title: "You found <b>Software Developer</b><br><b>which will do</b> the job",
-        // description: "I am <b>self-taught</b> programmer works with <b>WEB</b> and <b>IoT projects</b>,<br> additionally I teach <b>web application programming</b>.",
         description: "I am self-taught programmer works with WEB and IoT projects,<br> additionally I teach web application programming",
         cta: "See my experience",
         code: {
           title: "<b>Code</b> was my first <b>love</b>",
-          // description: "I started coding in 2010. I quickly realized that web development is what I should do, so I started learning."
           description: "In 2010, I started Googling in order to create a game. Since then, web development has captured me completely."
         }
       },
+      contact: {
+        title: "Contact details",
+        icons: {
+          phone : "+48 732 012 715",
+          mail: "antek.pietryga@gmail.com",
+          messenger: "https://www.messenger.com/t/antoni.pietryga",
+          instagram: "http://instagram.com/antek_pietryga",
+          facebook: "https://www.facebook.com/antoni.pietryga/",
+          youtube: "https://www.youtube.com/channel/UCB5bhBYgly7udyjyjj0K_UQ?view_as=subscriber",
+          linkedin: "https://www.linkedin.com/in/apietryga/",
+          github: "https://github.com/apietryga",
+          stackoverflow: "https://stackoverflow.com/users/5252704/antek-pietryga",
+        }
+      }
     },
     pl: {
       title: "apietryga",

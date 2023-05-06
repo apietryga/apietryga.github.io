@@ -22,7 +22,7 @@
               v-for="[index, element] in getProjectsByNames(recomended.code).entries()" 
               :to="'/projects/' + element.url" 
               :data-aos-delay="100*index"
-              data-aos="fade-right" 
+              data-aos="fade-right"
               :key="index"
               class="card" 
             >

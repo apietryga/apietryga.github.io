@@ -1231,35 +1231,35 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
           },
         }
       },
-      contact:{
-        name: "Contact",
-        href: "contact",
-        img: "antek_insta.webp",
-        phone : "+48 732 012 715",
-        fullName: "Antoni Pietryga",
-        mail: "antek.pietryga@gmail.com",
-        messenger: "https://www.messenger.com/t/antoni.pietryga",
-        instagram: "http://instagram.com/antek_pietryga",
-        facebook: "https://www.facebook.com/antoni.pietryga/",
-        youtube: "https://www.youtube.com/channel/UCB5bhBYgly7udyjyjj0K_UQ?view_as=subscriber",
-        linkedin: "https://www.linkedin.com/in/apietryga/",
-        github: "https://github.com/apietryga",
-        stackoverflow: "https://stackoverflow.com/users/5252704/antek-pietryga",
-        lang: {
-          "pl": {
-            desc: `Dane kontaktowe`,
-            content:[
-              `Kliknij Aby przejść`
-            ]
-          },
-          "en": {
-            desc: `Contact details`,
-            content:[
-              `Click to go`
-            ]
-          },
-        }
-      },
+      // contact:{
+      //   name: "Contact",
+      //   href: "contact",
+      //   img: "antek_insta.webp",
+      //   phone : "+48 732 012 715",
+      //   fullName: "Antoni Pietryga",
+      //   mail: "antek.pietryga@gmail.com",
+      //   messenger: "https://www.messenger.com/t/antoni.pietryga",
+      //   instagram: "http://instagram.com/antek_pietryga",
+      //   facebook: "https://www.facebook.com/antoni.pietryga/",
+      //   youtube: "https://www.youtube.com/channel/UCB5bhBYgly7udyjyjj0K_UQ?view_as=subscriber",
+      //   linkedin: "https://www.linkedin.com/in/apietryga/",
+      //   github: "https://github.com/apietryga",
+      //   stackoverflow: "https://stackoverflow.com/users/5252704/antek-pietryga",
+      //   lang: {
+      //     "pl": {
+      //       desc: `Dane kontaktowe`,
+      //       content:[
+      //         `Kliknij Aby przejść`
+      //       ]
+      //     },
+      //     "en": {
+      //       desc: `Contact details`,
+      //       content:[
+      //         `Click to go`
+      //       ]
+      //     },
+      //   }
+      // },
       index:{
         name: "apietryga",
         href: "index",

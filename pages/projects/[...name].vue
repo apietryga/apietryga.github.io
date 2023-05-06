@@ -1,40 +1,36 @@
 <template>
-  <!-- <div class="details"> -->
-    <!-- <div class="background" style="background-color:{{color}}"></div> -->
-    <!-- <div class="mainImg" v-if="img">
-      <img :src="'/img/contents/' + img" :alt="name">
-    </div> -->
-  <!-- </div> -->
-  <header>
-    <div class="mainImg">
-      <picture v-if="img">
-        <img :src="'/img/contents/' + img" :alt="name">
-      </picture>
-      <div class="title">
-        <h1>{{ name }}</h1>
-        <h2>{{ lang[language].desc }}</h2>
-      </div>
-    </div>
-  </header>
-  <main class="content">
-    <template v-for="section in getContent()" :key="section">
-      <section v-if="section?.media || section?.header">
-        <p v-if="section.header" v-html="section.header"></p>
-        <media v-else :props="section" />
-      </section>
-    </template>
-  </main>
-  <div class="prevNextWrapper">
-    <div v-for="butt of getPrevNext()" :key="butt">
-      <NuxtLink v-if="butt?.name" :to="'/projects/' + butt.url">
-        <picture>
-          <img :src="'/img/contents/' + butt.img" :alt="butt.name +' Logo'" />
+  <div>
+    <header>
+      <div class="mainImg">
+        <picture v-if="img">
+          <img :src="'/img/contents/' + img" :alt="name">
         </picture>
         <div class="title">
-          <h4>{{ butt.name }}</h4>
-          <p>{{ butt.lang[language].desc }}</p>
+          <h1>{{ name }}</h1>
+          <h2>{{ lang[language].desc }}</h2>
         </div>
-      </NuxtLink>
+      </div>
+    </header>
+    <main class="content">
+      <template v-for="section in getContent()" :key="section">
+        <section v-if="section?.media || section?.header">
+          <p v-if="section.header" v-html="section.header"></p>
+          <media v-else :props="section" />
+        </section>
+      </template>
+    </main>
+    <div class="prevNextWrapper">
+      <div v-for="butt of getPrevNext()" :key="butt">
+        <NuxtLink v-if="butt?.name" :to="'/projects/' + butt.url">
+          <picture>
+            <img :src="'/img/contents/' + butt.img" :alt="butt.name +' Logo'" />
+          </picture>
+          <div class="title">
+            <h4>{{ butt.name }}</h4>
+            <p>{{ butt.lang[language].desc }}</p>
+          </div>
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>

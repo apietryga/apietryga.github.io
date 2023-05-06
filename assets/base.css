@@ -48,6 +48,12 @@ h1, h2, p{
 }
 #__nuxt > div{
   flex:1;
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+}
+main{
+  flex:1;
 }
 body{
   background-color:var(--backgroundColor);

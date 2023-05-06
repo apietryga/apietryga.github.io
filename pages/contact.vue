@@ -46,13 +46,14 @@
     .socials{
       padding:.5rem 1rem 2rem 1rem;
       display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       // grid-template-areas:
       // 'gh in so'
       // 'ig fb yt'
       // 'ph mg ml';
-      @media (min-width : 350px){
+      // @media (min-width : 350px){
         gap:1rem;
-      }
+      // }
     }
   }
 </style>
