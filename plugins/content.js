@@ -15,11 +15,13 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
         cta: "See my full experience",
         code: {
           title: "<b>Code</b> was my first <b>love</b>",
-          description: "In 2010, I started Googling in order to create a game. Since then, web development has captured me completely."
+          description: "In 2010, I started Googling in order to create a game. Since then, web development has captured me completely.",
+          cta: "see my code projects",
         },
         teaching: {
           title: "<b>Teaching</b> - the best way of <b>learing</b>",
-          description: "I started my adventure with training with a computer skills course for seniors."
+          description: "I started my adventure with training with a computer skills course for seniors.",
+          cta: "see my teach experience",
         },
       },
       contact: {
@@ -54,20 +56,48 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
         }
 
       }
+    },
+    all: {
+      stack:[
+        'HTML',
+        'CSS',
+        'SCSS',
+        'PHP',
+        'JavaScript',
+        'Node.js',
+        'jQuery',
+        'CPP',
+        'Arduino',
+        'Python',
+        'django',
+        'Flask',
+        'Java',
+        'Spring',
+        'MySQL',
+        'iOT',
+        'SEO',
+        'ReactJS',
+        // ---
+        'Vue',
+        'Nuxt',
+        'Docker',
+        'Kubernetes',
+        'Linux',
+        'Slim',
+        'Twig'
+
+      ],
     }
   }
 
   const t = trans_key => {
     let a = trans_key.replace(/\[(\w+)\]/g, '.$1').replace(/^\./, '').split('.')
-    let o = content[lang]
-
+    let o = {...content[lang], ...content.all }
     for (let i = 0, n = a.length; i < n; ++i) {
-      let k = a[i];
-      if (!k in o){ return }
-      o = o[k];
+      if (a[i] in o){ o = o[a[i]] }else{ return }
     }
     return o;
   }
 
-  return { provide: { t, c: content[lang] } }
+  return { provide: { t } }
 })

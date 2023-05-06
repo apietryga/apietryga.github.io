@@ -1,13 +1,28 @@
 <template>
   <article id="teaching">
-    <header>
-      <h2 data-aos="fade-up" v-html="$t('home.teaching.title')"></h2>
-      <p>{{ $t('home.teaching.description') }}</p>  
-    </header>
-    <div class="content">
-      <!-- <p>{{lang[language].content[10]}}</p> -->
+    <div class="wrapper">
+      <header>
+        <h2 data-aos="fade-up" v-html="$t('home.teaching.title')"></h2>
+        <p>{{ $t('home.teaching.description') }}</p>  
+      </header>
+      <div class="ctaWrapper">
+        <NuxtLink to="/projects" class="btn">{{ $t('home.teaching.cta') }}</NuxtLink>
+      </div>
+      <div class="reviews">
+        <div>el 1</div>
+        <div>el 2</div>
+      </div>
+    </div>
+    <picture>
+      <img
+        src="/img/frontPage/projects_footer.webp" 
+        alt="Antoni Pietryga teaching learning adventure"
+      >
+    </picture>
+    <!-- <div class="content">
+      <p>{{lang[language].content[10]}}</p>
       <section class="card__wrapper">
-        <!-- <NuxtLink 
+        <NuxtLink 
           v-for="element in getProjectsByNames(recomended.teaching)" 
           :to="'/projects/' + element.url" :key="element"
           class="card"
@@ -19,13 +34,13 @@
           <picture class="card__picture">
             <img :src="'/img/contents/' + element.img" :alt="element.name" height="50" width="50">
           </picture>
-        </NuxtLink> -->
+        </NuxtLink>
         <div></div>
       </section>
-      <!-- <footer>
+      <footer>
         <NuxtLink to="/projects">{{ lang[language].content[11] }}</NuxtLink>
-      </footer>   -->
-    </div>
+      </footer>  
+    </div> -->
   </article>
 </template>
 
@@ -33,35 +48,54 @@
 
 <style lang="scss">
  #teaching{
-  position:relative;
-  color:#fff;
-  background:var(--dark-rocks);
+  border:2px dashed red;
   display:flex;
-  flex-direction: column;
-  > header{
-    h2{
-      padding-left:1rem;
-      font-size:3rem;
-    }
-    p{
-      padding-left:1rem;
-      margin:.5rem;
-      margin-bottom:3rem;
-    }  
-    *{
-      text-align: center;
-      flex:1;
-    }
-  }
-  .content{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    section{
-      padding-bottom:0;
-      width:80%;
-    }
 
+  .wrapper{
+    border:2px dashed yellow;
+    .reviews{
+      border:2px dashed blue;
+    }
   }
+
+  picture{
+    border:2px dashed green;
+    img{
+      border:2px dashed red;
+      width:200px;
+      height:200px;
+    }
+  }
+
+  // position:relative;
+  // color:#fff;
+  // background:var(--dark-rocks);
+  // display:flex;
+  // flex-direction: column;
+  // > header{
+  //   // h2{
+  //   //   padding-left:1rem;
+  //   //   font-size:3rem;
+  //   // }
+  //   // p{
+  //   //   padding-left:1rem;
+  //   //   margin:.5rem;
+  //   //   margin-bottom:3rem;
+  //   // }  
+  //   // *{
+  //   //   text-align: center;
+  //   //   flex:1;
+  //   // }
+  // }
+  // .content{
+  //   display:flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   section{
+  //     padding-bottom:0;
+  //     width:80%;
+  //   }
+
+  // }
 }
 </style>
