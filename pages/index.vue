@@ -4,6 +4,7 @@
       <homeNewHeader />
     </div>
     <div class="overwrapper">
+
       <main id="code">
         <div class="codeprojects">
           <header>
@@ -45,7 +46,7 @@
         </div>
       </main>
 
-      <homeSpacer />
+      <!-- <homeSpacer /> -->
       
       <article id="teaching">
         <header>

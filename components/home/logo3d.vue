@@ -44,14 +44,13 @@
 
         this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
         this.renderer.setSize(this.width, this.height);
-        this.renderer.shadowMap.enabled = true;
+        // this.renderer.shadowMap.enabled = true;
         let loader = new GLTFLoader();
 
         this.controls = new OrbitControls( this.camera, this.renderer.domElement );
         this.controls.enableZoom = false;
-        this.controls.touches = {
-          ONE: THREE.TOUCH.ROTATE,
-        }
+        this.controls.touches = { ONE: THREE.TOUCH.ROTATE }
+        
         loader.load( "/img/frontPage/logo_white.glb", gltf => {
           this.rocket = gltf.scene;
           this.rocket.rotation.x = 90 * Math.PI / 180
@@ -80,10 +79,91 @@
         return this.width = this.height = offsetWidth > offsetHeight ? offsetWidth : offsetHeight
       },
     },
-    mounted(){
+    async mounted(){
+      // this.$forceUpdate()
+      // console.log('check1', this.width, this.$refs.logoWrapper.offsetWidth)
+
       this.setCanvasDimensions()
+
+      if(this.$refs.logoWrapper.offsetWidth == 0){
+        await new Promise((res, rej) => {
+          let i = 0
+          const tryToSetSize = setInterval(() => {
+            this.setCanvasDimensions()
+  
+            if(++i > 30){  
+              clearInterval(tryToSetSize); 
+              rej({ error: 'waiting too long'}) 
+            }
+            
+            if(this.$refs.logoWrapper.offsetWidth == 0){ return }
+  
+            clearInterval(tryToSetSize); 
+            res({error: null})
+  
+          }, 100);
+        })
+      }
+
+      // this.setCanvasDimensions()
+      // this.handleWindowResize()
+      // console.log('check2', this.width, this.$refs.logoWrapper.offsetWidth)
+      // console.log('this1', this)
+      // nextTick(() => {
+        //   console.log('this2', this)
+        //   try {
+          //     // myCanvas.value.drawImage(background, 0, 0, size.w, size.h);
       this.init()
+          // console.log('check2', this.width, this.$refs.logoWrapper.offsetWidth)
+          // await nextTick( () => {
+          //   return console.log('check3', this.width, this.$refs.logoWrapper.offsetWidth)
+          
+          // })
+          // setTimeout(() => {
+          //   console.log('check4', this.width, this.$refs.logoWrapper.offsetWidth)
+            
+          // }, 3000);
+
+          // document.onreadystatechange = () => {
+          //   if (document.readyState == "complete") {
+          //     // console.log('Page completed with image and files!')
+          //     console.log('check5', this.width, this.$refs.logoWrapper.offsetWidth)
+          //     // fetch to next page or some code
+          //   }
+          // }
+
+
+          // this.$watch(
+          //     () => {
+          //         return this.$refs.logoWrapper.offsetWidth
+          //     },
+          //   (val) => {
+          //     alert('App $watch $refs.logoWrapper.offsetWidth: ' + val)
+          //   }
+          // )
+    //       this.$watch(
+    //     () => {
+    //         return this.$refs.logoWrapper.offsetWidth
+    //     },
+    //   (val) => {
+    //     console.log('$watch $refs.<name>.<data>: ' + val)
+    //   }
+    // )
+          // nex
+      //   } catch (e) {
+      //     console.log({ e });
+      //   }
+      //   // drawText();
+      // });
+      // this.init()
+      // setTimeout(() => {
+      // }, 100);
     },
+    // watch: {
+    //   '$refs.logoWrapper.offsetWidth': value =>  {
+    //     console.log('check5 ', this.$refs.logoWrapper.offsetWidth)
+    //   }
+    // }
   }
 </script>
 

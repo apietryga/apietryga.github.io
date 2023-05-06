@@ -31,7 +31,7 @@ export default defineNuxtPlugin((/* nuxtApp */) => {
           github: "https://github.com/apietryga",
           stackoverflow: "https://stackoverflow.com/users/5252704/antek-pietryga",
         }
-      }
+      },
     },
     pl: {
       title: "apietryga",
