@@ -35,7 +35,7 @@ a{
   font-family: var(--font-secondary);
   line-height: 1.1rem;
 }
-h1, h2, p{
+h1, h2, h3, p{
   margin:0;
 }
 #__nuxt{
@@ -111,5 +111,14 @@ body{
 .btn.small{
   font-size:.7rem;
   padding:.3rem .75rem;
+}
 
+picture{
+  background: var(--overlay-color);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding:.5rem;
+  border-radius: .5rem;
 }

@@ -6,60 +6,38 @@
         <p data-aos="fade-up">{{ $t('home.code.description') }}</p>
       </header>
       
-      <NuxtLink to="/projects" class="btn">{{ $t('home.code.cta') }}</NuxtLink>
+      <NuxtLink data-aos="fade-up" to="/projects" class="btn">
+        {{ $t('home.code.cta') }}
+      </NuxtLink>
 
       <div class="cards">
-
-        <div v-for="project in ['Webions', 'Anadar']">
+        <div v-for="[index, project] in ['webions', 'anadar'].entries()"
+          :data-aos-delay="100*index"
+          data-aos="fade-right"
+        >
           <picture>
             <img :src="'/img/contents/' + $p(project, 'img')" 
               :alt="$p(project, 'name')"
               height="50"
               width="50"
             >
-          </picture> 
-          <!-- <header class="card__header"> -->
+          </picture>
           <header>
             <h3>{{ $p(project, 'name') }}</h3>
             <p> {{ $p(project, 'desc') }}</p>
           </header>
-          <NuxtLink to="/projects" class="btn small">
-            {{ $t('projects.cta') + " " +$p(project, 'name') }}
+          <NuxtLink :to="'/projects/' + $p(project, 'url')" class="btn small">
+            {{ $t('projects.cta') + " " + $p(project, 'name') }}
           </NuxtLink>
         </div>
-
       </div>
-
-        <!-- <section class="card__wrapper"> -->
-        <!-- <NuxtLink 
-          v-for="[index, element] in ['Webions', 'Anadar'].entries()"
-          :to="'/projects/' + element.url" 
-          :data-aos-delay="100*index"
-          data-aos="fade-right"
-          :key="index"
-          class="card" 
-        > -->
-          <!-- <header class="card__header">
-            <h3>{{ element.name }}</h3>
-            <p>{{ element.lang[language].desc }}</p>
-          </header> -->
-          <!-- <picture class="card__picture">
-            <img :src="'/img/contents/' + element.img" 
-              :alt="element.name" 
-              height="50"
-              width="50"
-            >
-          </picture> -->
-        <!-- </NuxtLink> -->
-      <!-- </section>  -->
-     
-      <!-- <footer data-aos="fade-up"> -->
-        <!-- <NuxtLink to="/projects" class="btn">{{ $t('home.code.cta') }}</NuxtLink> -->
-      <!-- </footer> -->
     </div>
     <div class="techCloud">
       <ul>
-        <li v-for="[index, techElement] in $t('stack').entries()" :key="index" data-aos="fade-up" :data-aos-delay="index*10">
+        <li v-for="[index, techElement] in $t('stack').entries()" 
+          :key="index" data-aos="fade-up" 
+          :data-aos-delay="index*10"
+        >
           <NuxtLink :to="'/projects?q=' + techElement">{{ techElement }}</NuxtLink>
         </li>
       </ul>
@@ -71,41 +49,27 @@
 
 <style lang="scss">
   #code{
-    // border:2px dashed red;
-    // position:relative;
     display:flex;
     flex-direction: row-reverse;
     align-items: center;
     .codeprojects{
       flex:1;
-      // border:2px dashed blue;
       width:100%;
       display:flex;
       flex-direction: column;
-      // align-items: center;
       align-items: flex-end;
       padding:0 2rem;
       > header{
         flex:1;
-        // padding:0 2rem;
         width:100%;
         text-align: right;
         margin-bottom:2rem;
         h2{
-          // text-align: right;
           margin:2rem 0 0 0;
-          // font-size:2rem;
-          // line-height: 100%;
         }
-        // > p{
-        //   // margin-bottom:0;
-        //   // text-align: right;
-        //   // padding-left:50vw;
-        // }
       }
       .cards{
         margin: 3rem 1rem;
-        // border:2px dashed red;
         display:flex;
         > div{
           text-align: right;
@@ -113,15 +77,15 @@
           flex-direction: column;
           align-items: flex-end;
           margin-left:2rem;
-          picture{
-            background: var(--overlay-color);
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            width: fit-content;
-            padding:.5rem;
-            border-radius: .5rem;
-          }
+          // picture{
+          //   background: var(--overlay-color);
+          //   display:flex;
+          //   align-items: center;
+          //   justify-content: center;
+          //   width: fit-content;
+          //   padding:.5rem;
+          //   border-radius: .5rem;
+          // }
           >header{
             h3{
               margin:.5rem 0;
@@ -133,18 +97,6 @@
           }
         }
       }
-      // footer{
-      //   align-items: center;
-      //   display:flex;
-      //   // justify-content: center;
-      //   justify-content: end;
-      //   margin:1rem 0 3rem 0;
-      //   width:100%;
-      //   padding: 0 2rem;
-      // }
-      // section{
-      //   margin-top:3rem;
-      // }
     }
     .techCloud{
       flex:1;
@@ -182,7 +134,6 @@
           margin:.1rem;
           border-radius:8px;
           font-weight:bolder;
-          //&:before{content:"➡️ ";}
           @for $i from 0 to 30 {
             &:nth-child(#{$i}) {
               @include random-bgr($i);

@@ -20,7 +20,7 @@ export default defineNuxtPlugin( app => {
           cta: "see my code projects",
         },
         teaching: {
-          title: "<b>Teaching</b> - the best way of <b>learing</b>",
+          title: "<b>Teaching</b> - the best way of <b>learning</b>",
           description: "I started my adventure with training with a computer skills course for seniors.",
           cta: "see my teach experience",
         },
@@ -103,12 +103,12 @@ export default defineNuxtPlugin( app => {
     return o;
   }
 
-  const p = ( name, selector ) => {
-    const project = app.$appData.projects.find(p => p.name == name)
-    if(!project){ return console.error(`Project "${name}" does not exists`) }
+  const p = ( url, selector ) => {
+    const project = app.$appData.projects.find(p => p.url == url)
+    if(!project){ return console.error(`Project "${url}" does not exists`) }
     if(project[selector]){ return project[selector] }
     if(project.lang[lang][selector]){ return project.lang[lang][selector] }
-    return console.error(`Selector "${selector}" does not exist on project "${name}"`)
+    return console.error(`Selector "${selector}" does not exist on project "${url}"`)
   }
 
   return { provide: { t, p } }

@@ -1,24 +1,38 @@
 <template>
   <article id="teaching">
+
+    <header>
+      <h2 class="heroText" data-aos="fade-up" v-html="$t('home.teaching.title')"></h2>
+      <p data-aos="fade-up">{{ $t('home.teaching.description') }}</p>  
+      <NuxtLink data-aos="fade-up" to="/projects" class="btn">{{ $t('home.teaching.cta') }}</NuxtLink>
+    </header>
+
     <div class="wrapper">
-      <header>
-        <h2 data-aos="fade-up" v-html="$t('home.teaching.title')"></h2>
-        <p>{{ $t('home.teaching.description') }}</p>  
-      </header>
-      <div class="ctaWrapper">
-        <NuxtLink to="/projects" class="btn">{{ $t('home.teaching.cta') }}</NuxtLink>
+      <div v-for="[index, project] in ['praktykody', 'kurs-front-end','slaska-akademia-seniora'].entries()"
+        :data-aos-delay="100*index"
+        data-aos="fade-right"
+      >
+        <picture>
+          <img :src="'/img/contents/' + $p(project, 'img')" 
+            :alt="'Antoni Pietryga portfolio ' + $p(project, 'name') + ' logo'"
+            width="100"
+            height="100"
+          >
+        </picture>
+        <header>
+          <h3>{{ $p(project, 'name') }}</h3>
+          <p>{{ $p(project, 'desc') }}</p>
+        </header>
       </div>
-      <div class="reviews">
+
+      <!-- <div class="ctaWrapper"> -->
+      <!-- <NuxtLink to="/projects" class="btn">{{ $t('home.teaching.cta') }}</NuxtLink> -->
+      <!-- </div> -->
+      <!-- <div class="reviews">
         <div>el 1</div>
         <div>el 2</div>
-      </div>
+      </div> -->
     </div>
-    <picture>
-      <img
-        src="/img/frontPage/projects_footer.webp" 
-        alt="Antoni Pietryga teaching learning adventure"
-      >
-    </picture>
     <!-- <div class="content">
       <p>{{lang[language].content[10]}}</p>
       <section class="card__wrapper">
@@ -49,53 +63,53 @@
 <style lang="scss">
  #teaching{
   border:2px dashed red;
-  display:flex;
+  // display:flex;
+  padding: 0 2rem;
+
+  >header{
+    // border:2px dashed blue;
+    // margin:2rem 0;
+    margin:2rem 0 4rem 0;
+    p{
+      margin-bottom: 2rem;
+    }
+  }
 
   .wrapper{
-    border:2px dashed yellow;
-    .reviews{
-      border:2px dashed blue;
+    // border:2px dashed yellow;
+
+    >div{
+      // border:2px dashed blue;
+      display:flex;
+      margin:2rem 0;
+      &:nth-child(odd){
+        padding-left: 100px;
+      }
+      > header{
+        // border:2px dashed red;
+        // line-height: 1rem;
+        display: flex;
+        // place-items: center;
+        // align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 2rem;
+      }
+
     }
+    // .reviews{
+    //   border:2px dashed blue;
+    // }
   }
 
-  picture{
-    border:2px dashed green;
-    img{
-      border:2px dashed red;
-      width:200px;
-      height:200px;
-    }
-  }
-
-  // position:relative;
-  // color:#fff;
-  // background:var(--dark-rocks);
-  // display:flex;
-  // flex-direction: column;
-  // > header{
-  //   // h2{
-  //   //   padding-left:1rem;
-  //   //   font-size:3rem;
-  //   // }
-  //   // p{
-  //   //   padding-left:1rem;
-  //   //   margin:.5rem;
-  //   //   margin-bottom:3rem;
-  //   // }  
-  //   // *{
-  //   //   text-align: center;
-  //   //   flex:1;
-  //   // }
-  // }
-  // .content{
-  //   display:flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   section{
-  //     padding-bottom:0;
-  //     width:80%;
+  // picture{
+  //   border:2px dashed green;
+  //   img{
+  //     border:2px dashed red;
+  //     width:200px;
+  //     height:200px;
   //   }
-
   // }
+
 }
 </style>
