@@ -77,15 +77,6 @@
           flex-direction: column;
           align-items: flex-end;
           margin-left:2rem;
-          // picture{
-          //   background: var(--overlay-color);
-          //   display:flex;
-          //   align-items: center;
-          //   justify-content: center;
-          //   width: fit-content;
-          //   padding:.5rem;
-          //   border-radius: .5rem;
-          // }
           >header{
             h3{
               margin:.5rem 0;

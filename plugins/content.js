@@ -1,4 +1,3 @@
-// export default defineNuxtPlugin((/* nuxtApp */) => {
 export default defineNuxtPlugin( app => {
   const lang = 'en'
   const content = {

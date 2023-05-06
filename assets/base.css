@@ -107,12 +107,12 @@ body{
   font-size:.8rem;
   font-weight: 900;
   text-transform: uppercase;
+  width: fit-content;
 }
 .btn.small{
   font-size:.7rem;
   padding:.3rem .75rem;
 }
-
 picture{
   background: var(--overlay-color);
   display:flex;
