@@ -15,8 +15,8 @@
         <picture>
           <img :src="'/img/contents/' + $p(project, 'img')" 
             :alt="'Antoni Pietryga portfolio ' + $p(project, 'name') + ' logo'"
-            width="100"
-            height="100"
+            width="50"
+            height="50"
           >
         </picture>
         <header>

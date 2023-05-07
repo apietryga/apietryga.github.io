@@ -23,6 +23,11 @@ export default defineNuxtPlugin( app => {
           description: "I started my adventure with training with a computer skills course for seniors.",
           cta: "see my teach experience",
         },
+        business: {
+          title: "<b>Business</b> is <b>business</b>",
+          description: "In 2018, I started my first business, which resulted in some of the projects and a lot of experience featured on this page.",
+          cta: "see my business projects",
+        },
       },
       contact: {
         title: "Contact details",
