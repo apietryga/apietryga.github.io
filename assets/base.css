@@ -113,7 +113,8 @@ body{
   font-size:.7rem;
   padding:.3rem .75rem;
 }
-picture{
+/* picture{ */
+.overlay{
   background: var(--overlay-color);
   display:flex;
   align-items: center;

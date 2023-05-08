@@ -29,11 +29,18 @@ export default defineNuxtPlugin( app => {
           cta: "see my business projects",
         },
         reviews: [
-          {
-            img: "",
-            name: "",
-            review: "",
-          }
+          { name: "ERNABO",
+            img: "reviews/ernabo.webp",
+            content: "Pana Antoniego cechuje sumienność, zaangażowanie do wykonywanej pracy, odpowiedzialość i duża doza cierpliwości, Dzięki otwartpoości i zdolności budowania dobrych relacji międzyludzkich, jest idealnym trenerem szkoleń skutecznie przekazującym swoją bogatą wiedzę i dodatkowo szybko zdobywającym sympatię słuchaczy.",
+          },
+          { name: "ERNABO",
+            img: "reviews/ernabo.webp",
+            content: "Prowadzone przez p. Antoniego zajęcia są każdorazowo przemyślane i odpowiednio przygotowane, prócz wieczy teoretycznej charakteryzują się również dużą ilością przykładów zastosowania w życiu codziennym. Dba on zarówno o aktywizację grupy, jak i dobre zrozumienie zagadnień przez uczestników.",
+          },
+          { name: "ERNABO",
+            img: "reviews/ernabo.webp",
+            content: "Opierając się na dotychczasowej współpracy oraz profesjonalnym podejściu do uczestników pana Antoniego oraz jego bogatej wiedzy z tematyką szkolenia, co przekłada sięna jej jasne i zrozumiałe przekazywanie, z przyjemnością polecam pana Antoniego Pietryga jako rzetelnego trenera i sam chętnie kontynuował będę współpracę z p. Antonim w przyszłości.",
+          },
         ],
       },
       contact: {

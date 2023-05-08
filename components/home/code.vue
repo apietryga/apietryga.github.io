@@ -15,7 +15,7 @@
           :data-aos-delay="100*index"
           data-aos="fade-right"
         >
-          <picture>
+          <picture class="overlay">
             <img :src="'/img/contents/' + $p(project, 'img')" 
               :alt="$p(project, 'name')"
               height="50"

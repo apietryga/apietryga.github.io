@@ -12,7 +12,7 @@
         :data-aos-delay="100*index"
         data-aos="fade-right"
       >
-        <picture>
+        <picture class="overlay">
           <img :src="'/img/contents/' + $p(project, 'img')" 
             :alt="'Antoni Pietryga portfolio ' + $p(project, 'name') + ' logo'"
             width="50"
@@ -30,9 +30,6 @@
 
     </div>
 
-    <!-- <div class="reviews">
-      :D
-    </div> -->
     <homeCarousel :slides="$t('home.reviews')" />
       
   </article>
