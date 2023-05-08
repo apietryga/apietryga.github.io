@@ -1,7 +1,10 @@
 <template>
   <div class="carousel">
 
-    <section class="slide" v-for="slide of slides">
+    <section class="slide" v-for="[ index, slide ] of slides"
+    
+    >
+      {{ index }}
       <picture>
         <img 
           :src="'img/' + slide.img" 
@@ -22,7 +25,8 @@
 
 <script>
   export default {
-    props: { slides: { required: true, type: Array }}
+    props: { slides: { required: true, type: Array }},
+
   }
 </script>
 
@@ -31,6 +35,7 @@
     border:2px dashed red;
     display:flex;
     justify-content: center;
+    align-items: flex-start;
     .slide{
       border:2px dashed blue;
       display: flex;
