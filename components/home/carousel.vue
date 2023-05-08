@@ -1,9 +1,7 @@
 <template>
   <div class="carousel">
 
-    <section class="slide" v-for="[ index, slide ] of slides"
-    
-    >
+    <section class="slide" v-for="[index ,slide] of slides.entries()">
       {{ index }}
       <picture>
         <img 
