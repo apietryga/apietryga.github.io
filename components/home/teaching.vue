@@ -29,6 +29,12 @@
       </div>
 
     </div>
+
+    <!-- <div class="reviews">
+      :D
+    </div> -->
+    <homeCarousel :slides="$t('home.reviews')" />
+      
   </article>
 </template>
 
@@ -57,6 +63,10 @@
         margin-left: 2rem;
       }
     }
+  }
+  .reviews{
+    border:2px dashed blue;
+
   }
 }
 </style>

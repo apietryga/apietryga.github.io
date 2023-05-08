@@ -28,6 +28,13 @@ export default defineNuxtPlugin( app => {
           description: "In 2018, I started my first business, which resulted in some of the projects and a lot of experience featured on this page.",
           cta: "see my business projects",
         },
+        reviews: [
+          {
+            img: "",
+            name: "",
+            review: "",
+          }
+        ],
       },
       contact: {
         title: "Contact details",
