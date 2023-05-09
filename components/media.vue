@@ -77,7 +77,8 @@
 
     <template v-if="url.type == 'github'">
       <a :href="url.href" target="_blank" class="githubContainer">
-        <iconGithub />
+        <!-- <iconGithub /> -->
+        <iconCustom type="github" />
         <p v-html="url.href.split('/')[url.href.split('/').length -1]"></p>
       </a>
     </template>

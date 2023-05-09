@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel" ref="carousel">
+  <div class="carousel" ref="carousel" @mouseover="isPaused=true" @mouseleave="isPaused=false">
 
     <section class="slide" v-for="[index ,slide] of slides.entries()">
       <!-- {{ index }} -->
@@ -28,51 +28,29 @@
       return{
         window,
         isIntervaled: false,
+        isPaused: false,
       }
     },
     methods: {
       animationStart(){
         this.isIntervaled = true
         this.animation = setInterval(() => {
-          this.$refs.carousel.scrollLeft += 5
-
-          // console.log(this.$refs.carousel.scrollLeft)
-          // if(this.$refs.carousel.scrollLeft > 100){
-
-            const style = this.$refs.carousel.children[0].currentStyle || this.window.getComputedStyle(this.$refs.carousel.children[0]);
-
-            // console.log("Current Left: " + style.marginLeft);
-            // console.log("Current Rist: " + style.marginRight);
-
+          if(this.isPaused){ return }
+          const style = this.$refs.carousel.children[0].currentStyle || this.window.getComputedStyle(this.$refs.carousel.children[0]);
           let w = this.$refs.carousel.children[0].offsetWidth
-          w += style.marginRight.replace("px", "") * 1 
-          w += style.marginLeft.replace("px", "") * 1
-
+              w += style.marginRight.replace("px", "") * 1 
+              w += style.marginLeft.replace("px", "") * 1
+          // this.$refs.carousel.scrollBy({ left: this.speed, behavior: 'smooth' })
+          this.$refs.carousel.scrollBy({ left: w + 1, behavior: 'smooth' })
           if(this.$refs.carousel.scrollLeft > w ){
             this.$refs.carousel.scrollLeft = 0
             this.$refs.carousel.append(this.$refs.carousel.children[0])
-            // const style = this.$refs.carousel.children[0].currentStyle || this.window.getComputedStyle(this.$refs.carousel.children[0]);
-
-            // console.log("Current Left: " + style.marginLeft);
-            // console.log("Current Rist: " + style.marginRight);
-
-            console.log({ c: this.$refs.carousel})
-            // this.$refs.carousel.append(this.$refs.carousel.children[0])
           }
-
-        }, 25)
+        }, 1000)
       } 
     },
     mounted() {
       if(!this.isIntervaled){ this.animationStart() }
-      // console.log(this.$refs.carousel.children)
-      // console.log(this.$refs.carousel.scrollLeft = 10)
-      // this.$refs.carousel.children[0].style.display = 'flex'
-      // this.$refs.carousel.children[2].style.display = 'flex'
-      // this.$refs.carousel.children[3].style.display = 'flex'
-      console.log({s: this.$refs.carousel.children[0]})
-      console.log('ee')      
-      
     },
     unmounted() {
       if(this.isIntervaled){ clearInterval(this.animation) }
@@ -84,18 +62,15 @@
   .carousel{
     border:2px dashed red;
     display:flex;
-    // justify-content: center;
     justify-content:start;
     align-items: flex-start;
-    // overflow-x: scroll;
     overflow-x: hidden;
+    transition: .5s;
     .slide{
       border:2px dashed blue;
       display: flex;
-      // display: none;
       flex-direction: column;
       min-width:25%;
-      // margin-right: 5vw;
       margin:0 2.5vw;
       picture{
         border:2px dashed yellow;
