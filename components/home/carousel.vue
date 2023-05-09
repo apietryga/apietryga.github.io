@@ -2,7 +2,7 @@
   <div class="carousel" ref="carousel">
 
     <section class="slide" v-for="[index ,slide] of slides.entries()">
-      {{ index }}
+      <!-- {{ index }} -->
       <picture>
         <img 
           :src="'img/' + slide.img" 
@@ -26,6 +26,7 @@
     props: { slides: { required: true, type: Array }},
     data(){
       return{
+        window,
         isIntervaled: false,
       }
     },
@@ -37,8 +38,25 @@
 
           // console.log(this.$refs.carousel.scrollLeft)
           // if(this.$refs.carousel.scrollLeft > 100){
-          if(this.$refs.carousel.scrollLeft > this.$refs.carousel.children[0].offsetWidth ){
+
+            const style = this.$refs.carousel.children[0].currentStyle || this.window.getComputedStyle(this.$refs.carousel.children[0]);
+
+            // console.log("Current Left: " + style.marginLeft);
+            // console.log("Current Rist: " + style.marginRight);
+
+          let w = this.$refs.carousel.children[0].offsetWidth
+          w += style.marginRight.replace("px", "") * 1 
+          w += style.marginLeft.replace("px", "") * 1
+
+          if(this.$refs.carousel.scrollLeft > w ){
             this.$refs.carousel.scrollLeft = 0
+            this.$refs.carousel.append(this.$refs.carousel.children[0])
+            // const style = this.$refs.carousel.children[0].currentStyle || this.window.getComputedStyle(this.$refs.carousel.children[0]);
+
+            // console.log("Current Left: " + style.marginLeft);
+            // console.log("Current Rist: " + style.marginRight);
+
+            console.log({ c: this.$refs.carousel})
             // this.$refs.carousel.append(this.$refs.carousel.children[0])
           }
 
@@ -69,7 +87,8 @@
     // justify-content: center;
     justify-content:start;
     align-items: flex-start;
-    overflow-x: scroll;
+    // overflow-x: scroll;
+    overflow-x: hidden;
     .slide{
       border:2px dashed blue;
       display: flex;
