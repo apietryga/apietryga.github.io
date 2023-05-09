@@ -9,23 +9,45 @@
     </header>
 
     <div class="content">
-      <div class="bgImage"></div>
+      <div class="bgWrapper">
+        <div class="bgImage"></div>
+      </div>
+      <div class="textWrapper">
+        <picture class="overlay">
+          <img :src="'/img/contents/' + $p('uflash', 'img')" 
+            :alt="$p('uflash', 'name')"
+            height="50"
+            width="50"
+          >
+        </picture>
+        <h3>{{ $p('uflash', 'name') }}</h3>
+        <p>{{ $p('uflash', 'desc') }}</p>
+        <NuxtLink data-aos="fade-up" to="/projects/uflash" class="btn small">
+          {{ $t('projects.cta') + " " + $p('uflash', 'name') }}
+        </NuxtLink>
+      </div>
 
-      {{ $p('uflash', 'name') }}
 
-      <NuxtLink data-aos="fade-up" to="/projects/uflash" class="btn small">
-        {{ $t('projects.cta') + " " + $p('uflash', 'name') }}
-      </NuxtLink>
     </div>
 
     <footer>
-      <div class="bgImage"></div>
-      {{ $p('wellton', 'name') }}
-      <NuxtLink data-aos="fade-up" to="/projects/wellton" class="btn small">
-        {{ $t('projects.cta') + " " + $p('wellton', 'name') }}
-      </NuxtLink>
-
-      <!-- XD -->
+      <div class="textWrapper">
+        <picture class="overlay">
+          <img :src="'/img/contents/' + $p('wellton', 'img')" 
+            :alt="$p('wellton', 'name')"
+            height="50"
+            width="50"
+          >
+        </picture>
+        <h3>{{ $p('wellton', 'name') }}</h3>
+        <p>{{ $p('wellton', 'desc') }}</p>
+        <NuxtLink data-aos="fade-up" to="/projects/wellton" class="btn small">
+          {{ $t('projects.cta') + " " + $p('wellton', 'name') }}
+        </NuxtLink>
+      </div>
+      <div class="bgWrapper">
+        <div class="bgImage"></div>
+      </div>
     </footer>
 
   </article>
@@ -34,67 +56,60 @@
 <script></script>
 
 <style lang="scss">
-.bgImage{
-  width:100px;
-        height:100px;
-        border:2px dashed red;
-        background-size: cover;
-}
-
-  #business{
-    border:2px dashed red;
-    display:flex;
-    margin-left:1rem;
-    >*{
-      margin-right:1rem;
-      border:3px solid var(--accent);
-    }
-    >header{
-      // border:2px dashed blue;
-      flex:2;
-      aspect-ratio: 1 / 1;
-    }
-    .content{ 
-      // border:2px dashed yellow;
-      flex:1;
-      .bgImage{
-        background-image: url("@/img/contents/uflash_praca.webp");
-        
-      }
-    }
-    footer{
-      .bgImage{
-        background-image: url("@/img/contents/wellton_visualisation.webp");
-     
-      }
-      // border:2px dashed green;
-      flex:1;
-    }
-    // background: var(--bright-primary);
-    // color:var(--dark-primary);
-    // position:relative;
-    // min-height:40vh;
-    // padding:2rem;
-    // padding-top:var(--navHeaderHeight);
-    // margin-top:2rem;
-    // display:flex;
-    // flex-direction: column;
-    // align-items: center;
-    // h2{
-    //   font-size:3rem;
-    //   line-height: 1em;
-    //   margin-top:2rem;
-    //   text-align:center;
-    // }
-    // > p{
-    //   padding:0 0 1rem 2rem;
-    //   line-height:1.5rem;
-    // }
-    // section{
-    //   padding:0 0 2rem 0;
-    //   a{
-    //     margin-top:0;
-    //   }
-    // }
+.bgWrapper{
+  flex:1;
+  display:flex;
+  justify-content: flex-end;
+  .bgImage{
+    width:100%;
+    height:100px;
+    background-size: cover;
   }
+}
+.textWrapper{
+  padding:1rem;
+  p{
+    line-height: 1rem;
+    margin-bottom:.5rem !important;
+  }
+}
+#business{
+  display:flex;
+  margin-left:1rem;
+  // margin:2rem 0 2rem 1rem;
+  >*{
+    margin-right:1rem;
+    border:3px solid var(--accent);
+    border-radius: 10px;
+  }
+  >header{
+    flex:2;
+    aspect-ratio: 1 / 1;
+  }
+  .content{ 
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    .bgImage{
+      background-image: url("@/img/contents/uflash_praca.webp");
+      // border:2px dashed red;
+      background-position: left;
+      height:80%;
+    }
+  }
+  footer{
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    .bgWrapper{
+      align-items: flex-end;
+      .bgImage{
+        border-radius: 0 0 10px 10px;
+        height:70%;
+        background-image: url("@/img/contents/wellton_visualisation.webp");
+        background-position: center;
+      }
+    }    
+  }
+}
 </style>

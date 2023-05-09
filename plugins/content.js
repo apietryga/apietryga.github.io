@@ -85,7 +85,7 @@ export default defineNuxtPlugin( app => {
         }
       },
       projects: {
-        cta: "Watch ",
+        cta: "See ",
       },
     },
     pl: {

@@ -44,6 +44,7 @@
   .overwrapper{
     background: var(--dark-rocks);
     color: var(--bright-primary);
+    padding-bottom:1rem;
   }
   .headerWrapper{
     width:100%;
