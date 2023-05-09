@@ -1,8 +1,11 @@
 <template>
-  <div class="carousel" ref="carousel" @mouseover="isPaused=true" @mouseleave="isPaused=false">
+  <div class="carousel" ref="carousel" >
 
-    <section class="slide" v-for="[index ,slide] of slides.entries()">
-      <!-- {{ index }} -->
+    <section class="slide" v-for="[index, slide] of slides.entries()" 
+      @mouseover="isPaused=true" @mouseleave="isPaused=false"
+      data-aos="fade-left"
+      :data-aos-delay="100*index"
+    >
       <picture>
         <img 
           :src="'img/' + slide.img" 
@@ -14,7 +17,9 @@
         <p>{{ slide.content }}</p>
       </article>
       <footer>
-        <p>{{ slide.name }}</p>
+        <NuxtLink :to="slide.source" target="_blank" class="btn small">
+          {{ $t('home.teaching.reviews.cta') }}
+        </NuxtLink>
       </footer>
     </section>
 
@@ -36,11 +41,10 @@
         this.isIntervaled = true
         this.animation = setInterval(() => {
           if(this.isPaused){ return }
-          const style = this.$refs.carousel.children[0].currentStyle || this.window.getComputedStyle(this.$refs.carousel.children[0]);
+          const style = this.window.getComputedStyle(this.$refs.carousel.children[0]);
           let w = this.$refs.carousel.children[0].offsetWidth
               w += style.marginRight.replace("px", "") * 1 
               w += style.marginLeft.replace("px", "") * 1
-          // this.$refs.carousel.scrollBy({ left: this.speed, behavior: 'smooth' })
           this.$refs.carousel.scrollBy({ left: w + 1, behavior: 'smooth' })
           if(this.$refs.carousel.scrollLeft > w ){
             this.$refs.carousel.scrollLeft = 0
@@ -60,30 +64,31 @@
 
 <style lang="scss">
   .carousel{
-    border:2px dashed red;
+    align-items: stretch;
     display:flex;
     justify-content:start;
-    align-items: flex-start;
-    overflow-x: hidden;
+    overflow: hidden;
     transition: .5s;
+    margin:3rem 0;
     .slide{
-      border:2px dashed blue;
+      border:5px solid var(--accent);
+      border-radius:10px;
       display: flex;
       flex-direction: column;
       min-width:25%;
       margin:0 2.5vw;
       picture{
-        border:2px dashed yellow;
         height:3rem;
-        img{
-          border:2px dashed blue;
-        }
       }
       article{
         padding:0 1rem;
       }
       footer{
-        text-align: right;
+        align-items: flex-end;
+        display:flex;
+        flex:1;
+        justify-content: center;
+        padding-bottom:1rem;
       }
     }
   }

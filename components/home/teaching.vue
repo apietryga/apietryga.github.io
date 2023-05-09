@@ -1,44 +1,48 @@
 <template>
-  <article id="teaching">
-
-    <header>
-      <h2 class="heroText" data-aos="fade-up" v-html="$t('home.teaching.title')"></h2>
-      <p data-aos="fade-up">{{ $t('home.teaching.description') }}</p>  
-      <NuxtLink data-aos="fade-up" to="/projects" class="btn">{{ $t('home.teaching.cta') }}</NuxtLink>
-    </header>
-
-    <div class="wrapper">
-      <div v-for="[index, project] in ['praktykody', 'kurs-front-end','slaska-akademia-seniora'].entries()"
-        :data-aos-delay="100*index"
-        data-aos="fade-right"
-      >
-        <picture class="overlay">
-          <img :src="'/img/contents/' + $p(project, 'img')" 
-            :alt="'Antoni Pietryga portfolio ' + $p(project, 'name') + ' logo'"
-            width="50"
-            height="50"
-          >
-        </picture>
-        <header>
-          <h3>{{ $p(project, 'name') }}</h3>
-          <p>{{ $p(project, 'desc') }}</p>
-          <NuxtLink :to="'/projects/' + $p(project, 'url')" class="btn small">
-            {{ $t('projects.cta') + " " + $p(project, 'name') }}
-          </NuxtLink>
-        </header>
+  <div>
+    <article id="teaching">
+  
+      <header>
+        <h2 class="heroText" data-aos="fade-up" v-html="$t('home.teaching.title')"></h2>
+        <p data-aos="fade-up">{{ $t('home.teaching.description') }}</p>  
+        <NuxtLink data-aos="fade-up" to="/projects" class="btn">{{ $t('home.teaching.cta') }}</NuxtLink>
+      </header>
+  
+      <div class="wrapper">
+        <div v-for="[index, project] in ['praktykody', 'kurs-front-end','slaska-akademia-seniora'].entries()"
+          :data-aos-delay="100*index"
+          data-aos="fade-right"
+        >
+          <picture class="overlay">
+            <img :src="'/img/contents/' + $p(project, 'img')" 
+              :alt="'Antoni Pietryga portfolio ' + $p(project, 'name') + ' logo'"
+              width="50"
+              height="50"
+            >
+          </picture>
+          <header>
+            <h3>{{ $p(project, 'name') }}</h3>
+            <p>{{ $p(project, 'desc') }}</p>
+            <NuxtLink :to="'/projects/' + $p(project, 'url')" class="btn small">
+              {{ $t('projects.cta') + " " + $p(project, 'name') }}
+            </NuxtLink>
+          </header>
+        </div>
+  
       </div>
-
-    </div>
-
-    <homeCarousel :slides="$t('home.reviews')" />
+  
       
-  </article>
+    </article>
+    
+    <homeCarousel :slides="$t('home.teaching.reviews.list')" />
+
+</div>
 </template>
 
 <script></script>
 
 <style lang="scss">
- #teaching{
+#teaching{
   padding: 0 2rem;
   >header{
     margin:2rem 0 4rem 0;
