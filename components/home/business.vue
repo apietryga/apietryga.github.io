@@ -4,43 +4,71 @@
       <h2 class="heroText" v-html="$t('home.business.title')"></h2>
       <p>{{ $t('home.business.description') }}</p>
       <NuxtLink data-aos="fade-up" to="/projects" class="btn">
-        {{ $t('home.code.cta') }}
+        {{ $t('home.business.cta') }}
       </NuxtLink>
     </header>
 
-    <!-- <div class="photo me"></div> -->
-    <!-- <h2>{{ lang[language].content[12] }}</h2>
-    <p>{{ lang[language].content[13] }}</p> -->
-    <!-- <section class="card__wrapper"> -->
-      <!-- <NuxtLink 
-        v-for="element in getProjectsByNames(recomended.business)" 
-        :to="'/projects/' + element.url" :key="element"
-        class="card"
-      >
-        <header class="card__header">
-          <h3>{{element.name}}</h3>
-          <p>{{element.lang[language].desc}}</p>
-        </header>
-        <picture class="card__picture">
-          <img :src="'/img/contents/' + element.img" :alt="element.name" height="50" width="50">
-        </picture>
-      </NuxtLink> -->
-      <!-- <div></div> -->
-    <!-- </section> -->
-    <!-- <footer> -->
-      <!-- <NuxtLink :to="'/projects?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</NuxtLink> -->
-      <!-- <NuxtLink :to="'/projects?q=' + lang[language].content[15]">{{ lang[language].content[14] }}</NuxtLink> -->
-    <!-- </footer>   -->
+    <div class="content">
+      <div class="bgImage"></div>
+
+      {{ $p('uflash', 'name') }}
+
+      <NuxtLink data-aos="fade-up" to="/projects/uflash" class="btn small">
+        {{ $t('projects.cta') + " " + $p('uflash', 'name') }}
+      </NuxtLink>
+    </div>
+
+    <footer>
+      <div class="bgImage"></div>
+      {{ $p('wellton', 'name') }}
+      <NuxtLink data-aos="fade-up" to="/projects/wellton" class="btn small">
+        {{ $t('projects.cta') + " " + $p('wellton', 'name') }}
+      </NuxtLink>
+
+      <!-- XD -->
+    </footer>
+
   </article>
 </template>
 
 <script></script>
 
 <style lang="scss">
+.bgImage{
+  width:100px;
+        height:100px;
+        border:2px dashed red;
+        background-size: cover;
+}
+
   #business{
     border:2px dashed red;
+    display:flex;
+    margin-left:1rem;
+    >*{
+      margin-right:1rem;
+      border:3px solid var(--accent);
+    }
     >header{
-      border:2px dashed blue;
+      // border:2px dashed blue;
+      flex:2;
+      aspect-ratio: 1 / 1;
+    }
+    .content{ 
+      // border:2px dashed yellow;
+      flex:1;
+      .bgImage{
+        background-image: url("@/img/contents/uflash_praca.webp");
+        
+      }
+    }
+    footer{
+      .bgImage{
+        background-image: url("@/img/contents/wellton_visualisation.webp");
+     
+      }
+      // border:2px dashed green;
+      flex:1;
     }
     // background: var(--bright-primary);
     // color:var(--dark-primary);

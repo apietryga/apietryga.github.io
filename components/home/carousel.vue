@@ -71,7 +71,9 @@
     transition: .5s;
     margin:3rem 0;
     .slide{
-      border:5px solid var(--accent);
+      border:3px solid var(--accent);
+      // box-shadow: 2px 2px 2px var(--accent);
+      // box-shadow: 2px 2px 2px #fff;
       border-radius:10px;
       display: flex;
       flex-direction: column;
