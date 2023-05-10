@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="headerWrapper">  
+    <div class="headerWrapper">
       <homeNewHeader />
     </div>
     <div class="overwrapper">
       <homeCode />
       <homeTeaching />
       <homeBusiness />
-      
     </div>
+    <cursorGradient />
   </div>
 </template>
 
