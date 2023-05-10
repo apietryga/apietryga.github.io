@@ -66,7 +66,7 @@
   .carousel{
     align-items: stretch;
     display:flex;
-    justify-content:start;
+    justify-content:flex-start;
     overflow: hidden;
     transition: .5s;
     margin:3rem 0;
