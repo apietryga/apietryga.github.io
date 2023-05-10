@@ -41,6 +41,7 @@
         this.isIntervaled = true
         this.animation = setInterval(() => {
           if(this.isPaused){ return }
+          if(!this.$refs?.carousel?.children[0]){ return }
           const style = this.window.getComputedStyle(this.$refs.carousel.children[0]);
           let w = this.$refs.carousel.children[0].offsetWidth
               w += style.marginRight.replace("px", "") * 1 

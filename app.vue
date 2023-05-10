@@ -2,7 +2,7 @@
   <div>
     <seo :key="$route.fullPath" />
     <navHeader />
-    <!-- <div class="blob" ref="blob"></div> -->
+    <div class="blob" ref="blob"></div>
     <!-- <NuxtPage :key="$route.fullPath" /> -->
     <NuxtPage />
     <navFooter />
@@ -10,25 +10,26 @@
 </template>
 
 <script>
-// export default{
-//   data(){
-//     return{
-//       window
-//     }
-//   },
-//   mounted() {
+export default{
+  data(){
+    return{
+      window
+    }
+  },
+  mounted() {
     
 //     // var cursor = this.window.document.querySelector('.blob');
 //     var cursor = this.$refs.blob
     
 //     // document.addEventListener('mousemove', function(e){
 //     this.window.document.addEventListener('mousemove', function(e){
-//       var x = e.clientX;
-//       var y = e.clientY;
-//       // cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+//       console.log({ e })
+// //       var x = e.clientX;
+// //       var y = e.clientY;
+// //       // cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
 //     });
-//   },
-// }
+  },
+}
 </script>
 
 <style>
