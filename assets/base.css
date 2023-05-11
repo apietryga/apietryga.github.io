@@ -46,9 +46,6 @@ h1, h2, h3, p{
   position: relative;
   z-index: -1;
 }
-#__nuxt::after{
-  background: transparent;
-}
 #__nuxt > div{
   flex:1;
   min-height: 100vh;

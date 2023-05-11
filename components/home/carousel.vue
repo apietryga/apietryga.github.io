@@ -72,6 +72,7 @@
     transition: .5s;
     margin:3rem 0;
     .slide{
+      // background: red;
       border:3px solid var(--accent);
       // box-shadow: 2px 2px 2px var(--accent);
       // box-shadow: 2px 2px 2px #fff;

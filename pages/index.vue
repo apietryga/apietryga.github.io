@@ -29,24 +29,16 @@
 </script>
 
 <style lang="scss" >
-  // body{
-  // .__nuxt{
-  //   &::after{
-  // #__nuxt::after{
   .indexWrapper::after{
-    box-sizing: border-box;
-    // border:2px dashed blue;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height:100%;
-    top:0;
     background: #000;
-    // border:2px dashed red;
+    box-sizing: border-box;
+    content: '';
+    height:100%;
+    position: absolute;
+    top:0;
+    width: 100%;
     z-index: -2;
-    // }
   }
-
   .heroText{
     font-size: 2rem;
     font-weight: 100;
@@ -59,7 +51,6 @@
     }
   }
   .overwrapper{
-    // background: var(--dark-rocks);
     color: var(--bright-primary);
     padding-bottom:1rem;
   }
@@ -75,16 +66,6 @@
       z-index:-10;
     }
   }
- 
-  
-  // #code,#teaching,#business{
-  //   footer{
-  //     a{
-  //       text-align: center!important;
-  //     }
-  //   }
-  // }
-
   @media (max-width:768px){
     #code .codeprojects{
       >header >p {
