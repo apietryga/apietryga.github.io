@@ -141,7 +141,7 @@
   }
   main.content{ // content in details
     //min-height:calc( 70vh - 275px );
-    background-color: var(--backgroundColor);
+    // background-color: var(--backgroundColor);
     //border:2px dashed red;
     display:flex;
     flex-direction: column;

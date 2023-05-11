@@ -40,9 +40,8 @@
       font-weight:900;
     }
   }
-
   .overwrapper{
-    background: var(--dark-rocks);
+    // background: var(--dark-rocks);
     color: var(--bright-primary);
     padding-bottom:1rem;
   }

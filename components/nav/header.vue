@@ -278,7 +278,7 @@
           flex-direction: column;
           top:100%;
           position:absolute;
-          background-color: var(--backgroundColor);
+          // background-color: var(--backgroundColor);
           right:1rem;
           max-height:60vh;
           width:40vw;

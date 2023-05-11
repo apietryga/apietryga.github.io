@@ -17,7 +17,7 @@
 <style lang="scss">
 .homeHeader{
   align-items: center;
-  background: #000;
+  // background: #000;
   color:#fff;
   display:flex;
   justify-content: center;
