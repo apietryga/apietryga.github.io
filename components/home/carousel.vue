@@ -72,6 +72,13 @@
     transition: .5s;
     margin:3rem 0;
     .slide{
+/* From https://css.glass */
+background: rgba(0, 0, 0, 0.47);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.5px);
+-webkit-backdrop-filter: blur(8.5px);
+      
       // background: red;
       border:3px solid var(--accent);
       // box-shadow: 2px 2px 2px var(--accent);
