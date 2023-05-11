@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="indexWrapper">
     <div class="headerWrapper">
       <homeNewHeader />
     </div>
@@ -28,7 +28,25 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
+  // body{
+  // .__nuxt{
+  //   &::after{
+  // #__nuxt::after{
+  .indexWrapper::after{
+    box-sizing: border-box;
+    // border:2px dashed blue;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top:0;
+    background: #000;
+    // border:2px dashed red;
+    z-index: -2;
+    // }
+  }
+
   .heroText{
     font-size: 2rem;
     font-weight: 100;
