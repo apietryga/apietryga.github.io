@@ -107,22 +107,26 @@
 
 <style lang="scss">
 .outerWrapper{
+  align-items: center;
+  display:flex;
   flex:1;
   height:100%;
-  display:flex;
-  align-items: center;
   .logoWrapper{
-    position:relative;
-    width:100%;
-    height:70%;
     display:flex;
+    height:70%;
     justify-content: center;
     place-items:center;
+    position:relative;
+    width:100%;
     #logo{
-      position:absolute;
-      max-width: 100%;
-      display: flex;
       align-items: center;
+      cursor:grab;
+      display: flex;
+      max-width: 100%;
+      position:absolute;
+      &:active{
+        cursor:grabbing;
+      }
       canvas{
         height: fit-content !important;
         max-width:100%;
