@@ -81,6 +81,7 @@
     margin-right:1rem;
     border:3px solid var(--accent);
     border-radius: 10px;
+    
   }
   >header{
     flex:2;
@@ -101,12 +102,19 @@
     flex:1;
     display:flex;
     flex-direction: column;
+    background-image: url("@/img/contents/wellton_visualisation.webp");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: #000;
+
     .bgWrapper{
+      border:2px dashed red;
       align-items: flex-end;
       .bgImage{
         border-radius: 0 0 10px 10px;
         height:70%;
-        background-image: url("@/img/contents/wellton_visualisation.webp");
+        // background-image: url("@/img/contents/wellton_visualisation.webp");
         background-position: center;
       }
     }    
