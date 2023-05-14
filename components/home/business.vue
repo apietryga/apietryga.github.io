@@ -10,7 +10,7 @@
 
     <div class="content">
       <div class="bgWrapper">
-        <div class="bgImage"></div>
+        <!-- <div class="bgImage"></div> -->
       </div>
       <div class="textWrapper">
         <picture class="overlay">
@@ -91,12 +91,17 @@
     flex:1;
     display:flex;
     flex-direction: column;
-    .bgImage{
-      background-image: url("@/img/contents/uflash_praca.webp");
-      // border:2px dashed red;
-      background-position: left;
-      height:80%;
-    }
+    background-image: url("@/img/contents/uflash_praca.webp");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: #000;
+    // .bgImage{
+    //   background-image: url("@/img/contents/uflash_praca.webp");
+    //   // border:2px dashed red;
+    //   background-position: left;
+    //   height:80%;
+    // }
   }
   footer{
     flex:1;
@@ -109,14 +114,13 @@
     background-color: #000;
 
     .bgWrapper{
-      border:2px dashed red;
       align-items: flex-end;
-      .bgImage{
-        border-radius: 0 0 10px 10px;
-        height:70%;
-        // background-image: url("@/img/contents/wellton_visualisation.webp");
-        background-position: center;
-      }
+      // .bgImage{
+      //   // border-radius: 0 0 10px 10px;
+      //   // height:70%;
+      //   // background-image: url("@/img/contents/wellton_visualisation.webp");
+      //   // background-position: center;
+      // }
     }    
   }
 }
