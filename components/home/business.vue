@@ -1,6 +1,6 @@
 <template>
   <article id="business">
-    <header>
+    <header data-aos="fade-right">
       <h2 class="heroText" v-html="$t('home.business.title')"></h2>
       <p>{{ $t('home.business.description') }}</p>
       <NuxtLink data-aos="fade-up" to="/projects" class="btn">
@@ -8,7 +8,7 @@
       </NuxtLink>
     </header>
 
-    <div class="content">
+    <div class="content" data-aos="fade-right" :data-aos-delay="100">
       <div class="bgWrapper">
         <!-- <div class="bgImage"></div> -->
       </div>
@@ -30,7 +30,7 @@
 
     </div>
 
-    <footer>
+    <footer data-aos="fade-right" :data-aos-delay="200">
       <div class="textWrapper">
         <picture class="overlay">
           <img :src="'/img/contents/' + $p('wellton', 'img')" 

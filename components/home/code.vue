@@ -82,8 +82,11 @@
               margin:.5rem 0;
             }
             p{
-              padding-left:2rem;
+              // padding-left:2rem;
+              padding-left:40%;
               text-align: right;
+              // max-width: 50%;
+              // paddi
             }
           }
         }
