@@ -81,11 +81,19 @@
     margin-right:1rem;
     border:3px solid var(--accent);
     border-radius: 10px;
-    
+    background-color: #000;
+    p{
+      max-width: 50%;
+    }
   }
   >header{
     flex:2;
-    aspect-ratio: 1 / 1;
+    // aspect-ratio: 1 / 1;
+    padding: 2rem;
+    p{
+      // max-width: 500px;
+      margin-bottom: 1.2rem;
+    }
   }
   .content{ 
     flex:1;
@@ -95,7 +103,7 @@
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: top;
-    background-color: #000;
+    // background-color: #000;
     // .bgImage{
     //   background-image: url("@/img/contents/uflash_praca.webp");
     //   // border:2px dashed red;
@@ -111,7 +119,7 @@
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: bottom;
-    background-color: #000;
+    // background-color: #000;
 
     .bgWrapper{
       align-items: flex-end;
