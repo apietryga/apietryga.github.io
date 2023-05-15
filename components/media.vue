@@ -1,7 +1,6 @@
 <template>
 
   <a v-if="url?.type == 'fbgroup'" :href="url?.href" target="_blank" class="fbgroup">
-    <!-- <img :src="url?.img" :alt="url?.name" /> -->
     <iconCustom type="facebook" />
   </a>
 
@@ -176,39 +175,16 @@
 
 <style lang="scss">
   .fbgroup{
-    // border:2px dashed red;
     position:relative;
     a{
-      // height:100%;
-      // height: 5rem;
-      // width: 5rem;
       display:flex;
-      // border:2px dashed blue;
       border-radius: 50%;
       svg{
         height: 5rem;
         width: 5rem;
       }
     }
-    // &:before{
-    //   content:"";
-    //   position:absolute;
-    //   width:3rem;
-    //   height:3rem;
-    //   left:-.5rem;
-    //   top:-.5rem;
-    //   border-radius:25px;
-    //   background-size:100%;
-    //   background-repeat:no-repeat;
-    //   background-position: center;
-    //   background-image:
-    //   // url("/img/page/contact/facebook.svg"),
-    //   linear-gradient(#18AAFD,#0066E2);
-    // }
   }
-  //.fbpost{
-    //background-color:rgba(255, 255, 255, 0.63);
-  //}
   .ytvideo{
     background-color:#000;
   }

@@ -7,7 +7,7 @@
         "request": "launch",
         "cwd": "${workspaceFolder}",
         "runtimeExecutable": "npm",
-        "console": "integratedTerminal",
+        "console": "internalConsole",
         "runtimeArgs": [
           "run", "dev"
         ],

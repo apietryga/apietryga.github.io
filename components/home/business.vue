@@ -10,7 +10,6 @@
 
     <div class="content" data-aos="fade-right" :data-aos-delay="100">
       <div class="bgWrapper">
-        <!-- <div class="bgImage"></div> -->
       </div>
       <div class="textWrapper">
         <picture class="overlay">
@@ -26,8 +25,6 @@
           {{ $t('projects.cta') + " " + $p('uflash', 'name') }}
         </NuxtLink>
       </div>
-
-
     </div>
 
     <footer data-aos="fade-right" :data-aos-delay="200">
@@ -76,7 +73,6 @@
 #business{
   display:flex;
   margin-left:1rem;
-  // margin:2rem 0 2rem 1rem;
   >*{
     margin-right:1rem;
     border:3px solid var(--accent);
@@ -88,10 +84,8 @@
   }
   >header{
     flex:2;
-    // aspect-ratio: 1 / 1;
     padding: 2rem;
     p{
-      // max-width: 500px;
       margin-bottom: 1.2rem;
     }
   }
@@ -99,36 +93,21 @@
     flex:1;
     display:flex;
     flex-direction: column;
-    background-image: url("@/img/contents/uflash_praca.webp");
+    background-image: url("/img/contents/uflash_praca.webp");
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: top;
-    // background-color: #000;
-    // .bgImage{
-    //   background-image: url("@/img/contents/uflash_praca.webp");
-    //   // border:2px dashed red;
-    //   background-position: left;
-    //   height:80%;
-    // }
   }
   footer{
     flex:1;
     display:flex;
     flex-direction: column;
-    background-image: url("@/img/contents/wellton_visualisation.webp");
+    background-image: url("/img/contents/wellton_visualisation.webp");
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: bottom;
-    // background-color: #000;
-
     .bgWrapper{
       align-items: flex-end;
-      // .bgImage{
-      //   // border-radius: 0 0 10px 10px;
-      //   // height:70%;
-      //   // background-image: url("@/img/contents/wellton_visualisation.webp");
-      //   // background-position: center;
-      // }
     }    
   }
 }
