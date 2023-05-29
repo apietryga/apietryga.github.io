@@ -2,7 +2,7 @@
   <main class="list">
     <nav>
       <template v-if="projects.length > 0">          
-        <section v-for="[index, item] in projects.entries()" :key="item"
+        <section v-for="( item, index ) in filteredProjects" :key="item"
           data-aos="fade-up" :data-aos-delay="index * 10">
           <div class="wrapper">
             <NuxtLink :to="'/projects/' + item.url">
@@ -37,34 +37,35 @@
   export default {
     data(){
       const { index, language, projects } = this.$appData
-      if(this.$route.query?.q){
-        return { ...index, language, projects: this.searchProjects( projects, language ) }
+      return { 
+        ...index, 
+        language, 
+        projects, 
+        filteredProjects: [],
       }
-      return { ...index, language, projects }
     },
     methods: {
-      searchProjects( allProjects, lang ){
-        const q = this.$route.query.q
+      searchProjects(){
+        const lang = 'en'
+        const q = this.$route.query?.q?.toLowerCase()
+        if( !this.projects || !q ){ return this.filteredProjects = this.projects }
 
         // FILTERING
-        let filteredProjects = [];
-        filteredProjects = allProjects.filter( project => {
-          if( project.url.toLowerCase().includes(q.toLowerCase())
-          ||  project.name.toLowerCase().includes(q.toLowerCase()) 
-          ||  project.lang[lang].desc.toLowerCase().includes(q.toLowerCase())
-          ||  this.arrToLowercase(project.lang[lang].category).includes(q.toLowerCase())
+        const filteredProjects = this.projects.filter( project => {
+          if( project.url.toLowerCase().includes(q)
+          ||  project.name.toLowerCase().includes(q) 
+          ||  project.lang[lang].desc.toLowerCase().includes(q)
+          ||  this.arrToLowercase(project.lang[lang].category).includes(q)
           ){ return true }
           for(const content of project.lang[lang].content ){
             if( content.toLowerCase().includes(q.toLowerCase()) ){ return true }
           }
           return false
         })
+        console.log({ q, filteredProjects })
 
         // SORTING
-
-
-
-        return filteredProjects
+        this.filteredProjects = filteredProjects
       },
       arrToLowercase(arr){
         const lower = [];
@@ -72,6 +73,14 @@
           lower.push(element.toLowerCase());
         }
         return lower
+      }
+    },
+    mounted() {
+      this.searchProjects()
+    },
+    watch: {
+      '$route.query'() {
+        this.searchProjects()
       }
     },
   }
@@ -104,7 +113,6 @@
         display:flex;
         justify-content: space-between;
         a{
-          // border:2px dashed red;
           display:flex;
           align-items: center;
           header{

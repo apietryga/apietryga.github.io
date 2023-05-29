@@ -6,7 +6,7 @@
         <p data-aos="fade-up">{{ $t('home.code.description') }}</p>
       </header>
       
-      <NuxtLink data-aos="fade-up" to="/projects" class="btn">
+      <NuxtLink data-aos="fade-up" to="/projects?q=code" class="btn">
         {{ $t('home.code.cta') }}
       </NuxtLink>
 
@@ -53,6 +53,7 @@
     flex-direction: row-reverse;
     align-items: center;
     margin-bottom:30vh;
+    flex-wrap: wrap;
     .codeprojects{
       flex:1;
       width:100%;
@@ -83,11 +84,7 @@
               margin:.5rem 0;
             }
             p{
-              // padding-left:2rem;
-              padding-left:40%;
               text-align: right;
-              // max-width: 50%;
-              // paddi
             }
           }
         }
@@ -102,7 +99,6 @@
         display:flex;
         flex-wrap: wrap;
         list-style-type: none;
-        max-width: 60vw;
         padding-right:2rem;
         justify-content: center;
         @mixin text-contrast($n) {

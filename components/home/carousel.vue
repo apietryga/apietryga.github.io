@@ -1,6 +1,5 @@
 <template>
   <div class="carousel" ref="carousel" >
-
     <section class="slide" v-for="[index, slide] of slides.entries()" 
       @mouseover="isPaused=true" @mouseleave="isPaused=false"
       data-aos="fade-left"
@@ -22,7 +21,6 @@
         </NuxtLink>
       </footer>
     </section>
-
   </div>
 </template>
 
@@ -101,6 +99,12 @@
         justify-content: center;
         padding-bottom:1rem;
       }
+    }
+  }
+
+  @media (max-width:768px){
+    .carousel .slide{
+      min-width:calc(100vw - 3rem);
     }
   }
 </style>

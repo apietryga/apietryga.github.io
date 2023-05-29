@@ -19,7 +19,7 @@
         </NuxtLink>
       </p>
       <p>
-        <NuxtLink to="/projects?q=code">
+        <NuxtLink :to="{name: 'projects', query: {q: 'code'}}">
           <span>Code</span> 
         </NuxtLink>
         <NuxtLink to="/projects?q=teach">
@@ -57,12 +57,9 @@ footer{
   bottom:0;
   width:100%;
   nav{
-    // display:grid;
     display:flex;
     height:100%;
-    // justify-content: flex-end;
     justify-content: flex-start;
-    // grid-template-columns: 1fr 1fr 1fr;
     width:100%;
     font-family: var(--font-secondary);
     p{
@@ -72,12 +69,10 @@ footer{
       padding:1rem;
       font-size:1rem;
       &:nth-child(2){
-        // align-items: flex-end;
         justify-content: flex-end;
       }
       a{
         font-size:inherit;
-        // padding:.25rem 0;
       }
     }
     .cp{

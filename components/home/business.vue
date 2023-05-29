@@ -3,7 +3,7 @@
     <header data-aos="fade-right">
       <h2 class="heroText" v-html="$t('home.business.title')"></h2>
       <p>{{ $t('home.business.description') }}</p>
-      <NuxtLink data-aos="fade-up" to="/projects" class="btn">
+      <NuxtLink data-aos="fade-up" to="/projects?q=business" class="btn">
         {{ $t('home.business.cta') }}
       </NuxtLink>
     </header>
@@ -72,10 +72,11 @@
 }
 #business{
   display:flex;
-  margin-left:1rem;
-  margin:30vh 1rem;
+  flex-wrap: wrap;
+  margin:5vh 1rem;
   >*{
     margin-right:1rem;
+    margin-top:1rem;
     border:3px solid var(--accent);
     border-radius: 10px;
     background-color: #000;
@@ -110,6 +111,11 @@
     .bgWrapper{
       align-items: flex-end;
     }    
+  }
+}
+@media (max-width:768px){
+  #business{
+    flex-direction: column;
   }
 }
 </style>
