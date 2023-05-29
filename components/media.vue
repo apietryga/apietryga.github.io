@@ -247,12 +247,19 @@
           margin:0;
           text-align: left;
         }
-        img{
-          width:6rem;
-          height:6rem;
-          max-width: unset;
+        picture{
+          // border: 2px dashed red;
+          background: var(--accent);
+          border-radius: .5rem;
+          padding:.5rem;
           margin:.5rem;
-
+          img{
+            width:3rem;
+            height:3rem;
+            max-width: unset;
+            margin:.5rem;
+  
+          }
         }
         p{
           text-align: left;
@@ -303,12 +310,10 @@
       justify-content: center;
     }
   }
-
   section{
     display:flex;
     justify-content: center;
   }
-
   img{
     max-width: 50vw;
     max-height:50vh;

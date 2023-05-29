@@ -7,7 +7,7 @@
         </picture>
         <div class="title">
           <h1>{{ name }}</h1>
-          <h2>{{ lang[language].desc }}</h2>
+          <h2>{{ desc }}</h2>
         </div>
       </div>
     </header>
@@ -27,7 +27,7 @@
           </picture>
           <div class="title">
             <h4>{{ butt.name }}</h4>
-            <p>{{ butt.lang[language].desc }}</p>
+            <p>{{ butt.desc }}</p>
           </div>
         </NuxtLink>
       </div>
@@ -38,35 +38,29 @@
 <script>
   export default {
     data(){
-      const { projects, language } = this.$appData
+      const projects = this.$t('projects')
       const projectIndex = projects.findIndex( project => project.url == this.$route.params.name[0])
+      console.log(projects[projectIndex])
       return {
         ...projects[projectIndex],
         projectIndex,
         projects,
-        language,
       }
     },
     methods: {
-      getContent(lang = 'en'){
+      getContent(){
         const content = [];
-        const fieldsLength = Math.max(this.lang[lang].content?.length || 0, this.media?.length || 0);
+        const fieldsLength = Math.max(this.content?.length || 0, this.media?.length || 0);
         for(let i = 0; i <= fieldsLength - 1; i++){
-          content.push({ header: this.lang?.[lang]?.content[i], name: this.name })
+          content.push({ header: this.content[i], name: this.name })
           content.push({ media: this.media?.[i], name: this.name })
         }
         return content
       },
-      getPrevNext(lang){
+      getPrevNext(){
         return [ 
-          {
-            ...this.projects[this.projectIndex - 1],
-            languages: { pl: "Poprzedni", en: "Prev" }
-          },
-          {
-            ...this.projects[this.projectIndex + 1],
-            languages: { pl: "Następny", en: "Next" }
-          },
+          { ...this.projects[this.projectIndex - 1] },
+          { ...this.projects[this.projectIndex + 1] },
         ]
       },
     },
@@ -74,22 +68,21 @@
 </script>
 
 <style lang="scss">
-  .content ul {
-    // border:2px dashed red;
-    text-align: left;
-  }
-  .content p {
-    // border:2px dashed blue;
-    margin: 0;
-    width:100%;
-    p{
-      margin:0;
+  .content{
+    ul {
+      text-align: left;
+    }
+    p {
+      margin: 0;
       width:100%;
+      p{
+        margin:0;
+        width:100%;
+      }
     }
   }
-.details{
+  .details{
     position:relative;
-    // margin-top:var(--navHeaderHeight);
     .background{
       position:absolute;
       width:100%;
@@ -102,16 +95,18 @@
     background-position:center;
     display:flex;
     justify-content: flex-start;
-    // margin-top: var(--navHeaderHeight);
     padding:1rem;
     width:100%;
     picture{
       align-items: center;
+      background: var(--accent);
+      border-radius: .5rem;
       display: flex;
-      width:5rem;
-      height:5rem;
+      padding:.5rem;
+      margin:.5rem;
       img{
-        height:5rem;
+        width:4rem;
+        height:4rem;
         max-width: unset;
       }
     }
@@ -121,7 +116,6 @@
       justify-content: flex-start;
       margin:.5rem;
       p{
-        //border:2px dashed red;
         text-align: left;
       }
       h1{
@@ -140,25 +134,14 @@
     }
   }
   main.content{ // content in details
-    //min-height:calc( 70vh - 275px );
-    // background-color: var(--backgroundColor);
-    //border:2px dashed red;
     display:flex;
     flex-direction: column;
-    //flex-wrap: wrap;
-    
-
-    //padding:.5rem 1rem; 
     padding:1rem;
-
     section{
-      // text-align: left;
-      // text-align: left;
       display:flex;
       align-items: center;
       flex-direction: column;
       margin:0 0 2rem 0;
-      //margin:2rem 0;
       max-width:100%;
       flex:1;
       header,article{
@@ -175,62 +158,6 @@
         padding:1.5rem 0;
       }
     }
-    .prevNextWrapper{
-      align-items: center;
-      background:var(--dark-primary);
-      display:flex;
-      gap:1rem;
-      margin-top:0 1rem;
-      // border:2px dashed blue;
-      > div{
-        flex:1;
-        // border:2px dashed red;
-        > a{
-          align-items: center;
-          // background:lighten(var(--backgroundColor), 5%);
-          background: hsl(var(--backgroundColor), 5% );
-          border:.2rem solid var(--dark-primary);
-          display:flex;
-          flex-direction: column;    
-          padding-bottom:1.5rem;
-          position:relative;
-          img{
-            height:6rem;
-            width:6rem;
-          }
-          p{
-            padding:0 1rem;
-            text-align: left;
-            &:nth-child(1){
-              font-size: 1.2rem;
-              font-weight: bold;
-              position:absolute;
-              top:-2rem;
-            }
-          }
-        }
-        > p{
-          flex:1;
-          display:flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          padding:1rem;
-          background-color: var(--dark-primary);
-          color:var(--backgroundColor);
-          a{
-            line-height: 1.5rem;
-            padding:.5rem;
-          }
-        }
-      }
-      @media(max-width: 510px){
-        flex-direction: column;
-        >div:nth-child(1){
-          margin-bottom:2.5rem;
-        }
-      }
-    }
     @media (min-width : 720px){
       &.content{
         display:grid;
@@ -240,8 +167,6 @@
         margin-bottom:2rem
       }
       section{
-        //max-width:50%;
-        //padding-right: 10rem;
         display:flex;
         align-items: center;
         padding:1rem 1.5rem;
@@ -249,22 +174,16 @@
         &:nth-child(1){
           align-items: flex-start;
           justify-content: flex-start;
-
         }
         &:nth-child(odd){
           justify-content: flex-end;
           display:flex;
           text-align:right;
-        
         }
         &:nth-child(even){
-          //flex-direction: row-reverse;
           justify-content: flex-start;
         }  
         flex-direction: row;
-        // p{
-        //   max-width:50%;
-        // }
         header{
           padding:2rem;
         }
