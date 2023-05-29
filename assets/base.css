@@ -5,7 +5,9 @@
   --font-primary-color:#eee;
   
   --link-color:#67a4e8;
-  --dark-rocks:#000000;
+  
+  --dark:#000;
+  --light:#fff;
   
   --dark-primary:#111;
   --bright-primary:#eee;
@@ -22,7 +24,8 @@
 
   --clickedColor: rgba(0, 0, 0, 0.2);
   --backgroundColor: rgb(214, 214, 214);
-  --fontColor:rgba(31, 29, 29, 0.8); 
+  /* --fontColor:rgba(31, 29, 29, 0.8);  */
+  --fontColor:rgba(255, 255, 255, 0.8); 
 
   --overlay-color: rgba(157, 179, 157, 0.712);
 }
@@ -57,6 +60,9 @@ main{
 }
 body{
   /* background-color:var(--backgroundColor); */
+  background:var(--dark);
+  /* color:var(--light); */
+
   font-family: var(--font-family);
   margin:0;
   letter-spacing: 0.2px;

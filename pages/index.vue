@@ -29,16 +29,17 @@
 </script>
 
 <style lang="scss" >
-  .indexWrapper::after{
-    background: #000;
-    box-sizing: border-box;
-    content: '';
-    height:100%;
-    position: absolute;
-    top:0;
-    width: 100%;
-    z-index: -2;
-  }
+  // .indexWrapper::after{
+  //   // background: #000;
+  //   background: var(--dark-rocks);
+  //   box-sizing: border-box;
+  //   content: '';
+  //   height:100%;
+  //   position: absolute;
+  //   top:0;
+  //   width: 100%;
+  //   z-index: -2;
+  // }
   .heroText{
     font-size: 2rem;
     font-weight: 100;
