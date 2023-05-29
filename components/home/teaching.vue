@@ -24,7 +24,7 @@
             <h3>{{ $p(project, 'name') }}</h3>
             <p>{{ $p(project, 'desc') }}</p>
             <NuxtLink :to="'/projects/' + $p(project, 'url')" class="btn small">
-              {{ $t('projects.cta') + " " + $p(project, 'name') }}
+              {{ $t('home.projects.cta') + " " + $p(project, 'name') }}
             </NuxtLink>
           </header>
         </div>

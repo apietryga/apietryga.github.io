@@ -22,7 +22,7 @@
         <h3>{{ $p('uflash', 'name') }}</h3>
         <p>{{ $p('uflash', 'desc') }}</p>
         <NuxtLink data-aos="fade-up" to="/projects/uflash" class="btn small">
-          {{ $t('projects.cta') + " " + $p('uflash', 'name') }}
+          {{ $t('home.projects.cta') + " " + $p('uflash', 'name') }}
         </NuxtLink>
       </div>
     </div>
@@ -39,7 +39,7 @@
         <h3>{{ $p('wellton', 'name') }}</h3>
         <p>{{ $p('wellton', 'desc') }}</p>
         <NuxtLink data-aos="fade-up" to="/projects/wellton" class="btn small">
-          {{ $t('projects.cta') + " " + $p('wellton', 'name') }}
+          {{ $t('home.projects.cta') + " " + $p('wellton', 'name') }}
         </NuxtLink>
       </div>
       <div class="bgWrapper">
