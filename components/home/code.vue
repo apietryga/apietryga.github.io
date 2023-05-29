@@ -52,6 +52,7 @@
     display:flex;
     flex-direction: row-reverse;
     align-items: center;
+    margin-bottom:30vh;
     .codeprojects{
       flex:1;
       width:100%;

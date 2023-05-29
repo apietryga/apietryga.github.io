@@ -73,6 +73,7 @@
 #business{
   display:flex;
   margin-left:1rem;
+  margin:30vh 1rem;
   >*{
     margin-right:1rem;
     border:3px solid var(--accent);

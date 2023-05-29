@@ -65,9 +65,5 @@
       }
     }
   }
-  .reviews{
-    border:2px dashed blue;
-
-  }
 }
 </style>

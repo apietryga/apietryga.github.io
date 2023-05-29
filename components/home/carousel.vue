@@ -87,9 +87,12 @@
       padding:1rem;
       picture{
         height:3rem;
+        img{
+          max-width: 50%;
+        }
       }
       article{
-        padding:0 1rem;
+        padding:1rem;
       }
       footer{
         align-items: flex-end;
