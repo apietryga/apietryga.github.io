@@ -22,8 +22,8 @@
         <NuxtLink :to="{name: 'projects', query: {q: 'code'}}">
           <span>Code</span> 
         </NuxtLink>
-        <NuxtLink to="/projects?q=teach">
-          <span>Teach</span> 
+        <NuxtLink to="/projects?q=teaching">
+          <span>Teaching</span> 
         </NuxtLink>
         <NuxtLink to="/projects?q=business">
           <span>Business</span> 

@@ -2,8 +2,8 @@
   <main class="list">
     <nav>
       <template v-if="projects.length > 0">          
-        <section v-for="( item, index ) in filteredProjects" :key="item"
-          data-aos="fade-up" :data-aos-delay="index * 10">
+        <!-- data-aos="fade-up" :data-aos-delay="index * 10"> -->
+        <section v-for="item in filteredProjects" :key="item" data-aos="fade-up">
           <div class="wrapper">
             <NuxtLink :to="'/projects/' + item.url">
               <article>
@@ -14,7 +14,8 @@
                 <h2>
                   {{ item.name }}
                 </h2>
-                <p>{{ item.lang[language].desc }}</p>
+                <!-- <p>{{ item.lang[language].desc }}</p> -->
+                <p>{{ item.desc }}</p>
               </header>
             </NuxtLink>
           </div>
@@ -36,17 +37,20 @@
 <script>
   export default {
     data(){
-      const { index, language, projects } = this.$appData
+      // const { index, language, projects } = this.$appData
+      // const { index, language } = this.$appData
+      const projects = this.$t('projects')
+      // console.log({ index, language, projects })
       return { 
-        ...index, 
-        language, 
+        // ...index, 
+        // language, 
         projects, 
         filteredProjects: [],
       }
     },
     methods: {
       searchProjects(){
-        const lang = 'en'
+        // const lang = 'en'
         const q = this.$route.query?.q?.toLowerCase()
         if( !this.projects || !q ){ return this.filteredProjects = this.projects }
 
@@ -54,11 +58,16 @@
         const filteredProjects = this.projects.filter( project => {
           if( project.url.toLowerCase().includes(q)
           ||  project.name.toLowerCase().includes(q) 
-          ||  project.lang[lang].desc.toLowerCase().includes(q)
-          ||  this.arrToLowercase(project.lang[lang].category).includes(q)
+          // ||  project.lang[lang].desc.toLowerCase().includes(q)
+          // ||  this.arrToLowercase(project.lang[lang].category).includes(q)
+          ||  project.desc.toLowerCase().includes(q)
+          // ||  this.arrToLowercase(project.category).includes(q)
+          ||  project.category.map(i => i.toLowerCase()).includes(q)
           ){ return true }
-          for(const content of project.lang[lang].content ){
-            if( content.toLowerCase().includes(q.toLowerCase()) ){ return true }
+          // for(const content of project.lang[lang].content ){
+          for(const content of project.content ){
+            // if( content.toLowerCase().includes(q.toLowerCase()) ){ return true }
+            if( content.toLowerCase().includes(q) ){ return true }
           }
           return false
         })
@@ -67,13 +76,16 @@
         // SORTING
         this.filteredProjects = filteredProjects
       },
-      arrToLowercase(arr){
-        const lower = [];
-        for (const element of arr) {
-          lower.push(element.toLowerCase());
-        }
-        return lower
-      }
+      // arrToLowercase(arr){
+      //   // console.log({arr})
+      //   // const lower = [];
+      //   // for (const element of arr) {
+      //   //   lower.push(element.toLowerCase());
+      //   // }
+      //   // console.log({arr, lower})
+      //   // return lower
+      //   return arr.map(i => i.toLowerCase())
+      // }
     },
     mounted() {
       this.searchProjects()
@@ -101,7 +113,8 @@
   }
   nav{
     position:relative;
-    margin:0 auto;
+    // margin:0 auto;
+    margin-left: 3rem;;
     display:flex;
     flex-direction: column;
     section{
