@@ -6,13 +6,13 @@
       </p>
       <p>
         <NuxtLink to="/">
-          <span>{{ pageBuild[language].nav.home }}</span>
+          <span>{{ $t('nav.home') }}</span>
         </NuxtLink>
         <NuxtLink to="/projects">
-          <span>{{ pageBuild[language].nav.projects }}</span>
+          <span>{{ $t('nav.projects') }}</span>
         </NuxtLink>
         <NuxtLink to="/contact">
-          <span>{{ pageBuild[language].nav.contact }}</span> 
+          <span>{{ $t('nav.contact') }}</span> 
         </NuxtLink>
         <NuxtLink :to="'/cvs/2023_03_CV_en.pdf'" target="_blank">
           Curriculum Vitae
@@ -36,13 +36,7 @@
   </footer>
 </template>
 
-<script>
-  export default {
-    data(){
-      return this.$appData
-    },
-  }
-</script>
+<script></script>
 
 <style lang="scss" scoped>
 footer{

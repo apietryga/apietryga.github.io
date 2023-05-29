@@ -83,7 +83,6 @@
   position:relative;
   justify-content:flex-start;
   width:100%;
-  // $tableBackground:var(--dark-primary);
   h1{
     margin:1rem 0 .2rem .5rem;
   }
@@ -93,7 +92,7 @@
     display:flex;
     flex-direction: column;
     section{
-      border-bottom:.1rem solid rgba(0, 0, 0, 0.288);
+      border-bottom:.1rem solid var(--fontColor);
       display:flex;
       flex-direction: column;
       padding:1rem;
@@ -124,7 +123,6 @@
               background: var(--accent);
               padding:10px;
               img{
-                // border:2px dashed red;
                 height:80px;
                 width:80px;
               }

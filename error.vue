@@ -2,19 +2,12 @@
   <navHeader />
   <main class='div404'>
     <h2>404</h2>
-    <p v-html="lang[language].desc"></p>
+    <p v-html="$t('error.desc')"></p>
   </main>
   <navFooter />
 </template>
 
-<script>
-  export default {
-    data(){
-      const { p404, language } = this.$appData
-      return { ...p404, language }
-    },
-  }
-</script>
+<script></script>
 
 <style lang="scss">
   .div404{
@@ -29,7 +22,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    h2,p{
+    > * {
       background-color:rgb(3, 3, 3);
       padding:.5rem 2rem;
     }
@@ -38,14 +31,6 @@
     }
     p{
       border-radius:2rem;
-     
-    }
-    a{
-      display:inline;
-    }
-    img{
-      max-height: 100%;
-      position:absolute;
     }
   }
 </style>

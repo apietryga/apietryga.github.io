@@ -70,7 +70,6 @@
   export default {
     data(){ 
       return {
-        // ...this.$appData,
         toggler: false,
       } 
     },

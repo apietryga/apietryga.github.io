@@ -1,7 +1,7 @@
 <template>
   <div class="indexWrapper">
     <div class="headerWrapper">
-      <homeNewHeader />
+      <homeHeader />
     </div>
     <div class="overwrapper">
       <homeCode />
@@ -14,14 +14,10 @@
 
 <script>
   export default {
-    data(){
-      const { index, language, projects } = this.$appData
-      return { ...index, language, projects }
-    },
     methods: {
       getProjectsByNames( names ){
-        return names.map(( name ) => {
-          return this.projects.filter( project => project.name == name )[0]
+        return names.map( name => {
+          return this.$t('projects').filter( project => project.name == name )[0]
         })
       },
     },
@@ -29,17 +25,6 @@
 </script>
 
 <style lang="scss" >
-  // .indexWrapper::after{
-  //   // background: #000;
-  //   background: var(--dark-rocks);
-  //   box-sizing: border-box;
-  //   content: '';
-  //   height:100%;
-  //   position: absolute;
-  //   top:0;
-  //   width: 100%;
-  //   z-index: -2;
-  // }
   .heroText{
     font-size: 2rem;
     font-weight: 100;

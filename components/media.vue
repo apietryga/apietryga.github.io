@@ -21,7 +21,7 @@
         <a :href="'/projects/' + el.url" class="externalJob">
           <img :src="'/img/contents/' + el.img" :alt="el?.name + ' Logo'" />
           <h3>{{ el?.name }}</h3>
-          <p>{{ el.lang?.[language].desc }}</p>
+          <p>{{ el?.desc }}</p>
         </a>
       </template>
     </template>
@@ -125,10 +125,9 @@
       }
     },
     data(){
-      const { language, projects } = this.$appData
+      const projects = this.$t('projects')
       return { 
         url: this.props.media,
-        language,
         projects,
       }
     },

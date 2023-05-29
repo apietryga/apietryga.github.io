@@ -826,4 +826,11 @@ export default {
       ],
     },
   ],
+  error:{
+    desc: /*html*/`
+    <p> This is not the page you wanted <br /> 
+      Better check
+      <a href='/projects'><b>projects</b></a> 😎
+    </p>`,
+  }
 }
