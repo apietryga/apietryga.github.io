@@ -29,7 +29,8 @@
     props: { slides: { required: true, type: Array }},
     data(){
       return{
-        window,
+        // window,
+        window: typeof window != 'undefined' ? window : null,
         isIntervaled: false,
         isPaused: false,
       }
@@ -38,7 +39,7 @@
       animationStart(){
         this.isIntervaled = true
         this.animation = setInterval(() => {
-          if(this.isPaused){ return }
+          if(this.isPaused || !this.window){ return }
           if(!this.$refs?.carousel?.children[0]){ return }
           const style = this.window.getComputedStyle(this.$refs.carousel.children[0]);
           let w = this.$refs.carousel.children[0].offsetWidth

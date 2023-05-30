@@ -1,6 +1,10 @@
 export default defineNuxtConfig({
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    }
   },
   css: [ "@/assets/base.css", "@/assets/animations.css" ],
   experimental: { 
@@ -15,6 +19,6 @@ export default defineNuxtConfig({
     }
   },
   transpile: [ "three" ],
-  ssr: false,
+  // ssr: false,
   purgeCSS: { whitelist: ["aos-init", "aos-animate", "data-aos-delay", "data-aos-duration", "fade-up", "zoom-in"] }
 })

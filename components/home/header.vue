@@ -80,10 +80,4 @@
 }
 </style>
 
-<script> 
-export default{
-  data(){
-    return{ window }
-  }
-} 
-</script>
+<script> </script>
