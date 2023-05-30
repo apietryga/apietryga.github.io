@@ -1,6 +1,8 @@
 <template>
   <Head>
-    <Title>{{ $t('title') }}</Title>
+    <!-- <Title>{{ $t('title') }}</Title> -->
+    <!-- <Title>{{ page.name }}</Title> -->
+    <Title>{{ seo.name }}</Title>
     <Meta v-for="{ name, content } of meta" :key="name" :name="name" :content="content" />
     <Link rel="preconnect" href="https://fonts.googleapis.com" />
     <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,9 +14,77 @@
   const ORIGIN="https://apietryga.github.io"
   export default{
     data(){
-      return this.fillSeoFields()
+      return { 
+        seo: {
+          name: "apietryga",
+          desc: "",
+          category: "",
+          img: "",
+        }, 
+        // page: {},
+      }
+    },
+    mounted() {
+      // const default_seo = {
+      //   name: "apietryga",
+      //   desc: "",
+      //   category: "",
+      //   img: "",
+      // }
+      // this.page = this.setPage()
+      // console.log({
+      //   page: this.page,
+      // })
+      // this.seo = this.setPage()
+      this.setPage()
+
     },
     methods: {
+      setPage(){
+        
+        if(this.$route.name == 'projects'){
+          // page = {
+          return this.seo = {
+            name: 'Projects',
+            // lang: {
+              // 'en': { 
+            desc: 'Watch my experience!',
+            category: ['programming', 'web development', 'inventing'],
+              // },
+              // 'pl': { 
+              //   desc: 'Zobacz moje doświadczenie',
+              //   category: ['programming', 'web development', 'inventing'],
+              // },
+            // },
+            img: 'wellton_visualisation.webp',
+          }
+        }
+
+        if(this.$route.name == 'projects-name'){
+          // page = this.$appData.projects.find( project => project.url == this.$route.params.name[0])
+          return this.seo = this.$t('projects').find( project => project.url == this.$route.params.name[0])
+        }
+
+        if(this.$t(this.$route.name)){
+
+          if(this.$t(this.$route.name).title){
+            // return this.$t(this.$route.name).title
+            return this.seo.name = this.$t(this.$route.name).title
+          }
+
+          if(this.$t(this.$route.name)?.name){
+            // return this.$t(this.$route.name).name
+            return this.seo.name = this.$t(this.$route.name).name
+          }
+
+        }
+
+        // return this.seo.name = this.$t(this.$route.name).title
+        // return this.$t(this.$route.name).name
+        // let page = this.$appData[this.$route.name]
+        // return this.$appData[this.$route.name]
+        // returnpage
+      },
       fillSeoFields(){
         const seo = { // default
           title: "apietryga",
@@ -22,26 +92,28 @@
             { name: "description", content: "Web Developer Portfolio" },
           ],
         }
-        let page = this.$appData[this.$route.name]
-        if(this.$route.name == 'projects-name'){
-          page = this.$appData.projects.find( project => project.url == this.$route.params.name[0])
-        }
-        if(this.$route.name == 'projects'){
-          page = {
-            name: 'Projects',
-            lang: {
-              'en': { 
-                desc: 'Watch my experience!',
-                category: ['programming', 'web development', 'inventing'],
-              },
-              'pl': { 
-                desc: 'Zobacz moje doświadczenie',
-                category: ['programming', 'web development', 'inventing'],
-              },
-            },
-            img: 'wellton_visualisation.webp',
-          }
-        }
+
+        // let page = this.$appData[this.$route.name]
+        // if(this.$route.name == 'projects-name'){
+        //   page = this.$appData.projects.find( project => project.url == this.$route.params.name[0])
+        // }
+        // if(this.$route.name == 'projects'){
+        //   page = {
+        //     name: 'Projects',
+        //     lang: {
+        //       'en': { 
+        //         desc: 'Watch my experience!',
+        //         category: ['programming', 'web development', 'inventing'],
+        //       },
+        //       'pl': { 
+        //         desc: 'Zobacz moje doświadczenie',
+        //         category: ['programming', 'web development', 'inventing'],
+        //       },
+        //     },
+        //     img: 'wellton_visualisation.webp',
+        //   }
+        // }
+
         if(page){
           seo.title = page.name
           seo.meta = [

@@ -40,7 +40,6 @@
     data(){
       const projects = this.$t('projects')
       const projectIndex = projects.findIndex( project => project.url == this.$route.params.name[0])
-      console.log(projects[projectIndex])
       return {
         ...projects[projectIndex],
         projectIndex,
