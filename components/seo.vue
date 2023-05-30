@@ -1,9 +1,7 @@
 <template>
   <Head>
-    <!-- <Title>{{ $t('title') }}</Title> -->
-    <!-- <Title>{{ page.name }}</Title> -->
     <Title>{{ seo.name }}</Title>
-    <Meta v-for="{ name, content } of meta" :key="name" :name="name" :content="content" />
+    <Meta v-for="{ name, content } of seo.meta" :key="name" :name="name" :content="content" />
     <Link rel="preconnect" href="https://fonts.googleapis.com" />
     <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <Link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap" rel="stylesheet" />
@@ -18,120 +16,56 @@
         seo: {
           name: "apietryga",
           desc: "",
-          category: "",
+          category: [],
           img: "",
         }, 
-        // page: {},
       }
     },
     mounted() {
-      // const default_seo = {
-      //   name: "apietryga",
-      //   desc: "",
-      //   category: "",
-      //   img: "",
-      // }
-      // this.page = this.setPage()
-      // console.log({
-      //   page: this.page,
-      // })
-      // this.seo = this.setPage()
       this.setPage()
-
+      this.setMeta()
     },
     methods: {
       setPage(){
-        
+
         if(this.$route.name == 'projects'){
-          // page = {
           return this.seo = {
             name: 'Projects',
-            // lang: {
-              // 'en': { 
             desc: 'Watch my experience!',
             category: ['programming', 'web development', 'inventing'],
-              // },
-              // 'pl': { 
-              //   desc: 'Zobacz moje doświadczenie',
-              //   category: ['programming', 'web development', 'inventing'],
-              // },
-            // },
             img: 'wellton_visualisation.webp',
           }
         }
 
         if(this.$route.name == 'projects-name'){
-          // page = this.$appData.projects.find( project => project.url == this.$route.params.name[0])
           return this.seo = this.$t('projects').find( project => project.url == this.$route.params.name[0])
         }
 
         if(this.$t(this.$route.name)){
-
           if(this.$t(this.$route.name).title){
-            // return this.$t(this.$route.name).title
             return this.seo.name = this.$t(this.$route.name).title
           }
-
           if(this.$t(this.$route.name)?.name){
-            // return this.$t(this.$route.name).name
             return this.seo.name = this.$t(this.$route.name).name
           }
-
         }
 
-        // return this.seo.name = this.$t(this.$route.name).title
-        // return this.$t(this.$route.name).name
-        // let page = this.$appData[this.$route.name]
-        // return this.$appData[this.$route.name]
-        // returnpage
       },
-      fillSeoFields(){
-        const seo = { // default
-          title: "apietryga",
-          meta: [
-            { name: "description", content: "Web Developer Portfolio" },
-          ],
-        }
+      setMeta(){
+        this.seo.meta = [
+          { name: "google-site-verification", content: "8ipK6aTDBqxsTimOuexoAapkaGpct8pl3NNw7HLw2vA" },
 
-        // let page = this.$appData[this.$route.name]
-        // if(this.$route.name == 'projects-name'){
-        //   page = this.$appData.projects.find( project => project.url == this.$route.params.name[0])
-        // }
-        // if(this.$route.name == 'projects'){
-        //   page = {
-        //     name: 'Projects',
-        //     lang: {
-        //       'en': { 
-        //         desc: 'Watch my experience!',
-        //         category: ['programming', 'web development', 'inventing'],
-        //       },
-        //       'pl': { 
-        //         desc: 'Zobacz moje doświadczenie',
-        //         category: ['programming', 'web development', 'inventing'],
-        //       },
-        //     },
-        //     img: 'wellton_visualisation.webp',
-        //   }
-        // }
+          { name: "description", content: this.seo.desc },
+          { name: "keywords", content: this.seo.category?.join(", ") },
 
-        if(page){
-          seo.title = page.name
-          seo.meta = [
-            { name: "google-site-verification", content: "8ipK6aTDBqxsTimOuexoAapkaGpct8pl3NNw7HLw2vA" },
+          { name: "og:title", content: this.seo.name },
+          { name: "og:description", content: this.seo.desc },
+          { name: "og:image", content: ORIGIN + '/img/contents/' + this.seo.img },
 
-            { name: "description", content: page.lang[this.$appData.language].desc },
-            { name: "keywords", content: page.lang[this.$appData.language].category?.join(", ") },
-
-            { name: "og:title", content: page.name },
-            { name: "og:description", content: page.lang[this.$appData.language].desc },
-            { name: "og:image", content: ORIGIN + '/img/contents/' + page.img },
-
-            { name: "twitter:title", content: page.name },
-            { name: "twitter:description", content: page.lang[this.$appData.language].desc },
-            { name: "twitter:image", content: ORIGIN + '/img/contents/' + page.img },
-          ]
-        }
-        return seo
+          { name: "twitter:title", content: this.seo.name },
+          { name: "twitter:description", content: this.seo.desc },
+          { name: "twitter:image", content: ORIGIN + '/img/contents/' + this.seo.img },
+        ]
       }
     }
   }
