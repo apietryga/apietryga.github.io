@@ -3,7 +3,8 @@
     <seo :key="$route.fullPath" />
     <navHeader />
     <NuxtPage />
-    <navFooter />
+    <navFooter />    
+    <cursorGradient />
   </div>
 </template>
 

@@ -8,7 +8,7 @@
       <homeTeaching />
       <homeBusiness />
     </div>
-    <cursorGradient />
+    <!-- <cursorGradient /> -->
   </div>
 </template>
 

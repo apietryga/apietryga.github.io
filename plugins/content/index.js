@@ -43,7 +43,7 @@ export default defineNuxtPlugin( app => {
     return o;
   }
   const p = ( url, selector ) => {
-    const project = app.$appData.projects.find(p => p.url == url)
+    const project = content[lang].projects.find(p => p.url == url)
     if(!project){ return console.error(`Project "${url}" does not exists`) }
     if(project[selector]){ return project[selector] }
     if(project.lang[lang][selector]){ return project.lang[lang][selector] }
