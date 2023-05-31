@@ -61,8 +61,8 @@
     ]
   }
 
-  setPage()
-  setMeta()
+  // setPage()
+  // setMeta()
 
   // const prepareSEOData = () => {
   //   return { 

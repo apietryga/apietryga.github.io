@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loader v-if="loading" />
     <seo :key="$route.fullPath" />
     <navHeader />
     <NuxtPage />
@@ -8,7 +9,13 @@
   </div>
 </template>
 
-<script></script>
+<script setup>
+  const nuxtApp = useNuxtApp();
+  const loading = ref(true);
+  nuxtApp.hook("page:finish", () => {
+    loading.value = false;
+  });
+</script>
 
 <style>
 /* ANIMATION */
