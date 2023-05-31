@@ -31,7 +31,6 @@
     &::before{
       content:"";
       position: absolute;
-      // top:30vw;
       top:calc(60vh - 30vw);
       left:30vw;
       background: repeating-linear-gradient(to right, #00DC82 0%, #1DE0B1 50%, #36E4DA 100%);
