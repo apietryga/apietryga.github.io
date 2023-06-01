@@ -93,12 +93,12 @@
         
       </article>
       <section>
-<!-- 
+
         <h1>Antoni Pietryga</h1>
         <p>Software Developer & Trainer</p>
         <p>Katowice, Woj. Śląskie, Polska</p>
- -->
-        <!--         
+
+                
         <h2>Summary</h2>        
         <p>
           I am a self-taught programmer with a background in freelance
@@ -107,7 +107,7 @@
           Since May 2022, I have been working as a dedicated software
           developer.
         </p>
-         -->
+        
         <h2>Experience</h2>
         <ol>
           <li>
@@ -211,7 +211,8 @@
 
   .cv{
     margin:2rem;
-    background: #fff;
+    background: #000;
+    // background: #fff;
     display:flex;
     width:  210mm;
     height: 297mm;
@@ -219,8 +220,11 @@
     article{
       flex:1;
       color:#fff;
-      background: #000;
-      // padding:.75rem;
+      // background: #000;
+      
+      // background: linear-gradient();
+      // background: linear-gradient(to left,  #333 80%, #eee 20%);
+      // background: linear-gradient(to right, #333, #333 20%, #fff 75%);
       padding:1rem .5rem 1rem 1rem;
       picture{
         height:5.5cm;
@@ -280,21 +284,20 @@
       }
     }
     section{
+      background: #fff;
+      // border-radius:1rem 0 0 5px;
       color:#000;
       flex:2;
       padding:1rem 1rem 1rem .5rem;
+      // box-shadow: 0 0 15px red;
+      // box-shadow: -10px 0 5px -2px #fff;
       ol{
         padding:0 0 0 2rem;
         list-style: none;
-        // border:2px dashed red;
         sub{
           line-height: 0rem;
           position:relative;
           top:-.5rem;
-        }
-        sup{
-          // line-height: 0rem;  
-
         }
         h3,h4{
           line-height: .3rem;
@@ -304,16 +307,13 @@
         h4{
           margin:0 0 1rem 0;
         }
-        // > li{
         li{
-          // border:2px dashed blue;
           margin-top:1rem;
           position: relative;
           >p{
             margin-top:-.5rem;
           }
           p{
-            // border:2px dashed red;
             font-size: .9rem;
             line-height: 1rem;
           }
@@ -323,58 +323,41 @@
           &::before{
             content:"";
             position:absolute;
-            // top:calc(1.5rem + 5px);
             top:1rem;
             left:calc(-1.5rem - 4px);
             background: var(--cv-line-color);
-            // border:5px solid red;
             border:5px solid var(--accent);
             width:calc(1rem - 5px);
             height:calc(1rem - 5px);
             border-radius: 50%;
-            // box
+            box-shadow: 0 0 5px #000;
           }
           &::after{
             content:"";
             left:calc(-1.5rem + 4px);
-            // left:-1.3rem;
             position:absolute;
             background: var(--cv-line-color);
             width:5px;
             top:1.5rem;
-            // height:calc(1rem - 5px);
-            // height:100%;
             height:calc(100% + 1rem);
             border-radius: 5px;
           }
-          // &:last-of-type::after{
-          //   height:0;
-          // }
           ul{
-            // border:2px dashed green;
             list-style: none;
             padding:0 0 0 2rem;
             position:relative;
             &::before{
               content:"";
               position:absolute;
-              // width:calc(1rem - 5px);
               width:2.5rem;
               height:5px;
               top:1.5rem;
-              // left:calc(-1.5rem - 4px);
-              // left:-1.5rem;
               left:calc(-1.5rem + 5px);
               background: var(--cv-line-color);
-
-              // border:5px solid red;
-              
             }
-            // > li{
             li:last-of-type::after{
               height:0;
             }
-            // }
           }
         }
       }
