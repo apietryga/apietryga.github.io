@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="overWrapper">
     <loader v-if="loading" />
     <seo :key="$route.fullPath" />
     <navHeader />
-    <NuxtPage />
+    <NuxtPage class="pageWrapper" />
     <navFooter />    
     <cursorGradient />
   </div>
@@ -18,6 +18,9 @@
 </script>
 
 <style>
+.pageWrapper{
+  flex:1;
+}
 /* ANIMATION */
 .page-enter-active,
 .page-leave-active{

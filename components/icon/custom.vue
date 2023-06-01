@@ -79,7 +79,7 @@
     </g>
     </svg>
   </a>
-  <div v-else> X </div>
+  <a v-else> <span>X</span> </a>
 </template>
 
 <script> 

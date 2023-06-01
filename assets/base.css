@@ -59,6 +59,8 @@ main{
   flex:1;
 }
 body{
+  -webkit-print-color-adjust:exact !important;
+  print-color-adjust:exact !important;
   /* background-color:var(--backgroundColor); */
   background:var(--dark);
   /* color:var(--light); */
