@@ -28,6 +28,7 @@
   --fontColor:rgba(255, 255, 255, 0.8); 
 
   --overlay-color: rgba(157, 179, 157, 0.712);
+  --cv-line-color: rgb(230, 38, 38);
 }
 *{
   box-sizing: border-box;

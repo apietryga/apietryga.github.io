@@ -8,8 +8,8 @@
           <img src="" alt="Antoni Pietryga profile photo">
         </picture>
 
-        <h1>Antoni Pietryga</h1>
-        <!-- <h2>Contact</h2> -->
+        <!-- <h1>Antoni Pietryga</h1> -->
+        <h2>Contact</h2>
         <ul>
           <li>
             <a class="link" href="mailto:antek.pietryga@gmail.com">
@@ -93,64 +93,100 @@
         
       </article>
       <section>
-        Antoni Pietryga
-        Software Developer & Trainer
-        Katowice, Woj. Śląskie, Polska
-        Podsumowanie
-        I am a self-taught programmer with a background in freelance
-        full-stack programming from 2014 to 2018 and experience as a
-        programming and digital competence trainer from 2018 to 2022.
-        Since May 2022, I have been working as a dedicated software
-        developer.
-        Doświadczenie
-        Linkhouse.co
-        Software Engineer
-        maja 2022 - Present (1 rok 1 miesiąc)
-        Maintenance and development platform that simplifies link building - from
-        finding offers to monitoring and managing orders. Access one of the largest
-        databases of websites for free.
-        Antoni Pietryga Freelancing
-        2 lata 2 mies.
-        Programming trainer
-        lutego 2020 - lutego 2022 (2 lata 1 miesiąc)
-        Katowice
-        Conducting trainings in the field of Front-end development in technologies
-        for Ernabo
-        Programming trainer
-        stycznia 2020 - grudnia 2021 (2 lata)
-        Woj. Śląskie, Polska
-        Training in SEO and programming in Python and Java
-        for Everest Consulting & Training, Business Masters, RECON Consulting
-        Kuźnia Ekspertów
-        Digital competence trainer
-        listopada 2018 - sierpnia 2021 (2 lata 10 mies.)
-        Woj. Śląskie, Polska
-        Conducting training in the field of digital competences
-        Page 1 of 2
-        Antoni Pietryga Freelancing
-        1 rok 11 mies.
-        Software Developer
-        sierpnia 2016 - października 2016 (3 mies.)
-        Creating a "Good Lock" escape room website with a booking system
-        Full-stack Developer
-        czerwca 2016 - lipca 2016 (2 mies.)
-        Katowice
-        Creation of a key configurator for LOB Master Key systems - Kluczdowszygo.pl
-        Frontend Developer
-        lutego 2015 - maja 2016 (1 rok 4 mies.)
-        Warsaw, Mazowieckie, Poland
-        Creating an educational game for children - TOMIGRA
-        for clients Marketing Design, Gigant.pl
-        Wordpress Developer
-        grudnia 2014 - stycznia 2015 (2 mies.)
-        Rybnik, Woj. Śląskie, Polska
-        Modernization of the website of the furniture manufacturer Yano Mebel
-        https://yanomebel.com.pl
-        Wykształcenie
-        Uniwersytet Ekonomiczny w Katowicach
-        Licencjat (Lic.), Zarządzanie przedsiębiorstwem · (2015 - 2018)
-        Uniwersytet Śląski w Katowicach
-        Magister prawa (Mgr prawa), Prawo · (2016 - 2021)
+<!-- 
+        <h1>Antoni Pietryga</h1>
+        <p>Software Developer & Trainer</p>
+        <p>Katowice, Woj. Śląskie, Polska</p>
+ -->
+        <!--         
+        <h2>Summary</h2>        
+        <p>
+          I am a self-taught programmer with a background in freelance
+          full-stack programming from 2014 to 2018 and experience as a
+          programming and digital competence trainer from 2018 to 2022.
+          Since May 2022, I have been working as a dedicated software
+          developer.
+        </p>
+         -->
+        <h2>Experience</h2>
+        <ol>
+          <li>
+            <sub>May 2022 - Present</sub>
+            <h3>Linkhouse.co</h3>
+            <sup>Software Engineer</sup>
+            <p>
+              Maintenance and development platform that simplifies link building - from
+              finding offers to monitoring and managing orders. Access one of the largest
+              databases of websites for free.
+            </p>
+          </li>
+          <li>
+            <sub>May 2022 - Present</sub>
+            <h3>Frelance programming trainer</h3>
+            <ul>
+              <li>
+                <sub>lutego 2020 - lutego 2022</sub>
+                <h4>Ernabo</h4>
+                <p>
+                  Conducting trainings in the field of Front-end development in technologies
+                  for Ernabo
+                </p>
+              </li>
+              <li>
+                <sub>lutego 2020 - lutego 2022</sub>
+                <h4>Programming trainer</h4>
+                <p>
+                  Conducting trainings in the field of Front-end development in technologies
+                  for Ernabo
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <sub>listopada 2018 - sierpnia 2021</sub>
+            <h3>Kuźnia Ekspertów</h3>
+            <sup>Digital competence trainer</sup>
+            <p>
+              Conducting training in the field of digital competences
+            </p>
+          </li>
+          <li>
+            <sub>May 2022 - Present</sub>
+            <h3>Frelance software developer</h3>
+            <ul>
+              <li>
+                <sub>sierpnia 2016 - października 2016</sub>
+                <h4>Good Lock</h4>
+                <p>
+                  Creating a "Good Lock" escape room website with a booking system
+                </p>
+              </li>
+              <li>
+                <sub>lutego 2020 - lutego 2022</sub>
+                <h4>Kluczdowszystkiego.pl</h4>
+                <p>
+                  Creation of a key configurator for LOB Master Key systems - Kluczdowszygo.pl
+                </p>
+              </li>
+
+              <li>
+                <sub>lutego 2020 - lutego 2022</sub>
+                <h4>Gigant.pl | MarketingDesign</h4>
+                <p>
+                  Creating an educational game for children - TOMIGRA
+                </p>
+              </li>
+              <li>
+                <sub>grudnia 2014 - stycznia 2015</sub>
+                <h4>YanoMebel</h4>
+                <p>
+                  Modernization of the website of the furniture manufacturer Yano Mebel
+                  https://yanomebel.com.pl
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ol>
       </section>
     </div>
 
@@ -184,9 +220,9 @@
       flex:1;
       color:#fff;
       background: #000;
-      padding:.75rem;
+      // padding:.75rem;
+      padding:1rem .5rem 1rem 1rem;
       picture{
-        // border:2px dashed red;
         height:5.5cm;
         display: flex;
         align-items: center;
@@ -199,29 +235,22 @@
         }
       }
       h1{
-        // border:2px dashed red;
         margin:0;
         font-size:2em;
       }
       h2{
-        // margin:0 .75rem;
         margin:0;
         margin-top:2rem;
         line-height: 1.5rem;
-        // &:first-of-type{
-        //   margin:0;
-        //   // margin-top:.25rem;
-        //   // border:2px dashed red;
-        // }
+        &:first-of-type{
+          margin-top:.5rem;
+        }
       }
       > ul{
-        // border:2px dashed red;
-        // padding:0 1rem;
         margin:0 .25rem;
         padding:0;
         list-style: none;
         li {
-          // border:2px dashed blue;
           width: fit-content;
           margin:.5rem 0;
           div.link a{
@@ -230,23 +259,17 @@
           .link{
             display:flex;
             align-items: center;
-            // border:2px dashed green;
             a{
-              // border:2px dashed blue;
-              // border:2px dashed transparent;
               width:1.5rem;
               height:1.5rem;
               margin-right:.5rem;
               border-radius: 7px;
             }
             span{
-              // border:2px dashed green;
               font-size: .8rem;
               p{
-                // border:2px dashed blue;
                 line-height: .8rem;
                 &:nth-child(2){
-                  // border:2px dashed red;
                   font-size:.5rem;
                 }
               }
@@ -259,12 +282,104 @@
     section{
       color:#000;
       flex:2;
+      padding:1rem 1rem 1rem .5rem;
+      ol{
+        padding:0 0 0 2rem;
+        list-style: none;
+        // border:2px dashed red;
+        sub{
+          line-height: 0rem;
+          position:relative;
+          top:-.5rem;
+        }
+        sup{
+          // line-height: 0rem;  
+
+        }
+        h3,h4{
+          line-height: .3rem;
+          margin-bottom:.4rem
+          
+        }
+        h4{
+          margin:0 0 1rem 0;
+        }
+        // > li{
+        li{
+          // border:2px dashed blue;
+          margin-top:1rem;
+          position: relative;
+          >p{
+            margin-top:-.5rem;
+          }
+          p{
+            // border:2px dashed red;
+            font-size: .9rem;
+            line-height: 1rem;
+          }
+          &:last-of-type::after{
+            height:3rem;
+          }
+          &::before{
+            content:"";
+            position:absolute;
+            // top:calc(1.5rem + 5px);
+            top:1rem;
+            left:calc(-1.5rem - 4px);
+            background: var(--cv-line-color);
+            // border:5px solid red;
+            border:5px solid var(--accent);
+            width:calc(1rem - 5px);
+            height:calc(1rem - 5px);
+            border-radius: 50%;
+            // box
+          }
+          &::after{
+            content:"";
+            left:calc(-1.5rem + 4px);
+            // left:-1.3rem;
+            position:absolute;
+            background: var(--cv-line-color);
+            width:5px;
+            top:1.5rem;
+            // height:calc(1rem - 5px);
+            // height:100%;
+            height:calc(100% + 1rem);
+            border-radius: 5px;
+          }
+          // &:last-of-type::after{
+          //   height:0;
+          // }
+          ul{
+            // border:2px dashed green;
+            list-style: none;
+            padding:0 0 0 2rem;
+            position:relative;
+            &::before{
+              content:"";
+              position:absolute;
+              // width:calc(1rem - 5px);
+              width:2.5rem;
+              height:5px;
+              top:1.5rem;
+              // left:calc(-1.5rem - 4px);
+              // left:-1.5rem;
+              left:calc(-1.5rem + 5px);
+              background: var(--cv-line-color);
+
+              // border:5px solid red;
+              
+            }
+            // > li{
+            li:last-of-type::after{
+              height:0;
+            }
+            // }
+          }
+        }
+      }
     }
-    // 	210 x 297 mm
-
   }
-
-
 </style>
 
 
