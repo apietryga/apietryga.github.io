@@ -1,6 +1,5 @@
 <template>
   <div class="overCV">
-    <!-- <div class="download cta" @click="generatePDFx()"> DOWNLOAD CV </div> -->
     <div class="cv" ref="cv">
       <article>
 
@@ -8,7 +7,6 @@
           <img src="" alt="Antoni Pietryga profile photo">
         </picture>
 
-        <!-- <h1>Antoni Pietryga</h1> -->
         <h2>Contact</h2>
         <ul>
           <li>
@@ -93,12 +91,10 @@
         
       </article>
       <section>
-
+				<!-- <p>Curriculum Vitae</p> -->
         <h1>Antoni Pietryga</h1>
-        <p>Software Developer & Trainer</p>
-        <p>Katowice, Woj. Śląskie, Polska</p>
-
-                
+        <p class="role">Software Developer & Trainer</p>
+        <!-- <p>Katowice, Woj. Śląskie, Polska</p> -->
         <h2>Summary</h2>        
         <p>
           I am a self-taught programmer with a background in freelance
@@ -107,7 +103,6 @@
           Since May 2022, I have been working as a dedicated software
           developer.
         </p>
-        
         <h2>Experience</h2>
         <ol>
           <li>
@@ -189,23 +184,20 @@
         </ol>
       </section>
     </div>
-
   </div>
 </template>
 
 <style lang="scss">
 .overCV{
   display:flex;
-  // justify-content: center;
   flex-direction: column;
   align-items: center;
 	.cv{
 		margin:2em;
 		background: #000;
-		// background: #fff;
 		display:flex;
 		width:  210mm;
-		height: 297mm;
+		height: calc(297mm - 2px);
 		border:1px solid #fff;
 		article{
 			flex:1;
@@ -257,9 +249,10 @@
 						span{
 							font-size: .8em;
 							p{
-								line-height: .8em;
+								line-height: 1.2em;
 								&:nth-child(2){
 									font-size:.5em;
+									text-transform: uppercase;
 								}
 							}
 						}
@@ -272,8 +265,21 @@
 			background: #fff;
 			color:#000;
 			flex:2;
-			padding:1em 1em 1em .5em;
+			// padding:1em 1em 1em .5em;
+			padding:1em;
+			h1{
+				font-size:3em;
+				margin:0;
+				line-height: .9em;
+			}
+			h2{
+				margin-top:.5em;
+			}
+			p{
+				font-size: .9em;
+			}
 			ol{
+				margin:0;
 				padding:0 0 0 2em;
 				list-style: none;
 				sub{
@@ -290,6 +296,7 @@
 					margin:0 0 1em 0;
 				}
 				>li{
+					padding-left:.5em;
 					margin-top:1em;
 					position: relative;
 					>p{
@@ -299,8 +306,10 @@
 						font-size: .9em;
 						line-height: 1em;
 					}
+					&:first-of-type{
+						margin-top:0;
+					}
 					&:last-of-type::after{
-						// height:3em;
 						height:0;
 					}
 					&::before{
@@ -327,27 +336,14 @@
 					}
 					ul{
 						list-style: none;
-						padding:0 0 0 2em;
+						padding:0 0 0 1em;
 						position:relative;
 						li{
-							// border:2px dashed red;
 							margin-top:1em;
 							h4{
 								margin-bottom:.5em;
 							}
 						}
-						// &::before{
-						//   content:"";
-						//   position:absolute;
-						//   width:2.5em;
-						//   height:5px;
-						//   top:1.5em;
-						//   left:calc(-1.5em + 5px);
-						//   background: var(--cv-line-color);
-						// }
-						// li:last-of-type::after{
-						//   height:0;
-						// }
 					}
 				}
 			}
@@ -356,12 +352,21 @@
 }
 
 @media only print {
+	body{
+		height: unset;
+	}
   .navHeader,
   .overWrapper > footer {
     display:none;
   }
 	.overCV .cv{
 		margin:0;
+	}
+	.blob{
+		display:none !important;
+	}
+	#__nuxt > div {
+		min-height: unset;
 	}
 }
 

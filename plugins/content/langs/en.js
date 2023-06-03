@@ -832,5 +832,5 @@ export default {
       Better check
       <a href='/projects'><b>projects</b></a> 😎
     </p>`,
-  }
+  },
 }
