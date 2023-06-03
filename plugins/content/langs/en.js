@@ -159,21 +159,14 @@ export default {
         },
       ],
       img: "praktykody.webp",
-      date: "2022-11-08",
+      date: "2022-08-25",
       color: "#ffffff",
       url: "praktykody",
-      category: ["business", "education", "movie", "coding","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL"],
-      desc: "A web platform for enterpeurs to control and developing business",
+      category: ["teaching", "coding","HTML", "CSS","JavaScript", "JS", "Node.js"],
+      desc: "A website leading in easy way to learn the front-end",
       content: [
-        `Anadar is a digital synthesis of management science theory.
-        Its flexible interface allows you to use it
-        CEOs of large companies, but also people in their small businesses.
-        In both cases, the program will help entrepreneurs to reduce expenses
-        and increase profits.`,
-        `In October 2018, the program was expanded with a plug-in for a restaurant that
-        integrates the kitchen with the counter and automatically analyzes the company's situation.
-        In December 2018, project get the concept of rebate cards which supports
-        cooperation of local enterprises`,
+				`After every front-end course i optimized my presentations. One day i had idea to change presenting form from *.pptx to website and there she is`,
+				`I published there imho the easiest way to learn about front-end technology. Every time i conduct another course, contens are evaluating - in many ways.`,
       ],                
     },
     { name: "Anadar",
