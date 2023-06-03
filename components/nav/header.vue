@@ -93,23 +93,18 @@
     display:flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    // border:2px dashed blue;
-
     .searchAndMenu{
       flex:1;
       display:flex;
       flex-direction: row-reverse;
       align-items: center;
       .menu{
-        flex:1;
         align-items: center;
         display:flex;
         height:var(--navHeaderHeight);
         justify-content: center;
-        // padding:.5rem 1rem .5rem .5rem;
         right:0;
         .navShadow{
-          // border:2px dashed red;
           transition:.5s;
           position:absolute;
           width:100%;
@@ -159,16 +154,13 @@
         nav{
           flex:1;
           justify-content: flex-end;
-          // border:2px dashed green;
           top:var(--navHeaderHeight);
           transition:1s;
           position:absolute;
-          width:100%;
-          left:0;
+					right:0;
           top:-100vh;
           display:flex;
           flex-direction:column;
-          // padding:.5rem .5rem .5rem 0;
           color:#fff;
           background-color: #040003;
           >*{
@@ -210,7 +202,7 @@
         }  
       }
       .searchContainer{
-        // flex:1;
+        flex:1;
         display:flex;
         justify-content: flex-end;
         align-items: center;
@@ -236,6 +228,8 @@
             width:0;
             flex:1;
             color:rgba(255, 255, 255, 0.8);
+						font-size:.6em;
+						text-transform: uppercase;
           }
           .bg{
             border-radius: 2rem;
@@ -277,7 +271,6 @@
           flex-direction: column;
           top:100%;
           position:absolute;
-          // background-color: var(--backgroundColor);
           right:1rem;
           max-height:60vh;
           width:40vw;
@@ -332,7 +325,6 @@
   @media (min-width:749px){
     .navHeader{
       .searchAndMenu{
-        flex-direction: row;
         padding-right: .5rem;
         justify-content: space-between;
         .menu{
@@ -378,7 +370,10 @@
         nav{
           justify-content: flex-start;
           // flex:none;
-          padding:0 1.5rem;
+          padding:0 1.5em 0 .5em;
+					a{
+						margin:.25em;
+					}
         }
         #toggler{
           &:checked ~ .toggler{

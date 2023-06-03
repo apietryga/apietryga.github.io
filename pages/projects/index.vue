@@ -77,7 +77,8 @@
 
 <style lang="scss">
 .list{
-  min-height: calc(100vh - var(--navfooterHeight) - #{var(--navHeaderHeight)});
+	// flex:1;
+  // min-height: calc(100vh - var(--navfooterHeight) - #{var(--navHeaderHeight)});
   display:flex;
   flex-wrap:wrap;
   position:relative;
