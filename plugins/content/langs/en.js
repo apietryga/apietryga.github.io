@@ -880,11 +880,13 @@ export default {
 							date_to:"02.2022",
 							date_from: "02.2020",
 							company: "Ernabo",
+							role: "Programming trainer",
 							desc: "Conducting trainings in the field of Front-end development in technologies for Ernabo",
 						},
 						{
 							date_to:"02.2022",
 							date_from: "02.2020",
+							role: "Programming trainer",
 							company: "RECON Consulting, Business Masters",
 							desc: "Conducting trainings in the field of Front-end development in technologies for Ernabo",
 						},
@@ -906,29 +908,34 @@ export default {
 							date_from: "sierpnia 2016",
 							date_to:"października 2016",
 							company: "Good Lock",
+							role: "Full stack developer",
 							desc: "Creating a \"Good Lock\" escape room website with a booking system",
 						},
 						{
 							date_from: "lutego 2020",
 							date_to:"lutego 2022",
 							company: "Kluczdowszystkiego.pl",
+							role: "Full stack developer",
 							desc: "Creation of a key configurator for LOB Master Key systems - Kluczdowszygo.pl",
 						},
 						{
 							date_from: "lutego 2020",
 							date_to:"lutego 2022",
 							company: "Gigant.pl | MarketingDesign",
+							role: "Front-end developer",
 							desc: "Creating an educational game for children - TOMIGRA",
 						},
 						{
 							date_from: "lutego 2020",
 							date_to:"lutego 2022",
 							company: "YanoMebel",
+							role: "WordPress developer",
 							desc: "Modernization of the website of the furniture manufacturer Yano Mebel",
 						},
 					]
 				},
 			],
+			description: "Wyrażam zgodę na przetwarzanie danych osobowych zawartych w niniejszym dokumencie do realizacji procesu rekrutacji zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO). ",
 		},
 	}
 }

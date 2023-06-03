@@ -71,19 +71,26 @@
         <h2>{{ $t('cv.experience.title') }}</h2>
         <ol>
           <li v-for="item of $t('cv.experience.items')">
-            <sub>{{ item.date_from + " - " + item.date_to }}</sub>
+            <sub>
+							<span v-if="!item.items">{{ item.date_from + " - " + item.date_to }}</span>
+							<span v-else>{{ item.items[0].date_from + " - " + item.items[item.items.length - 1].date_to }}</span>
+						</sub>
             <h3>{{ item.title }}</h3>
             <sup v-if="!item.items">{{ item.role }}</sup>
 						<p v-if="!item.items">{{ item.desc }}</p>
 						<ul v-if="item.items">
               <li v-for="subitem of item.items">
                 <sub>{{ subitem.date_from + " " + subitem.date_to }}</sub>
-                <h4>{{ subitem.company }}</h4>
+                <h4>
+									<span>{{ subitem.company }}</span>
+									<sub> - {{ subitem.role }}</sub>
+								</h4>
 								<p>{{ subitem.desc }}</p>
               </li>
             </ul>
           </li>
         </ol>
+				<p class="description">{{ $t('cv.experience.description') }}</p>
       </section>
     </div>
   </div>
@@ -169,6 +176,8 @@
 			color:#000;
 			flex:2;
 			padding:1em;
+			display:flex;
+			flex-direction: column;
 			h1{
 				font-size:3em;
 				margin:0;
@@ -185,15 +194,24 @@
 				margin:0;
 				padding:0 0 0 2em;
 				list-style: none;
+				flex:1;
 				sub{
 					line-height: 0em;
 					position:relative;
 					top:-.65em;
+					font-size:.6em;
+					font-weight: bold;
+				}
+				sup{
+					font-size:.6em;
+					font-weight: bold;
+					position:relative;
+					top:-.3em;
+
 				}
 				h3,h4{
 					line-height: .3em;
 					margin-bottom:.4em
-					
 				}
 				h4{
 					margin:0 0 1em 0;
@@ -219,23 +237,25 @@
 						content:"";
 						position:absolute;
 						top:1em;
-						left:calc(-1.5em - 4px);
-						background: var(--cv-line-color);
-						border:5px solid var(--accent);
-						width:calc(1em - 5px);
-						height:calc(1em - 5px);
+						left:calc(-1.5em - 2.5px);
+						background: #000;
+						border:5px solid #fff;
+						width:7px;
+						height:7px;
 						border-radius: 50%;
 						box-shadow: 0 0 5px #000;
+						z-index:1;
 					}
 					&::after{
 						content:"";
-						left:calc(-1.5em + 4px);
+						left:calc(-1.5em + 5.5px);
 						position:absolute;
 						background: var(--cv-line-color);
-						width:5px;
+						width:1px;
 						top:1.5em;
 						height:calc(100% + 1em);
 						border-radius: 5px;
+						box-shadow: 0 0 2px #000;
 					}
 					ul{
 						list-style: none;
@@ -246,9 +266,21 @@
 							h4{
 								margin-bottom:.5em;
 							}
+							// sup{
+							// 	// display:none;
+							// 	// line-height: 0;
+							// 	// margin:0;
+							// }
+							// p{
+							// 	// margin:0;
+							// 	line-height: .5em;
+							// }
 						}
 					}
 				}
+			}
+			.description{
+				font-size:.7em;
 			}
 		}
 	}
