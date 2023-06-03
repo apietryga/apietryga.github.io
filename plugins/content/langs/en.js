@@ -1,6 +1,7 @@
 export default {
   title: "apietryga",
   author: "Antoni Pietryga",
+	role: "Software Developer & Trainer",
   nav: {
     home: 'Home',
     projects: 'Projects',
@@ -833,4 +834,101 @@ export default {
       <a href='/projects'><b>projects</b></a> 😎
     </p>`,
   },
+	cv: {
+		contact: {
+			title: "Contact",
+			webpage: "https://apietryga.github.io",
+			social_name: "apietryga",
+		},
+		main_skills:{
+			title: "Main Skills",
+			items: [
+				{ name: "JavaScript", ico:"js" },
+				{ name: "Node.js", ico:"nodejs" },
+				{ name: "Nuxt", ico:"nuxt" },
+				{ name: "Python", ico:"python" },
+				{ name: "PHP", ico:"php" },
+			]
+		},
+		languages:{
+			title: "Languages",
+			items: [
+				{ name: "English", desc: "EFSET CEFR B1/B2", ico: "us" },
+				{ name: "Polish", desc: "Native", ico: "pl" },
+			]
+		},
+		summary:{
+			title: "Summary",
+			content: "I am a self-taught programmer with a background in freelance full-stack programming from 2014 to 2018 and experience as a programming and digital competence trainer from 2018 to 2022. Since May 2022, I have been working as a dedicated software developer.",
+		},
+		experience:{
+			title: "Experience",
+			items: [
+				{
+					date_to:"Present",
+					date_from: "05.2022",
+					title: "Linkhouse.co",
+					role: "Software Engineer",
+					desc: "Maintenance and development platform that simplifies link building - from finding offers to monitoring and managing orders. Access one of the largest databases of websites for free.",
+				},
+				{
+					date_to:"to",
+					date_from: "from",
+					title: "Frelance programming trainer",
+					items: [
+						{
+							date_to:"02.2022",
+							date_from: "02.2020",
+							company: "Ernabo",
+							desc: "Conducting trainings in the field of Front-end development in technologies for Ernabo",
+						},
+						{
+							date_to:"02.2022",
+							date_from: "02.2020",
+							company: "RECON Consulting, Business Masters",
+							desc: "Conducting trainings in the field of Front-end development in technologies for Ernabo",
+						},
+					]
+				},
+				{
+					date_to:"sierpnia 2021",
+					date_from: "listopada 2018 ",
+					title: "Kuźnia Ekspertów",
+					role: "Digital competence trainer",
+					desc: "Conducting training in the field of digital competences",
+				},
+				{
+					date_to:"to",
+					date_from: "from",
+					title: "Frelance software developer",
+					items: [
+						{
+							date_from: "sierpnia 2016",
+							date_to:"października 2016",
+							company: "Good Lock",
+							desc: "Creating a \"Good Lock\" escape room website with a booking system",
+						},
+						{
+							date_from: "lutego 2020",
+							date_to:"lutego 2022",
+							company: "Kluczdowszystkiego.pl",
+							desc: "Creation of a key configurator for LOB Master Key systems - Kluczdowszygo.pl",
+						},
+						{
+							date_from: "lutego 2020",
+							date_to:"lutego 2022",
+							company: "Gigant.pl | MarketingDesign",
+							desc: "Creating an educational game for children - TOMIGRA",
+						},
+						{
+							date_from: "lutego 2020",
+							date_to:"lutego 2022",
+							company: "YanoMebel",
+							desc: "Modernization of the website of the furniture manufacturer Yano Mebel",
+						},
+					]
+				},
+			],
+		},
+	}
 }
