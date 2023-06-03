@@ -14,7 +14,8 @@
         <NuxtLink to="/contact">
           <span>{{ $t('nav.contact') }}</span> 
         </NuxtLink>
-        <NuxtLink :to="'/cvs/2023_03_CV_en.pdf'" target="_blank">
+        <!-- <NuxtLink :to="'/cvs/2023_03_CV_en.pdf'" target="_blank"> -->
+        <NuxtLink :to="'/cv'">
           Curriculum Vitae
         </NuxtLink>
       </p>
@@ -61,11 +62,12 @@ footer{
       flex-direction: column;
       align-items: flex-start;
       padding:1rem;
-      font-size:1rem;
+      font-size:.9rem;
       &:nth-child(2){
         justify-content: flex-end;
       }
       a{
+				margin-bottom:.25rem;
         font-size:inherit;
       }
     }

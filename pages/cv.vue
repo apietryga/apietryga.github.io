@@ -199,6 +199,160 @@
   // justify-content: center;
   flex-direction: column;
   align-items: center;
+	.cv{
+		margin:2em;
+		background: #000;
+		// background: #fff;
+		display:flex;
+		width:  210mm;
+		height: 297mm;
+		border:1px solid #fff;
+		article{
+			flex:1;
+			color:#fff;
+			padding:1em .5em 1em 1em;
+			picture{
+				height:5.5cm;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				img{
+					background: rgb(21, 21, 116);
+					border:2px dashed blue;
+					height:5cm;
+					width:5cm;
+				}
+			}
+			h1{
+				margin:0;
+				font-size:2em;
+			}
+			h2{
+				margin:0;
+				margin-top:2em;
+				line-height: 1.5em;
+				&:first-of-type{
+					margin-top:.5em;
+				}
+			}
+			> ul{
+				margin:0 .25em;
+				padding:0;
+				list-style: none;
+				li {
+					width: fit-content;
+					margin:.5em 0;
+					div.link a{
+						padding:2px;
+					}
+					.link{
+						display:flex;
+						align-items: center;
+						a{
+							width:1.5em;
+							height:1.5em;
+							margin-right:.5em;
+							border-radius: 7px;
+						}
+						span{
+							font-size: .8em;
+							p{
+								line-height: .8em;
+								&:nth-child(2){
+									font-size:.5em;
+								}
+							}
+						}
+	
+					}
+				}
+			}
+		}
+		section{
+			background: #fff;
+			color:#000;
+			flex:2;
+			padding:1em 1em 1em .5em;
+			ol{
+				padding:0 0 0 2em;
+				list-style: none;
+				sub{
+					line-height: 0em;
+					position:relative;
+					top:-.5em;
+				}
+				h3,h4{
+					line-height: .3em;
+					margin-bottom:.4em
+					
+				}
+				h4{
+					margin:0 0 1em 0;
+				}
+				>li{
+					margin-top:1em;
+					position: relative;
+					>p{
+						margin-top:-.5em;
+					}
+					p{
+						font-size: .9em;
+						line-height: 1em;
+					}
+					&:last-of-type::after{
+						// height:3em;
+						height:0;
+					}
+					&::before{
+						content:"";
+						position:absolute;
+						top:1em;
+						left:calc(-1.5em - 4px);
+						background: var(--cv-line-color);
+						border:5px solid var(--accent);
+						width:calc(1em - 5px);
+						height:calc(1em - 5px);
+						border-radius: 50%;
+						box-shadow: 0 0 5px #000;
+					}
+					&::after{
+						content:"";
+						left:calc(-1.5em + 4px);
+						position:absolute;
+						background: var(--cv-line-color);
+						width:5px;
+						top:1.5em;
+						height:calc(100% + 1em);
+						border-radius: 5px;
+					}
+					ul{
+						list-style: none;
+						padding:0 0 0 2em;
+						position:relative;
+						li{
+							// border:2px dashed red;
+							margin-top:1em;
+							h4{
+								margin-bottom:.5em;
+							}
+						}
+						// &::before{
+						//   content:"";
+						//   position:absolute;
+						//   width:2.5em;
+						//   height:5px;
+						//   top:1.5em;
+						//   left:calc(-1.5em + 5px);
+						//   background: var(--cv-line-color);
+						// }
+						// li:last-of-type::after{
+						//   height:0;
+						// }
+					}
+				}
+			}
+		}
+	}
 }
 
 @media only print {
@@ -206,163 +360,11 @@
   .overWrapper > footer {
     display:none;
   }
+	.overCV .cv{
+		margin:0;
+	}
 }
 
-
-  .cv{
-    margin:2rem;
-    background: #000;
-    // background: #fff;
-    display:flex;
-    width:  210mm;
-    height: 297mm;
-    border:1px solid #fff;
-    article{
-      flex:1;
-      color:#fff;
-      // background: #000;
-      
-      // background: linear-gradient();
-      // background: linear-gradient(to left,  #333 80%, #eee 20%);
-      // background: linear-gradient(to right, #333, #333 20%, #fff 75%);
-      padding:1rem .5rem 1rem 1rem;
-      picture{
-        height:5.5cm;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        img{
-          background: rgb(21, 21, 116);
-          border:2px dashed blue;
-          height:5cm;
-          width:5cm;
-        }
-      }
-      h1{
-        margin:0;
-        font-size:2em;
-      }
-      h2{
-        margin:0;
-        margin-top:2rem;
-        line-height: 1.5rem;
-        &:first-of-type{
-          margin-top:.5rem;
-        }
-      }
-      > ul{
-        margin:0 .25rem;
-        padding:0;
-        list-style: none;
-        li {
-          width: fit-content;
-          margin:.5rem 0;
-          div.link a{
-            padding:2px;
-          }
-          .link{
-            display:flex;
-            align-items: center;
-            a{
-              width:1.5rem;
-              height:1.5rem;
-              margin-right:.5rem;
-              border-radius: 7px;
-            }
-            span{
-              font-size: .8rem;
-              p{
-                line-height: .8rem;
-                &:nth-child(2){
-                  font-size:.5rem;
-                }
-              }
-            }
-  
-          }
-        }
-      }
-    }
-    section{
-      background: #fff;
-      // border-radius:1rem 0 0 5px;
-      color:#000;
-      flex:2;
-      padding:1rem 1rem 1rem .5rem;
-      // box-shadow: 0 0 15px red;
-      // box-shadow: -10px 0 5px -2px #fff;
-      ol{
-        padding:0 0 0 2rem;
-        list-style: none;
-        sub{
-          line-height: 0rem;
-          position:relative;
-          top:-.5rem;
-        }
-        h3,h4{
-          line-height: .3rem;
-          margin-bottom:.4rem
-          
-        }
-        h4{
-          margin:0 0 1rem 0;
-        }
-        li{
-          margin-top:1rem;
-          position: relative;
-          >p{
-            margin-top:-.5rem;
-          }
-          p{
-            font-size: .9rem;
-            line-height: 1rem;
-          }
-          &:last-of-type::after{
-            height:3rem;
-          }
-          &::before{
-            content:"";
-            position:absolute;
-            top:1rem;
-            left:calc(-1.5rem - 4px);
-            background: var(--cv-line-color);
-            border:5px solid var(--accent);
-            width:calc(1rem - 5px);
-            height:calc(1rem - 5px);
-            border-radius: 50%;
-            box-shadow: 0 0 5px #000;
-          }
-          &::after{
-            content:"";
-            left:calc(-1.5rem + 4px);
-            position:absolute;
-            background: var(--cv-line-color);
-            width:5px;
-            top:1.5rem;
-            height:calc(100% + 1rem);
-            border-radius: 5px;
-          }
-          ul{
-            list-style: none;
-            padding:0 0 0 2rem;
-            position:relative;
-            &::before{
-              content:"";
-              position:absolute;
-              width:2.5rem;
-              height:5px;
-              top:1.5rem;
-              left:calc(-1.5rem + 5px);
-              background: var(--cv-line-color);
-            }
-            li:last-of-type::after{
-              height:0;
-            }
-          }
-        }
-      }
-    }
-  }
 </style>
 
 
