@@ -80,11 +80,8 @@
 						<p v-if="!item.items">{{ item.desc }}</p>
 						<ul v-if="item.items">
               <li v-for="subitem of item.items">
-                <sub>{{ subitem.date_from + " " + subitem.date_to }}</sub>
-                <h4>
-									<span>{{ subitem.company }}</span>
-									<sub> - {{ subitem.role }}</sub>
-								</h4>
+                <sub>{{ subitem.date_from + " - " + subitem.date_to }}</sub>
+                <h4>{{ subitem.company }}</h4>
 								<p>{{ subitem.desc }}</p>
               </li>
             </ul>
@@ -124,10 +121,6 @@
 					height:5cm;
 					width:5cm;
 				}
-			}
-			h1{
-				margin:0;
-				font-size:2em;
 			}
 			h2{
 				margin:0;
@@ -182,6 +175,7 @@
 				font-size:3em;
 				margin:0;
 				line-height: .9em;
+				margin-top:.25em;
 			}
 			h2{
 				margin-top:.5em;
@@ -264,8 +258,13 @@
 						li{
 							margin-top:1em;
 							h4{
-								margin-bottom:.5em;
+								// margin-bottom:.5em;
+								margin-bottom:0;
+								line-height: 1em;
 							}
+							// p{
+							// 	line-height: .9em;
+							// }
 							// sup{
 							// 	// display:none;
 							// 	// line-height: 0;
