@@ -192,7 +192,7 @@
 				sub{
 					line-height: 0em;
 					position:relative;
-					top:-.65em;
+					top:-.75em;
 					font-size:.6em;
 					font-weight: bold;
 				}
@@ -206,9 +206,6 @@
 				h3,h4{
 					line-height: .3em;
 					margin-bottom:.4em
-				}
-				h4{
-					margin:0 0 1em 0;
 				}
 				>li{
 					padding-left:.5em;
@@ -259,10 +256,14 @@
 							margin-top:1em;
 							h4{
 								// margin-bottom:.5em;
+								margin:0 0 1em 0;
 								margin-bottom:0;
 								line-height: 1em;
 							}
-							// p{
+							sub{
+								top:-.25em;
+							}
+								// p{
 							// 	line-height: .9em;
 							// }
 							// sup{
@@ -281,6 +282,18 @@
 			.description{
 				font-size:.7em;
 			}
+		}
+	}
+}
+
+@media only screen and (max-width:210mm){
+	.overCV .cv{
+		flex-direction: column-reverse;
+		width:95%;
+		height: unset;
+		margin-top:2.5%;
+		section >.description{
+			display:none;
 		}
 	}
 }

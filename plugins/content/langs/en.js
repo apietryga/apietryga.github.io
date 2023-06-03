@@ -889,7 +889,7 @@ export default {
 					]
 				},
 				{
-					date_to:"sierpnia 2021",
+					date_to:"08.2021",
 					date_from: "11.2018",
 					title: "Kuźnia Ekspertów",
 					role: "Digital competence trainer",
