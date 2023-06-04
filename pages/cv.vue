@@ -3,7 +3,7 @@
     <div class="cv" ref="cv">
       <article>
         <picture>
-          <img src="/img/cv/antoni-pietryga.jpg" alt="Antoni Pietryga profile photo">
+          <img src="/img/cv/antoni-pietryga-light.jpg" alt="Antoni Pietryga profile photo">
         </picture>
         <h2>{{ $t('cv.contact.title') }}</h2>
         <ul>
@@ -41,13 +41,16 @@
         <h2>{{ $t('cv.main_skills.title') }}</h2>
         <ul>
           <li>
-						<a v-for="skill of $t('cv.main_skills.items')" class="link"
-							:href="$t('cv.contact.webpage') + '/projects?q=' + skill.name" 
-							target="_blank"
-						>
-              <iconCustom :type="skill.ico" />
-              <span>{{ skill.name }}</span>
-						</a>
+						<template v-for="skill of $t('cv.main_skills.items')">
+							<!-- {{  skill  }} -->
+							<a class="link"
+								:href="$t('cv.contact.webpage') + '/projects?q=' + skill.name" 
+								target="_blank"
+							>
+								<iconCustom :type="skill.ico" />
+								<span>{{ skill.name }}</span>
+							</a>
+						</template>
           </li>
         </ul>
         <h2>{{ $t('cv.languages.title') }}</h2>

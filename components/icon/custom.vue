@@ -127,7 +127,6 @@
       <path fill="url(#logosNodejsIconAlt2)" d="M249.485 67.8L134.65 1.833c-1.086-.542-2.443-1.085-3.529-1.357L2.443 220.912c1.086 1.357 2.444 2.443 3.8 3.258l114.834 65.968c3.258 1.9 7.059 2.443 10.588 1.357L252.47 70.515c-.815-1.086-1.9-1.9-2.986-2.714Z" mask="url(#logosNodejsIconAlt5)"/><mask id="logosNodejsIconAlt6" fill="#fff"><use href="#logosNodejsIconAlt4"/></mask>
       <path fill="url(#logosNodejsIconAlt3)" d="M249.756 223.898c3.258-1.9 5.701-5.158 6.787-8.687L130.579.204c-3.258-.543-6.787-.272-9.773 1.628L6.786 67.53l122.979 224.238c1.628-.272 3.529-.815 5.158-1.63l114.833-66.239Z" mask="url(#logosNodejsIconAlt6)"/>
     </svg>
-
   </a>
   <a v-else-if="type==='nuxt'">
     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 256 256">
