@@ -310,6 +310,9 @@
 }
 
 @media only print {
+	.btn{
+		display:none;
+	}
 	body{
 		height: unset;
 	}
