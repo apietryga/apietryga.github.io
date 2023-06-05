@@ -828,6 +828,7 @@ export default {
     </p>`,
   },
 	cv: {
+		download: "Download CV",
 		contact: {
 			title: "Contact",
 			webpage: "https://apietryga.github.io",

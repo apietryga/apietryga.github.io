@@ -1,5 +1,13 @@
 <template>
   <div class="overCV">
+
+		<nuxtLink class="btn" target="_blank"
+			to="/cvs/2023_06_CV_en.pdf"
+			download="/cvs/2023_06_CV_en.pdf"
+			style="margin-top:2em;">
+			{{ $t('cv.download') }}
+		</nuxtLink>
+
     <div class="cv" ref="cv">
       <article>
         <picture>

@@ -108,6 +108,7 @@ body{
 }
 
 .btn{
+	cursor: pointer;
   padding:.6rem 1.5rem;
   margin-top:.75rem;
   background: var(--accent);
