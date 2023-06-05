@@ -180,7 +180,7 @@ export default {
       date: "2018-09-01",
       color: "#ffffff",
       url: "anadar",
-      category: ["business", "education", "movie", "coding","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL"],
+      category: ["business", "education", "movie", "coding","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL", "nuxt"],
       desc: "A web platform for enterpeurs to control and developing business",
       content: [
         `Anadar is a digital synthesis of management science theory.
@@ -268,7 +268,7 @@ export default {
         'bombeltyj_1.webp',
         'bombeltyj_2.webp',
       ],
-      category: ['renovations','business', '3d'],
+      category: ['renovations','business', '3d', 'nuxt', 'javasript', 'coding'],
       desc: "Restaurant serving bubble-tea",
       content: [
         `We turned an industrial into a gastronomic establishment - it took a lot
