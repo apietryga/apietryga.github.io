@@ -23,13 +23,13 @@
       </p>
       <p>
         <NuxtLink :to="{name: 'projects', query: {q: 'code'}}">
-          <span>Code</span> 
+          <span>{{ $t('nav.code') }}</span> 
         </NuxtLink>
         <NuxtLink to="/projects?q=teaching">
-          <span>Teaching</span> 
+          <span>{{ $t('nav.teaching') }}</span> 
         </NuxtLink>
         <NuxtLink to="/projects?q=business">
-          <span>Business</span> 
+          <span>{{ $t('nav.business') }}</span> 
         </NuxtLink>
       </p>
     </nav>

@@ -6,6 +6,9 @@ export default {
     home: 'Home',
     projects: 'Projects',
     contact: 'Contact',
+		code: 'Code',
+		teaching: 'Teaching',
+		business: 'Business',
   },
   home: {
     title: "You found <b>Software Developer</b><br><b>which will do</b> the job",
