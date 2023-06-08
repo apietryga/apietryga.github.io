@@ -2,7 +2,9 @@
   <footer>
     <nav>
       <p>
-        <navLogo />
+        <NuxtLink to="/">
+	        <navLogo />
+				</NuxtLink>
       </p>
       <p>
         <NuxtLink to="/">
