@@ -166,7 +166,7 @@ export default {
       date: "2022-08-25",
       color: "#ffffff",
       url: "praktykody",
-      category: ["teaching", "coding","HTML", "CSS","JavaScript", "JS", "Node.js"],
+      category: ["teaching", "code", "coding","HTML", "CSS","JavaScript", "JS", "Node.js"],
       desc: "A website leading in easy way to learn the front-end",
       content: [
 				`After every front-end course i optimized my presentations. One day i had idea to change presenting form from *.pptx to website and there she is`,
@@ -183,7 +183,7 @@ export default {
       date: "2018-09-01",
       color: "#ffffff",
       url: "anadar",
-      category: ["business", "education", "movie", "coding","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL", "nuxt"],
+      category: ["business", "code", "education", "movie", "coding","HTML", "CSS","JavaScript", "JS", "Node.js","PHP", "MySQL", "nuxt"],
       desc: "A web platform for enterpeurs to control and developing business",
       content: [
         `Anadar is a digital synthesis of management science theory.
@@ -213,7 +213,7 @@ export default {
           href: 'https://github.com/apietryga/webions',
         },
       ],
-      category : ["game","coding","HTML", "SCSS","JavaScript", "JS", "Node.js","Redis"],
+      category : ["game", "code","coding","HTML", "SCSS","JavaScript", "JS", "Node.js","Redis"],
       desc : "Webions is a MMORPG game, avalible on browsers.",
       content : [
         `In school age, I spent a lot of time playing Tibia. Whenever I walked away from my computer
@@ -248,7 +248,7 @@ export default {
           href: 'https://github.com/apietryga/uFlash',
         },
       ],
-      category: ["business","IoT","movie","coding","HTML", "CSS", "PHP", "JavaScript", "JS"],
+      category: ["business", "code", "IoT","movie","coding","HTML", "CSS", "PHP", "JavaScript", "JS"],
       desc: "Interactive photo-mirror created for events or cultural places",
       content : [
         `A mirror measuring 160 x 80cm makes the product
@@ -271,7 +271,7 @@ export default {
         'bombeltyj_1.webp',
         'bombeltyj_2.webp',
       ],
-      category: ['renovations','business', '3d', 'nuxt', 'javasript', 'coding'],
+      category: ['renovations', "code", 'business', '3d', 'nuxt', 'javasript', 'coding'],
       desc: "Restaurant serving bubble-tea",
       content: [
         `We turned an industrial into a gastronomic establishment - it took a lot
@@ -289,7 +289,7 @@ export default {
         "pinky_server.webp",
         "pinky_nest.webp",
       ],
-      category : ["iOT","coding", "Python", "django", "CPP", "Arduino", "HTML", "CSS"],
+      category : ["iOT", "code", "coding", "Python", "django", "CPP", "Arduino", "HTML", "CSS"],
       desc : "Interactive home assistant for remote control of electrical appliances",
       content : [
         `Pinky is easy to adapt to your apartment, just switch it on
@@ -313,7 +313,7 @@ export default {
         "sanctuarium_2.webp",
         "sanctuarium_3.webp",
       ],
-      category : ['renovations', 'coding', 'iOT'],
+      category : ['renovations', "code", 'coding', 'iOT'],
       desc : "An interactive showroom where I create and test projects",
       content : [
         `Having access to a room of approximately 30m², I decided to create a place where I will develop my projects.`,
@@ -334,7 +334,7 @@ export default {
         "https://www.youtube.com/embed/x2LeWqEt27g",
         "wellton_visualisation2.webp"
       ],
-      category: ["business","IoT","coding","HTML","CSS","PHP","JavaScript","JS","Android"],
+      category: ["business","IoT", "code", "coding","HTML","CSS","PHP","JavaScript","JS","Android"],
       desc: "Interactive tables for restaurants.",
       content : [
         `The table software is aimed at restaurants.
@@ -387,7 +387,7 @@ export default {
           name: "Sanctuarium"
         }
       ],
-      category: ["IoT","coding","HTML","CSS","JavaScript", "JS", "PHP"],
+      category: ["IoT", "code", "coding","HTML","CSS","JavaScript", "JS", "PHP"],
       desc: "A program for transferring items between screens",
       content:[
         `Lets you upload text, video from yt / cda, photo or website
@@ -438,7 +438,7 @@ export default {
           href: "https://github.com/taicoders/kurseo"
         },
       ],
-      category:["courses", "Python", "django", "Java", "Spring", "SEO"],
+      category:["teaching", "courses", "Python", "django", "Java", "Spring", "SEO"],
       desc:`Single courses that I have conducted no more than 5 times.`,
       content: [
         /*html*/`<h3>Python Course</h3>
@@ -525,7 +525,7 @@ export default {
       media: [
         "/reference/1.webp"
       ],
-      category: ["courses","webdevelopment","HTML","CSS","SCSS","JavaScript","JS","Node.js", "jQuery", "SEO"],
+      category: ["teaching", "code", "courses","webdevelopment","HTML","CSS","SCSS","JavaScript","JS","Node.js", "jQuery", "SEO"],
       desc : "Course of the basics WEB application programming",
       content:[
         `I have conducted over 1000 hours of programming training
@@ -571,7 +571,7 @@ export default {
         "https://www.youtube.com/embed/SgVNov7eCq0",
         "/reference/5.webp",
       ],
-      category: ["courses","social","movie"],
+      category: ["teaching", "courses","social","movie"],
       desc: "Course of digital competences",
       content: [
         `I started my career as a trainer with computer skills courses for seniors.
@@ -607,7 +607,7 @@ export default {
         "https://www.youtube.com/embed/fYKp4NstrBQ",
         "https://www.youtube.com/embed/6liLfVHJCFY",
       ],
-      category: ["social","coding","teaching", "HTML", "CSS", "JavaScript", "JS"],
+      category: ["teaching", "code", "social","coding","teaching", "HTML", "CSS", "JavaScript", "JS"],
       desc: "Course of digital competences",
       content:[
         `After the courses conducted as part of the Silesian Senior @ Academy
@@ -636,7 +636,7 @@ export default {
       media:[
         "yano_1.webp"
       ],
-      category: ["webdevelopment","HTML", "CSS", "PHP", "WORDPRESS"],
+      category: ["webdevelopment", "code", "HTML", "CSS", "PHP", "WORDPRESS"],
       desc: "Editing of the furniture manufacturer's website",
       content : [
         `It was my first commercial commission. <br />
@@ -657,7 +657,7 @@ export default {
         "masterkey_1.webp",
         "masterkey_2.webp",
       ],
-      category: ["webdevelopment","HTML", "CSS", "JS", "jQuery", "PHP", "EXCEL", "CSV"],
+      category: ["webdevelopment", "code", "HTML", "CSS", "JS", "jQuery", "PHP", "EXCEL", "CSV"],
       desc: "Order configurator for the MasterKey key manufacturer",
       content:[
         `Masterkey technology allows you to open multiple locks with one key.
@@ -680,7 +680,7 @@ export default {
         "tomigra2.webp",
         "tomigra3.webp",
       ],
-      category: ["webdevelopment", "HTML", "CSS", "JS", "jQuery"],
+      category: ["teaching", "code", "webdevelopment", "HTML", "CSS", "JS", "jQuery"],
       desc: "Educational game for children of music and elementary schools",
       content:[
         `The design was going through the user
@@ -708,7 +708,7 @@ export default {
         "goodlock_2.webp",
         "goodlock_ulotka.webp",
       ],
-      category: ["webdevelopment","graphic", "HTML", "CSS", "JS", "PHP", "MySQL"],
+      category: ["webdevelopment", "code", "graphic", "HTML", "CSS", "JS", "PHP", "MySQL"],
       desc: "Website + reservation system + admin panel",
       content:[
         `I created a website for the escape room - the company's showcase
