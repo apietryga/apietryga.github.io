@@ -24,7 +24,6 @@
 
   --clickedColor: rgba(0, 0, 0, 0.2);
   --backgroundColor: rgb(214, 214, 214);
-  /* --fontColor:rgba(31, 29, 29, 0.8);  */
   --fontColor:rgba(255, 255, 255, 0.8); 
 
   --overlay-color: rgba(157, 179, 157, 0.712);
@@ -43,7 +42,6 @@ h1, h2, h3, p{
   margin:0;
 }
 #__nuxt{
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -62,14 +60,10 @@ main{
 body{
   -webkit-print-color-adjust:exact !important;
   print-color-adjust:exact !important;
-  /* background-color:var(--backgroundColor); */
   background:var(--dark);
-  /* color:var(--light); */
-
   font-family: var(--font-family);
   margin:0;
   letter-spacing: 0.2px;
-  /* line-height: 20px; */
   color:var(--fontColor);
   height:calc(100vh - var(--navHeaderHeight));
   position:relative;
@@ -123,7 +117,6 @@ body{
   font-size:.7rem;
   padding:.3rem .75rem;
 }
-/* picture{ */
 .overlay{
   background: var(--overlay-color);
   display:flex;

@@ -16,7 +16,6 @@
         <NuxtLink to="/contact">
           <span>{{ $t('nav.contact') }}</span> 
         </NuxtLink>
-        <!-- <NuxtLink :to="'/cvs/2023_03_CV_en.pdf'" target="_blank"> -->
         <NuxtLink :to="'/cv'">
           Curriculum Vitae
         </NuxtLink>
