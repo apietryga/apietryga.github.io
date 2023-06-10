@@ -159,8 +159,9 @@
     }
     @media (min-width : 720px){
       &.content{
-        display:grid;
-        grid-template-columns: 1fr 1fr;
+        // display:grid;
+        // grid-template-columns: 1fr 1fr;
+				max-width: 60%;
       }
       h2{
         margin-bottom:2rem
@@ -177,7 +178,7 @@
         &:nth-child(odd){
           justify-content: flex-end;
           display:flex;
-          text-align:right;
+          // text-align:right;
         }
         &:nth-child(even){
           justify-content: flex-start;
@@ -189,4 +190,7 @@
       }
     }
   }
+	.githubContainer a{
+		background:none !important;
+	}
 </style>
