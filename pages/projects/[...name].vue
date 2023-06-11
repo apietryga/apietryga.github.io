@@ -159,8 +159,6 @@
     }
     @media (min-width : 720px){
       &.content{
-        // display:grid;
-        // grid-template-columns: 1fr 1fr;
 				max-width: 60%;
       }
       h2{
@@ -178,7 +176,6 @@
         &:nth-child(odd){
           justify-content: flex-end;
           display:flex;
-          // text-align:right;
         }
         &:nth-child(even){
           justify-content: flex-start;

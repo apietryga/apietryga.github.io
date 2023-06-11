@@ -189,14 +189,11 @@
   }
   .externalJob{
     border-radius:2rem;
-    //border:2px solid var(--dark-primary);
-    //box-shadow: 0 0 1rem var(--dark-primary);
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding:0 1rem;
-    // background: lighten(var(--backgroundColor), 10%);
     background: hsl(var(--backgroundColor), 10% );
     img{
       margin-top:1rem;
@@ -247,7 +244,6 @@
           text-align: left;
         }
         picture{
-          // border: 2px dashed red;
           background: var(--accent);
           border-radius: .5rem;
           padding:.5rem;
@@ -262,7 +258,6 @@
         }
         p{
           text-align: left;
-          //padding:0 1rem;
           &:nth-child(1){
             font-size: 1.2rem;
             position:absolute;
@@ -320,6 +315,5 @@
   iframe{
     max-width: 100vw;
     max-height:100vh;
-    // min-height:50vh;
   }
 </style>

@@ -19,6 +19,5 @@ export default defineNuxtConfig({
     }
   },
   transpile: [ "three" ],
-  // ssr: false,
   purgeCSS: { whitelist: ["aos-init", "aos-animate", "data-aos-delay", "data-aos-duration", "fade-up", "zoom-in"] }
 })
