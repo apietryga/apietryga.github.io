@@ -29,7 +29,6 @@
     props: { slides: { required: true, type: Array }},
     data(){
       return{
-        // window,
         window: typeof window != 'undefined' ? window : null,
         isIntervaled: false,
         isPaused: false,
