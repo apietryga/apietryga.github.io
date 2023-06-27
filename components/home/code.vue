@@ -138,4 +138,18 @@
       }
     }
   }
+
+  @media(min-width:938px){
+    #code{
+      max-width: 60%;
+      margin:2rem auto;
+      margin-bottom:30vh;
+    }
+  }
+  @media(max-width:938px){
+    #code{
+      flex-direction: column;
+    }
+  }
+
 </style>
