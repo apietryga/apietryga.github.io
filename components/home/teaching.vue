@@ -34,7 +34,7 @@
       
     </article>
     
-    <homeCarousel :slides="$t('home.teaching.reviews.list')" />
+    <!-- <homeCarousel :slides="$t('home.teaching.reviews.list')" /> -->
 
 </div>
 </template>
@@ -44,6 +44,9 @@
 <style lang="scss">
 #teaching{
   padding: 0 2rem;
+  max-width: 60%;
+  margin:auto;
+  margin-bottom:30vh;
   >header{
     margin:2rem 0 4rem 0;
     p{
@@ -67,11 +70,13 @@
   }
 }
 @media (max-width:768px){
-  #teaching .wrapper  >div{
-    &:nth-child(odd){
+  #teaching {
+    max-width: 100%;
+    .wrapper  >div{
+      &:nth-child(odd){
         padding-left: 50px;
       }
-    
+    }
   }
 }
 </style>
