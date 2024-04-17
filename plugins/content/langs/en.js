@@ -842,6 +842,7 @@ export default {
 			title: "Main Skills",
 			items: [
 				{ name: "JavaScript", ico:"js" },
+				{ name: "Vue", ico:"vue" },
 				{ name: "Node.js", ico:"nodejs" },
 				{ name: "Nuxt", ico:"nuxt" },
 				{ name: "Python", ico:"python" },
@@ -868,6 +869,7 @@ export default {
 					title: "Linkhouse.co",
 					role: "Software Engineer",
 					desc: "Maintenance and development link building platform, creating innovative solutions for the seo industry.",
+          stack: ["Vue", "Twig", "PHP", "Slim", "Docker", "Linux", "Laravel"],
 				},
 				{
 					title: "Frelance programming trainer",
@@ -877,12 +879,14 @@ export default {
 							date_to:"02.2022",
 							company: "Ernabo",
 							desc: "Conducting trainings in the field of Front-end development in technologies",
+              stack: ["HTML", "SCSS", "JS", "Vue"],
 						},
 						{
 							date_from: "12.2020",
 							date_to:"12.2021",
 							company: "RECON Consulting, Business Masters, LG PROJECT,  Everest Consulting",
 							desc: "Training in Social Media, SEO and programming in Python and Java",
+              stack: ["HTML", "SCSS", "JS", "Vue"],
 						},
 					]
 				},
@@ -901,6 +905,7 @@ export default {
 							date_to:"10.2016",
 							company: "Good Lock",
 							desc: "Creating CMS for escape room to manage booking with landing page to present rooms offers.",
+              stack: ["Vue", "PHP"],
 						},
 						{
 							date_from: "06.2016",

@@ -11,7 +11,8 @@
     <div class="cv" ref="cv">
       <article>
         <picture>
-          <img src="/img/cv/antoni-pietryga-light.jpg" alt="Antoni Pietryga profile photo">
+          <!-- <img src="/img/cv/antoni-pietryga-light.jpg" alt="Antoni Pietryga profile photo"> -->
+          <img src="/img/cv/anotni-pietryga-2024.jpg" alt="Antoni Pietryga profile photo">
         </picture>
         <h2>{{ $t('cv.contact.title') }}</h2>
         <ul>
@@ -83,22 +84,29 @@
         <ol>
           <li v-for="item of $t('cv.experience.items')">
             <sub>
-							<span v-if="!item.items">{{ item.date_from + " - " + item.date_to }}</span>
-							<span v-else>{{ item.items[0].date_from + " - " + item.items[item.items.length - 1].date_to }}</span>
-						</sub>
+				<span v-if="!item.items">{{ item.date_from + " - " + item.date_to }}</span>
+				<span v-else>{{ item.items[0].date_from + " - " + item.items[item.items.length - 1].date_to }}</span>
+			</sub>
             <h3>{{ item.title }}</h3>
             <sup v-if="!item.items">{{ item.role }}</sup>
-						<p v-if="!item.items">{{ item.desc }}</p>
-						<ul v-if="item.items">
+			<p v-if="!item.items">{{ item.desc }}</p>
+			<ul v-if="item.items">
               <li v-for="subitem of item.items">
                 <sub>{{ subitem.date_from + " - " + subitem.date_to }}</sub>
                 <h4>{{ subitem.company }}</h4>
-								<p>{{ subitem.desc }}</p>
+				<p>{{ subitem.desc }}</p>
+				<p v-if="subitem.stack" class="stack">
+					<span v-for="tech of subitem.stack">{{ tech }}</span>
+				</p>
               </li>
             </ul>
+			<p v-if="item.stack" class="stack">
+				<span v-for="tech of item.stack">{{ tech }}</span>
+			</p>
           </li>
         </ol>
-				<p class="description">{{ $t('cv.experience.description') }}</p>
+		<p class="description">{{ $t('cv.experience.description') }}</p>
+
       </section>
     </div>
   </div>
@@ -175,6 +183,13 @@
 				}
 			}
 		}
+		.stack{
+			font-weight: bold;
+			margin-top:3px;
+			display: flex;
+			flex-wrap: wrap;
+			gap:5px;
+		}
 		section{
 			background: #fff;
 			color:#000;
@@ -220,7 +235,7 @@
 				}
 				>li{
 					padding-left:.5em;
-					margin-top:1em;
+					margin-top:.5rem;
 					position: relative;
 					>p{
 						margin-top:-.5em;
@@ -264,7 +279,7 @@
 						padding:0 0 0 1em;
 						position:relative;
 						li{
-							margin-top:1em;
+							margin-top:.5rem;
 							h4{
 								// margin-bottom:.5em;
 								margin:0 0 1em 0;
