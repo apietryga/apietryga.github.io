@@ -1,12 +1,12 @@
 <template>
   <div class="overCV">
 
-		<nuxtLink class="btn" target="_blank"
+    <!-- <nuxtLink class="btn" target="_blank"
 			to="/cvs/2023_06_CV_en.pdf"
 			download="/cvs/2023_06_CV_en.pdf"
 			style="margin-top:2em;">
 			{{ $t('cv.download') }}
-		</nuxtLink>
+		</nuxtLink> -->
 
 		<button @click="generatePDF()">
 			Generate
@@ -14,75 +14,129 @@
 
     <div class="cv_wrapper">
       <div id="curriculum_vitae">
-        <h1>Antoni Pietryga</h1>
+
+        <main>
+          <header>
+            <h1>{{ $t('author') }}</h1>
+            <h2>{{ $t('role') }}</h2>
+            <picture>
+              <img src="/img/cv/anotni-pietryga-2024.jpg" alt="Antoni Pietryga profile photo">
+            </picture>
+          </header>
+
+          <div class="contact">
+            
+            <div class="contact-item" v-for="contact_item of cv.contact">
+              <a :href="contact_item.href" :target="contact_item.blank ? '_blank' : null">
+                <i>{{ contact_item.icon }}</i>
+                <span>{{ contact_item.label }}</span>
+              </a>
+            </div>
+            <!-- <ul>
+              <li>
+                <a class="link" :href="'mailto:' + $t('contact.icons.mail')">
+                  <iconCustom type="mail" />
+                  <span>{{ $t('contact.icons.mail') }}</span>
+                </a>
+              </li>
+              <li>
+                <a class="link" :href="'tel:' + $t('contact.icons.phone').replace(/ /g, '')">
+                  <iconCustom type="phone" />
+                  <span>{{ $t('contact.icons.phone') }}</span>
+                </a>
+              </li>
+              <li>
+                <a class="link" :href="$t('cv.contact.webpage')" target="_blank">
+                  <iconCustom type="web" />
+                  <span>{{ $t('cv.contact.webpage').replace('https://', "") }}</span>
+                </a>
+              </li>
+              <li>
+                <a class="link" :href="$t('contact.icons.github')" target="_blank">
+                  <iconCustom type="github" />
+                  <span>{{  $t('cv.contact.social_name') }}</span>
+                </a>
+              </li>
+              <li>
+                <a class="link" :href="$t('contact.icons.linkedin')" target="_blank">
+                  <iconCustom type="linkedin" />
+                  <span>{{  $t('cv.contact.social_name') }}</span>
+                </a>
+              </li>
+            </ul> -->
+          </div>
+        </main>
+        <section>
+          About me
+        </section>
         <!-- <p><font size="3" color="red">print this to pdf</font></p> -->
       </div>
     </div>
 
-		<div class="cv" ref="cv">
+		<!-- <div class="cv" ref="cv">
 			<article>
-			<picture>
-				<img src="/img/cv/anotni-pietryga-2024.jpg" alt="Antoni Pietryga profile photo">
-			</picture>
-			<h2>{{ $t('cv.contact.title') }}</h2>
-			<ul>
-				<li>
-				<a class="link" :href="'mailto:' + $t('contact.icons.mail')">
-					<iconCustom type="mail" />
-					<span>{{ $t('contact.icons.mail') }}</span>
-				</a>
-				</li>
-				<li>
-				<a class="link" :href="'tel:' + $t('contact.icons.phone').replace(/ /g, '')">
-					<iconCustom type="phone" />
-					<span>{{ $t('contact.icons.phone') }}</span>
-				</a>
-				</li>
-				<li>
-				<a class="link" :href="$t('cv.contact.webpage')" target="_blank">
-					<iconCustom type="web" />
-					<span>{{ $t('cv.contact.webpage').replace('https://', "") }}</span>
-				</a>
-				</li>
-				<li>
-				<a class="link" :href="$t('contact.icons.github')" target="_blank">
-					<iconCustom type="github" />
-					<span>{{  $t('cv.contact.social_name') }}</span>
-				</a>
-				</li>
-				<li>
-				<a class="link" :href="$t('contact.icons.linkedin')" target="_blank">
-					<iconCustom type="linkedin" />
-					<span>{{  $t('cv.contact.social_name') }}</span>
-				</a>
-				</li>
-			</ul>
-			<h2>{{ $t('cv.main_skills.title') }}</h2>
-			<ul>
-				<li>
-							<template v-for="skill of $t('cv.main_skills.items')">
-								<a class="link"
-									:href="$t('cv.contact.webpage') + '/projects?q=' + skill.name" 
-									target="_blank"
-								>
-									<iconCustom :type="skill.ico" />
-									<span>{{ skill.name }}</span>
-								</a>
-							</template>
-				</li>
-			</ul>
-			<h2>{{ $t('cv.languages.title') }}</h2>
-			<ul>
-				<li v-for="item of $t('cv.languages.items')">
-				<div class="link">
-					<iconCustom :type="item.ico" />
-					<span>
-					<p>{{ item.name }}</p>
-					<p>{{ item.desc }}</p>
-					</span>
-				</div>
-				</li>
-			</ul>
+        <picture>
+          <img src="/img/cv/anotni-pietryga-2024.jpg" alt="Antoni Pietryga profile photo">
+        </picture>
+        <h2>{{ $t('cv.contact.title') }}</h2>
+        <ul>
+          <li>
+          <a class="link" :href="'mailto:' + $t('contact.icons.mail')">
+            <iconCustom type="mail" />
+            <span>{{ $t('contact.icons.mail') }}</span>
+          </a>
+          </li>
+          <li>
+          <a class="link" :href="'tel:' + $t('contact.icons.phone').replace(/ /g, '')">
+            <iconCustom type="phone" />
+            <span>{{ $t('contact.icons.phone') }}</span>
+          </a>
+          </li>
+          <li>
+          <a class="link" :href="$t('cv.contact.webpage')" target="_blank">
+            <iconCustom type="web" />
+            <span>{{ $t('cv.contact.webpage').replace('https://', "") }}</span>
+          </a>
+          </li>
+          <li>
+          <a class="link" :href="$t('contact.icons.github')" target="_blank">
+            <iconCustom type="github" />
+            <span>{{  $t('cv.contact.social_name') }}</span>
+          </a>
+          </li>
+          <li>
+          <a class="link" :href="$t('contact.icons.linkedin')" target="_blank">
+            <iconCustom type="linkedin" />
+            <span>{{  $t('cv.contact.social_name') }}</span>
+          </a>
+          </li>
+        </ul>
+        <h2>{{ $t('cv.main_skills.title') }}</h2>
+        <ul>
+          <li>
+                <template v-for="skill of $t('cv.main_skills.items')">
+                  <a class="link"
+                    :href="$t('cv.contact.webpage') + '/projects?q=' + skill.name" 
+                    target="_blank"
+                  >
+                    <iconCustom :type="skill.ico" />
+                    <span>{{ skill.name }}</span>
+                  </a>
+                </template>
+          </li>
+        </ul>
+        <h2>{{ $t('cv.languages.title') }}</h2>
+        <ul>
+          <li v-for="item of $t('cv.languages.items')">
+          <div class="link">
+            <iconCustom :type="item.ico" />
+            <span>
+            <p>{{ item.name }}</p>
+            <p>{{ item.desc }}</p>
+            </span>
+          </div>
+          </li>
+        </ul>
 			</article>
 			<section>
 			<h1>{{ $t('author') }}</h1>
@@ -117,315 +171,435 @@
 			<p class="description">{{ $t('cv.experience.description') }}</p>
 
 			</section>
-		</div>
+		</div> -->
 
   </div>
 </template>
 
 <style lang="scss">
-  .cv_wrapper{
-    --cv-scale: 3;
-    --cv-default-height: 296px;
-    border:2px dashed blue;
-    aspect-ratio: 210 / 296;
-    height: calc(var(--cv-default-height) * var(--cv-scale));
-    // display: flex;
-    // justify-content: center;
-    display: grid;
-    place-items: center;
-
-
-    #curriculum_vitae{
-      transform: scale(var(--cv-scale));
-    }
-  //   // --cv-width:  
-
-  //   border:2px dashed green;
-
-  }
-
   #curriculum_vitae{
     border:2px dashed red;
-    color:blue;
-    height:296px;
-    width: 210px;
+    color:#000;
+    // height:296px;
+    // width: 210px;
+    height:var(--cv-default-height);
+    width: var(--cv-default-width);
+    background: #fff;
+    display:flex;
+    font-size:5px;
+
+    main{
+      border:2px dashed green;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // justify-content: center;
+      text-align: center;
+      header{
+        // text-align: center;
+        border:2px dashed blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        h1, h2 {
+          margin:0;
+          line-height: 1;
+        }
+        h1{
+          font-size:6px;
+          font-weight: 800;
+        }
+        h2{
+          font-size:3px;
+        }
+        picture{
+          width:50px;
+          height:50px;
+          border:2px dashed yellow;
+          display:flex;
+          justify-content: center;
+          img{
+            max-width: 100%;
+            max-height: 100%;
+            border-radius:50%;
+          }
+        }
+      }
+
+      .contact{
+        border:2px dashed pink;
+        padding:0;
+        color:#000;
+        .contact-item{
+          color:#000;
+
+        }
+        // ul{
+        //   border:2px dashed greenyellow;
+        //   margin:0;
+        //   padding:0;
+        //   list-style:none;
+        //   color:green;
+        //   li{
+        //     color:blue;
+        //     border:2px dashed red;
+        //     a{
+        //       color:yellow;
+        //       border:2px dashed green;
+        //       display:flex;
+
+        //       &:not(.link){
+        //         width:15px;
+        //         height:15px;
+
+        //       }
+
+        //     }
+        //   }
+        // }
+
+      }
+    }
+
+
+
   }
 
+  .overCV{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 
-.overCV{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-	.cv{
-		margin:2em;
-		background: #000;
-		display:flex;
-		width:  210mm;
-		height: calc(297mm - 2px);
-		border:1px solid #fff;
-		article{
-			flex:1;
-			color:#fff;
-			padding:1em .5em 1em 1em;
-			picture{
-				height:5.5cm;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding-right:.5em;
-				img{
-					background: rgb(21, 21, 116);
-					border-radius:5cm;
-					height:5cm;
-					width:5cm;
-				}
-			}
-			h2{
-				margin:0;
-				margin-top:2em;
-				line-height: 1.5em;
-				&:first-of-type{
-					margin-top:.5em;
-				}
-			}
-			> ul{
-				margin:0 .25em;
-				padding:0;
-				list-style: none;
-				li {
-					width: fit-content;
-					margin:.5em 0;
-					div.link a{
-						padding:2px;
-					}
-					.link{
-						display:flex;
-						align-items: center;
-						a{
-							width:1.5em;
-							height:1.5em;
-							margin-right:.5em;
-							border-radius: 7px;
-						}
-						span{
-							font-size: .8em;
-							p{
-								line-height: 1.2em;
-								&:nth-child(2){
-									font-size:.5em;
-									text-transform: uppercase;
-								}
-							}
-						}
-	
-					}
-				}
-			}
-		}
-		.stack{
-			font-weight: bold;
-			margin-top:3px;
-			display: flex;
-			flex-wrap: wrap;
-			gap:5px;
-		}
-		section{
-			background: #fff;
-			color:#000;
-			flex:2;
-			padding:1em;
-			display:flex;
-			flex-direction: column;
-			h1{
-				font-size:3em;
-				margin:0;
-				line-height: .9em;
-				margin-top:.25em;
-			}
-			h2{
-				margin-top:.5em;
-			}
-			p{
-				line-height: 1.1em;
-				font-size: .9em;
-			}
-			ol{
-				margin:0;
-				padding:0 0 0 2em;
-				list-style: none;
-				flex:1;
-				sub{
-					line-height: 0em;
-					position:relative;
-					top:-.75em;
-					font-size:.6em;
-					font-weight: bold;
-				}
-				sup{
-					font-size:.6em;
-					font-weight: bold;
-					position:relative;
-					top:-.3em;
+    .cv_wrapper{
+      --cv-scale: .8;
+      --cv-default-height: 296mm;
+      --cv-default-width: 210mm;
+      border:2px dashed blue;
+      // aspect-ratio: 210 / 296;
+      height: calc(var(--cv-default-height) * var(--cv-scale));
+      width: calc(var(--cv-default-width) * var(--cv-scale));
+      // display: flex;
+      // justify-content: center;
+      display: grid;
+      place-items: center;
+      position: relative;
 
-				}
-				h3,h4{
-					line-height: .3em;
-					margin-bottom:.4em
-				}
-				>li{
-					padding-left:.5em;
-					margin-top:.5rem;
-					position: relative;
-					>p{
-						margin-top:-.5em;
-					}
-					p{
-						font-size: .9em;
-						line-height: 1em;
-					}
-					&:first-of-type{
-						margin-top:0;
-					}
-					&:last-of-type::after{
-						height:0;
-					}
-					&::before{
-						content:"";
-						position:absolute;
-						top:1em;
-						left:calc(-1.5em - 2.5px);
-						background: #000;
-						border:5px solid #fff;
-						width:7px;
-						height:7px;
-						border-radius: 50%;
-						box-shadow: 0 0 5px #000;
-						z-index:1;
-					}
-					&::after{
-						content:"";
-						left:calc(-1.5em + 5.5px);
-						position:absolute;
-						background: var(--cv-line-color);
-						width:1px;
-						top:1.5em;
-						height:calc(100% + 1em);
-						border-radius: 5px;
-						box-shadow: 0 0 2px #000;
-					}
-					ul{
-						list-style: none;
-						padding:0 0 0 1em;
-						position:relative;
-						li{
-							margin-top:.5rem;
-							h4{
-								// margin-bottom:.5em;
-								margin:0 0 1em 0;
-								margin-bottom:0;
-								line-height: 1em;
-							}
-							sub{
-								top:-.25em;
-							}
-								// p{
-							// 	line-height: .9em;
-							// }
-							// sup{
-							// 	// display:none;
-							// 	// line-height: 0;
-							// 	// margin:0;
-							// }
-							// p{
-							// 	// margin:0;
-							// 	line-height: .5em;
-							// }
-						}
-					}
-				}
-			}
-			.description{
-				font-size:.7em;
-			}
-		}
-	}
-}
 
-@media only screen and (max-width:210mm){
-	.overCV .cv{
-		flex-direction: column-reverse;
-		width:95%;
-		height: unset;
-		margin-top:2.5%;
-		section >.description{
-			display:none;
-		}
-	}
-}
+      #curriculum_vitae{
+        transform: scale(var(--cv-scale));
+        position: absolute;
+      }
+    //   // --cv-width:  
 
-@media only print {
-	.btn{
-		display:none;
-	}
-	body{
-		height: unset;
-	}
-  .navHeader,
-  .overWrapper > footer {
-    display:none;
+    //   border:2px dashed green;
+
+    }
+
+    // 	.cv{
+    // 		margin:2em;
+    // 		background: #000;
+    // 		display:flex;
+    // 		width:  210mm;
+    // 		height: calc(297mm - 2px);
+    // 		border:1px solid #fff;
+    // 		article{
+    // 			flex:1;
+    // 			color:#fff;
+    // 			padding:1em .5em 1em 1em;
+    // 			picture{
+    // 				height:5.5cm;
+    // 				display: flex;
+    // 				align-items: center;
+    // 				justify-content: center;
+    // 				padding-right:.5em;
+    // 				img{
+    // 					background: rgb(21, 21, 116);
+    // 					border-radius:5cm;
+    // 					height:5cm;
+    // 					width:5cm;
+    // 				}
+    // 			}
+    // 			h2{
+    // 				margin:0;
+    // 				margin-top:2em;
+    // 				line-height: 1.5em;
+    // 				&:first-of-type{
+    // 					margin-top:.5em;
+    // 				}
+    // 			}
+    // 			> ul{
+    // 				margin:0 .25em;
+    // 				padding:0;
+    // 				list-style: none;
+    // 				li {
+    // 					width: fit-content;
+    // 					margin:.5em 0;
+    // 					div.link a{
+    // 						padding:2px;
+    // 					}
+    // 					.link{
+    // 						display:flex;
+    // 						align-items: center;
+    // 						a{
+    // 							width:1.5em;
+    // 							height:1.5em;
+    // 							margin-right:.5em;
+    // 							border-radius: 7px;
+    // 						}
+    // 						span{
+    // 							font-size: .8em;
+    // 							p{
+    // 								line-height: 1.2em;
+    // 								&:nth-child(2){
+    // 									font-size:.5em;
+    // 									text-transform: uppercase;
+    // 								}
+    // 							}
+    // 						}
+      
+    // 					}
+    // 				}
+    // 			}
+    // 		}
+    // 		.stack{
+    // 			font-weight: bold;
+    // 			margin-top:3px;
+    // 			display: flex;
+    // 			flex-wrap: wrap;
+    // 			gap:5px;
+    // 		}
+    // 		section{
+    // 			background: #fff;
+    // 			color:#000;
+    // 			flex:2;
+    // 			padding:1em;
+    // 			display:flex;
+    // 			flex-direction: column;
+    // 			h1{
+    // 				font-size:3em;
+    // 				margin:0;
+    // 				line-height: .9em;
+    // 				margin-top:.25em;
+    // 			}
+    // 			h2{
+    // 				margin-top:.5em;
+    // 			}
+    // 			p{
+    // 				line-height: 1.1em;
+    // 				font-size: .9em;
+    // 			}
+    // 			ol{
+    // 				margin:0;
+    // 				padding:0 0 0 2em;
+    // 				list-style: none;
+    // 				flex:1;
+    // 				sub{
+    // 					line-height: 0em;
+    // 					position:relative;
+    // 					top:-.75em;
+    // 					font-size:.6em;
+    // 					font-weight: bold;
+    // 				}
+    // 				sup{
+    // 					font-size:.6em;
+    // 					font-weight: bold;
+    // 					position:relative;
+    // 					top:-.3em;
+
+    // 				}
+    // 				h3,h4{
+    // 					line-height: .3em;
+    // 					margin-bottom:.4em
+    // 				}
+    // 				>li{
+    // 					padding-left:.5em;
+    // 					margin-top:.5rem;
+    // 					position: relative;
+    // 					>p{
+    // 						margin-top:-.5em;
+    // 					}
+    // 					p{
+    // 						font-size: .9em;
+    // 						line-height: 1em;
+    // 					}
+    // 					&:first-of-type{
+    // 						margin-top:0;
+    // 					}
+    // 					&:last-of-type::after{
+    // 						height:0;
+    // 					}
+    // 					&::before{
+    // 						content:"";
+    // 						position:absolute;
+    // 						top:1em;
+    // 						left:calc(-1.5em - 2.5px);
+    // 						background: #000;
+    // 						border:5px solid #fff;
+    // 						width:7px;
+    // 						height:7px;
+    // 						border-radius: 50%;
+    // 						box-shadow: 0 0 5px #000;
+    // 						z-index:1;
+    // 					}
+    // 					&::after{
+    // 						content:"";
+    // 						left:calc(-1.5em + 5.5px);
+    // 						position:absolute;
+    // 						background: var(--cv-line-color);
+    // 						width:1px;
+    // 						top:1.5em;
+    // 						height:calc(100% + 1em);
+    // 						border-radius: 5px;
+    // 						box-shadow: 0 0 2px #000;
+    // 					}
+    // 					ul{
+    // 						list-style: none;
+    // 						padding:0 0 0 1em;
+    // 						position:relative;
+    // 						li{
+    // 							margin-top:.5rem;
+    // 							h4{
+    // 								// margin-bottom:.5em;
+    // 								margin:0 0 1em 0;
+    // 								margin-bottom:0;
+    // 								line-height: 1em;
+    // 							}
+    // 							sub{
+    // 								top:-.25em;
+    // 							}
+    // 								// p{
+    // 							// 	line-height: .9em;
+    // 							// }
+    // 							// sup{
+    // 							// 	// display:none;
+    // 							// 	// line-height: 0;
+    // 							// 	// margin:0;
+    // 							// }
+    // 							// p{
+    // 							// 	// margin:0;
+    // 							// 	line-height: .5em;
+    // 							// }
+    // 						}
+    // 					}
+    // 				}
+    // 			}
+    // 			.description{
+    // 				font-size:.7em;
+    // 			}
+    // 		}
+    // 	}
+
   }
-	.overCV .cv{
-		margin:0;
-	}
-	.blob{
-		display:none !important;
-	}
-	#__nuxt > div {
-		min-height: unset;
-	}
-}
+
+  // @media only screen and (max-width:210mm){
+  // 	.overCV .cv{
+  // 		flex-direction: column-reverse;
+  // 		width:95%;
+  // 		height: unset;
+  // 		margin-top:2.5%;
+  // 		section >.description{
+  // 			display:none;
+  // 		}
+  // 	}
+  // }
+
+  // @media only print {
+  // 	.btn{
+  // 		display:none;
+  // 	}
+  // 	body{
+  // 		height: unset;
+  // 	}
+  //   .navHeader,
+  //   .overWrapper > footer {
+  //     display:none;
+  //   }
+  // 	.overCV .cv{
+  // 		margin:0;
+  // 	}
+  // 	.blob{
+  // 		display:none !important;
+  // 	}
+  // 	#__nuxt > div {
+  // 		min-height: unset;
+  // 	}
+  // }
 
 </style>
 
 
 <script setup>
-// var domToPdf = require('dom-to-pdf');
-// import domToPdf from 'dom-to-pdf'
-// console.log('hello')
 
-// var element = document.getElementById('test');
+  useHead({
+    script: [{ src: "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" }],
+  })
 
-// onMounted(() => {
+  const cv = {
+    contact: [
+      {
+        icon: 'mail',
+        href: 'mailto:antek.pietryga@gmail.com',
+        label: 'antek.pietryga@gmail.com',
+      },
+      {
+        icon: 'phone',
+        href: 'tel:+48732012715',
+        label: '+48 732 012 715',
+      },
+      {
+        icon: 'web',
+        href: 'https://apietryga.github.io',
+        label: 'apietryga.github.io',
+        blank: true,
+      },
+      {
+        icon: 'github',
+        href: 'https://github.com/apietryga',
+        label: '/apietryga',
+        blank: true,
+      },
+      {
+        icon: 'linkedin',
+        href: 'https://www.linkedin.com/in/apietryga/',
+        label: '/in/apietryga',
+        blank: true,
+      }
+    ]
+  }
 
-// 	var element = document.querySelector('.cv');
-// 	var options = {
-// 	  filename: 'test.pdf'
-// 	};
-	
-// 	domToPdf(element, options, function(pdf) {
-// 	  console.log('done');
-// 	});
+  const generatePDF = () => {
 
-// })
-import { jsPDF } from "jspdf";
+    var element = document.getElementById('curriculum_vitae');
+    var opt = {
+      // margin:       1,
+      filename:     'myfile.pdf',
+      // image:        { type: 'jpeg', quality: 0.98 },
+      // html2canvas:  { scale: 2 },
+      html2canvas: { scale: 3.78 },
+      // jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' },
+      // jsPDF:        { unit: 'mm', format: 'letter', orientation: 'portrait' },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    }
+    
+    // html2pdf().from(element).set(opt).save();
+    html2pdf().from(element).set(opt).toPdf().get('pdf').then(pdf => {
+      console.log({pdf})
+      window.open(pdf.output('bloburl'), '_blank');
+    })
 
-const generatePDF = () => {
+    // const doc = new jsPDF('p', 'mm', [297, 210]);
+    // const source = window.document.getElementById('curriculum_vitae')
 
-	// const doc = new jsPDF();          
-	const doc = new jsPDF('p', 'mm', [297, 210]);
-	const source = window.document.getElementById('curriculum_vitae');
-	// const source = window.document.querySelector('.cv');
+    // doc.html(source, {
+    // 	callback: doc => {
+    //     // doc.rect(0, 50, 50, 50, 'FD');
+    //     doc.link(0, 0, 50, 50, {url: 'https://www.example.com/', target: "_blank"});
+    //     doc.output("dataurlnewwindow");
+    // 	}
+    // })
 
-	doc.html(source, {
-		callback: doc => {
-			doc.output("dataurlnewwindow");
-		}
-	});
+  }
 
-}
-
-// onMounted(() => {
-// 	generatePDF()
-// })
 
 </script>
