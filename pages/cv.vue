@@ -8,111 +8,126 @@
 			{{ $t('cv.download') }}
 		</nuxtLink>
 
-    <div class="cv" ref="cv">
-      <article>
-        <picture>
-          <!-- <img src="/img/cv/antoni-pietryga-light.jpg" alt="Antoni Pietryga profile photo"> -->
-          <img src="/img/cv/anotni-pietryga-2024.jpg" alt="Antoni Pietryga profile photo">
-        </picture>
-        <h2>{{ $t('cv.contact.title') }}</h2>
-        <ul>
-          <li>
-            <a class="link" :href="'mailto:' + $t('contact.icons.mail')">
-              <iconCustom type="mail" />
-              <span>{{ $t('contact.icons.mail') }}</span>
-            </a>
-          </li>
-          <li>
-            <a class="link" :href="'tel:' + $t('contact.icons.phone').replace(/ /g, '')">
-              <iconCustom type="phone" />
-              <span>{{ $t('contact.icons.phone') }}</span>
-            </a>
-          </li>
-          <li>
-            <a class="link" :href="$t('cv.contact.webpage')" target="_blank">
-              <iconCustom type="web" />
-              <span>{{ $t('cv.contact.webpage').replace('https://', "") }}</span>
-            </a>
-          </li>
-          <li>
-            <a class="link" :href="$t('contact.icons.github')" target="_blank">
-              <iconCustom type="github" />
-              <span>{{  $t('cv.contact.social_name') }}</span>
-            </a>
-          </li>
-          <li>
-            <a class="link" :href="$t('contact.icons.linkedin')" target="_blank">
-              <iconCustom type="linkedin" />
-              <span>{{  $t('cv.contact.social_name') }}</span>
-            </a>
-          </li>
-        </ul>
-        <h2>{{ $t('cv.main_skills.title') }}</h2>
-        <ul>
-          <li>
-						<template v-for="skill of $t('cv.main_skills.items')">
-							<!-- {{  skill  }} -->
-							<a class="link"
-								:href="$t('cv.contact.webpage') + '/projects?q=' + skill.name" 
-								target="_blank"
-							>
-								<iconCustom :type="skill.ico" />
-								<span>{{ skill.name }}</span>
-							</a>
-						</template>
-          </li>
-        </ul>
-        <h2>{{ $t('cv.languages.title') }}</h2>
-        <ul>
-          <li v-for="item of $t('cv.languages.items')">
-            <div class="link">
-              <iconCustom :type="item.ico" />
-              <span>
-                <p>{{ item.name }}</p>
-                <p>{{ item.desc }}</p>
-              </span>
-            </div>
-          </li>
-        </ul>
-      </article>
-      <section>
-        <h1>{{ $t('author') }}</h1>
-				<p class="role">{{ $t('role') }}</p>
-        <h2>{{ $t('cv.summary.title') }}</h2>
-				<p>{{ $t('cv.summary.content') }}</p>
-        <h2>{{ $t('cv.experience.title') }}</h2>
-        <ol>
-          <li v-for="item of $t('cv.experience.items')">
-            <sub>
-				<span v-if="!item.items">{{ item.date_from + " - " + item.date_to }}</span>
-				<span v-else>{{ item.items[0].date_from + " - " + item.items[item.items.length - 1].date_to }}</span>
-			</sub>
-            <h3>{{ item.title }}</h3>
-            <sup v-if="!item.items">{{ item.role }}</sup>
-			<p v-if="!item.items">{{ item.desc }}</p>
-			<ul v-if="item.items">
-              <li v-for="subitem of item.items">
-                <sub>{{ subitem.date_from + " - " + subitem.date_to }}</sub>
-                <h4>{{ subitem.company }}</h4>
-				<p>{{ subitem.desc }}</p>
-				<p v-if="subitem.stack" class="stack">
-					<span v-for="tech of subitem.stack">{{ tech }}</span>
-				</p>
-              </li>
-            </ul>
-			<p v-if="item.stack" class="stack">
-				<span v-for="tech of item.stack">{{ tech }}</span>
-			</p>
-          </li>
-        </ol>
-		<p class="description">{{ $t('cv.experience.description') }}</p>
+		<button @click="generatePDF()">
+			Generate
+		</button>
 
-      </section>
-    </div>
+		<div id="curriculum_vitae">
+			<h1>Antoni Pietryga</h1>
+			<!-- <p><font size="3" color="red">print this to pdf</font></p> -->
+		</div>
+
+		<div class="cv" ref="cv">
+			<article>
+			<picture>
+				<img src="/img/cv/anotni-pietryga-2024.jpg" alt="Antoni Pietryga profile photo">
+			</picture>
+			<h2>{{ $t('cv.contact.title') }}</h2>
+			<ul>
+				<li>
+				<a class="link" :href="'mailto:' + $t('contact.icons.mail')">
+					<iconCustom type="mail" />
+					<span>{{ $t('contact.icons.mail') }}</span>
+				</a>
+				</li>
+				<li>
+				<a class="link" :href="'tel:' + $t('contact.icons.phone').replace(/ /g, '')">
+					<iconCustom type="phone" />
+					<span>{{ $t('contact.icons.phone') }}</span>
+				</a>
+				</li>
+				<li>
+				<a class="link" :href="$t('cv.contact.webpage')" target="_blank">
+					<iconCustom type="web" />
+					<span>{{ $t('cv.contact.webpage').replace('https://', "") }}</span>
+				</a>
+				</li>
+				<li>
+				<a class="link" :href="$t('contact.icons.github')" target="_blank">
+					<iconCustom type="github" />
+					<span>{{  $t('cv.contact.social_name') }}</span>
+				</a>
+				</li>
+				<li>
+				<a class="link" :href="$t('contact.icons.linkedin')" target="_blank">
+					<iconCustom type="linkedin" />
+					<span>{{  $t('cv.contact.social_name') }}</span>
+				</a>
+				</li>
+			</ul>
+			<h2>{{ $t('cv.main_skills.title') }}</h2>
+			<ul>
+				<li>
+							<template v-for="skill of $t('cv.main_skills.items')">
+								<a class="link"
+									:href="$t('cv.contact.webpage') + '/projects?q=' + skill.name" 
+									target="_blank"
+								>
+									<iconCustom :type="skill.ico" />
+									<span>{{ skill.name }}</span>
+								</a>
+							</template>
+				</li>
+			</ul>
+			<h2>{{ $t('cv.languages.title') }}</h2>
+			<ul>
+				<li v-for="item of $t('cv.languages.items')">
+				<div class="link">
+					<iconCustom :type="item.ico" />
+					<span>
+					<p>{{ item.name }}</p>
+					<p>{{ item.desc }}</p>
+					</span>
+				</div>
+				</li>
+			</ul>
+			</article>
+			<section>
+			<h1>{{ $t('author') }}</h1>
+					<p class="role">{{ $t('role') }}</p>
+			<h2>{{ $t('cv.summary.title') }}</h2>
+					<p>{{ $t('cv.summary.content') }}</p>
+			<h2>{{ $t('cv.experience.title') }}</h2>
+			<ol>
+				<li v-for="item of $t('cv.experience.items')">
+				<sub>
+					<span v-if="!item.items">{{ item.date_from + " - " + item.date_to }}</span>
+					<span v-else>{{ item.items[0].date_from + " - " + item.items[item.items.length - 1].date_to }}</span>
+				</sub>
+				<h3>{{ item.title }}</h3>
+				<sup v-if="!item.items">{{ item.role }}</sup>
+				<p v-if="!item.items">{{ item.desc }}</p>
+				<ul v-if="item.items">
+					<li v-for="subitem of item.items">
+					<sub>{{ subitem.date_from + " - " + subitem.date_to }}</sub>
+					<h4>{{ subitem.company }}</h4>
+					<p>{{ subitem.desc }}</p>
+					<p v-if="subitem.stack" class="stack">
+						<span v-for="tech of subitem.stack">{{ tech }}</span>
+					</p>
+					</li>
+				</ul>
+				<p v-if="item.stack" class="stack">
+					<span v-for="tech of item.stack">{{ tech }}</span>
+				</p>
+				</li>
+			</ol>
+			<p class="description">{{ $t('cv.experience.description') }}</p>
+
+			</section>
+		</div>
+
   </div>
 </template>
 
 <style lang="scss">
+	#curriculum_vitae{
+		border:2px dashed red;
+		color:blue;
+		height:296px;
+		width: 210px;
+	}
+
 .overCV{
   display:flex;
   flex-direction: column;
@@ -349,4 +364,44 @@
 </style>
 
 
-<script></script>
+<script setup>
+// var domToPdf = require('dom-to-pdf');
+// import domToPdf from 'dom-to-pdf'
+// console.log('hello')
+
+// var element = document.getElementById('test');
+
+// onMounted(() => {
+
+// 	var element = document.querySelector('.cv');
+// 	var options = {
+// 	  filename: 'test.pdf'
+// 	};
+	
+// 	domToPdf(element, options, function(pdf) {
+// 	  console.log('done');
+// 	});
+
+// })
+import { jsPDF } from "jspdf";
+
+const generatePDF = () => {
+
+	// const doc = new jsPDF();          
+	const doc = new jsPDF('p', 'mm', [297, 210]);
+	const source = window.document.getElementById('curriculum_vitae');
+	// const source = window.document.querySelector('.cv');
+
+	doc.html(source, {
+		callback: doc => {
+			doc.output("dataurlnewwindow");
+		}
+	});
+
+}
+
+onMounted(() => {
+	generatePDF()
+})
+
+</script>
