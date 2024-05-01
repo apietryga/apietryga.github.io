@@ -12,10 +12,12 @@
 			Generate
 		</button>
 
-		<div id="curriculum_vitae">
-			<h1>Antoni Pietryga</h1>
-			<!-- <p><font size="3" color="red">print this to pdf</font></p> -->
-		</div>
+    <div class="cv_wrapper">
+      <div id="curriculum_vitae">
+        <h1>Antoni Pietryga</h1>
+        <!-- <p><font size="3" color="red">print this to pdf</font></p> -->
+      </div>
+    </div>
 
 		<div class="cv" ref="cv">
 			<article>
@@ -121,12 +123,34 @@
 </template>
 
 <style lang="scss">
-	#curriculum_vitae{
-		border:2px dashed red;
-		color:blue;
-		height:296px;
-		width: 210px;
-	}
+  .cv_wrapper{
+    --cv-scale: 3;
+    --cv-default-height: 296px;
+    border:2px dashed blue;
+    aspect-ratio: 210 / 296;
+    height: calc(var(--cv-default-height) * var(--cv-scale));
+    // display: flex;
+    // justify-content: center;
+    display: grid;
+    place-items: center;
+
+
+    #curriculum_vitae{
+      transform: scale(var(--cv-scale));
+    }
+  //   // --cv-width:  
+
+  //   border:2px dashed green;
+
+  }
+
+  #curriculum_vitae{
+    border:2px dashed red;
+    color:blue;
+    height:296px;
+    width: 210px;
+  }
+
 
 .overCV{
   display:flex;
@@ -400,8 +424,8 @@ const generatePDF = () => {
 
 }
 
-onMounted(() => {
-	generatePDF()
-})
+// onMounted(() => {
+// 	generatePDF()
+// })
 
 </script>

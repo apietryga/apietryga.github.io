@@ -5,3 +5,4 @@ old_content/
 dist
 .output
 .env
+package-lock.json

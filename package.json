@@ -1,6 +1,6 @@
 {
   "name": "apietryga.com",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Webdev portfolio",
   "scripts": {
     "dev": "npx nuxi dev",
