@@ -1,6 +1,13 @@
 <template>
   <div class="wrapper">
 
+    <div class="snake">
+      <div class="part_1"></div>
+      <div class="part_2"></div>
+      <div class="part_3"></div>
+      <div class="part_4"></div>
+    </div>
+
     <div class="section">
       <div class="head">
         <h1>Antoni Pietryga</h1>
@@ -76,6 +83,52 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .snake{
+      border:2px dashed red;
+      position:relative;
+
+      > div{
+        position: absolute;
+        min-width: 5px;
+        min-height: 5px;
+        border:5px solid yellow;
+      }
+
+      .part_1{
+        top:50vh;
+        left: calc(50% - 2.5px);
+        height:30vh;
+        width:calc(50%);
+        border-top: none;
+        border-right: none;
+      }
+
+      .part_2{
+        top:80vh;
+        height:80vh;
+        width:100%;
+        border-left:none;
+        border-top:none;
+      }
+
+      .part_3{
+        top:160vh;
+        height:80vh;
+        width:100%;
+        border-right:none;
+        border-top:none;
+        border-bottom:none;
+      }
+
+      .part_4{
+        top:240vh;
+        height:30vh;
+        width:calc(50%);
+        border-left: none;
+        border-bottom: none;
+      }
     }
   }
 </style>
