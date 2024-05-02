@@ -1,70 +1,81 @@
 <template>
-  <div class="indexWrapper">
-    <div class="headerWrapper">
-      <homeHeader />
+  <div class="wrapper">
+
+    <div class="section">
+      <div class="head">
+        <h1>Antoni Pietryga</h1>
+        <p>Techhead</p>
+        <p>scroll down to see my story</p>
+      </div>
     </div>
-    <div class="overwrapper">
-      <homeCode />
-      <homeTeaching />
-      <homeBusiness />
+
+    <div class="section">
+      <div class="head">
+        <h2>Początek</h2>
+        <p>Nauczyłem się podstaw i pisałem proste appki</p>
+        <p>Pozwoliło mi to na zrealizowanie kilku prostych projektów</p>
+      </div>
+      <div class="body">
+        <p>zdjęcie jak robiłem</p>
+        <p>w tym czasie też zrobiłem kilka projektów</p>
+        <div class="projects">
+          <div class="project">
+            Projekt 1 
+          </div>
+          <div class="project">
+            Projekt 2
+          </div>
+          <div class="project">
+            Projekt 3
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- <cursorGradient /> -->
+
+    <div class="section">
+      <div class="head">
+        <h2>Szkolenia</h2>
+        <p>Zacząłem robić szkolenia z seniorami, bo było fajnie</p>
+        <p>Potem robiłem szkolenia z frontu</p>
+        <p>Nauczyłem się tam skillsów</p>
+        <div class="skills">
+          <div class="skill">PHP</div>
+          <div class="skill">Vue</div>
+        </div>
+      </div>
+      <div class="body">
+        zdjęcie jak robiłem
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="head">
+        <h2>Programowanie</h2>
+        <p>Zacząłem profesjonalnie kodować</p>
+        <p>I se kodze</p>
+        <div class="skills">
+          <div class="skill">Docker</div>
+          <div class="skill">Linux</div>
+        </div>
+      </div>
+      <div class="body">
+        zdjęcie jak robie
+      </div>
+    </div>
+
   </div>
 </template>
 
-<script>
-  export default {
-    methods: {
-      getProjectsByNames( names ){
-        return names.map( name => {
-          return this.$t('projects').filter( project => project.name == name )[0]
-        })
-      },
-    },
-  }
-</script>
-
-<style lang="scss" >
-  .heroText{
-    font-size: 2rem;
-    font-weight: 100;
-    line-height: 100%;
-    b{
-      line-height: 100%;
-      font-size: 2.5rem;
-      color:var(--accent);
-      font-weight:900;
-    }
-  }
-  .overwrapper{
-    color: var(--bright-primary);
-    padding-bottom:1rem;
-  }
-  .headerWrapper{
-    width:100%;
-    z-index:-15;
-    .hider{ // hide elements in front page (code section)
-      background: var(--backgroundColor);
-      max-width:100%;
-      width:100%;
-      height:120%;
-      position:absolute;
-      z-index:-10;
-    }
-  }
-  @media (max-width:768px){
-    #code .codeprojects{
-      >header >p {
-        padding-left:0;
-      }
-      .techCloud ul{
-        max-width:100%;
-      }
-      >section{
-        flex-direction: column;
-        padding:0 2rem;
-        a{ max-width: 60%; }
-      }
+<style lang="scss">
+  .wrapper{
+    border:2px dashed red;
+    
+    .section{
+      border:2px dashed green;
+      min-height:80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 </style>

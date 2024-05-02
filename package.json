@@ -20,6 +20,7 @@
     "@nuxtjs/google-fonts": "^2.0.0",
     "@types/three": "^0.149.0",
     "execa": "^6.1.0",
+    "jspdf": "^2.5.1",
     "nuxt-simple-sitemap": "^1.0.9"
   }
 }
