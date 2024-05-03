@@ -1,6 +1,10 @@
 <template>
   <div class="wrapper">
 
+    <index-animation>
+
+    </index-animation>
+    
     <div class="snake">
       <div class="part_1"></div>
       <div class="part_2"></div>

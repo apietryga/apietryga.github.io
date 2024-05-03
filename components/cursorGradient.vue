@@ -1,33 +1,33 @@
 <template>
-  <div class="blob" ref="blob"></div>
+  <!-- <div class="blob" ref="blob"></div> -->
 </template>
 
 <script>
-  export default{
-    data(){
-      return{ window: typeof window != 'undefined' ? window : null }
-    },
-    methods: {
-      startTrackin(e){
-        this.$refs.blob.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-      }
-    },
-    mounted() {
-      if(this.window){
-        this.window.document.addEventListener('mousemove', this.startTrackin);
-      }
-    },
-    unmounted(){
-      if(this.window){
-        this.window.document.removeEventListener('mousemove', this.startTrackin);
-      }
-    }
-  }
+  // export default{
+  //   data(){
+  //     return{ window: typeof window != 'undefined' ? window : null }
+  //   },
+  //   methods: {
+  //     startTrackin(e){
+  //       this.$refs.blob.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+  //     }
+  //   },
+  //   mounted() {
+  //     if(this.window){
+  //       this.window.document.addEventListener('mousemove', this.startTrackin);
+  //     }
+  //   },
+  //   unmounted(){
+  //     if(this.window){
+  //       this.window.document.removeEventListener('mousemove', this.startTrackin);
+  //     }
+  //   }
+  // }
 </script>
 
 <style scoped>
 /* CURSOR GRADIENT */
-.blob {
+/* .blob {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,5 +42,5 @@
   top: 0;
   transform: translate(calc(-50% + 15px), -50%);
   z-index: -1;
-}
+} */
 </style>

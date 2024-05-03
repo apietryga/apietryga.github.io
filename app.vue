@@ -5,7 +5,7 @@
     <navHeader />
     <NuxtPage class="pageWrapper" />
     <navFooter />    
-    <cursorGradient />
+    <!-- <cursorGradient /> -->
   </div>
 </template>
 
