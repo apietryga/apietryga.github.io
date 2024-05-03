@@ -23,14 +23,14 @@
   }
 
   function applyCamera(){
-    const fov = 100
+    const fov = 30
     const aspect =  window.innerWidth / window.innerHeight
     const near = 1
     const far = 1000
 
     camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
     // camera.position.setZ(5)
-    camera.position.set(0, 1, 5)
+    camera.position.set(0, 1, 10)
     camera.rotation.set(0, 0, 0)
 
   }
@@ -50,18 +50,22 @@
     
     const loader = new GLTFLoader();
 
-    loader.load( "/3d_models/character.glb", gltf => {
+    loader.load( "/3d_models/character.glb", char => {
 
-      gltf.scene.traverse( child => child.material ? child.material.metalness = 0 : '')
-      console.log(gltf)
-
-      scene.add(gltf.scene);
+      char.scene.traverse( child => child.material ? child.material.metalness = 0 : '')
+      // char.scene.rotation.set(0, 0, 0)
+      // char.scene.rotation.set(90, 0, 0, 0)
+      char.scene.rotation.x = 0
+      char.scene.rotation.y = 3.1
+      char.scene.rotation.z = 0
+      // console.log('rotation', char.scene.rotation.set())
+      
+      scene.add(char.scene);
       applyLights()
 
       renderer.render(scene, camera)
 
-      console.log({scene, camera})
-
+      console.log({scene, camera, char})
     })
 
 
@@ -77,7 +81,7 @@
       position:fixed;
       inset:0;
       background: blue;
-      z-index:1;
+      z-index:-1;
     }
   }
 </style>
