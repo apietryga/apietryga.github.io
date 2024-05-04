@@ -37,7 +37,8 @@
 
   function applyCamera(){
     const fov = 30
-    const aspect =  window.innerWidth / window.innerHeight
+    // const aspect =  window.innerWidth / window.innerHeight
+    const aspect =  1
     const near = 1
     const far = 1000
 
@@ -78,9 +79,10 @@
     // const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
     renderer = new THREE.WebGLRenderer({ canvas })
 
-    renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.setSize(window.innerWidth, window.innerHeight)
-  
+    // renderer.setPixelRatio(window.devicePixelRatio)
+    // renderer.setSize(window.innerWidth, window.innerHeight)
+    setRendererSize()
+
     const loader = new GLTFLoader();
 
     loader.load( "/3d_models/character.glb", char => {
@@ -116,6 +118,24 @@
 
   })
 
+  function setRendererSize(){
+    // let size = window.innerWidth
+    const size = window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth
+    // if(window.innerWidth > window.innerHeight)
+    // console.log('resize')
+    // renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.setSize(size, size)
+  }
+
+  // window.addEventListener('resize', function(event) {
+  window.addEventListener('resize', setRendererSize)
+  //   setRendererSize()
+  //     // let size = window.innerWidth
+  //     // console.log('resize')
+  //     // // renderer.setSize(window.innerWidth, window.innerHeight)
+  //     // renderer.setSize(size, size)
+  // }, true);
+
 
 </script>
 
@@ -123,10 +143,13 @@
   .scene{
     border:2px dashed yellow;
     #bg{
+      border:5px double red;
       position:fixed;
       inset:0;
+      left:unset;
       background: blue;
       z-index:-1;
+      aspect-ratio: 1;
     }
   }
 </style>
