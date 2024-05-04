@@ -11,7 +11,20 @@
   import * as THREE from 'three';
   import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
-  let scene, camera;
+  let scene, camera, mixer, renderer;
+
+  let camera_pose = 'start'
+  // camera_pose = 'default'
+  const camera_poses = {
+    default: {
+      position: [0, 1, 10],
+      rotation: [0, 0, 0],
+    },
+    start: {
+      position: [-5, 1.4, -3.8],
+      rotation: [0, -2.1, 0],
+    },
+  }
 
   function applyLights(){
 
@@ -30,9 +43,31 @@
 
     camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
     // camera.position.setZ(5)
-    camera.position.set(0, 1, 10)
-    camera.rotation.set(0, 0, 0)
+    // camera.position.set(0, 1, 10)
+    // camera.rotation.set(0, 0, 0)
+    camera.position.set(...camera_poses[camera_pose].position)
+    camera.rotation.set(...camera_poses[camera_pose].rotation)
 
+  }
+
+  function applyAnimation(char){
+    
+    mixer = new THREE.AnimationMixer(char.scene)
+    const clips = char.animations
+    // console.log({ clips })
+    const clip = THREE.AnimationClip.findByName(clips, 'Hands Crossing Idle')
+    const action = mixer.clipAction(clip)
+    // console.log({ clip, action })
+    action.play()
+
+
+  }
+
+  const clock = new THREE.Clock()
+  function animation(){
+    mixer.update(clock.getDelta())
+    renderer.render(scene, camera)
+    // console.log('animation loop')
   }
 
   onMounted(() => {
@@ -41,16 +76,15 @@
     scene = new THREE.Scene()
     applyCamera()
     // const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-    const renderer = new THREE.WebGLRenderer({ canvas })
+    renderer = new THREE.WebGLRenderer({ canvas })
 
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setSize(window.innerWidth, window.innerHeight)
   
-    
-    
     const loader = new GLTFLoader();
 
     loader.load( "/3d_models/character.glb", char => {
+
 
       char.scene.traverse( child => child.material ? child.material.metalness = 0 : '')
       // char.scene.rotation.set(0, 0, 0)
@@ -61,9 +95,20 @@
       // console.log('rotation', char.scene.rotation.set())
       
       scene.add(char.scene);
-      applyLights()
+      // mixer = new THREE.AnimationMixer(char.scene)
 
-      renderer.render(scene, camera)
+      applyLights()
+      applyAnimation(char)
+
+      // renderer.render(scene, camera)
+      renderer.setAnimationLoop(animation)
+
+
+      // document.addEventListener('wheel', () => {
+      //   console.log('mixer update')
+      //   mixer.update()
+      //   renderer.render(scene, camera)
+      // })
 
       console.log({scene, camera, char})
     })

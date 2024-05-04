@@ -109,11 +109,15 @@
         .body {
           flex:1;
           // height:100%;
+          // display: flex;
+          // align-items: center;
   
   
           .picture_wrapper{
             // border:5px dashed red;
-            height:80%;
+            --img-height: 60%;
+            height:var(--img-height);
+            margin-top:calc((100% - var(--img-height)) / 2 );
             position:relative;
 
             picture{
