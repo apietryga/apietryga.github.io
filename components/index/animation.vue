@@ -11,10 +11,10 @@
   import * as THREE from 'three';
   import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
-  let scene, camera, mixer, renderer;
-
+  const clock = new THREE.Clock()
+  let scene, camera, mixer, renderer, char, sitting, hands_crossing_idle
   let camera_pose = 'start'
-  // camera_pose = 'default'
+
   const camera_poses = {
     default: {
       position: [0, 1, 10],
@@ -37,105 +37,140 @@
 
   function applyCamera(){
     const fov = 30
-    // const aspect =  window.innerWidth / window.innerHeight
-    const aspect =  1
+    const aspect = 1
     const near = 1
     const far = 1000
 
     camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
-    // camera.position.setZ(5)
-    // camera.position.set(0, 1, 10)
-    // camera.rotation.set(0, 0, 0)
     camera.position.set(...camera_poses[camera_pose].position)
     camera.rotation.set(...camera_poses[camera_pose].rotation)
 
   }
 
-  function applyAnimation(char){
+  function applyAnimation(){
     
     mixer = new THREE.AnimationMixer(char.scene)
     const clips = char.animations
-    // console.log({ clips })
-    const clip = THREE.AnimationClip.findByName(clips, 'Hands Crossing Idle')
-    const action = mixer.clipAction(clip)
-    // console.log({ clip, action })
-    action.play()
+    console.log('clips', clips)
 
+    const clip = THREE.AnimationClip.findByName(clips, 'Hands Crossing Idle')
+    // const action = mixer.clipAction(clip)
+    hands_crossing_idle = mixer.clipAction(clip)
+    
+    const sitting_clip = THREE.AnimationClip.findByName(clips, 'From cross hands to sitting')
+    sitting = mixer.clipAction(sitting_clip)
+    sitting.setLoop(THREE.LoopOnce);
+    // sitting.setLoop(THREE.LoopPingPong);
+    // sitting.repetitions = 1;
+    // sitting.loop = 1;
+    sitting.clampWhenFinished = true;
+
+    hands_crossing_idle.play()
+    // hands_crossing_idle.
 
   }
 
-  const clock = new THREE.Clock()
   function animation(){
     mixer.update(clock.getDelta())
     renderer.render(scene, camera)
-    // console.log('animation loop')
   }
+
+  function setRendererSize(){
+    const size = window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth
+    renderer.setSize(size, size)
+  }
+
+  function wheelAnimation(){
+    setTimeout(() => {
+      
+      
+          // console.log('wheel update', window.scrollY)
+          // console.log('mixer', mixer)
+          console.log('scroll00', window.scrollY, window)
+          if(window.scrollY < 50){
+      
+            // sitting.timeScale = -1
+            // sitting.reset().setEffectiveTimeScale(-1).play().setEffectiveTimeScale(1)
+            // sitting.timeScale = 1
+            // hands_crossing_idle.play()
+      
+            // console.log("HERE")
+            
+            // sitting.timeScale = -1
+            sitting.stop()
+            hands_crossing_idle.play()
+      
+            return
+          }
+      
+          // sitting.timeScale = 1
+      
+          // sitting.timeScale = 1
+          hands_crossing_idle.stop()
+          sitting.play()
+          // sitting.addEventListener( 'finished', function( e ) {console.log('sitting end')} )
+    }, 100)
+
+    
+
+
+  }
+
+  // function onAnimationDone(e){
+  //   console.log('animation done', e.action._clip.name)
+
+  //   if('Hands Crossing Idle' == e.action._clip.name){
+  //     console.log("ANIMATION SITTING DONE")
+  //     sitting.stop()
+  //   }
+
+  // }
+
+  // mixer.dispatchEvent({
+  //   type: 'finished', action: this,
+  //   direction: deltaTime < 0 ? -1 : 1
+  // })
 
   onMounted(() => {
 
     const canvas = document.querySelector('#bg')
     scene = new THREE.Scene()
     applyCamera()
-    // const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-    renderer = new THREE.WebGLRenderer({ canvas })
 
-    // renderer.setPixelRatio(window.devicePixelRatio)
-    // renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer = new THREE.WebGLRenderer({ canvas })
+    renderer.setPixelRatio(window.devicePixelRatio)
     setRendererSize()
 
     const loader = new GLTFLoader();
+    loader.load( "/3d_models/character.glb", character => {
 
-    loader.load( "/3d_models/character.glb", char => {
+      char = character
 
-
-      char.scene.traverse( child => child.material ? child.material.metalness = 0 : '')
-      // char.scene.rotation.set(0, 0, 0)
-      // char.scene.rotation.set(90, 0, 0, 0)
       char.scene.rotation.x = 0
       char.scene.rotation.y = 3.1
       char.scene.rotation.z = 0
-      // console.log('rotation', char.scene.rotation.set())
+      char.scene.traverse( child => child.material ? child.material.metalness = 0 : '')
       
-      scene.add(char.scene);
-      // mixer = new THREE.AnimationMixer(char.scene)
-
       applyLights()
       applyAnimation(char)
-
-      // renderer.render(scene, camera)
-      renderer.setAnimationLoop(animation)
-
-
-      // document.addEventListener('wheel', () => {
-      //   console.log('mixer update')
-      //   mixer.update()
-      //   renderer.render(scene, camera)
-      // })
-
+      
+      scene.add(char.scene);
       console.log({scene, camera, char})
-    })
+      renderer.setAnimationLoop(animation)
+      document.addEventListener('wheel', wheelAnimation)
+      window.addEventListener('resize', setRendererSize)
+      // mixer.addEventListener('loop', onAnimationDone)
 
+    })
 
   })
 
-  function setRendererSize(){
-    // let size = window.innerWidth
-    const size = window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth
-    // if(window.innerWidth > window.innerHeight)
-    // console.log('resize')
-    // renderer.setSize(window.innerWidth, window.innerHeight)
-    renderer.setSize(size, size)
-  }
-
-  // window.addEventListener('resize', function(event) {
-  window.addEventListener('resize', setRendererSize)
-  //   setRendererSize()
-  //     // let size = window.innerWidth
-  //     // console.log('resize')
-  //     // // renderer.setSize(window.innerWidth, window.innerHeight)
-  //     // renderer.setSize(size, size)
-  // }, true);
-
+  onUnmounted(() => {
+    renderer.setAnimationLoop(null)
+    document.removeEventListener('wheel', wheelAnimation)
+    window.removeEventListener('resize', setRendererSize)
+    // mixer.addEventListener('loop', onAnimationDone)
+  })
 
 </script>
 
