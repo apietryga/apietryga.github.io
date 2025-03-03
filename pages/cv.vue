@@ -1,12 +1,21 @@
 <template>
   <div class="overCV">
 
+	<div class="download-links">
 		<nuxtLink class="btn" target="_blank"
-			to="/cvs/2023_06_CV_en.pdf"
-			download="/cvs/2023_06_CV_en.pdf"
+			to="/cvs/2025_03_CV_pl.pdf"
+			download="/cvs/2025_03_CV_pl.pdf"
 			style="margin-top:2em;">
-			{{ $t('cv.download') }}
+			{{ $t('cv.download') }} PL
 		</nuxtLink>
+
+		<nuxtLink class="btn" target="_blank"
+			to="/cvs/2025_03_CV_pl.pdf"
+			download="/cvs/2025_03_CV_en.pdf"
+			style="margin-top:2em;">
+			{{ $t('cv.download') }} EN
+		</nuxtLink>
+	</div>
 
     <div class="cv" ref="cv">
       <article>
@@ -117,6 +126,11 @@
   display:flex;
   flex-direction: column;
   align-items: center;
+  .download-links{
+	  display:flex;
+	  gap:15px;
+	  flex-wrap: wrap;
+  }
 	.cv{
 		margin:2em;
 		background: #000;
