@@ -127,9 +127,13 @@
     }
   }
 }
-@media (max-width:768px){
+@media (max-width:1060px){
   #business{
     flex-direction: column;
+    .bgWrapper{
+      position:absolute;
+      inset:0;
+    }
   }
 }
 </style>
