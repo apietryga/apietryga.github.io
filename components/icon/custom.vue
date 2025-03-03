@@ -168,7 +168,7 @@
   export default { props: { type: String } } 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   a{
     width:80px;
     height:80px;
@@ -176,5 +176,9 @@
     background-size:100%;
     background-repeat:no-repeat;
     background-position: center;
+    svg{
+      max-width: 80px;
+      max-height: 80px;
+    }
   }
 </style>

@@ -7,7 +7,7 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt start",
-    "deploy": "node ./deploy.mjs"
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "aos": "^2.3.4",
