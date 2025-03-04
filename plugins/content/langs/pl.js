@@ -1324,7 +1324,7 @@ export default {
 		},
 		summary:{
 			title: "Podsumowanie",
-			content: "Jestem samukiem programowania full-stack które uskuteczniałem jako freelancer w latach 2014 - 2018. Następnie zająłem się szkoleniami z kompetencji cyfrowych i programowania aż do 2022 roku, kiedy to zacząłem pracę jako Software developer. Okazyjnie prowadzę kursy front-end developmentu.",
+			content: "Zacząłem programować w 2014 roku, żeby zbudować grę żużlową. W miarę poszerzających się potrzeb poznałem progamowanie ze stakiem LAMP, co pozwoliło mi zdobyć pierwsze zlecenia. W 2018 założyłem działalność gospodarczą zajmującą się szkoleniami kompetencji cyfrowych. Po dwóch latach zacząłem prowadzić kursy programowania front-end. Od maja 2022 roku programuję na kontrakcie B2B. Nadal okazyjnie prowadzę kursy programowania.",
 		},
 		experience:{
 			title: "Doświadczenie",
@@ -1333,62 +1333,85 @@ export default {
 					date_from: "05.2022",
 					date_to:"Teraz",
 					title: "Linkhouse.co",
-					role: "Software Engineer",
-					desc: "Utrzymywanie i rozijanie platfomy link buildingowej, tworzenie innowacyjnych rozwiązań dla branży SEO.",
+					role: "Fullstack",
+					desc: "Rozwój i utrzymanie monolitu marketplace, integracje API, implementacja AI, mikroserwisy, tworzenie innowacyjnych rozwiązań dla branży SEO.",
+          stack: ["Vue", "Twig", "PHP", "Slim", "Docker", "Kubernetes", "Linux", "Laravel"],
 				},
 				{
-					title: "Trener programowania - freelancer",
-					items: [
-						{
-							date_from: "02.2020",
-							date_to:"02.2022",
-							company: "Ernabo",
-							desc: "Prowadzenie zajęć z zakresu technologi front-end'owych",
-						},
-						{
-							date_from: "12.2020",
-							date_to:"12.2021",
-							company: "RECON Consulting, Business Masters, LG PROJECT,  Everest Consulting",
-							desc: "Prowadzenie szkoleń z zakresu Social Media, SEO oraz programowania w językach Java i Python",
-						},
-					]
+					date_from: "12.2020",
+					date_to:"04.2022",
+					title: "Ernabo, RECON Consulting, Business Masters, LG PROJECT,  Everest Consulting",
+          role: "Trener programowania",
+					desc: "Prowadzenie zajęć z zakresu programowania front-end, oraz w językach PHP, Java i Python, a także kursy z zakresów Social Media oraz SEO",
+          stack: ["HTML", "SCSS", "JS", "Vue", "PHP", "Python"],
 				},
+				// {
+				// 	title: "Trener programowania - freelancer",
+				// 	items: [
+				// 		{
+				// 			date_from: "02.2020",
+				// 			date_to:"02.2022",
+				// 			company: "Ernabo",
+				// 			desc: "Prowadzenie zajęć z zakresu technologi front-end'owych",
+				// 		},
+				// 		{
+				// 			date_from: "12.2020",
+				// 			date_to:"12.2021",
+				// 			company: "RECON Consulting, Business Masters, LG PROJECT,  Everest Consulting",
+				// 			desc: "Prowadzenie szkoleń z zakresu Social Media, SEO oraz programowania w językach Java i Python",
+				// 		},
+				// 	]
+				// },
 				{
 					date_to:"08.2021",
 					date_from: "11.2018",
 					title: "Kuźnia Ekspertów",
 					role: "Trener kompetencji cyfrowych",
 					desc: "Prowadzenie zajęć z technologii cyfrowej",
+          stack: ["Szkolenia", "MS Office"],
 				},
 				{
-					title: "Frelance software developer",
-					items: [
-						{
-							date_from: "08.2016",
-							date_to:"10.2016",
-							company: "Good Lock",
-							desc: "Stworzenie systemu CMS dla escape roomu, do zarządzania systemem rezerwacji oraz opracowanie landing page do prezentacji pokoi dostępnych w ofercie.",
-						},
-						{
-							date_from: "06.2016",
-							date_to:"07.2016",
-							company: "Kluczdowszystkiego",
-							desc: "Stworzenie systemu umożliwiającego zamawianie \"Systemu Jednego Klucza\" firmy LOB.",
-						},
-						{
-							date_from: "02.2015",
-							date_to:"05.2022",
-							company: "Gigant.pl | MarketingDesign",
-							desc: "Tworzenie edukacyjnej gry muzycznej TOMIGra.",
-						},
-						{
-							date_from: "12.2014",
-							date_to:"01.2015",
-							company: "YanoMebel",
-							desc: "Modernizacja strony producenta mebli.",
-						},
-					]
+					date_to:"10.2018",
+					date_from: "12.2014",
+					title: "Good Lock, Kluczdowszystkiego, Gigant.pl, YanoMebel",
+					role: "Freelance Fullstack",
+          desc:
+          "Modernizacja strony producenta mebli." +
+          "Tworzenie edukacyjnej gry muzycznej TOMIGra." +
+          "Stworzenie systemu CMS dla escape roomu, do zarządzania systemem rezerwacji oraz opracowanie landing page do prezentacji pokoi dostępnych w ofercie." +
+          "Stworzenie systemu umożliwiającego zamawianie \"Systemu Jednego Klucza\" firmy LOB.",
+          stack: ["Wordpress", "PHP", "JS", "jQuery", "LAMP"],
 				},
+				// {
+				// 	title: "Frelance software developer",
+				// 	role: "Frelance fullstack",
+				// 	items: [
+				// 		{
+				// 			date_from: "08.2016",
+				// 			date_to:"10.2016",
+				// 			company: "Good Lock",
+				// 			desc: "Stworzenie systemu CMS dla escape roomu, do zarządzania systemem rezerwacji oraz opracowanie landing page do prezentacji pokoi dostępnych w ofercie.",
+				// 		},
+				// 		{
+				// 			date_from: "06.2016",
+				// 			date_to:"07.2016",
+				// 			company: "Kluczdowszystkiego",
+				// 			desc: "Stworzenie systemu umożliwiającego zamawianie \"Systemu Jednego Klucza\" firmy LOB.",
+				// 		},
+				// 		{
+				// 			date_from: "02.2015",
+				// 			date_to:"05.2016",
+				// 			company: "Gigant.pl | MarketingDesign",
+				// 			desc: "Tworzenie edukacyjnej gry muzycznej TOMIGra.",
+				// 		},
+				// 		{
+				// 			date_from: "12.2014",
+				// 			date_to:"01.2015",
+				// 			company: "YanoMebel",
+				// 			desc: "Modernizacja strony producenta mebli.",
+				// 		},
+				// 	]
+				// },
 			],
 			description: "Wyrażam zgodę na przetwarzanie danych osobowych zawartych w niniejszym dokumencie do realizacji procesu rekrutacji zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO). ",
 		},

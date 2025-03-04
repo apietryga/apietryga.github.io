@@ -104,13 +104,28 @@
 			  <header class="li-header">
 				
 				<p class="title">
-					<h3>{{ item.title }}</h3>
-					<sup v-if="!item.items">{{ item.role }}</sup>
+					<h3>{{ item.role }}</h3>
+					<sup v-if="!item.items">{{ item.title }}</sup>
 				</p>
 
 				<p class="date">
-					<span v-if="!item.items">{{ item.date_from + " - " + item.date_to }}</span>
-					<span v-else>{{ item.items[0].date_from + " - " + item.items[item.items.length - 1].date_to }}</span>
+					<!-- <span v-for="(subitem, index) of item.items">
+						<template v-if="item.items">
+							<span v-if="! index">{{ subitem.date_from }}</span>
+							<template v-if="index == item.items.length - 1">
+								<span>- {{ subitem.date_to }}</span>
+								<span v-html="countYears(subitem)"></span>
+							</template>
+						</template>
+					</span> -->
+
+					<template v-if="! item.items?.length">
+						<span>{{ item.date_from + " - " + item.date_to }}</span>
+						<span v-html="countYears(item)"></span>
+					</template>
+
+					<!-- <span v-if="!item.items">{{ item.date_from + " - " + item.date_to }}</span> -->
+					<!-- <span v-else>{{ item.items[0].date_from + " - " + item.items[item.items.length - 1].date_to }}</span> -->
 				</p>
 
 			</header>
@@ -118,7 +133,10 @@
 			<ul v-if="item.items">
               <li v-for="subitem of item.items">
 				<div class="li-subheader">
-					<p class="date">{{ subitem.date_from + " - " + subitem.date_to }}</p>
+					<p class="date">
+						<span>{{ subitem.date_from + " - " + subitem.date_to }}</span>
+						<span v-html="countYears(subitem)"></span>
+					</p>
 					<h4>{{ subitem.company }}</h4>
 				</div>
 				
@@ -272,6 +290,10 @@
 					font-family: "Ubuntu";
 				}
 
+				.summary{
+					line-height: 1.2;
+				}
+
 				h2{
 					margin-top:1rem;
 					font-size:1.25rem;
@@ -307,7 +329,8 @@
 						font-size:1rem;
 						font-weight: 600;
 						white-space: nowrap;
-						align-items: center;
+						padding-top: .5rem;
+						// align-items: flex-start;
 					}
 
 					.desc{
@@ -321,13 +344,20 @@
 						justify-content: space-between;
 
 						.title {
-							// border:2px dashed pink;
 							padding:.5rem 0 ;
+
 							h3{
 								font-size:1.2rem;
 								line-height: 1;
 								font-weight: 600;
 							}
+
+							sup{
+								margin: .25rem 0;
+								line-height: 1;
+								display:flex;
+							}
+
 						}
 
 					}
@@ -458,4 +488,28 @@
 </style>
 
 
-<script></script>
+<script lang="ts" setup>
+
+	const countYears = ({ date_from, date_to }) => {
+
+		if (!date_from || !date_to) {
+			return '';
+		}
+
+		let endDate = date_to ? new Date(date_to.split('.').reverse().join('.')) : new Date();
+		if (isNaN(endDate.getTime())) {
+			endDate = new Date();
+		}
+
+		const startDate = new Date(date_from.split('.').reverse().join('.'));
+		const diffTime = Math.abs(endDate - startDate);
+		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+		const totalYears = diffDays / 365;
+
+		return '&nbsp;(' + totalYears.toFixed(1) + ')';
+
+	}
+
+
+
+</script>
