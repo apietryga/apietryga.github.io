@@ -1,12 +1,4 @@
 export default {
-  title: "apietryga",
-	author: "Antoni Pietryga",
-	role: "Software Developer & Trainer",
-  nav: {
-    home: 'Strona główna',
-    projects: 'Projekty',
-    contact: 'Kontakt',
-  },
   home: {
     title: "hello <br> im apietryga",
     description: "Jestem samoukiem programowania, pracuję jako Software Developer. Najlepiej czuje się w Node i Nuxt. Tworzę projekty WEB i IoT. Prowadzę również szkolenia z programowania aplikacji internetowych. Chętnie porozmawiam o ciekawych projektach.",

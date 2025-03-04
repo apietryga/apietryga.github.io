@@ -1,5 +1,6 @@
 import en from './langs/en'
 import pl from './langs/pl'
+import common from './langs/common'
 
 export default defineNuxtPlugin( app => {
   const lang = 'en'
@@ -33,10 +34,11 @@ export default defineNuxtPlugin( app => {
       'Twig'
     ],
   }
-  const content = { en, pl, all }
+  const content = { en, pl, all, common }
+
   const t = trans_key => {
     let a = trans_key.replace(/\[(\w+)\]/g, '.$1').replace(/^\./, '').split('.')
-    let o = {...content[lang], ...content.all }
+    let o = {...content[lang], ...content.all, ...content.common }
     for (let i = 0, n = a.length; i < n; ++i) {
       if (a[i] in o){ o = o[a[i]] }else{ return }
     }

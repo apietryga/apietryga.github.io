@@ -1,4 +1,8 @@
 <template>
+	<Head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">	</Head>
   <div class="overCV">
 
 	<div class="download-links">
@@ -85,25 +89,40 @@
         </ul>
       </article>
       <section>
-        <h1>{{ $t('author') }}</h1>
-				<p class="role">{{ $t('role') }}</p>
-        <h2>{{ $t('cv.summary.title') }}</h2>
-				<p>{{ $t('cv.summary.content') }}</p>
-        <h2>{{ $t('cv.experience.title') }}</h2>
-        <ol>
+
+		<header>
+			<h1>{{ $t('author') }}</h1>
+			<p class="role">{{ $t('role') }}</p>
+	
+			<h2>{{ $t('cv.summary.title') }}</h2>
+			<p class="summary">{{ $t('cv.summary.content') }}</p>
+			<h2>{{ $t('cv.experience.title') }}</h2>
+		</header>
+
+		<ol>
           <li v-for="item of $t('cv.experience.items')">
-            <sub>
-				<span v-if="!item.items">{{ item.date_from + " - " + item.date_to }}</span>
-				<span v-else>{{ item.items[0].date_from + " - " + item.items[item.items.length - 1].date_to }}</span>
-			</sub>
-            <h3>{{ item.title }}</h3>
-            <sup v-if="!item.items">{{ item.role }}</sup>
-			<p v-if="!item.items">{{ item.desc }}</p>
+			  <header class="li-header">
+				
+				<p class="title">
+					<h3>{{ item.title }}</h3>
+					<sup v-if="!item.items">{{ item.role }}</sup>
+				</p>
+
+				<p class="date">
+					<span v-if="!item.items">{{ item.date_from + " - " + item.date_to }}</span>
+					<span v-else>{{ item.items[0].date_from + " - " + item.items[item.items.length - 1].date_to }}</span>
+				</p>
+
+			</header>
+			<p class="desc" v-if="!item.items">{{ item.desc }}</p>
 			<ul v-if="item.items">
               <li v-for="subitem of item.items">
-                <sub>{{ subitem.date_from + " - " + subitem.date_to }}</sub>
-                <h4>{{ subitem.company }}</h4>
-				<p>{{ subitem.desc }}</p>
+				<div class="li-subheader">
+					<p class="date">{{ subitem.date_from + " - " + subitem.date_to }}</p>
+					<h4>{{ subitem.company }}</h4>
+				</div>
+				
+				<p class="desc">{{ subitem.desc }}</p>
 				<p v-if="subitem.stack" class="stack">
 					<span v-for="tech of subitem.stack">{{ tech }}</span>
 				</p>
@@ -126,11 +145,13 @@
   display:flex;
   flex-direction: column;
   align-items: center;
-  .download-links{
-	  display:flex;
-	  gap:15px;
-	  flex-wrap: wrap;
-  }
+	
+	.download-links{
+		display:flex;
+		gap:15px;
+		flex-wrap: wrap;
+	}
+
 	.cv{
 		margin:2em;
 		background: #000;
@@ -138,6 +159,23 @@
 		width:  210mm;
 		height: calc(297mm - 2px);
 		border:1px solid #fff;
+
+		h1, h2, h3, h4, h5, h6{
+			font-family: "Ubuntu";
+			// font-family: "Ubuntu";
+		}
+
+		p{
+			padding-left:.2rem;
+		}
+		// font-family: "Aldrich", sans-serif;
+		// font-family: "Ubuntu";
+		// font-family: "Open Sans", sans-serif;
+		// font-family: "Ubuntu", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+
+
 		article{
 			flex:1;
 			color:#fff;
@@ -168,6 +206,7 @@
 				padding:0;
 				list-style: none;
 				li {
+
 					width: fit-content;
 					margin:.5em 0;
 					div.link a{
@@ -192,18 +231,22 @@
 								}
 							}
 						}
-	
+
 					}
 				}
 			}
 		}
+
 		.stack{
-			font-weight: bold;
+			font-family: "Ubuntu";
+			font-weight: 600;
 			margin-top:3px;
 			display: flex;
 			flex-wrap: wrap;
 			gap:5px;
+			color: rgba(0,0,0,0.7)
 		}
+
 		section{
 			background: #fff;
 			color:#000;
@@ -211,52 +254,95 @@
 			padding:1em;
 			display:flex;
 			flex-direction: column;
-			h1{
-				font-size:3em;
-				margin:0;
-				line-height: .9em;
-				margin-top:.25em;
+			font-family: Arial, Helvetica, sans-serif;
+			// font-family: 'Times New Roman', Times, serif;
+
+			header{
+
+				h1{
+					font-size:3rem;
+					line-height: 1.5rem;
+					margin-top:.5rem;
+				}
+
+				.role{
+					// border:2px dashed red;
+					font-size:1.5rem;
+					font-weight: 700;
+					font-family: "Ubuntu";
+				}
+
+				h2{
+					margin-top:1rem;
+					font-size:1.25rem;
+				}
+				
 			}
-			h2{
-				margin-top:.5em;
-			}
+
+			
 			p{
-				line-height: 1.1em;
-				font-size: .9em;
+				line-height: 1.5em;
+				font-size: 1rem;
+				font-weight: 500;
 			}
 			ol{
 				margin:0;
 				padding:0 0 0 2em;
 				list-style: none;
 				flex:1;
-				sub{
-					line-height: 0em;
-					position:relative;
-					top:-.75em;
-					font-size:.6em;
-					font-weight: bold;
-				}
-				sup{
-					font-size:.6em;
-					font-weight: bold;
-					position:relative;
-					top:-.3em;
+				// sup{
+					// font-size:.6em;
+					// font-weight: bold;
+					// position:relative;
+					// top:-.3em;
 
-				}
-				h3,h4{
-					line-height: .3em;
-					margin-bottom:.4em
-				}
+				// }
 				>li{
-					padding-left:.5em;
 					margin-top:.5rem;
 					position: relative;
+
+					.date{
+						// border:2px dashed red;
+						display:flex;
+						font-size:1rem;
+						font-weight: 600;
+						white-space: nowrap;
+						align-items: center;
+					}
+
+					.desc{
+						// border:2px dashed red;
+						margin-bottom:.5rem;
+					}
+
+
+					.li-header{
+						display:flex;
+						justify-content: space-between;
+
+						.title {
+							// border:2px dashed pink;
+							padding:.5rem 0 ;
+							h3{
+								font-size:1.2rem;
+								line-height: 1;
+								font-weight: 600;
+							}
+						}
+
+					}
+
+
+
 					>p{
 						margin-top:-.5em;
 					}
 					p{
-						font-size: .9em;
-						line-height: 1em;
+						font-size: 1rem;
+						line-height: 1;
+						// margin-bottom: 0;
+						// border:2px dashed red;
+						// border:2px dashed red;
 					}
 					&:first-of-type{
 						margin-top:0;
@@ -293,16 +379,24 @@
 						padding:0 0 0 1em;
 						position:relative;
 						li{
-							margin-top:.5rem;
-							h4{
-								// margin-bottom:.5em;
-								margin:0 0 1em 0;
-								margin-bottom:0;
-								line-height: 1em;
+							// margin-top:.5rem;
+							// border:2px dashed red;
+							margin-bottom:.75rem;
+							.li-subheader{
+								display:flex;
+								flex-direction: row-reverse;
+								justify-content: space-between;
+								// padding:.2rem 0 1rem 0;
+
+								h4{
+									// margin-bottom:.5em;
+									margin:0 0 1em 0;
+									margin-bottom:0;
+									line-height: 1em;
+								}
+
 							}
-							sub{
-								top:-.25em;
-							}
+
 								// p{
 							// 	line-height: .9em;
 							// }
@@ -323,6 +417,7 @@
 				font-size:.7em;
 			}
 		}
+
 	}
 }
 

@@ -1,15 +1,4 @@
 export default {
-  title: "apietryga",
-  author: "Antoni Pietryga",
-	role: "Software Developer & Trainer",
-  nav: {
-    home: 'Home',
-    projects: 'Projects',
-    contact: 'Contact',
-		code: 'Code',
-		teaching: 'Teaching',
-		business: 'Business',
-  },
   home: {
     title: "You found <b>Software Developer</b><br><b>which will do</b> the job",
     description: "I am self-taught programmer works with WEB and IoT projects,<br> additionally I teach web application programming",
