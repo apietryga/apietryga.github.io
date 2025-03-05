@@ -3,8 +3,8 @@ import pl from './langs/pl'
 import common from './langs/common'
 
 export default defineNuxtPlugin( app => {
-  // const lang = 'en'
-  const lang = 'pl'
+  const lang = 'en'
+  // const lang = 'pl'
   const all = {
     stack:[
       'HTML',
