@@ -1343,7 +1343,7 @@ export default {
 					title: "Ernabo, RECON Consulting, Business Masters, LG PROJECT,  Everest Consulting",
           role: "Trener programowania",
 					desc: "Prowadzenie zajęć z zakresu programowania front-end, oraz w językach PHP, Java i Python, a także kursy z zakresów Social Media oraz SEO",
-          stack: ["HTML", "SCSS", "JS", "Vue", "PHP", "Python"],
+          stack: ["Szkolenia", "HTML", "SCSS", "JS", "Vue", "PHP", "Python"],
 				},
 				// {
 				// 	title: "Trener programowania - freelancer",
@@ -1367,8 +1367,8 @@ export default {
 					date_from: "11.2018",
 					title: "Kuźnia Ekspertów",
 					role: "Trener kompetencji cyfrowych",
-					desc: "Prowadzenie zajęć z technologii cyfrowej",
-          stack: ["Szkolenia", "MS Office"],
+					desc: "Prowadzenie zajęć z technologii cyfrowej dla seniorów (65+). Obsługa Windows, Android, weryfikacja informacji w internecie",
+          stack: ["Szkolenia"],
 				},
 				{
 					date_to:"10.2018",
@@ -1376,10 +1376,7 @@ export default {
 					title: "Good Lock, Kluczdowszystkiego, Gigant.pl, YanoMebel",
 					role: "Freelance Fullstack",
           desc:
-          "Modernizacja strony producenta mebli." +
-          "Tworzenie edukacyjnej gry muzycznej TOMIGra." +
-          "Stworzenie systemu CMS dla escape roomu, do zarządzania systemem rezerwacji oraz opracowanie landing page do prezentacji pokoi dostępnych w ofercie." +
-          "Stworzenie systemu umożliwiającego zamawianie \"Systemu Jednego Klucza\" firmy LOB.",
+          "Modernizacja strony WP producenta mebli, tworzenie edukacyjnej gry muzycznej TOMIGra, tworzenie systemu CMS i rezerwacji dla escape roomu, tworzenie systemu umożliwiającego zamawianie \"Systemu Jednego Klucza\" firmy LOB.",
           stack: ["Wordpress", "PHP", "JS", "jQuery", "LAMP"],
 				},
 				// {

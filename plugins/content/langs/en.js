@@ -847,7 +847,7 @@ export default {
 		},
 		summary:{
 			title: "Summary",
-			content: "I am a self-taught programmer with a background in freelance full-stack programming from 2014 to 2018 and experience as a programming and digital competence trainer from 2018 to 2022. Since May 2022, I have been working as a dedicated software developer.",
+			content: "I started programming in 2014 to develop a speedway game. As my needs grew, I became familiar with the LAMP stack, which enabled me to secure my first freelance projects. In 2018, I founded a business focused on digital skills training. After two years, I began conducting front-end programming courses. Since May 2022, I have been working as a B2B contractor while occasionally continuing to teach programming courses.",
 		},
 		experience:{
 			title: "Experience",
@@ -856,66 +856,83 @@ export default {
 					date_from: "05.2022",
 					date_to:"Present",
 					title: "Linkhouse.co",
-					role: "Software Engineer",
-					desc: "Maintenance and development link building platform, creating innovative solutions for the seo industry.",
-          stack: ["Vue", "Twig", "PHP", "Slim", "Docker", "Linux", "Laravel"],
+					role: "Fullstack",
+					desc: "Development and maintenance of a marketplace monolith, API integrations, AI implementation, microservices, and the creation of innovative solutions for the SEO industry.",
+          stack: ["Vue", "Twig", "PHP", "Slim", "Docker", "Kuberbetes", "Linux", "Laravel"],
 				},
-				{
-					title: "Frelance programming trainer",
-					items: [
-						{
-							date_from: "02.2020",
-							date_to:"02.2022",
-							company: "Ernabo",
-							desc: "Conducting trainings in the field of Front-end development in technologies",
-              stack: ["HTML", "SCSS", "JS", "Vue"],
-						},
-						{
-							date_from: "12.2020",
-							date_to:"12.2021",
-							company: "RECON Consulting, Business Masters, LG PROJECT,  Everest Consulting",
-							desc: "Training in Social Media, SEO and programming in Python and Java",
-              stack: ["HTML", "SCSS", "JS", "Vue"],
-						},
-					]
+        {
+					date_from: "12.2020",
+					date_to:"04.2022",
+					title: "Ernabo, RECON Consulting, Business Masters, LG PROJECT,  Everest Consulting",
+          role: "Programming Trainer",
+					desc: "Conducting courses in front-end programming, as well as PHP, Java, and Python. Additionally, leading training sessions on Social Media and SEO.",
+          stack: ["Courses", "HTML", "SCSS", "JS", "Vue", "PHP", "Python"],
 				},
+				// {
+				// 	title: "Frelance programming trainer",
+				// 	items: [
+				// 		{
+				// 			date_from: "02.2020",
+				// 			date_to:"02.2022",
+				// 			company: "Ernabo",
+				// 			desc: "Conducting trainings in the field of Front-end development in technologies",
+        //       stack: ["HTML", "SCSS", "JS", "Vue"],
+				// 		},
+				// 		{
+				// 			date_from: "12.2020",
+				// 			date_to:"12.2021",
+				// 			company: "RECON Consulting, Business Masters, LG PROJECT,  Everest Consulting",
+				// 			desc: "Training in Social Media, SEO and programming in Python and Java",
+        //       stack: ["HTML", "SCSS", "JS", "Vue"],
+				// 		},
+				// 	]
+				// },
 				{
 					date_to:"08.2021",
 					date_from: "11.2018",
 					title: "Kuźnia Ekspertów",
-					role: "Digital competence trainer",
-					desc: "Conducting training in the field of digital competences",
+					role: "Digital Skills Trainer",
+					desc: "Conducting digital technology courses for seniors (65+), covering Windows and Android operation, as well as online information verification.",
+          stack: ["Courses"],
 				},
-				{
-					title: "Frelance software developer",
-					items: [
-						{
-							date_from: "08.2016",
-							date_to:"10.2016",
-							company: "Good Lock",
-							desc: "Creating CMS for escape room to manage booking with landing page to present rooms offers.",
-              stack: ["Vue", "PHP"],
-						},
-						{
-							date_from: "06.2016",
-							date_to:"07.2016",
-							company: "Kluczdowszystkiego",
-							desc: "Creation of a key configurator for \"LOB Master Key systems\" - one key system.",
-						},
-						{
-							date_from: "02.2015",
-							date_to:"05.2022",
-							company: "Gigant.pl | MarketingDesign",
-							desc: "Creating an educational game for children - TOMIGRA",
-						},
-						{
-							date_from: "12.2014",
-							date_to:"01.2015",
-							company: "YanoMebel",
-							desc: "Modernization of the website of the furniture manufacturer Yano Mebel",
-						},
-					]
+        {
+					date_to:"10.2018",
+					date_from: "12.2014",
+					title: "Good Lock, Kluczdowszystkiego, Gigant.pl, YanoMebel",
+					role: "Freelance Fullstack",
+          desc: "Modernization of a WordPress website for a furniture manufacturer, development of the educational music game TOMIGra, creation of a CMS and booking system for an escape room, and development of a system for ordering the \"One Key System\" for LOB.",
+          stack: ["Wordpress", "PHP", "JS", "jQuery", "LAMP"],
 				},
+				// {
+				// 	title: "Frelance software developer",
+				// 	items: [
+				// 		{
+				// 			date_from: "08.2016",
+				// 			date_to:"10.2016",
+				// 			company: "Good Lock",
+				// 			desc: "Creating CMS for escape room to manage booking with landing page to present rooms offers.",
+        //       stack: ["Vue", "PHP"],
+				// 		},
+				// 		{
+				// 			date_from: "06.2016",
+				// 			date_to:"07.2016",
+				// 			company: "Kluczdowszystkiego",
+				// 			desc: "Creation of a key configurator for \"LOB Master Key systems\" - one key system.",
+				// 		},
+				// 		{
+				// 			date_from: "02.2015",
+				// 			date_to:"05.2022",
+				// 			company: "Gigant.pl | MarketingDesign",
+				// 			desc: "Creating an educational game for children - TOMIGRA",
+				// 		},
+				// 		{
+				// 			date_from: "12.2014",
+				// 			date_to:"01.2015",
+				// 			company: "YanoMebel",
+				// 			desc: "Modernization of the website of the furniture manufacturer Yano Mebel",
+				// 		},
+				// 	]
+				// },
 			],
 			description: "Wyrażam zgodę na przetwarzanie danych osobowych zawartych w niniejszym dokumencie do realizacji procesu rekrutacji zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO). ",
 		},

@@ -7,15 +7,15 @@
 
 	<div class="download-links">
 		<nuxtLink class="btn" target="_blank"
-			to="/cvs/2025_03_CV_pl.pdf"
-			download="/cvs/2025_03_CV_pl.pdf"
+			to="/cvs/Pietryga_Antoni_2025_03_CV_pl.pdf"
+			download="/cvs/Pietryga_Antoni_2025_03_CV_pl.pdf"
 			style="margin-top:2em;">
 			{{ $t('cv.download') }} PL
 		</nuxtLink>
 
 		<nuxtLink class="btn" target="_blank"
-			to="/cvs/2025_03_CV_pl.pdf"
-			download="/cvs/2025_03_CV_en.pdf"
+			to="/cvs/Pietryga_Antoni_2025_03_CV_pl.pdf"
+			download="/cvs/Pietryga_Antoni_2025_03_CV_en.pdf"
 			style="margin-top:2em;">
 			{{ $t('cv.download') }} EN
 		</nuxtLink>
@@ -336,6 +336,7 @@
 					.desc{
 						// border:2px dashed red;
 						margin-bottom:.5rem;
+						line-height: 1.25;
 					}
 
 
@@ -506,7 +507,10 @@
 		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 		const totalYears = diffDays / 365;
 
-		return '&nbsp;(' + totalYears.toFixed(1) + ')';
+		const years = Math.floor(totalYears);
+		const months = Math.floor((totalYears - years) * 12);
+
+		return '&nbsp;(' + years + 'y, ' + months + 'm)';
 
 	}
 
