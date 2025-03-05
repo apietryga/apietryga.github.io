@@ -1,0 +1,1 @@
+import{_ as s,o as r,c,a as n,b as e,F as a,d,e as l}from"./entry.0498322a.js";const i={},m={class:"div404"},p=e("h2",null,"404",-1),u=["innerHTML"];function f(o,h){const _=d,t=l;return r(),c(a,null,[n(_),e("main",m,[p,e("p",{innerHTML:o.$t("error.desc")},null,8,u)]),n(t)],64)}const x=s(i,[["render",f]]);export{x as default};
