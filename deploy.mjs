@@ -1,22 +1,24 @@
-import { execa } from "execa";
-const folderName = ".output/public";
-(async () => {
-  try {
-    await execa(`git checkout --orphan gh-pages`);
+import { execSync } from "node:child_process";
 
-    console.log("Building started...");
+const folderName = "dist";
 
-    await execa(`npm run generate`);
-    await execa(`git --work-tree ${ folderName } add --all`);
-    await execa(`git --work-tree ${ folderName } commit -m gh-pages`);
+try {
+  execSync("git checkout --orphan gh-pages", { stdio: "inherit" });
 
-    console.log("Pushing to gh-pages...");
+  console.log("Building started...");
 
-    await execa(`git push origin HEAD:gh-pages --force`);
-    await execa(`git checkout -f master`);
-    await execa(`git branch -D gh-pages`);
- 
-    console.log("Successfully deployed, check your settings");
- 
-  } catch (e) { console.log({ e }); process.exit(1) }
-})();
+  execSync("npm run build", { stdio: "inherit" });
+  execSync(`git --work-tree ${folderName} add --all`, { stdio: "inherit" });
+  execSync('git --work-tree dist commit -m "gh-pages"', { stdio: "inherit" });
+
+  console.log("Pushing to gh-pages...");
+
+  execSync("git push origin HEAD:gh-pages --force", { stdio: "inherit" });
+  execSync("git checkout -f master", { stdio: "inherit" });
+  execSync("git branch -D gh-pages", { stdio: "inherit" });
+
+  console.log("Successfully deployed, check your settings");
+} catch (e) {
+  console.log({ e });
+  process.exit(1);
+}

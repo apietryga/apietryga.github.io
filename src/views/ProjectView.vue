@@ -1,0 +1,256 @@
+<template>
+  <div class="project-page" v-if="project">
+    <!-- HERO -->
+    <div class="project-hero" :style="heroStyle">
+      <div class="project-hero-bg" />
+      <div class="project-hero-content">
+        <RouterLink to="/projects" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          All Projects
+        </RouterLink>
+        <div class="project-hero-tags">
+          <span v-for="c in project.category.slice(0,5)" :key="c" class="tag">{{ c }}</span>
+        </div>
+        <h1>{{ project.name }}</h1>
+        <p class="project-hero-desc">{{ project.desc }}</p>
+        <p class="project-hero-date">{{ project.date }}</p>
+      </div>
+    </div>
+
+    <div class="project-body">
+
+      <!-- MEDIA -->
+      <section class="project-media" v-if="project.media?.length">
+        <div class="media-grid" :class="'media-grid-' + Math.min(project.media.length, 3)">
+          <template v-for="(m, i) in project.media" :key="i">
+            <a
+              v-if="isLink(m)"
+              :href="typeof m === 'string' ? m : m.href"
+              target="_blank" class="media-link"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              <span>{{ linkLabel(m) }}</span>
+            </a>
+            <div v-else-if="isYoutube(m)" class="media-video">
+              <iframe :src="m" frameborder="0" allowfullscreen loading="lazy" />
+            </div>
+            <div v-else-if="typeof m === 'string'" class="media-img" @click="lightbox = m">
+              <img :src="mediaPath(m)" :alt="project.name" loading="lazy" />
+              <div class="media-img-zoom">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/>
+                </svg>
+              </div>
+            </div>
+          </template>
+        </div>
+      </section>
+
+      <!-- CONTENT -->
+      <section class="project-content">
+        <div
+          v-for="(para, i) in project.content"
+          :key="i"
+          class="project-para"
+          v-html="para"
+        />
+      </section>
+
+      <!-- NAV -->
+      <nav class="project-nav">
+        <RouterLink v-if="prev" :to="'/projects/' + prev.url" class="project-nav-item project-nav-prev">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+          <span>
+            <small>Previous</small>
+            <strong>{{ prev.name }}</strong>
+          </span>
+        </RouterLink>
+        <RouterLink v-if="next" :to="'/projects/' + next.url" class="project-nav-item project-nav-next">
+          <span>
+            <small>Next</small>
+            <strong>{{ next.name }}</strong>
+          </span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M14 5l7 7-7 7"/></svg>
+        </RouterLink>
+      </nav>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <Teleport to="body">
+      <div class="lightbox" v-if="lightbox" @click="lightbox = null">
+        <button class="lightbox-close">✕</button>
+        <img :src="mediaPath(lightbox)" />
+      </div>
+    </Teleport>
+  </div>
+
+  <div class="project-not-found" v-else>
+    <p>Project not found.</p>
+    <RouterLink to="/projects" class="btn">All Projects</RouterLink>
+  </div>
+</template>
+
+<script setup>
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { projects } from '../content.js'
+
+const route = useRoute()
+const lightbox = ref(null)
+
+const idx = computed(() => projects.findIndex(p => p.url === route.params.url))
+const project = computed(() => projects[idx.value])
+const prev = computed(() => idx.value > 0 ? projects[idx.value - 1] : null)
+const next = computed(() => idx.value < projects.length - 1 ? projects[idx.value + 1] : null)
+
+const heroStyle = computed(() => ({
+  '--project-color': project.value?.color || '#7c6fff',
+}))
+
+const isYoutube = m => typeof m === 'string' && m.includes('youtube.com/embed')
+const isLink = m => typeof m === 'object' || (typeof m === 'string' && m.startsWith('http') && !isYoutube(m))
+const mediaPath = m => m.startsWith('/') || m.startsWith('http') ? m : '/img/contents/' + m
+
+const linkLabel = m => {
+  if (typeof m === 'object') {
+    if (m.type === 'github') return 'GitHub Repository'
+    return m.href || 'External Link'
+  }
+  return m.replace('https://', '').replace('http://', '').split('/')[0]
+}
+</script>
+
+<style scoped>
+.project-page { padding-top: var(--nav-h); }
+
+.project-hero {
+  position: relative;
+  padding: 4rem clamp(1.5rem, 5vw, 4rem) 3rem;
+  overflow: hidden;
+}
+.project-hero-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(124,111,255,.15), rgba(0,212,255,.08));
+  border-bottom: 1px solid var(--border);
+}
+
+.project-hero-content { position: relative; max-width: 800px; margin: 0 auto; }
+
+.back-link {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .82rem; font-weight: 500; color: var(--muted);
+  margin-bottom: 1.5rem; transition: color .2s;
+}
+.back-link:hover { color: var(--text); }
+
+.project-hero-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+
+.project-hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700; margin-bottom: .75rem; line-height: 1.15;
+}
+.project-hero-desc { font-size: 1.05rem; color: var(--muted); max-width: 560px; margin-bottom: .75rem; }
+.project-hero-date { font-size: .78rem; color: var(--muted); font-weight: 500; letter-spacing: .06em; }
+
+/* BODY */
+.project-body { max-width: 880px; margin: 0 auto; padding: 3rem clamp(1.5rem, 5vw, 4rem) 5rem; }
+
+/* MEDIA */
+.project-media { margin-bottom: 3rem; }
+.media-grid { display: grid; gap: 1rem; }
+.media-grid-1 { grid-template-columns: 1fr; }
+.media-grid-2 { grid-template-columns: 1fr 1fr; }
+.media-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.media-video {
+  aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--border); grid-column: span 2;
+}
+.media-grid-1 .media-video { grid-column: span 1; }
+.media-video iframe { width: 100%; height: 100%; }
+
+.media-img {
+  aspect-ratio: 16/10; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--border); position: relative; cursor: zoom-in;
+}
+.media-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.media-img:hover img { transform: scale(1.03); }
+.media-img-zoom {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,.4); opacity: 0; transition: opacity .2s;
+  color: #fff;
+}
+.media-img:hover .media-img-zoom { opacity: 1; }
+
+.media-link {
+  display: flex; align-items: center; justify-content: center; gap: .75rem;
+  padding: 1.5rem; border-radius: var(--radius);
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--accent); font-size: .9rem; font-weight: 500;
+  transition: border-color .2s, background .2s; text-decoration: none;
+}
+.media-link:hover { border-color: var(--accent); background: rgba(124,111,255,.08); }
+
+/* CONTENT */
+.project-content { margin-bottom: 3rem; }
+.project-para {
+  font-size: 1rem; line-height: 1.8; color: var(--muted);
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.project-para:first-child { padding-top: 0; }
+.project-para:last-child { border-bottom: none; }
+.project-para :deep(a) { color: var(--accent); text-decoration: underline; }
+.project-para :deep(b) { color: var(--text); }
+.project-para :deep(h3) { color: var(--text); margin-bottom: .5rem; }
+.project-para :deep(ul) { padding-left: 1.5rem; margin-top: .5rem; }
+.project-para :deep(li) { margin-bottom: .25rem; }
+
+/* NAV */
+.project-nav {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  border-top: 1px solid var(--border); padding-top: 2rem;
+  justify-content: space-between;
+}
+.project-nav-item {
+  display: flex; align-items: center; gap: .75rem;
+  padding: 1rem 1.25rem; border-radius: var(--radius);
+  border: 1px solid var(--border); flex: 1;
+  min-width: 160px; transition: border-color .2s;
+}
+.project-nav-item:hover { border-color: var(--accent); }
+.project-nav-item span { display: flex; flex-direction: column; gap: .1rem; }
+.project-nav-item small { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.project-nav-item strong { font-size: .9rem; font-weight: 600; }
+.project-nav-next { justify-content: flex-end; text-align: right; }
+.project-nav-next span { align-items: flex-end; }
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(0,0,0,.92); backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 2rem; cursor: zoom-out;
+}
+.lightbox img { max-width: 100%; max-height: 90vh; border-radius: var(--radius); }
+.lightbox-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  font-size: 1.4rem; color: var(--muted); transition: color .2s;
+}
+.lightbox-close:hover { color: var(--text); }
+
+.project-not-found {
+  padding-top: calc(var(--nav-h) + 5rem); text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .media-grid-2, .media-grid-3 { grid-template-columns: 1fr; }
+  .media-video { grid-column: span 1; }
+}
+</style>

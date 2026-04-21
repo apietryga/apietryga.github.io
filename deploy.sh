@@ -2,13 +2,13 @@
 
 set -e  # Zatrzymaj skrypt, jeśli wystąpi błąd
 
-FOLDER_NAME=".output/public"
+FOLDER_NAME="dist"
 
 echo "Switching to orphan branch gh-pages..."
 git checkout --orphan gh-pages
 
 echo "Building started..."
-npm run generate
+npm run build
 
 echo "Adding files to gh-pages..."
 git --work-tree "$FOLDER_NAME" add --all
