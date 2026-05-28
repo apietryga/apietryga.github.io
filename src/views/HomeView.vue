@@ -3,27 +3,47 @@
 
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-bg">
-        <div class="hero-orb hero-orb-1" />
-        <div class="hero-orb hero-orb-2" />
-      </div>
       <div class="hero-content">
         <p class="hero-label">Antoni Pietryga</p>
-        <h1 class="hero-title">
-          Software Developer<br>
-          <span class="hero-accent">which will do</span> the job.
-        </h1>
-        <p class="hero-desc">
-          Self-taught programmer working with WEB and IoT projects,<br class="hero-br">
-          additionally teaching web application programming.
-        </p>
+        <h1 class="hero-title">Product Builder &amp; Tech Educator</h1>
         <div class="hero-actions">
           <RouterLink to="/projects" class="btn">See my work</RouterLink>
           <RouterLink to="/contact" class="btn btn-ghost">Contact me</RouterLink>
         </div>
       </div>
-      <div class="hero-stack">
-        <span v-for="s in stack" :key="s" class="hero-stack-tag">{{ s }}</span>
+
+      <div class="hero-live-header">
+        <span class="live-pulse"><span class="live-pulse-dot" /></span>
+        currently shipping
+      </div>
+      <div class="hero-live">
+        <a class="live-card" href="https://speedwaygame.online/" target="_blank" rel="noopener">
+          <div class="live-card-img">
+            <img src="https://speedwaygame.online/images/og-image.jpg" alt="SpeedwayGame" />
+            <div class="live-card-caption">
+              <h3 class="live-card-name">SpeedwayGame</h3>
+              <p class="live-card-tech">bun · colyseus · android</p>
+            </div>
+          </div>
+        </a>
+        <a class="live-card" href="https://game.degengames.space/" target="_blank" rel="noopener">
+          <div class="live-card-img">
+            <img src="https://media.degengames.space/assets/images/main-menu_new-big.png" alt="Degen.gg" />
+            <div class="live-card-caption">
+              <h3 class="live-card-name">Degen.gg</h3>
+              <p class="live-card-tech">bun · vue3 · telegram mini app</p>
+            </div>
+          </div>
+        </a>
+        <a class="live-card" href="https://waitlistener.com/" target="_blank" rel="noopener">
+          <div class="live-card-img">
+            <img src="https://waitlistener.com/og_en.png" alt="Waitlistener" />
+            <div class="live-card-caption">
+              <h3 class="live-card-name">Waitlistener</h3>
+              <p class="live-card-tech">laravel · inertia</p>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -113,7 +133,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { projects, stack, home } from '../content.js'
+import { projects, home } from '../content.js'
 
 const router = useRouter()
 const go = path => router.push(path)
@@ -136,51 +156,88 @@ onUnmounted(() => clearInterval(timer))
 /* HERO */
 .hero {
   min-height: 100vh;
-  display: flex; flex-direction: column; justify-content: center;
-  padding: calc(var(--nav-h) + 4rem) clamp(1.5rem, 5vw, 4rem) 5rem;
-  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  padding: calc(var(--nav-h) + 2.5rem) clamp(1.5rem, 5vw, 4rem) 4rem;
+  text-align: center;
 }
 
-.hero-bg { position: absolute; inset: 0; pointer-events: none; }
-.hero-orb {
-  position: absolute; border-radius: 50%;
-  filter: blur(120px); opacity: .25;
+.hero-content {
+  display: flex; flex-direction: column; align-items: center;
+  max-width: 680px;
 }
-.hero-orb-1 {
-  width: 600px; height: 600px; top: -100px; right: -100px;
-  background: radial-gradient(circle, #7c6fff, transparent 70%);
-}
-.hero-orb-2 {
-  width: 400px; height: 400px; bottom: -50px; left: -50px;
-  background: radial-gradient(circle, #00d4ff, transparent 70%);
-}
-
-.hero-content { position: relative; max-width: 800px; }
 .hero-label {
-  font-size: .8rem; font-weight: 600; letter-spacing: .15em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem;
+  font-size: .78rem; font-weight: 600; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: .5rem;
 }
 .hero-title {
-  font-size: clamp(2.4rem, 6vw, 5rem);
-  font-weight: 700; line-height: 1.1;
-  margin-bottom: 1.5rem;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700; line-height: 1.05;
+  margin-bottom: 1.75rem;
 }
-.hero-accent { background: var(--accent-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.hero-desc { color: var(--muted); font-size: 1.05rem; max-width: 480px; margin-bottom: 2.5rem; }
-.hero-br { display: none; }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 
-.hero-stack {
-  position: relative; display: flex; flex-wrap: wrap; gap: .5rem;
-  margin-top: 4rem; max-width: 700px;
+/* LIVE HEADER */
+.hero-live-header {
+  display: flex; align-items: center; gap: .5rem;
+  margin-top: 3.5rem; margin-bottom: .75rem;
+  font-size: .72rem; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted);
 }
-.hero-stack-tag {
-  font-size: .72rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
-  padding: .25rem .6rem; border-radius: 4px;
-  border: 1px solid var(--border); color: var(--muted);
-  transition: border-color .2s, color .2s;
+.live-pulse {
+  display: flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px;
 }
-.hero-stack-tag:hover { border-color: var(--accent); color: var(--text); }
+.live-pulse-dot {
+  display: block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(0,220,130,.5);
+  animation: live-ring 2s ease-out infinite;
+}
+@keyframes live-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(0,220,130,.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(0,220,130,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,220,130,0); }
+}
+
+/* LIVE CARDS */
+.hero-live {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  width: 100%; max-width: 960px;
+}
+
+.live-card {
+  text-decoration: none;
+  transition: transform .3s ease;
+}
+.live-card:hover { transform: translateY(-6px); }
+
+.live-card-img {
+  position: relative;
+  width: 100%; aspect-ratio: 16/9;
+  overflow: hidden; border-radius: 10px;
+  background: var(--surface2);
+}
+.live-card-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .5s ease;
+  display: block;
+}
+.live-card:hover .live-card-img img { transform: scale(1.06); }
+
+.live-card-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: .9rem .85rem .75rem;
+  background: linear-gradient(to top, rgba(0,0,0,.75) 0%, transparent 100%);
+  border-radius: 0 0 10px 10px;
+}
+.live-card-name {
+  font-size: .88rem; font-weight: 600; color: #fff;
+}
+.live-card-tech { font-size: .68rem; color: rgba(255,255,255,.65); margin-top: .1rem; }
+
+@media (max-width: 700px) {
+  .hero-live { grid-template-columns: 1fr; }
+}
 
 /* SECTIONS */
 .feat { background: var(--surface); }

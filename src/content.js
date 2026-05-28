@@ -147,7 +147,7 @@ export const projects = [
   {
     name: 'uFlash', url: 'uflash',
     img: 'uflash.webp', date: '2020-03-23', color: '#ffffff',
-    media: ['uflash_praca.webp', { type: 'github', href: 'https://github.com/apietryga/uFlash' }],
+    media: ['uflash_praca.webp', { type: 'igpost', id: 'B5P0GPLhPoZ' }, { type: 'instagram', href: 'https://www.instagram.com/uflashon/' }, { type: 'github', href: 'https://github.com/apietryga/uFlash' }],
     category: ['business', 'code', 'IoT', 'HTML', 'CSS', 'PHP', 'JavaScript'],
     desc: 'Interactive photo-mirror created for events or cultural places',
     content: [

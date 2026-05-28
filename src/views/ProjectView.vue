@@ -23,21 +23,8 @@
       <section class="project-media" v-if="project.media?.length">
         <div class="media-grid" :class="'media-grid-' + Math.min(project.media.length, 3)">
           <template v-for="(m, i) in project.media" :key="i">
-            <a
-              v-if="isLink(m)"
-              :href="typeof m === 'string' ? m : m.href"
-              target="_blank" class="media-link"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
-              </svg>
-              <span>{{ linkLabel(m) }}</span>
-            </a>
-            <div v-else-if="isYoutube(m)" class="media-video">
-              <iframe :src="m" frameborder="0" allowfullscreen loading="lazy" />
-            </div>
-            <div v-else-if="typeof m === 'string'" class="media-img" @click="lightbox = m">
+            <!-- local image -->
+            <div v-if="isImg(m)" class="media-img" @click="lightbox = m">
               <img :src="mediaPath(m)" :alt="project.name" loading="lazy" />
               <div class="media-img-zoom">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -45,6 +32,33 @@
                 </svg>
               </div>
             </div>
+            <!-- youtube embed -->
+            <div v-else-if="isYoutube(m)" class="media-video">
+              <iframe :src="m" frameborder="0" allowfullscreen loading="lazy" />
+            </div>
+            <!-- instagram post embed -->
+            <div v-else-if="m?.type === 'igpost'" class="media-igpost">
+              <iframe
+                :src="'https://www.instagram.com/p/' + m.id + '/embed/'"
+                frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"
+              />
+            </div>
+            <!-- github / instagram profile / external link -->
+            <a v-else-if="isLink(m)" :href="m.href || m" target="_blank" rel="noopener" class="media-link" :class="m?.type === 'instagram' ? 'media-link--ig' : ''">
+              <svg v-if="m?.type === 'github'" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .269.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              <svg v-else-if="m?.type === 'instagram'" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4.5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+              <svg v-else width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              <span>{{ linkLabel(m) }}</span>
+            </a>
           </template>
         </div>
       </section>
@@ -110,16 +124,17 @@ const heroStyle = computed(() => ({
   '--project-color': project.value?.color || '#7c6fff',
 }))
 
+const isImg    = m => typeof m === 'string' && !m.startsWith('http')
 const isYoutube = m => typeof m === 'string' && m.includes('youtube.com/embed')
-const isLink = m => typeof m === 'object' || (typeof m === 'string' && m.startsWith('http') && !isYoutube(m))
+const isLink   = m => typeof m === 'object' && m?.type !== 'igpost'
 const mediaPath = m => m.startsWith('/') || m.startsWith('http') ? m : '/img/contents/' + m
 
 const linkLabel = m => {
-  if (typeof m === 'object') {
-    if (m.type === 'github') return 'GitHub Repository'
-    return m.href || 'External Link'
-  }
-  return m.replace('https://', '').replace('http://', '').split('/')[0]
+  if (m?.type === 'github') return 'GitHub Repository'
+  if (m?.type === 'instagram') return '@' + (m.href.replace(/^https?:\/\/(www\.)?instagram\.com\//, '').replace(/\/$/, ''))
+  if (m?.label) return m.label
+  if (m?.href) return m.href.replace(/^https?:\/\//, '').split('/')[0]
+  return 'External Link'
 }
 </script>
 
@@ -150,7 +165,7 @@ const linkLabel = m => {
 
 .project-hero h1 {
   font-size: clamp(1.8rem, 5vw, 3rem);
-  font-weight: 700; margin-bottom: .75rem; line-height: 1.15;
+  font-weight: 700; line-height: 1.15; margin-bottom: .75rem;
 }
 .project-hero-desc { font-size: 1.05rem; color: var(--muted); max-width: 560px; margin-bottom: .75rem; }
 .project-hero-date { font-size: .78rem; color: var(--muted); font-weight: 500; letter-spacing: .06em; }
@@ -160,40 +175,56 @@ const linkLabel = m => {
 
 /* MEDIA */
 .project-media { margin-bottom: 3rem; }
-.media-grid { display: grid; gap: 1rem; }
+
+.media-grid {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 280px;
+}
 .media-grid-1 { grid-template-columns: 1fr; }
 .media-grid-2 { grid-template-columns: 1fr 1fr; }
 .media-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
 
-.media-video {
-  aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden;
-  border: 1px solid var(--border); grid-column: span 2;
+/* shared: every cell fills its row */
+.media-img,
+.media-video,
+.media-igpost,
+.media-link {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  height: 100%;
 }
-.media-grid-1 .media-video { grid-column: span 1; }
-.media-video iframe { width: 100%; height: 100%; }
 
-.media-img {
-  aspect-ratio: 16/10; border-radius: var(--radius); overflow: hidden;
-  border: 1px solid var(--border); position: relative; cursor: zoom-in;
+.media-video iframe,
+.media-igpost iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: none;
 }
+
+.media-img { cursor: zoom-in; }
 .media-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
 .media-img:hover img { transform: scale(1.03); }
 .media-img-zoom {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(0,0,0,.4); opacity: 0; transition: opacity .2s;
-  color: #fff;
+  background: rgba(0,0,0,.4); opacity: 0; transition: opacity .2s; color: #fff;
 }
 .media-img:hover .media-img-zoom { opacity: 1; }
 
+.media-igpost { background: #000; }
+
 .media-link {
   display: flex; align-items: center; justify-content: center; gap: .75rem;
-  padding: 1.5rem; border-radius: var(--radius);
-  border: 1px solid var(--border); background: var(--surface);
-  color: var(--accent); font-size: .9rem; font-weight: 500;
+  background: var(--surface); color: var(--accent);
+  font-size: .9rem; font-weight: 500;
   transition: border-color .2s, background .2s; text-decoration: none;
 }
-.media-link:hover { border-color: var(--accent); background: rgba(124,111,255,.08); }
+.media-link:hover { border-color: var(--accent); background: rgba(0,220,130,.06); }
+.media-link--ig { color: #c13584; }
+.media-link--ig:hover { border-color: #c13584; background: rgba(193,53,132,.06); }
 
 /* CONTENT */
 .project-content { margin-bottom: 3rem; }
