@@ -1,24 +1,20 @@
 <template>
-	<Head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">	</Head>
   <div class="overCV">
 
 	<div class="download-links">
-		<nuxtLink class="btn" target="_blank"
-			to="/cvs/Pietryga_Antoni_2025_03_CV_pl.pdf"
-			download="/cvs/Pietryga_Antoni_2025_03_CV_pl.pdf"
+		<a class="btn" target="_blank"
+			href="/cvs/Pietryga_Antoni_2025_03_CV_pl.pdf"
+			download
 			style="margin-top:2em;">
 			{{ $t('cv.download') }} PL
-		</nuxtLink>
+		</a>
 
-		<nuxtLink class="btn" target="_blank"
-			to="/cvs/Pietryga_Antoni_2025_03_CV_pl.pdf"
-			download="/cvs/Pietryga_Antoni_2025_03_CV_en.pdf"
+		<a class="btn" target="_blank"
+			href="/cvs/Pietryga_Antoni_2025_03_CV_en.pdf"
+			download
 			style="margin-top:2em;">
 			{{ $t('cv.download') }} EN
-		</nuxtLink>
+		</a>
 	</div>
 
     <div class="cv" ref="cv">
@@ -482,7 +478,7 @@
 	.blob{
 		display:none !important;
 	}
-	#__nuxt > div {
+	#app > div {
 		min-height: unset;
 	}
 }

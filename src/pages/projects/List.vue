@@ -4,7 +4,7 @@
       <template v-if="projects.length > 0">          
         <section v-for="item in filteredProjects" :key="item" data-aos="fade-up">
           <div class="wrapper">
-            <NuxtLink :to="'/projects/' + item.url">
+            <RouterLink :to="'/projects/' + item.url">
               <article>
                 <picture>
                   <img :src="'/img/contents/' + item.img" :alt="item.name">
@@ -15,7 +15,7 @@
                 <h2>{{ item.name }}</h2>
                 <p>{{ item.desc }}</p>
               </header>
-            </NuxtLink>
+            </RouterLink>
           </div>
         </section>
       </template>
@@ -23,9 +23,9 @@
         <p>
           There's no results<span v-if="$route.query"> for <b>{{ $route.query.q }}</b> query</span>.<br /> 
           Try search something else or 
-          <NuxtLink 
+          <RouterLink 
             style="color:var(--link-color)"
-            to="/projects">see all projects</NuxtLink>
+            to="/projects">see all projects</RouterLink>
         </p>
       </section>
     </nav>

@@ -3,18 +3,16 @@
     <loader v-if="loading" />
     <seo :key="$route.fullPath" />
     <navHeader />
-    <NuxtPage class="pageWrapper" />
-    <navFooter />    
+    <router-view class="pageWrapper" />
+    <navFooter />
     <cursorGradient />
   </div>
 </template>
 
 <script setup>
-  const nuxtApp = useNuxtApp();
-  const loading = ref(true);
-  nuxtApp.hook("page:finish", () => {
-    loading.value = false;
-  });
+  import { ref, onMounted } from 'vue'
+  const loading = ref(true)
+  onMounted(() => { loading.value = false })
 </script>
 
 <style>

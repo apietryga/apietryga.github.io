@@ -21,7 +21,7 @@
     </main>
     <div class="prevNextWrapper">
       <div v-for="butt of getPrevNext()" :key="butt">
-        <NuxtLink v-if="butt?.name" :to="'/projects/' + butt.url">
+        <RouterLink v-if="butt?.name" :to="'/projects/' + butt.url">
           <picture>
             <img :src="'/img/contents/' + butt.img" :alt="butt.name +' Logo'" />
           </picture>
@@ -29,7 +29,7 @@
             <h4>{{ butt.name }}</h4>
             <p>{{ butt.desc }}</p>
           </div>
-        </NuxtLink>
+        </RouterLink>
       </div>
     </div>
   </div>

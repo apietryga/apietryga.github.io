@@ -41,14 +41,14 @@ a{
 h1, h2, h3, p{
   margin:0;
 }
-#__nuxt{
+#app{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   z-index: -1;
 }
-#__nuxt > div{
+#app > div{
   flex:1;
   min-height: 100vh;
   display:flex;

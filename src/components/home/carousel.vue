@@ -16,9 +16,9 @@
         <p>{{ slide.content }}</p>
       </article>
       <footer>
-        <NuxtLink :to="slide.source" target="_blank" class="btn small">
+        <RouterLink :to="slide.source" target="_blank" class="btn small">
           {{ $t('home.teaching.reviews.cta') }}
-        </NuxtLink>
+        </RouterLink>
       </footer>
     </section>
   </div>

@@ -6,9 +6,9 @@
         <p data-aos="fade-up">{{ $t('home.code.description') }}</p>
       </header>
       
-      <NuxtLink data-aos="fade-up" to="/projects?q=code" class="btn">
+      <RouterLink data-aos="fade-up" to="/projects?q=code" class="btn">
         {{ $t('home.code.cta') }}
-      </NuxtLink>
+      </RouterLink>
 
       <div class="cards">
         <div v-for="[index, project] in ['webions', 'anadar'].entries()"
@@ -26,9 +26,9 @@
             <h3>{{ $p(project, 'name') }}</h3>
             <p> {{ $p(project, 'desc') }}</p>
           </header>
-          <NuxtLink :to="'/projects/' + $p(project, 'url')" class="btn small">
+          <RouterLink :to="'/projects/' + $p(project, 'url')" class="btn small">
             {{ $t('home.projects.cta') + " " + $p(project, 'name') }}
-          </NuxtLink>
+          </RouterLink>
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@
           :key="index" data-aos="fade-up" 
           :data-aos-delay="index*10"
         >
-          <NuxtLink :to="'/projects?q=' + techElement">{{ techElement }}</NuxtLink>
+          <RouterLink :to="'/projects?q=' + techElement">{{ techElement }}</RouterLink>
         </li>
       </ul>
     </div>

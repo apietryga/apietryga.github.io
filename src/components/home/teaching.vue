@@ -5,7 +5,7 @@
       <header>
         <h2 class="heroText" data-aos="fade-up" v-html="$t('home.teaching.title')"></h2>
         <p data-aos="fade-up">{{ $t('home.teaching.description') }}</p>  
-        <NuxtLink data-aos="fade-up" to="/projects?q=tech" class="btn">{{ $t('home.teaching.cta') }}</NuxtLink>
+        <RouterLink data-aos="fade-up" to="/projects?q=tech" class="btn">{{ $t('home.teaching.cta') }}</RouterLink>
       </header>
   
       <div class="wrapper">
@@ -23,9 +23,9 @@
           <header>
             <h3>{{ $p(project, 'name') }}</h3>
             <p>{{ $p(project, 'desc') }}</p>
-            <NuxtLink :to="'/projects/' + $p(project, 'url')" class="btn small">
+            <RouterLink :to="'/projects/' + $p(project, 'url')" class="btn small">
               {{ $t('home.projects.cta') + " " + $p(project, 'name') }}
-            </NuxtLink>
+            </RouterLink>
           </header>
         </div>
   

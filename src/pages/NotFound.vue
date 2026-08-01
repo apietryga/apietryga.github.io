@@ -1,10 +1,8 @@
 <template>
-  <navHeader />
   <main class='div404'>
     <h2>404</h2>
     <p v-html="$t('error.desc')"></p>
   </main>
-  <navFooter />
 </template>
 
 <script></script>

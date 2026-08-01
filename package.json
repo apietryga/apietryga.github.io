@@ -1,25 +1,24 @@
 {
   "name": "apietryga.com",
-  "version": "2.0.0",
-  "description": "Webdev portfolio",
+  "version": "5.0.0",
+  "description": "Webdev portfolio — Vue 3 + Vite SPA",
+  "type": "module",
   "scripts": {
-    "dev": "npx nuxi dev",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "start": "nuxt start",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "deploy": "./deploy.sh"
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "nuxt": "^3.1.1",
-    "sass": "^1.57.1",
     "three": "^0.149.0",
-    "vue-gtag-next": "^1.14.0"
+    "vue": "^3.4.0",
+    "vue-gtag-next": "^1.14.0",
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@nuxtjs/google-fonts": "^2.0.0",
-    "@types/three": "^0.149.0",
-    "execa": "^6.1.0",
-    "nuxt-simple-sitemap": "^1.0.9"
+    "@vitejs/plugin-vue": "^5.0.0",
+    "sass": "^1.57.1",
+    "vite": "^5.0.0"
   }
 }

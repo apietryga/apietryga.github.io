@@ -1,0 +1,240 @@
+export default {
+  home: {
+    title: "You found <b>Software Developer</b><br><b>which will do</b> the job",
+    description: "I am self-taught programmer works with WEB and IoT projects,<br> additionally I teach web application programming",
+    cta: "See my full experience",
+    code: {
+      title: "<b>Code</b> was my first <b>love</b>",
+      description: "In 2010, I started Googling in order to create a game. Since then, web development has captured me completely.",
+      cta: "see my code projects",
+    },
+    teaching: {
+      title: "<b>Teaching</b> - the best way of <b>learning</b>",
+      description: "I started my adventure with training with a computer skills course for seniors.",
+      cta: "see my teach experience",
+      reviews: {
+        
+        cta: "see reference",
+        list: [
+          { name: "ERNABO",
+            img: "reviews/ernabo.svg",
+            content: "Mr. Antoni causes change, commitment to work, responsibility and a large amount of patience",
+            source: "/docs/1.pdf",
+          },
+          { name: "Fundacja Partycypacji Społecznej",
+            img: "reviews/fundacja.svg",
+            content: "Mr. Antoni not only implemented the program of classes, but also showed ingenuity - expanding the classes with original initiatives, which always enjoyed the satisfaction of the participants.",
+            source: "/docs/6.pdf",
+          },
+          { name: "KUŹNIA EKSPERTÓW",
+            img: "reviews/kuznia_ekspertow.svg",
+            content: "Based on the cooperation so far, I certify that Mr. Antoni is worth recommending as a trainer.",
+            source: "/docs/3.pdf",
+          },
+          { name: "OPS Krzyżanowice",
+            img: "reviews/ops.svg",
+            content: "Mr. Antoni proved to be a reliable, competent, professional person with a great sense of humor.",
+            source: "/docs/5.pdf",
+          },
+          { name: "ERNABO",
+            img: "reviews/ernabo.svg",
+            content: "He is an ideal trainer who effectively transfers his extensive knowledge and additionally quickly wins the sympathy of his listeners.",
+            source: "/docs/1.pdf",
+          },
+          { name: "Fundacja Partycypacji Społecznej",
+            img: "reviews/fundacja.svg",
+            content: "Mr. Antoni proved to be an extremely committed person with high qualifications and interpersonal skills.",
+            source: "/docs/6.pdf",
+          },
+          { name: "KUŹNIA EKSPERTÓW",
+            img: "reviews/kuznia_ekspertow.svg",
+            content: "He performed his duties and responsibilities diligently. He was known as a meticulous and trustworthy person.",
+            source: "/docs/3.pdf",
+          },
+          { name: "OPS Krzyżanowice",
+            img: "reviews/ops.svg",
+            content: "The meetings were held in an atmosphere of pleasant relaxation with a sense of effective acquisition of knowledge.",
+            source: "/docs/5.pdf",
+          },
+          { name: "ERNABO",
+            img: "reviews/ernabo.svg",
+            content: "Classes are each time well thought out and properly prepared, in addition to theoretical knowledge, they are also characterized by a large number of examples of application in everyday life. ",
+            source: "/docs/1.pdf",
+          },
+          { name: "Fundacja Partycypacji Społecznej",
+            img: "reviews/fundacja.svg",
+            content: "The trainings were conducted in a professional manner and each time they were highly appreciated by the participants, who also emphasized the very good atmosphere prevailing during the classes.",
+            source: "/docs/6.pdf",
+          },
+          { name: "KUŹNIA EKSPERTÓW",
+            img: "reviews/kuznia_ekspertow.svg",
+            content: "He has extensive knowledge related to the subject of the training, he passes it on to the participants in a clear and understandable way.",
+            source: "/docs/3.pdf",
+          },
+          { name: "ERNABO",
+            img: "reviews/ernabo.svg",
+            content: "Professional approach to participants by Mr. Antoni and his extensive knowledge of the subject of the training translates into its clear and understandable transmission",
+            source: "/docs/1.pdf",
+          },
+          { name: "KUŹNIA EKSPERTÓW",
+          img: "reviews/kuznia_ekspertow.svg",
+          content: "He cares about both the group's accreditation and the substantive value of each meeting",
+          source: "/docs/3.pdf",
+          },
+          { name: "OPS Krzyżanowice",
+            img: "reviews/ops.svg",
+            content: "The topics discussed during the training were presented in an innovative and interesting way, which significantly raised the level of awareness of the participants",
+            source: "/docs/5.pdf",
+          },
+
+        ],
+      },
+    },
+    business: {
+      title: "<b>Business</b> is <b>business</b>",
+      description: "In 2018, I started my first business, which resulted in some of the projects and a lot of experience featured on this page.",
+      cta: "see my business projects",
+    },
+    projects: {
+      cta: "See ",
+    },
+  },
+  contact: {
+    title: "Contact details",
+    icons: {
+      phone : "+48 732 012 715",
+      mail: "antek.pietryga@gmail.com",
+      messenger: "https://www.messenger.com/t/antoni.pietryga",
+      instagram: "http://instagram.com/antek_pietryga",
+      facebook: "https://www.facebook.com/antoni.pietryga/",
+      youtube: "https://www.youtube.com/channel/UCB5bhBYgly7udyjyjj0K_UQ?view_as=subscriber",
+      linkedin: "https://www.linkedin.com/in/apietryga/",
+      github: "https://github.com/apietryga",
+      stackoverflow: "https://stackoverflow.com/users/5252704/antek-pietryga",
+    }
+  },
+  error:{
+    desc: /*html*/`
+    <p> This is not the page you wanted <br /> 
+      Better check
+      <a href='/projects'><b>projects</b></a> 😎
+    </p>`,
+  },
+	cv: {
+		download: "Download CV",
+		contact: {
+			title: "Contact",
+			webpage: "https://apietryga.github.io",
+			social_name: "apietryga",
+		},
+		main_skills:{
+			title: "Main Skills",
+			items: [
+				{ name: "JavaScript", ico:"js" },
+				{ name: "Vue", ico:"vue" },
+				{ name: "Node.js", ico:"nodejs" },
+				{ name: "Nuxt", ico:"nuxt" },
+				{ name: "Python", ico:"python" },
+				{ name: "PHP", ico:"php" },
+			]
+		},
+		languages:{
+			title: "Languages",
+			items: [
+				{ name: "English", desc: "EFSET CEFR B1/B2", ico: "us" },
+				{ name: "Polish", desc: "Native", ico: "pl" },
+			]
+		},
+		summary:{
+			title: "Summary",
+			content: "I started programming in 2014 to develop a speedway game. As my needs grew, I became familiar with the LAMP stack, which enabled me to secure my first freelance projects. In 2018, I founded a business focused on digital skills training. After two years, I began conducting front-end programming courses. Since May 2022, I have been working as a B2B contractor while occasionally continuing to teach programming courses.",
+		},
+		experience:{
+			title: "Experience",
+			items: [
+				{
+					date_from: "05.2022",
+					date_to:"Present",
+					title: "Linkhouse.co",
+					role: "Fullstack",
+					desc: "Development and maintenance of a marketplace monolith, API integrations, AI implementation, microservices, and the creation of innovative solutions for the SEO industry.",
+          stack: ["Vue", "Twig", "PHP", "Slim", "Docker", "Kuberbetes", "Linux", "Laravel"],
+				},
+        {
+					date_from: "12.2020",
+					date_to:"04.2022",
+					title: "Ernabo, RECON Consulting, Business Masters, LG PROJECT,  Everest Consulting",
+          role: "Programming Trainer",
+					desc: "Conducting courses in front-end programming, as well as PHP, Java, and Python. Additionally, leading training sessions on Social Media and SEO.",
+          stack: ["Courses", "HTML", "SCSS", "JS", "Vue", "PHP", "Python"],
+				},
+				// {
+				// 	title: "Frelance programming trainer",
+				// 	items: [
+				// 		{
+				// 			date_from: "02.2020",
+				// 			date_to:"02.2022",
+				// 			company: "Ernabo",
+				// 			desc: "Conducting trainings in the field of Front-end development in technologies",
+        //       stack: ["HTML", "SCSS", "JS", "Vue"],
+				// 		},
+				// 		{
+				// 			date_from: "12.2020",
+				// 			date_to:"12.2021",
+				// 			company: "RECON Consulting, Business Masters, LG PROJECT,  Everest Consulting",
+				// 			desc: "Training in Social Media, SEO and programming in Python and Java",
+        //       stack: ["HTML", "SCSS", "JS", "Vue"],
+				// 		},
+				// 	]
+				// },
+				{
+					date_to:"08.2021",
+					date_from: "11.2018",
+					title: "Kuźnia Ekspertów",
+					role: "Digital Skills Trainer",
+					desc: "Conducting digital technology courses for seniors (65+), covering Windows and Android operation, as well as online information verification.",
+          stack: ["Courses"],
+				},
+        {
+					date_to:"10.2018",
+					date_from: "12.2014",
+					title: "Good Lock, Kluczdowszystkiego, Gigant.pl, YanoMebel",
+					role: "Freelance Fullstack",
+          desc: "Modernization of a WordPress website for a furniture manufacturer, development of the educational music game TOMIGra, creation of a CMS and booking system for an escape room, and development of a system for ordering the \"One Key System\" for LOB.",
+          stack: ["Wordpress", "PHP", "JS", "jQuery", "LAMP"],
+				},
+				// {
+				// 	title: "Frelance software developer",
+				// 	items: [
+				// 		{
+				// 			date_from: "08.2016",
+				// 			date_to:"10.2016",
+				// 			company: "Good Lock",
+				// 			desc: "Creating CMS for escape room to manage booking with landing page to present rooms offers.",
+        //       stack: ["Vue", "PHP"],
+				// 		},
+				// 		{
+				// 			date_from: "06.2016",
+				// 			date_to:"07.2016",
+				// 			company: "Kluczdowszystkiego",
+				// 			desc: "Creation of a key configurator for \"LOB Master Key systems\" - one key system.",
+				// 		},
+				// 		{
+				// 			date_from: "02.2015",
+				// 			date_to:"05.2022",
+				// 			company: "Gigant.pl | MarketingDesign",
+				// 			desc: "Creating an educational game for children - TOMIGRA",
+				// 		},
+				// 		{
+				// 			date_from: "12.2014",
+				// 			date_to:"01.2015",
+				// 			company: "YanoMebel",
+				// 			desc: "Modernization of the website of the furniture manufacturer Yano Mebel",
+				// 		},
+				// 	]
+				// },
+			],
+			description: "Wyrażam zgodę na przetwarzanie danych osobowych zawartych w niniejszym dokumencie do realizacji procesu rekrutacji zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO). ",
+		},
+	}
+}

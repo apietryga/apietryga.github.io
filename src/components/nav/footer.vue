@@ -2,34 +2,34 @@
   <footer>
     <nav>
       <p>
-        <NuxtLink to="/">
+        <RouterLink to="/">
 	        <navLogo />
-				</NuxtLink>
+				</RouterLink>
       </p>
       <p>
-        <NuxtLink to="/">
+        <RouterLink to="/">
           <span>{{ $t('nav.home') }}</span>
-        </NuxtLink>
-        <NuxtLink to="/projects">
+        </RouterLink>
+        <RouterLink to="/projects">
           <span>{{ $t('nav.projects') }}</span>
-        </NuxtLink>
-        <NuxtLink to="/contact">
+        </RouterLink>
+        <RouterLink to="/contact">
           <span>{{ $t('nav.contact') }}</span> 
-        </NuxtLink>
-        <NuxtLink :to="'/cv'">
+        </RouterLink>
+        <RouterLink :to="'/cv'">
           Curriculum Vitae
-        </NuxtLink>
+        </RouterLink>
       </p>
       <p>
-        <NuxtLink :to="{name: 'projects', query: {q: 'code'}}">
+        <RouterLink :to="{name: 'projects', query: {q: 'code'}}">
           <span>{{ $t('nav.code') }}</span> 
-        </NuxtLink>
-        <NuxtLink to="/projects?q=teaching">
+        </RouterLink>
+        <RouterLink to="/projects?q=teaching">
           <span>{{ $t('nav.teaching') }}</span> 
-        </NuxtLink>
-        <NuxtLink to="/projects?q=business">
+        </RouterLink>
+        <RouterLink to="/projects?q=business">
           <span>{{ $t('nav.business') }}</span> 
-        </NuxtLink>
+        </RouterLink>
       </p>
     </nav>
     <div class="cp">
