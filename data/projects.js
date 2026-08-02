@@ -5,7 +5,7 @@
 export default [
   {
     "url": "praktykody",
-    "status": "live",
+    "status": "online",
     "media": [
       "https://praktykody.github.io",
       {
@@ -17,8 +17,6 @@ export default [
     "color": "#ffffff",
     "category": [
       "education",
-      "app",
-      "video"
     ],
     "tech": [
       "html",
@@ -62,8 +60,6 @@ export default [
     "color": "#ffffff",
     "category": [
       "app",
-      "education",
-      "video"
     ],
     "tech": [
       "html",
@@ -111,7 +107,6 @@ export default [
     ],
     "category": [
       "game",
-      "app"
     ],
     "tech": [
       "html",
@@ -998,7 +993,6 @@ export default [
   {
     "url": "tanker",
     "status": "completed",
-    "active": false,
     "img": "tanker.webp",
     "color": "#D9BD90",
     "date": "2012-05-15",
@@ -1037,7 +1031,6 @@ export default [
   {
     "url": "waitlistener",
     "status": "online",
-    "active": false,
     "img": "waitlistener.png",
     "color": "#D9BD90",
     "date": "2012-05-15",
@@ -1067,7 +1060,6 @@ export default [
   {
     "url": "speedwaygame.online",
     "status": "online",
-    "active": false,
     "img": "sgo.png",
     "color": "#D9BD90",
     "date": "2012-05-15",
@@ -1085,6 +1077,33 @@ export default [
       "pl": {
         "name": "Speedwaygame.online",
         "desc": "Racing game multiplayer (browser / android app / messenger)",
+        "content": [
+
+        ]
+      }
+    }
+  },
+   {
+    "url": "degen",
+    "status": "online",
+    "active": false,
+    "img": "degen.png",
+    "color": "#D9BD90",
+    "date": "2012-05-15",
+    "media": [
+    ],
+    "category": ['game'],
+    "i18n": {
+      "en": {
+        "name": "DEGEN.GG",
+        "desc": "Multiplayer card game for crypto enthusiast",
+        "content": [
+          
+        ]
+      },
+      "pl": {
+        "name": "DEGEN.gg",
+        "desc": "Karciana gra multiplayer dla entuzjastów krypto",
         "content": [
 
         ]

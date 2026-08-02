@@ -6,8 +6,7 @@ import { i18n, common, stack, localizedProjects } from '../data/index.js'
 const lang = 'en'
 // const lang = 'pl'
 const all = { stack }
-// Draft projects (active: false) are shown only on local/dev.
-const projects = localizedProjects(lang, { includeInactive: import.meta.env.DEV })
+const projects = localizedProjects(lang)
 const content = { en: i18n.en, pl: i18n.pl, all, common }
 
 export function t(trans_key) {

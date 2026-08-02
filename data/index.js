@@ -29,11 +29,9 @@ export function resolveTech(keys) {
 
 // Merge shared project fields with the requested language's i18n block,
 // returning the flat project shape the components expect (name, desc, content, ...).
-// Projects flagged `active: false` are drafts — hidden in production, shown only
-// when `includeInactive` is true (callers pass their dev/local flag).
-export function localizedProjects(lang, { includeInactive = false } = {}) {
+// Lifecycle is expressed by `status` (see ./statuses.js); callers filter on it.
+export function localizedProjects(lang) {
   return projects
-    .filter(p => includeInactive || p.active !== false)
     .map(({ i18n: perLang, ...shared }) => {
       const flat = { ...shared, ...(perLang?.[lang] || {}) }
       if (flat.category) flat.category = resolveCategories(flat.category)

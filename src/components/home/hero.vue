@@ -54,7 +54,10 @@
 
   export default {
     data() {
-      const projects = this.$t('projects') || []
+      // Only surface active-ish projects in the hero catalog.
+      const VISIBLE_STATUSES = ['online', 'development']
+      const projects = (this.$t('projects') || [])
+        .filter(p => VISIBLE_STATUSES.includes(p.status))
       // Group projects under each category, in the order declared in categories.js.
       // A category's resolved label is what lands on project.category, so we match on that.
       const categoryGroups = Object.entries(categories)
@@ -177,7 +180,7 @@
       // status-specific accents
       background:rgba(255,255,255,.12);
       color:#fff;
-      &[data-status="live"]{        background:rgba(46,204,113,.22); color:#7ef0a8; }
+      &[data-status="online"]{      background:rgba(46,204,113,.22); color:#7ef0a8; }
       &[data-status="development"]{ background:rgba(52,152,219,.22); color:#7ec8f0; }
       &[data-status="completed"]{   background:rgba(155,155,155,.22); color:#d9d9d9; }
       &[data-status="archived"]{    background:rgba(231,76,60,.18);  color:#f0a79e; }
