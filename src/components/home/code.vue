@@ -48,6 +48,8 @@
 <script></script>
 
 <style lang="scss">
+  @use 'sass:math';
+  @use 'sass:color';
   #code{
     display:flex;
     flex-direction: row-reverse;
@@ -102,9 +104,9 @@
         padding-right:2rem;
         justify-content: center;
         @mixin text-contrast($n) {
-          $color-brightness: round((red($n) * 299) + (green($n) * 587) + calc((blue($n) * 114) / 1000));
-          $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + calc((blue(#ffffff) * 114) / 1000));
-          @if abs($color-brightness) < calc($light-color / 2){
+          $color-brightness: math.round((color.channel($n, "red", $space: rgb) * 299) + (color.channel($n, "green", $space: rgb) * 587) + math.div(color.channel($n, "blue", $space: rgb) * 114, 1000));
+          $light-color: math.round((color.channel(#ffffff, "red", $space: rgb) * 299) + (color.channel(#ffffff, "green", $space: rgb) * 587) + math.div(color.channel(#ffffff, "blue", $space: rgb) * 114, 1000));
+          @if math.abs($color-brightness) < math.div($light-color, 2){
             color: white;
           }
           @else {
@@ -112,10 +114,10 @@
           }
         }
         @mixin random-bgr($i){
-          $c: rgb(random(255), random(255), random(255));
+          $c: rgb(math.random(255), math.random(255), math.random(255));
           background: $c;
-          border-color:darken($c,10%);
-          color:invert(darken($c,10%));
+          border-color: color.adjust($c, $lightness: -10%);
+          color: color.invert(color.adjust($c, $lightness: -10%));
           @include text-contrast($c);
         }
         li{

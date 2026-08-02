@@ -99,10 +99,10 @@
           <li v-for="item of $t('cv.experience.items')">
 			  <header class="li-header">
 				
-				<p class="title">
+				<div class="title">
 					<h3>{{ item.role }}</h3>
 					<sup v-if="!item.items">{{ item.title }}</sup>
-				</p>
+				</div>
 
 				<p class="date">
 					<!-- <span v-for="(subitem, index) of item.items">

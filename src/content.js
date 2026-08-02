@@ -11,6 +11,7 @@ const projects = localizedProjects(lang, { includeInactive: import.meta.env.DEV 
 const content = { en: i18n.en, pl: i18n.pl, all, common }
 
 export function t(trans_key) {
+  if (typeof trans_key !== 'string') { return }
   let a = trans_key.replace(/\[(\w+)\]/g, '.$1').replace(/^\./, '').split('.')
   let o = { ...content[lang], ...content.all, ...content.common, projects }
   for (let i = 0, n = a.length; i < n; ++i) {
