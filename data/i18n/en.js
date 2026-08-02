@@ -1,8 +1,9 @@
 export default {
   home: {
-    title: "You found <b>Software Developer</b><br><b>which will do</b> the job",
-    description: "I am self-taught programmer works with WEB and IoT projects,<br> additionally I teach web application programming",
-    cta: "See my full experience",
+    description: "Cześć! <br> na tej stronie znajdziesz projekty, w których możesz kontrybuować",
+    cta: "Zobacz wszystkie projekty",
+    description: "Heyio! <br> on this page you can take part in some projects.",
+    cta: "See all projects",
     code: {
       title: "<b>Code</b> was my first <b>love</b>",
       description: "In 2010, I started Googling in order to create a game. Since then, web development has captured me completely.",

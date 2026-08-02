@@ -21,14 +21,17 @@
         </RouterLink>
       </p>
       <p>
-        <RouterLink :to="{name: 'projects', query: {q: 'code'}}">
-          <span>{{ $t('nav.code') }}</span> 
+        <RouterLink :to="{name: 'projects', query: {q: 'app'}}">
+          <span>{{ $t('nav.app') }}</span>
         </RouterLink>
-        <RouterLink to="/projects?q=teaching">
-          <span>{{ $t('nav.teaching') }}</span> 
+        <RouterLink to="/projects?q=education">
+          <span>{{ $t('nav.education') }}</span>
         </RouterLink>
-        <RouterLink to="/projects?q=business">
-          <span>{{ $t('nav.business') }}</span> 
+        <RouterLink to="/projects?q=video">
+          <span>{{ $t('nav.video') }}</span>
+        </RouterLink>
+        <RouterLink to="/projects?q=game">
+          <span>{{ $t('nav.game') }}</span>
         </RouterLink>
       </p>
     </nav>

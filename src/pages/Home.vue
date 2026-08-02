@@ -1,13 +1,11 @@
 <template>
   <div class="indexWrapper">
-    <div class="headerWrapper">
-      <homeHeader />
-    </div>
-    <div class="overwrapper">
+    <homeHero />
+    <!-- <div class="overwrapper">
       <homeCode />
       <homeTeaching />
       <homeBusiness />
-    </div>
+    </div> -->
     <!-- <cursorGradient /> -->
   </div>
 </template>
@@ -39,18 +37,6 @@
   .overwrapper{
     color: var(--bright-primary);
     padding-bottom:1rem;
-  }
-  .headerWrapper{
-    width:100%;
-    z-index:-15;
-    .hider{ // hide elements in front page (code section)
-      background: var(--backgroundColor);
-      max-width:100%;
-      width:100%;
-      height:120%;
-      position:absolute;
-      z-index:-10;
-    }
   }
   @media (max-width:768px){
     #code .codeprojects{

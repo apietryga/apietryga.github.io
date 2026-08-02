@@ -2,8 +2,6 @@
   <div class="homeHeader">
     <header>
       <h1 data-aos="fade-up">{{ $t('author') }}</h1>
-      <p data-aos="fade-up" data-aos-delay="100" class="heroText" v-html="$t('home.title')"></p>
-      <p data-aos="fade-up" data-aos-delay="200" class="description" v-html="$t('home.description')"></p>
       <router-link 
         data-aos-disable="false"
         data-aos="fade-up" data-aos-delay="300" to="/projects" class="btn">{{ $t('home.cta') }}</router-link>

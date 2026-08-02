@@ -1,8 +1,11 @@
 // AUTO-UNIFIED project data (shared fields + per-language i18n).
 // Single source of truth consumed by the Nuxt site and the topbar-app.
+// `category` holds keys into ./categories.js and `tech` holds keys into
+// ./tech.js (both resolved to labels in localizedProjects).
 export default [
   {
     "url": "praktykody",
+    "status": "live",
     "media": [
       "https://praktykody.github.io",
       {
@@ -12,20 +15,23 @@ export default [
     ],
     "img": "praktykody.webp",
     "color": "#ffffff",
+    "category": [
+      "education",
+      "app",
+      "video"
+    ],
+    "tech": [
+      "html",
+      "css",
+      "javascript",
+      "nodejs",
+      "php",
+      "mysql"
+    ],
     "i18n": {
       "en": {
         "name": "Praktykody",
         "date": "2022-08-25",
-        "category": [
-          "teaching",
-          "code",
-          "coding",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "JS",
-          "Node.js"
-        ],
         "desc": "A website leading in easy way to learn the front-end",
         "content": [
           "After every front-end course i optimized my presentations. One day i had idea to change presenting form from *.pptx to website and there she is",
@@ -35,19 +41,6 @@ export default [
       "pl": {
         "name": "Praktykody",
         "date": "2022-11-08",
-        "category": [
-          "business",
-          "education",
-          "movie",
-          "coding",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "JS",
-          "Node.js",
-          "PHP",
-          "MySQL"
-        ],
         "desc": "A web platform for enterpeurs to control and developing business",
         "content": [
           "Anadar is a digital synthesis of management science theory.\n              Its flexible interface allows you to use it\n              CEOs of large companies, but also people in their small businesses.\n              In both cases, the program will help entrepreneurs to reduce expenses\n              and increase profits.",
@@ -58,6 +51,7 @@ export default [
   },
   {
     "url": "anadar",
+    "status": "development",
     "media": [
       "https://www.youtube.com/embed/X7MoF4tvf2Q",
       "anadar_restauracje.webp",
@@ -66,24 +60,23 @@ export default [
     "img": "anadar.webp",
     "date": "2018-09-01",
     "color": "#ffffff",
+    "category": [
+      "app",
+      "education",
+      "video"
+    ],
+    "tech": [
+      "html",
+      "css",
+      "javascript",
+      "nodejs",
+      "php",
+      "mysql",
+      "nuxt"
+    ],
     "i18n": {
       "en": {
         "name": "Anadar",
-        "category": [
-          "business",
-          "code",
-          "education",
-          "movie",
-          "coding",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "JS",
-          "Node.js",
-          "PHP",
-          "MySQL",
-          "nuxt"
-        ],
         "desc": "A web platform for enterpeurs to control and developing business",
         "content": [
           "Anadar is a digital synthesis of management science theory.\n        Its flexible interface allows you to use it\n        CEOs of large companies, but also people in their small businesses.\n        In both cases, the program will help entrepreneurs to reduce expenses\n        and increase profits.",
@@ -93,19 +86,6 @@ export default [
       },
       "pl": {
         "name": "Anadar",
-        "category": [
-          "business",
-          "education",
-          "movie",
-          "coding",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "JS",
-          "Node.js",
-          "PHP",
-          "MySQL"
-        ],
         "desc": "A web platform for enterpeurs to control and developing business",
         "content": [
           "Anadar is a digital synthesis of management science theory.\n              Its flexible interface allows you to use it\n              CEOs of large companies, but also people in their small businesses.\n              In both cases, the program will help entrepreneurs to reduce expenses\n              and increase profits.",
@@ -117,6 +97,7 @@ export default [
   },
   {
     "url": "webions",
+    "status": "development",
     "img": "webions.webp",
     "date": "2021-08-01",
     "color": "#222222",
@@ -128,20 +109,20 @@ export default [
         "href": "https://github.com/apietryga/webions"
       }
     ],
+    "category": [
+      "game",
+      "app"
+    ],
+    "tech": [
+      "html",
+      "scss",
+      "javascript",
+      "nodejs",
+      "redis"
+    ],
     "i18n": {
       "en": {
         "name": "Webions",
-        "category": [
-          "game",
-          "code",
-          "coding",
-          "HTML",
-          "SCSS",
-          "JavaScript",
-          "JS",
-          "Node.js",
-          "Redis"
-        ],
         "desc": "Webions is a MMORPG game, avalible on browsers.",
         "content": [
           "In school age, I spent a lot of time playing Tibia. Whenever I walked away from my computer\n        it hurt me not being able to pull out my phone and develop characters outside of the computer. When i met\n        Node.js technology, found it an invaluable technology (javascript everywhere) and decided to\n        create something interesting. Connecting the dots i decide to make version of Tibia that could be played on all devices",
@@ -152,16 +133,6 @@ export default [
       },
       "pl": {
         "name": "Webions",
-        "category": [
-          "game",
-          "coding",
-          "HTML",
-          "SCSS",
-          "JavaScript",
-          "JS",
-          "Node.js",
-          "Redis"
-        ],
         "desc": "Webions is a MMORPG game, avalible on browsers.",
         "content": [
           "In school age, I spent a lot of time playing Tibia. Whenever I walked away from my computer\n            it hurt me not being able to pull out my phone and develop characters outside of the computer. When i met\n            Node.js technology, found it an invaluable technology (javascript everywhere) and decided to\n            create something interesting. Connecting the dots i decide to make version of Tibia that could be played on all devices",
@@ -174,6 +145,7 @@ export default [
   },
   {
     "url": "uflash",
+    "status": "archived",
     "color": "#ffffff",
     "img": "uflash.webp",
     "date": "2020-03-23",
@@ -188,21 +160,19 @@ export default [
         "href": "https://github.com/apietryga/uFlash"
       }
     ],
+    "category": [
+      "app",
+      "video"
+    ],
+    "tech": [
+      "html",
+      "css",
+      "php",
+      "javascript"
+    ],
     "i18n": {
       "en": {
         "name": "uFlash",
-        "category": [
-          "business",
-          "code",
-          "IoT",
-          "movie",
-          "coding",
-          "HTML",
-          "CSS",
-          "PHP",
-          "JavaScript",
-          "JS"
-        ],
         "desc": "Interactive photo-mirror created for events or cultural places",
         "content": [
           "A mirror measuring 160 x 80cm makes the product\n        is one of the largest of its kind available on the polish market.",
@@ -212,17 +182,6 @@ export default [
       },
       "pl": {
         "name": "uFlash",
-        "category": [
-          "business",
-          "IoT",
-          "movie",
-          "coding",
-          "HTML",
-          "CSS",
-          "PHP",
-          "JavaScript",
-          "JS"
-        ],
         "desc": "Interactive photo-mirror created for events or cultural places",
         "content": [
           "A mirror measuring 160 x 80cm makes the product\n            is one of the largest of its kind available on the polish market.",
@@ -234,6 +193,7 @@ export default [
   },
   {
     "url": "bombeltyj",
+    "status": "archived",
     "color": "#DC468E",
     "img": "bombeltyj.webp",
     "date": "2021-03-23",
@@ -241,18 +201,16 @@ export default [
       "bombeltyj_1.webp",
       "bombeltyj_2.webp"
     ],
+    "category": [
+      "app"
+    ],
+    "tech": [
+      "nuxt",
+      "javascript"
+    ],
     "i18n": {
       "en": {
         "name": "Bombel Tyj",
-        "category": [
-          "renovations",
-          "code",
-          "business",
-          "3d",
-          "nuxt",
-          "javasript",
-          "coding"
-        ],
         "desc": "Restaurant serving bubble-tea",
         "content": [
           "We turned an industrial into a gastronomic establishment - it took a lot\n        design and planning, for which we used 3D projects",
@@ -262,11 +220,6 @@ export default [
       },
       "pl": {
         "name": "Bombel Tyj",
-        "category": [
-          "renovations",
-          "business",
-          "3d"
-        ],
         "desc": "Restaurant serving bubble-tea",
         "content": [
           "We turned an industrial into a gastronomic establishment - it took a lot\n            design and planning, for which we used 3D projects",
@@ -278,6 +231,7 @@ export default [
   },
   {
     "url": "pinky",
+    "status": "archived",
     "color": "#F6B9ED",
     "img": "pinky.webp",
     "date": "2021-01-24",
@@ -285,20 +239,20 @@ export default [
       "pinky_server.webp",
       "pinky_nest.webp"
     ],
+    "category": [
+      "app"
+    ],
+    "tech": [
+      "python",
+      "django",
+      "cpp",
+      "arduino",
+      "html",
+      "css"
+    ],
     "i18n": {
       "en": {
         "name": "Pinky",
-        "category": [
-          "iOT",
-          "code",
-          "coding",
-          "Python",
-          "django",
-          "CPP",
-          "Arduino",
-          "HTML",
-          "CSS"
-        ],
         "desc": "Interactive home assistant for remote control of electrical appliances",
         "content": [
           "Pinky is easy to adapt to your apartment, just switch it on\n        easy to use server on a computer or raspberry pi.\n        The system is equipped with speech recognition and the hotword \"Pinky\" - based on PocketSphinx\n        - the only system I found that does not require an internet connection (hence the decision to create\n          this project in Python)",
@@ -308,16 +262,6 @@ export default [
       },
       "pl": {
         "name": "Pinky",
-        "category": [
-          "iOT",
-          "coding",
-          "Python",
-          "django",
-          "CPP",
-          "Arduino",
-          "HTML",
-          "CSS"
-        ],
         "desc": "Interactive home assistant for remote control of electrical appliances",
         "content": [
           "Pinky is easy to adapt to your apartment, just switch it on\n            easy to use server on a computer or raspberry pi.\n            The system is equipped with speech recognition and the hotword \"Pinky\" - based on PocketSphinx\n            - the only system I found that does not require an internet connection (hence the decision to create\n              this project in Python)",
@@ -329,6 +273,7 @@ export default [
   },
   {
     "url": "sanctuarium",
+    "status": "completed",
     "color": "#ffffff",
     "img": "sanctuarium.webp",
     "date": "2020-08-15",
@@ -337,15 +282,12 @@ export default [
       "sanctuarium_2.webp",
       "sanctuarium_3.webp"
     ],
+    "category": [
+      "app"
+    ],
     "i18n": {
       "en": {
         "name": "Sanctuarium",
-        "category": [
-          "renovations",
-          "code",
-          "coding",
-          "iOT"
-        ],
         "desc": "An interactive showroom where I create and test projects",
         "content": [
           "Having access to a room of approximately 30m², I decided to create a place where I will develop my projects.",
@@ -355,11 +297,6 @@ export default [
       },
       "pl": {
         "name": "Sanctuarium",
-        "category": [
-          "renovations",
-          "coding",
-          "iOT"
-        ],
         "desc": "An interactive showroom where I create and test projects",
         "content": [
           "Having access to a room of approximately 30m², I decided to create a place where I will develop my projects.",
@@ -371,6 +308,7 @@ export default [
   },
   {
     "url": "wellton",
+    "status": "archived",
     "img": "wellton.webp",
     "date": "2017-12-12",
     "color": "#729AAA",
@@ -380,21 +318,19 @@ export default [
       "https://www.youtube.com/embed/x2LeWqEt27g",
       "wellton_visualisation2.webp"
     ],
+    "category": [
+      "app"
+    ],
+    "tech": [
+      "html",
+      "css",
+      "php",
+      "javascript",
+      "android"
+    ],
     "i18n": {
       "en": {
         "name": "Wellton",
-        "category": [
-          "business",
-          "IoT",
-          "code",
-          "coding",
-          "HTML",
-          "CSS",
-          "PHP",
-          "JavaScript",
-          "JS",
-          "Android"
-        ],
         "desc": "Interactive tables for restaurants.",
         "content": [
           "The table software is aimed at restaurants.\n        Thanks to the plugin of the Anadar project, it allows you to analyze orders immediately\n        in terms of the product strategy.",
@@ -405,17 +341,6 @@ export default [
       },
       "pl": {
         "name": "Wellton",
-        "category": [
-          "business",
-          "IoT",
-          "coding",
-          "HTML",
-          "CSS",
-          "PHP",
-          "JavaScript",
-          "JS",
-          "Android"
-        ],
         "desc": "Interactive tables for restaurants.",
         "content": [
           "The table software is aimed at restaurants.\n            Thanks to the plugin of the Anadar project, it allows you to analyze orders immediately\n            in terms of the product strategy.",
@@ -428,6 +353,7 @@ export default [
   },
   {
     "url": "polish-makers",
+    "status": "completed",
     "img": "polishmakers.webp",
     "date": "2016-02-15",
     "color": "#ff0000",
@@ -436,7 +362,7 @@ export default [
       "https://www.youtube.com/embed/rsp7LJa7-Fc"
     ],
     "category": [
-      "movie"
+      "video"
     ],
     "i18n": {
       "en": {
@@ -461,6 +387,7 @@ export default [
   },
   {
     "url": "liveshare",
+    "status": "archived",
     "img": "liveshare.webp",
     "date": "2015-12-05",
     "color": "#B05111",
@@ -475,19 +402,18 @@ export default [
         "name": "Sanctuarium"
       }
     ],
+    "category": [
+      "app"
+    ],
+    "tech": [
+      "html",
+      "css",
+      "javascript",
+      "php"
+    ],
     "i18n": {
       "en": {
         "name": "LiveShare",
-        "category": [
-          "IoT",
-          "code",
-          "coding",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "JS",
-          "PHP"
-        ],
         "desc": "A program for transferring items between screens",
         "content": [
           "Lets you upload text, video from yt / cda, photo or website\n        between the phone / computer / TV screen.",
@@ -497,15 +423,6 @@ export default [
       },
       "pl": {
         "name": "LiveShare",
-        "category": [
-          "IoT",
-          "coding",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "JS",
-          "PHP"
-        ],
         "desc": "A program for transferring items between screens",
         "content": [
           "Lets you upload text, video from yt / cda, photo or website\n            between the phone / computer / TV screen.",
@@ -517,6 +434,7 @@ export default [
   },
   {
     "url": "single-courses",
+    "status": "completed",
     "img": "singlecourses.webp",
     "date": "2020-03-15",
     "color": "#ffffff",
@@ -534,18 +452,19 @@ export default [
         "href": "https://github.com/taicoders/kurseo"
       }
     ],
+    "category": [
+      "education",
+      "app"
+    ],
+    "tech": [
+      "python",
+      "django",
+      "java",
+      "spring"
+    ],
     "i18n": {
       "en": {
         "name": "Single Courses",
-        "category": [
-          "teaching",
-          "courses",
-          "Python",
-          "django",
-          "Java",
-          "Spring",
-          "SEO"
-        ],
         "desc": "Single courses that I have conducted no more than 5 times.",
         "content": [
           "<h3>Python Course</h3>\n        <ul>\n          <li>Integrated Development Environment</li>\n          <li>Data structures</li>\n          <li>Basic instructions</li>\n          <li>Principles of creating documentation</li>\n          <li>Funcions</li>\n          <li>Object oriented programming (OOP)</li>\n          <li>Web API - django</li>\n        </ul>\n        <p>You can see the files created during this course on github</p>",
@@ -556,14 +475,6 @@ export default [
       },
       "pl": {
         "name": "Single Courses",
-        "category": [
-          "courses",
-          "Python",
-          "django",
-          "Java",
-          "Spring",
-          "SEO"
-        ],
         "desc": "Single courses that I have conducted no more than 5 times.",
         "content": [
           "<h3>Python Course</h3>\n            <ul>\n              <li>Integrated Development Environment</li>\n              <li>Data structures</li>\n              <li>Basic instructions</li>\n              <li>Principles of creating documentation</li>\n              <li>Funcions</li>\n              <li>Object oriented programming (OOP)</li>\n              <li>Web API - django</li>\n            </ul>\n            <p>You can see the files created during this course on github</p>",
@@ -576,29 +487,28 @@ export default [
   },
   {
     "url": "kurs-front-end",
+    "status": "completed",
     "img": "sfedev.webp",
     "date": "2020-01-22",
     "color": "#4F9690",
     "media": [
       "/reference/1.webp"
     ],
+    "category": [
+      "education",
+      "app"
+    ],
+    "tech": [
+      "html",
+      "css",
+      "scss",
+      "javascript",
+      "nodejs",
+      "jquery"
+    ],
     "i18n": {
       "en": {
         "name": "Kurs Front-end Dev",
-        "category": [
-          "teaching",
-          "code",
-          "courses",
-          "webdevelopment",
-          "HTML",
-          "CSS",
-          "SCSS",
-          "JavaScript",
-          "JS",
-          "Node.js",
-          "jQuery",
-          "SEO"
-        ],
         "desc": "Course of the basics WEB application programming",
         "content": [
           "I have conducted over 1000 hours of programming training\n        front-end developer. The training courses are aimed at\n        people looking for their professional path. On the course\n        learn the basics required to work in the profession.",
@@ -608,18 +518,6 @@ export default [
       },
       "pl": {
         "name": "Kurs Front-end Dev",
-        "category": [
-          "courses",
-          "webdevelopment",
-          "HTML",
-          "CSS",
-          "SCSS",
-          "JavaScript",
-          "JS",
-          "Node.js",
-          "jQuery",
-          "SEO"
-        ],
         "desc": "Course of the basics WEB application programming",
         "content": [
           "I have conducted over 1000 hours of programming training\n            front-end developer. The training courses are aimed at\n            people looking for their professional path. On the course\n            learn the basics required to work in the profession.",
@@ -631,6 +529,7 @@ export default [
   },
   {
     "url": "slaska-akademia-seniora",
+    "status": "completed",
     "img": "slaskaakademiaseniora.webp",
     "date": "2018-11-01",
     "color": "#FFD1F2",
@@ -652,15 +551,13 @@ export default [
       "https://www.youtube.com/embed/SgVNov7eCq0",
       "/reference/5.webp"
     ],
+    "category": [
+      "education",
+      "video"
+    ],
     "i18n": {
       "en": {
         "name": "Śląska Akademia Senior@",
-        "category": [
-          "teaching",
-          "courses",
-          "social",
-          "movie"
-        ],
         "desc": "Course of digital competences",
         "content": [
           "I started my career as a trainer with computer skills courses for seniors.\n        The student group of this age is really thankful and overcrowded\n        life experience. I learned to conduct classes as transparently as possible.",
@@ -672,11 +569,6 @@ export default [
       },
       "pl": {
         "name": "Śląska Akademia Senior@",
-        "category": [
-          "courses",
-          "social",
-          "movie"
-        ],
         "desc": "Course of digital competences",
         "content": [
           "I started my career as a trainer with computer skills courses for seniors.\n            The student group of this age is really thankful and overcrowded\n            life experience. I learned to conduct classes as transparently as possible.",
@@ -690,6 +582,7 @@ export default [
   },
   {
     "url": "kurscyfrowy-pl",
+    "status": "completed",
     "img": "kurscyfrowy.webp",
     "date": "2020-04-10",
     "color": "#ADFFAD",
@@ -703,20 +596,18 @@ export default [
       "https://www.youtube.com/embed/fYKp4NstrBQ",
       "https://www.youtube.com/embed/6liLfVHJCFY"
     ],
+    "category": [
+      "education",
+      "app"
+    ],
+    "tech": [
+      "html",
+      "css",
+      "javascript"
+    ],
     "i18n": {
       "en": {
         "name": "Kurs Cyfrowy.pl",
-        "category": [
-          "teaching",
-          "code",
-          "social",
-          "coding",
-          "teaching",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "JS"
-        ],
         "desc": "Course of digital competences",
         "content": [
           "After the courses conducted as part of the Silesian Senior @ Academy\n        we often got a lot of questions from alumni in theirs\n        independent digital path. So we decided\n        construct a project that will allow for the exchange of experience\n        and expand the competences of the course participants, even after the course.",
@@ -728,15 +619,6 @@ export default [
       },
       "pl": {
         "name": "Kurs Cyfrowy.pl",
-        "category": [
-          "social",
-          "coding",
-          "teaching",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "JS"
-        ],
         "desc": "Course of digital competences",
         "content": [
           "After the courses conducted as part of the Silesian Senior @ Academy\n            we often got a lot of questions from alumni in theirs\n            independent digital path. So we decided\n            construct a project that will allow for the exchange of experience\n            and expand the competences of the course participants, even after the course.",
@@ -750,23 +632,25 @@ export default [
   },
   {
     "url": "yanomebel",
+    "status": "completed",
     "img": "yanomebel.webp",
     "date": "2014-05-10",
     "color": "#F1BF00",
     "media": [
       "yano_1.webp"
     ],
+    "category": [
+      "app"
+    ],
+    "tech": [
+      "html",
+      "css",
+      "php",
+      "wordpress"
+    ],
     "i18n": {
       "en": {
         "name": "YanoMebel",
-        "category": [
-          "webdevelopment",
-          "code",
-          "HTML",
-          "CSS",
-          "PHP",
-          "WORDPRESS"
-        ],
         "desc": "Editing of the furniture manufacturer's website",
         "content": [
           "It was my first commercial commission. <br />\n        It consisted in adding the option to change languages - on the already prepared one\n        translation. I also improved the site navigation. <br /> ",
@@ -776,13 +660,6 @@ export default [
       },
       "pl": {
         "name": "YanoMebel",
-        "category": [
-          "webdevelopment",
-          "HTML",
-          "CSS",
-          "PHP",
-          "WORDPRESS"
-        ],
         "desc": "Editing of the furniture manufacturer's website",
         "content": [
           "It was my first commercial commission. <br />\n            It consisted in adding the option to change languages - on the already prepared one\n            translation. I also improved the site navigation. <br /> ",
@@ -794,6 +671,7 @@ export default [
   },
   {
     "url": "masterkey",
+    "status": "completed",
     "img": "masterkey.webp",
     "date": "2016-02-15",
     "color": "#F78F1D",
@@ -801,20 +679,21 @@ export default [
       "masterkey_1.webp",
       "masterkey_2.webp"
     ],
+    "category": [
+      "app"
+    ],
+    "tech": [
+      "html",
+      "css",
+      "javascript",
+      "jquery",
+      "php",
+      "excel",
+      "csv"
+    ],
     "i18n": {
       "en": {
         "name": "LOB MasterKey",
-        "category": [
-          "webdevelopment",
-          "code",
-          "HTML",
-          "CSS",
-          "JS",
-          "jQuery",
-          "PHP",
-          "EXCEL",
-          "CSV"
-        ],
         "desc": "Order configurator for the MasterKey key manufacturer",
         "content": [
           "Masterkey technology allows you to open multiple locks with one key.\n        However, this causes a problem when ordering a larger number of this type of keys,\n        where the individual is to have access to specific doors.\n        So we created a configurator with the possibility of creating locks and keys\n        and then determining the dependencies between them.",
@@ -823,16 +702,6 @@ export default [
       },
       "pl": {
         "name": "LOB MasterKey",
-        "category": [
-          "webdevelopment",
-          "HTML",
-          "CSS",
-          "JS",
-          "jQuery",
-          "PHP",
-          "EXCEL",
-          "CSV"
-        ],
         "desc": "Order configurator for the MasterKey key manufacturer",
         "content": [
           "Masterkey technology allows you to open multiple locks with one key.\n            However, this causes a problem when ordering a larger number of this type of keys,\n            where the individual is to have access to specific doors.\n            So we created a configurator with the possibility of creating locks and keys\n            and then determining the dependencies between them.",
@@ -843,6 +712,7 @@ export default [
   },
   {
     "url": "tomigra",
+    "status": "completed",
     "img": "tomigra.webp",
     "date": "2015-09-03",
     "color": "#B2EF6B",
@@ -851,18 +721,19 @@ export default [
       "tomigra2.webp",
       "tomigra3.webp"
     ],
+    "category": [
+      "education",
+      "app"
+    ],
+    "tech": [
+      "html",
+      "css",
+      "javascript",
+      "jquery"
+    ],
     "i18n": {
       "en": {
         "name": "TOMIgra",
-        "category": [
-          "teaching",
-          "code",
-          "webdevelopment",
-          "HTML",
-          "CSS",
-          "JS",
-          "jQuery"
-        ],
         "desc": "Educational game for children of music and elementary schools",
         "content": [
           "The design was going through the user\n        through successive boards, on which he completed musical tasks.\n        Depending on the selected module and the user's level of advancement\n        the tasks were of varying difficulty.\n        In an interactive way, the game taught about instruments, notes, etc.",
@@ -872,13 +743,6 @@ export default [
       },
       "pl": {
         "name": "TOMIgra",
-        "category": [
-          "webdevelopment",
-          "HTML",
-          "CSS",
-          "JS",
-          "jQuery"
-        ],
         "desc": "Educational game for children of music and elementary schools",
         "content": [
           "The design was going through the user\n            through successive boards, on which he completed musical tasks.\n            Depending on the selected module and the user's level of advancement\n            the tasks were of varying difficulty.\n            In an interactive way, the game taught about instruments, notes, etc.",
@@ -890,6 +754,7 @@ export default [
   },
   {
     "url": "goodlock",
+    "status": "completed",
     "img": "goodlock.webp",
     "date": "2016-05-01",
     "color": "#bbbbbb",
@@ -898,19 +763,19 @@ export default [
       "goodlock_2.webp",
       "goodlock_ulotka.webp"
     ],
+    "category": [
+      "app"
+    ],
+    "tech": [
+      "html",
+      "css",
+      "javascript",
+      "php",
+      "mysql"
+    ],
     "i18n": {
       "en": {
         "name": "GoodLock",
-        "category": [
-          "webdevelopment",
-          "code",
-          "graphic",
-          "HTML",
-          "CSS",
-          "JS",
-          "PHP",
-          "MySQL"
-        ],
         "desc": "Website + reservation system + admin panel",
         "content": [
           "I created a website for the escape room - the company's showcase\n        with the services presented.",
@@ -921,15 +786,6 @@ export default [
       },
       "pl": {
         "name": "GoodLock",
-        "category": [
-          "webdevelopment",
-          "graphic",
-          "HTML",
-          "CSS",
-          "JS",
-          "PHP",
-          "MySQL"
-        ],
         "desc": "Website + reservation system + admin panel",
         "content": [
           "I created a website for the escape room - the company's showcase\n            with the services presented.",
@@ -942,6 +798,7 @@ export default [
   },
   {
     "url": "eatall",
+    "status": "completed",
     "img": "eatall.webp",
     "date": "2016-04-15",
     "color": "#FF0000",
@@ -949,9 +806,7 @@ export default [
       "eatall_ulotka_black.webp",
       "eatall_ulotka_white.webp"
     ],
-    "category": [
-      "graphic"
-    ],
+    "category": [],
     "i18n": {
       "en": {
         "name": "EatAll",
@@ -973,39 +828,39 @@ export default [
       }
     }
   },
-  {
-    "url": "szalejemy-budujemy",
-    "img": "szalejemybudujemy.webp",
-    "date": "2020-04-04",
-    "color": "#93AAC9",
-    "media": [
-      "https://www.youtube.com/embed/htItjXAqpDo"
-    ],
-    "category": [
-      "YouTube",
-      "movie"
-    ],
-    "i18n": {
-      "en": {
-        "name": "Szalejemy Budujemy",
-        "desc": "YouTube channel about construction",
-        "content": [
-          "In this project, I was responsible for the implementation. I prepared the intro\n        the channel, which is still used today, and I edited the first episode",
-          "The channel is constantly evolving ."
-        ]
-      },
-      "pl": {
-        "name": "Szalejemy Budujemy",
-        "desc": "YouTube channel about construction",
-        "content": [
-          "In this project, I was responsible for the implementation. I prepared the intro\n            the channel, which is still used today, and I edited the first episode",
-          "The channel is constantly evolving ."
-        ]
-      }
-    }
-  },
+  // {
+  //   "url": "szalejemy-budujemy",
+  //   "img": "szalejemybudujemy.webp",
+  //   "date": "2020-04-04",
+  //   "color": "#93AAC9",
+  //   "media": [
+  //     "https://www.youtube.com/embed/htItjXAqpDo"
+  //   ],
+  //   "category": [
+  //     "video"
+  //   ],
+  //   "i18n": {
+  //     "en": {
+  //       "name": "Szalejemy Budujemy",
+  //       "desc": "YouTube channel about construction",
+  //       "content": [
+  //         "In this project, I was responsible for the implementation. I prepared the intro\n        the channel, which is still used today, and I edited the first episode",
+  //         "The channel is constantly evolving ."
+  //       ]
+  //     },
+  //     "pl": {
+  //       "name": "Szalejemy Budujemy",
+  //       "desc": "YouTube channel about construction",
+  //       "content": [
+  //         "In this project, I was responsible for the implementation. I prepared the intro\n            the channel, which is still used today, and I edited the first episode",
+  //         "The channel is constantly evolving ."
+  //       ]
+  //     }
+  //   }
+  // },
   {
     "url": "szymon-ymek-szewczyk",
+    "status": "completed",
     "img": "ymekszewczyk.webp",
     "date": "2020-06-19",
     "color": "#395880",
@@ -1017,10 +872,7 @@ export default [
       }
     ],
     "category": [
-      "YouTube",
-      "movie",
-      "photo",
-      "graphic"
+      "video"
     ],
     "i18n": {
       "en": {
@@ -1045,6 +897,7 @@ export default [
   },
   {
     "url": "jerzy-malcher-film",
+    "status": "completed",
     "img": "jmalcher.webp",
     "date": "2017-10-11",
     "color": "#464A35",
@@ -1054,8 +907,7 @@ export default [
       "https://www.youtube.com/embed/iqlRAYE5ys0"
     ],
     "category": [
-      "movie",
-      "acting"
+      "video"
     ],
     "i18n": {
       "en": {
@@ -1080,6 +932,7 @@ export default [
   },
   {
     "url": "jo-byl-ukradziony",
+    "status": "completed",
     "img": "jbu.webp",
     "date": "2017-01-22",
     "color": "#193840",
@@ -1091,8 +944,7 @@ export default [
       }
     ],
     "category": [
-      "movie",
-      "acting"
+      "video"
     ],
     "i18n": {
       "en": {
@@ -1113,36 +965,39 @@ export default [
       }
     }
   },
-  {
-    "url": "linkhouse",
-    "active": false,
-    "img": "linkhouse.webp",
-    "color": "#ffffff",
-    "media": [
-      "https://linkhouse.pl"
-    ],
-    "i18n": {
-      "en": {
-        "name": "Linkhouse",
-        "date": "2022-05-04",
-        "category": [
-          "coding",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Vue",
-          "Nuxt",
-          "Twig",
-          "Docker",
-          "Kubernetes"
-        ],
-        "desc": "A web platform for enterpeurs to control and developing business",
-        "content": []
-      }
-    }
-  },
+  // {
+  //   "url": "linkhouse",
+  //   "active": false,
+  //   "img": "linkhouse.webp",
+  //   "color": "#ffffff",
+  //   "media": [
+  //     "https://linkhouse.pl"
+  //   ],
+  //   "category": [
+  //     "app"
+  //   ],
+  //   "tech": [
+  //     "html",
+  //     "css",
+  //     "javascript",
+  //     "vue",
+  //     "nuxt",
+  //     "twig",
+  //     "docker",
+  //     "kubernetes"
+  //   ],
+  //   "i18n": {
+  //     "en": {
+  //       "name": "Linkhouse",
+  //       "date": "2022-05-04",
+  //       "desc": "A web platform for enterpeurs to control and developing business",
+  //       "content": []
+  //     }
+  //   }
+  // },
   {
     "url": "tanker",
+    "status": "completed",
     "active": false,
     "img": "tanker.webp",
     "color": "#D9BD90",
@@ -1153,12 +1008,10 @@ export default [
       "tanker_3.webp",
       "tanker_4.webp"
     ],
+    "category": [],
     "i18n": {
       "en": {
         "name": "Tanker",
-        "category": [
-          "moto"
-        ],
         "desc": "Custom Chopper based on Romet Kadett",
         "content": [
           "I started the project at the age of 16 with the change of the frame structure",
@@ -1170,9 +1023,6 @@ export default [
       },
       "pl": {
         "name": "Tanker",
-        "category": [
-          "motoryzacja"
-        ],
         "desc": "Custom Chopper stworzony na bazie Rometa Kadetta",
         "content": [
           "Projekt rozpocząłem w mając 16 lat od zmiany konstrukcji  ramy",
@@ -1183,5 +1033,64 @@ export default [
         ]
       }
     }
+  },
+  {
+    "url": "waitlistener",
+    "status": "online",
+    "active": false,
+    "img": "waitlistener.png",
+    "color": "#D9BD90",
+    "date": "2012-05-15",
+    "media": [
+    ],
+    "category": ['app'],
+    "i18n": {
+      "en": {
+        "name": "Waitlistener",
+        "desc": "Make your own public waitlist (for event/product) in seconds, then manage mailing to the interesed",
+        "content": [
+        ]
+      },
+      "pl": {
+        "name": "Waitlistener",
+        "desc": "Stwórz publicznie widoczną listę oczekujących (na wydarzenie/produkt) i zarządzaj mailingiem do zainteresowanych",
+        "content": [
+          "Projekt rozpocząłem w mając 16 lat od zmiany konstrukcji  ramy",
+          "Po kosmetycznej poprawie zrobiłem również koncept baku",
+          "Po malowaniu, modelowaniu i przerobieniu paru części\n          motor zaczynał nabierać kształtów",
+          "Na tym etapie zakończyłem prace nad projektem",
+          "Projekt został sprzedany."
+        ]
+      }
+    }
+  },
+  {
+    "url": "speedwaygame.online",
+    "status": "online",
+    "active": false,
+    "img": "sgo.png",
+    "color": "#D9BD90",
+    "date": "2012-05-15",
+    "media": [
+    ],
+    "category": ['game'],
+    "i18n": {
+      "en": {
+        "name": "speedwaygame.online",
+        "desc": "Gra wyścigowa multiplayer (przeglądarka / android app / messenger)",
+        "content": [
+          
+        ]
+      },
+      "pl": {
+        "name": "Speedwaygame.online",
+        "desc": "Racing game multiplayer (browser / android app / messenger)",
+        "content": [
+
+        ]
+      }
+    }
   }
+
+
 ]

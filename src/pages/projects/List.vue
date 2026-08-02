@@ -52,6 +52,7 @@
           ||  project.name.toLowerCase().includes(q) 
           ||  project.desc.toLowerCase().includes(q)
           ||  project.category.map(i => i.toLowerCase()).includes(q)
+          ||  (project.tech || []).map(i => i.toLowerCase()).includes(q)
           ){ return true }
           for(const content of project.content ){
             if( content.toLowerCase().includes(q) ){ return true }

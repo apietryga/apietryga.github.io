@@ -6,8 +6,9 @@ export default {
       home: 'Home',
       projects: 'Projects',
       contact: 'Contact',
-          code: 'Code',
-          teaching: 'Teaching',
-          business: 'Business',
+          app: 'App',
+          education: 'Education',
+          video: 'Video',
+          game: 'Game',
     },
 }  

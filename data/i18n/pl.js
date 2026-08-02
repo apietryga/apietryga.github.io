@@ -1,8 +1,9 @@
 export default {
   home: {
     title: "hello <br> im apietryga",
-    description: "Jestem samoukiem programowania, pracuję jako Software Developer. Najlepiej czuje się w Node i Nuxt. Tworzę projekty WEB i IoT. Prowadzę również szkolenia z programowania aplikacji internetowych. Chętnie porozmawiam o ciekawych projektach.",
-    cta: "See my experience",
+    description: "Siema — robię projekty, w których <b>TY TEŻ</b> możesz wziąć udział.",
+    description: "Cześć! <br> na tej stronie znajdziesz projekty, w których możesz kontrybuować",
+    cta: "Zobacz wszystkie projekty",
     code: {
       title: "<b>Kod</b> był moją pierwszą <b>miłością</b>",
       description: "W 2010 roku w celu stworzenia gry zacząłem googlować. Od tamtego czasu web development wciągnął mnie bez reszty."
